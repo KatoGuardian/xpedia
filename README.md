@@ -1,4 +1,4 @@
-# The X-Com Files xpedia
+# The X-Com Files XPedia
 
 Wiki service for The X-Com Files megamod, powered by Baturinsky's Xpedia (https://github.com/baturinsky/xpedia)
 
