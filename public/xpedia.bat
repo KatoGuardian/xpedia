@@ -2,7 +2,7 @@
 setlocal
 CHCP 65001 >NUL
 
-set mod_name=Piratez
+set mod_name=XComFiles
 set language_name=en-US
 
 set mod_rules_path=user\mods\%mod_name%\Ruleset

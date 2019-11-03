@@ -4,7 +4,7 @@ const JSZip = require("./xpedia/jszip.min.js");
 let packed = true;
 let saveAs = "xpedia.html";
 
-let mod_name = "Piratez";
+let mod_name = "XComFiles";
 let language_name = "en-US";
 
 let mod_rules_path = "user/mods/" + mod_name + "/Ruleset";
