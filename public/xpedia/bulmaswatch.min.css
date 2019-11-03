@@ -6,6 +6,10 @@
   to {
     transform: rotate(359deg); } }
 
+.centreinfo{
+  width: 50%;
+}
+
 .delete, .modal-close, .is-unselectable, .button, .file, .breadcrumb, .pagination-previous,
 .pagination-next,
 .pagination-link,
@@ -325,7 +329,7 @@ pre {
   color: #fff;
   font-size: 0.875em;
   overflow-x: auto;
-  padding: 1.25rem 1.5rem;
+  padding: 0.5rem 1rem;
   white-space: pre;
   word-wrap: normal; }
   pre code {
