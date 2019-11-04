@@ -26,4 +26,4 @@ for (let i = 0; i < files.length; ++i) {
   fs.copyFileSync("public/" + files[i], "dist/" + files[i])
 }
 
-zipFolder.zipFolder('dist', 'xpedia.zip', err=> {if(err) console.log(err)})
+// zipFolder.zipFolder('dist', 'xpedia.zip', err=> {if(err) console.log(err)})

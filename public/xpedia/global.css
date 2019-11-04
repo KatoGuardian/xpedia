@@ -6,7 +6,8 @@
 } 
 
 html {
-  background:#180C24
+  background:#25315a;
+  /* #180C24 */
 }
 
 body {
@@ -20,19 +21,23 @@ a {
 }
 
 a:hover {
-	text-decoration: underline;
+  text-decoration: none;
+  color: white;
 }
 
 .main-table > tr:nth-child(odd){
-  background: #20152B;
+  background: #141d3d;
+  /* #20152B */
 }
 
 .main-table > tr:nth-child(even){
-  background: #180C24;
+  background: #25315a;
+    /* #180C24 */
 }
 
 .main-table{	
-  border: solid 0.3px #382C44;
+  border: solid 0.3px #141d3d;
+  /* #382C44 */
   margin: 0px;
 }
 
@@ -66,7 +71,8 @@ a:hover {
 }
 
 .number-table td{
-  border-left: solid 0.3px #382C44;
+  border-left: solid 0.3px  #141d3d;
+  /* #382C44 */
 }
 
 .number-table td:first-child{
@@ -76,7 +82,8 @@ a:hover {
 }
 
 .number-table-header{
-  border-bottom: solid 0.3px #382C44;  
+  border-bottom: solid 0.3px #141d3d;
+  /* #382C44 */
 }
 
 .number-table-header td:first-child{
@@ -101,21 +108,25 @@ h1{
 }
 
 h1, h4{
-  border-bottom: solid 1px #483C54;
+  border-bottom: solid 1px #8dc9ec; 
+  /* #483C54 */
   margin: 10px 0px;
-  color: #aaffff;
+  color: white;
+  /* #aaffff */
 }
 
 .table-header{
   color: #66ffff;
-  background: #483C54;
+  background: #141d3d; 
+  /* #483C54 */
   text-align: center;
   font-size: larger;
 }
 
 .table-subheader{
   color: white;
-  background: #382C44;
+  background: #141d3d;
+  /* #382C44 */
   text-align: center;
 }
 
@@ -214,11 +225,13 @@ audio{
 }
 
 .attacks-table td{
-  border: solid 0.3px #382C44;
+  border: solid 0.3px  #141d3d;
+  /* #382C44 */
   font-size: 14pt;
 }
 .attacks-table thead{
-  background: #382C44;  
+  background: #141d3d;
+  /* #382C44 */
 }
 
 
