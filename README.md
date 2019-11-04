@@ -2,7 +2,7 @@
 
 Wiki service for The X-Com Files megamod, powered by Baturinsky's Xpedia (https://github.com/baturinsky/xpedia)
 
-This is my first JS project, so its more about learning, I only do tiny tweaks. Builded version is awailable at http://thexcomfiles.xyz/
+This is my first JS project, so its more about learning, I only do tiny tweaks. Builded version awailable at http://thexcomfiles.xyz/
 
 ## About XCF project: 
 
