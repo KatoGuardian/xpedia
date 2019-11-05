@@ -58,47 +58,6 @@ td.svelte-edz6kn{
 a.svelte-edz6kn{
     color:cyan}
 
-/* finnik's part */
-.workspace{
-    /* margin-right: 14px; */
-    width: 68%;
-    float: left;
-}
- 
-.quote {
-   /* background-color: #363636; */
-   color: #fff;
-   font-size: 1em;
-   overflow-x: auto;
-   padding: 0.5rem 1rem;
-   border-left: 2px solid #fff; /* Параметры линии */ 
-   margin-left: 20px; /* Отступ слева */
-   padding-left: 10px; /* Расстояние от линии до текста */ 
-}
-.qsign {
-   padding-left: 60px;
-}
-
-.imgcol {
-   /* background-color: #74992e; */
-   margin-right: 14px;
-   width: 30%;
-   float: right;
-}
-.downloadbtn {
-   background-color: #8dc9ec;
-   border: none;
-   color: white;
-   padding: 12px 30px;
-   cursor: pointer;
-   font-size: 20px;
-   margin-top: 10px;
-   margin-bottom: 10px;
-   border-radius: 5px;
- }
-.downloadbtn:hover {
-   background-color: RoyalBlue;
-}
 
 
 /*# sourceMappingURL=bundle.css.map */

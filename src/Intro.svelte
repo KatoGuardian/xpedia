@@ -31,4 +31,7 @@ Wiki is powered by <a href="https://github.com/baturinsky/xpedia/">Baturinsky's 
 <div class="imgcol">
   <button class="downloadbtn" style="width:100%" onclick="location.href='https://openxcom.mod.io/the-x-com-files'" ><i class="fa fa-download"></i> Download</button>
   <img src="https://thumb.mod.io/mods/0640/158/thumb_1020x2000/osprey.1.png" alt="osprey.1.png">
+  <img src="https://thumb.mod.io/mods/0640/158/thumb_1020x2000/screen072.1.png" alt="screen072.1.png">
+  <img src="https://thumb.mod.io/mods/0640/158/thumb_1020x2000/callofcoding.1.png" alt="callofcoding.1.png">
+  <img src="https://thumb.mod.io/mods/0640/158/thumb_1020x2000/screen070.png" alt="screen070.png">
 </div>

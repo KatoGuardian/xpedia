@@ -5417,7 +5417,7 @@ var app = (function (JSZip) {
     const file$1 = "src\\Intro.svelte";
 
     function create_fragment$1(ctx) {
-    	var div3, h1, t1, br0, t2, h40, t4, br1, t5, br2, t6, br3, t7, br4, t8, br5, t9, a0, t11, a1, t13, a2, br6, t15, br7, t16, h41, t18, div2, div0, t19, br8, t20, t21, div1, t23, br9, t24, br10, t25, a3, t27, t28, div4, button, i, t29, t30, img;
+    	var div3, h1, t1, br0, t2, h40, t4, br1, t5, br2, t6, br3, t7, br4, t8, br5, t9, a0, t11, a1, t13, a2, br6, t15, br7, t16, h41, t18, div2, div0, t19, br8, t20, t21, div1, t23, br9, t24, br10, t25, a3, t27, t28, div4, button, i, t29, t30, img0, t31, img1, t32, img2, t33, img3;
 
     	const block = {
     		c: function create() {
@@ -5477,7 +5477,13 @@ var app = (function (JSZip) {
     			i = element("i");
     			t29 = text(" Download");
     			t30 = space();
-    			img = element("img");
+    			img0 = element("img");
+    			t31 = space();
+    			img1 = element("img");
+    			t32 = space();
+    			img2 = element("img");
+    			t33 = space();
+    			img3 = element("img");
     			add_location(h1, file$1, 1, 0, 25);
     			add_location(br0, file$1, 4, 0, 100);
     			add_location(h40, file$1, 5, 0, 107);
@@ -5513,9 +5519,18 @@ var app = (function (JSZip) {
     			set_style(button, "width", "100%");
     			attr_dev(button, "onclick", "location.href='https://openxcom.mod.io/the-x-com-files'");
     			add_location(button, file$1, 31, 2, 1994);
-    			attr_dev(img, "src", "https://thumb.mod.io/mods/0640/158/thumb_1020x2000/osprey.1.png");
-    			attr_dev(img, "alt", "osprey.1.png");
-    			add_location(img, file$1, 32, 2, 2160);
+    			attr_dev(img0, "src", "https://thumb.mod.io/mods/0640/158/thumb_1020x2000/osprey.1.png");
+    			attr_dev(img0, "alt", "osprey.1.png");
+    			add_location(img0, file$1, 32, 2, 2160);
+    			attr_dev(img1, "src", "https://thumb.mod.io/mods/0640/158/thumb_1020x2000/screen072.1.png");
+    			attr_dev(img1, "alt", "screen072.1.png");
+    			add_location(img1, file$1, 33, 2, 2258);
+    			attr_dev(img2, "src", "https://thumb.mod.io/mods/0640/158/thumb_1020x2000/callofcoding.1.png");
+    			attr_dev(img2, "alt", "callofcoding.1.png");
+    			add_location(img2, file$1, 34, 2, 2362);
+    			attr_dev(img3, "src", "https://thumb.mod.io/mods/0640/158/thumb_1020x2000/screen070.png");
+    			attr_dev(img3, "alt", "screen070.png");
+    			add_location(img3, file$1, 35, 2, 2472);
     			attr_dev(div4, "class", "imgcol");
     			add_location(div4, file$1, 30, 0, 1970);
     		},
@@ -5573,7 +5588,13 @@ var app = (function (JSZip) {
     			append_dev(button, i);
     			append_dev(button, t29);
     			append_dev(div4, t30);
-    			append_dev(div4, img);
+    			append_dev(div4, img0);
+    			append_dev(div4, t31);
+    			append_dev(div4, img1);
+    			append_dev(div4, t32);
+    			append_dev(div4, img2);
+    			append_dev(div4, t33);
+    			append_dev(div4, img3);
     		},
 
     		p: noop,
