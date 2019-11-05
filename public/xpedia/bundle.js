@@ -5417,7 +5417,7 @@ var app = (function (JSZip) {
     const file$1 = "src\\Intro.svelte";
 
     function create_fragment$1(ctx) {
-    	var div3, h1, t1, br0, t2, h40, t4, br1, t5, br2, t6, br3, t7, br4, t8, br5, t9, a0, t11, a1, t13, a2, br6, t15, br7, t16, h41, t18, div2, div0, t19, br8, t20, t21, div1, t23, br9, t24, br10, t25, a3, t27, t28, div4, button, i, t29, t30, img0, t31, img1, t32, img2, t33, img3;
+    	var div3, h1, t1, br0, t2, h40, t4, br1, t5, br2, t6, br3, t7, br4, t8, br5, t9, a0, t11, a1, t13, a2, br6, t15, br7, t16, h41, t18, div2, div0, t19, br8, t20, t21, div1, t23, br9, t24, br10, t25, a3, t27, t28, div4, button, i, t29, t30, img0, t31, img1, t32, img2, t33, img3, t34, img4;
 
     	const block = {
     		c: function create() {
@@ -5484,6 +5484,8 @@ var app = (function (JSZip) {
     			img2 = element("img");
     			t33 = space();
     			img3 = element("img");
+    			t34 = space();
+    			img4 = element("img");
     			add_location(h1, file$1, 1, 0, 25);
     			add_location(br0, file$1, 4, 0, 100);
     			add_location(h40, file$1, 5, 0, 107);
@@ -5531,6 +5533,9 @@ var app = (function (JSZip) {
     			attr_dev(img3, "src", "https://thumb.mod.io/mods/0640/158/thumb_1020x2000/screen070.png");
     			attr_dev(img3, "alt", "screen070.png");
     			add_location(img3, file$1, 35, 2, 2472);
+    			attr_dev(img4, "src", "https://thumb.mod.io/mods/0640/158/thumb_1020x2000/village01.png");
+    			attr_dev(img4, "alt", "village01.png");
+    			add_location(img4, file$1, 36, 2, 2572);
     			attr_dev(div4, "class", "imgcol");
     			add_location(div4, file$1, 30, 0, 1970);
     		},
@@ -5595,6 +5600,8 @@ var app = (function (JSZip) {
     			append_dev(div4, img2);
     			append_dev(div4, t33);
     			append_dev(div4, img3);
+    			append_dev(div4, t34);
+    			append_dev(div4, img4);
     		},
 
     		p: noop,
@@ -18888,7 +18895,7 @@ var app = (function (JSZip) {
     	return child_ctx;
     }
 
-    // (141:2) {#if !article}
+    // (143:2) {#if !article}
     function create_if_block_9$3(ctx) {
     	const block = {
     		c: function create() {
@@ -18898,7 +18905,7 @@ var app = (function (JSZip) {
     		m: noop,
     		d: noop
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_9$3.name, type: "if", source: "(141:2) {#if !article}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_9$3.name, type: "if", source: "(143:2) {#if !article}", ctx });
     	return block;
     }
 
@@ -18916,7 +18923,7 @@ var app = (function (JSZip) {
     	return block;
     }
 
-    // (148:0) {:then}
+    // (150:0) {:then}
     function create_then_block(ctx) {
     	var nav, div6, div4, a0, img, t0, t1_value = rul.modName + "", t1, t2, t3, div3, div2, div0, t4, div1, t5, div5, a1, t6_value = ctx.currentSection ? ctx.currentSection.title : '' + "", t6, a1_href_value, t7, show_if = ctx.article && !['TYPE', 'PEDIA'].includes(ctx.article.type_id), t8, div10, div7, select, option0, option1, option2, option3, t13, div9, div8, p, input, t14, div15, div11, t15, div12, t16, div13, button, t17, button_style_value, t18, div14, current_block_type_index, if_block1, current, dispose;
 
@@ -19033,68 +19040,68 @@ var app = (function (JSZip) {
     			if (if_block1) if_block1.c();
     			attr_dev(img, "src", "xpedia/favicon.png");
     			attr_dev(img, "alt", "favicon");
-    			add_location(img, file$i, 157, 10, 3564);
+    			add_location(img, file$i, 159, 10, 3612);
     			attr_dev(a0, "href", "#MAIN");
     			attr_dev(a0, "class", "navbar-link");
-    			add_location(a0, file$i, 156, 8, 3516);
-    			add_location(div0, file$i, 162, 12, 3747);
-    			add_location(div1, file$i, 169, 12, 3983);
+    			add_location(a0, file$i, 158, 8, 3564);
+    			add_location(div0, file$i, 164, 12, 3795);
+    			add_location(div1, file$i, 171, 12, 4031);
     			set_style(div2, "display", "flex");
-    			add_location(div2, file$i, 161, 10, 3707);
+    			add_location(div2, file$i, 163, 10, 3755);
     			attr_dev(div3, "class", "navbar-dropdown");
-    			add_location(div3, file$i, 160, 8, 3666);
+    			add_location(div3, file$i, 162, 8, 3714);
     			attr_dev(div4, "class", "navbar-item has-dropdown is-hoverable");
-    			add_location(div4, file$i, 155, 6, 3455);
+    			add_location(div4, file$i, 157, 6, 3503);
     			set_style(a1, "color", "white");
     			attr_dev(a1, "href", a1_href_value = '#' + (ctx.currentSection ? ctx.currentSection.id : 'MAIN'));
-    			add_location(a1, file$i, 181, 8, 4302);
+    			add_location(a1, file$i, 183, 8, 4350);
     			attr_dev(div5, "class", "navbar-item");
-    			add_location(div5, file$i, 180, 6, 4267);
+    			add_location(div5, file$i, 182, 6, 4315);
     			attr_dev(div6, "class", "navbar-brand");
-    			add_location(div6, file$i, 154, 4, 3421);
+    			add_location(div6, file$i, 156, 4, 3469);
     			option0.__value = "volvo";
     			option0.value = option0.__value;
-    			add_location(option0, file$i, 204, 10, 4950);
+    			add_location(option0, file$i, 206, 10, 4998);
     			option1.__value = "saab";
     			option1.value = option1.__value;
-    			add_location(option1, file$i, 205, 10, 4998);
+    			add_location(option1, file$i, 207, 10, 5046);
     			option2.__value = "opel";
     			option2.value = option2.__value;
-    			add_location(option2, file$i, 206, 10, 5044);
+    			add_location(option2, file$i, 208, 10, 5092);
     			option3.__value = "audi";
     			option3.value = option3.__value;
-    			add_location(option3, file$i, 207, 10, 5090);
-    			add_location(select, file$i, 203, 8, 4930);
+    			add_location(option3, file$i, 209, 10, 5138);
+    			add_location(select, file$i, 205, 8, 4978);
     			attr_dev(div7, "class", "navbar-item");
-    			add_location(div7, file$i, 201, 6, 4858);
+    			add_location(div7, file$i, 203, 6, 4906);
     			attr_dev(input, "class", "input");
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "Search...");
-    			add_location(input, file$i, 213, 12, 5275);
+    			add_location(input, file$i, 215, 12, 5323);
     			attr_dev(p, "class", "control");
-    			add_location(p, file$i, 212, 10, 5242);
+    			add_location(p, file$i, 214, 10, 5290);
     			attr_dev(div8, "class", "field has-addons");
-    			add_location(div8, file$i, 211, 8, 5200);
+    			add_location(div8, file$i, 213, 8, 5248);
     			attr_dev(div9, "class", "navbar-item");
-    			add_location(div9, file$i, 210, 6, 5165);
+    			add_location(div9, file$i, 212, 6, 5213);
     			attr_dev(div10, "class", "navbar-end");
-    			add_location(div10, file$i, 200, 4, 4826);
+    			add_location(div10, file$i, 202, 4, 4874);
     			attr_dev(nav, "class", "navbar is-fixed-top");
     			attr_dev(nav, "role", "navigation");
     			attr_dev(nav, "aria-label", "main navigation");
-    			add_location(nav, file$i, 149, 2, 3318);
-    			attr_dev(div11, "class", "column is-2 is-sidebar-menu is-hidden-mobile sidebar padding-top svelte-tbjp40");
-    			add_location(div11, file$i, 233, 4, 5698);
+    			add_location(nav, file$i, 151, 2, 3366);
+    			attr_dev(div11, "class", "column is-2 is-sidebar-menu is-hidden-mobile sidebar padding-top svelte-1bogsca");
+    			add_location(div11, file$i, 235, 4, 5746);
     			attr_dev(div12, "class", "column is-2");
-    			add_location(div12, file$i, 262, 4, 6779);
+    			add_location(div12, file$i, 264, 4, 6827);
     			attr_dev(button, "style", button_style_value = ctx.sortArticles?"":"text-decoration:line-through");
-    			add_location(button, file$i, 264, 6, 6850);
+    			add_location(button, file$i, 266, 6, 6898);
     			attr_dev(div13, "class", "side-sort-button");
-    			add_location(div13, file$i, 263, 4, 6812);
+    			add_location(div13, file$i, 265, 4, 6860);
     			attr_dev(div14, "class", "column is-main-content main padding-top");
-    			add_location(div14, file$i, 267, 4, 6990);
+    			add_location(div14, file$i, 269, 4, 7038);
     			attr_dev(div15, "class", "columns is-fullheight");
-    			add_location(div15, file$i, 231, 2, 5651);
+    			add_location(div15, file$i, 233, 2, 5699);
 
     			dispose = [
     				listen_dev(input, "input", ctx.input_input_handler),
@@ -19326,11 +19333,11 @@ var app = (function (JSZip) {
     			run_all(dispose);
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_then_block.name, type: "then", source: "(148:0) {:then}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_then_block.name, type: "then", source: "(150:0) {:then}", ctx });
     	return block;
     }
 
-    // (164:14) {#each rul.sectionsOrder as section}
+    // (166:14) {#each rul.sectionsOrder as section}
     function create_each_block_3$4(ctx) {
     	var a, t0_value = ctx.section.title + "", t0, t1;
 
@@ -19341,7 +19348,7 @@ var app = (function (JSZip) {
     			t1 = space();
     			attr_dev(a, "class", "navbar-item");
     			attr_dev(a, "href", '#' + ctx.section.id);
-    			add_location(a, file$i, 164, 16, 3822);
+    			add_location(a, file$i, 166, 16, 3870);
     		},
 
     		m: function mount(target, anchor) {
@@ -19358,11 +19365,11 @@ var app = (function (JSZip) {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_3$4.name, type: "each", source: "(164:14) {#each rul.sectionsOrder as section}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_3$4.name, type: "each", source: "(166:14) {#each rul.sectionsOrder as section}", ctx });
     	return block;
     }
 
-    // (171:14) {#each rul.typeSectionsOrder as section}
+    // (173:14) {#each rul.typeSectionsOrder as section}
     function create_each_block_2$7(ctx) {
     	var a, t0_value = ctx.section.title + "", t0, t1;
 
@@ -19373,7 +19380,7 @@ var app = (function (JSZip) {
     			t1 = space();
     			attr_dev(a, "class", "navbar-item");
     			attr_dev(a, "href", '#' + ctx.section.id);
-    			add_location(a, file$i, 171, 16, 4062);
+    			add_location(a, file$i, 173, 16, 4110);
     		},
 
     		m: function mount(target, anchor) {
@@ -19390,11 +19397,11 @@ var app = (function (JSZip) {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_2$7.name, type: "each", source: "(171:14) {#each rul.typeSectionsOrder as section}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_2$7.name, type: "each", source: "(173:14) {#each rul.typeSectionsOrder as section}", ctx });
     	return block;
     }
 
-    // (188:6) {#if article && !['TYPE', 'PEDIA'].includes(article.type_id)}
+    // (190:6) {#if article && !['TYPE', 'PEDIA'].includes(article.type_id)}
     function create_if_block_8$3(ctx) {
     	var div, a, t_value = ctx.article.title + "", t, a_href_value, dispose;
 
@@ -19405,9 +19412,9 @@ var app = (function (JSZip) {
     			t = text(t_value);
     			set_style(a, "color", "white");
     			attr_dev(a, "href", a_href_value = '#' + ctx.article.id);
-    			add_location(a, file$i, 189, 10, 4606);
+    			add_location(a, file$i, 191, 10, 4654);
     			attr_dev(div, "class", "navbar-item");
-    			add_location(div, file$i, 188, 8, 4569);
+    			add_location(div, file$i, 190, 8, 4617);
     			dispose = listen_dev(a, "click", ctx.click_handler);
     		},
 
@@ -19435,11 +19442,11 @@ var app = (function (JSZip) {
     			dispose();
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_8$3.name, type: "if", source: "(188:6) {#if article && !['TYPE', 'PEDIA'].includes(article.type_id)}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_8$3.name, type: "if", source: "(190:6) {#if article && !['TYPE', 'PEDIA'].includes(article.type_id)}", ctx });
     	return block;
     }
 
-    // (238:8) {#if !currentSection || section.id == currentSection.id}
+    // (240:8) {#if !currentSection || section.id == currentSection.id}
     function create_if_block_6$3(ctx) {
     	var p, t0_value = ctx.section.title + "", t0, t1, ul, t2;
 
@@ -19464,9 +19471,9 @@ var app = (function (JSZip) {
 
     			t2 = space();
     			attr_dev(p, "class", "menu-label");
-    			add_location(p, file$i, 238, 10, 5988);
-    			attr_dev(ul, "class", "menu-list svelte-tbjp40");
-    			add_location(ul, file$i, 239, 10, 6041);
+    			add_location(p, file$i, 240, 10, 6036);
+    			attr_dev(ul, "class", "menu-list");
+    			add_location(ul, file$i, 241, 10, 6089);
     		},
 
     		m: function mount(target, anchor) {
@@ -19520,11 +19527,11 @@ var app = (function (JSZip) {
     			destroy_each(each_blocks, detaching);
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_6$3.name, type: "if", source: "(238:8) {#if !currentSection || section.id == currentSection.id}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_6$3.name, type: "if", source: "(240:8) {#if !currentSection || section.id == currentSection.id}", ctx });
     	return block;
     }
 
-    // (250:16) {:else}
+    // (252:16) {:else}
     function create_else_block_1$2(ctx) {
     	var a, t_value = ctx.option.title + "", t, a_href_value, dispose;
 
@@ -19533,8 +19540,7 @@ var app = (function (JSZip) {
     			a = element("a");
     			t = text(t_value);
     			attr_dev(a, "href", a_href_value = '#' + ctx.option.id);
-    			attr_dev(a, "class", "svelte-tbjp40");
-    			add_location(a, file$i, 250, 18, 6474);
+    			add_location(a, file$i, 252, 18, 6522);
     			dispose = listen_dev(a, "click", ctx.click_handler_1);
     		},
 
@@ -19561,11 +19567,11 @@ var app = (function (JSZip) {
     			dispose();
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block_1$2.name, type: "else", source: "(250:16) {:else}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block_1$2.name, type: "else", source: "(252:16) {:else}", ctx });
     	return block;
     }
 
-    // (243:16) {#if article && article.id == option.id}
+    // (245:16) {#if article && article.id == option.id}
     function create_if_block_7$3(ctx) {
     	var a, t_value = ctx.option.title + "", t, a_href_value;
 
@@ -19574,8 +19580,8 @@ var app = (function (JSZip) {
     			a = element("a");
     			t = text(t_value);
     			attr_dev(a, "href", a_href_value = '#' + ctx.option.id);
-    			attr_dev(a, "class", "active-article-option svelte-tbjp40");
-    			add_location(a, file$i, 243, 18, 6225);
+    			attr_dev(a, "class", "active-article-option svelte-1bogsca");
+    			add_location(a, file$i, 245, 18, 6273);
     		},
 
     		m: function mount(target, anchor) {
@@ -19602,11 +19608,11 @@ var app = (function (JSZip) {
     			ctx.a_binding(null);
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_7$3.name, type: "if", source: "(243:16) {#if article && article.id == option.id}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_7$3.name, type: "if", source: "(245:16) {#if article && article.id == option.id}", ctx });
     	return block;
     }
 
-    // (241:12) {#each sortedArticles(section.articles) as option}
+    // (243:12) {#each sortedArticles(section.articles) as option}
     function create_each_block_1$7(ctx) {
     	var li;
 
@@ -19622,7 +19628,7 @@ var app = (function (JSZip) {
     		c: function create() {
     			li = element("li");
     			if_block.c();
-    			add_location(li, file$i, 241, 14, 6143);
+    			add_location(li, file$i, 243, 14, 6191);
     		},
 
     		m: function mount(target, anchor) {
@@ -19651,11 +19657,11 @@ var app = (function (JSZip) {
     			if_block.d();
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_1$7.name, type: "each", source: "(241:12) {#each sortedArticles(section.articles) as option}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_1$7.name, type: "each", source: "(243:12) {#each sortedArticles(section.articles) as option}", ctx });
     	return block;
     }
 
-    // (237:6) {#each article && article.section && article.section.isType() ? rul.typeSectionsOrder : rul.sectionsOrder as section}
+    // (239:6) {#each article && article.section && article.section.isType() ? rul.typeSectionsOrder : rul.sectionsOrder as section}
     function create_each_block$g(ctx) {
     	var if_block_anchor;
 
@@ -19695,11 +19701,11 @@ var app = (function (JSZip) {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$g.name, type: "each", source: "(237:6) {#each article && article.section && article.section.isType() ? rul.typeSectionsOrder : rul.sectionsOrder as section}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$g.name, type: "each", source: "(239:6) {#each article && article.section && article.section.isType() ? rul.typeSectionsOrder : rul.sectionsOrder as section}", ctx });
     	return block;
     }
 
-    // (286:23) 
+    // (288:23) 
     function create_if_block_5$4(ctx) {
     	var current;
 
@@ -19733,11 +19739,11 @@ var app = (function (JSZip) {
     			destroy_component(intro, detaching);
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_5$4.name, type: "if", source: "(286:23) ", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_5$4.name, type: "if", source: "(288:23) ", ctx });
     	return block;
     }
 
-    // (272:22) 
+    // (274:22) 
     function create_if_block_1$d(ctx) {
     	var t0, em, t1, t2, br, t3, current_block_type_index, if_block, if_block_anchor, current;
 
@@ -19770,8 +19776,8 @@ var app = (function (JSZip) {
     			t3 = space();
     			if_block.c();
     			if_block_anchor = empty();
-    			add_location(em, file$i, 273, 8, 7160);
-    			add_location(br, file$i, 275, 8, 7198);
+    			add_location(em, file$i, 275, 8, 7208);
+    			add_location(br, file$i, 277, 8, 7246);
     		},
 
     		m: function mount(target, anchor) {
@@ -19839,11 +19845,11 @@ var app = (function (JSZip) {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$d.name, type: "if", source: "(272:22) ", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$d.name, type: "if", source: "(274:22) ", ctx });
     	return block;
     }
 
-    // (270:6) {#if article}
+    // (272:6) {#if article}
     function create_if_block$g(ctx) {
     	var current;
 
@@ -19888,11 +19894,11 @@ var app = (function (JSZip) {
     			destroy_component(article_1, detaching);
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$g.name, type: "if", source: "(270:6) {#if article}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$g.name, type: "if", source: "(272:6) {#if article}", ctx });
     	return block;
     }
 
-    // (283:8) {:else}
+    // (285:8) {:else}
     function create_else_block$a(ctx) {
     	var i;
 
@@ -19900,7 +19906,7 @@ var app = (function (JSZip) {
     		c: function create() {
     			i = element("i");
     			i.textContent = "Nothing found";
-    			add_location(i, file$i, 283, 10, 7437);
+    			add_location(i, file$i, 285, 10, 7485);
     		},
 
     		m: function mount(target, anchor) {
@@ -19917,11 +19923,11 @@ var app = (function (JSZip) {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block$a.name, type: "else", source: "(283:8) {:else}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block$a.name, type: "else", source: "(285:8) {:else}", ctx });
     	return block;
     }
 
-    // (281:36) 
+    // (283:36) 
     function create_if_block_4$5(ctx) {
     	var t;
 
@@ -19944,11 +19950,11 @@ var app = (function (JSZip) {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_4$5.name, type: "if", source: "(281:36) ", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_4$5.name, type: "if", source: "(283:36) ", ctx });
     	return block;
     }
 
-    // (279:35) 
+    // (281:35) 
     function create_if_block_3$9(ctx) {
     	var i;
 
@@ -19956,7 +19962,7 @@ var app = (function (JSZip) {
     		c: function create() {
     			i = element("i");
     			i.textContent = "Query too short";
-    			add_location(i, file$i, 279, 10, 7333);
+    			add_location(i, file$i, 281, 10, 7381);
     		},
 
     		m: function mount(target, anchor) {
@@ -19973,11 +19979,11 @@ var app = (function (JSZip) {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_3$9.name, type: "if", source: "(279:35) ", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_3$9.name, type: "if", source: "(281:35) ", ctx });
     	return block;
     }
 
-    // (277:8) {#if found && found.length > 0}
+    // (279:8) {#if found && found.length > 0}
     function create_if_block_2$d(ctx) {
     	var current;
 
@@ -20018,21 +20024,21 @@ var app = (function (JSZip) {
     			destroy_component(linkspage, detaching);
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2$d.name, type: "if", source: "(277:8) {#if found && found.length > 0}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2$d.name, type: "if", source: "(279:8) {#if found && found.length > 0}", ctx });
     	return block;
     }
 
-    // (146:20)     <img class="centered" alt="Loading rules..." src="xpedia/spinner.svg" />  {:then}
+    // (148:20)     <img class="centered" alt="Loading rules..." src="xpedia/spinner.svg" />  {:then}
     function create_pending_block(ctx) {
     	var img;
 
     	const block = {
     		c: function create() {
     			img = element("img");
-    			attr_dev(img, "class", "centered svelte-tbjp40");
+    			attr_dev(img, "class", "centered svelte-1bogsca");
     			attr_dev(img, "alt", "Loading rules...");
     			attr_dev(img, "src", "xpedia/spinner.svg");
-    			add_location(img, file$i, 146, 2, 3231);
+    			add_location(img, file$i, 148, 2, 3279);
     		},
 
     		m: function mount(target, anchor) {
@@ -20049,7 +20055,7 @@ var app = (function (JSZip) {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_pending_block.name, type: "pending", source: "(146:20)     <img class=\"centered\" alt=\"Loading rules...\" src=\"xpedia/spinner.svg\" />  {:then}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_pending_block.name, type: "pending", source: "(148:20)     <img class=\"centered\" alt=\"Loading rules...\" src=\"xpedia/spinner.svg\" />  {:then}", ctx });
     	return block;
     }
 

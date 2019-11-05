@@ -115,15 +115,17 @@
     position: fixed;
     overflow-y: auto;
     overflow-x: hidden;
+    background:#141d3d;
   }
   .narrow {
     max-width: 800px;
   }
-  .menu-list a:visited {
+  /* .menu-list a:visited {
     color: white;
-  }
+  } */
   .active-article-option {
-    background: #584c64;
+    background: white;
+    color: black;
   }
 
   .centered {
