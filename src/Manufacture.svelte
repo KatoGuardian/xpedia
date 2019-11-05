@@ -14,7 +14,7 @@
 </style>
 
   <tr>
-    <td colspan="2" class="table-header">Manufacture</td>
+    <td colspan="2" class="table-header">{rul.str("MANUFACTURE")}</td>
   </tr>
 
   {#if 'randomProducedItems' in manufacture}

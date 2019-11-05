@@ -15,12 +15,10 @@ set vanilla_rules_path=standard\xcom1
 set vanilla_language_path=standard\xcom1\Language\%language_name%.yml
 set vanilla_language_path1=standard\xcom1\Language\%language_name1%.yml
 set vanilla_language_path2=standard\xcom1\Language\%language_name2%.yml
+rem set xpedia_language_path=xpedia\Language\%language_name%.yml
+set xpedia_language_path1=xpedia\Language\%language_name1%.yml
+set xpedia_language_path2=xpedia\Language\%language_name2%.yml
 set pedia_header=xpedia\xpedia.html.header
-
-rem echo %mod_rules_path%
-rem echo %mod_language_path%
-rem echo %vanilla_rules_path%
-rem echo %vanilla_language_path%
 
 >index.html (
 	type %pedia_header%
@@ -46,7 +44,10 @@ rem echo %vanilla_language_path%
 	type "%vanilla_language_path%"
 	
 	echo | set /p langTag=langm-
-	type "%mod_language_path%"	
+	type "%mod_language_path%"
+
+	rem echo | set /p langTag=langp-
+	rem type "%xpedia_language_path%"	
 )
 
 index.html
@@ -75,7 +76,10 @@ index.html
 	type "%vanilla_language_path1%"
 	
 	echo | set /p langTag=langm-
-	type "%mod_language_path1%"	
+	type "%mod_language_path1%"
+
+	echo | set /p langTag=langp-
+	type "%xpedia_language_path1%"	
 )
 
 
@@ -103,5 +107,8 @@ index.html
 	type "%vanilla_language_path2%"
 	
 	echo | set /p langTag=langm-
-	type "%mod_language_path2%"	
+	type "%mod_language_path2%"
+
+	echo | set /p langTag=langp-
+	type "%xpedia_language_path1%"		
 )

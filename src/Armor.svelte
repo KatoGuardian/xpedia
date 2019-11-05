@@ -35,7 +35,7 @@
 <table class="main-table">
   <tr>
     <td colspan="2" class="table-header">
-      Armor
+      {rul.str("Armor")}
       {#if seeAlso.length > 0}
         <span style="color:white">- see also</span>
         <LinksList items={seeAlso} />

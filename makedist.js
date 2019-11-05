@@ -5,8 +5,10 @@ const zipFolder = require('zip-a-folder');
 rimraf.sync("dist");
 fs.mkdirSync("dist");
 fs.mkdirSync("dist/xpedia");
+fs.mkdirSync("dist/xpedia/Language");
 
 let files = [
+  "xpedia/Language/ru.yml",
   "xpedia/bundle.js",
   "xpedia/bundle.css",
   "xpedia/global.css",

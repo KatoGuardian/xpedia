@@ -5172,3 +5172,7 @@ dist/standard/xcom2/Language/OXCE/ko.yml
 dist/user/mods/XComFiles/metadata.yml
 dist/xpedia_pl.html
 dist/xpedia_ru.html
+dist/xpedia/Language/ru.yml
+dist/common/Language/Technical/es_419.yml
+dist/common/Language/OXCE/es_419.yml
+dist/common/Language/Android/es_419.yml
