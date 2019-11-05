@@ -5,7 +5,7 @@ let packed = true;
 let saveAs = "xpedia.html";
 
 let mod_name = "XComFiles";
-let language_name = "en-US";
+let language_name = "ru";
 
 let mod_rules_path = "user/mods/" + mod_name + "/Ruleset";
 let mod_language_path =

@@ -1,7 +1,7 @@
 <div class="workspace">
 <h1>The X-COM Files</h1>
 
-  Welcome to The X-COM Files mod to OpenXcom.
+  Привет, МИР!
 <br/>
 <h4>What is XCF?</h4>
   This megamod is a global conversion to OpenXcom (clone of the classic UFO:Enemy Unknown 1994), preserving the original setting.<br/> 
@@ -29,7 +29,7 @@ Wiki is powered by <a href="https://github.com/baturinsky/xpedia/">Baturinsky's 
 
 </div>
 <div class="infocol">
-  <button title="Download" class="downloadbtn" onclick=" window.open('https://openxcom.mod.io/the-x-com-files', '_blank'); return false;">Download</button>
+  <button title="Download" class="downloadbtn" onclick=" window.open('https://openxcom.mod.io/the-x-com-files', '_blank'); return false;"><i class="fa fa-download"></i>Download</button>
   <div class="imgcol">
     <img class="imgbox" src="https://thumb.mod.io/mods/0640/158/thumb_1020x2000/osprey.1.png" alt="osprey.1.png">
     <img class="imgbox" src="https://thumb.mod.io/mods/0640/158/thumb_1020x2000/screen072.1.png" alt="screen072.1.png">

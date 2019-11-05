@@ -202,13 +202,14 @@
 
     <div class="navbar-end">
       <div class="navbar-item"> 
-        <!-- lang will be here -->
-        <select>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="opel">Opel</option>
-          <option value="audi">Audi</option>
-        </select>
+        <div class="dropdown">
+          <button class="dropbtn">Choose language</button>
+          <div class="dropdown-content">
+            <a href="index.html">English</a>
+            <a href="xpedia_ru.html">Русский</a>
+            <a href="xpedia_pl.html">Polski</a>
+          </div>
+        </div>
       </div>
       <div class="navbar-item">
         <div class="field has-addons">
@@ -267,7 +268,7 @@
       <button style={sortArticles?"":"text-decoration:line-through"} on:click={e => sortArticles = !sortArticles}>A-Z</button>
     </div>
 
-    <div class="column is-main-content main padding-top">
+    <div class="column is-main-content main padding-top " style="padding-left: 0px">
 
       {#if article}
         <Article {article} {query} />
