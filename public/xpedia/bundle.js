@@ -18903,6 +18903,12 @@ var app = (function (JSZip) {
     	return child_ctx;
     }
 
+    function get_each_context_4$2(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.section = list[i];
+    	return child_ctx;
+    }
+
     // (143:2) {#if !article}
     function create_if_block_9$3(ctx) {
     	const block = {
@@ -18933,32 +18939,40 @@ var app = (function (JSZip) {
 
     // (150:0) {:then}
     function create_then_block(ctx) {
-    	var nav, div6, div4, a0, img, t0, t1_value = rul.modName + "", t1, t2, t3, div3, div2, div0, t4, div1, t5, div5, a1, t6_value = ctx.currentSection ? ctx.currentSection.title : '' + "", t6, a1_href_value, t7, show_if = ctx.article && !['TYPE', 'PEDIA'].includes(ctx.article.type_id), t8, div12, div9, div8, button0, t10, div7, a2, t12, a3, t14, a4, t16, div11, div10, p, input, t17, div17, div13, t18, div14, t19, div15, button1, t20, button1_style_value, t21, div16, current_block_type_index, if_block1, current, dispose;
+    	var nav0, div6, div4, a0, img, t0, t1_value = rul.modName + "", t1, t2, t3, div3, div2, div0, t4, div1, t5, div5, a1, t6_value = ctx.currentSection ? ctx.currentSection.title : '' + "", t6, a1_href_value, t7, show_if = ctx.article && !['TYPE', 'PEDIA'].includes(ctx.article.type_id), t8, div12, div9, div8, button0, t9_value = rul.str("Choose language") + "", t9, t10, div7, a2, t12, a3, t14, a4, t16, div11, div10, p0, input0, t17, nav1, div14, button1, t18_value = rul.modName + "", t18, t19, t20, div13, a5, t21_value = rul.str("HOME") + "", t21, t22, t23, div17, div16, div15, p1, input1, t24, div20, button2, i, t26, div19, div18, p2, input2, t27, div25, div21, t28, div22, t29, div23, button3, t30, button3_style_value, t31, div24, current_block_type_index, if_block1, current, dispose;
 
-    	let each_value_3 = rul.sectionsOrder;
+    	let each_value_4 = rul.sectionsOrder;
+
+    	let each_blocks_3 = [];
+
+    	for (let i_1 = 0; i_1 < each_value_4.length; i_1 += 1) {
+    		each_blocks_3[i_1] = create_each_block_4$2(get_each_context_4$2(ctx, each_value_4, i_1));
+    	}
+
+    	let each_value_3 = rul.typeSectionsOrder;
 
     	let each_blocks_2 = [];
 
-    	for (let i = 0; i < each_value_3.length; i += 1) {
-    		each_blocks_2[i] = create_each_block_3$4(get_each_context_3$4(ctx, each_value_3, i));
-    	}
-
-    	let each_value_2 = rul.typeSectionsOrder;
-
-    	let each_blocks_1 = [];
-
-    	for (let i = 0; i < each_value_2.length; i += 1) {
-    		each_blocks_1[i] = create_each_block_2$7(get_each_context_2$7(ctx, each_value_2, i));
+    	for (let i_1 = 0; i_1 < each_value_3.length; i_1 += 1) {
+    		each_blocks_2[i_1] = create_each_block_3$4(get_each_context_3$4(ctx, each_value_3, i_1));
     	}
 
     	var if_block0 = (show_if) && create_if_block_8$3(ctx);
+
+    	let each_value_2 = rul.sectionsOrder;
+
+    	let each_blocks_1 = [];
+
+    	for (let i_1 = 0; i_1 < each_value_2.length; i_1 += 1) {
+    		each_blocks_1[i_1] = create_each_block_2$7(get_each_context_2$7(ctx, each_value_2, i_1));
+    	}
 
     	let each_value = ctx.article && ctx.article.section && ctx.article.section.isType() ? rul.typeSectionsOrder : rul.sectionsOrder;
 
     	let each_blocks = [];
 
-    	for (let i = 0; i < each_value.length; i += 1) {
-    		each_blocks[i] = create_each_block$g(get_each_context$g(ctx, each_value, i));
+    	for (let i_1 = 0; i_1 < each_value.length; i_1 += 1) {
+    		each_blocks[i_1] = create_each_block$g(get_each_context$g(ctx, each_value, i_1));
     	}
 
     	var if_block_creators = [
@@ -18982,7 +18996,7 @@ var app = (function (JSZip) {
 
     	const block = {
     		c: function create() {
-    			nav = element("nav");
+    			nav0 = element("nav");
     			div6 = element("div");
     			div4 = element("div");
     			a0 = element("a");
@@ -18995,15 +19009,15 @@ var app = (function (JSZip) {
     			div2 = element("div");
     			div0 = element("div");
 
-    			for (let i = 0; i < each_blocks_2.length; i += 1) {
-    				each_blocks_2[i].c();
+    			for (let i_1 = 0; i_1 < each_blocks_3.length; i_1 += 1) {
+    				each_blocks_3[i_1].c();
     			}
 
     			t4 = space();
     			div1 = element("div");
 
-    			for (let i = 0; i < each_blocks_1.length; i += 1) {
-    				each_blocks_1[i].c();
+    			for (let i_1 = 0; i_1 < each_blocks_2.length; i_1 += 1) {
+    				each_blocks_2[i_1].c();
     			}
 
     			t5 = space();
@@ -19017,7 +19031,7 @@ var app = (function (JSZip) {
     			div9 = element("div");
     			div8 = element("div");
     			button0 = element("button");
-    			button0.textContent = "Choose language";
+    			t9 = text(t9_value);
     			t10 = space();
     			div7 = element("div");
     			a2 = element("a");
@@ -19031,100 +19045,176 @@ var app = (function (JSZip) {
     			t16 = space();
     			div11 = element("div");
     			div10 = element("div");
-    			p = element("p");
-    			input = element("input");
+    			p0 = element("p");
+    			input0 = element("input");
     			t17 = space();
-    			div17 = element("div");
+    			nav1 = element("nav");
+    			div14 = element("div");
+    			button1 = element("button");
+    			t18 = text(t18_value);
+    			t19 = text(" Xpedia");
+    			t20 = space();
     			div13 = element("div");
+    			a5 = element("a");
+    			t21 = text(t21_value);
+    			t22 = space();
 
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].c();
+    			for (let i_1 = 0; i_1 < each_blocks_1.length; i_1 += 1) {
+    				each_blocks_1[i_1].c();
     			}
 
-    			t18 = space();
-    			div14 = element("div");
-    			t19 = space();
-    			div15 = element("div");
-    			button1 = element("button");
-    			t20 = text("A-Z");
-    			t21 = space();
+    			t23 = space();
+    			div17 = element("div");
     			div16 = element("div");
+    			div15 = element("div");
+    			p1 = element("p");
+    			input1 = element("input");
+    			t24 = space();
+    			div20 = element("div");
+    			button2 = element("button");
+    			i = element("i");
+    			i.textContent = "nen";
+    			t26 = space();
+    			div19 = element("div");
+    			div18 = element("div");
+    			p2 = element("p");
+    			input2 = element("input");
+    			t27 = space();
+    			div25 = element("div");
+    			div21 = element("div");
+
+    			for (let i_1 = 0; i_1 < each_blocks.length; i_1 += 1) {
+    				each_blocks[i_1].c();
+    			}
+
+    			t28 = space();
+    			div22 = element("div");
+    			t29 = space();
+    			div23 = element("div");
+    			button3 = element("button");
+    			t30 = text("A-Z");
+    			t31 = space();
+    			div24 = element("div");
     			if (if_block1) if_block1.c();
     			attr_dev(img, "src", "xpedia/favicon.png");
     			attr_dev(img, "alt", "favicon");
-    			add_location(img, file$i, 159, 10, 3612);
+    			add_location(img, file$i, 159, 10, 3630);
     			attr_dev(a0, "href", "#MAIN");
     			attr_dev(a0, "class", "navbar-link");
-    			add_location(a0, file$i, 158, 8, 3564);
-    			add_location(div0, file$i, 164, 12, 3795);
-    			add_location(div1, file$i, 171, 12, 4031);
+    			add_location(a0, file$i, 158, 8, 3582);
+    			add_location(div0, file$i, 164, 12, 3813);
+    			add_location(div1, file$i, 171, 12, 4049);
     			set_style(div2, "display", "flex");
-    			add_location(div2, file$i, 163, 10, 3755);
+    			add_location(div2, file$i, 163, 10, 3773);
     			attr_dev(div3, "class", "navbar-dropdown");
-    			add_location(div3, file$i, 162, 8, 3714);
-    			attr_dev(div4, "class", "navbar-item has-dropdown is-hoverable");
-    			add_location(div4, file$i, 157, 6, 3503);
+    			add_location(div3, file$i, 162, 8, 3732);
+    			attr_dev(div4, "class", "navbar-item has-dropdown is-hoverable ");
+    			add_location(div4, file$i, 157, 6, 3520);
     			set_style(a1, "color", "white");
     			attr_dev(a1, "href", a1_href_value = '#' + (ctx.currentSection ? ctx.currentSection.id : 'MAIN'));
-    			add_location(a1, file$i, 183, 8, 4350);
+    			add_location(a1, file$i, 183, 8, 4368);
     			attr_dev(div5, "class", "navbar-item");
-    			add_location(div5, file$i, 182, 6, 4315);
-    			attr_dev(div6, "class", "navbar-brand");
-    			add_location(div6, file$i, 156, 4, 3469);
-    			attr_dev(button0, "class", "dropbtn");
-    			add_location(button0, file$i, 205, 10, 4976);
+    			add_location(div5, file$i, 182, 6, 4333);
+    			attr_dev(div6, "class", "navbar-brand ");
+    			add_location(div6, file$i, 156, 4, 3485);
+    			attr_dev(button0, "class", "dropbtn navbar-link");
+    			add_location(button0, file$i, 205, 10, 4994);
     			attr_dev(a2, "href", "index.html");
-    			add_location(a2, file$i, 207, 12, 5080);
+    			add_location(a2, file$i, 207, 12, 5123);
     			attr_dev(a3, "href", "xpedia_ru.html");
-    			add_location(a3, file$i, 208, 12, 5126);
+    			add_location(a3, file$i, 208, 12, 5169);
     			attr_dev(a4, "href", "xpedia_pl.html");
-    			add_location(a4, file$i, 209, 12, 5176);
+    			add_location(a4, file$i, 209, 12, 5219);
     			attr_dev(div7, "class", "dropdown-content");
-    			add_location(div7, file$i, 206, 10, 5036);
+    			add_location(div7, file$i, 206, 10, 5079);
     			attr_dev(div8, "class", "dropdown");
-    			add_location(div8, file$i, 204, 8, 4942);
+    			add_location(div8, file$i, 204, 8, 4960);
     			attr_dev(div9, "class", "navbar-item");
-    			add_location(div9, file$i, 203, 6, 4906);
-    			attr_dev(input, "class", "input");
-    			attr_dev(input, "type", "text");
-    			attr_dev(input, "placeholder", "Search...");
-    			add_location(input, file$i, 216, 12, 5377);
-    			attr_dev(p, "class", "control");
-    			add_location(p, file$i, 215, 10, 5344);
+    			add_location(div9, file$i, 203, 6, 4924);
+    			attr_dev(input0, "class", "input");
+    			attr_dev(input0, "type", "text");
+    			attr_dev(input0, "placeholder", rul.str("Search..."));
+    			add_location(input0, file$i, 216, 12, 5420);
+    			attr_dev(p0, "class", "control");
+    			add_location(p0, file$i, 215, 10, 5387);
     			attr_dev(div10, "class", "field has-addons");
-    			add_location(div10, file$i, 214, 8, 5302);
+    			add_location(div10, file$i, 214, 8, 5345);
     			attr_dev(div11, "class", "navbar-item");
-    			add_location(div11, file$i, 213, 6, 5267);
+    			add_location(div11, file$i, 213, 6, 5310);
     			attr_dev(div12, "class", "navbar-end");
-    			add_location(div12, file$i, 202, 4, 4874);
-    			attr_dev(nav, "class", "navbar is-fixed-top");
-    			attr_dev(nav, "role", "navigation");
-    			attr_dev(nav, "aria-label", "main navigation");
-    			add_location(nav, file$i, 151, 2, 3366);
-    			attr_dev(div13, "class", "column is-2 is-sidebar-menu is-hidden-mobile sidebar padding-top svelte-1bogsca");
-    			add_location(div13, file$i, 236, 4, 5800);
-    			attr_dev(div14, "class", "column is-2");
-    			add_location(div14, file$i, 265, 4, 6881);
-    			attr_dev(button1, "style", button1_style_value = ctx.sortArticles?"":"text-decoration:line-through");
-    			add_location(button1, file$i, 267, 6, 6952);
-    			attr_dev(div15, "class", "side-sort-button");
-    			add_location(div15, file$i, 266, 4, 6914);
-    			attr_dev(div16, "class", "column is-main-content main padding-top ");
-    			set_style(div16, "padding-left", "0px");
-    			add_location(div16, file$i, 270, 4, 7092);
-    			attr_dev(div17, "class", "columns is-fullheight");
-    			add_location(div17, file$i, 234, 2, 5753);
+    			add_location(div12, file$i, 202, 4, 4892);
+    			attr_dev(nav0, "class", "navbar is-fixed-top is-hidden-touch");
+    			attr_dev(nav0, "role", "navigation");
+    			attr_dev(nav0, "aria-label", "main navigation");
+    			add_location(nav0, file$i, 151, 2, 3366);
+    			attr_dev(button1, "class", "dropbtn");
+    			add_location(button1, file$i, 238, 4, 5971);
+    			attr_dev(a5, "href", "#MAIN");
+    			add_location(a5, file$i, 240, 4, 6066);
+    			attr_dev(div13, "class", "dropdown-content");
+    			add_location(div13, file$i, 239, 4, 6030);
+    			attr_dev(div14, "class", "navbar-item dropdown is-inline-block");
+    			add_location(div14, file$i, 237, 2, 5915);
+    			attr_dev(input1, "class", "input");
+    			attr_dev(input1, "type", "text");
+    			attr_dev(input1, "placeholder", rul.str("Search..."));
+    			add_location(input1, file$i, 252, 10, 6478);
+    			attr_dev(p1, "class", "control");
+    			add_location(p1, file$i, 251, 8, 6447);
+    			attr_dev(div15, "class", "field has-addons ");
+    			add_location(div15, file$i, 250, 6, 6406);
+    			attr_dev(div16, "class", "is-pulled-right navbar-item is-inline-block is-hidden-mobile");
+    			add_location(div16, file$i, 249, 4, 6302);
+    			attr_dev(div17, "class", "is-pulled-right");
+    			add_location(div17, file$i, 248, 2, 6266);
+    			attr_dev(i, "class", "fas fa-bars");
+    			add_location(i, file$i, 263, 28, 6844);
+    			attr_dev(button2, "class", "dropbtn");
+    			add_location(button2, file$i, 263, 4, 6820);
+    			attr_dev(input2, "class", "input");
+    			attr_dev(input2, "type", "text");
+    			attr_dev(input2, "placeholder", rul.str("Search..."));
+    			add_location(input2, file$i, 267, 8, 7001);
+    			attr_dev(p2, "class", "control");
+    			add_location(p2, file$i, 266, 8, 6972);
+    			attr_dev(div18, "class", "dropdown-content wide");
+    			add_location(div18, file$i, 265, 6, 6927);
+    			attr_dev(div19, "class", "field has-addons");
+    			add_location(div19, file$i, 264, 4, 6889);
+    			attr_dev(div20, "class", "navbar-item dropdown is-pulled-right is-inline-block is-hidden-tablet");
+    			add_location(div20, file$i, 262, 2, 6711);
+    			attr_dev(nav1, "class", "navbar is-fixed-top is-hidden-desktop");
+    			attr_dev(nav1, "role", "navigation");
+    			attr_dev(nav1, "aria-label", "main navigation");
+    			add_location(nav1, file$i, 233, 0, 5801);
+    			attr_dev(div21, "class", "column is-2 is-sidebar-menu is-hidden-mobile is-hidden-tablet-only sidebar padding-top svelte-1bogsca");
+    			add_location(div21, file$i, 282, 4, 7287);
+    			attr_dev(div22, "class", "column is-2");
+    			add_location(div22, file$i, 311, 4, 8390);
+    			attr_dev(button3, "style", button3_style_value = ctx.sortArticles?"":"text-decoration:line-through");
+    			add_location(button3, file$i, 313, 6, 8461);
+    			attr_dev(div23, "class", "side-sort-button");
+    			add_location(div23, file$i, 312, 4, 8423);
+    			attr_dev(div24, "class", "column is-main-content main padding-top ");
+    			set_style(div24, "padding-left", "0px");
+    			add_location(div24, file$i, 316, 4, 8601);
+    			attr_dev(div25, "class", "columns is-fullheight");
+    			add_location(div25, file$i, 280, 2, 7240);
 
     			dispose = [
-    				listen_dev(input, "input", ctx.input_input_handler),
-    				listen_dev(input, "keyup", ctx.searchKeyUp),
-    				listen_dev(button1, "click", ctx.click_handler_2)
+    				listen_dev(input0, "input", ctx.input0_input_handler),
+    				listen_dev(input0, "keyup", ctx.searchKeyUp),
+    				listen_dev(input1, "input", ctx.input1_input_handler),
+    				listen_dev(input1, "keyup", ctx.searchKeyUp),
+    				listen_dev(input2, "input", ctx.input2_input_handler),
+    				listen_dev(input2, "keyup", ctx.searchKeyUp),
+    				listen_dev(button3, "click", ctx.click_handler_2)
     			];
     		},
 
     		m: function mount(target, anchor) {
-    			insert_dev(target, nav, anchor);
-    			append_dev(nav, div6);
+    			insert_dev(target, nav0, anchor);
+    			append_dev(nav0, div6);
     			append_dev(div6, div4);
     			append_dev(div4, a0);
     			append_dev(a0, img);
@@ -19136,15 +19226,15 @@ var app = (function (JSZip) {
     			append_dev(div3, div2);
     			append_dev(div2, div0);
 
-    			for (let i = 0; i < each_blocks_2.length; i += 1) {
-    				each_blocks_2[i].m(div0, null);
+    			for (let i_1 = 0; i_1 < each_blocks_3.length; i_1 += 1) {
+    				each_blocks_3[i_1].m(div0, null);
     			}
 
     			append_dev(div2, t4);
     			append_dev(div2, div1);
 
-    			for (let i = 0; i < each_blocks_1.length; i += 1) {
-    				each_blocks_1[i].m(div1, null);
+    			for (let i_1 = 0; i_1 < each_blocks_2.length; i_1 += 1) {
+    				each_blocks_2[i_1].m(div1, null);
     			}
 
     			append_dev(div6, t5);
@@ -19153,11 +19243,12 @@ var app = (function (JSZip) {
     			append_dev(a1, t6);
     			append_dev(div6, t7);
     			if (if_block0) if_block0.m(div6, null);
-    			append_dev(nav, t8);
-    			append_dev(nav, div12);
+    			append_dev(nav0, t8);
+    			append_dev(nav0, div12);
     			append_dev(div12, div9);
     			append_dev(div9, div8);
     			append_dev(div8, button0);
+    			append_dev(button0, t9);
     			append_dev(div8, t10);
     			append_dev(div8, div7);
     			append_dev(div7, a2);
@@ -19168,74 +19259,111 @@ var app = (function (JSZip) {
     			append_dev(div12, t16);
     			append_dev(div12, div11);
     			append_dev(div11, div10);
-    			append_dev(div10, p);
-    			append_dev(p, input);
+    			append_dev(div10, p0);
+    			append_dev(p0, input0);
 
-    			set_input_value(input, ctx.query);
+    			set_input_value(input0, ctx.query);
 
     			insert_dev(target, t17, anchor);
-    			insert_dev(target, div17, anchor);
-    			append_dev(div17, div13);
+    			insert_dev(target, nav1, anchor);
+    			append_dev(nav1, div14);
+    			append_dev(div14, button1);
+    			append_dev(button1, t18);
+    			append_dev(button1, t19);
+    			append_dev(div14, t20);
+    			append_dev(div14, div13);
+    			append_dev(div13, a5);
+    			append_dev(a5, t21);
+    			append_dev(div13, t22);
 
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div13, null);
+    			for (let i_1 = 0; i_1 < each_blocks_1.length; i_1 += 1) {
+    				each_blocks_1[i_1].m(div13, null);
     			}
 
-    			append_dev(div17, t18);
-    			append_dev(div17, div14);
-    			append_dev(div17, t19);
-    			append_dev(div17, div15);
-    			append_dev(div15, button1);
-    			append_dev(button1, t20);
-    			append_dev(div17, t21);
+    			append_dev(nav1, t23);
+    			append_dev(nav1, div17);
     			append_dev(div17, div16);
-    			if (~current_block_type_index) if_blocks[current_block_type_index].m(div16, null);
+    			append_dev(div16, div15);
+    			append_dev(div15, p1);
+    			append_dev(p1, input1);
+
+    			set_input_value(input1, ctx.query);
+
+    			append_dev(nav1, t24);
+    			append_dev(nav1, div20);
+    			append_dev(div20, button2);
+    			append_dev(button2, i);
+    			append_dev(div20, t26);
+    			append_dev(div20, div19);
+    			append_dev(div19, div18);
+    			append_dev(div18, p2);
+    			append_dev(p2, input2);
+
+    			set_input_value(input2, ctx.query);
+
+    			insert_dev(target, t27, anchor);
+    			insert_dev(target, div25, anchor);
+    			append_dev(div25, div21);
+
+    			for (let i_1 = 0; i_1 < each_blocks.length; i_1 += 1) {
+    				each_blocks[i_1].m(div21, null);
+    			}
+
+    			append_dev(div25, t28);
+    			append_dev(div25, div22);
+    			append_dev(div25, t29);
+    			append_dev(div25, div23);
+    			append_dev(div23, button3);
+    			append_dev(button3, t30);
+    			append_dev(div25, t31);
+    			append_dev(div25, div24);
+    			if (~current_block_type_index) if_blocks[current_block_type_index].m(div24, null);
     			current = true;
     		},
 
     		p: function update(changed, ctx) {
     			if (changed.rul) {
-    				each_value_3 = rul.sectionsOrder;
+    				each_value_4 = rul.sectionsOrder;
 
-    				let i;
-    				for (i = 0; i < each_value_3.length; i += 1) {
-    					const child_ctx = get_each_context_3$4(ctx, each_value_3, i);
+    				let i_1;
+    				for (i_1 = 0; i_1 < each_value_4.length; i_1 += 1) {
+    					const child_ctx = get_each_context_4$2(ctx, each_value_4, i_1);
 
-    					if (each_blocks_2[i]) {
-    						each_blocks_2[i].p(changed, child_ctx);
+    					if (each_blocks_3[i_1]) {
+    						each_blocks_3[i_1].p(changed, child_ctx);
     					} else {
-    						each_blocks_2[i] = create_each_block_3$4(child_ctx);
-    						each_blocks_2[i].c();
-    						each_blocks_2[i].m(div0, null);
+    						each_blocks_3[i_1] = create_each_block_4$2(child_ctx);
+    						each_blocks_3[i_1].c();
+    						each_blocks_3[i_1].m(div0, null);
     					}
     				}
 
-    				for (; i < each_blocks_2.length; i += 1) {
-    					each_blocks_2[i].d(1);
+    				for (; i_1 < each_blocks_3.length; i_1 += 1) {
+    					each_blocks_3[i_1].d(1);
     				}
-    				each_blocks_2.length = each_value_3.length;
+    				each_blocks_3.length = each_value_4.length;
     			}
 
     			if (changed.rul) {
-    				each_value_2 = rul.typeSectionsOrder;
+    				each_value_3 = rul.typeSectionsOrder;
 
-    				let i;
-    				for (i = 0; i < each_value_2.length; i += 1) {
-    					const child_ctx = get_each_context_2$7(ctx, each_value_2, i);
+    				let i_1;
+    				for (i_1 = 0; i_1 < each_value_3.length; i_1 += 1) {
+    					const child_ctx = get_each_context_3$4(ctx, each_value_3, i_1);
 
-    					if (each_blocks_1[i]) {
-    						each_blocks_1[i].p(changed, child_ctx);
+    					if (each_blocks_2[i_1]) {
+    						each_blocks_2[i_1].p(changed, child_ctx);
     					} else {
-    						each_blocks_1[i] = create_each_block_2$7(child_ctx);
-    						each_blocks_1[i].c();
-    						each_blocks_1[i].m(div1, null);
+    						each_blocks_2[i_1] = create_each_block_3$4(child_ctx);
+    						each_blocks_2[i_1].c();
+    						each_blocks_2[i_1].m(div1, null);
     					}
     				}
 
-    				for (; i < each_blocks_1.length; i += 1) {
-    					each_blocks_1[i].d(1);
+    				for (; i_1 < each_blocks_2.length; i_1 += 1) {
+    					each_blocks_2[i_1].d(1);
     				}
-    				each_blocks_1.length = each_value_2.length;
+    				each_blocks_2.length = each_value_3.length;
     			}
 
     			if ((!current || changed.currentSection) && t6_value !== (t6_value = ctx.currentSection ? ctx.currentSection.title : '' + "")) {
@@ -19261,32 +19389,57 @@ var app = (function (JSZip) {
     				if_block0 = null;
     			}
 
-    			if (changed.query && (input.value !== ctx.query)) set_input_value(input, ctx.query);
+    			if (changed.query && (input0.value !== ctx.query)) set_input_value(input0, ctx.query);
+
+    			if (changed.rul) {
+    				each_value_2 = rul.sectionsOrder;
+
+    				let i_1;
+    				for (i_1 = 0; i_1 < each_value_2.length; i_1 += 1) {
+    					const child_ctx = get_each_context_2$7(ctx, each_value_2, i_1);
+
+    					if (each_blocks_1[i_1]) {
+    						each_blocks_1[i_1].p(changed, child_ctx);
+    					} else {
+    						each_blocks_1[i_1] = create_each_block_2$7(child_ctx);
+    						each_blocks_1[i_1].c();
+    						each_blocks_1[i_1].m(div13, null);
+    					}
+    				}
+
+    				for (; i_1 < each_blocks_1.length; i_1 += 1) {
+    					each_blocks_1[i_1].d(1);
+    				}
+    				each_blocks_1.length = each_value_2.length;
+    			}
+
+    			if (changed.query && (input1.value !== ctx.query)) set_input_value(input1, ctx.query);
+    			if (changed.query && (input2.value !== ctx.query)) set_input_value(input2, ctx.query);
 
     			if (changed.currentSection || changed.article || changed.rul || changed.sortedArticles || changed.activeOption) {
     				each_value = ctx.article && ctx.article.section && ctx.article.section.isType() ? rul.typeSectionsOrder : rul.sectionsOrder;
 
-    				let i;
-    				for (i = 0; i < each_value.length; i += 1) {
-    					const child_ctx = get_each_context$g(ctx, each_value, i);
+    				let i_1;
+    				for (i_1 = 0; i_1 < each_value.length; i_1 += 1) {
+    					const child_ctx = get_each_context$g(ctx, each_value, i_1);
 
-    					if (each_blocks[i]) {
-    						each_blocks[i].p(changed, child_ctx);
+    					if (each_blocks[i_1]) {
+    						each_blocks[i_1].p(changed, child_ctx);
     					} else {
-    						each_blocks[i] = create_each_block$g(child_ctx);
-    						each_blocks[i].c();
-    						each_blocks[i].m(div13, null);
+    						each_blocks[i_1] = create_each_block$g(child_ctx);
+    						each_blocks[i_1].c();
+    						each_blocks[i_1].m(div21, null);
     					}
     				}
 
-    				for (; i < each_blocks.length; i += 1) {
-    					each_blocks[i].d(1);
+    				for (; i_1 < each_blocks.length; i_1 += 1) {
+    					each_blocks[i_1].d(1);
     				}
     				each_blocks.length = each_value.length;
     			}
 
-    			if ((!current || changed.sortArticles) && button1_style_value !== (button1_style_value = ctx.sortArticles?"":"text-decoration:line-through")) {
-    				attr_dev(button1, "style", button1_style_value);
+    			if ((!current || changed.sortArticles) && button3_style_value !== (button3_style_value = ctx.sortArticles?"":"text-decoration:line-through")) {
+    				attr_dev(button3, "style", button3_style_value);
     			}
 
     			var previous_block_index = current_block_type_index;
@@ -19309,7 +19462,7 @@ var app = (function (JSZip) {
     						if_block1.c();
     					}
     					transition_in(if_block1, 1);
-    					if_block1.m(div16, null);
+    					if_block1.m(div24, null);
     				} else {
     					if_block1 = null;
     				}
@@ -19329,18 +19482,25 @@ var app = (function (JSZip) {
 
     		d: function destroy(detaching) {
     			if (detaching) {
-    				detach_dev(nav);
+    				detach_dev(nav0);
     			}
 
-    			destroy_each(each_blocks_2, detaching);
+    			destroy_each(each_blocks_3, detaching);
 
-    			destroy_each(each_blocks_1, detaching);
+    			destroy_each(each_blocks_2, detaching);
 
     			if (if_block0) if_block0.d();
 
     			if (detaching) {
     				detach_dev(t17);
-    				detach_dev(div17);
+    				detach_dev(nav1);
+    			}
+
+    			destroy_each(each_blocks_1, detaching);
+
+    			if (detaching) {
+    				detach_dev(t27);
+    				detach_dev(div25);
     			}
 
     			destroy_each(each_blocks, detaching);
@@ -19354,6 +19514,38 @@ var app = (function (JSZip) {
     }
 
     // (166:14) {#each rul.sectionsOrder as section}
+    function create_each_block_4$2(ctx) {
+    	var a, t0_value = ctx.section.title + "", t0, t1;
+
+    	const block = {
+    		c: function create() {
+    			a = element("a");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			attr_dev(a, "class", "navbar-item");
+    			attr_dev(a, "href", '#' + ctx.section.id);
+    			add_location(a, file$i, 166, 16, 3888);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, a, anchor);
+    			append_dev(a, t0);
+    			append_dev(a, t1);
+    		},
+
+    		p: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(a);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_4$2.name, type: "each", source: "(166:14) {#each rul.sectionsOrder as section}", ctx });
+    	return block;
+    }
+
+    // (173:14) {#each rul.typeSectionsOrder as section}
     function create_each_block_3$4(ctx) {
     	var a, t0_value = ctx.section.title + "", t0, t1;
 
@@ -19364,7 +19556,7 @@ var app = (function (JSZip) {
     			t1 = space();
     			attr_dev(a, "class", "navbar-item");
     			attr_dev(a, "href", '#' + ctx.section.id);
-    			add_location(a, file$i, 166, 16, 3870);
+    			add_location(a, file$i, 173, 16, 4128);
     		},
 
     		m: function mount(target, anchor) {
@@ -19381,39 +19573,7 @@ var app = (function (JSZip) {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_3$4.name, type: "each", source: "(166:14) {#each rul.sectionsOrder as section}", ctx });
-    	return block;
-    }
-
-    // (173:14) {#each rul.typeSectionsOrder as section}
-    function create_each_block_2$7(ctx) {
-    	var a, t0_value = ctx.section.title + "", t0, t1;
-
-    	const block = {
-    		c: function create() {
-    			a = element("a");
-    			t0 = text(t0_value);
-    			t1 = space();
-    			attr_dev(a, "class", "navbar-item");
-    			attr_dev(a, "href", '#' + ctx.section.id);
-    			add_location(a, file$i, 173, 16, 4110);
-    		},
-
-    		m: function mount(target, anchor) {
-    			insert_dev(target, a, anchor);
-    			append_dev(a, t0);
-    			append_dev(a, t1);
-    		},
-
-    		p: noop,
-
-    		d: function destroy(detaching) {
-    			if (detaching) {
-    				detach_dev(a);
-    			}
-    		}
-    	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_2$7.name, type: "each", source: "(173:14) {#each rul.typeSectionsOrder as section}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_3$4.name, type: "each", source: "(173:14) {#each rul.typeSectionsOrder as section}", ctx });
     	return block;
     }
 
@@ -19428,9 +19588,9 @@ var app = (function (JSZip) {
     			t = text(t_value);
     			set_style(a, "color", "white");
     			attr_dev(a, "href", a_href_value = '#' + ctx.article.id);
-    			add_location(a, file$i, 191, 10, 4654);
+    			add_location(a, file$i, 191, 10, 4672);
     			attr_dev(div, "class", "navbar-item");
-    			add_location(div, file$i, 190, 8, 4617);
+    			add_location(div, file$i, 190, 8, 4635);
     			dispose = listen_dev(a, "click", ctx.click_handler);
     		},
 
@@ -19462,7 +19622,38 @@ var app = (function (JSZip) {
     	return block;
     }
 
-    // (241:8) {#if !currentSection || section.id == currentSection.id}
+    // (242:6) {#each rul.sectionsOrder as section}
+    function create_each_block_2$7(ctx) {
+    	var a, t0_value = ctx.section.title + "", t0, t1;
+
+    	const block = {
+    		c: function create() {
+    			a = element("a");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			attr_dev(a, "href", '#' + ctx.section.id);
+    			add_location(a, file$i, 242, 8, 6157);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, a, anchor);
+    			append_dev(a, t0);
+    			append_dev(a, t1);
+    		},
+
+    		p: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(a);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_2$7.name, type: "each", source: "(242:6) {#each rul.sectionsOrder as section}", ctx });
+    	return block;
+    }
+
+    // (287:8) {#if !currentSection || section.id == currentSection.id}
     function create_if_block_6$3(ctx) {
     	var p, t0_value = ctx.section.title + "", t0, t1, ul, t2;
 
@@ -19487,9 +19678,9 @@ var app = (function (JSZip) {
 
     			t2 = space();
     			attr_dev(p, "class", "menu-label");
-    			add_location(p, file$i, 241, 10, 6090);
+    			add_location(p, file$i, 287, 10, 7599);
     			attr_dev(ul, "class", "menu-list");
-    			add_location(ul, file$i, 242, 10, 6143);
+    			add_location(ul, file$i, 288, 10, 7652);
     		},
 
     		m: function mount(target, anchor) {
@@ -19543,11 +19734,11 @@ var app = (function (JSZip) {
     			destroy_each(each_blocks, detaching);
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_6$3.name, type: "if", source: "(241:8) {#if !currentSection || section.id == currentSection.id}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_6$3.name, type: "if", source: "(287:8) {#if !currentSection || section.id == currentSection.id}", ctx });
     	return block;
     }
 
-    // (253:16) {:else}
+    // (299:16) {:else}
     function create_else_block_1$2(ctx) {
     	var a, t_value = ctx.option.title + "", t, a_href_value, dispose;
 
@@ -19556,7 +19747,7 @@ var app = (function (JSZip) {
     			a = element("a");
     			t = text(t_value);
     			attr_dev(a, "href", a_href_value = '#' + ctx.option.id);
-    			add_location(a, file$i, 253, 18, 6576);
+    			add_location(a, file$i, 299, 18, 8085);
     			dispose = listen_dev(a, "click", ctx.click_handler_1);
     		},
 
@@ -19583,11 +19774,11 @@ var app = (function (JSZip) {
     			dispose();
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block_1$2.name, type: "else", source: "(253:16) {:else}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block_1$2.name, type: "else", source: "(299:16) {:else}", ctx });
     	return block;
     }
 
-    // (246:16) {#if article && article.id == option.id}
+    // (292:16) {#if article && article.id == option.id}
     function create_if_block_7$3(ctx) {
     	var a, t_value = ctx.option.title + "", t, a_href_value;
 
@@ -19597,7 +19788,7 @@ var app = (function (JSZip) {
     			t = text(t_value);
     			attr_dev(a, "href", a_href_value = '#' + ctx.option.id);
     			attr_dev(a, "class", "active-article-option svelte-1bogsca");
-    			add_location(a, file$i, 246, 18, 6327);
+    			add_location(a, file$i, 292, 18, 7836);
     		},
 
     		m: function mount(target, anchor) {
@@ -19624,11 +19815,11 @@ var app = (function (JSZip) {
     			ctx.a_binding(null);
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_7$3.name, type: "if", source: "(246:16) {#if article && article.id == option.id}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_7$3.name, type: "if", source: "(292:16) {#if article && article.id == option.id}", ctx });
     	return block;
     }
 
-    // (244:12) {#each sortedArticles(section.articles) as option}
+    // (290:12) {#each sortedArticles(section.articles) as option}
     function create_each_block_1$7(ctx) {
     	var li;
 
@@ -19644,7 +19835,7 @@ var app = (function (JSZip) {
     		c: function create() {
     			li = element("li");
     			if_block.c();
-    			add_location(li, file$i, 244, 14, 6245);
+    			add_location(li, file$i, 290, 14, 7754);
     		},
 
     		m: function mount(target, anchor) {
@@ -19673,11 +19864,11 @@ var app = (function (JSZip) {
     			if_block.d();
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_1$7.name, type: "each", source: "(244:12) {#each sortedArticles(section.articles) as option}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_1$7.name, type: "each", source: "(290:12) {#each sortedArticles(section.articles) as option}", ctx });
     	return block;
     }
 
-    // (240:6) {#each article && article.section && article.section.isType() ? rul.typeSectionsOrder : rul.sectionsOrder as section}
+    // (286:6) {#each article && article.section && article.section.isType() ? rul.typeSectionsOrder : rul.sectionsOrder as section}
     function create_each_block$g(ctx) {
     	var if_block_anchor;
 
@@ -19717,11 +19908,11 @@ var app = (function (JSZip) {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$g.name, type: "each", source: "(240:6) {#each article && article.section && article.section.isType() ? rul.typeSectionsOrder : rul.sectionsOrder as section}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$g.name, type: "each", source: "(286:6) {#each article && article.section && article.section.isType() ? rul.typeSectionsOrder : rul.sectionsOrder as section}", ctx });
     	return block;
     }
 
-    // (289:23) 
+    // (335:23) 
     function create_if_block_5$4(ctx) {
     	var current;
 
@@ -19755,11 +19946,11 @@ var app = (function (JSZip) {
     			destroy_component(intro, detaching);
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_5$4.name, type: "if", source: "(289:23) ", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_5$4.name, type: "if", source: "(335:23) ", ctx });
     	return block;
     }
 
-    // (275:22) 
+    // (321:22) 
     function create_if_block_1$d(ctx) {
     	var t0, em, t1, t2, br, t3, current_block_type_index, if_block, if_block_anchor, current;
 
@@ -19792,8 +19983,8 @@ var app = (function (JSZip) {
     			t3 = space();
     			if_block.c();
     			if_block_anchor = empty();
-    			add_location(em, file$i, 276, 8, 7289);
-    			add_location(br, file$i, 278, 8, 7327);
+    			add_location(em, file$i, 322, 8, 8798);
+    			add_location(br, file$i, 324, 8, 8836);
     		},
 
     		m: function mount(target, anchor) {
@@ -19861,11 +20052,11 @@ var app = (function (JSZip) {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$d.name, type: "if", source: "(275:22) ", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$d.name, type: "if", source: "(321:22) ", ctx });
     	return block;
     }
 
-    // (273:6) {#if article}
+    // (319:6) {#if article}
     function create_if_block$g(ctx) {
     	var current;
 
@@ -19910,11 +20101,11 @@ var app = (function (JSZip) {
     			destroy_component(article_1, detaching);
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$g.name, type: "if", source: "(273:6) {#if article}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$g.name, type: "if", source: "(319:6) {#if article}", ctx });
     	return block;
     }
 
-    // (286:8) {:else}
+    // (332:8) {:else}
     function create_else_block$a(ctx) {
     	var i;
 
@@ -19922,7 +20113,7 @@ var app = (function (JSZip) {
     		c: function create() {
     			i = element("i");
     			i.textContent = "Nothing found";
-    			add_location(i, file$i, 286, 10, 7566);
+    			add_location(i, file$i, 332, 10, 9075);
     		},
 
     		m: function mount(target, anchor) {
@@ -19939,11 +20130,11 @@ var app = (function (JSZip) {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block$a.name, type: "else", source: "(286:8) {:else}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block$a.name, type: "else", source: "(332:8) {:else}", ctx });
     	return block;
     }
 
-    // (284:36) 
+    // (330:36) 
     function create_if_block_4$5(ctx) {
     	var t;
 
@@ -19966,11 +20157,11 @@ var app = (function (JSZip) {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_4$5.name, type: "if", source: "(284:36) ", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_4$5.name, type: "if", source: "(330:36) ", ctx });
     	return block;
     }
 
-    // (282:35) 
+    // (328:35) 
     function create_if_block_3$9(ctx) {
     	var i;
 
@@ -19978,7 +20169,7 @@ var app = (function (JSZip) {
     		c: function create() {
     			i = element("i");
     			i.textContent = "Query too short";
-    			add_location(i, file$i, 282, 10, 7462);
+    			add_location(i, file$i, 328, 10, 8971);
     		},
 
     		m: function mount(target, anchor) {
@@ -19995,11 +20186,11 @@ var app = (function (JSZip) {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_3$9.name, type: "if", source: "(282:35) ", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_3$9.name, type: "if", source: "(328:35) ", ctx });
     	return block;
     }
 
-    // (280:8) {#if found && found.length > 0}
+    // (326:8) {#if found && found.length > 0}
     function create_if_block_2$d(ctx) {
     	var current;
 
@@ -20040,7 +20231,7 @@ var app = (function (JSZip) {
     			destroy_component(linkspage, detaching);
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2$d.name, type: "if", source: "(280:8) {#if found && found.length > 0}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2$d.name, type: "if", source: "(326:8) {#if found && found.length > 0}", ctx });
     	return block;
     }
 
@@ -20273,7 +20464,17 @@ var app = (function (JSZip) {
 
     	const click_handler = (e) => window.scrollTo(0, 0);
 
-    	function input_input_handler() {
+    	function input0_input_handler() {
+    		query = this.value;
+    		$$invalidate('query', query);
+    	}
+
+    	function input1_input_handler() {
+    		query = this.value;
+    		$$invalidate('query', query);
+    	}
+
+    	function input2_input_handler() {
     		query = this.value;
     		$$invalidate('query', query);
     	}
@@ -20335,7 +20536,9 @@ var app = (function (JSZip) {
     		window,
     		sortedArticles,
     		click_handler,
-    		input_input_handler,
+    		input0_input_handler,
+    		input1_input_handler,
+    		input2_input_handler,
     		a_binding,
     		click_handler_1,
     		click_handler_2

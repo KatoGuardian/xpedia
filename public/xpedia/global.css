@@ -268,11 +268,7 @@ audio{
   overflow: hidden;
 }
 
-/* effect 1 styles */
-.btn-hover-effect--effect-1 {
-  /* overlay block styles */
-  /* icon styles */
-}
+
 .btn-hover-effect--effect-1:before {
   position: absolute;
   top: 0;
@@ -391,7 +387,7 @@ button{
 }
 
 .infocol {
-  margin-right: 14px;
+  margin-right: 13px;
   width: 30%;
   float: right;
 }
@@ -423,7 +419,6 @@ button{
 }
 
 .dropbtn {
-  background-color: #363636;
   color: white;
   padding: 16px;
   padding-bottom: 8px;
@@ -444,12 +439,15 @@ button{
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  /* min-width: 160px; */
   width: 100%;
   overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   border-radius: 0px;
+}
+.wide {
+  min-width: 170px !important;
+  position: relative;
 }
 /* Links inside the dropdown */
 .dropdown-content a {
@@ -464,9 +462,9 @@ button{
 .dropdown:hover .dropdown-content {
   display: block;
 }
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-  background-color: #6a6a6a;
+
+.small-search {
+  width: 40%;
 }
 
 .sidebar::-webkit-scrollbar-track

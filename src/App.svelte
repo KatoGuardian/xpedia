@@ -150,12 +150,12 @@
 {:then}
 
   <nav
-    class="navbar is-fixed-top"
+    class="navbar is-fixed-top is-hidden-touch"
     role="navigation"
     aria-label="main navigation">
 
-    <div class="navbar-brand">
-      <div class="navbar-item has-dropdown is-hoverable">
+    <div class="navbar-brand ">
+      <div class="navbar-item has-dropdown is-hoverable ">
         <a href="#MAIN" class="navbar-link">
           <img src="xpedia/favicon.png" alt="favicon" />
           {rul.modName} XPedia
@@ -203,7 +203,7 @@
     <div class="navbar-end">
       <div class="navbar-item"> 
         <div class="dropdown">
-          <button class="dropbtn">Choose language</button>
+          <button class="dropbtn navbar-link">{rul.str("Choose language")}</button>
           <div class="dropdown-content">
             <a href="index.html">English</a>
             <a href="xpedia_ru.html">Русский</a>
@@ -219,7 +219,7 @@
               type="text"
               bind:value={query}
               on:keyup={searchKeyUp}
-              placeholder="Search..." />
+              placeholder="{rul.str("Search...")}" />
           </p>
           <!--
           <p class="control">
@@ -229,13 +229,59 @@
 
       </div>
     </div>
-    
   </nav>
+
+<nav 
+  class="navbar is-fixed-top is-hidden-desktop" 
+  role="navigation" 
+  aria-label="main navigation">
+  <div class="navbar-item dropdown is-inline-block">
+    <button class="dropbtn">{rul.modName} Xpedia</button>
+    <div class="dropdown-content">
+    <a href="#MAIN">{rul.str("HOME")}</a>
+      {#each rul.sectionsOrder as section}
+        <a href={'#' + section.id}>
+          {section.title}
+        </a>
+      {/each}
+    </div>
+  </div>
+  <div class="is-pulled-right" >
+    <div class="is-pulled-right navbar-item is-inline-block is-hidden-mobile" > <!-- На планшете -->
+      <div class="field has-addons ">
+        <p class="control">
+          <input
+            class="input"
+            type="text"
+            bind:value={query}
+            on:keyup={searchKeyUp}
+            placeholder="{rul.str("Search...")}" />
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-item dropdown is-pulled-right is-inline-block is-hidden-tablet"> <!-- На мобилке -->
+    <button class="dropbtn"><i class="fas fa-bars">nen</i></button>
+    <div class="field has-addons">
+      <div class="dropdown-content wide">
+        <p class="control">
+        <input
+          class="input"
+          type="text"
+          bind:value={query}
+          on:keyup={searchKeyUp}
+          placeholder="{rul.str("Search...")}" />
+        </p>
+      </div>
+    </div>
+  </div>
+    
+</nav>
 
   <div class="columns is-fullheight">
     
     <div
-      class="column is-2 is-sidebar-menu is-hidden-mobile sidebar padding-top">
+      class="column is-2 is-sidebar-menu is-hidden-mobile is-hidden-tablet-only sidebar padding-top">
 
       {#each article && article.section && article.section.isType() ? rul.typeSectionsOrder : rul.sectionsOrder as section}
         {#if !currentSection || section.id == currentSection.id}

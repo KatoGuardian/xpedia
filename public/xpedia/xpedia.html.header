@@ -4,9 +4,10 @@
   <meta charset='utf8'>
   <meta name='viewport' content='width=device-width'>
 
-  <title>XPedia</title>
+  <title>The X-Com Files Xpedia</title>
 
   <link rel='icon' type='image/png' href='xpedia/favicon.png'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel='stylesheet' href='xpedia/bulmaswatch.min.css'>  
   <link rel='stylesheet' href='xpedia/global.css'>
   <link rel='stylesheet' href='xpedia/bundle.css'>
