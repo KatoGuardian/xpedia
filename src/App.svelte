@@ -203,7 +203,7 @@
     <div class="navbar-end">
       <div class="navbar-item"> 
         <div class="dropdown">
-          <button class="dropbtn navbar-link">{rul.str("Choose language")}</button>
+          <button class="dropbtn navbar-link">{rul.str("Language")}</button>
           <div class="dropdown-content">
             <a href="index.html">English</a>
             <a href="xpedia_ru.html">Русский</a>
@@ -226,57 +226,48 @@
             <button class="button">Search</button>
           </p>-->
         </div>
-
       </div>
     </div>
   </nav>
 
-<nav 
-  class="navbar is-fixed-top is-hidden-desktop" 
-  role="navigation" 
-  aria-label="main navigation">
-  <div class="navbar-item dropdown is-inline-block">
-    <button class="dropbtn">{rul.modName} Xpedia</button>
-    <div class="dropdown-content">
-    <a href="#MAIN">{rul.str("HOME")}</a>
-      {#each rul.sectionsOrder as section}
-        <a href={'#' + section.id}>
-          {section.title}
-        </a>
-      {/each}
-    </div>
-  </div>
-  <div class="is-pulled-right" >
-    <div class="is-pulled-right navbar-item is-inline-block is-hidden-mobile" > <!-- На планшете -->
-      <div class="field has-addons ">
-        <p class="control">
-          <input
-            class="input"
-            type="text"
-            bind:value={query}
-            on:keyup={searchKeyUp}
-            placeholder="{rul.str("Search...")}" />
-        </p>
+  <nav 
+    class="navbar is-fixed-top is-hidden-desktop" 
+    role="navigation" 
+    aria-label="main navigation">
+    <div class="navbar-item dropdown is-inline-block">
+      <button class="dropbtn navbar-link">{rul.modName} Xpedia</button>
+      <div class="dropdown-content">
+      <a href="#MAIN">{rul.str("HOME")}</a>
+        {#each rul.sectionsOrder as section}
+          <a href={'#' + section.id}>
+            {section.title}
+          </a>
+        {/each}
       </div>
     </div>
-  </div>
-  <div class="navbar-item dropdown is-pulled-right is-inline-block is-hidden-tablet"> <!-- На мобилке -->
-    <button class="dropbtn"><i class="fas fa-bars">nen</i></button>
-    <div class="field has-addons">
-      <div class="dropdown-content wide">
-        <p class="control">
-        <input
-          class="input"
-          type="text"
-          bind:value={query}
-          on:keyup={searchKeyUp}
-          placeholder="{rul.str("Search...")}" />
-        </p>
+    <div class="is-pulled-right" >
+      <div class="navbar-item"> 
+        <div class="dropdown">
+          <button class="dropbtn navbar-link">{rul.str("Language")}</button>
+          <div class="dropdown-content">
+            <div class="mar5">
+              <p class="control">
+                <input
+                  class="input"
+                  type="text"
+                  bind:value={query}
+                  on:keyup={searchKeyUp}
+                  placeholder="{rul.str("Search...")}" />
+              </p>
+            </div>
+            <a href="index.html">English</a>
+            <a href="xpedia_ru.html">Русский</a>
+            <a href="xpedia_pl.html">Polski</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-    
-</nav>
+    </div> 
+  </nav>
 
   <div class="columns is-fullheight">
     
