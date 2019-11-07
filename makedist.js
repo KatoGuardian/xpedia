@@ -9,6 +9,7 @@ fs.mkdirSync("dist/xpedia/Language");
 
 let files = [
   "xpedia/Language/ru.yml",
+  "xpedia/Language/pl.yml",
   "xpedia/bundle.js",
   "xpedia/bundle.css",
   "xpedia/global.css",

@@ -22,7 +22,7 @@
     <td>
       <table class="main-table">
         <tr>
-          <td colspan="2" class="table-header">Weapon</td>
+          <td colspan="2" class="table-header">{rul.str("Weapon")}</td>
         </tr>
         {#each Object.entries(weapon).sort((a, b) =>
           a[0] > b[0] ? 1 : -1

@@ -16,7 +16,7 @@
 </style>
 
   <tr>
-    <td colspan="2" class="table-header">{rul.str("RESEARCH")}</td>
+    <td colspan="2" class="table-header">{rul.str("Research")}</td>
   </tr>
   {#each Object.entries(research).sort((a, b) => (longLists.includes(b[0])?-10:10) + (a[0] > b[0] ? 1 : -1)) as [key, prop]}
     {#if longLists.includes(key) && prop && prop.length>0}

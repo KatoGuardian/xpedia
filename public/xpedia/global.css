@@ -26,12 +26,12 @@ a:hover {
 }
 
 .main-table > tr:nth-child(odd){
-  background: #141d3d;
-  /* #20152B */
+  background: #252e4f;
+  /*  #141d3d #20152B */
 }
 
 .main-table > tr:nth-child(even){
-  background: #25315a;
+  background: #3c4564;;
     /* #180C24 */
 }
 
@@ -365,13 +365,6 @@ button{
   height: 0px; 
 }
 
-/* finnik's part */
-.workspace{
-  /* margin-right: 14px; */
-  width: 67%;
-  float: left;
-}
-
 .quote {
  /* background-color: #363636; */
   color: #fff;
@@ -386,11 +379,7 @@ button{
   padding-left: 60px;
 }
 
-.infocol {
-  margin-right: 13px;
-  width: 30%;
-  float: right;
-}
+
 .imgcol {
   background-color: #141d3d;
   padding: 10px;
@@ -410,8 +399,8 @@ button{
   padding: 12px 30px;
   cursor: pointer;
   font-size: 20px;
-  margin-top: 10px;
   margin-bottom: 10px;
+  margin-top: 10px;
   border-radius: 5px;
 }
 .downloadbtn:hover {
@@ -420,12 +409,13 @@ button{
 
 .dropbtn {
   color: white;
-  padding: 16px;
-  padding-bottom: 8px;
-  padding-top: 7px;
+  padding: 12px;
+  padding-top: 0px; 
+  padding-bottom: 0px;
   font-size: 16px;
   border: none;
   cursor: pointer;
+  height: 52px; 
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -434,7 +424,6 @@ button{
   display: inline-block;
 }
 
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -445,25 +434,24 @@ button{
   z-index: 0;
   border-radius: 0px;
 }
-.mar5 {
-  
-}
-/* Links inside the dropdown */
+
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
+  padding: 8px 16px;
   text-decoration: none;
   display: block;
 }
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
-/* Show the dropdown menu on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-.small-search {
-  width: 40%;
+.dropdown-divider{
+  margin: 0px;
+  background-color: #919191;
 }
 
 .sidebar::-webkit-scrollbar-track

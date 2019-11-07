@@ -11,12 +11,13 @@ let text;
 
 laguages.forEach(function(item, index, array){
   if (item == "en-US") {
-    var filename = "index1.html";
+    var filename = "index.html";
   }
   if (item != "en-US") {
     var filename = "xpedia_"+ item +".html";
   }
   saveAs = filename;
+  console.log(saveAs)
   let language_name = item;
   let mod_rules_path = "user/mods/" + mod_name + "/Ruleset";
   let mod_language_path = "user/mods/" + mod_name + "/Language/" + language_name + ".yml";
@@ -59,8 +60,6 @@ laguages.forEach(function(item, index, array){
   
 
   text = all.join("\n");
-});
-
 
 if (packed) {
   let zip = new JSZip();
@@ -87,4 +86,4 @@ require('child_process').exec(start + ' ' + url);
 function newFunction(pedia_header) {
   return fs.readFileSync(pedia_header);
 }
-
+});

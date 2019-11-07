@@ -148,11 +148,11 @@
 {#await rulesLoaded}
   <img class="centered" alt="Loading rules..." src="xpedia/spinner.svg" />
 {:then}
-
+  <!-- desctop nav -->
   <nav
     class="navbar is-fixed-top is-hidden-touch"
     role="navigation"
-    aria-label="main navigation">
+    aria-label="main navigation"> 
 
     <div class="navbar-brand ">
       <div class="navbar-item has-dropdown is-hoverable ">
@@ -201,7 +201,7 @@
     </div>
 
     <div class="navbar-end">
-      <div class="navbar-item"> 
+      <div class="navbar-item is-paddingless"> 
         <div class="dropdown">
           <button class="dropbtn navbar-link">{rul.str("Language")}</button>
           <div class="dropdown-content">
@@ -221,58 +221,97 @@
               on:keyup={searchKeyUp}
               placeholder="{rul.str("Search...")}" />
           </p>
-          <!--
-          <p class="control">
-            <button class="button">Search</button>
-          </p>-->
         </div>
       </div>
     </div>
   </nav>
-
+  
+  <!-- small nav -->
   <nav 
     class="navbar is-fixed-top is-hidden-desktop" 
     role="navigation" 
-    aria-label="main navigation">
-    <div class="navbar-item dropdown is-inline-block">
-      <button class="dropbtn navbar-link">{rul.modName} Xpedia</button>
-      <div class="dropdown-content">
-      <a href="#MAIN">{rul.str("HOME")}</a>
-        {#each rul.sectionsOrder as section}
-          <a href={'#' + section.id}>
-            {section.title}
-          </a>
-        {/each}
-      </div>
-    </div>
-    <div class="is-pulled-right" >
-      <div class="navbar-item"> 
-        <div class="dropdown">
-          <button class="dropbtn navbar-link">{rul.str("Language")}</button>
-          <div class="dropdown-content">
-            <div class="mar5">
-              <p class="control">
-                <input
-                  class="input"
-                  type="text"
-                  bind:value={query}
-                  on:keyup={searchKeyUp}
-                  placeholder="{rul.str("Search...")}" />
-              </p>
-            </div>
-            <a href="index.html">English</a>
-            <a href="xpedia_ru.html">Русский</a>
-            <a href="xpedia_pl.html">Polski</a>
-          </div>
+    aria-label="main navigation"
+    style="border-left-width: 0px; border-right-width: 0px;"> 
+    <div class="dropdown is-inline-block">
+      <button class="dropbtn navbar-link">
+        {rul.modName} Xpedia
+      </button>
+      <div class="dropdown-content" style="height: 300px; overflow-y: scroll;">
+        <div>
+          <a href="#MAIN">{rul.str("HOME")}</a>
+          {#each rul.sectionsOrder as section}
+            <a href={'#' + section.id}>
+              {section.title}
+            </a>
+          {/each}
+        </div>
+        <hr class="dropdown-divider">
+        <div>
+          {#each rul.typeSectionsOrder as section}
+            <a href={'#' + section.id}>
+              {section.title}
+            </a>
+          {/each}
         </div>
       </div>
-    </div> 
+    </div>
+    <!-- Cellphone -->
+    <div class="is-pulled-right is-hidden-tablet is-inline-block">
+      <div class="dropdown is-inline-block">
+        <button class="dropbtn navbar-link">
+          {rul.str("Lang")}
+        </button>
+        <div class="dropdown-content">
+          <a href="index.html">Eng</a>
+          <a href="xpedia_ru.html">Рус</a>
+          <a href="xpedia_pl.html">Pol</a>
+        </div>
+      </div>
+      <div class="navbar-item  is-inline-block"
+        style="width: 100px; padding-left: 0px; padding-right: 8px;">
+        <div class="field has-addons">
+          <p class="control">
+            <input
+              class="input"
+              type="text"
+              bind:value={query}
+              on:keyup={searchKeyUp}
+              placeholder="{rul.str("Search...")}" />
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Tablet -->
+    <div class="is-pulled-right is-hidden-mobile is-inline-block">
+      <div class="dropdown is-inline-block">
+        <button class="dropbtn navbar-link">
+          {rul.str("Language")}
+        </button>
+        <div class="dropdown-content">
+          <a href="index.html">English</a>
+          <a href="xpedia_ru.html">Русский</a>
+          <a href="xpedia_pl.html">Polski</a>
+        </div>
+      </div>
+      <div class="navbar-item  is-inline-block">
+        <div class="field has-addons">
+          <p class="control">
+            <input
+              class="input"
+              type="text"
+              bind:value={query}
+              on:keyup={searchKeyUp}
+              placeholder="{rul.str("Search...")}" />
+          </p>
+        </div>
+      </div>
+    </div>
   </nav>
 
-  <div class="columns is-fullheight">
+  <div class="columns is-fullheight is-marginless">
     
     <div
-      class="column is-2 is-sidebar-menu is-hidden-mobile is-hidden-tablet-only sidebar padding-top">
+      class="column is-2 is-sidebar-menu is-hidden-touch sidebar">
 
       {#each article && article.section && article.section.isType() ? rul.typeSectionsOrder : rul.sectionsOrder as section}
         {#if !currentSection || section.id == currentSection.id}
@@ -300,12 +339,12 @@
         {/if}
       {/each}
     </div>
-    <div class="column is-2" />
+    <div class="column is-2 is-hidden-touch" />
     <div class="side-sort-button">
-      <button style={sortArticles?"":"text-decoration:line-through"} on:click={e => sortArticles = !sortArticles}>A-Z</button>
+      <button class="is-hidden-touch" style={sortArticles?"":"text-decoration:line-through"} on:click={e => sortArticles = !sortArticles}>A-Z</button>
     </div>
 
-    <div class="column is-main-content main padding-top " style="padding-left: 0px">
+    <div class="column is-main-content main" style="padding-top: 0px;">
 
       {#if article}
         <Article {article} {query} />
