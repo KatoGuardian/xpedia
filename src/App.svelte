@@ -234,7 +234,7 @@
     style="border-left-width: 0px; border-right-width: 0px;"> 
     <div class="dropdown is-inline-block">
       <button class="dropbtn navbar-link">
-        {rul.modName} Xpedia
+        {rul.modName}
       </button>
       <div class="dropdown-content" style="height: 300px; overflow-y: scroll;">
         <div>
