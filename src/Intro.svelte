@@ -16,7 +16,7 @@
       <br/>
       <a href="https://openxcom.mod.io/the-x-com-files">Download mod</a>, join our community with <a href="https://discord.gg/XrQQTPg">Discord server</a> and <a href="https://openxcom.org/forum/index.php/board,21.0.html">forum!</a><br/>
       <br/>
-    <h4>Current mod version is 1.0</h4>
+    <h4>Current mod version is 1.0.2</h4>
       <div>
         <div class="quote">
           "Now, this doesn't at all mean that this is the end. I will continue releasing new versions just like before, at least for the foreseeable future... <br/>
