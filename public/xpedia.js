@@ -3,7 +3,7 @@ const JSZip = require("./xpedia/jszip.min.js");
 
 let packed = false;
 
-let mod_name = "XComFiles";
+let mod_name = "Piratez";
 var laguages = ["en-US", "ru", "pl"];
 let saveAs;
 let header;
