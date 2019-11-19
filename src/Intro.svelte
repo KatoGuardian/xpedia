@@ -5,7 +5,7 @@
 
 <div class="columns">
   <div class="column is-full-touch is-9-desktop">
-    <h1>The X-COM Files</h1>
+    <h1>X-PirateZ</h1>
       {rul.str("Welcome to The X-COM Files mod to OpenXcom website.")}
     <br/>
     <h4>What is XCF?</h4>
