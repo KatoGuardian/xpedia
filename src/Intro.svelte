@@ -14,9 +14,9 @@
       With this mod the game starts in 1996. The player gets control over the newly formed organization X-Com - a project of the UN, designed to investigate abnormal events on our planet. The style of the series X-Files (where the name comes from) is surprisingly clear. In the beginning, no fighters, dozens of scientists, millions of dollars in budgets. You only have two special agents and they travel by public transport! Investigate mysterious incidents, tie the evidence together to shed light on extraterrestrial activities, develop X-COM and prepare for an alien invasion from Cidonia!<br/>
       This mod contains many, many additions, like new mission types, enemies, equipment and story arcs (including the entirety of my previous project, the Final Mod Pack). It also places the game a bit more firmly in the 90's conspiracy genre and its clichés.<br/>
       <br/>
-      <a href="https://openxcom.mod.io/the-x-com-files">Download mod</a>, join our community with <a href="https://discord.gg/XrQQTPg">Discord server</a> and <a href="https://openxcom.org/forum/index.php/board,21.0.html">forum!</a><br/>
+      <a href="https://openxcom.mod.io/the-x-com-files">{rul.str("Download mod")}</a>, join our community with <a href="https://discord.gg/XrQQTPg">Discord server</a> and <a href="https://openxcom.org/forum/index.php/board,21.0.html">forum!</a><br/>
       <br/>
-    <h4>Current mod version is 1.0.2</h4>
+    <h4>{rul.str("Current mod version is")} 1.0.2</h4>
       <div>
         <div class="quote">
           "Now, this doesn't at all mean that this is the end. I will continue releasing new versions just like before, at least for the foreseeable future... <br/>
