@@ -2,7 +2,7 @@
 setlocal
 CHCP 65001 >NUL
 
-set mod_name=XComFiles
+set mod_name=Piratez
 set language_name=en-US
 set language_name1=ru
 set language_name2=pl
