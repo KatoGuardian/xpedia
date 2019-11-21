@@ -1,1 +1,20846 @@
-var app=function(e){"use strict";function t(e,t){var n,r,i,o,a={label:0,sent:function(){if(1&i[0])throw i[1];return i[1]},trys:[],ops:[]};return o={next:l(0),throw:l(1),return:l(2)},"function"==typeof Symbol&&(o[Symbol.iterator]=function(){return this}),o;function l(o){return function(l){return function(o){if(n)throw new TypeError("Generator is already executing.");for(;a;)try{if(n=1,r&&(i=2&o[0]?r.return:o[0]?r.throw||((i=r.return)&&i.call(r),0):r.next)&&!(i=i.call(r,o[1])).done)return i;switch(r=0,i&&(o=[2&o[0],i.value]),o[0]){case 0:case 1:i=o;break;case 4:return a.label++,{value:o[1],done:!1};case 5:a.label++,r=o[1],o=[0];continue;case 7:o=a.ops.pop(),a.trys.pop();continue;default:if(!(i=(i=a.trys).length>0&&i[i.length-1])&&(6===o[0]||2===o[0])){a=0;continue}if(3===o[0]&&(!i||o[1]>i[0]&&o[1]<i[3])){a.label=o[1];break}if(6===o[0]&&a.label<i[1]){a.label=i[1],i=o;break}if(i&&a.label<i[2]){a.label=i[2],a.ops.push(o);break}i[2]&&a.ops.pop(),a.trys.pop();continue}o=t.call(e,a)}catch(e){o=[6,e],r=0}finally{n=i=0}if(5&o[0])throw o[1];return{value:o[0]?o[1]:void 0,done:!0}}([o,l])}}}e=e&&e.hasOwnProperty("default")?e.default:e;"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self&&self;function n(){throw new Error("Dynamic requires are not currently supported by rollup-plugin-commonjs")}var r,i,o=(function(e,t){e.exports=function(e){var t={};function n(r){if(t[r])return t[r].exports;var i=t[r]={i:r,l:!1,exports:{}};return e[r].call(i.exports,i,i.exports,n),i.l=!0,i.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var i in e)n.d(r,i,function(t){return e[t]}.bind(null,i));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=1)}([function(e,t){e.exports=function(e){return Array.isArray?Array.isArray(e):"[object Array]"===Object.prototype.toString.call(e)}},function(e,t,n){function r(e){return(r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}var i=n(2),o=n(8),a=n(0),l=function(){function e(t,n){var r=n.location,i=void 0===r?0:r,a=n.distance,l=void 0===a?100:a,s=n.threshold,c=void 0===s?.6:s,u=n.maxPatternLength,f=void 0===u?32:u,p=n.caseSensitive,d=void 0!==p&&p,h=n.tokenSeparator,m=void 0===h?/ +/g:h,g=n.findAllMatches,v=void 0!==g&&g,y=n.minMatchCharLength,b=void 0===y?1:y,$=n.id,k=void 0===$?null:$,w=n.keys,A=void 0===w?[]:w,x=n.shouldSort,S=void 0===x||x,O=n.getFn,_=void 0===O?o:O,C=n.sortFn,T=void 0===C?function(e,t){return e.score-t.score}:C,j=n.tokenize,M=void 0!==j&&j,I=n.matchAllTokens,E=void 0!==I&&I,N=n.includeMatches,L=void 0!==N&&N,F=n.includeScore,B=void 0!==F&&F,H=n.verbose,D=void 0!==H&&H;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.options={location:i,distance:l,threshold:c,maxPatternLength:f,isCaseSensitive:d,tokenSeparator:m,findAllMatches:v,minMatchCharLength:b,id:k,keys:A,includeMatches:L,includeScore:B,shouldSort:S,getFn:_,sortFn:T,verbose:D,tokenize:M,matchAllTokens:E},this.setCollection(t)}var t,n;return t=e,(n=[{key:"setCollection",value:function(e){return this.list=e,e}},{key:"search",value:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{limit:!1};this._log('---------\nSearch pattern: "'.concat(e,'"'));var n=this._prepareSearchers(e),r=n.tokenSearchers,i=n.fullSearcher,o=this._search(r,i),a=o.weights,l=o.results;return this._computeScore(a,l),this.options.shouldSort&&this._sort(l),t.limit&&"number"==typeof t.limit&&(l=l.slice(0,t.limit)),this._format(l)}},{key:"_prepareSearchers",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=[];if(this.options.tokenize)for(var n=e.split(this.options.tokenSeparator),r=0,o=n.length;r<o;r+=1)t.push(new i(n[r],this.options));return{tokenSearchers:t,fullSearcher:new i(e,this.options)}}},{key:"_search",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],t=arguments.length>1?arguments[1]:void 0,n=this.list,r={},i=[];if("string"==typeof n[0]){for(var o=0,a=n.length;o<a;o+=1)this._analyze({key:"",value:n[o],record:o,index:o},{resultMap:r,results:i,tokenSearchers:e,fullSearcher:t});return{weights:null,results:i}}for(var l={},s=0,c=n.length;s<c;s+=1)for(var u=n[s],f=0,p=this.options.keys.length;f<p;f+=1){var d=this.options.keys[f];if("string"!=typeof d){if(l[d.name]={weight:1-d.weight||1},d.weight<=0||d.weight>1)throw new Error("Key weight has to be > 0 and <= 1");d=d.name}else l[d]={weight:1};this._analyze({key:d,value:this.options.getFn(u,d),record:u,index:s},{resultMap:r,results:i,tokenSearchers:e,fullSearcher:t})}return{weights:l,results:i}}},{key:"_analyze",value:function(e,t){var n=e.key,r=e.arrayIndex,i=void 0===r?-1:r,o=e.value,l=e.record,s=e.index,c=t.tokenSearchers,u=void 0===c?[]:c,f=t.fullSearcher,p=void 0===f?[]:f,d=t.resultMap,h=void 0===d?{}:d,m=t.results,g=void 0===m?[]:m;if(null!=o){var v=!1,y=-1,b=0;if("string"==typeof o){this._log("\nKey: ".concat(""===n?"-":n));var $=p.search(o);if(this._log('Full text: "'.concat(o,'", score: ').concat($.score)),this.options.tokenize){for(var k=o.split(this.options.tokenSeparator),w=[],A=0;A<u.length;A+=1){var x=u[A];this._log('\nPattern: "'.concat(x.pattern,'"'));for(var S=!1,O=0;O<k.length;O+=1){var _=k[O],C=x.search(_),T={};C.isMatch?(T[_]=C.score,v=!0,S=!0,w.push(C.score)):(T[_]=1,this.options.matchAllTokens||w.push(1)),this._log('Token: "'.concat(_,'", score: ').concat(T[_]))}S&&(b+=1)}y=w[0];for(var j=w.length,M=1;M<j;M+=1)y+=w[M];y/=j,this._log("Token score average:",y)}var I=$.score;y>-1&&(I=(I+y)/2),this._log("Score average:",I);var E=!this.options.tokenize||!this.options.matchAllTokens||b>=u.length;if(this._log("\nCheck Matches: ".concat(E)),(v||$.isMatch)&&E){var N=h[s];N?N.output.push({key:n,arrayIndex:i,value:o,score:I,matchedIndices:$.matchedIndices}):(h[s]={item:l,output:[{key:n,arrayIndex:i,value:o,score:I,matchedIndices:$.matchedIndices}]},g.push(h[s]))}}else if(a(o))for(var L=0,F=o.length;L<F;L+=1)this._analyze({key:n,arrayIndex:L,value:o[L],record:l,index:s},{resultMap:h,results:g,tokenSearchers:u,fullSearcher:p})}}},{key:"_computeScore",value:function(e,t){this._log("\n\nComputing score:\n");for(var n=0,r=t.length;n<r;n+=1){for(var i=t[n].output,o=i.length,a=1,l=1,s=0;s<o;s+=1){var c=e?e[i[s].key].weight:1,u=(1===c?i[s].score:i[s].score||.001)*c;1!==c?l=Math.min(l,u):(i[s].nScore=u,a*=u)}t[n].score=1===l?a:l,this._log(t[n])}}},{key:"_sort",value:function(e){this._log("\n\nSorting...."),e.sort(this.options.sortFn)}},{key:"_format",value:function(e){var t=[];if(this.options.verbose){var n=[];this._log("\n\nOutput:\n\n",JSON.stringify(e,function(e,t){if("object"===r(t)&&null!==t){if(-1!==n.indexOf(t))return;n.push(t)}return t})),n=null}var i=[];this.options.includeMatches&&i.push(function(e,t){var n=e.output;t.matches=[];for(var r=0,i=n.length;r<i;r+=1){var o=n[r];if(0!==o.matchedIndices.length){var a={indices:o.matchedIndices,value:o.value};o.key&&(a.key=o.key),o.hasOwnProperty("arrayIndex")&&o.arrayIndex>-1&&(a.arrayIndex=o.arrayIndex),t.matches.push(a)}}}),this.options.includeScore&&i.push(function(e,t){t.score=e.score});for(var o=0,a=e.length;o<a;o+=1){var l=e[o];if(this.options.id&&(l.item=this.options.getFn(l.item,this.options.id)[0]),i.length){for(var s={item:l.item},c=0,u=i.length;c<u;c+=1)i[c](l,s);t.push(s)}else t.push(l.item)}return t}},{key:"_log",value:function(){var e;this.options.verbose&&(e=console).log.apply(e,arguments)}}])&&function(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}(t.prototype,n),e}();e.exports=l},function(e,t,n){var r=n(3),i=n(4),o=n(7),a=function(){function e(t,n){var r=n.location,i=void 0===r?0:r,a=n.distance,l=void 0===a?100:a,s=n.threshold,c=void 0===s?.6:s,u=n.maxPatternLength,f=void 0===u?32:u,p=n.isCaseSensitive,d=void 0!==p&&p,h=n.tokenSeparator,m=void 0===h?/ +/g:h,g=n.findAllMatches,v=void 0!==g&&g,y=n.minMatchCharLength,b=void 0===y?1:y;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.options={location:i,distance:l,threshold:c,maxPatternLength:f,isCaseSensitive:d,tokenSeparator:m,findAllMatches:v,minMatchCharLength:b},this.pattern=this.options.isCaseSensitive?t:t.toLowerCase(),this.pattern.length<=f&&(this.patternAlphabet=o(this.pattern))}var t,n;return t=e,(n=[{key:"search",value:function(e){if(this.options.isCaseSensitive||(e=e.toLowerCase()),this.pattern===e)return{isMatch:!0,score:0,matchedIndices:[[0,e.length-1]]};var t=this.options,n=t.maxPatternLength,o=t.tokenSeparator;if(this.pattern.length>n)return r(e,this.pattern,o);var a=this.options,l=a.location,s=a.distance,c=a.threshold,u=a.findAllMatches,f=a.minMatchCharLength;return i(e,this.pattern,this.patternAlphabet,{location:l,distance:s,threshold:c,findAllMatches:u,minMatchCharLength:f})}}])&&function(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}(t.prototype,n),e}();e.exports=a},function(e,t){var n=/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g;e.exports=function(e,t){var r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:/ +/g,i=new RegExp(t.replace(n,"\\$&").replace(r,"|")),o=e.match(i),a=!!o,l=[];if(a)for(var s=0,c=o.length;s<c;s+=1){var u=o[s];l.push([e.indexOf(u),u.length-1])}return{score:a?.5:1,isMatch:a,matchedIndices:l}}},function(e,t,n){var r=n(5),i=n(6);e.exports=function(e,t,n,o){for(var a=o.location,l=void 0===a?0:a,s=o.distance,c=void 0===s?100:s,u=o.threshold,f=void 0===u?.6:u,p=o.findAllMatches,d=void 0!==p&&p,h=o.minMatchCharLength,m=void 0===h?1:h,g=l,v=e.length,y=f,b=e.indexOf(t,g),$=t.length,k=[],w=0;w<v;w+=1)k[w]=0;if(-1!==b){var A=r(t,{errors:0,currentLocation:b,expectedLocation:g,distance:c});if(y=Math.min(A,y),-1!==(b=e.lastIndexOf(t,g+$))){var x=r(t,{errors:0,currentLocation:b,expectedLocation:g,distance:c});y=Math.min(x,y)}}b=-1;for(var S=[],O=1,_=$+v,C=1<<$-1,T=0;T<$;T+=1){for(var j=0,M=_;j<M;)r(t,{errors:T,currentLocation:g+M,expectedLocation:g,distance:c})<=y?j=M:_=M,M=Math.floor((_-j)/2+j);_=M;var I=Math.max(1,g-M+1),E=d?v:Math.min(g+M,v)+$,N=Array(E+2);N[E+1]=(1<<T)-1;for(var L=E;L>=I;L-=1){var F=L-1,B=n[e.charAt(F)];if(B&&(k[F]=1),N[L]=(N[L+1]<<1|1)&B,0!==T&&(N[L]|=(S[L+1]|S[L])<<1|1|S[L+1]),N[L]&C&&(O=r(t,{errors:T,currentLocation:F,expectedLocation:g,distance:c}))<=y){if(y=O,(b=F)<=g)break;I=Math.max(1,2*g-b)}}if(r(t,{errors:T+1,currentLocation:g,expectedLocation:g,distance:c})>y)break;S=N}return{isMatch:b>=0,score:0===O?.001:O,matchedIndices:i(k,m)}}},function(e,t){e.exports=function(e,t){var n=t.errors,r=void 0===n?0:n,i=t.currentLocation,o=void 0===i?0:i,a=t.expectedLocation,l=void 0===a?0:a,s=t.distance,c=void 0===s?100:s,u=r/e.length,f=Math.abs(l-o);return c?u+f/c:f?1:u}},function(e,t){e.exports=function(){for(var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:1,n=[],r=-1,i=-1,o=0,a=e.length;o<a;o+=1){var l=e[o];l&&-1===r?r=o:l||-1===r||((i=o-1)-r+1>=t&&n.push([r,i]),r=-1)}return e[o-1]&&o-r>=t&&n.push([r,o-1]),n}},function(e,t){e.exports=function(e){for(var t={},n=e.length,r=0;r<n;r+=1)t[e.charAt(r)]=0;for(var i=0;i<n;i+=1)t[e.charAt(i)]|=1<<n-i-1;return t}},function(e,t,n){var r=n(0);e.exports=function(e,t){return function e(t,n,i){if(n){var o=n.indexOf("."),a=n,l=null;-1!==o&&(a=n.slice(0,o),l=n.slice(o+1));var s=t[a];if(null!=s)if(l||"string"!=typeof s&&"number"!=typeof s)if(r(s))for(var c=0,u=s.length;c<u;c+=1)e(s[c],l,i);else l&&e(s,l,i);else i.push(s.toString())}else i.push(t);return i}(e,t,[])}}])}(r={exports:{}},r.exports),r.exports),a=(i=o)&&i.__esModule&&Object.prototype.hasOwnProperty.call(i,"default")?i.default:i;o.Fuse;function l(e){return null==e}var s={isNothing:l,isObject:function(e){return"object"==typeof e&&null!==e},toArray:function(e){return Array.isArray(e)?e:l(e)?[]:[e]},repeat:function(e,t){var n,r="";for(n=0;n<t;n+=1)r+=e;return r},isNegativeZero:function(e){return 0===e&&Number.NEGATIVE_INFINITY===1/e},extend:function(e,t){var n,r,i,o;if(t)for(n=0,r=(o=Object.keys(t)).length;n<r;n+=1)e[i=o[n]]=t[i];return e}};function c(e,t){Error.call(this),this.name="YAMLException",this.reason=e,this.mark=t,this.message=(this.reason||"(unknown reason)")+(this.mark?" "+this.mark.toString():""),Error.captureStackTrace?Error.captureStackTrace(this,this.constructor):this.stack=(new Error).stack||""}c.prototype=Object.create(Error.prototype),c.prototype.constructor=c,c.prototype.toString=function(e){var t=this.name+": ";return t+=this.reason||"(unknown reason)",!e&&this.mark&&(t+=" "+this.mark.toString()),t};var u=c;function f(e,t,n,r,i){this.name=e,this.buffer=t,this.position=n,this.line=r,this.column=i}f.prototype.getSnippet=function(e,t){var n,r,i,o,a;if(!this.buffer)return null;for(e=e||4,t=t||75,n="",r=this.position;r>0&&-1==="\0\r\n\u2028\u2029".indexOf(this.buffer.charAt(r-1));)if(r-=1,this.position-r>t/2-1){n=" ... ",r+=5;break}for(i="",o=this.position;o<this.buffer.length&&-1==="\0\r\n\u2028\u2029".indexOf(this.buffer.charAt(o));)if((o+=1)-this.position>t/2-1){i=" ... ",o-=5;break}return a=this.buffer.slice(r,o),s.repeat(" ",e)+n+a+i+"\n"+s.repeat(" ",e+this.position-r+n.length)+"^"},f.prototype.toString=function(e){var t,n="";return this.name&&(n+='in "'+this.name+'" '),n+="at line "+(this.line+1)+", column "+(this.column+1),e||(t=this.getSnippet())&&(n+=":\n"+t),n};var p=f,d=["kind","resolve","construct","instanceOf","predicate","represent","defaultStyle","styleAliases"],h=["scalar","sequence","mapping"];var m=function(e,t){var n,r;if(t=t||{},Object.keys(t).forEach(function(t){if(-1===d.indexOf(t))throw new u('Unknown option "'+t+'" is met in definition of "'+e+'" YAML type.')}),this.tag=e,this.kind=t.kind||null,this.resolve=t.resolve||function(){return!0},this.construct=t.construct||function(e){return e},this.instanceOf=t.instanceOf||null,this.predicate=t.predicate||null,this.represent=t.represent||null,this.defaultStyle=t.defaultStyle||null,this.styleAliases=(n=t.styleAliases||null,r={},null!==n&&Object.keys(n).forEach(function(e){n[e].forEach(function(t){r[String(t)]=e})}),r),-1===h.indexOf(this.kind))throw new u('Unknown kind "'+this.kind+'" is specified for "'+e+'" YAML type.')};function g(e,t,n){var r=[];return e.include.forEach(function(e){n=g(e,t,n)}),e[t].forEach(function(e){n.forEach(function(t,n){t.tag===e.tag&&t.kind===e.kind&&r.push(n)}),n.push(e)}),n.filter(function(e,t){return-1===r.indexOf(t)})}function v(e){this.include=e.include||[],this.implicit=e.implicit||[],this.explicit=e.explicit||[],this.implicit.forEach(function(e){if(e.loadKind&&"scalar"!==e.loadKind)throw new u("There is a non-scalar type in the implicit list of a schema. Implicit resolving of such types is not supported.")}),this.compiledImplicit=g(this,"implicit",[]),this.compiledExplicit=g(this,"explicit",[]),this.compiledTypeMap=function(){var e,t,n={scalar:{},sequence:{},mapping:{},fallback:{}};function r(e){n[e.kind][e.tag]=n.fallback[e.tag]=e}for(e=0,t=arguments.length;e<t;e+=1)arguments[e].forEach(r);return n}(this.compiledImplicit,this.compiledExplicit)}v.DEFAULT=null,v.create=function(){var e,t;switch(arguments.length){case 1:e=v.DEFAULT,t=arguments[0];break;case 2:e=arguments[0],t=arguments[1];break;default:throw new u("Wrong number of arguments for Schema.create function")}if(e=s.toArray(e),t=s.toArray(t),!e.every(function(e){return e instanceof v}))throw new u("Specified list of super schemas (or a single Schema object) contains a non-Schema object.");if(!t.every(function(e){return e instanceof m}))throw new u("Specified list of YAML types (or a single Type object) contains a non-Type object.");return new v({include:e,explicit:t})};var y=v,b=new y({explicit:[new m("tag:yaml.org,2002:str",{kind:"scalar",construct:function(e){return null!==e?e:""}}),new m("tag:yaml.org,2002:seq",{kind:"sequence",construct:function(e){return null!==e?e:[]}}),new m("tag:yaml.org,2002:map",{kind:"mapping",construct:function(e){return null!==e?e:{}}})]});var $=new m("tag:yaml.org,2002:null",{kind:"scalar",resolve:function(e){if(null===e)return!0;var t=e.length;return 1===t&&"~"===e||4===t&&("null"===e||"Null"===e||"NULL"===e)},construct:function(){return null},predicate:function(e){return null===e},represent:{canonical:function(){return"~"},lowercase:function(){return"null"},uppercase:function(){return"NULL"},camelcase:function(){return"Null"}},defaultStyle:"lowercase"});var k=new m("tag:yaml.org,2002:bool",{kind:"scalar",resolve:function(e){if(null===e)return!1;var t=e.length;return 4===t&&("true"===e||"True"===e||"TRUE"===e)||5===t&&("false"===e||"False"===e||"FALSE"===e)},construct:function(e){return"true"===e||"True"===e||"TRUE"===e},predicate:function(e){return"[object Boolean]"===Object.prototype.toString.call(e)},represent:{lowercase:function(e){return e?"true":"false"},uppercase:function(e){return e?"TRUE":"FALSE"},camelcase:function(e){return e?"True":"False"}},defaultStyle:"lowercase"});function w(e){return 48<=e&&e<=55}function A(e){return 48<=e&&e<=57}var x=new m("tag:yaml.org,2002:int",{kind:"scalar",resolve:function(e){if(null===e)return!1;var t,n,r=e.length,i=0,o=!1;if(!r)return!1;if("-"!==(t=e[i])&&"+"!==t||(t=e[++i]),"0"===t){if(i+1===r)return!0;if("b"===(t=e[++i])){for(i++;i<r;i++)if("_"!==(t=e[i])){if("0"!==t&&"1"!==t)return!1;o=!0}return o&&"_"!==t}if("x"===t){for(i++;i<r;i++)if("_"!==(t=e[i])){if(!(48<=(n=e.charCodeAt(i))&&n<=57||65<=n&&n<=70||97<=n&&n<=102))return!1;o=!0}return o&&"_"!==t}for(;i<r;i++)if("_"!==(t=e[i])){if(!w(e.charCodeAt(i)))return!1;o=!0}return o&&"_"!==t}if("_"===t)return!1;for(;i<r;i++)if("_"!==(t=e[i])){if(":"===t)break;if(!A(e.charCodeAt(i)))return!1;o=!0}return!(!o||"_"===t)&&(":"!==t||/^(:[0-5]?[0-9])+$/.test(e.slice(i)))},construct:function(e){var t,n,r=e,i=1,o=[];return-1!==r.indexOf("_")&&(r=r.replace(/_/g,"")),"-"!==(t=r[0])&&"+"!==t||("-"===t&&(i=-1),t=(r=r.slice(1))[0]),"0"===r?0:"0"===t?"b"===r[1]?i*parseInt(r.slice(2),2):"x"===r[1]?i*parseInt(r,16):i*parseInt(r,8):-1!==r.indexOf(":")?(r.split(":").forEach(function(e){o.unshift(parseInt(e,10))}),r=0,n=1,o.forEach(function(e){r+=e*n,n*=60}),i*r):i*parseInt(r,10)},predicate:function(e){return"[object Number]"===Object.prototype.toString.call(e)&&e%1==0&&!s.isNegativeZero(e)},represent:{binary:function(e){return e>=0?"0b"+e.toString(2):"-0b"+e.toString(2).slice(1)},octal:function(e){return e>=0?"0"+e.toString(8):"-0"+e.toString(8).slice(1)},decimal:function(e){return e.toString(10)},hexadecimal:function(e){return e>=0?"0x"+e.toString(16).toUpperCase():"-0x"+e.toString(16).toUpperCase().slice(1)}},defaultStyle:"decimal",styleAliases:{binary:[2,"bin"],octal:[8,"oct"],decimal:[10,"dec"],hexadecimal:[16,"hex"]}}),S=new RegExp("^(?:[-+]?(?:0|[1-9][0-9_]*)(?:\\.[0-9_]*)?(?:[eE][-+]?[0-9]+)?|\\.[0-9_]+(?:[eE][-+]?[0-9]+)?|[-+]?[0-9][0-9_]*(?::[0-5]?[0-9])+\\.[0-9_]*|[-+]?\\.(?:inf|Inf|INF)|\\.(?:nan|NaN|NAN))$");var O=/^[-+]?[0-9]+e/;var _=new y({include:[b],implicit:[$,k,x,new m("tag:yaml.org,2002:float",{kind:"scalar",resolve:function(e){return null!==e&&!(!S.test(e)||"_"===e[e.length-1])},construct:function(e){var t,n,r,i;return n="-"===(t=e.replace(/_/g,"").toLowerCase())[0]?-1:1,i=[],"+-".indexOf(t[0])>=0&&(t=t.slice(1)),".inf"===t?1===n?Number.POSITIVE_INFINITY:Number.NEGATIVE_INFINITY:".nan"===t?NaN:t.indexOf(":")>=0?(t.split(":").forEach(function(e){i.unshift(parseFloat(e,10))}),t=0,r=1,i.forEach(function(e){t+=e*r,r*=60}),n*t):n*parseFloat(t,10)},predicate:function(e){return"[object Number]"===Object.prototype.toString.call(e)&&(e%1!=0||s.isNegativeZero(e))},represent:function(e,t){var n;if(isNaN(e))switch(t){case"lowercase":return".nan";case"uppercase":return".NAN";case"camelcase":return".NaN"}else if(Number.POSITIVE_INFINITY===e)switch(t){case"lowercase":return".inf";case"uppercase":return".INF";case"camelcase":return".Inf"}else if(Number.NEGATIVE_INFINITY===e)switch(t){case"lowercase":return"-.inf";case"uppercase":return"-.INF";case"camelcase":return"-.Inf"}else if(s.isNegativeZero(e))return"-0.0";return n=e.toString(10),O.test(n)?n.replace("e",".e"):n},defaultStyle:"lowercase"})]}),C=new y({include:[_]}),T=new RegExp("^([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])$"),j=new RegExp("^([0-9][0-9][0-9][0-9])-([0-9][0-9]?)-([0-9][0-9]?)(?:[Tt]|[ \\t]+)([0-9][0-9]?):([0-9][0-9]):([0-9][0-9])(?:\\.([0-9]*))?(?:[ \\t]*(Z|([-+])([0-9][0-9]?)(?::([0-9][0-9]))?))?$");var M=new m("tag:yaml.org,2002:timestamp",{kind:"scalar",resolve:function(e){return null!==e&&(null!==T.exec(e)||null!==j.exec(e))},construct:function(e){var t,n,r,i,o,a,l,s,c=0,u=null;if(null===(t=T.exec(e))&&(t=j.exec(e)),null===t)throw new Error("Date resolve error");if(n=+t[1],r=+t[2]-1,i=+t[3],!t[4])return new Date(Date.UTC(n,r,i));if(o=+t[4],a=+t[5],l=+t[6],t[7]){for(c=t[7].slice(0,3);c.length<3;)c+="0";c=+c}return t[9]&&(u=6e4*(60*+t[10]+ +(t[11]||0)),"-"===t[9]&&(u=-u)),s=new Date(Date.UTC(n,r,i,o,a,l,c)),u&&s.setTime(s.getTime()-u),s},instanceOf:Date,represent:function(e){return e.toISOString()}});var I,E=new m("tag:yaml.org,2002:merge",{kind:"scalar",resolve:function(e){return"<<"===e||null===e}});try{I=n("buffer").Buffer}catch(e){}var N="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=\n\r";var L=new m("tag:yaml.org,2002:binary",{kind:"scalar",resolve:function(e){if(null===e)return!1;var t,n,r=0,i=e.length,o=N;for(n=0;n<i;n++)if(!((t=o.indexOf(e.charAt(n)))>64)){if(t<0)return!1;r+=6}return r%8==0},construct:function(e){var t,n,r=e.replace(/[\r\n=]/g,""),i=r.length,o=N,a=0,l=[];for(t=0;t<i;t++)t%4==0&&t&&(l.push(a>>16&255),l.push(a>>8&255),l.push(255&a)),a=a<<6|o.indexOf(r.charAt(t));return 0==(n=i%4*6)?(l.push(a>>16&255),l.push(a>>8&255),l.push(255&a)):18===n?(l.push(a>>10&255),l.push(a>>2&255)):12===n&&l.push(a>>4&255),I?I.from?I.from(l):new I(l):l},predicate:function(e){return I&&I.isBuffer(e)},represent:function(e){var t,n,r="",i=0,o=e.length,a=N;for(t=0;t<o;t++)t%3==0&&t&&(r+=a[i>>18&63],r+=a[i>>12&63],r+=a[i>>6&63],r+=a[63&i]),i=(i<<8)+e[t];return 0==(n=o%3)?(r+=a[i>>18&63],r+=a[i>>12&63],r+=a[i>>6&63],r+=a[63&i]):2===n?(r+=a[i>>10&63],r+=a[i>>4&63],r+=a[i<<2&63],r+=a[64]):1===n&&(r+=a[i>>2&63],r+=a[i<<4&63],r+=a[64],r+=a[64]),r}}),F=Object.prototype.hasOwnProperty,B=Object.prototype.toString;var H=new m("tag:yaml.org,2002:omap",{kind:"sequence",resolve:function(e){if(null===e)return!0;var t,n,r,i,o,a=[],l=e;for(t=0,n=l.length;t<n;t+=1){if(r=l[t],o=!1,"[object Object]"!==B.call(r))return!1;for(i in r)if(F.call(r,i)){if(o)return!1;o=!0}if(!o)return!1;if(-1!==a.indexOf(i))return!1;a.push(i)}return!0},construct:function(e){return null!==e?e:[]}}),D=Object.prototype.toString;var z=new m("tag:yaml.org,2002:pairs",{kind:"sequence",resolve:function(e){if(null===e)return!0;var t,n,r,i,o,a=e;for(o=new Array(a.length),t=0,n=a.length;t<n;t+=1){if(r=a[t],"[object Object]"!==D.call(r))return!1;if(1!==(i=Object.keys(r)).length)return!1;o[t]=[i[0],r[i[0]]]}return!0},construct:function(e){if(null===e)return[];var t,n,r,i,o,a=e;for(o=new Array(a.length),t=0,n=a.length;t<n;t+=1)r=a[t],i=Object.keys(r),o[t]=[i[0],r[i[0]]];return o}}),q=Object.prototype.hasOwnProperty;var P=new y({include:[C],implicit:[M,E],explicit:[L,H,z,new m("tag:yaml.org,2002:set",{kind:"mapping",resolve:function(e){if(null===e)return!0;var t,n=e;for(t in n)if(q.call(n,t)&&null!==n[t])return!1;return!0},construct:function(e){return null!==e?e:{}}})]});var R=new m("tag:yaml.org,2002:js/undefined",{kind:"scalar",resolve:function(){return!0},construct:function(){},predicate:function(e){return void 0===e},represent:function(){return""}});var W,G=new m("tag:yaml.org,2002:js/regexp",{kind:"scalar",resolve:function(e){if(null===e)return!1;if(0===e.length)return!1;var t=e,n=/\/([gim]*)$/.exec(e),r="";if("/"===t[0]){if(n&&(r=n[1]),r.length>3)return!1;if("/"!==t[t.length-r.length-1])return!1}return!0},construct:function(e){var t=e,n=/\/([gim]*)$/.exec(e),r="";return"/"===t[0]&&(n&&(r=n[1]),t=t.slice(1,t.length-r.length-1)),new RegExp(t,r)},predicate:function(e){return"[object RegExp]"===Object.prototype.toString.call(e)},represent:function(e){var t="/"+e.source+"/";return e.global&&(t+="g"),e.multiline&&(t+="m"),e.ignoreCase&&(t+="i"),t}});try{W=n("esprima")}catch(e){"undefined"!=typeof window&&(W=window.esprima)}var U=new m("tag:yaml.org,2002:js/function",{kind:"scalar",resolve:function(e){if(null===e)return!1;try{var t="("+e+")",n=W.parse(t,{range:!0});return"Program"===n.type&&1===n.body.length&&"ExpressionStatement"===n.body[0].type&&("ArrowFunctionExpression"===n.body[0].expression.type||"FunctionExpression"===n.body[0].expression.type)}catch(e){return!1}},construct:function(e){var t,n="("+e+")",r=W.parse(n,{range:!0}),i=[];if("Program"!==r.type||1!==r.body.length||"ExpressionStatement"!==r.body[0].type||"ArrowFunctionExpression"!==r.body[0].expression.type&&"FunctionExpression"!==r.body[0].expression.type)throw new Error("Failed to resolve function");return r.body[0].expression.params.forEach(function(e){i.push(e.name)}),t=r.body[0].expression.body.range,"BlockStatement"===r.body[0].expression.body.type?new Function(i,n.slice(t[0]+1,t[1]-1)):new Function(i,"return "+n.slice(t[0],t[1]))},predicate:function(e){return"[object Function]"===Object.prototype.toString.call(e)},represent:function(e){return e.toString()}}),V=y.DEFAULT=new y({include:[P],explicit:[R,G,U]}),K=Object.prototype.hasOwnProperty,Y=1,Z=2,X=3,J=4,Q=1,ee=2,te=3,ne=/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x84\x86-\x9F\uFFFE\uFFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]/,re=/[\x85\u2028\u2029]/,ie=/[,\[\]\{\}]/,oe=/^(?:!|!!|![a-z\-]+!)$/i,ae=/^(?:!|[^,\[\]\{\}])(?:%[0-9a-f]{2}|[0-9a-z\-#;\/\?:@&=\+\$,_\.!~\*'\(\)\[\]])*$/i;function le(e){return Object.prototype.toString.call(e)}function se(e){return 10===e||13===e}function ce(e){return 9===e||32===e}function ue(e){return 9===e||32===e||10===e||13===e}function fe(e){return 44===e||91===e||93===e||123===e||125===e}function pe(e){var t;return 48<=e&&e<=57?e-48:97<=(t=32|e)&&t<=102?t-97+10:-1}function de(e){return 48===e?"\0":97===e?"":98===e?"\b":116===e?"\t":9===e?"\t":110===e?"\n":118===e?"\v":102===e?"\f":114===e?"\r":101===e?"":32===e?" ":34===e?'"':47===e?"/":92===e?"\\":78===e?"":95===e?" ":76===e?"\u2028":80===e?"\u2029":""}function he(e){return e<=65535?String.fromCharCode(e):String.fromCharCode(55296+(e-65536>>10),56320+(e-65536&1023))}for(var me=new Array(256),ge=new Array(256),ve=0;ve<256;ve++)me[ve]=de(ve)?1:0,ge[ve]=de(ve);function ye(e,t){this.input=e,this.filename=t.filename||null,this.schema=t.schema||V,this.onWarning=t.onWarning||null,this.legacy=t.legacy||!1,this.json=t.json||!1,this.listener=t.listener||null,this.implicitTypes=this.schema.compiledImplicit,this.typeMap=this.schema.compiledTypeMap,this.length=e.length,this.position=0,this.line=0,this.lineStart=0,this.lineIndent=0,this.documents=[]}function be(e,t){return new u(t,new p(e.filename,e.input,e.position,e.line,e.position-e.lineStart))}function $e(e,t){throw be(e,t)}function ke(e,t){e.onWarning&&e.onWarning.call(null,be(e,t))}var we={YAML:function(e,t,n){var r,i,o;null!==e.version&&$e(e,"duplication of %YAML directive"),1!==n.length&&$e(e,"YAML directive accepts exactly one argument"),null===(r=/^([0-9]+)\.([0-9]+)$/.exec(n[0]))&&$e(e,"ill-formed argument of the YAML directive"),i=parseInt(r[1],10),o=parseInt(r[2],10),1!==i&&$e(e,"unacceptable YAML version of the document"),e.version=n[0],e.checkLineBreaks=o<2,1!==o&&2!==o&&ke(e,"unsupported YAML version of the document")},TAG:function(e,t,n){var r,i;2!==n.length&&$e(e,"TAG directive accepts exactly two arguments"),r=n[0],i=n[1],oe.test(r)||$e(e,"ill-formed tag handle (first argument) of the TAG directive"),K.call(e.tagMap,r)&&$e(e,'there is a previously declared suffix for "'+r+'" tag handle'),ae.test(i)||$e(e,"ill-formed tag prefix (second argument) of the TAG directive"),e.tagMap[r]=i}};function Ae(e,t,n,r){var i,o,a,l;if(t<n){if(l=e.input.slice(t,n),r)for(i=0,o=l.length;i<o;i+=1)9===(a=l.charCodeAt(i))||32<=a&&a<=1114111||$e(e,"expected valid JSON character");else ne.test(l)&&$e(e,"the stream contains non-printable characters");e.result+=l}}function xe(e,t,n,r){var i,o,a,l;for(s.isObject(n)||$e(e,"cannot merge mappings; the provided source object is unacceptable"),a=0,l=(i=Object.keys(n)).length;a<l;a+=1)o=i[a],K.call(t,o)||(t[o]=n[o],r[o]=!0)}function Se(e,t,n,r,i,o,a,l){var s,c;if(Array.isArray(i))for(s=0,c=(i=Array.prototype.slice.call(i)).length;s<c;s+=1)Array.isArray(i[s])&&$e(e,"nested arrays are not supported inside keys"),"object"==typeof i&&"[object Object]"===le(i[s])&&(i[s]="[object Object]");if("object"==typeof i&&"[object Object]"===le(i)&&(i="[object Object]"),i=String(i),null===t&&(t={}),"tag:yaml.org,2002:merge"===r)if(Array.isArray(o))for(s=0,c=o.length;s<c;s+=1)xe(e,t,o[s],n);else xe(e,t,o,n);else e.json||K.call(n,i)||!K.call(t,i)||(e.line=a||e.line,e.position=l||e.position,$e(e,"duplicated mapping key")),t[i]=o,delete n[i];return t}function Oe(e){var t;10===(t=e.input.charCodeAt(e.position))?e.position++:13===t?(e.position++,10===e.input.charCodeAt(e.position)&&e.position++):$e(e,"a line break is expected"),e.line+=1,e.lineStart=e.position}function _e(e,t,n){for(var r=0,i=e.input.charCodeAt(e.position);0!==i;){for(;ce(i);)i=e.input.charCodeAt(++e.position);if(t&&35===i)do{i=e.input.charCodeAt(++e.position)}while(10!==i&&13!==i&&0!==i);if(!se(i))break;for(Oe(e),i=e.input.charCodeAt(e.position),r++,e.lineIndent=0;32===i;)e.lineIndent++,i=e.input.charCodeAt(++e.position)}return-1!==n&&0!==r&&e.lineIndent<n&&ke(e,"deficient indentation"),r}function Ce(e){var t,n=e.position;return!(45!==(t=e.input.charCodeAt(n))&&46!==t||t!==e.input.charCodeAt(n+1)||t!==e.input.charCodeAt(n+2)||(n+=3,0!==(t=e.input.charCodeAt(n))&&!ue(t)))}function Te(e,t){1===t?e.result+=" ":t>1&&(e.result+=s.repeat("\n",t-1))}function je(e,t){var n,r,i=e.tag,o=e.anchor,a=[],l=!1;for(null!==e.anchor&&(e.anchorMap[e.anchor]=a),r=e.input.charCodeAt(e.position);0!==r&&45===r&&ue(e.input.charCodeAt(e.position+1));)if(l=!0,e.position++,_e(e,!0,-1)&&e.lineIndent<=t)a.push(null),r=e.input.charCodeAt(e.position);else if(n=e.line,Ee(e,t,X,!1,!0),a.push(e.result),_e(e,!0,-1),r=e.input.charCodeAt(e.position),(e.line===n||e.lineIndent>t)&&0!==r)$e(e,"bad indentation of a sequence entry");else if(e.lineIndent<t)break;return!!l&&(e.tag=i,e.anchor=o,e.kind="sequence",e.result=a,!0)}function Me(e){var t,n,r,i,o=!1,a=!1;if(33!==(i=e.input.charCodeAt(e.position)))return!1;if(null!==e.tag&&$e(e,"duplication of a tag property"),60===(i=e.input.charCodeAt(++e.position))?(o=!0,i=e.input.charCodeAt(++e.position)):33===i?(a=!0,n="!!",i=e.input.charCodeAt(++e.position)):n="!",t=e.position,o){do{i=e.input.charCodeAt(++e.position)}while(0!==i&&62!==i);e.position<e.length?(r=e.input.slice(t,e.position),i=e.input.charCodeAt(++e.position)):$e(e,"unexpected end of the stream within a verbatim tag")}else{for(;0!==i&&!ue(i);)33===i&&(a?$e(e,"tag suffix cannot contain exclamation marks"):(n=e.input.slice(t-1,e.position+1),oe.test(n)||$e(e,"named tag handle cannot contain such characters"),a=!0,t=e.position+1)),i=e.input.charCodeAt(++e.position);r=e.input.slice(t,e.position),ie.test(r)&&$e(e,"tag suffix cannot contain flow indicator characters")}return r&&!ae.test(r)&&$e(e,"tag name cannot contain such characters: "+r),o?e.tag=r:K.call(e.tagMap,n)?e.tag=e.tagMap[n]+r:"!"===n?e.tag="!"+r:"!!"===n?e.tag="tag:yaml.org,2002:"+r:$e(e,'undeclared tag handle "'+n+'"'),!0}function Ie(e){var t,n;if(38!==(n=e.input.charCodeAt(e.position)))return!1;for(null!==e.anchor&&$e(e,"duplication of an anchor property"),n=e.input.charCodeAt(++e.position),t=e.position;0!==n&&!ue(n)&&!fe(n);)n=e.input.charCodeAt(++e.position);return e.position===t&&$e(e,"name of an anchor node must contain at least one character"),e.anchor=e.input.slice(t,e.position),!0}function Ee(e,t,n,r,i){var o,a,l,c,u,f,p,d,h=1,m=!1,g=!1;if(null!==e.listener&&e.listener("open",e),e.tag=null,e.anchor=null,e.kind=null,e.result=null,o=a=l=J===n||X===n,r&&_e(e,!0,-1)&&(m=!0,e.lineIndent>t?h=1:e.lineIndent===t?h=0:e.lineIndent<t&&(h=-1)),1===h)for(;Me(e)||Ie(e);)_e(e,!0,-1)?(m=!0,l=o,e.lineIndent>t?h=1:e.lineIndent===t?h=0:e.lineIndent<t&&(h=-1)):l=!1;if(l&&(l=m||i),1!==h&&J!==n||(p=Y===n||Z===n?t:t+1,d=e.position-e.lineStart,1===h?l&&(je(e,d)||function(e,t,n){var r,i,o,a,l,s=e.tag,c=e.anchor,u={},f={},p=null,d=null,h=null,m=!1,g=!1;for(null!==e.anchor&&(e.anchorMap[e.anchor]=u),l=e.input.charCodeAt(e.position);0!==l;){if(r=e.input.charCodeAt(e.position+1),o=e.line,a=e.position,63!==l&&58!==l||!ue(r)){if(!Ee(e,n,Z,!1,!0))break;if(e.line===o){for(l=e.input.charCodeAt(e.position);ce(l);)l=e.input.charCodeAt(++e.position);if(58===l)ue(l=e.input.charCodeAt(++e.position))||$e(e,"a whitespace character is expected after the key-value separator within a block mapping"),m&&(Se(e,u,f,p,d,null),p=d=h=null),g=!0,m=!1,i=!1,p=e.tag,d=e.result;else{if(!g)return e.tag=s,e.anchor=c,!0;$e(e,"can not read an implicit mapping pair; a colon is missed")}}else{if(!g)return e.tag=s,e.anchor=c,!0;$e(e,"can not read a block mapping entry; a multiline key may not be an implicit key")}}else 63===l?(m&&(Se(e,u,f,p,d,null),p=d=h=null),g=!0,m=!0,i=!0):m?(m=!1,i=!0):$e(e,"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line"),e.position+=1,l=r;if((e.line===o||e.lineIndent>t)&&(Ee(e,t,J,!0,i)&&(m?d=e.result:h=e.result),m||(Se(e,u,f,p,d,h,o,a),p=d=h=null),_e(e,!0,-1),l=e.input.charCodeAt(e.position)),e.lineIndent>t&&0!==l)$e(e,"bad indentation of a mapping entry");else if(e.lineIndent<t)break}return m&&Se(e,u,f,p,d,null),g&&(e.tag=s,e.anchor=c,e.kind="mapping",e.result=u),g}(e,d,p))||function(e,t){var n,r,i,o,a,l,s,c,u,f,p=!0,d=e.tag,h=e.anchor,m={};if(91===(f=e.input.charCodeAt(e.position)))i=93,l=!1,r=[];else{if(123!==f)return!1;i=125,l=!0,r={}}for(null!==e.anchor&&(e.anchorMap[e.anchor]=r),f=e.input.charCodeAt(++e.position);0!==f;){if(_e(e,!0,t),(f=e.input.charCodeAt(e.position))===i)return e.position++,e.tag=d,e.anchor=h,e.kind=l?"mapping":"sequence",e.result=r,!0;p||$e(e,"missed comma between flow collection entries"),u=null,o=a=!1,63===f&&ue(e.input.charCodeAt(e.position+1))&&(o=a=!0,e.position++,_e(e,!0,t)),n=e.line,Ee(e,t,Y,!1,!0),c=e.tag,s=e.result,_e(e,!0,t),f=e.input.charCodeAt(e.position),!a&&e.line!==n||58!==f||(o=!0,f=e.input.charCodeAt(++e.position),_e(e,!0,t),Ee(e,t,Y,!1,!0),u=e.result),l?Se(e,r,m,c,s,u):o?r.push(Se(e,null,m,c,s,u)):r.push(s),_e(e,!0,t),44===(f=e.input.charCodeAt(e.position))?(p=!0,f=e.input.charCodeAt(++e.position)):p=!1}$e(e,"unexpected end of the stream within a flow collection")}(e,p)?g=!0:(a&&function(e,t){var n,r,i,o,a,l=Q,c=!1,u=!1,f=t,p=0,d=!1;if(124===(o=e.input.charCodeAt(e.position)))r=!1;else{if(62!==o)return!1;r=!0}for(e.kind="scalar",e.result="";0!==o;)if(43===(o=e.input.charCodeAt(++e.position))||45===o)Q===l?l=43===o?te:ee:$e(e,"repeat of a chomping mode identifier");else{if(!((i=48<=(a=o)&&a<=57?a-48:-1)>=0))break;0===i?$e(e,"bad explicit indentation width of a block scalar; it cannot be less than one"):u?$e(e,"repeat of an indentation width identifier"):(f=t+i-1,u=!0)}if(ce(o)){do{o=e.input.charCodeAt(++e.position)}while(ce(o));if(35===o)do{o=e.input.charCodeAt(++e.position)}while(!se(o)&&0!==o)}for(;0!==o;){for(Oe(e),e.lineIndent=0,o=e.input.charCodeAt(e.position);(!u||e.lineIndent<f)&&32===o;)e.lineIndent++,o=e.input.charCodeAt(++e.position);if(!u&&e.lineIndent>f&&(f=e.lineIndent),se(o))p++;else{if(e.lineIndent<f){l===te?e.result+=s.repeat("\n",c?1+p:p):l===Q&&c&&(e.result+="\n");break}for(r?ce(o)?(d=!0,e.result+=s.repeat("\n",c?1+p:p)):d?(d=!1,e.result+=s.repeat("\n",p+1)):0===p?c&&(e.result+=" "):e.result+=s.repeat("\n",p):e.result+=s.repeat("\n",c?1+p:p),c=!0,u=!0,p=0,n=e.position;!se(o)&&0!==o;)o=e.input.charCodeAt(++e.position);Ae(e,n,e.position,!1)}}return!0}(e,p)||function(e,t){var n,r,i;if(39!==(n=e.input.charCodeAt(e.position)))return!1;for(e.kind="scalar",e.result="",e.position++,r=i=e.position;0!==(n=e.input.charCodeAt(e.position));)if(39===n){if(Ae(e,r,e.position,!0),39!==(n=e.input.charCodeAt(++e.position)))return!0;r=e.position,e.position++,i=e.position}else se(n)?(Ae(e,r,i,!0),Te(e,_e(e,!1,t)),r=i=e.position):e.position===e.lineStart&&Ce(e)?$e(e,"unexpected end of the document within a single quoted scalar"):(e.position++,i=e.position);$e(e,"unexpected end of the stream within a single quoted scalar")}(e,p)||function(e,t){var n,r,i,o,a,l,s;if(34!==(l=e.input.charCodeAt(e.position)))return!1;for(e.kind="scalar",e.result="",e.position++,n=r=e.position;0!==(l=e.input.charCodeAt(e.position));){if(34===l)return Ae(e,n,e.position,!0),e.position++,!0;if(92===l){if(Ae(e,n,e.position,!0),se(l=e.input.charCodeAt(++e.position)))_e(e,!1,t);else if(l<256&&me[l])e.result+=ge[l],e.position++;else if((a=120===(s=l)?2:117===s?4:85===s?8:0)>0){for(i=a,o=0;i>0;i--)(a=pe(l=e.input.charCodeAt(++e.position)))>=0?o=(o<<4)+a:$e(e,"expected hexadecimal character");e.result+=he(o),e.position++}else $e(e,"unknown escape sequence");n=r=e.position}else se(l)?(Ae(e,n,r,!0),Te(e,_e(e,!1,t)),n=r=e.position):e.position===e.lineStart&&Ce(e)?$e(e,"unexpected end of the document within a double quoted scalar"):(e.position++,r=e.position)}$e(e,"unexpected end of the stream within a double quoted scalar")}(e,p)?g=!0:!function(e){var t,n,r;if(42!==(r=e.input.charCodeAt(e.position)))return!1;for(r=e.input.charCodeAt(++e.position),t=e.position;0!==r&&!ue(r)&&!fe(r);)r=e.input.charCodeAt(++e.position);return e.position===t&&$e(e,"name of an alias node must contain at least one character"),n=e.input.slice(t,e.position),e.anchorMap.hasOwnProperty(n)||$e(e,'unidentified alias "'+n+'"'),e.result=e.anchorMap[n],_e(e,!0,-1),!0}(e)?function(e,t,n){var r,i,o,a,l,s,c,u,f=e.kind,p=e.result;if(ue(u=e.input.charCodeAt(e.position))||fe(u)||35===u||38===u||42===u||33===u||124===u||62===u||39===u||34===u||37===u||64===u||96===u)return!1;if((63===u||45===u)&&(ue(r=e.input.charCodeAt(e.position+1))||n&&fe(r)))return!1;for(e.kind="scalar",e.result="",i=o=e.position,a=!1;0!==u;){if(58===u){if(ue(r=e.input.charCodeAt(e.position+1))||n&&fe(r))break}else if(35===u){if(ue(e.input.charCodeAt(e.position-1)))break}else{if(e.position===e.lineStart&&Ce(e)||n&&fe(u))break;if(se(u)){if(l=e.line,s=e.lineStart,c=e.lineIndent,_e(e,!1,-1),e.lineIndent>=t){a=!0,u=e.input.charCodeAt(e.position);continue}e.position=o,e.line=l,e.lineStart=s,e.lineIndent=c;break}}a&&(Ae(e,i,o,!1),Te(e,e.line-l),i=o=e.position,a=!1),ce(u)||(o=e.position+1),u=e.input.charCodeAt(++e.position)}return Ae(e,i,o,!1),!!e.result||(e.kind=f,e.result=p,!1)}(e,p,Y===n)&&(g=!0,null===e.tag&&(e.tag="?")):(g=!0,null===e.tag&&null===e.anchor||$e(e,"alias node should not have any properties")),null!==e.anchor&&(e.anchorMap[e.anchor]=e.result)):0===h&&(g=l&&je(e,d))),null!==e.tag&&"!"!==e.tag)if("?"===e.tag){for(c=0,u=e.implicitTypes.length;c<u;c+=1)if((f=e.implicitTypes[c]).resolve(e.result)){e.result=f.construct(e.result),e.tag=f.tag,null!==e.anchor&&(e.anchorMap[e.anchor]=e.result);break}}else K.call(e.typeMap[e.kind||"fallback"],e.tag)?(f=e.typeMap[e.kind||"fallback"][e.tag],null!==e.result&&f.kind!==e.kind&&$e(e,"unacceptable node kind for !<"+e.tag+'> tag; it should be "'+f.kind+'", not "'+e.kind+'"'),f.resolve(e.result)?(e.result=f.construct(e.result),null!==e.anchor&&(e.anchorMap[e.anchor]=e.result)):$e(e,"cannot resolve a node with !<"+e.tag+"> explicit tag")):$e(e,"unknown tag !<"+e.tag+">");return null!==e.listener&&e.listener("close",e),null!==e.tag||null!==e.anchor||g}function Ne(e){var t,n,r,i,o=e.position,a=!1;for(e.version=null,e.checkLineBreaks=e.legacy,e.tagMap={},e.anchorMap={};0!==(i=e.input.charCodeAt(e.position))&&(_e(e,!0,-1),i=e.input.charCodeAt(e.position),!(e.lineIndent>0||37!==i));){for(a=!0,i=e.input.charCodeAt(++e.position),t=e.position;0!==i&&!ue(i);)i=e.input.charCodeAt(++e.position);for(r=[],(n=e.input.slice(t,e.position)).length<1&&$e(e,"directive name must not be less than one character in length");0!==i;){for(;ce(i);)i=e.input.charCodeAt(++e.position);if(35===i){do{i=e.input.charCodeAt(++e.position)}while(0!==i&&!se(i));break}if(se(i))break;for(t=e.position;0!==i&&!ue(i);)i=e.input.charCodeAt(++e.position);r.push(e.input.slice(t,e.position))}0!==i&&Oe(e),K.call(we,n)?we[n](e,n,r):ke(e,'unknown document directive "'+n+'"')}_e(e,!0,-1),0===e.lineIndent&&45===e.input.charCodeAt(e.position)&&45===e.input.charCodeAt(e.position+1)&&45===e.input.charCodeAt(e.position+2)?(e.position+=3,_e(e,!0,-1)):a&&$e(e,"directives end mark is expected"),Ee(e,e.lineIndent-1,J,!1,!0),_e(e,!0,-1),e.checkLineBreaks&&re.test(e.input.slice(o,e.position))&&ke(e,"non-ASCII line breaks are interpreted as content"),e.documents.push(e.result),e.position===e.lineStart&&Ce(e)?46===e.input.charCodeAt(e.position)&&(e.position+=3,_e(e,!0,-1)):e.position<e.length-1&&$e(e,"end of the stream or a document separator is expected")}function Le(e,t){t=t||{},0!==(e=String(e)).length&&(10!==e.charCodeAt(e.length-1)&&13!==e.charCodeAt(e.length-1)&&(e+="\n"),65279===e.charCodeAt(0)&&(e=e.slice(1)));var n=new ye(e,t);for(n.input+="\0";32===n.input.charCodeAt(n.position);)n.lineIndent+=1,n.position+=1;for(;n.position<n.length-1;)Ne(n);return n.documents}function Fe(e,t,n){var r,i,o=Le(e,n);if("function"!=typeof t)return o;for(r=0,i=o.length;r<i;r+=1)t(o[r])}function Be(e,t){var n=Le(e,t);if(0!==n.length){if(1===n.length)return n[0];throw new u("expected a single document in the stream, but found more")}}var He={loadAll:Fe,load:Be,safeLoadAll:function(e,t,n){if("function"!=typeof t)return Fe(e,s.extend({schema:P},n));Fe(e,t,s.extend({schema:P},n))},safeLoad:function(e,t){return Be(e,s.extend({schema:P},t))}},De=Object.prototype.toString,ze=Object.prototype.hasOwnProperty,qe=9,Pe=10,Re=32,We=33,Ge=34,Ue=35,Ve=37,Ke=38,Ye=39,Ze=42,Xe=44,Je=45,Qe=58,et=62,tt=63,nt=64,rt=91,it=93,ot=96,at=123,lt=124,st=125,ct={0:"\\0",7:"\\a",8:"\\b",9:"\\t",10:"\\n",11:"\\v",12:"\\f",13:"\\r",27:"\\e",34:'\\"',92:"\\\\",133:"\\N",160:"\\_",8232:"\\L",8233:"\\P"},ut=["y","Y","yes","Yes","YES","on","On","ON","n","N","no","No","NO","off","Off","OFF"];function ft(e){var t,n,r;if(t=e.toString(16).toUpperCase(),e<=255)n="x",r=2;else if(e<=65535)n="u",r=4;else{if(!(e<=4294967295))throw new u("code point within a string may not be greater than 0xFFFFFFFF");n="U",r=8}return"\\"+n+s.repeat("0",r-t.length)+t}function pt(e){this.schema=e.schema||V,this.indent=Math.max(1,e.indent||2),this.noArrayIndent=e.noArrayIndent||!1,this.skipInvalid=e.skipInvalid||!1,this.flowLevel=s.isNothing(e.flowLevel)?-1:e.flowLevel,this.styleMap=function(e,t){var n,r,i,o,a,l,s;if(null===t)return{};for(n={},i=0,o=(r=Object.keys(t)).length;i<o;i+=1)a=r[i],l=String(t[a]),"!!"===a.slice(0,2)&&(a="tag:yaml.org,2002:"+a.slice(2)),(s=e.compiledTypeMap.fallback[a])&&ze.call(s.styleAliases,l)&&(l=s.styleAliases[l]),n[a]=l;return n}(this.schema,e.styles||null),this.sortKeys=e.sortKeys||!1,this.lineWidth=e.lineWidth||80,this.noRefs=e.noRefs||!1,this.noCompatMode=e.noCompatMode||!1,this.condenseFlow=e.condenseFlow||!1,this.implicitTypes=this.schema.compiledImplicit,this.explicitTypes=this.schema.compiledExplicit,this.tag=null,this.result="",this.duplicates=[],this.usedDuplicates=null}function dt(e,t){for(var n,r=s.repeat(" ",t),i=0,o=-1,a="",l=e.length;i<l;)-1===(o=e.indexOf("\n",i))?(n=e.slice(i),i=l):(n=e.slice(i,o+1),i=o+1),n.length&&"\n"!==n&&(a+=r),a+=n;return a}function ht(e,t){return"\n"+s.repeat(" ",e.indent*t)}function mt(e){return e===Re||e===qe}function gt(e){return 32<=e&&e<=126||161<=e&&e<=55295&&8232!==e&&8233!==e||57344<=e&&e<=65533&&65279!==e||65536<=e&&e<=1114111}function vt(e){return gt(e)&&65279!==e&&e!==Xe&&e!==rt&&e!==it&&e!==at&&e!==st&&e!==Qe&&e!==Ue}function yt(e){return/^\n* /.test(e)}var bt=1,$t=2,kt=3,wt=4,At=5;function xt(e,t,n,r,i){var o,a,l,s=!1,c=!1,u=-1!==r,f=-1,p=gt(l=e.charCodeAt(0))&&65279!==l&&!mt(l)&&l!==Je&&l!==tt&&l!==Qe&&l!==Xe&&l!==rt&&l!==it&&l!==at&&l!==st&&l!==Ue&&l!==Ke&&l!==Ze&&l!==We&&l!==lt&&l!==et&&l!==Ye&&l!==Ge&&l!==Ve&&l!==nt&&l!==ot&&!mt(e.charCodeAt(e.length-1));if(t)for(o=0;o<e.length;o++){if(!gt(a=e.charCodeAt(o)))return At;p=p&&vt(a)}else{for(o=0;o<e.length;o++){if((a=e.charCodeAt(o))===Pe)s=!0,u&&(c=c||o-f-1>r&&" "!==e[f+1],f=o);else if(!gt(a))return At;p=p&&vt(a)}c=c||u&&o-f-1>r&&" "!==e[f+1]}return s||c?n>9&&yt(e)?At:c?wt:kt:p&&!i(e)?bt:$t}function St(e,t,n,r){e.dump=function(){if(0===t.length)return"''";if(!e.noCompatMode&&-1!==ut.indexOf(t))return"'"+t+"'";var i=e.indent*Math.max(1,n),o=-1===e.lineWidth?-1:Math.max(Math.min(e.lineWidth,40),e.lineWidth-i),a=r||e.flowLevel>-1&&n>=e.flowLevel;switch(xt(t,a,e.indent,o,function(t){return function(e,t){var n,r;for(n=0,r=e.implicitTypes.length;n<r;n+=1)if(e.implicitTypes[n].resolve(t))return!0;return!1}(e,t)})){case bt:return t;case $t:return"'"+t.replace(/'/g,"''")+"'";case kt:return"|"+Ot(t,e.indent)+_t(dt(t,i));case wt:return">"+Ot(t,e.indent)+_t(dt(function(e,t){var n,r,i=/(\n+)([^\n]*)/g,o=(l=e.indexOf("\n"),l=-1!==l?l:e.length,i.lastIndex=l,Ct(e.slice(0,l),t)),a="\n"===e[0]||" "===e[0];var l;for(;r=i.exec(e);){var s=r[1],c=r[2];n=" "===c[0],o+=s+(a||n||""===c?"":"\n")+Ct(c,t),a=n}return o}(t,o),i));case At:return'"'+function(e){for(var t,n,r,i="",o=0;o<e.length;o++)(t=e.charCodeAt(o))>=55296&&t<=56319&&(n=e.charCodeAt(o+1))>=56320&&n<=57343?(i+=ft(1024*(t-55296)+n-56320+65536),o++):(r=ct[t],i+=!r&&gt(t)?e[o]:r||ft(t));return i}(t)+'"';default:throw new u("impossible error: invalid scalar style")}}()}function Ot(e,t){var n=yt(e)?String(t):"",r="\n"===e[e.length-1];return n+(r&&("\n"===e[e.length-2]||"\n"===e)?"+":r?"":"-")+"\n"}function _t(e){return"\n"===e[e.length-1]?e.slice(0,-1):e}function Ct(e,t){if(""===e||" "===e[0])return e;for(var n,r,i=/ [^ ]/g,o=0,a=0,l=0,s="";n=i.exec(e);)(l=n.index)-o>t&&(r=a>o?a:l,s+="\n"+e.slice(o,r),o=r+1),a=l;return s+="\n",e.length-o>t&&a>o?s+=e.slice(o,a)+"\n"+e.slice(a+1):s+=e.slice(o),s.slice(1)}function Tt(e,t,n){var r,i,o,a,l,s;for(o=0,a=(i=n?e.explicitTypes:e.implicitTypes).length;o<a;o+=1)if(((l=i[o]).instanceOf||l.predicate)&&(!l.instanceOf||"object"==typeof t&&t instanceof l.instanceOf)&&(!l.predicate||l.predicate(t))){if(e.tag=n?l.tag:"?",l.represent){if(s=e.styleMap[l.tag]||l.defaultStyle,"[object Function]"===De.call(l.represent))r=l.represent(t,s);else{if(!ze.call(l.represent,s))throw new u("!<"+l.tag+'> tag resolver accepts not "'+s+'" style');r=l.represent[s](t,s)}e.dump=r}return!0}return!1}function jt(e,t,n,r,i,o){e.tag=null,e.dump=n,Tt(e,n,!1)||Tt(e,n,!0);var a=De.call(e.dump);r&&(r=e.flowLevel<0||e.flowLevel>t);var l,s,c="[object Object]"===a||"[object Array]"===a;if(c&&(s=-1!==(l=e.duplicates.indexOf(n))),(null!==e.tag&&"?"!==e.tag||s||2!==e.indent&&t>0)&&(i=!1),s&&e.usedDuplicates[l])e.dump="*ref_"+l;else{if(c&&s&&!e.usedDuplicates[l]&&(e.usedDuplicates[l]=!0),"[object Object]"===a)r&&0!==Object.keys(e.dump).length?(!function(e,t,n,r){var i,o,a,l,s,c,f="",p=e.tag,d=Object.keys(n);if(!0===e.sortKeys)d.sort();else if("function"==typeof e.sortKeys)d.sort(e.sortKeys);else if(e.sortKeys)throw new u("sortKeys must be a boolean or a function");for(i=0,o=d.length;i<o;i+=1)c="",r&&0===i||(c+=ht(e,t)),l=n[a=d[i]],jt(e,t+1,a,!0,!0,!0)&&((s=null!==e.tag&&"?"!==e.tag||e.dump&&e.dump.length>1024)&&(e.dump&&Pe===e.dump.charCodeAt(0)?c+="?":c+="? "),c+=e.dump,s&&(c+=ht(e,t)),jt(e,t+1,l,!0,s)&&(e.dump&&Pe===e.dump.charCodeAt(0)?c+=":":c+=": ",f+=c+=e.dump));e.tag=p,e.dump=f||"{}"}(e,t,e.dump,i),s&&(e.dump="&ref_"+l+e.dump)):(!function(e,t,n){var r,i,o,a,l,s="",c=e.tag,u=Object.keys(n);for(r=0,i=u.length;r<i;r+=1)l=e.condenseFlow?'"':"",0!==r&&(l+=", "),a=n[o=u[r]],jt(e,t,o,!1,!1)&&(e.dump.length>1024&&(l+="? "),l+=e.dump+(e.condenseFlow?'"':"")+":"+(e.condenseFlow?"":" "),jt(e,t,a,!1,!1)&&(s+=l+=e.dump));e.tag=c,e.dump="{"+s+"}"}(e,t,e.dump),s&&(e.dump="&ref_"+l+" "+e.dump));else if("[object Array]"===a){var f=e.noArrayIndent&&t>0?t-1:t;r&&0!==e.dump.length?(!function(e,t,n,r){var i,o,a="",l=e.tag;for(i=0,o=n.length;i<o;i+=1)jt(e,t+1,n[i],!0,!0)&&(r&&0===i||(a+=ht(e,t)),e.dump&&Pe===e.dump.charCodeAt(0)?a+="-":a+="- ",a+=e.dump);e.tag=l,e.dump=a||"[]"}(e,f,e.dump,i),s&&(e.dump="&ref_"+l+e.dump)):(!function(e,t,n){var r,i,o="",a=e.tag;for(r=0,i=n.length;r<i;r+=1)jt(e,t,n[r],!1,!1)&&(0!==r&&(o+=","+(e.condenseFlow?"":" ")),o+=e.dump);e.tag=a,e.dump="["+o+"]"}(e,f,e.dump),s&&(e.dump="&ref_"+l+" "+e.dump))}else{if("[object String]"!==a){if(e.skipInvalid)return!1;throw new u("unacceptable kind of an object to dump "+a)}"?"!==e.tag&&St(e,e.dump,t,o)}null!==e.tag&&"?"!==e.tag&&(e.dump="!<"+e.tag+"> "+e.dump)}return!0}function Mt(e,t){var n,r,i=[],o=[];for(function e(t,n,r){var i,o,a;if(null!==t&&"object"==typeof t)if(-1!==(o=n.indexOf(t)))-1===r.indexOf(o)&&r.push(o);else if(n.push(t),Array.isArray(t))for(o=0,a=t.length;o<a;o+=1)e(t[o],n,r);else for(i=Object.keys(t),o=0,a=i.length;o<a;o+=1)e(t[i[o]],n,r)}(e,i,o),n=0,r=o.length;n<r;n+=1)t.duplicates.push(i[o[n]]);t.usedDuplicates=new Array(r)}function It(e,t){var n=new pt(t=t||{});return n.noRefs||Mt(e,n),jt(n,0,e,!0,!0)?n.dump+"\n":""}var Et={dump:It,safeDump:function(e,t){return It(e,s.extend({schema:P},t))}};function Nt(e){return function(){throw new Error("Function "+e+" is deprecated and cannot be used.")}}var Lt,Ft={Type:m,Schema:y,FAILSAFE_SCHEMA:b,JSON_SCHEMA:_,CORE_SCHEMA:C,DEFAULT_SAFE_SCHEMA:P,DEFAULT_FULL_SCHEMA:V,load:He.load,loadAll:He.loadAll,safeLoad:He.safeLoad,safeLoadAll:He.safeLoadAll,dump:Et.dump,safeDump:Et.safeDump,YAMLException:u,MINIMAL_SCHEMA:b,SAFE_SCHEMA:P,DEFAULT_SCHEMA:V,scan:Nt("scan"),parse:Nt("parse"),compose:Nt("compose"),addConstructor:Nt("addConstructor")};function Bt(e,t,n,r){if(t)for(var i=0,o=t;i<o.length;i++){var a=n[o[i]];a[r]=a[r]||[],a[r].push(e)}}var Ht=function(){function e(){this.articles=new a(Lt.articlesOrder,{keys:["id","type","title","text"],tokenize:!0,matchAllTokens:!0,distance:10,threshold:.1})}return e.prototype.findArticles=function(e){return this.articles.search(e)},e}(),Dt=function(){return function(e){if(Object.assign(this,e),Lt.manufacture[this.name]=this,this.requires)for(var t=0,n=this.requires;t<n.length;t++){var r=n[t],i=Lt.research[r];i.manufacture||(i.manufacture=[]),i.manufacture.push(this.name)}if(this.producedItems)for(var o=0,a=Object.keys(this.producedItems);o<a.length;o++){var l=a[o];(u=Lt.items[l])&&(u.manufacture||(u.manufacture={}),u.manufacture[this.name]=this.producedItems[l])}if(this.requiredItems)for(var s=0,c=Object.keys(this.requiredItems);s<c.length;s++){var u;l=c[s],(u=Lt.items[l])&&(u.componentOf||(u.componentOf={}),u.componentOf[this.name]=this.requiredItems[l])}if(this.randomProducedItems){this.chanceSum=0;for(var f=0,p=this.randomProducedItems;f<p.length;f++){var d=p[f];this.chanceSum+=d[0]}}qt.add("allowsManufacture",this.name,this.requiresBaseFunc),Zt.create({id:this.name,section:"MANUFACTURE",type_id:"MANUFACTURE"})}}(),zt=function(){return function(e){Object.assign(this,e),Lt.research[this.name]=this,qt.add("allowsResearching",this.name,this.requiresBaseFunc),Zt.create({id:this.name,section:"RESEARCH",type_id:"RESEARCH"})}}(),qt=function(){function e(e){this.id=e,Zt.create({id:e,type_id:"SERVICES",section:"SERVICES"})}return e.add=function(t,n,r){if(r)for(var i=0,o=r;i<o.length;i++){var a=o[i];a in Lt.baseServices||(Lt.baseServices[a]=new e(a)),t in Lt.baseServices[a]||(Lt.baseServices[a][t]=[]),Lt.baseServices[a][t].push(n)}},e}(),Pt=function(){return function(e){Object.assign(this,e),Lt.alienDeployments[this.type]=this;var t=Lt.startingConditions[this.startingCondition];t&&t.deployments.push(this.type)}}(),Rt=function(){return function(e){Object.assign(this,e),Lt.craftWeapons[this.type]=this,qt.add("canBuy",this.type,this.requiresBuyBaseFunc)}}(),Wt=function(){return function(e){this.startingConditions=[],Object.assign(this,e),Lt.crafts[this.type]=this}}(),Gt=function(){return function(e){Object.assign(this,e),Lt.ufos[this.type]=this}}(),Ut=function(){return function(e){Object.assign(this,e),Lt.facilities[this.type]=this,qt.add("providedBy",this.type,this.provideBaseFunc),qt.add("allowsBuilding",this.type,this.requiresBaseFunc),qt.add("forbidsBuilding",this.type,this.forbiddenBaseFunc)}}(),Vt=function(){return function(e){this.allowedCraft=[],this.allowedItemCategories=[],this.allowedArmors=[],this.allowedVehicles=[],this.deployments=[],Object.assign(this,e),Lt.startingConditions[this.type]=this,Lt.lang[this.type]=Lt.decamelize(this.type.substr(11));for(var t=0,n=this.allowedCraft;t<n.length;t++){var r=n[t];Lt.crafts[r].startingConditions.push(this.type)}Zt.create({id:this.type,section:"CONDITIONS",type_id:"CONDITIONS"})}}(),Kt=function(){return function(e){Object.assign(this,e),Lt.units[this.type]=this;var t=Lt.armors[e.armor];t&&(t.users=t.users||[],t.users.push(this.type))}}(),Yt=function(){return function(e,t){this.mode=t,this.possible=!1,this.flatTime=!1,this.shots=1,this.pellets=1;var n=t.charAt(0).toUpperCase()+t.substr(1),r="ammo"==t&&2==e.battleType||"melee"==t&&3==e.battleType||"psi"==t&&9==e.battleType||"throw"==t&&[4,5].includes(e.battleType);if(!e["accuracy"+n]&&!r)return null;"melee"==t&&3!=e.battleType?(this.damage=e.meleePower,this.damageBonus=e.meleeBonus,this.damageType=e.meleeType):e.compatibleAmmo||(this.damage=e.power,this.damageBonus=e.damageBonus,this.damageType=e.damageType),this.pellets=e.shotgunPellets||1,this.shots="auto"==t?e.autoShots||3:1,this.name=t.substr(0,1).toUpperCase()+t.substr(1);var i="conf"+this.name;if(i in e){var o=e[i];o.name&&(this.name=Lt.str(o.name)),o.shots&&(this.shots=o.shots),delete e[i]}if(e[t+"AttackName"]&&(this.name=Lt.str(e[t+"AttackName"])),"melee"==t&&(this.alter=e.meleeAlter),3!=e.battleType&&"melee"==t||(this.alter=e.damageAlter),"ammo"!=t){("melee"==t&&3==e.battleType||"melee"!=t)&&e.flatRate&&(this.flatTime=e.flatRate),e["flat"+n]&&e["flat"+n].time&&(this.flatTime=!0),"Psi"==n&&(n="Use"),this.cost=this.cost=e["cost"+n]||{time:e["tu"+n],energy:0},this.accuracy=e["accuracy"+n]||100;var a="throw"==t?e.throwMultiplier:"melee"==t?e.meleeMultiplier:e.accuracyMultiplier;a||((a={})["throw"==t?"throwing":"melee"==t?"melee":"firing"]=1),this.accuracyMultiplier=a}this.alter&&this.alter.ResistType&&(this.damageType=this.alter.ResistType),t+"Range"in e&&(this.alter=this.alter||{},this.alter.range=e[t+"Range"]),this.possible=!0}}(),Zt=function(){function e(e){this.id=e.id,this.title=e.title||Lt.str(e.id),Lt.lang[this.id]=this.title,this.text=Lt.lang[e.text]||Lt.lang[e.id+"_UFOPEDIA"],this.image_id=e.image_id,this.type_id=e.type_id||"-1",Lt.articles[this.id]=this;var t=e.id;Lt.articles[t]=this,e.section&&Lt.addToSection(this,e.section)}return e.create=function(t){if(t.id in Lt.articles){var n=Lt.articles[t.id];return t.section&&n.section!=t.section&&Lt.sections[t.section].add(n),n}return new e(t)},e}(),Xt=function(){function e(e,t){void 0===t&&(t="PEDIA"),this.id=e,this.type_id=t,this._articles=[],Lt.sections[e]=this,this.isType()?Lt.typeSectionsOrder.push(this):Lt.sectionsOrder.push(this),this.title=Lt.str(e),Zt.create({id:e,section:e,type_id:t})}return Object.defineProperty(e.prototype,"articles",{get:function(){return this._articles},enumerable:!0,configurable:!0}),e.prototype.isType=function(){return"TYPE"==this.type_id},e.prototype.add=function(e){this._articles.includes(e)||this._articles.push(e),e.section||(e.section=this)},e}(),Jt=function(){return function(e){this.id=e.type||e.typeSingle,e.files&&(this.path=e.files[0],this.extra=e.files),e.fileSingle&&(this.path=e.fileSingle)}}(),Qt=function(){return function(e){if(this.dollSprites={},this.armor={},Object.assign(this,e),Lt.armors[e.type]=this,this.layersDefinition){var t=this.layersDefaultPrefix;for(var n in this.layersDefinition){var r=this.layersDefinition[n],i=[];for(var o in r){var a=r[o];if(a&&a.length){var l=t+"__"+o+"__"+a;i.push(Lt.sprite(l))}}this.dollSprites[n]=i}}else if(this.spriteInv){var s=this.spriteInv,c=s.length;if(this.spriteInv+".SPK"in Lt.sprites)this.dollSprites={0:[Lt.path+Lt.sprites[this.spriteInv+".SPK"].path]};else for(var u in Lt.sprites)u.substr(0,c)==s&&(this.dollSprites[u.substr(c,u.length-c-4)]=[Lt.path+Lt.sprites[u].path])}if(this.armor={Front:this.frontArmor,Side:this.sideArmor,Rear:this.rearArmor,Under:this.underArmor},this.storeItem&&Lt.items[this.storeItem]){var f=Lt.items[this.storeItem];f.armors||(f.armors=[]),f.armors.push(this.type)}}}(),en=function(){function e(e){this.invWidth=1,this.invHeight=1,Object.assign(this,e),Lt.items[e.type]=this,this.sprite=Lt.bigSprite[this.bigSprite];var t=this;if("flatThrow"in t&&(t.flatThrowTime=t.flatThrow.time,delete t.flatThrow),qt.add("canBuyItem",this.type,this.requiresBuyBaseFunc),this.categories)for(var n=0,r=this.categories;n<r.length;n++){var i=r[n];this.addCategory(i)}Zt.create({id:this.type,type_id:"ITEMS",section:"ITEMS"})}return e.prototype.attacks=function(){if(!this._attacks){this._attacks=[];for(var e=0,t=["ammo","melee","snap","aimed","auto","throw","psi"];e<t.length;e++){var n=new Yt(this,t[e]);if(n.possible&&(this._attacks.push(n),isNaN(+n.damageType)||this.addCategory("dmg="+Lt.damageTypes[n.damageType]),n.damageBonus)){for(var r in n.damageBonus)this.addCategory("dmg*"+r);for(var r in n.accuracyMultiplier)this.addCategory("acc*"+r)}}}return this._attacks},e.prototype.addCategory=function(e){var t=Lt.categories[e]||[];t.includes(this)||t.push(this),Lt.categories[e]=t},e}(),tn=function(){function n(){this.articles={},this.articlesOrder=[],this.sections={},this.sectionsOrder=[],this.typeSectionsOrder=[],this.sprites={},this.raw={},this.items={},this.categories={},this.armors={},this.units={},this.crafts={},this.ufos={},this.facilities={},this.craftWeapons={},this.alienDeployments={},this.research={},this.manufacture={},this.startingConditions={},this.bigSprite=[],this.floorSprite=[],this.handSprite=[],this.baseSprite=[],this.sounds=[],this.baseServices={},this.redirect={},this.lang={},this.damageTypes=["STR_DAMAGE_NONE","STR_DAMAGE_ARMOR_PIERCING","STR_DAMAGE_INCENDIARY","STR_DAMAGE_HIGH_EXPLOSIVE","STR_DAMAGE_LASER_BEAM","STR_DAMAGE_PLASMA_BEAM","STR_DAMAGE_STUN","STR_DAMAGE_MELEE","STR_DAMAGE_ACID","STR_DAMAGE_SMOKE","STR_DAMAGE_10","STR_DAMAGE_11","STR_DAMAGE_12","STR_DAMAGE_13","STR_DAMAGE_14","STR_DAMAGE_15","STR_DAMAGE_16","STR_DAMAGE_17","STR_DAMAGE_18","STR_DAMAGE_19","STR_DAMAGE_20","STR_DAMAGE_21","STR_DAMAGE_22","STR_MANA"],this.battleTypes=["None (Geoscape-only item)","Firearm","Ammo","Melee","Grenade","Proximity Grenade","Medi-Kit","Motion Scanner","Mind Probe","Psi-Amp","Electro-flare","Corpse"],Lt=this}return n.prototype.damageTypeName=function(e){return this.lang[this.damageTypes[e]]},n.prototype.sound=function(e){return this.path+this.sounds[e]},n.prototype.str=function(e){return this.lang[e]||e},n.prototype.specialSprite=function(e,t){return t in this[e]?this.path+this[e][t]:"xpedia/0.png"},n.prototype.parse=function(e){for(var t=0,n=e;t<n.length;t++){var r=n[t];for(var i in r)if("lang"==i.substr(0,4)&&Object.assign(this.lang,r[i]),i in this.raw){var o=this.raw[i],a=r[i];if(o.concat)this.raw[i]=o.concat(a);else for(var l=0,s=a;l<s.length;l++){($=s[l])in o?Object.assign(o[$],a[$]):o[$]=a[$]}}else this.raw[i]=r[i]}for(var c=["Items","Conditions","Categories","Research","Manufacture","Services"],u=0,f=c;u<f.length;u++){new Xt(Se=f[u],"TYPE")}for(var p=0,d=["items","armors","ufopaedia","manufacture","units","alienDeployments","research"];p<d.length;p++){for(var h=d[p],m={},g=0,v=this.raw[h];g<v.length;g++){var y=v[g],b=y.type||y.id||y.name||y.delete;"delete"in y?delete m[b]:b&&b in m?Object.assign(m[b],y):m[b]=y}this.raw[h]=Object.values(m)}for(var $ in this.modName=this.raw.modName,this.path="user/mods/"+Lt.modName+"/",this.lang){var k=this.lang[$];"string"==typeof k&&(k=(k=k.replace(/^({NEWLINE})+/,"")).replace(/{NEWLINE}/g,"<br/>"),this.lang[$]=k)}for(var w=0,A=Lt.damageTypes;w<A.length;w++){var x=A[w];Lt.categories["dmg="+x]=[],this.redirect[x]="dmg="+x,this.lang["dmg="+x]=this.lang[x]}this.parsePedia(this.raw.ufopaedia),this.parseSprites(this.raw.extraSprites),this.sprites["BIGOBS.PCK"]&&(this.bigSprite=this.sprites["BIGOBS.PCK"].extra),this.sprites["FLOOROB.PCK"]&&(this.floorSprite=this.sprites["FLOOROB.PCK"].extra),this.sprites["HANDOB.PCK"]&&(this.handSprite=this.sprites["HANDOB.PCK"].extra),this.sprites["BASEBITS.PCK"]&&(this.baseSprite=this.sprites["BASEBITS.PCK"].extra),this.raw.extraSounds&&this.raw.extraSounds[0]&&(this.sounds=this.raw.extraSounds[0].files);for(var S=0,O=this.raw.items;S<O.length;S++){var _=O[S];new en(_)}for(var C=0,T=this.raw.armors;C<T.length;C++){var j=T[C];new Qt(j)}for(var M=0,I=this.raw.units;M<I.length;M++){var E=I[M];new Kt(E)}for(var N=0,L=this.raw.crafts;N<L.length;N++){var F=L[N];new Wt(F)}for(var B=0,H=this.raw.craftWeapons;B<H.length;B++){var D=H[B];new Rt(D)}for(var z=0,q=this.raw.ufos;z<q.length;z++){var P=q[z];new Gt(P)}for(var R=0,W=this.raw.facilities;R<W.length;R++){var G=W[R];new Ut(G)}if(this.raw.startingConditions)for(var U=0,V=this.raw.startingConditions;U<V.length;U++){var K=V[U];new Vt(K)}for(var Y=0,Z=this.raw.alienDeployments;Y<Z.length;Y++){var X=Z[Y];new Pt(X)}for(var J=0,Q=this.raw.research;J<Q.length;J++){var ee=Q[J];new zt(ee)}for(var te=0,ne=this.raw.manufacture;te<ne.length;te++){var re=ne[te];new Dt(re)}for(var ie=0,oe=Object.values(this.facilities);ie<oe.length;ie++){var ae=oe[ie];if(ae.buildCostItems)for(var le=0,se=Object.keys(ae.buildCostItems);le<se.length;le++){var ce=se[le];(ye=Lt.items[ce])&&(ye.componentOf||(ye.componentOf={}),ye.componentOf[ae.type]=ae.buildCostItems[ce].build,ye.manufacture||(ye.manufacture={}),ye.manufacture[ae.type]=ae.buildCostItems[ce].refund)}}for(var ue=0,fe=Object.values(this.items);ue<fe.length;ue++){if((ye=fe[ue]).attacks(),ye.compatibleAmmo)for(var pe=0,de=ye.compatibleAmmo;pe<de.length;pe++){var he=de[pe],me=this.items[he];me&&(me.compatibleWeapons=me.compatibleWeapons||[],me.compatibleWeapons.push(ye.type))}}for(var ge=0,ve=Object.values(this.research);ge<ve.length;ge++){var ye,be=ve[ge];if(Bt(be.name,be.dependencies,Lt.research,"leadsTo"),Bt(be.name,be.getOneFree,Lt.research,"freeFrom"),be.lookup&&be.name==be.lookup&&console.warn(be.lookup+" lookup is to itself"),be.lookup&&be.name!=be.lookup){var $e=this.research[be.lookup];$e.seeAlso=$e.seeAlso||[],$e.seeAlso.push(be.name);var ke=this.article(be.lookup),we=this.article(be.name);Lt.lang[we.id]||(we.title=ke.title),we.text=ke.text,we.image_id=ke.image_id}if(be.spawnedItem)(ye=Lt.items[be.spawnedItem]).spawnedBy=ye.spawnedBy||[],ye.spawnedBy.push(be.name)}this.ourArmors=Object.values(this.armors).filter(function(e){return e.units}).map(function(e){return e.type});for(var Ae=0,xe=c;Ae<xe.length;Ae++){var Se=xe[Ae];Lt.sections[Se]._articles=Lt.sections[Se].articles.sort(function(e,t){return e.title<t.title?-1:1})}Zt.create({id:"BASE_FUNC",title:"Base Services",type_id:"OTHER",section:"OTHER"});for(var Oe=0,_e=Object.keys(this.categories);Oe<_e.length;Oe++){var Ce=_e[Oe];console.log(Ce),Zt.create({id:Ce,title:Lt.str(Ce),type_id:"CATEGORIES",section:"Categories"})}console.log(this),this.search=new Ht},n.prototype.parsePedia=function(e){for(var t=0,n=e;t<n.length;t++){var r=n[t];if(r.id){var i=new Zt(r);this.articlesOrder.push(i),this.articles[i.id]=i}}},n.prototype.parseSprites=function(e){for(var t=0,n=e;t<n.length;t++){var r=n[t],i=new Jt(r);this.sprites[i.id]=i}},n.prototype.findNextArticle=function(e,t){if(!e)return null;var n=e.section,r=n?n.articles:this.articlesOrder,i=r.findIndex(function(t){return t.id==e.id});return null!=i?r[i+t]:void 0},n.prototype.decamelize=function(e,t){return void 0===t&&(t=" "),"string"==typeof e&&(e=(e=e.includes("_")&&-1==e.search(/[a-z]/)?e.replace(/_/g," "):e.replace(/([^A-Z])([A-Z])/g,"$1"+t+"$2")).substr(0,1).toUpperCase()+e.substr(1).toLowerCase()),e},n.prototype.sprite=function(e){return e in this.sprites?this.path+this.sprites[e].path:this.path+e},n.prototype.load=function(n){return r=this,i=void 0,a=function(){var r,i;return t(this,function(t){switch(t.label){case 0:return"base64"!=(n=n.trim()).substr(0,6)?[3,3]:(n=n.substr(6),[4,(r=new e).loadAsync(n,{base64:!0})]);case 1:return t.sent(),[4,r.file("xpedia").async("text")];case 2:n=t.sent(),t.label=3;case 3:i=function(e){for(var t,n=[],r=/^FILE: (.+)\n/gm,i=[];t=r.exec(e);)i.push(t);for(var o=0;o<i.length;o++){var a=i[o][1],l=void 0;"п»ї"==(l=o<i.length-1?e.substr(i[o].index+7+a.length,i[o+1].index-i[o].index-7-a.length):e.substr(i[o].index+7+a.length)).substr(1,3)&&(l=l.substr(4));var s=void 0;try{s=Ft.load(l,{json:!0,filename:a})}catch(e){console.log(e.message)}s&&n.push(s)}return n}(n);try{this.parse(i)}catch(e){console.error(e)}return[2]}})},new((o=void 0)||(o=Promise))(function(e,t){function n(e){try{s(a.next(e))}catch(e){t(e)}}function l(e){try{s(a.throw(e))}catch(e){t(e)}}function s(t){t.done?e(t.value):new o(function(e){e(t.value)}).then(n,l)}s((a=a.apply(r,i||[])).next())});var r,i,o,a},n.prototype.addToSection=function(e,t){var n;return n=t in Lt.sections?Lt.sections[t]:Lt.sections[t]=new Xt(t),e.id!=n.id&&n.add(e),e.section=n,n},n.prototype.linksByType=function(e){switch(e){case"CONDITIONS":return Object.keys(this.startingConditions).map(function(e){return"CONDITIONS_"+e})}return[]},n.prototype.bodiesCompare=function(e){for(var t in e)2==e[t].length&&(e[t]=("M"==e[t].charAt(0)?"A":"B")+"0"+e[t].substr(1));return e[0]>e[1]?1:-1},n.prototype.article=function(e){return this.articles[this.redirect[e]||e]},n}();function nn(){}function rn(e,t){for(const n in t)e[n]=t[n];return e}function on(e){return e()}function an(){return Object.create(null)}function ln(e){e.forEach(on)}function sn(e){return"function"==typeof e}function cn(e,t){return e!=e?t==t:e!==t||e&&"object"==typeof e||"function"==typeof e}function un(e){return null==e?"":e}function fn(e,t){e.appendChild(t)}function pn(e,t,n){e.insertBefore(t,n||null)}function dn(e){e.parentNode.removeChild(e)}function hn(e,t){for(let n=0;n<e.length;n+=1)e[n]&&e[n].d(t)}function mn(e){return document.createElement(e)}function gn(e){return document.createTextNode(e)}function vn(){return gn(" ")}function yn(){return gn("")}function bn(e,t,n,r){return e.addEventListener(t,n,r),()=>e.removeEventListener(t,n,r)}function $n(e,t,n){null==n?e.removeAttribute(t):e.setAttribute(t,n)}function kn(e,t){t=""+t,e.data!==t&&(e.data=t)}function wn(e,t){(null!=t||e.value)&&(e.value=t)}function An(e,t,n,r){e.style.setProperty(t,n,r?"important":"")}class xn{constructor(e,t=null){this.e=mn("div"),this.a=t,this.u(e)}m(e,t=null){for(let n=0;n<this.n.length;n+=1)pn(e,this.n[n],t);this.t=e}u(e){this.e.innerHTML=e,this.n=Array.from(this.e.childNodes)}p(e){this.d(),this.u(e),this.m(this.t,this.a)}d(){this.n.forEach(dn)}}let Sn;function On(e){Sn=e}function _n(){if(!Sn)throw new Error("Function called outside component initialization");return Sn}const Cn=[],Tn=[],jn=[],Mn=[],In=Promise.resolve();let En=!1;function Nn(){En||(En=!0,In.then(Fn))}function Ln(e){jn.push(e)}function Fn(){const e=new Set;do{for(;Cn.length;){const e=Cn.shift();On(e),Bn(e.$$)}for(;Tn.length;)Tn.pop()();for(let t=0;t<jn.length;t+=1){const n=jn[t];e.has(n)||(n(),e.add(n))}jn.length=0}while(Cn.length);for(;Mn.length;)Mn.pop()();En=!1}function Bn(e){e.fragment&&(e.update(e.dirty),ln(e.before_update),e.fragment.p(e.dirty,e.ctx),e.dirty=null,e.after_update.forEach(Ln))}const Hn=new Set;let Dn;function zn(){Dn={r:0,c:[],p:Dn}}function qn(){Dn.r||ln(Dn.c),Dn=Dn.p}function Pn(e,t){e&&e.i&&(Hn.delete(e),e.i(t))}function Rn(e,t,n,r){if(e&&e.o){if(Hn.has(e))return;Hn.add(e),Dn.c.push(()=>{Hn.delete(e),r&&(n&&e.d(1),r())}),e.o(t)}}const Wn="undefined"!=typeof window?window:global;function Gn(e,t,n){const{fragment:r,on_mount:i,on_destroy:o,after_update:a}=e.$$;r.m(t,n),Ln(()=>{const t=i.map(on).filter(sn);o?o.push(...t):ln(t),e.$$.on_mount=[]}),a.forEach(Ln)}function Un(e,t){e.$$.fragment&&(ln(e.$$.on_destroy),e.$$.fragment.d(t),e.$$.on_destroy=e.$$.fragment=null,e.$$.ctx={})}function Vn(e,t,n,r,i,o){const a=Sn;On(e);const l=t.props||{},s=e.$$={fragment:null,ctx:null,props:o,update:nn,not_equal:i,bound:an(),on_mount:[],on_destroy:[],before_update:[],after_update:[],context:new Map(a?a.$$.context:[]),callbacks:an(),dirty:null};let c=!1;var u;s.ctx=n?n(e,l,(t,n,r=n)=>(s.ctx&&i(s.ctx[t],s.ctx[t]=r)&&(s.bound[t]&&s.bound[t](r),c&&function(e,t){e.$$.dirty||(Cn.push(e),Nn(),e.$$.dirty=an()),e.$$.dirty[t]=!0}(e,t)),n)):l,s.update(),c=!0,ln(s.before_update),s.fragment=r(s.ctx),t.target&&(t.hydrate?s.fragment.l((u=t.target,Array.from(u.childNodes))):s.fragment.c(),t.intro&&Pn(e.$$.fragment),Gn(e,t.target,t.anchor),Fn()),On(a)}class Kn{$destroy(){Un(this,1),this.$destroy=nn}$on(e,t){const n=this.$$.callbacks[e]||(this.$$.callbacks[e]=[]);return n.push(t),()=>{const e=n.indexOf(t);-1!==e&&n.splice(e,1)}}$set(){}}function Yn(e){var t,n=Lt.str(e.href)+"";return{c(){t=gn(n)},m(e,n){pn(e,t,n)},p(e,r){e.href&&n!==(n=Lt.str(r.href)+"")&&kn(t,n)},d(e){e&&dn(t)}}}function Zn(e){var t,n,r,i=Lt.str(e.href)+"";return{c(){t=mn("a"),n=gn(i),$n(t,"href",r="#"+e.href)},m(e,r){pn(e,t,r),fn(t,n)},p(e,o){e.href&&i!==(i=Lt.str(o.href)+"")&&kn(n,i),e.href&&r!==(r="#"+o.href)&&$n(t,"href",r)},d(e){e&&dn(t)}}}function Xn(e){var t,n;function r(e,n){return(null==t||e.href)&&(t=!!Lt.article(n.href)),t?Zn:Yn}var i=r(null,e),o=i(e);return{c(){o.c(),n=yn()},m(e,t){o.m(e,t),pn(e,n,t)},p(e,t){i===(i=r(e,t))&&o?o.p(e,t):(o.d(1),(o=i(t))&&(o.c(),o.m(n.parentNode,n)))},i:nn,o:nn,d(e){o.d(e),e&&dn(n)}}}function Jn(e,t,n){let{href:r}=t;return e.$set=(e=>{"href"in e&&n("href",r=e.href)}),e.$$.update=((e={href:1})=>{e.href&&r&&r.type&&n("href",r=r.type)}),{href:r}}class Qn extends Kn{constructor(e){super(),Vn(this,e,Jn,Xn,cn,["href"])}}function er(e,t,n){const r=Object.create(e);return r.option=t[n],r}function tr(e){var t,n,r,i,o,a,l=!e.title&&nr(e),s=e.title&&rr(e);let c=e.sortedList,u=[];for(let t=0;t<c.length;t+=1)u[t]=ir(er(e,c,t));const f=e=>Rn(u[e],1,1,()=>{u[e]=null});return{c(){l&&l.c(),t=vn(),n=mn("div"),s&&s.c(),r=vn(),i=mn("div"),o=mn("ol");for(let e=0;e<u.length;e+=1)u[e].c();$n(i,"class","cols"),$n(n,"class","links-page")},m(e,c){l&&l.m(e,c),pn(e,t,c),pn(e,n,c),s&&s.m(n,null),fn(n,r),fn(n,i),fn(i,o);for(let e=0;e<u.length;e+=1)u[e].m(o,null);a=!0},p(e,i){if(i.title?l&&(l.d(1),l=null):l?l.p(e,i):((l=nr(i)).c(),l.m(t.parentNode,t)),i.title?s?s.p(e,i):((s=rr(i)).c(),s.m(n,r)):s&&(s.d(1),s=null),e.sortedList){let t;for(c=i.sortedList,t=0;t<c.length;t+=1){const n=er(i,c,t);u[t]?(u[t].p(e,n),Pn(u[t],1)):(u[t]=ir(n),u[t].c(),Pn(u[t],1),u[t].m(o,null))}for(zn(),t=c.length;t<u.length;t+=1)f(t);qn()}},i(e){if(!a){for(let e=0;e<c.length;e+=1)Pn(u[e]);a=!0}},o(e){u=u.filter(Boolean);for(let e=0;e<u.length;e+=1)Rn(u[e]);a=!1},d(e){l&&l.d(e),e&&(dn(t),dn(n)),s&&s.d(),hn(u,e)}}}function nr(e){var t,n,r,i,o;return{c(){t=mn("div"),n=mn("button"),r=gn("A-Z"),$n(n,"style",i=e.sorted?"":"text-decoration:line-through"),$n(t,"class","links-page-button"),o=bn(n,"click",e.click_handler)},m(e,i){pn(e,t,i),fn(t,n),fn(n,r)},p(e,t){e.sorted&&i!==(i=t.sorted?"":"text-decoration:line-through")&&$n(n,"style",i)},d(e){e&&dn(t),o()}}}function rr(e){var t,n;return{c(){t=mn("div"),n=gn(e.title),$n(t,"class","links-page-header")},m(e,r){pn(e,t,r),fn(t,n)},p(e,t){e.title&&kn(n,t.title)},d(e){e&&dn(t)}}}function ir(e){var t,n,r,i=new Qn({props:{href:e.option}});return{c(){t=mn("li"),i.$$.fragment.c(),n=vn()},m(e,o){pn(e,t,o),Gn(i,t,null),fn(t,n),r=!0},p(e,t){var n={};e.sortedList&&(n.href=t.option),i.$set(n)},i(e){r||(Pn(i.$$.fragment,e),r=!0)},o(e){Rn(i.$$.fragment,e),r=!1},d(e){e&&dn(t),Un(i)}}}function or(e){var t,n,r=e.links&&e.links.length>0&&tr(e);return{c(){r&&r.c(),t=yn()},m(e,i){r&&r.m(e,i),pn(e,t,i),n=!0},p(e,n){n.links&&n.links.length>0?r?(r.p(e,n),Pn(r,1)):((r=tr(n)).c(),Pn(r,1),r.m(t.parentNode,t)):r&&(zn(),Rn(r,1,1,()=>{r=null}),qn())},i(e){n||(Pn(r),n=!0)},o(e){Rn(r),n=!1},d(e){r&&r.d(e),e&&dn(t)}}}function ar(e,t,n){let{links:r,title:i=null}=t,o=!1;let a;return e.$set=(e=>{"links"in e&&n("links",r=e.links),"title"in e&&n("title",i=e.title)}),e.$$.update=((e={sorted:1,links:1})=>{(e.sorted||e.links)&&n("sortedList",a=o?r.slice().sort((e,t)=>Lt.str(e)>Lt.str(t)?1:-1):r)}),{links:r,title:i,sorted:o,sortedList:a,click_handler:e=>n("sorted",o=!o)}}class lr extends Kn{constructor(e){super(),Vn(this,e,ar,or,cn,["links","title"])}}function sr(e){var t,n,r,i,o,a,l,s,c,u,f,p,d,h,m,g,v,y,b,$,k,w,A,x,S,O,_,C,T,j,M,I,E,N,L,F,B,H,D,z,q,P,R,W,G,U,V,K,Y,Z,X,J,Q,ee,te,ne,re,ie,oe,ae,le,se,ce,ue,fe,pe,de,he,me,ge=Lt.str("Welcome onboard, seagal! Take your bunk at da orlop and have some X-Grog, yarrr!")+"",ve=Lt.str("Arrr, whats dat X-Piratez?")+"",ye=Lt.str("Download mod")+"",be=Lt.str("Discord server")+"",$e=Lt.str("Current mod version is")+"",ke=Lt.str("mod author, lead designer")+"",we=Lt.str("Download")+"";return{c(){t=mn("div"),n=mn("div"),(r=mn("h1")).textContent="X-PirateZ",i=vn(),o=gn(ge),a=vn(),l=mn("br"),s=vn(),c=mn("h4"),u=gn(ve),f=gn("\r\n      The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. Now with a coustom .exe that allows for a ton of unique features; bigger and better than ever before."),p=mn("br"),d=gn("\r\n      Piratez is the biggest Openxcom mod to date and takes weeks to finish."),h=mn("br"),m=vn(),g=mn("br"),v=gn("\r\n      WARNINGS:"),y=mn("br"),b=gn("\r\n      1. Contains some NUDITY of both sexes. You've been warned. Also take note this is not any porn-quality T&A since it's not a porn game."),$=mn("br"),k=gn("\r\n      2. Do not install Openxcom nightlies! They are not compatible with Piratez."),w=mn("br"),A=gn("\r\n      3. If you absolutely can't stand bikini babes fighting Nazis with chainsaws, you may suffer some trauma."),x=mn("br"),S=gn("\r\n      4. If you're looking for a tactical game that doesn't require brains, try DOTA instead."),O=mn("br"),_=gn("\r\n      5. Read or Die."),C=mn("br"),T=gn("\r\n      6. Contains riddles. Not everything is what it seems."),j=mn("br"),M=gn("\r\n      7. A single campaign might take as much as 400 hours."),I=mn("br"),E=vn(),N=mn("br"),L=vn(),F=mn("a"),B=gn(ye),H=gn(", join our community with "),D=mn("a"),z=gn(be),q=gn(" and "),(P=mn("a")).textContent="forum!",R=mn("br"),W=vn(),G=mn("br"),U=vn(),V=mn("h4"),K=gn($e),Y=gn(" K2"),Z=vn(),X=mn("div"),(J=mn("div")).textContent='"Some words must be here."',Q=vn(),ee=mn("div"),te=gn("– Dioxine, "),ne=gn(ke),re=vn(),ie=mn("br"),oe=vn(),ae=mn("br"),le=gn("\r\n\r\n    Wiki is powered by "),(se=mn("a")).textContent="Baturinsky's XPedia",ce=gn("."),ue=vn(),fe=mn("div"),pe=mn("button"),de=gn(we),he=vn(),(me=mn("div")).innerHTML='<img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen1209.png" alt="screen1209.png"> <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen334.png" alt="screen334.png"> <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen757.png" alt="screen757.png"> <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen135.png" alt="screen135.png"> <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen789.png" alt="screen789.png">',$n(F,"href","https://openxcom.mod.io/the-x-com-files"),$n(D,"href","https://discord.gg/XrQQTPg"),$n(P,"href","https://openxcom.org/forum/index.php/board,21.0.html"),$n(J,"class","quote"),$n(ee,"class","qsign"),$n(se,"href","https://github.com/baturinsky/xpedia/"),$n(n,"class","column is-full-touch is-9-desktop"),$n(pe,"title","Download"),$n(pe,"class","downloadbtn"),$n(pe,"onclick"," window.open('https://openxcom.mod.io/the-x-com-files', '_blank'); return false;"),$n(me,"class","imgcol"),$n(fe,"class","column is-hidden-touch is-3-desktop"),$n(t,"class","columns")},m(e,ge){pn(e,t,ge),fn(t,n),fn(n,r),fn(n,i),fn(n,o),fn(n,a),fn(n,l),fn(n,s),fn(n,c),fn(c,u),fn(n,f),fn(n,p),fn(n,d),fn(n,h),fn(n,m),fn(n,g),fn(n,v),fn(n,y),fn(n,b),fn(n,$),fn(n,k),fn(n,w),fn(n,A),fn(n,x),fn(n,S),fn(n,O),fn(n,_),fn(n,C),fn(n,T),fn(n,j),fn(n,M),fn(n,I),fn(n,E),fn(n,N),fn(n,L),fn(n,F),fn(F,B),fn(n,H),fn(n,D),fn(D,z),fn(n,q),fn(n,P),fn(n,R),fn(n,W),fn(n,G),fn(n,U),fn(n,V),fn(V,K),fn(V,Y),fn(n,Z),fn(n,X),fn(X,J),fn(X,Q),fn(X,ee),fn(ee,te),fn(ee,ne),fn(n,re),fn(n,ie),fn(n,oe),fn(n,ae),fn(n,le),fn(n,se),fn(n,ce),fn(t,ue),fn(t,fe),fn(fe,pe),fn(pe,de),fn(fe,he),fn(fe,me)},p:nn,i:nn,o:nn,d(e){e&&dn(t)}}}class cr extends Kn{constructor(e){super(),Vn(this,e,null,sr,cn,[])}}function ur(e,t,n){const r=Object.create(e);return r.item=t[n],r.i=n,r}function fr(e){var t,n,r,i=0==e.i?"":e.vertical?"</br>":", ",o=new Qn({props:{href:e.item}});return{c(){n=vn(),o.$$.fragment.c(),t=new xn(i,n)},m(e,i){t.m(e,i),pn(e,n,i),Gn(o,e,i),r=!0},p(e,n){r&&!e.vertical||i===(i=0==n.i?"":n.vertical?"</br>":", ")||t.p(i);var a={};e.items&&(a.href=n.item),o.$set(a)},i(e){r||(Pn(o.$$.fragment,e),r=!0)},o(e){Rn(o.$$.fragment,e),r=!1},d(e){e&&(t.d(),dn(n)),Un(o,e)}}}function pr(e){var t,n;let r=e.items,i=[];for(let t=0;t<r.length;t+=1)i[t]=fr(ur(e,r,t));const o=e=>Rn(i[e],1,1,()=>{i[e]=null});return{c(){for(let e=0;e<i.length;e+=1)i[e].c();t=yn()},m(e,r){for(let t=0;t<i.length;t+=1)i[t].m(e,r);pn(e,t,r),n=!0},p(e,n){if(e.items||e.vertical){let a;for(r=n.items,a=0;a<r.length;a+=1){const o=ur(n,r,a);i[a]?(i[a].p(e,o),Pn(i[a],1)):(i[a]=fr(o),i[a].c(),Pn(i[a],1),i[a].m(t.parentNode,t))}for(zn(),a=r.length;a<i.length;a+=1)o(a);qn()}},i(e){if(!n){for(let e=0;e<r.length;e+=1)Pn(i[e]);n=!0}},o(e){i=i.filter(Boolean);for(let e=0;e<i.length;e+=1)Rn(i[e]);n=!1},d(e){hn(i,e),e&&dn(t)}}}function dr(e,t,n){let{items:r,vertical:i=!1}=t;return e.$set=(e=>{"items"in e&&n("items",r=e.items),"vertical"in e&&n("vertical",i=e.vertical)}),{items:r,vertical:i}}class hr extends Kn{constructor(e){super(),Vn(this,e,dr,pr,cn,["items","vertical"])}}function mr(e,t,n){const r=Object.create(e);return r.field=t[n],r.i=n,r}function gr(e){var t,n=new Qn({props:{href:e.val}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.val&&(r.href=t.val),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function vr(e){var t,n,r=e.val.toLocaleString()+"";return{c(){t=mn("em"),n=gn(r),$n(t,"class","num")},m(e,r){pn(e,t,r),fn(t,n)},p(e,t){e.val&&r!==(r=t.val.toLocaleString()+"")&&kn(n,r)},i:nn,o:nn,d(e){e&&dn(t)}}}function yr(e){var t,n;return{c(){t=mn("span"),n=gn(e.val),An(t,"color",e.val?"lime":"red")},m(e,r){pn(e,t,r),fn(t,n)},p(e,r){e.val&&(kn(n,r.val),An(t,"color",r.val?"lime":"red"))},i:nn,o:nn,d(e){e&&dn(t)}}}function br(e){var t,n;let r=Object.keys(e.val).sort(),i=[];for(let t=0;t<r.length;t+=1)i[t]=kr(mr(e,r,t));const o=e=>Rn(i[e],1,1,()=>{i[e]=null});return{c(){t=mn("table");for(let e=0;e<i.length;e+=1)i[e].c();$n(t,"class","number-table")},m(e,r){pn(e,t,r);for(let e=0;e<i.length;e+=1)i[e].m(t,null);n=!0},p(e,n){if(e.val||e.rul){let a;for(r=Object.keys(n.val).sort(),a=0;a<r.length;a+=1){const o=mr(n,r,a);i[a]?(i[a].p(e,o),Pn(i[a],1)):(i[a]=kr(o),i[a].c(),Pn(i[a],1),i[a].m(t,null))}for(zn(),a=r.length;a<i.length;a+=1)o(a);qn()}},i(e){if(!n){for(let e=0;e<r.length;e+=1)Pn(i[e]);n=!0}},o(e){i=i.filter(Boolean);for(let e=0;e<i.length;e+=1)Rn(i[e]);n=!1},d(e){e&&dn(t),hn(i,e)}}}function $r(e){var t,n=new hr({props:{items:e.val,vertical:!0}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.val&&(r.items=t.val),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function kr(e){var t,n,r,i,o,a,l,s,c=Lt.decamelize(e.field)+"",u=new Qn({props:{href:e.val[e.field]}});return{c(){t=mn("tr"),n=mn("td"),r=mn("nobr"),i=vn(),o=mn("td"),a=mn("em"),u.$$.fragment.c(),l=vn()},m(e,f){pn(e,t,f),fn(t,n),fn(n,r),r.innerHTML=c,fn(t,i),fn(t,o),fn(o,a),Gn(u,a,null),fn(t,l),s=!0},p(e,t){s&&!e.val||c===(c=Lt.decamelize(t.field)+"")||(r.innerHTML=c);var n={};e.val&&(n.href=t.val[t.field]),u.$set(n)},i(e){s||(Pn(u.$$.fragment,e),s=!0)},o(e){Rn(u.$$.fragment,e),s=!1},d(e){e&&dn(t),Un(u)}}}function wr(e){var t,n,r,i,o,a,l=[$r,br,yr,vr,gr],s=[];function c(e,r){return(null==t||e.val)&&(t=!!Array.isArray(r.val)),t?0:r.val instanceof Object?1:!0===r.val||!1===r.val?2:((null==n||e.val)&&(n=!isNaN(+r.val)),n?3:4)}return r=c(null,e),i=s[r]=l[r](e),{c(){i.c(),o=yn()},m(e,t){s[r].m(e,t),pn(e,o,t),a=!0},p(e,t){var n=r;(r=c(e,t))===n?s[r].p(e,t):(zn(),Rn(s[n],1,1,()=>{s[n]=null}),qn(),(i=s[r])||(i=s[r]=l[r](t)).c(),Pn(i,1),i.m(o.parentNode,o))},i(e){a||(Pn(i),a=!0)},o(e){Rn(i),a=!1},d(e){s[r].d(e),e&&dn(o)}}}function Ar(e,t,n){let{val:r}=t;return e.$set=(e=>{"val"in e&&n("val",r=e.val)}),{val:r}}class xr extends Kn{constructor(e){super(),Vn(this,e,Ar,wr,cn,["val"])}}function Sr(e,t,n){const r=Object.create(e);return r.item=t[n],r.i=n,r}function Or(e){var t,n,r,i=0==e.i?"":e.vertical?"</br>":", ",o=new Qn({props:{href:e.item}});return{c(){n=vn(),o.$$.fragment.c(),t=new xn(i,n)},m(e,i){t.m(e,i),pn(e,n,i),Gn(o,e,i),r=!0},p(e,n){r&&!e.vertical||i===(i=0==n.i?"":n.vertical?"</br>":", ")||t.p(i);var a={};e.items&&(a.href=n.item),o.$set(a)},i(e){r||(Pn(o.$$.fragment,e),r=!0)},o(e){Rn(o.$$.fragment,e),r=!1},d(e){e&&(t.d(),dn(n)),Un(o,e)}}}function _r(e){var t,n;let r=e.items,i=[];for(let t=0;t<r.length;t+=1)i[t]=Or(Sr(e,r,t));const o=e=>Rn(i[e],1,1,()=>{i[e]=null});return{c(){for(let e=0;e<i.length;e+=1)i[e].c();t=yn()},m(e,r){for(let t=0;t<i.length;t+=1)i[t].m(e,r);pn(e,t,r),n=!0},p(e,n){if(e.items||e.vertical){let a;for(r=n.items,a=0;a<r.length;a+=1){const o=Sr(n,r,a);i[a]?(i[a].p(e,o),Pn(i[a],1)):(i[a]=Or(o),i[a].c(),Pn(i[a],1),i[a].m(t.parentNode,t))}for(zn(),a=r.length;a<i.length;a+=1)o(a);qn()}},i(e){if(!n){for(let e=0;e<r.length;e+=1)Pn(i[e]);n=!0}},o(e){i=i.filter(Boolean);for(let e=0;e<i.length;e+=1)Rn(i[e]);n=!1},d(e){hn(i,e),e&&dn(t)}}}function Cr(e,t,n){let{items:r,vertical:i=!1}=t;return e.$set=(e=>{"items"in e&&n("items",r=e.items),"vertical"in e&&n("vertical",i=e.vertical)}),{items:r,vertical:i}}class Tr extends Kn{constructor(e){super(),Vn(this,e,Cr,_r,cn,["items","vertical"])}}function jr(e){var t,n,r,i,o,a;return{c(){t=mn("div"),$n(n=mn("img"),"class","pedia-image svelte-3txty7"),$n(n,"style",r=e.style+(e.left?"float:left":"")),$n(n,"alt",i=e.id||""),$n(n,"src",o=Lt.sprite(e.id)),a=bn(n,"load",e.load_handler)},m(e,r){pn(e,t,r),fn(t,n)},p(e,t){(e.style||e.left)&&r!==(r=t.style+(t.left?"float:left":""))&&$n(n,"style",r),e.id&&i!==(i=t.id||"")&&$n(n,"alt",i),e.id&&o!==(o=Lt.sprite(t.id))&&$n(n,"src",o)},d(e){e&&dn(t),a()}}}function Mr(e){var t,n=e.id&&Lt.sprite(e.id),r=n&&jr(e);return{c(){r&&r.c(),t=yn()},m(e,n){r&&r.m(e,n),pn(e,t,n)},p(e,i){e.id&&(n=i.id&&Lt.sprite(i.id)),n?r?r.p(e,i):((r=jr(i)).c(),r.m(t.parentNode,t)):r&&(r.d(1),r=null)},i:nn,o:nn,d(e){r&&r.d(e),e&&dn(t)}}}function Ir(e,t,n){let{id:r,left:i=!1,maxWidth:o=640,maxZoom:a=4,style:l=""}=t;function s(e){console.info(e);let t=Math.min(a,Math.max(1,Math.floor(o/e.naturalWidth)));e.width=e.naturalWidth*t,e.height=e.naturalHeight*t}console.log(r);return e.$set=(e=>{"id"in e&&n("id",r=e.id),"left"in e&&n("left",i=e.left),"maxWidth"in e&&n("maxWidth",o=e.maxWidth),"maxZoom"in e&&n("maxZoom",a=e.maxZoom),"style"in e&&n("style",l=e.style)}),{id:r,left:i,maxWidth:o,maxZoom:a,style:l,loaded:s,load_handler:e=>s(e.target)}}class Er extends Kn{constructor(e){super(),Vn(this,e,Ir,Mr,cn,["id","left","maxWidth","maxZoom","style"])}}const{Object:Nr}=Wn;function Lr(e,t,n){const r=Nr.create(e);return r.b=t[n],r.i=n,r}function Fr(e){var t;return{c(){t=gn("+")},m(e,n){pn(e,t,n)},d(e){e&&dn(t)}}}function Br(e){var t,n=e.b[0]+(1!=e.b[1]?"×<em>"+e.b[1]+"</em>":"");return{c(){t=new xn(n,null)},m(e,n){t.m(e,n)},p(e,r){e.flat&&n!==(n=r.b[0]+(1!=r.b[1]?"×<em>"+r.b[1]+"</em>":""))&&t.p(n)},d(e){e&&t.d()}}}function Hr(e){var t,n=100*e.b[1]+"";return{c(){t=new xn(n,null)},m(e,n){t.m(e,n)},p(e,r){e.flat&&n!==(n=100*r.b[1]+"")&&t.p(n)},d(e){e&&t.d()}}}function Dr(e){var t,n,r=0!=e.i&&function(e){var t;return{c(){t=gn(" +")},m(e,n){pn(e,t,n)},d(e){e&&dn(t)}}}();function i(e,t){return"flatHundred"==t.b[0]?Hr:Br}var o=i(0,e),a=o(e);return{c(){r&&r.c(),t=vn(),a.c(),n=yn()},m(e,i){r&&r.m(e,i),pn(e,t,i),a.m(e,i),pn(e,n,i)},p(e,t){o===(o=i(0,t))&&a?a.p(e,t):(a.d(1),(a=o(t))&&(a.c(),a.m(n.parentNode,n)))},d(e){r&&r.d(e),e&&dn(t),a.d(e),e&&dn(n)}}}function zr(e){var t,n,r=e.flat.length>0&&e.plus&&Fr();let i=e.flat,o=[];for(let t=0;t<i.length;t+=1)o[t]=Dr(Lr(e,i,t));return{c(){r&&r.c(),t=vn();for(let e=0;e<o.length;e+=1)o[e].c();n=yn()},m(e,i){r&&r.m(e,i),pn(e,t,i);for(let t=0;t<o.length;t+=1)o[t].m(e,i);pn(e,n,i)},p(e,a){if(a.flat.length>0&&a.plus?r||((r=Fr()).c(),r.m(t.parentNode,t)):r&&(r.d(1),r=null),e.flat){let t;for(i=a.flat,t=0;t<i.length;t+=1){const r=Lr(a,i,t);o[t]?o[t].p(e,r):(o[t]=Dr(r),o[t].c(),o[t].m(n.parentNode,n))}for(;t<o.length;t+=1)o[t].d(1);o.length=i.length}},i:nn,o:nn,d(e){r&&r.d(e),e&&dn(t),hn(o,e),e&&dn(n)}}}function qr(e,t,n){let r,{bonus:i,plus:o=!1}=t;return e.$set=(e=>{"bonus"in e&&n("bonus",i=e.bonus),"plus"in e&&n("plus",o=e.plus)}),e.$$.update=((e={bonus:1})=>{e.bonus&&n("flat",r=function(e){if(!e)return[];let t=[];for(let n of Object.keys(e))if(e[n].length)for(let r in e[n]){let i=e[n][r];0!=i&&(r=1*r+1,t.push([n+(1==r?"":"<sup>"+r+"</sup>"),i]))}else 0!=e[n]&&t.push([n,e[n]]);return t=t.sort((e,t)=>"flatHundred"==e[0]||e[0]<t[0]?-1:1)}(i))}),{bonus:i,plus:o,flat:r}}class Pr extends Kn{constructor(e){super(),Vn(this,e,qr,zr,cn,["bonus","plus"])}}function Rr(e){var t,n,r;return{c(){t=mn("a"),$n(n=mn("canvas"),"class","pixelated"),An(n,"display",e.loaded?"inline":"none"),$n(t,"href",e.src)},m(i,o){pn(i,t,o),fn(t,n),e.canvas_1_binding(n),r=e.prepareCanvas.call(null,n)||{}},p(e,r){e.loaded&&An(n,"display",r.loaded?"inline":"none"),e.src&&$n(t,"href",r.src)},i:nn,o:nn,d(n){n&&dn(t),e.canvas_1_binding(null),r&&"function"==typeof r.destroy&&r.destroy()}}}function Wr(e,t,n){let r,i,{src:o,maxWidth:a=1e6,maxHeight:l=1e6,zoom:s=1}=t,c=null,u=!1;function f(){n("canvas",r.width=Math.min(a,c.naturalWidth*s),r),n("canvas",r.height=Math.min(l,c.naturalHeight*s),r),i.imageSmoothingEnabled=!1,i.mozImageSmoothingEnabled=!1,i.webkitImageSmoothingEnabled=!1,i.drawImage(c,0,0,c.naturalWidth*s,c.naturalHeight*s),n("loaded",u=!0)}return e.$set=(e=>{"src"in e&&n("src",o=e.src),"maxWidth"in e&&n("maxWidth",a=e.maxWidth),"maxHeight"in e&&n("maxHeight",l=e.maxHeight),"zoom"in e&&n("zoom",s=e.zoom)}),e.$$.update=((e={src:1,img:1})=>{(e.src||e.img)&&o&&c&&(n("loaded",u=!1),n("img",c.src=o,c))}),{src:o,maxWidth:a,maxHeight:l,zoom:s,canvas:r,loaded:u,prepareCanvas:function(e){n("canvas",r=e),i=r.getContext("2d"),n("img",c=new Image),n("img",c.onload=f,c),n("img",c.src=o,c)},canvas_1_binding:function(e){Tn[e?"unshift":"push"](()=>{n("canvas",r=e)})}}}class Gr extends Kn{constructor(e){super(),Vn(this,e,Wr,Rr,cn,["src","maxWidth","maxHeight","zoom"])}}function Ur(e,t,n){const r=Object.create(e);return r.sound=t[n],r.i=n,r}function Vr(e,t,n){const r=Object.create(e);return r.field=t[n],r.i=n,r}function Kr(e,t,n){const r=Object.create(e);return r.key=t[n][0],r.prop=t[n][1],r}function Yr(e,t,n){const r=Object.create(e);return r.field=t[n],r.i=n,r}function Zr(e,t,n){const r=Object.create(e);return r.res=t[n],r}function Xr(e,t,n){const r=Object.create(e);return r.attack=t[n],r}function Jr(e){var t,n,r,i,o,a=new Gr({props:{src:Lt.sprite(e.item.sprite),maxWidth:32*e.item.invWidth,maxHeight:32*e.item.invHeight,zoom:"2"}}),l=e.attacks.length>0&&Qr(e);return{c(){t=mn("tr"),n=mn("td"),r=mn("div"),a.$$.fragment.c(),i=vn(),l&&l.c(),An(r,"display","flex"),An(r,"align-items","flex-start"),An(r,"margin","5px 3px"),$n(n,"colspan","2"),$n(n,"class","svelte-yer6ww")},m(e,s){pn(e,t,s),fn(t,n),fn(n,r),Gn(a,r,null),fn(r,i),l&&l.m(r,null),o=!0},p(e,t){var n={};e.item&&(n.src=Lt.sprite(t.item.sprite)),e.item&&(n.maxWidth=32*t.item.invWidth),e.item&&(n.maxHeight=32*t.item.invHeight),a.$set(n),t.attacks.length>0?l?(l.p(e,t),Pn(l,1)):((l=Qr(t)).c(),Pn(l,1),l.m(r,null)):l&&(zn(),Rn(l,1,1,()=>{l=null}),qn())},i(e){o||(Pn(a.$$.fragment,e),Pn(l),o=!0)},o(e){Rn(a.$$.fragment,e),Rn(l),o=!1},d(e){e&&dn(t),Un(a),l&&l.d()}}}function Qr(e){var t,n,r,i,o,a,l=2!=e.item.battleType&&ei();let s=e.attacks,c=[];for(let t=0;t<s.length;t+=1)c[t]=ci(Xr(e,s,t));const u=e=>Rn(c[e],1,1,()=>{c[e]=null});return{c(){t=mn("table"),n=mn("thead"),l&&l.c(),r=vn(),(i=mn("td")).textContent="damage",o=vn();for(let e=0;e<c.length;e+=1)c[e].c();$n(i,"class","svelte-yer6ww"),$n(t,"class","attacks-table")},m(e,s){pn(e,t,s),fn(t,n),l&&l.m(n,null),fn(n,r),fn(n,i),fn(t,o);for(let e=0;e<c.length;e+=1)c[e].m(t,null);a=!0},p(e,i){if(2!=i.item.battleType?l||((l=ei()).c(),l.m(n,r)):l&&(l.d(1),l=null),e.attacks||e.rul||e.item){let n;for(s=i.attacks,n=0;n<s.length;n+=1){const r=Xr(i,s,n);c[n]?(c[n].p(e,r),Pn(c[n],1)):(c[n]=ci(r),c[n].c(),Pn(c[n],1),c[n].m(t,null))}for(zn(),n=s.length;n<c.length;n+=1)u(n);qn()}},i(e){if(!a){for(let e=0;e<s.length;e+=1)Pn(c[e]);a=!0}},o(e){c=c.filter(Boolean);for(let e=0;e<c.length;e+=1)Rn(c[e]);a=!1},d(e){e&&dn(t),l&&l.d(),hn(c,e)}}}function ei(e){var t,n,r,i,o;return{c(){(t=mn("td")).textContent="mode",n=vn(),(r=mn("td")).textContent="accuracy",i=vn(),(o=mn("td")).textContent="cost",$n(t,"class","svelte-yer6ww"),$n(r,"class","svelte-yer6ww"),$n(o,"class","svelte-yer6ww")},m(e,a){pn(e,t,a),pn(e,n,a),pn(e,r,a),pn(e,i,a),pn(e,o,a)},d(e){e&&(dn(t),dn(n),dn(r),dn(i),dn(o))}}}function ti(e){var t,n,r,i,o,a,l,s,c,u,f,p,d,h,m,g,v,y,b,$=e.attack.name+"",k=1==e.attack.shots?"":"×"+e.attack.shots,w=e.attack.accuracy+"",A=e.attack.cost.time+(e.attack.flatTime?"":"%"),x=new Pr({props:{bonus:e.attack.accuracyMultiplier}});let S=Object.keys(e.attack.cost),O=[];for(let t=0;t<S.length;t+=1)O[t]=ii(Zr(e,S,t));const _=e=>Rn(O[e],1,1,()=>{O[e]=null});return{c(){t=mn("td"),n=gn($),r=gn(k),i=vn(),o=mn("td"),a=mn("nobr"),l=mn("em"),s=gn(w),c=mn("small"),u=gn("%"),f=mn("br"),x.$$.fragment.c(),p=vn(),d=mn("td"),h=mn("em"),m=gn(A),g=vn(),(v=mn("small")).textContent="TU",y=vn();for(let e=0;e<O.length;e+=1)O[e].c();$n(t,"rowspan","2"),$n(t,"class","svelte-yer6ww"),$n(o,"class","svelte-yer6ww"),$n(d,"class","svelte-yer6ww")},m(e,$){pn(e,t,$),fn(t,n),fn(t,r),pn(e,i,$),pn(e,o,$),fn(o,a),fn(a,l),fn(l,s),fn(a,c),fn(c,u),fn(c,f),Gn(x,c,null),pn(e,p,$),pn(e,d,$),fn(d,h),fn(h,m),fn(d,g),fn(d,v),fn(d,y);for(let e=0;e<O.length;e+=1)O[e].m(d,null);b=!0},p(e,t){b&&!e.attacks||$===($=t.attack.name+"")||kn(n,$),b&&!e.attacks||k===(k=1==t.attack.shots?"":"×"+t.attack.shots)||kn(r,k),b&&!e.attacks||w===(w=t.attack.accuracy+"")||kn(s,w);var i={};if(e.attacks&&(i.bonus=t.attack.accuracyMultiplier),x.$set(i),b&&!e.attacks||A===(A=t.attack.cost.time+(t.attack.flatTime?"":"%"))||kn(m,A),e.attacks){let n;for(S=Object.keys(t.attack.cost),n=0;n<S.length;n+=1){const r=Zr(t,S,n);O[n]?(O[n].p(e,r),Pn(O[n],1)):(O[n]=ii(r),O[n].c(),Pn(O[n],1),O[n].m(d,null))}for(zn(),n=S.length;n<O.length;n+=1)_(n);qn()}},i(e){if(!b){Pn(x.$$.fragment,e);for(let e=0;e<S.length;e+=1)Pn(O[e]);b=!0}},o(e){Rn(x.$$.fragment,e),O=O.filter(Boolean);for(let e=0;e<O.length;e+=1)Rn(O[e]);b=!1},d(e){e&&(dn(t),dn(i),dn(o)),Un(x),e&&(dn(p),dn(d)),hn(O,e)}}}function ni(e){var t,n,r=2!=e.item.battleType&&oi(e);return{c(){r&&r.c(),t=yn()},m(e,i){r&&r.m(e,i),pn(e,t,i),n=!0},p(e,n){2!=n.item.battleType?r?(r.p(e,n),Pn(r,1)):((r=oi(n)).c(),Pn(r,1),r.m(t.parentNode,t)):r&&(zn(),Rn(r,1,1,()=>{r=null}),qn())},i(e){n||(Pn(r),n=!0)},o(e){Rn(r),n=!1},d(e){r&&r.d(e),e&&dn(t)}}}function ri(e){var t,n,r,i,o,a=e.res+"",l=new xr({props:{val:e.attack.cost[e.res]}});return{c(){t=mn("br"),l.$$.fragment.c(),n=gn(" "),r=mn("small"),i=gn(a)},m(e,a){pn(e,t,a),Gn(l,e,a),pn(e,n,a),pn(e,r,a),fn(r,i),o=!0},p(e,t){var n={};e.attacks&&(n.val=t.attack.cost[t.res]),l.$set(n),o&&!e.attacks||a===(a=t.res+"")||kn(i,a)},i(e){o||(Pn(l.$$.fragment,e),o=!0)},o(e){Rn(l.$$.fragment,e),o=!1},d(e){e&&dn(t),Un(l,e),e&&(dn(n),dn(r))}}}function ii(e){var t,n,r="time"!=e.res&&0!=e.attack.cost[e.res]&&ri(e);return{c(){r&&r.c(),t=yn()},m(e,i){r&&r.m(e,i),pn(e,t,i),n=!0},p(e,n){"time"!=n.res&&0!=n.attack.cost[n.res]?r?(r.p(e,n),Pn(r,1)):((r=ri(n)).c(),Pn(r,1),r.m(t.parentNode,t)):r&&(zn(),Rn(r,1,1,()=>{r=null}),qn())},i(e){n||(Pn(r),n=!0)},o(e){Rn(r),n=!1},d(e){r&&r.d(e),e&&dn(t)}}}function oi(e){var t,n,r,i,o,a,l,s,c,u,f=e.attack.item.clipSize+"",p=e.attack.item.weight+"",d=new Gr({props:{src:Lt.sprite(e.attack.item.sprite),maxWidth:32*e.attack.item.invWidth,maxHeight:32*e.attack.item.invHeight,zoom:"2"}}),h=new Qn({props:{href:e.attack.item.type}});return{c(){t=mn("td"),d.$$.fragment.c(),n=vn(),r=mn("td"),h.$$.fragment.c(),i=mn("br"),o=mn("small"),a=gn("Clip: "),l=gn(f),s=gn(" Wgt: "),c=gn(p),$n(t,"rowspan","2"),$n(t,"class","ammo-img svelte-yer6ww"),$n(r,"colspan","2"),$n(r,"class","svelte-yer6ww")},m(e,f){pn(e,t,f),Gn(d,t,null),pn(e,n,f),pn(e,r,f),Gn(h,r,null),fn(r,i),fn(r,o),fn(o,a),fn(o,l),fn(o,s),fn(o,c),u=!0},p(e,t){var n={};e.attacks&&(n.src=Lt.sprite(t.attack.item.sprite)),e.attacks&&(n.maxWidth=32*t.attack.item.invWidth),e.attacks&&(n.maxHeight=32*t.attack.item.invHeight),d.$set(n);var r={};e.attacks&&(r.href=t.attack.item.type),h.$set(r),u&&!e.attacks||f===(f=t.attack.item.clipSize+"")||kn(l,f),u&&!e.attacks||p===(p=t.attack.item.weight+"")||kn(c,p)},i(e){u||(Pn(d.$$.fragment,e),Pn(h.$$.fragment,e),u=!0)},o(e){Rn(d.$$.fragment,e),Rn(h.$$.fragment,e),u=!1},d(e){e&&dn(t),Un(d),e&&(dn(n),dn(r)),Un(h)}}}function ai(e){var t,n,r,i,o,a,l,s,c,u,f,p,d=e.attack.pellets>1&&e.attack.damageBonus?"(":"",h=e.attack.damage||"0",m=e.attack.pellets>1&&e.attack.damageBonus?")":"",g=e.attack.pellets>1?" ×"+e.attack.pellets:"",v=new Pr({props:{plus:!0,bonus:e.attack.damageBonus}}),y=new Qn({props:{href:Lt.damageTypes[e.attack.damageType]}});return{c(){t=mn("nobr"),n=gn(d),r=mn("em"),i=gn(h),o=vn(),a=mn("small"),v.$$.fragment.c(),l=gn(m),s=vn(),c=gn(g),u=vn(),f=mn("br"),y.$$.fragment.c()},m(e,d){pn(e,t,d),fn(t,n),fn(t,r),fn(r,i),fn(t,o),fn(t,a),Gn(v,a,null),fn(a,l),fn(t,s),fn(t,c),pn(e,u,d),pn(e,f,d),Gn(y,e,d),p=!0},p(e,t){p&&!e.attacks||d===(d=t.attack.pellets>1&&t.attack.damageBonus?"(":"")||kn(n,d),p&&!e.attacks||h===(h=t.attack.damage||"0")||kn(i,h);var r={};e.attacks&&(r.bonus=t.attack.damageBonus),v.$set(r),p&&!e.attacks||m===(m=t.attack.pellets>1&&t.attack.damageBonus?")":"")||kn(l,m),p&&!e.attacks||g===(g=t.attack.pellets>1?" ×"+t.attack.pellets:"")||kn(c,g);var o={};e.attacks&&(o.href=Lt.damageTypes[t.attack.damageType]),y.$set(o)},i(e){p||(Pn(v.$$.fragment,e),Pn(y.$$.fragment,e),p=!0)},o(e){Rn(v.$$.fragment,e),Rn(y.$$.fragment,e),p=!1},d(e){e&&dn(t),Un(v),e&&(dn(u),dn(f)),Un(y,e)}}}function li(e){var t,n;let r=Object.keys(e.attack.alter).sort(),i=[];for(let t=0;t<r.length;t+=1)i[t]=si(Yr(e,r,t));const o=e=>Rn(i[e],1,1,()=>{i[e]=null});return{c(){for(let e=0;e<i.length;e+=1)i[e].c();t=yn()},m(e,r){for(let t=0;t<i.length;t+=1)i[t].m(e,r);pn(e,t,r),n=!0},p(e,n){if(e.attacks){let a;for(r=Object.keys(n.attack.alter).sort(),a=0;a<r.length;a+=1){const o=Yr(n,r,a);i[a]?(i[a].p(e,o),Pn(i[a],1)):(i[a]=si(o),i[a].c(),Pn(i[a],1),i[a].m(t.parentNode,t))}for(zn(),a=r.length;a<i.length;a+=1)o(a);qn()}},i(e){if(!n){for(let e=0;e<r.length;e+=1)Pn(i[e]);n=!0}},o(e){i=i.filter(Boolean);for(let e=0;e<i.length;e+=1)Rn(i[e]);n=!1},d(e){hn(i,e),e&&dn(t)}}}function si(e){var t,n,r,i,o=e.field+"",a=new xr({props:{val:e.attack.alter[e.field]}});return{c(){t=gn(o),n=gn(": "),a.$$.fragment.c(),r=mn("br")},m(e,o){pn(e,t,o),pn(e,n,o),Gn(a,e,o),pn(e,r,o),i=!0},p(e,n){i&&!e.attacks||o===(o=n.field+"")||kn(t,o);var r={};e.attacks&&(r.val=n.attack.alter[n.field]),a.$set(r)},i(e){i||(Pn(a.$$.fragment,e),i=!0)},o(e){Rn(a.$$.fragment,e),i=!1},d(e){e&&(dn(t),dn(n)),Un(a,e),e&&dn(r)}}}function ci(e){var t,n,r,i,o,a,l,s,c,u,f,p=[ni,ti],d=[];function h(e,t){return"ammo"==t.attack.mode?0:1}n=h(0,e),r=d[n]=p[n](e);var m=("damage"in e.attack||"damageType"in e.attack)&&ai(e),g=e.attack.alter&&li(e);return{c(){t=mn("tr"),r.c(),i=vn(),o=mn("td"),m&&m.c(),a=vn(),l=mn("tr"),s=mn("td"),c=mn("small"),g&&g.c(),u=vn(),$n(o,"class","svelte-yer6ww"),$n(s,"colspan","3"),An(s,"columns","2"),$n(s,"class","svelte-yer6ww")},m(e,r){pn(e,t,r),d[n].m(t,null),fn(t,i),fn(t,o),m&&m.m(o,null),pn(e,a,r),pn(e,l,r),fn(l,s),fn(s,c),g&&g.m(c,null),fn(l,u),f=!0},p(e,a){var l=n;(n=h(0,a))===l?d[n].p(e,a):(zn(),Rn(d[l],1,1,()=>{d[l]=null}),qn(),(r=d[n])||(r=d[n]=p[n](a)).c(),Pn(r,1),r.m(t,i)),"damage"in a.attack||"damageType"in a.attack?m?(m.p(e,a),Pn(m,1)):((m=ai(a)).c(),Pn(m,1),m.m(o,null)):m&&(zn(),Rn(m,1,1,()=>{m=null}),qn()),a.attack.alter?g?(g.p(e,a),Pn(g,1)):((g=li(a)).c(),Pn(g,1),g.m(c,null)):g&&(zn(),Rn(g,1,1,()=>{g=null}),qn())},i(e){f||(Pn(r),Pn(m),Pn(g),f=!0)},o(e){Rn(r),Rn(m),Rn(g),f=!1},d(e){e&&dn(t),d[n].d(),m&&m.d(),e&&(dn(a),dn(l)),g&&g.d()}}}function ui(e){var t,n,r,i,o,a,l,s,c,u,f,p,d,h,m=Lt.decamelize(e.key)+"",g=[yi,vi,gi,mi,hi,di,pi,fi],v=[];function y(e,t){return(null==o||e.item)&&(o=!!["requiresBuyBaseFunc"].includes(t.key)),o?0:((null==a||e.item)&&(a=!!["manufacture","componentOf"].includes(t.key)),a?1:((null==l||e.item)&&(l=!!["damageBonus","meleeBonus","accuracyMultiplier","meleeMultiplier","closeQuartersMultiplier"].includes(t.key)),l?2:((null==s||e.item)&&(s=!!["damageType","meleeType"].includes(t.key)),s?3:"battleType"==t.key?4:((null==c||e.item)&&(c=!!t.key.includes("Sound")),c?5:((null==u||e.item)&&(u=!!["floorSprite","handSprite"].includes(t.key)),u?6:7)))))}return f=y(null,e),p=v[f]=g[f](e),{c(){t=mn("tr"),n=mn("td"),r=vn(),i=mn("td"),p.c(),d=vn(),$n(n,"class","svelte-yer6ww"),$n(i,"class","right-column svelte-yer6ww")},m(e,o){pn(e,t,o),fn(t,n),n.innerHTML=m,fn(t,r),fn(t,i),v[f].m(i,null),fn(t,d),h=!0},p(e,t){h&&!e.item||m===(m=Lt.decamelize(t.key)+"")||(n.innerHTML=m);var r=f;(f=y(e,t))===r?v[f].p(e,t):(zn(),Rn(v[r],1,1,()=>{v[r]=null}),qn(),(p=v[f])||(p=v[f]=g[f](t)).c(),Pn(p,1),p.m(i,null))},i(e){h||(Pn(p),h=!0)},o(e){Rn(p),h=!1},d(e){e&&dn(t),v[f].d()}}}function fi(e){var t,n=new xr({props:{val:e.prop}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.item&&(r.val=t.prop),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function pi(e){var t,n,r,i,o,a,l,s=e.prop+"";return{c(){t=mn("a"),n=gn(s),i=vn(),o=mn("img"),An(t,"vertical-align","top"),$n(t,"href",r=Lt.specialSprite(e.key,e.prop)),$n(o,"class","sprite svelte-yer6ww"),$n(o,"alt",a=e.prop),$n(o,"src",l=Lt.specialSprite(e.key,e.prop))},m(e,r){pn(e,t,r),fn(t,n),pn(e,i,r),pn(e,o,r)},p(e,i){e.item&&s!==(s=i.prop+"")&&kn(n,s),e.item&&r!==(r=Lt.specialSprite(i.key,i.prop))&&$n(t,"href",r),e.item&&a!==(a=i.prop)&&$n(o,"alt",a),e.item&&l!==(l=Lt.specialSprite(i.key,i.prop))&&$n(o,"src",l)},i:nn,o:nn,d(e){e&&(dn(t),dn(i),dn(o))}}}function di(e){var t;let n=Ai(e.prop),r=[];for(let t=0;t<n.length;t+=1)r[t]=bi(Ur(e,n,t));return{c(){for(let e=0;e<r.length;e+=1)r[e].c();t=yn()},m(e,n){for(let t=0;t<r.length;t+=1)r[t].m(e,n);pn(e,t,n)},p(e,i){if(e.soundsFrom||e.item){let o;for(n=Ai(i.prop),o=0;o<n.length;o+=1){const a=Ur(i,n,o);r[o]?r[o].p(e,a):(r[o]=bi(a),r[o].c(),r[o].m(t.parentNode,t))}for(;o<r.length;o+=1)r[o].d(1);r.length=n.length}},i:nn,o:nn,d(e){hn(r,e),e&&dn(t)}}}function hi(e){var t,n,r,i=e.prop+"",o=Lt.battleTypes[e.prop]+"";return{c(){t=gn(i),n=gn(": "),r=gn(o)},m(e,i){pn(e,t,i),pn(e,n,i),pn(e,r,i)},p(e,n){e.item&&i!==(i=n.prop+"")&&kn(t,i),e.item&&o!==(o=Lt.battleTypes[n.prop]+"")&&kn(r,o)},i:nn,o:nn,d(e){e&&(dn(t),dn(n),dn(r))}}}function mi(e){var t,n=Lt.damageTypeName(e.prop)+"";return{c(){t=gn(n)},m(e,n){pn(e,t,n)},p(e,r){e.item&&n!==(n=Lt.damageTypeName(r.prop)+"")&&kn(t,n)},i:nn,o:nn,d(e){e&&dn(t)}}}function gi(e){var t,n=new Pr({props:{bonus:e.prop}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.item&&(r.bonus=t.prop),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function vi(e){var t,n;let r=Object.keys(e.prop),i=[];for(let t=0;t<r.length;t+=1)i[t]=$i(Vr(e,r,t));const o=e=>Rn(i[e],1,1,()=>{i[e]=null});return{c(){t=mn("table");for(let e=0;e<i.length;e+=1)i[e].c();$n(t,"class","number-table")},m(e,r){pn(e,t,r);for(let e=0;e<i.length;e+=1)i[e].m(t,null);n=!0},p(e,n){if(e.item){let a;for(r=Object.keys(n.prop),a=0;a<r.length;a+=1){const o=Vr(n,r,a);i[a]?(i[a].p(e,o),Pn(i[a],1)):(i[a]=$i(o),i[a].c(),Pn(i[a],1),i[a].m(t,null))}for(zn(),a=r.length;a<i.length;a+=1)o(a);qn()}},i(e){if(!n){for(let e=0;e<r.length;e+=1)Pn(i[e]);n=!0}},o(e){i=i.filter(Boolean);for(let e=0;e<i.length;e+=1)Rn(i[e]);n=!1},d(e){e&&dn(t),hn(i,e)}}}function yi(e){var t,n=new Tr({props:{items:e.prop,vertical:!0}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.item&&(r.items=t.prop),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function bi(e){var t,n,r,i,o,a=e.i>0?"<br/>":"";return{c(){n=vn(),r=mn("audio"),i=gn("Audio tag not working"),t=new xn(a,n),r.controls=!0,$n(r,"src",o=e.sound)},m(e,o){t.m(e,o),pn(e,n,o),pn(e,r,o),fn(r,i)},p(e,t){e.item&&o!==(o=t.sound)&&$n(r,"src",o)},d(e){e&&(t.d(),dn(n),dn(r))}}}function $i(e){var t,n,r,i,o,a,l=e.prop[e.field]+"",s=new Qn({props:{href:e.field}});return{c(){t=mn("tr"),n=mn("td"),r=mn("em"),i=gn(l),o=mn("td"),s.$$.fragment.c(),$n(n,"class","svelte-yer6ww"),$n(o,"class","svelte-yer6ww")},m(e,l){pn(e,t,l),fn(t,n),fn(n,r),fn(r,i),fn(t,o),Gn(s,o,null),a=!0},p(e,t){a&&!e.item||l===(l=t.prop[t.field]+"")||kn(i,l);var n={};e.item&&(n.href=t.field),s.$set(n)},i(e){a||(Pn(s.$$.fragment,e),a=!0)},o(e){Rn(s.$$.fragment,e),a=!1},d(e){e&&dn(t),Un(s)}}}function ki(e){var t,n,r=!["sprite","type","_attacks","damageAlter"].includes(e.key),i=r&&ui(e);return{c(){i&&i.c(),t=yn()},m(e,r){i&&i.m(e,r),pn(e,t,r),n=!0},p(e,n){e.item&&(r=!["sprite","type","_attacks","damageAlter"].includes(n.key)),r?i?(i.p(e,n),Pn(i,1)):((i=ui(n)).c(),Pn(i,1),i.m(t.parentNode,t)):i&&(zn(),Rn(i,1,1,()=>{i=null}),qn())},i(e){n||(Pn(i),n=!0)},o(e){Rn(i),n=!1},d(e){i&&i.d(e),e&&dn(t)}}}function wi(e){var t,n,r,i,o,a,l,s=(e.item.sprite&&"Resources/Blanks/Blank.png"!=e.item.sprite||e.attacks.length>0)&&Jr(e);let c=Object.entries(e.item).sort(xi),u=[];for(let t=0;t<c.length;t+=1)u[t]=ki(Kr(e,c,t));const f=e=>Rn(u[e],1,1,()=>{u[e]=null});return{c(){t=mn("tr"),n=mn("td"),r=gn(e.title),i=vn(),s&&s.c(),o=vn();for(let e=0;e<u.length;e+=1)u[e].c();a=yn(),$n(n,"colspan","2"),$n(n,"class","table-header svelte-yer6ww")},m(e,c){pn(e,t,c),fn(t,n),fn(n,r),pn(e,i,c),s&&s.m(e,c),pn(e,o,c);for(let t=0;t<u.length;t+=1)u[t].m(e,c);pn(e,a,c),l=!0},p(e,t){if(l&&!e.title||kn(r,t.title),t.item.sprite&&"Resources/Blanks/Blank.png"!=t.item.sprite||t.attacks.length>0?s?(s.p(e,t),Pn(s,1)):((s=Jr(t)).c(),Pn(s,1),s.m(o.parentNode,o)):s&&(zn(),Rn(s,1,1,()=>{s=null}),qn()),e.item||e.rul||e.soundsFrom){let n;for(c=Object.entries(t.item).sort(xi),n=0;n<c.length;n+=1){const r=Kr(t,c,n);u[n]?(u[n].p(e,r),Pn(u[n],1)):(u[n]=ki(r),u[n].c(),Pn(u[n],1),u[n].m(a.parentNode,a))}for(zn(),n=c.length;n<u.length;n+=1)f(n);qn()}},i(e){if(!l){Pn(s);for(let e=0;e<c.length;e+=1)Pn(u[e]);l=!0}},o(e){Rn(s),u=u.filter(Boolean);for(let e=0;e<u.length;e+=1)Rn(u[e]);l=!1},d(e){e&&(dn(t),dn(i)),s&&s.d(e),e&&dn(o),hn(u,e),e&&dn(a)}}}function Ai(e){return e?(e.length||(e=[e]),e.map(e=>Lt.path+Lt.sounds[e]).filter(e=>e)):[]}const xi=(e,t)=>e[0]>t[0]?1:-1;function Si(e,t,n){let r,{item:i,title:o="Item"}=t;return console.info(i),e.$set=(e=>{"item"in e&&n("item",i=e.item),"title"in e&&n("title",o=e.title)}),e.$$.update=((e={item:1,attacks:1})=>{if(e.item||e.attacks){if(n("attacks",r=i.attacks().slice()),i.compatibleAmmo)for(let e of i.compatibleAmmo){let t=Lt.items[e],n=t.attacks()[0];n.item=t,r.push(n)}console.info(r)}}),{item:i,title:o,attacks:r}}class Oi extends Kn{constructor(e){super(),Vn(this,e,Si,wi,cn,["item","title"])}}function _i(e,t,n){const r=Object.create(e);return r.field=t[n],r.i=n,r}function Ci(e,t,n){const r=Object.create(e);return r.res=t[n],r.i=n,r}function Ti(e,t,n){const r=Object.create(e);return r.key=t[n][0],r.prop=t[n][1],r}function ji(e,t,n){const r=Object.create(e);return r.subfield=t[n],r.j=n,r}function Mi(e,t,n){const r=Object.create(e);return r.key=t[n][0],r.val=t[n][1],r.i=n,r}function Ii(e,t,n){const r=Object.create(e);return r.prop=t[n],r}function Ei(e,t,n){const r=Object.create(e);return r.url=t[n],r.j=n,r}function Ni(e,t,n){const r=Object.create(e);return r.body=t[n],r.i=n,r}function Li(e){var t,n,r,i=new hr({props:{items:e.seeAlso}});return{c(){(t=mn("span")).textContent="- see also",n=vn(),i.$$.fragment.c(),An(t,"color","white")},m(e,o){pn(e,t,o),pn(e,n,o),Gn(i,e,o),r=!0},p(e,t){var n={};e.seeAlso&&(n.items=t.seeAlso),i.$set(n)},i(e){r||(Pn(i.$$.fragment,e),r=!0)},o(e){Rn(i.$$.fragment,e),r=!1},d(e){e&&(dn(t),dn(n)),Un(i,e)}}}function Fi(e){var t,n,r,i,o,a=e.seeAllVariants?"Hide":"See";return{c(){t=mn("p"),n=mn("button"),r=gn(a),i=gn(" all variants"),$n(n,"class","btn-hover-effect btn-hover-effect--effect-1"),o=bn(n,"click",e.click_handler)},m(e,o){pn(e,t,o),fn(t,n),fn(n,r),fn(n,i)},p(e,t){e.seeAllVariants&&a!==(a=t.seeAllVariants?"Hide":"See")&&kn(r,a)},d(e){e&&dn(t),o()}}}function Bi(e){var t,n,r;let i=Object.keys(e.armor.dollSprites).sort(e.func),o=[];for(let t=0;t<i.length;t+=1)o[t]=qi(Ni(e,i,t));return{c(){for(let e=0;e<o.length;e+=1)o[e].c();t=vn(),$n(n=mn("div"),"style",r="height:"+(e.seeAllVariants?120*(Math.floor(Object.keys(e.armor.dollSprites).length/ao)+1):120)+"px")},m(e,r){for(let t=0;t<o.length;t+=1)o[t].m(e,r);pn(e,t,r),pn(e,n,r)},p(e,a){if(e.seeAllVariants||e.dollColumns||e.armor||e.rul){let n;for(i=Object.keys(a.armor.dollSprites).sort(a.func),n=0;n<i.length;n+=1){const r=Ni(a,i,n);o[n]?o[n].p(e,r):(o[n]=qi(r),o[n].c(),o[n].m(t.parentNode,t))}for(;n<o.length;n+=1)o[n].d(1);o.length=i.length}(e.seeAllVariants||e.armor)&&r!==(r="height:"+(a.seeAllVariants?120*(Math.floor(Object.keys(a.armor.dollSprites).length/ao)+1):120)+"px")&&$n(n,"style",r)},d(e){hn(o,e),e&&(dn(t),dn(n))}}}function Hi(e){var t,n,r=e.seeAllVariants&&Di(e);let i=e.armor.dollSprites[e.body],o=[];for(let t=0;t<i.length;t+=1)o[t]=zi(Ei(e,i,t));return{c(){t=mn("div"),r&&r.c(),n=vn();for(let e=0;e<o.length;e+=1)o[e].c();$n(t,"class","armor"),An(t,"left",e.i%ao*80+"px"),An(t,"top",120*Math.floor(e.i/ao)+"px")},m(e,i){pn(e,t,i),r&&r.m(t,null),fn(t,n);for(let e=0;e<o.length;e+=1)o[e].m(t,null)},p(e,a){if(a.seeAllVariants?r?r.p(e,a):((r=Di(a)).c(),r.m(t,n)):r&&(r.d(1),r=null),e.armor||e.rul){let n;for(i=a.armor.dollSprites[a.body],n=0;n<i.length;n+=1){const r=Ei(a,i,n);o[n]?o[n].p(e,r):(o[n]=zi(r),o[n].c(),o[n].m(t,null))}for(;n<o.length;n+=1)o[n].d(1);o.length=i.length}},d(e){e&&dn(t),r&&r.d(),hn(o,e)}}}function Di(e){var t,n,r=e.body+"";return{c(){t=mn("div"),n=gn(r),$n(t,"class","armor-variant")},m(e,r){pn(e,t,r),fn(t,n)},p(e,t){e.armor&&r!==(r=t.body+"")&&kn(n,r)},d(e){e&&dn(t)}}}function zi(e){var t,n,r;return{c(){$n(t=mn("img"),"src",n=e.url),$n(t,"alt",r=e.body),$n(t,"class","armor-layer")},m(e,n){pn(e,t,n)},p(e,i){e.armor&&n!==(n=i.url)&&$n(t,"src",n),e.armor&&r!==(r=i.body)&&$n(t,"alt",r)},d(e){e&&dn(t)}}}function qi(e){var t,n=(e.seeAllVariants||0==e.i)&&Hi(e);return{c(){n&&n.c(),t=yn()},m(e,r){n&&n.m(e,r),pn(e,t,r)},p(e,r){r.seeAllVariants||0==r.i?n?n.p(e,r):((n=Hi(r)).c(),n.m(t.parentNode,t)):n&&(n.d(1),n=null)},d(e){n&&n.d(e),e&&dn(t)}}}function Pi(e){var t,n,r,i,o,a,l,s=Lt.decamelize(e.prop)+"";let c=Object.entries(e.armor[e.prop]).sort(e.func_1),u=[];for(let t=0;t<c.length;t+=1)u[t]=Ki(Mi(e,c,t));const f=e=>Rn(u[e],1,1,()=>{u[e]=null});return{c(){t=mn("table"),n=mn("thead"),r=mn("tr"),i=mn("td"),o=vn();for(let e=0;e<u.length;e+=1)u[e].c();a=vn(),$n(i,"colspan","2"),$n(i,"class","number-table-header"),An(i,"text-align","center"),$n(t,"class","number-table armor-column")},m(e,c){pn(e,t,c),fn(t,n),fn(n,r),fn(r,i),i.innerHTML=s,fn(t,o);for(let e=0;e<u.length;e+=1)u[e].m(t,null);fn(t,a),l=!0},p(e,n){if(e.armor||e.rul){let r;for(c=Object.entries(n.armor[n.prop]).sort(n.func_1),r=0;r<c.length;r+=1){const i=Mi(n,c,r);u[r]?(u[r].p(e,i),Pn(u[r],1)):(u[r]=Ki(i),u[r].c(),Pn(u[r],1),u[r].m(t,a))}for(zn(),r=c.length;r<u.length;r+=1)f(r);qn()}},i(e){if(!l){for(let e=0;e<c.length;e+=1)Pn(u[e]);l=!0}},o(e){u=u.filter(Boolean);for(let e=0;e<u.length;e+=1)Rn(u[e]);l=!1},d(e){e&&dn(t),hn(u,e)}}}function Ri(e){var t,n,r=Lt.decamelize(e.key)+"";return{c(){t=mn("nobr"),n=gn(r)},m(e,r){pn(e,t,r),fn(t,n)},p(e,t){e.armor&&r!==(r=Lt.decamelize(t.key)+"")&&kn(n,r)},i:nn,o:nn,d(e){e&&dn(t)}}}function Wi(e){var t,n=new Qn({props:{href:Lt.damageTypes[e.key]}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.armor&&(r.href=Lt.damageTypes[t.key]),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function Gi(e){var t,n="damageModifier"==e.prop?Math.floor(100*e.val):Lt.decamelize(e.val)+"";return{c(){t=mn("em")},m(e,r){pn(e,t,r),t.innerHTML=n},p(e,r){e.armor&&n!==(n="damageModifier"==r.prop?Math.floor(100*r.val):Lt.decamelize(r.val)+"")&&(t.innerHTML=n)},d(e){e&&dn(t)}}}function Ui(e){var t;let n=Object.keys(e.val),r=[];for(let t=0;t<n.length;t+=1)r[t]=Vi(ji(e,n,t));return{c(){for(let e=0;e<r.length;e+=1)r[e].c();t=yn()},m(e,n){for(let t=0;t<r.length;t+=1)r[t].m(e,n);pn(e,t,n)},p(e,i){if(e.rul||e.armor){let o;for(n=Object.keys(i.val),o=0;o<n.length;o+=1){const a=ji(i,n,o);r[o]?r[o].p(e,a):(r[o]=Vi(a),r[o].c(),r[o].m(t.parentNode,t))}for(;o<r.length;o+=1)r[o].d(1);r.length=n.length}},d(e){hn(r,e),e&&dn(t)}}}function Vi(e){var t,n,r,i,o,a=Lt.decamelize(e.subfield)+"",l=Lt.decamelize(e.val[e.subfield])+"",s=0!=e.j&&{c(){o=mn("br")},m(e,t){pn(e,o,t)},d(e){e&&dn(o)}};return{c(){s&&s.c(),t=vn(),r=gn("\r\n                        :\r\n                        "),i=mn("em"),n=new xn(a,r)},m(e,o){s&&s.m(e,o),pn(e,t,o),n.m(e,o),pn(e,r,o),pn(e,i,o),i.innerHTML=l},p(e,t){e.armor&&a!==(a=Lt.decamelize(t.subfield)+"")&&n.p(a),e.armor&&l!==(l=Lt.decamelize(t.val[t.subfield])+"")&&(i.innerHTML=l)},d(e){s&&s.d(e),e&&(dn(t),n.d(),dn(r),dn(i))}}}function Ki(e){var t,n,r,i,o,a,l,s=[Wi,Ri],c=[];r=function(e,t){return"damageModifier"==t.prop?0:1}(0,e),i=c[r]=s[r](e);var u=function(e,t){return"recovery"==t.prop?Ui:Gi}(0,e)(e);return{c(){t=mn("tr"),n=mn("td"),i.c(),o=vn(),a=mn("td"),u.c()},m(e,i){pn(e,t,i),fn(t,n),c[r].m(n,null),fn(t,o),fn(t,a),u.m(a,null),l=!0},p(e,t){i.p(e,t),u.p(e,t)},i(e){l||(Pn(i),l=!0)},o(e){Rn(i),l=!1},d(e){e&&dn(t),c[r].d(),u.d()}}}function Yi(e){var t,n,r=e.armor[e.prop]&&Pi(e);return{c(){r&&r.c(),t=yn()},m(e,i){r&&r.m(e,i),pn(e,t,i),n=!0},p(e,n){n.armor[n.prop]?r?(r.p(e,n),Pn(r,1)):((r=Pi(n)).c(),Pn(r,1),r.m(t.parentNode,t)):r&&(zn(),Rn(r,1,1,()=>{r=null}),qn())},i(e){n||(Pn(r),n=!0)},o(e){Rn(r),n=!1},d(e){r&&r.d(e),e&&dn(t)}}}function Zi(e){var t,n,r,i,o,a,l,s,c,u,f=Lt.decamelize(e.key)+"",p=[to,eo,Qi,Ji,Xi],d=[];function h(e,t){return"damageModifier"==t.key?0:((null==o||e.armor)&&(o=!!["corpseBattle"].includes(t.key)),o?1:"spriteSheet"==t.key?2:((null==a||e.armor)&&(a=!!["builtInWeapons","users","units"].includes(t.key)),a?3:4))}return l=h(null,e),s=d[l]=p[l](e),{c(){t=mn("tr"),n=mn("td"),r=vn(),i=mn("td"),s.c(),c=vn()},m(e,o){pn(e,t,o),fn(t,n),n.innerHTML=f,fn(t,r),fn(t,i),d[l].m(i,null),fn(t,c),u=!0},p(e,t){u&&!e.armor||f===(f=Lt.decamelize(t.key)+"")||(n.innerHTML=f);var r=l;(l=h(e,t))===r?d[l].p(e,t):(zn(),Rn(d[r],1,1,()=>{d[r]=null}),qn(),(s=d[l])||(s=d[l]=p[l](t)).c(),Pn(s,1),s.m(i,null))},i(e){u||(Pn(s),u=!0)},o(e){Rn(s),u=!1},d(e){e&&dn(t),d[l].d()}}}function Xi(e){var t,n=new xr({props:{val:e.prop}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.armor&&(r.val=t.prop),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function Ji(e){var t,n;let r=e.prop.filter(so),i=[];for(let t=0;t<r.length;t+=1)i[t]=no(_i(e,r,t));const o=e=>Rn(i[e],1,1,()=>{i[e]=null});return{c(){for(let e=0;e<i.length;e+=1)i[e].c();t=yn()},m(e,r){for(let t=0;t<i.length;t+=1)i[t].m(e,r);pn(e,t,r),n=!0},p(e,n){if(e.armor){let a;for(r=n.prop.filter(so),a=0;a<r.length;a+=1){const o=_i(n,r,a);i[a]?(i[a].p(e,o),Pn(i[a],1)):(i[a]=no(o),i[a].c(),Pn(i[a],1),i[a].m(t.parentNode,t))}for(zn(),a=r.length;a<i.length;a+=1)o(a);qn()}},i(e){if(!n){for(let e=0;e<r.length;e+=1)Pn(i[e]);n=!0}},o(e){i=i.filter(Boolean);for(let e=0;e<i.length;e+=1)Rn(i[e]);n=!1},d(e){hn(i,e),e&&dn(t)}}}function Qi(e){var t,n,r,i=e.prop+"";return{c(){t=mn("a"),n=gn(i),$n(t,"href",r=Lt.sprite(e.prop))},m(e,r){pn(e,t,r),fn(t,n)},p(e,o){e.armor&&i!==(i=o.prop+"")&&kn(n,i),e.armor&&r!==(r=Lt.sprite(o.prop))&&$n(t,"href",r)},i:nn,o:nn,d(e){e&&dn(t)}}}function eo(e){var t,n=new Qn({props:{href:e.prop[0]}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.armor&&(r.href=t.prop[0]),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function to(e){var t;let n=e.prop,r=[];for(let t=0;t<n.length;t+=1)r[t]=ro(Ci(e,n,t));return{c(){t=mn("table");for(let e=0;e<r.length;e+=1)r[e].c();$n(t,"class","number-table")},m(e,n){pn(e,t,n);for(let e=0;e<r.length;e+=1)r[e].m(t,null)},p(e,i){if(e.armor||e.rul){let o;for(n=i.prop,o=0;o<n.length;o+=1){const a=Ci(i,n,o);r[o]?r[o].p(e,a):(r[o]=ro(a),r[o].c(),r[o].m(t,null))}for(;o<r.length;o+=1)r[o].d(1);r.length=n.length}},i:nn,o:nn,d(e){e&&dn(t),hn(r,e)}}}function no(e){var t,n,r=0!=e.i&&function(e){var t;return{c(){t=gn(",")},m(e,n){pn(e,t,n)},d(e){e&&dn(t)}}}(),i=new Qn({props:{href:e.field}});return{c(){r&&r.c(),t=vn(),i.$$.fragment.c()},m(e,o){r&&r.m(e,o),pn(e,t,o),Gn(i,e,o),n=!0},p(e,t){var n={};e.armor&&(n.href=t.field),i.$set(n)},i(e){n||(Pn(i.$$.fragment,e),n=!0)},o(e){Rn(i.$$.fragment,e),n=!1},d(e){r&&r.d(e),e&&dn(t),Un(i,e)}}}function ro(e){var t,n,r,i,o,a,l,s,c=Lt.damageTypeName(e.i)+"",u=Math.round(100*e.res)+"";return{c(){t=mn("tr"),n=mn("td"),r=gn(c),i=vn(),o=mn("td"),a=gn(u),l=gn("%"),s=vn(),$n(n,"width","50%"),$n(n,"class","number-table1"),$n(o,"width","50%"),$n(o,"class","number-table2")},m(e,c){pn(e,t,c),fn(t,n),fn(n,r),fn(t,i),fn(t,o),fn(o,a),fn(o,l),fn(t,s)},p(e,t){e.armor&&u!==(u=Math.round(100*t.res)+"")&&kn(a,u)},d(e){e&&dn(t)}}}function io(e){var t,n,r=!["recovery","type","layersDefinition","spriteFaceColor","spriteHairColor","spriteUtileColor","spriteFaceGroup","spriteHairGroup","spriteUtileGroup","customArmorPreviewIndex","dollSprites","layersDefaultPrefix","frontArmor","sideArmor","rearArmor","underArmor","spriteInv","scripts","armor","damageModifier","stats"].includes(e.key),i=r&&Zi(e);return{c(){i&&i.c(),t=yn()},m(e,r){i&&i.m(e,r),pn(e,t,r),n=!0},p(e,n){e.armor&&(r=!["recovery","type","layersDefinition","spriteFaceColor","spriteHairColor","spriteUtileColor","spriteFaceGroup","spriteHairGroup","spriteUtileGroup","customArmorPreviewIndex","dollSprites","layersDefaultPrefix","frontArmor","sideArmor","rearArmor","underArmor","spriteInv","scripts","armor","damageModifier","stats"].includes(n.key)),r?i?(i.p(e,n),Pn(i,1)):((i=Zi(n)).c(),Pn(i,1),i.m(t.parentNode,t)):i&&(zn(),Rn(i,1,1,()=>{i=null}),qn())},i(e){n||(Pn(i),n=!0)},o(e){Rn(i),n=!1},d(e){i&&i.d(e),e&&dn(t)}}}function oo(e){var t,n,r,i,o,a,l,s,c,u,f,p,d,h,m,g,v=Lt.str("Armor")+"",y=Object.keys(e.armor.dollSprites).length>1,b=e.seeAlso.length>0&&Li(e),$=y&&Fi(e),k=e.armor.dollSprites&&Bi(e);let w=["armor","damageModifier","stats","recovery"],A=[];for(let t=0;t<4;t+=1)A[t]=Yi(Ii(e,w,t));const x=e=>Rn(A[e],1,1,()=>{A[e]=null});let S=Object.entries(e.armor).sort(lo),O=[];for(let t=0;t<S.length;t+=1)O[t]=io(Ti(e,S,t));const _=e=>Rn(O[e],1,1,()=>{O[e]=null});return{c(){t=mn("table"),n=mn("tr"),r=mn("td"),i=gn(v),o=vn(),b&&b.c(),a=vn(),l=mn("tr"),s=mn("td"),c=mn("div"),$&&$.c(),u=vn(),k&&k.c(),f=vn(),p=mn("tr"),d=mn("td"),h=mn("div");for(let e=0;e<4;e+=1)A[e].c();m=vn();for(let e=0;e<O.length;e+=1)O[e].c();$n(r,"colspan","2"),$n(r,"class","table-header"),$n(c,"class","armors"),$n(s,"colspan","2"),$n(h,"class","flex-horisontal"),$n(d,"colspan","2"),$n(t,"class","main-table")},m(e,v){pn(e,t,v),fn(t,n),fn(n,r),fn(r,i),fn(r,o),b&&b.m(r,null),fn(t,a),fn(t,l),fn(l,s),fn(s,c),$&&$.m(c,null),fn(c,u),k&&k.m(c,null),fn(t,f),fn(t,p),fn(p,d),fn(d,h);for(let e=0;e<4;e+=1)A[e].m(h,null);fn(t,m);for(let e=0;e<O.length;e+=1)O[e].m(t,null);g=!0},p(e,n){if(n.seeAlso.length>0?b?(b.p(e,n),Pn(b,1)):((b=Li(n)).c(),Pn(b,1),b.m(r,null)):b&&(zn(),Rn(b,1,1,()=>{b=null}),qn()),e.armor&&(y=Object.keys(n.armor.dollSprites).length>1),y?$?$.p(e,n):(($=Fi(n)).c(),$.m(c,u)):$&&($.d(1),$=null),n.armor.dollSprites?k?k.p(e,n):((k=Bi(n)).c(),k.m(c,null)):k&&(k.d(1),k=null),e.armor||e.rul){let t;for(w=["armor","damageModifier","stats","recovery"],t=0;t<w.length;t+=1){const r=Ii(n,w,t);A[t]?(A[t].p(e,r),Pn(A[t],1)):(A[t]=Yi(r),A[t].c(),Pn(A[t],1),A[t].m(h,null))}for(zn(),t=w.length;t<4;t+=1)x(t);qn()}if(e.armor||e.rul){let r;for(S=Object.entries(n.armor).sort(lo),r=0;r<S.length;r+=1){const i=Ti(n,S,r);O[r]?(O[r].p(e,i),Pn(O[r],1)):(O[r]=io(i),O[r].c(),Pn(O[r],1),O[r].m(t,null))}for(zn(),r=S.length;r<O.length;r+=1)_(r);qn()}},i(e){if(!g){Pn(b);for(let e=0;e<4;e+=1)Pn(A[e]);for(let e=0;e<S.length;e+=1)Pn(O[e]);g=!0}},o(e){Rn(b),A=A.filter(Boolean);for(let e=0;e<4;e+=1)Rn(A[e]);O=O.filter(Boolean);for(let e=0;e<O.length;e+=1)Rn(O[e]);g=!1},d(e){e&&dn(t),b&&b.d(),$&&$.d(),k&&k.d(),hn(A,e),hn(O,e)}}}let ao=6;const lo=(e,t)=>e[0]>t[0]?1:-1,so=e=>"INV_NULL"!=e.substr(0,8);function co(e,t,n){let{armor:r}=t,i=!1,o=[];return e.$set=(e=>{"armor"in e&&n("armor",r=e.armor)}),e.$$.update=((e={armor:1,seeAlso:1})=>{if((e.armor||e.seeAlso)&&(console.log(r),n("seeAlso",o=[]),"storeItem"in r&&"STR_NONE"!=r.storeItem&&o.push(r.storeItem),"users"in r))for(let e of r.users.filter(e=>"INV_NULL"!=e.substr(0,8)&&e!=r.type&&"#"+e!=window.location.hash))o.push(e)}),{armor:r,seeAllVariants:i,seeAlso:o,click_handler:e=>n("seeAllVariants",i=!i),func:(e,t)=>Lt.bodiesCompare([e,t]),func_1:(e,t)=>Lt.str(e[0])>Lt.str(t[0])?1:-1}}class uo extends Kn{constructor(e){super(),Vn(this,e,co,oo,cn,["armor"])}}function fo(e,t,n){const r=Object.create(e);return r.key=t[n][0],r.prop=t[n][1],r}function po(e){var t,n,r,i,o,a,l,s,c,u,f,p=Lt.decamelize(e.key)+"",d=[vo,go,mo,ho],h=[];function m(e,t){return(null==o||e.craft)&&(o=!!["weaponStrings"].includes(t.key)),o?0:((null==a||e.craft)&&(a=!!["sprite"].includes(t.key)),a?1:((null==l||e.craft)&&(l=!!["requiresBaseFunc"].includes(t.key)),l?2:3))}return s=m(null,e),c=h[s]=d[s](e),{c(){t=mn("tr"),n=mn("td"),r=vn(),i=mn("td"),c.c(),u=vn(),$n(n,"class","padding-right")},m(e,o){pn(e,t,o),fn(t,n),n.innerHTML=p,fn(t,r),fn(t,i),h[s].m(i,null),fn(t,u),f=!0},p(e,t){f&&!e.craft||p===(p=Lt.decamelize(t.key)+"")||(n.innerHTML=p);var r=s;(s=m(e,t))===r?h[s].p(e,t):(zn(),Rn(h[r],1,1,()=>{h[r]=null}),qn(),(c=h[s])||(c=h[s]=d[s](t)).c(),Pn(c,1),c.m(i,null))},i(e){f||(Pn(c),f=!0)},o(e){Rn(c),f=!1},d(e){e&&dn(t),h[s].d()}}}function ho(e){var t,n=new xr({props:{val:e.prop}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.craft&&(r.val=t.prop),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function mo(e){var t,n=new Tr({props:{items:e.prop,vertical:!0}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.craft&&(r.items=t.prop),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function go(e){var t,n;return{c(){$n(t=mn("img"),"class","sprite"),$n(t,"alt","X"),$n(t,"src",n=Lt.specialSprite("baseSprite",1*e.prop+33))},m(e,n){pn(e,t,n)},p(e,r){e.craft&&n!==(n=Lt.specialSprite("baseSprite",1*r.prop+33))&&$n(t,"src",n)},i:nn,o:nn,d(e){e&&dn(t)}}}function vo(e){var t,n=new xr({props:{val:e.prop.map(e.func_1)}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.craft&&(r.val=t.prop.map(t.func_1)),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function yo(e){var t,n,r=!["type","battlescapeTerrainData","craftInventoryTile","deployment"].includes(e.key),i=r&&po(e);return{c(){i&&i.c(),t=yn()},m(e,r){i&&i.m(e,r),pn(e,t,r),n=!0},p(e,n){e.craft&&(r=!["type","battlescapeTerrainData","craftInventoryTile","deployment"].includes(n.key)),r?i?(i.p(e,n),Pn(i,1)):((i=po(n)).c(),Pn(i,1),i.m(t.parentNode,t)):i&&(zn(),Rn(i,1,1,()=>{i=null}),qn())},i(e){n||(Pn(i),n=!0)},o(e){Rn(i),n=!1},d(e){i&&i.d(e),e&&dn(t)}}}function bo(e){var t,n,r,i;let o=Object.entries(e.craft).sort($o),a=[];for(let t=0;t<o.length;t+=1)a[t]=yo(fo(e,o,t));const l=e=>Rn(a[e],1,1,()=>{a[e]=null});return{c(){t=mn("table"),(n=mn("tr")).innerHTML='<td colspan="2" class="table-header">Craft</td>',r=vn();for(let e=0;e<a.length;e+=1)a[e].c();$n(t,"class","main-table")},m(e,o){pn(e,t,o),fn(t,n),fn(t,r);for(let e=0;e<a.length;e+=1)a[e].m(t,null);i=!0},p(e,n){if(e.craft||e.rul){let r;for(o=Object.entries(n.craft).sort($o),r=0;r<o.length;r+=1){const i=fo(n,o,r);a[r]?(a[r].p(e,i),Pn(a[r],1)):(a[r]=yo(i),a[r].c(),Pn(a[r],1),a[r].m(t,null))}for(zn(),r=o.length;r<a.length;r+=1)l(r);qn()}},i(e){if(!i){for(let e=0;e<o.length;e+=1)Pn(a[e]);i=!0}},o(e){a=a.filter(Boolean);for(let e=0;e<a.length;e+=1)Rn(a[e]);i=!1},d(e){e&&dn(t),hn(a,e)}}}const $o=(e,t)=>e[0]>t[0]?1:-1;function ko(e,t,n){let{craft:r}=t;return e.$set=(e=>{"craft"in e&&n("craft",r=e.craft)}),e.$$.update=((e={craft:1})=>{e.craft&&console.info(r)}),{craft:r,func_1:e=>Lt.str(e).replace(">{ALT}{0}","")}}class wo extends Kn{constructor(e){super(),Vn(this,e,ko,bo,cn,["craft"])}}function Ao(e,t,n){const r=Object.create(e);return r.prop=t[n],r}function xo(e){var t,n,r,i,o,a,l=Lt.decamelize(e.prop[0])+"",s=new xr({props:{val:e.prop[1]}});return{c(){t=mn("tr"),n=mn("td"),r=vn(),i=mn("td"),s.$$.fragment.c(),o=vn(),$n(n,"class","padding-right svelte-8df2j8"),$n(i,"class","svelte-8df2j8")},m(e,c){pn(e,t,c),fn(t,n),n.innerHTML=l,fn(t,r),fn(t,i),Gn(s,i,null),fn(t,o),a=!0},p(e,t){a&&!e.weapon||l===(l=Lt.decamelize(t.prop[0])+"")||(n.innerHTML=l);var r={};e.weapon&&(r.val=t.prop[1]),s.$set(r)},i(e){a||(Pn(s.$$.fragment,e),a=!0)},o(e){Rn(s.$$.fragment,e),a=!1},d(e){e&&dn(t),Un(s)}}}function So(e){var t,n,r=!["type"].includes(e.prop[0]),i=r&&xo(e);return{c(){i&&i.c(),t=yn()},m(e,r){i&&i.m(e,r),pn(e,t,r),n=!0},p(e,n){e.weapon&&(r=!["type"].includes(n.prop[0])),r?i?(i.p(e,n),Pn(i,1)):((i=xo(n)).c(),Pn(i,1),i.m(t.parentNode,t)):i&&(zn(),Rn(i,1,1,()=>{i=null}),qn())},i(e){n||(Pn(i),n=!0)},o(e){Rn(i),n=!1},d(e){i&&i.d(e),e&&dn(t)}}}function Oo(e){var t,n=new Oi({props:{item:Lt.items[e.weapon.launcher],title:"Launcher: "+Lt.str(e.weapon.launcher)}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.weapon&&(r.item=Lt.items[t.weapon.launcher]),e.weapon&&(r.title="Launcher: "+Lt.str(t.weapon.launcher)),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function _o(e){var t,n=new Oi({props:{item:Lt.items[e.weapon.clip],title:"Clip: "+Lt.str(e.weapon.clip)}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.weapon&&(r.item=Lt.items[t.weapon.clip]),e.weapon&&(r.title="Clip: "+Lt.str(t.weapon.clip)),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function Co(e){var t,n,r,i,o,a,l,s,c,u,f,p,d,h=Lt.str("Weapon")+"";let m=Object.entries(e.weapon).sort(To),g=[];for(let t=0;t<m.length;t+=1)g[t]=So(Ao(e,m,t));const v=e=>Rn(g[e],1,1,()=>{g[e]=null});var y=e.weapon.launcher&&Oo(e),b=e.weapon.clip&&_o(e);return{c(){t=mn("table"),n=mn("tr"),r=mn("td"),i=mn("table"),o=mn("tr"),a=mn("td"),l=gn(h),s=vn();for(let e=0;e<g.length;e+=1)g[e].c();c=vn(),u=mn("td"),f=mn("table"),y&&y.c(),p=vn(),b&&b.c(),$n(a,"colspan","2"),$n(a,"class","table-header svelte-8df2j8"),$n(i,"class","main-table"),$n(r,"class","svelte-8df2j8"),$n(f,"class","main-table"),$n(u,"class","svelte-8df2j8"),$n(t,"class","panels3 svelte-8df2j8")},m(e,h){pn(e,t,h),fn(t,n),fn(n,r),fn(r,i),fn(i,o),fn(o,a),fn(a,l),fn(i,s);for(let e=0;e<g.length;e+=1)g[e].m(i,null);fn(n,c),fn(n,u),fn(u,f),y&&y.m(f,null),fn(f,p),b&&b.m(f,null),d=!0},p(e,t){if(e.weapon||e.rul){let n;for(m=Object.entries(t.weapon).sort(To),n=0;n<m.length;n+=1){const r=Ao(t,m,n);g[n]?(g[n].p(e,r),Pn(g[n],1)):(g[n]=So(r),g[n].c(),Pn(g[n],1),g[n].m(i,null))}for(zn(),n=m.length;n<g.length;n+=1)v(n);qn()}t.weapon.launcher?y?(y.p(e,t),Pn(y,1)):((y=Oo(t)).c(),Pn(y,1),y.m(f,p)):y&&(zn(),Rn(y,1,1,()=>{y=null}),qn()),t.weapon.clip?b?(b.p(e,t),Pn(b,1)):((b=_o(t)).c(),Pn(b,1),b.m(f,null)):b&&(zn(),Rn(b,1,1,()=>{b=null}),qn())},i(e){if(!d){for(let e=0;e<m.length;e+=1)Pn(g[e]);Pn(y),Pn(b),d=!0}},o(e){g=g.filter(Boolean);for(let e=0;e<g.length;e+=1)Rn(g[e]);Rn(y),Rn(b),d=!1},d(e){e&&dn(t),hn(g,e),y&&y.d(),b&&b.d()}}}const To=(e,t)=>e[0]>t[0]?1:-1;function jo(e,t,n){let{weapon:r}=t;return e.$set=(e=>{"weapon"in e&&n("weapon",r=e.weapon)}),e.$$.update=((e={weapon:1})=>{e.weapon&&console.log(r)}),{weapon:r}}class Mo extends Kn{constructor(e){super(),Vn(this,e,jo,Co,cn,["weapon"])}}function Io(e,t,n){const r=Object.create(e);return r.field=t[n],r.j=n,r}function Eo(e,t,n){const r=Object.create(e);return r.set=t[n],r.i=n,r}function No(e,t,n){const r=Object.create(e);return r.key=t[n][0],r.prop=t[n][1],r}function Lo(e){var t,n,r,i,o,a,l,s,c,u=Lt.decamelize(e.key)+"",f=[Bo,Fo],p=[];function d(e,t){return(null==o||e.unit)&&(o=!!["builtInWeaponSets"].includes(t.prop[0])),o?0:1}return a=d(null,e),l=p[a]=f[a](e),{c(){t=mn("tr"),n=mn("td"),r=vn(),i=mn("td"),l.c(),s=vn(),$n(n,"class","padding-right")},m(e,o){pn(e,t,o),fn(t,n),n.innerHTML=u,fn(t,r),fn(t,i),p[a].m(i,null),fn(t,s),c=!0},p(e,t){c&&!e.unit||u===(u=Lt.decamelize(t.key)+"")||(n.innerHTML=u);var r=a;(a=d(e,t))===r?p[a].p(e,t):(zn(),Rn(p[r],1,1,()=>{p[r]=null}),qn(),(l=p[a])||(l=p[a]=f[a](t)).c(),Pn(l,1),l.m(i,null))},i(e){c||(Pn(l),c=!0)},o(e){Rn(l),c=!1},d(e){e&&dn(t),p[a].d()}}}function Fo(e){var t,n=new xr({props:{val:e.prop}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.unit&&(r.val=t.prop),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function Bo(e){var t,n;let r=Object.values(e.prop),i=[];for(let t=0;t<r.length;t+=1)i[t]=Do(Eo(e,r,t));const o=e=>Rn(i[e],1,1,()=>{i[e]=null});return{c(){for(let e=0;e<i.length;e+=1)i[e].c();t=yn()},m(e,r){for(let t=0;t<i.length;t+=1)i[t].m(e,r);pn(e,t,r),n=!0},p(e,n){if(e.unit){let a;for(r=Object.values(n.prop),a=0;a<r.length;a+=1){const o=Eo(n,r,a);i[a]?(i[a].p(e,o),Pn(i[a],1)):(i[a]=Do(o),i[a].c(),Pn(i[a],1),i[a].m(t.parentNode,t))}for(zn(),a=r.length;a<i.length;a+=1)o(a);qn()}},i(e){if(!n){for(let e=0;e<r.length;e+=1)Pn(i[e]);n=!0}},o(e){i=i.filter(Boolean);for(let e=0;e<i.length;e+=1)Rn(i[e]);n=!1},d(e){hn(i,e),e&&dn(t)}}}function Ho(e){var t,n,r=0!=e.j&&function(e){var t;return{c(){t=gn(",")},m(e,n){pn(e,t,n)},d(e){e&&dn(t)}}}(),i=new Qn({props:{href:e.field}});return{c(){r&&r.c(),t=vn(),i.$$.fragment.c()},m(e,o){r&&r.m(e,o),pn(e,t,o),Gn(i,e,o),n=!0},p(e,t){var n={};e.unit&&(n.href=t.field),i.$set(n)},i(e){n||(Pn(i.$$.fragment,e),n=!0)},o(e){Rn(i.$$.fragment,e),n=!1},d(e){r&&r.d(e),e&&dn(t),Un(i,e)}}}function Do(e){var t,n,r,i,o=0!=e.i&&{c(){i=mn("br")},m(e,t){pn(e,i,t)},d(e){e&&dn(i)}};let a=e.set,l=[];for(let t=0;t<a.length;t+=1)l[t]=Ho(Io(e,a,t));const s=e=>Rn(l[e],1,1,()=>{l[e]=null});return{c(){o&&o.c(),t=vn();for(let e=0;e<l.length;e+=1)l[e].c();n=yn()},m(e,i){o&&o.m(e,i),pn(e,t,i);for(let t=0;t<l.length;t+=1)l[t].m(e,i);pn(e,n,i),r=!0},p(e,t){if(e.unit){let r;for(a=t.set,r=0;r<a.length;r+=1){const i=Io(t,a,r);l[r]?(l[r].p(e,i),Pn(l[r],1)):(l[r]=Ho(i),l[r].c(),Pn(l[r],1),l[r].m(n.parentNode,n))}for(zn(),r=a.length;r<l.length;r+=1)s(r);qn()}},i(e){if(!r){for(let e=0;e<a.length;e+=1)Pn(l[e]);r=!0}},o(e){l=l.filter(Boolean);for(let e=0;e<l.length;e+=1)Rn(l[e]);r=!1},d(e){o&&o.d(e),e&&dn(t),hn(l,e),e&&dn(n)}}}function zo(e){var t,n,r=!["type","deathSound","scripts"].includes(e.key),i=r&&Lo(e);return{c(){i&&i.c(),t=yn()},m(e,r){i&&i.m(e,r),pn(e,t,r),n=!0},p(e,n){e.unit&&(r=!["type","deathSound","scripts"].includes(n.key)),r?i?(i.p(e,n),Pn(i,1)):((i=Lo(n)).c(),Pn(i,1),i.m(t.parentNode,t)):i&&(zn(),Rn(i,1,1,()=>{i=null}),qn())},i(e){n||(Pn(i),n=!0)},o(e){Rn(i),n=!1},d(e){i&&i.d(e),e&&dn(t)}}}function qo(e){var t,n,r,i;let o=Object.entries(e.unit).sort(Po),a=[];for(let t=0;t<o.length;t+=1)a[t]=zo(No(e,o,t));const l=e=>Rn(a[e],1,1,()=>{a[e]=null});return{c(){(t=mn("tr")).innerHTML='<td colspan="2" class="table-header">Unit</td>',n=vn();for(let e=0;e<a.length;e+=1)a[e].c();r=yn()},m(e,o){pn(e,t,o),pn(e,n,o);for(let t=0;t<a.length;t+=1)a[t].m(e,o);pn(e,r,o),i=!0},p(e,t){if(e.unit||e.rul){let n;for(o=Object.entries(t.unit).sort(Po),n=0;n<o.length;n+=1){const i=No(t,o,n);a[n]?(a[n].p(e,i),Pn(a[n],1)):(a[n]=zo(i),a[n].c(),Pn(a[n],1),a[n].m(r.parentNode,r))}for(zn(),n=o.length;n<a.length;n+=1)l(n);qn()}},i(e){if(!i){for(let e=0;e<o.length;e+=1)Pn(a[e]);i=!0}},o(e){a=a.filter(Boolean);for(let e=0;e<a.length;e+=1)Rn(a[e]);i=!1},d(e){e&&(dn(t),dn(n)),hn(a,e),e&&dn(r)}}}const Po=(e,t)=>e[0]>t[0]?1:-1;function Ro(e,t,n){let{unit:r}=t;return e.$set=(e=>{"unit"in e&&n("unit",r=e.unit)}),e.$$.update=((e={unit:1})=>{e.unit&&console.log(r)}),{unit:r}}class Wo extends Kn{constructor(e){super(),Vn(this,e,Ro,qo,cn,["unit"])}}function Go(e,t,n){const r=Object.create(e);return r.key=t[n],r}function Uo(e,t,n){const r=Object.create(e);return r.field=t[n],r.i=n,r}function Vo(e,t,n){const r=Object.create(e);return r.key=t[n][0],r.prop=t[n][1],r}function Ko(e){var t,n,r,i,o,a,l=Lt.decamelize(e.key)+"",s=new xr({props:{val:e.prop}});return{c(){t=mn("tr"),n=mn("td"),r=vn(),i=mn("td"),s.$$.fragment.c(),o=vn()},m(e,c){pn(e,t,c),fn(t,n),n.innerHTML=l,fn(t,r),fn(t,i),Gn(s,i,null),fn(t,o),a=!0},p(e,t){a&&!e.research||l===(l=Lt.decamelize(t.key)+"")||(n.innerHTML=l);var r={};e.research&&(r.val=t.prop),s.$set(r)},i(e){a||(Pn(s.$$.fragment,e),a=!0)},o(e){Rn(s.$$.fragment,e),a=!1},d(e){e&&dn(t),Un(s)}}}function Yo(e){var t,n,r,i,o,a,l=Lt.decamelize(e.key)+"";let s=Object.keys(e.prop),c=[];for(let t=0;t<s.length;t+=1)c[t]=Jo(Go(e,s,t));const u=e=>Rn(c[e],1,1,()=>{c[e]=null});return{c(){t=mn("tr"),n=mn("td"),r=gn(l),i=vn();for(let e=0;e<c.length;e+=1)c[e].c();o=yn(),$n(n,"colspan","2"),$n(n,"class","table-subheader")},m(e,l){pn(e,t,l),fn(t,n),fn(n,r),pn(e,i,l);for(let t=0;t<c.length;t+=1)c[t].m(e,l);pn(e,o,l),a=!0},p(e,t){if(a&&!e.research||l===(l=Lt.decamelize(t.key)+"")||kn(r,l),e.research||e.longLists){let n;for(s=Object.keys(t.prop),n=0;n<s.length;n+=1){const r=Go(t,s,n);c[n]?(c[n].p(e,r),Pn(c[n],1)):(c[n]=Jo(r),c[n].c(),Pn(c[n],1),c[n].m(o.parentNode,o))}for(zn(),n=s.length;n<c.length;n+=1)u(n);qn()}},i(e){if(!a){for(let e=0;e<s.length;e+=1)Pn(c[e]);a=!0}},o(e){c=c.filter(Boolean);for(let e=0;e<c.length;e+=1)Rn(c[e]);a=!1},d(e){e&&(dn(t),dn(i)),hn(c,e),e&&dn(o)}}}function Zo(e){var t,n=new Tr({props:{items:e.prop,vertical:!0}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.research&&(r.items=t.prop),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function Xo(e){var t,n,r,i,o,a,l,s,c,u=Lt.decamelize(e.key)+"";let f=e.prop,p=[];for(let t=0;t<f.length;t+=1)p[t]=Qo(Uo(e,f,t));const d=e=>Rn(p[e],1,1,()=>{p[e]=null});return{c(){t=mn("tr"),n=mn("td"),r=gn(u),i=vn(),o=mn("tr"),a=mn("td"),l=mn("ul");for(let e=0;e<p.length;e+=1)p[e].c();s=vn(),$n(n,"colspan","2"),$n(n,"class","table-subheader"),$n(l,"class","research-links"),$n(a,"colspan","2"),$n(a,"class","cols"),An(a,"columns","2")},m(e,u){pn(e,t,u),fn(t,n),fn(n,r),pn(e,i,u),pn(e,o,u),fn(o,a),fn(a,l);for(let e=0;e<p.length;e+=1)p[e].m(l,null);fn(a,s),c=!0},p(e,t){if(c&&!e.research||u===(u=Lt.decamelize(t.key)+"")||kn(r,u),e.research||e.longLists){let n;for(f=t.prop,n=0;n<f.length;n+=1){const r=Uo(t,f,n);p[n]?(p[n].p(e,r),Pn(p[n],1)):(p[n]=Qo(r),p[n].c(),Pn(p[n],1),p[n].m(l,null))}for(zn(),n=f.length;n<p.length;n+=1)d(n);qn()}},i(e){if(!c){for(let e=0;e<f.length;e+=1)Pn(p[e]);c=!0}},o(e){p=p.filter(Boolean);for(let e=0;e<p.length;e+=1)Rn(p[e]);c=!1},d(e){e&&(dn(t),dn(i),dn(o)),hn(p,e)}}}function Jo(e){var t,n,r,i,o=new Qn({props:{href:e.key}}),a=new hr({props:{items:e.prop[e.key]}});return{c(){t=mn("tr"),n=mn("td"),o.$$.fragment.c(),r=mn("td"),a.$$.fragment.c()},m(e,l){pn(e,t,l),fn(t,n),Gn(o,n,null),fn(t,r),Gn(a,r,null),i=!0},p(e,t){var n={};e.research&&(n.href=t.key),o.$set(n);var r={};e.research&&(r.items=t.prop[t.key]),a.$set(r)},i(e){i||(Pn(o.$$.fragment,e),Pn(a.$$.fragment,e),i=!0)},o(e){Rn(o.$$.fragment,e),Rn(a.$$.fragment,e),i=!1},d(e){e&&dn(t),Un(o),Un(a)}}}function Qo(e){var t,n,r=new Qn({props:{href:e.field}});return{c(){t=mn("li"),r.$$.fragment.c()},m(e,i){pn(e,t,i),Gn(r,t,null),n=!0},p(e,t){var n={};e.research&&(n.href=t.field),r.$set(n)},i(e){n||(Pn(r.$$.fragment,e),n=!0)},o(e){Rn(r.$$.fragment,e),n=!1},d(e){e&&dn(t),Un(r)}}}function ea(e){var t,n,r,i,o,a,l,s=[Xo,Zo,Yo,Ko],c=[];function u(e,i){return(null==t||e.research)&&(t=!!(i.longLists.includes(i.key)&&i.prop&&i.prop.length>0)),t?0:((null==n||e.research)&&(n=!!["requiresBaseFunc"].includes(i.key)),n?1:"getOneFreeProtected"==i.key?2:((null==r||e.research)&&(r=!["name"].includes(i.key)),r?3:-1))}return~(i=u(null,e))&&(o=c[i]=s[i](e)),{c(){o&&o.c(),a=yn()},m(e,t){~i&&c[i].m(e,t),pn(e,a,t),l=!0},p(e,t){var n=i;(i=u(e,t))===n?~i&&c[i].p(e,t):(o&&(zn(),Rn(c[n],1,1,()=>{c[n]=null}),qn()),~i?((o=c[i])||(o=c[i]=s[i](t)).c(),Pn(o,1),o.m(a.parentNode,a)):o=null)},i(e){l||(Pn(o),l=!0)},o(e){Rn(o),l=!1},d(e){~i&&c[i].d(e),e&&dn(a)}}}function ta(e){var t,n,r,i,o,a,l=Lt.str("Research")+"";let s=Object.entries(e.research).sort(e.func),c=[];for(let t=0;t<s.length;t+=1)c[t]=ea(Vo(e,s,t));const u=e=>Rn(c[e],1,1,()=>{c[e]=null});return{c(){t=mn("tr"),n=mn("td"),r=gn(l),i=vn();for(let e=0;e<c.length;e+=1)c[e].c();o=yn(),$n(n,"colspan","2"),$n(n,"class","table-header")},m(e,l){pn(e,t,l),fn(t,n),fn(n,r),pn(e,i,l);for(let t=0;t<c.length;t+=1)c[t].m(e,l);pn(e,o,l),a=!0},p(e,t){if(e.longLists||e.research||e.rul){let n;for(s=Object.entries(t.research).sort(t.func),n=0;n<s.length;n+=1){const r=Vo(t,s,n);c[n]?(c[n].p(e,r),Pn(c[n],1)):(c[n]=ea(r),c[n].c(),Pn(c[n],1),c[n].m(o.parentNode,o))}for(zn(),n=s.length;n<c.length;n+=1)u(n);qn()}},i(e){if(!a){for(let e=0;e<s.length;e+=1)Pn(c[e]);a=!0}},o(e){c=c.filter(Boolean);for(let e=0;e<c.length;e+=1)Rn(c[e]);a=!1},d(e){e&&(dn(t),dn(i)),hn(c,e),e&&dn(o)}}}function na(e,t,n){let{research:r,title:i="Research"}=t,o=["seeAlso","requiresBaseFunc","manufacture","getOneFree","freeFrom","unlocks","dependencies","leadsTo","disables"];return e.$set=(e=>{"research"in e&&n("research",r=e.research),"title"in e&&n("title",i=e.title)}),e.$$.update=((e={research:1})=>{e.research&&console.log(r)}),{research:r,title:i,longLists:o,func:(e,t)=>(o.includes(t[0])?-10:10)+(e[0]>t[0]?1:-1)}}class ra extends Kn{constructor(e){super(),Vn(this,e,na,ta,cn,["research","title"])}}function ia(e,t,n){const r=Object.create(e);return r.field=t[n],r.i=n,r}function oa(e,t,n){const r=Object.create(e);return r.prop=t[n],r}function aa(e,t,n){const r=Object.create(e);return r.field=t[n],r.i=n,r}function la(e,t,n){const r=Object.create(e);return r.chance=t[n],r}function sa(e){var t,n,r,i,o,a,l,s,c=Lt.decamelize("randomProducedItems")+"";let u=e.manufacture.randomProducedItems,f=[];for(let t=0;t<u.length;t+=1)f[t]=fa(la(e,u,t));const p=e=>Rn(f[e],1,1,()=>{f[e]=null});return{c(){t=mn("tr"),n=mn("td"),r=gn(c),i=vn(),o=mn("tr"),a=mn("td"),l=mn("table");for(let e=0;e<f.length;e+=1)f[e].c();$n(n,"colspan","2"),$n(n,"class","table-subheader"),$n(l,"class","number-table"),$n(l,"width","100%"),An(l,"margin","0px"),$n(a,"colspan","2")},m(e,c){pn(e,t,c),fn(t,n),fn(n,r),pn(e,i,c),pn(e,o,c),fn(o,a),fn(a,l);for(let e=0;e<f.length;e+=1)f[e].m(l,null);s=!0},p(e,t){if(e.manufacture){let n;for(u=t.manufacture.randomProducedItems,n=0;n<u.length;n+=1){const r=la(t,u,n);f[n]?(f[n].p(e,r),Pn(f[n],1)):(f[n]=fa(r),f[n].c(),Pn(f[n],1),f[n].m(l,null))}for(zn(),n=u.length;n<f.length;n+=1)p(n);qn()}},i(e){if(!s){for(let e=0;e<u.length;e+=1)Pn(f[e]);s=!0}},o(e){f=f.filter(Boolean);for(let e=0;e<f.length;e+=1)Rn(f[e]);s=!1},d(e){e&&(dn(t),dn(i),dn(o)),hn(f,e)}}}function ca(e){var t;return{c(){(t=mn("tr")).innerHTML='<td colspan="2" style="text-align:center;">NOTHING</td>'},m(e,n){pn(e,t,n)},d(e){e&&dn(t)}}}function ua(e){var t,n,r,i,o,a=e.chance[1][e.field]+"",l=new Qn({props:{href:e.field}});return{c(){t=mn("tr"),n=mn("td"),r=gn(a),i=mn("td"),l.$$.fragment.c()},m(e,a){pn(e,t,a),fn(t,n),fn(n,r),fn(t,i),Gn(l,i,null),o=!0},p(e,t){o&&!e.manufacture||a===(a=t.chance[1][t.field]+"")||kn(r,a);var n={};e.manufacture&&(n.href=t.field),l.$set(n)},i(e){o||(Pn(l.$$.fragment,e),o=!0)},o(e){Rn(l.$$.fragment,e),o=!1},d(e){e&&dn(t),Un(l)}}}function fa(e){var t,n,r,i,o,a,l,s,c,u,f=0==Object.keys(e.chance[1]).length,p=e.chance[0]+"",d=(e.chance[0]/e.manufacture.chanceSum*100).toFixed(3)+"",h=f&&ca();let m=Object.keys(e.chance[1]).sort(),g=[];for(let t=0;t<m.length;t+=1)g[t]=ua(aa(e,m,t));const v=e=>Rn(g[e],1,1,()=>{g[e]=null});return{c(){h&&h.c(),t=vn();for(let e=0;e<g.length;e+=1)g[e].c();n=vn(),r=mn("tr"),i=mn("td"),o=gn("×"),a=gn(p),l=gn(" / "),s=gn(d),c=gn("%"),$n(i,"colspan","2"),An(i,"text-align","center"),An(i,"border-bottom","solid 0.3px #382C44")},m(e,f){h&&h.m(e,f),pn(e,t,f);for(let t=0;t<g.length;t+=1)g[t].m(e,f);pn(e,n,f),pn(e,r,f),fn(r,i),fn(i,o),fn(i,a),fn(i,l),fn(i,s),fn(i,c),u=!0},p(e,r){if(e.manufacture&&(f=0==Object.keys(r.chance[1]).length),f?h||((h=ca()).c(),h.m(t.parentNode,t)):h&&(h.d(1),h=null),e.manufacture){let t;for(m=Object.keys(r.chance[1]).sort(),t=0;t<m.length;t+=1){const i=aa(r,m,t);g[t]?(g[t].p(e,i),Pn(g[t],1)):(g[t]=ua(i),g[t].c(),Pn(g[t],1),g[t].m(n.parentNode,n))}for(zn(),t=m.length;t<g.length;t+=1)v(t);qn()}u&&!e.manufacture||p===(p=r.chance[0]+"")||kn(a,p),u&&!e.manufacture||d===(d=(r.chance[0]/r.manufacture.chanceSum*100).toFixed(3)+"")||kn(s,d)},i(e){if(!u){for(let e=0;e<m.length;e+=1)Pn(g[e]);u=!0}},o(e){g=g.filter(Boolean);for(let e=0;e<g.length;e+=1)Rn(g[e]);u=!1},d(e){h&&h.d(e),e&&dn(t),hn(g,e),e&&(dn(n),dn(r))}}}function pa(e){var t,n,r,i,o,a,l,s,c,u,f=Lt.decamelize(e.prop[0])+"",p=[ma,ha,da],d=[];function h(e,t){return(null==o||e.manufacture)&&(o=!!["requiresBaseFunc"].includes(t.prop[0])),o?0:((null==a||e.manufacture)&&(a=!!["producedItems","requiredItems"].includes(t.prop[0])),a?1:2)}return l=h(null,e),s=d[l]=p[l](e),{c(){t=mn("tr"),n=mn("td"),r=vn(),i=mn("td"),s.c(),c=vn(),$n(n,"class","padding-right")},m(e,o){pn(e,t,o),fn(t,n),n.innerHTML=f,fn(t,r),fn(t,i),d[l].m(i,null),fn(t,c),u=!0},p(e,t){u&&!e.manufacture||f===(f=Lt.decamelize(t.prop[0])+"")||(n.innerHTML=f);var r=l;(l=h(e,t))===r?d[l].p(e,t):(zn(),Rn(d[r],1,1,()=>{d[r]=null}),qn(),(s=d[l])||(s=d[l]=p[l](t)).c(),Pn(s,1),s.m(i,null))},i(e){u||(Pn(s),u=!0)},o(e){Rn(s),u=!1},d(e){e&&dn(t),d[l].d()}}}function da(e){var t,n=new xr({props:{val:e.prop[1]}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.manufacture&&(r.val=t.prop[1]),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function ha(e){var t,n;let r=Object.keys(e.prop[1]).sort(),i=[];for(let t=0;t<r.length;t+=1)i[t]=ga(ia(e,r,t));const o=e=>Rn(i[e],1,1,()=>{i[e]=null});return{c(){t=mn("table");for(let e=0;e<i.length;e+=1)i[e].c();$n(t,"class","number-table")},m(e,r){pn(e,t,r);for(let e=0;e<i.length;e+=1)i[e].m(t,null);n=!0},p(e,n){if(e.manufacture){let a;for(r=Object.keys(n.prop[1]).sort(),a=0;a<r.length;a+=1){const o=ia(n,r,a);i[a]?(i[a].p(e,o),Pn(i[a],1)):(i[a]=ga(o),i[a].c(),Pn(i[a],1),i[a].m(t,null))}for(zn(),a=r.length;a<i.length;a+=1)o(a);qn()}},i(e){if(!n){for(let e=0;e<r.length;e+=1)Pn(i[e]);n=!0}},o(e){i=i.filter(Boolean);for(let e=0;e<i.length;e+=1)Rn(i[e]);n=!1},d(e){e&&dn(t),hn(i,e)}}}function ma(e){var t,n=new Tr({props:{items:e.prop[1],vertical:!0}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.manufacture&&(r.items=t.prop[1]),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function ga(e){var t,n,r,i,o,a=e.prop[1][e.field]+"",l=new Qn({props:{href:e.field}});return{c(){t=mn("tr"),n=mn("td"),r=gn(a),i=mn("td"),l.$$.fragment.c()},m(e,a){pn(e,t,a),fn(t,n),fn(n,r),fn(t,i),Gn(l,i,null),o=!0},p(e,t){o&&!e.manufacture||a===(a=t.prop[1][t.field]+"")||kn(r,a);var n={};e.manufacture&&(n.href=t.field),l.$set(n)},i(e){o||(Pn(l.$$.fragment,e),o=!0)},o(e){Rn(l.$$.fragment,e),o=!1},d(e){e&&dn(t),Un(l)}}}function va(e){var t,n,r=!["name","randomProducedItems"].includes(e.prop[0]),i=r&&pa(e);return{c(){i&&i.c(),t=yn()},m(e,r){i&&i.m(e,r),pn(e,t,r),n=!0},p(e,n){e.manufacture&&(r=!["name","randomProducedItems"].includes(n.prop[0])),r?i?(i.p(e,n),Pn(i,1)):((i=pa(n)).c(),Pn(i,1),i.m(t.parentNode,t)):i&&(zn(),Rn(i,1,1,()=>{i=null}),qn())},i(e){n||(Pn(i),n=!0)},o(e){Rn(i),n=!1},d(e){i&&i.d(e),e&&dn(t)}}}function ya(e){var t,n,r,i,o,a,l,s=Lt.str("Manufacture")+"",c="randomProducedItems"in e.manufacture&&sa(e);let u=Object.entries(e.manufacture).sort(ba),f=[];for(let t=0;t<u.length;t+=1)f[t]=va(oa(e,u,t));const p=e=>Rn(f[e],1,1,()=>{f[e]=null});return{c(){t=mn("tr"),n=mn("td"),r=gn(s),i=vn(),c&&c.c(),o=vn();for(let e=0;e<f.length;e+=1)f[e].c();a=yn(),$n(n,"colspan","2"),$n(n,"class","table-header")},m(e,s){pn(e,t,s),fn(t,n),fn(n,r),pn(e,i,s),c&&c.m(e,s),pn(e,o,s);for(let t=0;t<f.length;t+=1)f[t].m(e,s);pn(e,a,s),l=!0},p(e,t){if("randomProducedItems"in t.manufacture?c?(c.p(e,t),Pn(c,1)):((c=sa(t)).c(),Pn(c,1),c.m(o.parentNode,o)):c&&(zn(),Rn(c,1,1,()=>{c=null}),qn()),e.manufacture||e.rul){let n;for(u=Object.entries(t.manufacture).sort(ba),n=0;n<u.length;n+=1){const r=oa(t,u,n);f[n]?(f[n].p(e,r),Pn(f[n],1)):(f[n]=va(r),f[n].c(),Pn(f[n],1),f[n].m(a.parentNode,a))}for(zn(),n=u.length;n<f.length;n+=1)p(n);qn()}},i(e){if(!l){Pn(c);for(let e=0;e<u.length;e+=1)Pn(f[e]);l=!0}},o(e){Rn(c),f=f.filter(Boolean);for(let e=0;e<f.length;e+=1)Rn(f[e]);l=!1},d(e){e&&(dn(t),dn(i)),c&&c.d(e),e&&dn(o),hn(f,e),e&&dn(a)}}}const ba=(e,t)=>e[0]>t[0]?1:-1;function $a(e,t,n){let{manufacture:r}=t;return e.$set=(e=>{"manufacture"in e&&n("manufacture",r=e.manufacture)}),e.$$.update=((e={manufacture:1})=>{e.manufacture&&console.log(r)}),{manufacture:r}}class ka extends Kn{constructor(e){super(),Vn(this,e,$a,ya,cn,["manufacture"])}}function wa(e){var t,n,r,i,o,a=new lr({props:{links:e.conditions.allowedCraft,title:Lt.str("Allowed Craft")}}),l=new lr({props:{links:e.conditions.allowedItemCategories,title:Lt.str("Allowed Item Categories")}}),s=new lr({props:{links:e.conditions.allowedArmors,title:Lt.str("Allowed Armors")}}),c=new lr({props:{links:e.conditions.allowedVehicles,title:Lt.str("Allowed Vehicles")}}),u=new lr({props:{links:e.conditions.deployments,title:Lt.str("Deployments")}});return{c(){a.$$.fragment.c(),t=vn(),l.$$.fragment.c(),n=vn(),s.$$.fragment.c(),r=vn(),c.$$.fragment.c(),i=vn(),u.$$.fragment.c()},m(e,f){Gn(a,e,f),pn(e,t,f),Gn(l,e,f),pn(e,n,f),Gn(s,e,f),pn(e,r,f),Gn(c,e,f),pn(e,i,f),Gn(u,e,f),o=!0},p(e,t){var n={};e.conditions&&(n.links=t.conditions.allowedCraft),a.$set(n);var r={};e.conditions&&(r.links=t.conditions.allowedItemCategories),l.$set(r);var i={};e.conditions&&(i.links=t.conditions.allowedArmors),s.$set(i);var o={};e.conditions&&(o.links=t.conditions.allowedVehicles),c.$set(o);var f={};e.conditions&&(f.links=t.conditions.deployments),u.$set(f)},i(e){o||(Pn(a.$$.fragment,e),Pn(l.$$.fragment,e),Pn(s.$$.fragment,e),Pn(c.$$.fragment,e),Pn(u.$$.fragment,e),o=!0)},o(e){Rn(a.$$.fragment,e),Rn(l.$$.fragment,e),Rn(s.$$.fragment,e),Rn(c.$$.fragment,e),Rn(u.$$.fragment,e),o=!1},d(e){Un(a,e),e&&dn(t),Un(l,e),e&&dn(n),Un(s,e),e&&dn(r),Un(c,e),e&&dn(i),Un(u,e)}}}function Aa(e,t,n){let{conditions:r}=t;return e.$set=(e=>{"conditions"in e&&n("conditions",r=e.conditions)}),{conditions:r}}class xa extends Kn{constructor(e){super(),Vn(this,e,Aa,wa,cn,["conditions"])}}function Sa(e,t,n){const r=Object.create(e);return r.field2=t[n],r.i2=n,r}function Oa(e,t,n){const r=Object.create(e);return r.field=t[n],r.i=n,r}function _a(e,t,n){const r=Object.create(e);return r.key=t[n][0],r.prop=t[n][1],r}function Ca(e){var t,n,r,i,o,a,l,s,c,u=Lt.decamelize(e.key)+"",f=[Ma,ja,Ta],p=[];function d(e,t){return(null==o||e.ufo)&&(o=!!["modSprite"].includes(t.key)),o?0:"raceBonus"==t.key?1:2}return a=d(null,e),l=p[a]=f[a](e),{c(){t=mn("tr"),n=mn("td"),r=vn(),i=mn("td"),l.c(),s=vn(),$n(n,"class","padding-right")},m(e,o){pn(e,t,o),fn(t,n),n.innerHTML=u,fn(t,r),fn(t,i),p[a].m(i,null),fn(t,s),c=!0},p(e,t){c&&!e.ufo||u===(u=Lt.decamelize(t.key)+"")||(n.innerHTML=u);var r=a;(a=d(e,t))===r?p[a].p(e,t):(zn(),Rn(p[r],1,1,()=>{p[r]=null}),qn(),(l=p[a])||(l=p[a]=f[a](t)).c(),Pn(l,1),l.m(i,null))},i(e){c||(Pn(l),c=!0)},o(e){Rn(l),c=!1},d(e){e&&dn(t),p[a].d()}}}function Ta(e){var t,n=new xr({props:{val:e.prop}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.ufo&&(r.val=t.prop),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function ja(e){var t,n;let r=Object.keys(e.prop).sort(),i=[];for(let t=0;t<r.length;t+=1)i[t]=Ea(Oa(e,r,t));const o=e=>Rn(i[e],1,1,()=>{i[e]=null});return{c(){t=mn("table");for(let e=0;e<i.length;e+=1)i[e].c();$n(t,"class","number-table")},m(e,r){pn(e,t,r);for(let e=0;e<i.length;e+=1)i[e].m(t,null);n=!0},p(e,n){if(e.ufo||e.rul){let a;for(r=Object.keys(n.prop).sort(),a=0;a<r.length;a+=1){const o=Oa(n,r,a);i[a]?(i[a].p(e,o),Pn(i[a],1)):(i[a]=Ea(o),i[a].c(),Pn(i[a],1),i[a].m(t,null))}for(zn(),a=r.length;a<i.length;a+=1)o(a);qn()}},i(e){if(!n){for(let e=0;e<r.length;e+=1)Pn(i[e]);n=!0}},o(e){i=i.filter(Boolean);for(let e=0;e<i.length;e+=1)Rn(i[e]);n=!1},d(e){e&&dn(t),hn(i,e)}}}function Ma(e){var t,n;return{c(){$n(t=mn("img"),"class","sprite"),$n(t,"alt","X"),$n(t,"src",n=Lt.sprite(e.prop))},m(e,n){pn(e,t,n)},p(e,r){e.ufo&&n!==(n=Lt.sprite(r.prop))&&$n(t,"src",n)},i:nn,o:nn,d(e){e&&dn(t)}}}function Ia(e){var t,n,r,i,o,a=e.field2+"",l=new Qn({props:{href:e.prop[e.field][e.field2]}});return{c(){t=gn(a),n=gn(": "),r=mn("em"),l.$$.fragment.c(),i=mn("br")},m(e,a){pn(e,t,a),pn(e,n,a),pn(e,r,a),Gn(l,r,null),pn(e,i,a),o=!0},p(e,n){o&&!e.ufo||a===(a=n.field2+"")||kn(t,a);var r={};e.ufo&&(r.href=n.prop[n.field][n.field2]),l.$set(r)},i(e){o||(Pn(l.$$.fragment,e),o=!0)},o(e){Rn(l.$$.fragment,e),o=!1},d(e){e&&(dn(t),dn(n),dn(r)),Un(l),e&&dn(i)}}}function Ea(e){var t,n,r,i,o,a,l=Lt.str(e.field)+"";let s=Object.keys(e.prop[e.field]).sort(),c=[];for(let t=0;t<s.length;t+=1)c[t]=Ia(Sa(e,s,t));const u=e=>Rn(c[e],1,1,()=>{c[e]=null});return{c(){t=mn("tr"),n=mn("td"),r=gn(l),i=mn("td");for(let e=0;e<c.length;e+=1)c[e].c();o=vn()},m(e,l){pn(e,t,l),fn(t,n),fn(n,r),fn(t,i);for(let e=0;e<c.length;e+=1)c[e].m(i,null);fn(i,o),a=!0},p(e,t){if(a&&!e.ufo||l===(l=Lt.str(t.field)+"")||kn(r,l),e.ufo){let n;for(s=Object.keys(t.prop[t.field]).sort(),n=0;n<s.length;n+=1){const r=Sa(t,s,n);c[n]?(c[n].p(e,r),Pn(c[n],1)):(c[n]=Ia(r),c[n].c(),Pn(c[n],1),c[n].m(i,o))}for(zn(),n=s.length;n<c.length;n+=1)u(n);qn()}},i(e){if(!a){for(let e=0;e<s.length;e+=1)Pn(c[e]);a=!0}},o(e){c=c.filter(Boolean);for(let e=0;e<c.length;e+=1)Rn(c[e]);a=!1},d(e){e&&dn(t),hn(c,e)}}}function Na(e){var t,n,r=!["type","battlescapeTerrainData","craftInventoryTile","deployment"].includes(e.key),i=r&&Ca(e);return{c(){i&&i.c(),t=yn()},m(e,r){i&&i.m(e,r),pn(e,t,r),n=!0},p(e,n){e.ufo&&(r=!["type","battlescapeTerrainData","craftInventoryTile","deployment"].includes(n.key)),r?i?(i.p(e,n),Pn(i,1)):((i=Ca(n)).c(),Pn(i,1),i.m(t.parentNode,t)):i&&(zn(),Rn(i,1,1,()=>{i=null}),qn())},i(e){n||(Pn(i),n=!0)},o(e){Rn(i),n=!1},d(e){i&&i.d(e),e&&dn(t)}}}function La(e){var t,n,r,i;let o=Object.entries(e.ufo).sort(Fa),a=[];for(let t=0;t<o.length;t+=1)a[t]=Na(_a(e,o,t));const l=e=>Rn(a[e],1,1,()=>{a[e]=null});return{c(){t=mn("table"),(n=mn("tr")).innerHTML='<td colspan="2" class="table-header">Craft</td>',r=vn();for(let e=0;e<a.length;e+=1)a[e].c();$n(t,"class","main-table")},m(e,o){pn(e,t,o),fn(t,n),fn(t,r);for(let e=0;e<a.length;e+=1)a[e].m(t,null);i=!0},p(e,n){if(e.ufo||e.rul){let r;for(o=Object.entries(n.ufo).sort(Fa),r=0;r<o.length;r+=1){const i=_a(n,o,r);a[r]?(a[r].p(e,i),Pn(a[r],1)):(a[r]=Na(i),a[r].c(),Pn(a[r],1),a[r].m(t,null))}for(zn(),r=o.length;r<a.length;r+=1)l(r);qn()}},i(e){if(!i){for(let e=0;e<o.length;e+=1)Pn(a[e]);i=!0}},o(e){a=a.filter(Boolean);for(let e=0;e<a.length;e+=1)Rn(a[e]);i=!1},d(e){e&&dn(t),hn(a,e)}}}const Fa=(e,t)=>e[0]>t[0]?1:-1;function Ba(e,t,n){let{ufo:r}=t;return e.$set=(e=>{"ufo"in e&&n("ufo",r=e.ufo)}),e.$$.update=((e={ufo:1})=>{e.ufo&&console.info(r)}),{ufo:r}}class Ha extends Kn{constructor(e){super(),Vn(this,e,Ba,La,cn,["ufo"])}}function Da(e,t,n){const r=Object.create(e);return r._=t[n],r.x=n,r}function za(e,t,n){const r=Object.create(e);return r._=t[n],r.y=n,r}function qa(e,t,n){const r=Object.create(e);return r.field=t[n],r.i=n,r}function Pa(e,t,n){const r=Object.create(e);return r.key=t[n][0],r.prop=t[n][1],r}function Ra(e){var t,n,r,i,o,a,l,s,c,u,f,p,d=Lt.decamelize(e.key)+"",h=[Ka,Va,Ua,Ga,Wa],m=[];function g(e,t){return(null==o||e.facility)&&(o=!!["buildCostItems"].includes(t.key)),o?0:((null==a||e.facility)&&(a=!!["storageTiles"].includes(t.key)),a?1:((null==l||e.facility)&&(l=!!["provideBaseFunc","requiresBaseFunc","forbiddenBaseFunc"].includes(t.key)),l?2:((null==s||e.facility)&&(s=!!["spriteFacility","spriteShape"].includes(t.key)),s?3:4)))}return c=g(null,e),u=m[c]=h[c](e),{c(){t=mn("tr"),n=mn("td"),r=vn(),i=mn("td"),u.c(),f=vn(),$n(n,"class","padding-right")},m(e,o){pn(e,t,o),fn(t,n),n.innerHTML=d,fn(t,r),fn(t,i),m[c].m(i,null),fn(t,f),p=!0},p(e,t){p&&!e.facility||d===(d=Lt.decamelize(t.key)+"")||(n.innerHTML=d);var r=c;(c=g(e,t))===r?m[c].p(e,t):(zn(),Rn(m[r],1,1,()=>{m[r]=null}),qn(),(u=m[c])||(u=m[c]=h[c](t)).c(),Pn(u,1),u.m(i,null))},i(e){p||(Pn(u),p=!0)},o(e){Rn(u),p=!1},d(e){e&&dn(t),m[c].d()}}}function Wa(e){var t,n=new xr({props:{val:e.prop}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.facility&&(r.val=t.prop),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function Ga(e){var t;let n={length:e.size},r=[];for(let t=0;t<n.length;t+=1)r[t]=Za(za(e,n,t));return{c(){t=mn("div");for(let e=0;e<r.length;e+=1)r[e].c();$n(t,"class","tight"),An(t,"columns",e.size),An(t,"width",32*e.size+"px")},m(e,n){pn(e,t,n);for(let e=0;e<r.length;e+=1)r[e].m(t,null)},p(e,i){if(e.size||e.rul||e.facility){let o;for(n={length:i.size},o=0;o<n.length;o+=1){const a=za(i,n,o);r[o]?r[o].p(e,a):(r[o]=Za(a),r[o].c(),r[o].m(t,null))}for(;o<r.length;o+=1)r[o].d(1);r.length=n.length}e.size&&(An(t,"columns",i.size),An(t,"width",32*i.size+"px"))},i:nn,o:nn,d(e){e&&dn(t),hn(r,e)}}}function Ua(e){var t,n=new Tr({props:{items:e.prop,vertical:!0}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.facility&&(r.items=t.prop),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function Va(e){var t,n,r,i,o,a,l=new hr({props:{items:e.prop,vertical:!0}});return{c(){t=mn("div"),(n=mn("div")).innerHTML='<button class="button" aria-haspopup="true" aria-controls="dropdown-tiles">\n\t\t\t                  Expand\n\t\t\t                </button>',r=vn(),i=mn("div"),o=mn("div"),l.$$.fragment.c(),$n(n,"class","dropdown-trigger"),$n(o,"class","dropdown-content svelte-fh4l44"),An(o,"columns","6"),$n(i,"class","dropdown-menu"),$n(i,"id","dropdown-tiles"),$n(i,"role","menu"),$n(t,"class","dropdown is-hoverable")},m(e,s){pn(e,t,s),fn(t,n),fn(t,r),fn(t,i),fn(i,o),Gn(l,o,null),a=!0},p(e,t){var n={};e.facility&&(n.items=t.prop),l.$set(n)},i(e){a||(Pn(l.$$.fragment,e),a=!0)},o(e){Rn(l.$$.fragment,e),a=!1},d(e){e&&dn(t),Un(l)}}}function Ka(e){var t,n;let r=Object.keys(e.prop).sort(),i=[];for(let t=0;t<r.length;t+=1)i[t]=Xa(qa(e,r,t));const o=e=>Rn(i[e],1,1,()=>{i[e]=null});return{c(){for(let e=0;e<i.length;e+=1)i[e].c();t=yn()},m(e,r){for(let t=0;t<i.length;t+=1)i[t].m(e,r);pn(e,t,r),n=!0},p(e,n){if(e.facility){let a;for(r=Object.keys(n.prop).sort(),a=0;a<r.length;a+=1){const o=qa(n,r,a);i[a]?(i[a].p(e,o),Pn(i[a],1)):(i[a]=Xa(o),i[a].c(),Pn(i[a],1),i[a].m(t.parentNode,t))}for(zn(),a=r.length;a<i.length;a+=1)o(a);qn()}},i(e){if(!n){for(let e=0;e<r.length;e+=1)Pn(i[e]);n=!0}},o(e){i=i.filter(Boolean);for(let e=0;e<i.length;e+=1)Rn(i[e]);n=!1},d(e){hn(i,e),e&&dn(t)}}}function Ya(e){var t,n;return{c(){$n(t=mn("img"),"class","sprite"),$n(t,"alt","X"),$n(t,"src",n=Lt.specialSprite("baseSprite",1*e.prop+e.x*e.size+e.y))},m(e,n){pn(e,t,n)},p(e,r){(e.facility||e.size)&&n!==(n=Lt.specialSprite("baseSprite",1*r.prop+r.x*r.size+r.y))&&$n(t,"src",n)},d(e){e&&dn(t)}}}function Za(e){var t;let n={length:e.size},r=[];for(let t=0;t<n.length;t+=1)r[t]=Ya(Da(e,n,t));return{c(){for(let e=0;e<r.length;e+=1)r[e].c();t=yn()},m(e,n){for(let t=0;t<r.length;t+=1)r[t].m(e,n);pn(e,t,n)},p(e,i){if(e.rul||e.facility||e.size){let o;for(n={length:i.size},o=0;o<n.length;o+=1){const a=Da(i,n,o);r[o]?r[o].p(e,a):(r[o]=Ya(a),r[o].c(),r[o].m(t.parentNode,t))}for(;o<r.length;o+=1)r[o].d(1);r.length=n.length}},d(e){hn(r,e),e&&dn(t)}}}function Xa(e){var t,n,r,i,o,a,l,s=e.prop[e.field].build+"",c=e.prop[e.field].refund+"",u=0!=e.i&&{c(){l=mn("br")},m(e,t){pn(e,l,t)},d(e){e&&dn(l)}},f=new Qn({props:{href:e.field}});return{c(){u&&u.c(),t=vn(),f.$$.fragment.c(),n=gn("\r\n              : "),r=gn(s),i=gn(" / "),o=gn(c)},m(e,l){u&&u.m(e,l),pn(e,t,l),Gn(f,e,l),pn(e,n,l),pn(e,r,l),pn(e,i,l),pn(e,o,l),a=!0},p(e,t){var n={};e.facility&&(n.href=t.field),f.$set(n),a&&!e.facility||s===(s=t.prop[t.field].build+"")||kn(r,s),a&&!e.facility||c===(c=t.prop[t.field].refund+"")||kn(o,c)},i(e){a||(Pn(f.$$.fragment,e),a=!0)},o(e){Rn(f.$$.fragment,e),a=!1},d(e){u&&u.d(e),e&&dn(t),Un(f,e),e&&(dn(n),dn(r),dn(i),dn(o))}}}function Ja(e){var t,n,r=!["type","battlescapeTerrainData","craftInventoryTile","deployment"].includes(e.key),i=r&&Ra(e);return{c(){i&&i.c(),t=yn()},m(e,r){i&&i.m(e,r),pn(e,t,r),n=!0},p(e,n){e.facility&&(r=!["type","battlescapeTerrainData","craftInventoryTile","deployment"].includes(n.key)),r?i?(i.p(e,n),Pn(i,1)):((i=Ra(n)).c(),Pn(i,1),i.m(t.parentNode,t)):i&&(zn(),Rn(i,1,1,()=>{i=null}),qn())},i(e){n||(Pn(i),n=!0)},o(e){Rn(i),n=!1},d(e){i&&i.d(e),e&&dn(t)}}}function Qa(e){var t,n,r,i;let o=Object.entries(e.facility).sort(el),a=[];for(let t=0;t<o.length;t+=1)a[t]=Ja(Pa(e,o,t));const l=e=>Rn(a[e],1,1,()=>{a[e]=null});return{c(){t=mn("table"),(n=mn("tr")).innerHTML='<td colspan="2" class="table-header">Craft</td>',r=vn();for(let e=0;e<a.length;e+=1)a[e].c();$n(t,"class","main-table")},m(e,o){pn(e,t,o),fn(t,n),fn(t,r);for(let e=0;e<a.length;e+=1)a[e].m(t,null);i=!0},p(e,n){if(e.facility||e.size||e.rul){let r;for(o=Object.entries(n.facility).sort(el),r=0;r<o.length;r+=1){const i=Pa(n,o,r);a[r]?(a[r].p(e,i),Pn(a[r],1)):(a[r]=Ja(i),a[r].c(),Pn(a[r],1),a[r].m(t,null))}for(zn(),r=o.length;r<a.length;r+=1)l(r);qn()}},i(e){if(!i){for(let e=0;e<o.length;e+=1)Pn(a[e]);i=!0}},o(e){a=a.filter(Boolean);for(let e=0;e<a.length;e+=1)Rn(a[e]);i=!1},d(e){e&&dn(t),hn(a,e)}}}const el=(e,t)=>e[0]>t[0]&&"storageTiles"!=e[0]?1:-1;function tl(e,t,n){let{facility:r}=t,i=1;return e.$set=(e=>{"facility"in e&&n("facility",r=e.facility)}),e.$$.update=((e={facility:1,size:1})=>{(e.facility||e.size)&&(n("size",i=r.size||1),console.log(i),console.info(r))}),{facility:r,size:i}}class nl extends Kn{constructor(e){super(),Vn(this,e,tl,Qa,cn,["facility"])}}function rl(e,t,n){const r=Object.create(e);return r.prop=t[n],r}function il(e){var t,n,r,i,o,a,l=Lt.decamelize(e.prop[0])+"",s=new hr({props:{items:e.prop[1]}});return{c(){t=mn("tr"),n=mn("td"),r=gn(l),i=vn(),o=mn("td"),s.$$.fragment.c()},m(e,l){pn(e,t,l),fn(t,n),fn(n,r),fn(t,i),fn(t,o),Gn(s,o,null),a=!0},p(e,t){a&&!e.service||l===(l=Lt.decamelize(t.prop[0])+"")||kn(r,l);var n={};e.service&&(n.items=t.prop[1]),s.$set(n)},i(e){a||(Pn(s.$$.fragment,e),a=!0)},o(e){Rn(s.$$.fragment,e),a=!1},d(e){e&&dn(t),Un(s)}}}function ol(e){var t,n,r=!["id"].includes(e.prop[0]),i=r&&il(e);return{c(){i&&i.c(),t=yn()},m(e,r){i&&i.m(e,r),pn(e,t,r),n=!0},p(e,n){e.service&&(r=!["id"].includes(n.prop[0])),r?i?(i.p(e,n),Pn(i,1)):((i=il(n)).c(),Pn(i,1),i.m(t.parentNode,t)):i&&(zn(),Rn(i,1,1,()=>{i=null}),qn())},i(e){n||(Pn(i),n=!0)},o(e){Rn(i),n=!1},d(e){i&&i.d(e),e&&dn(t)}}}function al(e){var t,n;let r=Object.entries(e.service).sort(ll),i=[];for(let t=0;t<r.length;t+=1)i[t]=ol(rl(e,r,t));const o=e=>Rn(i[e],1,1,()=>{i[e]=null});return{c(){t=mn("table");for(let e=0;e<i.length;e+=1)i[e].c();$n(t,"class","main-table")},m(e,r){pn(e,t,r);for(let e=0;e<i.length;e+=1)i[e].m(t,null);n=!0},p(e,n){if(e.service||e.rul){let a;for(r=Object.entries(n.service).sort(ll),a=0;a<r.length;a+=1){const o=rl(n,r,a);i[a]?(i[a].p(e,o),Pn(i[a],1)):(i[a]=ol(o),i[a].c(),Pn(i[a],1),i[a].m(t,null))}for(zn(),a=r.length;a<i.length;a+=1)o(a);qn()}},i(e){if(!n){for(let e=0;e<r.length;e+=1)Pn(i[e]);n=!0}},o(e){i=i.filter(Boolean);for(let e=0;e<i.length;e+=1)Rn(i[e]);n=!1},d(e){e&&dn(t),hn(i,e)}}}const ll=(e,t)=>("providedBy"==e[0]?-10:10)+(e[0]>t[0]?1:-1);function sl(e,t,n){let{service:r}=t;return e.$set=(e=>{"service"in e&&n("service",r=e.service)}),{service:r}}class cl extends Kn{constructor(e){super(),Vn(this,e,sl,al,cn,["service"])}}function ul(e,t,n){const r=Object.create(e);return r.service=t[n],r}function fl(e){var t,n,r,i,o,a,l,s,c=Lt.str(e.service[0])+"",u=new hr({props:{items:e.service[1].providedBy}});return{c(){t=mn("tr"),n=mn("td"),r=mn("a"),i=vn(),o=mn("td"),u.$$.fragment.c(),a=vn(),$n(r,"color","cyan"),$n(r,"href","#"+e.service[0]),$n(r,"class","svelte-edz6kn"),$n(n,"class","svelte-edz6kn"),$n(o,"class","svelte-edz6kn"),$n(t,"class",l=un(e.service[0]==e.query?"highlight":"")+" svelte-edz6kn")},m(e,l){pn(e,t,l),fn(t,n),fn(n,r),r.innerHTML=c,fn(t,i),fn(t,o),Gn(u,o,null),fn(t,a),s=!0},p(e,n){s&&!e.query||l===(l=un(n.service[0]==n.query?"highlight":"")+" svelte-edz6kn")||$n(t,"class",l)},i(e){s||(Pn(u.$$.fragment,e),s=!0)},o(e){Rn(u.$$.fragment,e),s=!1},d(e){e&&dn(t),Un(u)}}}function pl(e){var t,n;let r=Object.entries(Lt.baseServices),i=[];for(let t=0;t<r.length;t+=1)i[t]=fl(ul(e,r,t));const o=e=>Rn(i[e],1,1,()=>{i[e]=null});return{c(){t=mn("table");for(let e=0;e<i.length;e+=1)i[e].c();$n(t,"class","main-table")},m(e,r){pn(e,t,r);for(let e=0;e<i.length;e+=1)i[e].m(t,null);n=!0},p(e,n){if(e.rul||e.query){let a;for(r=Object.entries(Lt.baseServices),a=0;a<r.length;a+=1){const o=ul(n,r,a);i[a]?(i[a].p(e,o),Pn(i[a],1)):(i[a]=fl(o),i[a].c(),Pn(i[a],1),i[a].m(t,null))}for(zn(),a=r.length;a<i.length;a+=1)o(a);qn()}},i(e){if(!n){for(let e=0;e<r.length;e+=1)Pn(i[e]);n=!0}},o(e){i=i.filter(Boolean);for(let e=0;e<i.length;e+=1)Rn(i[e]);n=!1},d(e){e&&dn(t),hn(i,e)}}}function dl(e,t,n){let{query:r=null}=t;return console.log(r),e.$set=(e=>{"query"in e&&n("query",r=e.query)}),{query:r}}class hl extends Kn{constructor(e){super(),Vn(this,e,dl,pl,cn,["query"])}}function ml(e){var t,n=new Er({props:{id:e.article.image_id}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.article&&(r.id=t.article.image_id),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function gl(e){var t,n=new lr({props:{links:Lt.sections[e.article.id].articles.map(Il)}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.article&&(r.links=Lt.sections[t.article.id].articles.map(Il)),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function vl(e){var t,n=new lr({props:{links:Lt.categories[e.article.id]}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.article&&(r.links=Lt.categories[t.article.id]),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function yl(e){var t,n=new xa({props:{conditions:Lt.startingConditions[e.article.id]}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.article&&(r.conditions=Lt.startingConditions[t.article.id]),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function bl(e){var t,n=new hl({});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p:nn,i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function $l(e){var t,n=new Wo({props:{unit:Lt.units[e.article.id]}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.article&&(r.unit=Lt.units[t.article.id]),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function kl(e){var t,n=new Oi({props:{item:Lt.items[e.article.id]}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.article&&(r.item=Lt.items[t.article.id]),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function wl(e){var t,n=new uo({props:{armor:Lt.armors[Lt.units[e.article.id].armor]}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.article&&(r.armor=Lt.armors[Lt.units[t.article.id].armor]),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function Al(e){var t,n=new uo({props:{armor:Lt.armors[e.article.id]}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.article&&(r.armor=Lt.armors[t.article.id]),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function xl(e){var t,n=new cl({props:{service:Lt.baseServices[e.article.id]}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.article&&(r.service=Lt.baseServices[t.article.id]),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function Sl(e){var t,n=new wo({props:{craft:Lt.crafts[e.article.id]}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.article&&(r.craft=Lt.crafts[t.article.id]),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function Ol(e){var t,n=new Mo({props:{weapon:Lt.craftWeapons[e.article.id]}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.article&&(r.weapon=Lt.craftWeapons[t.article.id]),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function _l(e){var t,n=new Ha({props:{ufo:Lt.ufos[e.article.id]}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.article&&(r.ufo=Lt.ufos[t.article.id]),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function Cl(e){var t,n=new nl({props:{facility:Lt.facilities[e.article.id]}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.article&&(r.facility=Lt.facilities[t.article.id]),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function Tl(e){var t,n=new ka({props:{manufacture:Lt.manufacture[e.article.id]}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.article&&(r.manufacture=Lt.manufacture[t.article.id]),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function jl(e){var t,n=new ra({props:{research:Lt.research[e.article.id]}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.article&&(r.research=Lt.research[t.article.id]),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function Ml(e){var t,n,r,i,o,a,l,s,c,u,f,p,d,h,m,g,v,y,b,$,k,w,A,x,S,O,_,C,T,j=e.article.title||e.article.id+"";document.title=t=e.article.title||"XPedia";var M=!(e.article.id in Lt.units)&&ml(e),I=[bl,yl,vl,gl],E=[];function N(e,t){return"SERVICES"==t.article.id?0:"CONDITIONS"==t.article.type_id?1:"CATEGORIES"==t.article.type_id?2:"PEDIA"==t.article.type_id||"TYPE"==t.article.type_id?3:-1}~(c=N(0,e))&&(u=E[c]=I[c](e));var L=e.other;function F(e){return{props:{query:e.query}}}if(L)var B=new L(F(e));var H=e.article.id in Lt.units&&$l(e),D=e.article.id in Lt.items&&kl(e),z=[Al,wl],q=[];function P(e,t){return t.article.id in Lt.armors?0:t.article.id in Lt.units&&Lt.units[t.article.id].armor?1:-1}~(y=P(0,e))&&(b=q[y]=z[y](e));var R=e.article.id in Lt.baseServices&&xl(e),W=e.article.id in Lt.crafts&&Sl(e),G=e.article.id in Lt.craftWeapons&&Ol(e),U=e.article.id in Lt.ufos&&_l(e),V=e.article.id in Lt.facilities&&Cl(e),K=e.article.id in Lt.manufacture&&Tl(e),Y=e.article.id in Lt.research&&jl(e);return{c(){n=vn(),r=mn("h1"),i=gn(j),o=vn(),M&&M.c(),a=vn(),l=mn("div"),s=vn(),u&&u.c(),f=vn(),p=mn("div"),B&&B.$$.fragment.c(),d=vn(),h=mn("div"),m=mn("table"),H&&H.c(),g=vn(),D&&D.c(),v=vn(),b&&b.c(),$=vn(),R&&R.c(),k=vn(),W&&W.c(),w=vn(),G&&G.c(),A=vn(),U&&U.c(),x=vn(),V&&V.c(),S=vn(),O=mn("div"),_=mn("table"),K&&K.c(),C=vn(),Y&&Y.c(),$n(l,"class","article-text"),$n(m,"class","main-table"),$n(h,"class","flex-vertical"),$n(_,"class","main-table"),$n(O,"class","flex-vertical"),$n(p,"class","flex-horisontal")},m(t,u){pn(t,n,u),pn(t,r,u),fn(r,i),pn(t,o,u),M&&M.m(t,u),pn(t,a,u),pn(t,l,u),l.innerHTML=e.textwithHighlights,pn(t,s,u),~c&&E[c].m(t,u),pn(t,f,u),pn(t,p,u),B&&Gn(B,p,null),fn(p,d),fn(p,h),fn(h,m),H&&H.m(m,null),fn(m,g),D&&D.m(m,null),fn(p,v),~y&&q[y].m(p,null),fn(p,$),R&&R.m(p,null),fn(p,k),W&&W.m(p,null),fn(p,w),G&&G.m(p,null),fn(p,A),U&&U.m(p,null),fn(p,x),V&&V.m(p,null),fn(p,S),fn(p,O),fn(O,_),K&&K.m(_,null),fn(_,C),Y&&Y.m(_,null),T=!0},p(e,n){T&&!e.article||t===(t=n.article.title||"XPedia")||(document.title=t),T&&!e.article||j===(j=n.article.title||n.article.id+"")||kn(i,j),n.article.id in Lt.units?M&&(zn(),Rn(M,1,1,()=>{M=null}),qn()):M?(M.p(e,n),Pn(M,1)):((M=ml(n)).c(),Pn(M,1),M.m(a.parentNode,a)),T&&!e.textwithHighlights||(l.innerHTML=n.textwithHighlights);var r=c;(c=N(0,n))===r?~c&&E[c].p(e,n):(u&&(zn(),Rn(E[r],1,1,()=>{E[r]=null}),qn()),~c?((u=E[c])||(u=E[c]=I[c](n)).c(),Pn(u,1),u.m(f.parentNode,f)):u=null);var o={};if(e.query&&(o.query=n.query),L!==(L=n.other)){if(B){zn();const e=B;Rn(e.$$.fragment,1,0,()=>{Un(e,1)}),qn()}L?((B=new L(F(n))).$$.fragment.c(),Pn(B.$$.fragment,1),Gn(B,p,d)):B=null}else L&&B.$set(o);n.article.id in Lt.units?H?(H.p(e,n),Pn(H,1)):((H=$l(n)).c(),Pn(H,1),H.m(m,g)):H&&(zn(),Rn(H,1,1,()=>{H=null}),qn()),n.article.id in Lt.items?D?(D.p(e,n),Pn(D,1)):((D=kl(n)).c(),Pn(D,1),D.m(m,null)):D&&(zn(),Rn(D,1,1,()=>{D=null}),qn());var s=y;(y=P(0,n))===s?~y&&q[y].p(e,n):(b&&(zn(),Rn(q[s],1,1,()=>{q[s]=null}),qn()),~y?((b=q[y])||(b=q[y]=z[y](n)).c(),Pn(b,1),b.m(p,$)):b=null),n.article.id in Lt.baseServices?R?(R.p(e,n),Pn(R,1)):((R=xl(n)).c(),Pn(R,1),R.m(p,k)):R&&(zn(),Rn(R,1,1,()=>{R=null}),qn()),n.article.id in Lt.crafts?W?(W.p(e,n),Pn(W,1)):((W=Sl(n)).c(),Pn(W,1),W.m(p,w)):W&&(zn(),Rn(W,1,1,()=>{W=null}),qn()),n.article.id in Lt.craftWeapons?G?(G.p(e,n),Pn(G,1)):((G=Ol(n)).c(),Pn(G,1),G.m(p,A)):G&&(zn(),Rn(G,1,1,()=>{G=null}),qn()),n.article.id in Lt.ufos?U?(U.p(e,n),Pn(U,1)):((U=_l(n)).c(),Pn(U,1),U.m(p,x)):U&&(zn(),Rn(U,1,1,()=>{U=null}),qn()),n.article.id in Lt.facilities?V?(V.p(e,n),Pn(V,1)):((V=Cl(n)).c(),Pn(V,1),V.m(p,S)):V&&(zn(),Rn(V,1,1,()=>{V=null}),qn()),n.article.id in Lt.manufacture?K?(K.p(e,n),Pn(K,1)):((K=Tl(n)).c(),Pn(K,1),K.m(_,C)):K&&(zn(),Rn(K,1,1,()=>{K=null}),qn()),n.article.id in Lt.research?Y?(Y.p(e,n),Pn(Y,1)):((Y=jl(n)).c(),Pn(Y,1),Y.m(_,null)):Y&&(zn(),Rn(Y,1,1,()=>{Y=null}),qn())},i(e){T||(Pn(M),Pn(u),B&&Pn(B.$$.fragment,e),Pn(H),Pn(D),Pn(b),Pn(R),Pn(W),Pn(G),Pn(U),Pn(V),Pn(K),Pn(Y),T=!0)},o(e){Rn(M),Rn(u),B&&Rn(B.$$.fragment,e),Rn(H),Rn(D),Rn(b),Rn(R),Rn(W),Rn(G),Rn(U),Rn(V),Rn(K),Rn(Y),T=!1},d(e){e&&(dn(n),dn(r),dn(o)),M&&M.d(e),e&&(dn(a),dn(l),dn(s)),~c&&E[c].d(e),e&&(dn(f),dn(p)),B&&Un(B),H&&H.d(),D&&D.d(),~y&&q[y].d(),R&&R.d(),W&&W.d(),G&&G.d(),U&&U.d(),V&&V.d(),K&&K.d(),Y&&Y.d()}}}const Il=e=>e.id;function El(e,t,n){let r,{article:i,query:o}=t,a=!1;return e.$set=(e=>{"article"in e&&n("article",i=e.article),"query"in e&&n("query",o=e.query)}),e.$$.update=((e={article:1,query:1,textwithHighlights:1})=>{if((e.article||e.query||e.textwithHighlights)&&(n("textwithHighlights",r=i.text||""),n("other",a="OTHER"==i.type_id&&{BaseServices:hl}[i.id]),o))for(let e of o.split()){let t=new RegExp(e,"ig");n("textwithHighlights",r=r.replace(t,"<span class='queried'>$&</span>"))}}),{article:i,query:o,textwithHighlights:r,other:a}}class Nl extends Kn{constructor(e){super(),Vn(this,e,El,Ml,cn,["article","query"])}}const{document:Ll}=Wn;function Fl(e,t,n){const r=Object.create(e);return r.option=t[n],r}function Bl(e,t,n){const r=Object.create(e);return r.section=t[n],r}function Hl(e,t,n){const r=Object.create(e);return r.section=t[n],r}function Dl(e,t,n){const r=Object.create(e);return r.section=t[n],r}function zl(e,t,n){const r=Object.create(e);return r.section=t[n],r}function ql(e,t,n){const r=Object.create(e);return r.section=t[n],r}function Pl(e){return{c(){Ll.title="XPedia"},m:nn,d:nn}}function Rl(e){return{c:nn,m:nn,p:nn,i:nn,o:nn,d:nn}}function Wl(e){var t,n,r,i,o,a,l,s,c,u,f,p,d,h,m,g,v,y,b,$,k,w,A,x,S,O,_,C,T,j,M,I,E,N,L,F,B,H,D,z,q,P,R,W,G,U,V,K,Y,Z,X,J,Q,ee,te,ne,re,ie,oe,ae,le,se,ce,ue,fe,pe,de,he,me,ge,ve,ye,be,$e,ke,we,Ae,xe,Se,Oe,_e,Ce,Te,je,Me,Ie,Ee,Ne,Le=Lt.modName+"",Fe=e.currentSection?e.currentSection.title:"",Be=e.article&&!["TYPE","PEDIA"].includes(e.article.type_id),He=Lt.str("Language")+"",De=Lt.modName+"",ze=Lt.str("HOME")+"",qe=Lt.str("Lang")+"",Pe=Lt.str("Language")+"";let Re=Lt.sectionsOrder,We=[];for(let t=0;t<Re.length;t+=1)We[t]=Gl(ql(e,Re,t));let Ge=Lt.typeSectionsOrder,Ue=[];for(let t=0;t<Ge.length;t+=1)Ue[t]=Ul(zl(e,Ge,t));var Ve=Be&&Vl(e);let Ke=Lt.sectionsOrder,Ye=[];for(let t=0;t<Ke.length;t+=1)Ye[t]=Kl(Dl(e,Ke,t));let Ze=Lt.typeSectionsOrder,Xe=[];for(let t=0;t<Ze.length;t+=1)Xe[t]=Yl(Hl(e,Ze,t));let Je=e.article&&e.article.section&&e.article.section.isType()?Lt.typeSectionsOrder:Lt.sectionsOrder,Qe=[];for(let t=0;t<Je.length;t+=1)Qe[t]=es(Bl(e,Je,t));var et=[rs,ns,ts],tt=[];function nt(e,t){return t.article?0:t.query?1:t.query?-1:2}return~(Me=nt(0,e))&&(Ie=tt[Me]=et[Me](e)),{c(){t=mn("nav"),n=mn("div"),r=mn("div"),i=mn("a"),o=mn("img"),a=vn(),l=gn(Le),s=gn(" XPedia"),c=vn(),u=mn("div"),f=mn("div"),p=mn("div");for(let e=0;e<We.length;e+=1)We[e].c();d=vn(),h=mn("div");for(let e=0;e<Ue.length;e+=1)Ue[e].c();m=vn(),g=mn("div"),v=mn("a"),y=gn(Fe),$=vn(),Ve&&Ve.c(),k=vn(),w=mn("div"),A=mn("div"),x=mn("div"),S=mn("button"),O=gn(He),_=vn(),(C=mn("div")).innerHTML='<a href="index.html">English</a> <a href="xpedia_ru.html">Русский</a> <a href="xpedia_pl.html">Polski</a>',T=vn(),j=mn("div"),M=mn("div"),I=mn("p"),E=mn("input"),N=vn(),L=mn("nav"),F=mn("div"),B=mn("button"),H=gn(De),D=vn(),z=mn("div"),q=mn("div"),P=mn("a"),R=gn(ze),W=vn();for(let e=0;e<Ye.length;e+=1)Ye[e].c();G=vn(),U=mn("hr"),V=vn(),K=mn("div");for(let e=0;e<Xe.length;e+=1)Xe[e].c();Y=vn(),Z=mn("div"),X=mn("div"),J=mn("button"),Q=gn(qe),ee=vn(),(te=mn("div")).innerHTML='<a href="index.html">Eng</a> <a href="xpedia_ru.html">Рус</a> <a href="xpedia_pl.html">Pol</a>',ne=vn(),re=mn("div"),ie=mn("div"),oe=mn("p"),ae=mn("input"),le=vn(),se=mn("div"),ce=mn("div"),ue=mn("button"),fe=gn(Pe),pe=vn(),(de=mn("div")).innerHTML='<a href="index.html">English</a> <a href="xpedia_ru.html">Русский</a> <a href="xpedia_pl.html">Polski</a>',he=vn(),me=mn("div"),ge=mn("div"),ve=mn("p"),ye=mn("input"),be=vn(),$e=mn("div"),ke=mn("div");for(let e=0;e<Qe.length;e+=1)Qe[e].c();we=vn(),Ae=mn("div"),xe=vn(),Se=mn("div"),Oe=mn("button"),_e=gn("A-Z"),Te=vn(),je=mn("div"),Ie&&Ie.c(),$n(o,"src","xpedia/favicon.png"),$n(o,"alt","favicon"),$n(i,"href","#MAIN"),$n(i,"class","navbar-link"),An(f,"display","flex"),$n(u,"class","navbar-dropdown"),$n(r,"class","navbar-item has-dropdown is-hoverable "),An(v,"color","white"),$n(v,"href",b="#"+(e.currentSection?e.currentSection.id:"MAIN")),$n(g,"class","navbar-item"),$n(n,"class","navbar-brand "),$n(S,"class","dropbtn navbar-link"),$n(C,"class","dropdown-content"),$n(x,"class","dropdown"),$n(A,"class","navbar-item is-paddingless"),$n(E,"class","input"),$n(E,"type","text"),$n(E,"placeholder",Lt.str("Search...")),$n(I,"class","control"),$n(M,"class","field has-addons"),$n(j,"class","navbar-item"),$n(w,"class","navbar-end"),$n(t,"class","navbar is-fixed-top is-hidden-touch"),$n(t,"role","navigation"),$n(t,"aria-label","main navigation"),$n(B,"class","dropbtn navbar-link"),$n(P,"href","#MAIN"),$n(U,"class","dropdown-divider"),$n(z,"class","dropdown-content"),An(z,"height","300px"),An(z,"overflow-y","scroll"),$n(F,"class","dropdown is-inline-block"),$n(J,"class","dropbtn navbar-link"),$n(te,"class","dropdown-content"),$n(X,"class","dropdown is-inline-block"),$n(ae,"class","input"),$n(ae,"type","text"),$n(ae,"placeholder",Lt.str("Search...")),$n(oe,"class","control"),$n(ie,"class","field has-addons"),$n(re,"class","navbar-item  is-inline-block"),An(re,"width","100px"),An(re,"padding-left","0px"),An(re,"padding-right","8px"),$n(Z,"class","is-pulled-right is-hidden-tablet is-inline-block"),$n(ue,"class","dropbtn navbar-link"),$n(de,"class","dropdown-content"),$n(ce,"class","dropdown is-inline-block"),$n(ye,"class","input"),$n(ye,"type","text"),$n(ye,"placeholder",Lt.str("Search...")),$n(ve,"class","control"),$n(ge,"class","field has-addons"),$n(me,"class","navbar-item  is-inline-block"),$n(se,"class","is-pulled-right is-hidden-mobile is-inline-block"),$n(L,"class","navbar is-fixed-top is-hidden-desktop"),$n(L,"role","navigation"),$n(L,"aria-label","main navigation"),An(L,"border-left-width","0px"),An(L,"border-right-width","0px"),$n(ke,"class","column is-2 is-sidebar-menu is-hidden-touch sidebar svelte-1bogsca"),$n(Ae,"class","column is-2 is-hidden-touch"),$n(Oe,"class","is-hidden-touch"),$n(Oe,"style",Ce=e.sortArticles?"":"text-decoration:line-through"),$n(Se,"class","side-sort-button"),$n(je,"class","column is-main-content main"),An(je,"padding-top","0px"),$n($e,"class","columns is-fullheight is-marginless"),Ne=[bn(E,"input",e.input0_input_handler),bn(E,"keyup",e.searchKeyUp),bn(ae,"input",e.input1_input_handler),bn(ae,"keyup",e.searchKeyUp),bn(ye,"input",e.input2_input_handler),bn(ye,"keyup",e.searchKeyUp),bn(Oe,"click",e.click_handler_2)]},m(b,Ce){pn(b,t,Ce),fn(t,n),fn(n,r),fn(r,i),fn(i,o),fn(i,a),fn(i,l),fn(i,s),fn(r,c),fn(r,u),fn(u,f),fn(f,p);for(let e=0;e<We.length;e+=1)We[e].m(p,null);fn(f,d),fn(f,h);for(let e=0;e<Ue.length;e+=1)Ue[e].m(h,null);fn(n,m),fn(n,g),fn(g,v),fn(v,y),fn(n,$),Ve&&Ve.m(n,null),fn(t,k),fn(t,w),fn(w,A),fn(A,x),fn(x,S),fn(S,O),fn(x,_),fn(x,C),fn(w,T),fn(w,j),fn(j,M),fn(M,I),fn(I,E),wn(E,e.query),pn(b,N,Ce),pn(b,L,Ce),fn(L,F),fn(F,B),fn(B,H),fn(F,D),fn(F,z),fn(z,q),fn(q,P),fn(P,R),fn(q,W);for(let e=0;e<Ye.length;e+=1)Ye[e].m(q,null);fn(z,G),fn(z,U),fn(z,V),fn(z,K);for(let e=0;e<Xe.length;e+=1)Xe[e].m(K,null);fn(L,Y),fn(L,Z),fn(Z,X),fn(X,J),fn(J,Q),fn(X,ee),fn(X,te),fn(Z,ne),fn(Z,re),fn(re,ie),fn(ie,oe),fn(oe,ae),wn(ae,e.query),fn(L,le),fn(L,se),fn(se,ce),fn(ce,ue),fn(ue,fe),fn(ce,pe),fn(ce,de),fn(se,he),fn(se,me),fn(me,ge),fn(ge,ve),fn(ve,ye),wn(ye,e.query),pn(b,be,Ce),pn(b,$e,Ce),fn($e,ke);for(let e=0;e<Qe.length;e+=1)Qe[e].m(ke,null);fn($e,we),fn($e,Ae),fn($e,xe),fn($e,Se),fn(Se,Oe),fn(Oe,_e),fn($e,Te),fn($e,je),~Me&&tt[Me].m(je,null),Ee=!0},p(e,t){if(e.rul){let n;for(Re=Lt.sectionsOrder,n=0;n<Re.length;n+=1){const r=ql(t,Re,n);We[n]?We[n].p(e,r):(We[n]=Gl(r),We[n].c(),We[n].m(p,null))}for(;n<We.length;n+=1)We[n].d(1);We.length=Re.length}if(e.rul){let n;for(Ge=Lt.typeSectionsOrder,n=0;n<Ge.length;n+=1){const r=zl(t,Ge,n);Ue[n]?Ue[n].p(e,r):(Ue[n]=Ul(r),Ue[n].c(),Ue[n].m(h,null))}for(;n<Ue.length;n+=1)Ue[n].d(1);Ue.length=Ge.length}if(Ee&&!e.currentSection||Fe===(Fe=t.currentSection?t.currentSection.title:"")||kn(y,Fe),Ee&&!e.currentSection||b===(b="#"+(t.currentSection?t.currentSection.id:"MAIN"))||$n(v,"href",b),e.article&&(Be=t.article&&!["TYPE","PEDIA"].includes(t.article.type_id)),Be?Ve?Ve.p(e,t):((Ve=Vl(t)).c(),Ve.m(n,null)):Ve&&(Ve.d(1),Ve=null),e.query&&E.value!==t.query&&wn(E,t.query),e.rul){let n;for(Ke=Lt.sectionsOrder,n=0;n<Ke.length;n+=1){const r=Dl(t,Ke,n);Ye[n]?Ye[n].p(e,r):(Ye[n]=Kl(r),Ye[n].c(),Ye[n].m(q,null))}for(;n<Ye.length;n+=1)Ye[n].d(1);Ye.length=Ke.length}if(e.rul){let n;for(Ze=Lt.typeSectionsOrder,n=0;n<Ze.length;n+=1){const r=Hl(t,Ze,n);Xe[n]?Xe[n].p(e,r):(Xe[n]=Yl(r),Xe[n].c(),Xe[n].m(K,null))}for(;n<Xe.length;n+=1)Xe[n].d(1);Xe.length=Ze.length}if(e.query&&ae.value!==t.query&&wn(ae,t.query),e.query&&ye.value!==t.query&&wn(ye,t.query),e.currentSection||e.article||e.rul||e.sortedArticles||e.activeOption){let n;for(Je=t.article&&t.article.section&&t.article.section.isType()?Lt.typeSectionsOrder:Lt.sectionsOrder,n=0;n<Je.length;n+=1){const r=Bl(t,Je,n);Qe[n]?Qe[n].p(e,r):(Qe[n]=es(r),Qe[n].c(),Qe[n].m(ke,null))}for(;n<Qe.length;n+=1)Qe[n].d(1);Qe.length=Je.length}Ee&&!e.sortArticles||Ce===(Ce=t.sortArticles?"":"text-decoration:line-through")||$n(Oe,"style",Ce);var r=Me;(Me=nt(0,t))===r?~Me&&tt[Me].p(e,t):(Ie&&(zn(),Rn(tt[r],1,1,()=>{tt[r]=null}),qn()),~Me?((Ie=tt[Me])||(Ie=tt[Me]=et[Me](t)).c(),Pn(Ie,1),Ie.m(je,null)):Ie=null)},i(e){Ee||(Pn(Ie),Ee=!0)},o(e){Rn(Ie),Ee=!1},d(e){e&&dn(t),hn(We,e),hn(Ue,e),Ve&&Ve.d(),e&&(dn(N),dn(L)),hn(Ye,e),hn(Xe,e),e&&(dn(be),dn($e)),hn(Qe,e),~Me&&tt[Me].d(),ln(Ne)}}}function Gl(e){var t,n,r,i=e.section.title+"";return{c(){t=mn("a"),n=gn(i),r=vn(),$n(t,"class","navbar-item"),$n(t,"href","#"+e.section.id)},m(e,i){pn(e,t,i),fn(t,n),fn(t,r)},p:nn,d(e){e&&dn(t)}}}function Ul(e){var t,n,r,i=e.section.title+"";return{c(){t=mn("a"),n=gn(i),r=vn(),$n(t,"class","navbar-item"),$n(t,"href","#"+e.section.id)},m(e,i){pn(e,t,i),fn(t,n),fn(t,r)},p:nn,d(e){e&&dn(t)}}}function Vl(e){var t,n,r,i,o,a=e.article.title+"";return{c(){t=mn("div"),n=mn("a"),r=gn(a),An(n,"color","white"),$n(n,"href",i="#"+e.article.id),$n(t,"class","navbar-item"),o=bn(n,"click",e.click_handler)},m(e,i){pn(e,t,i),fn(t,n),fn(n,r)},p(e,t){e.article&&a!==(a=t.article.title+"")&&kn(r,a),e.article&&i!==(i="#"+t.article.id)&&$n(n,"href",i)},d(e){e&&dn(t),o()}}}function Kl(e){var t,n,r,i=e.section.title+"";return{c(){t=mn("a"),n=gn(i),r=vn(),$n(t,"href","#"+e.section.id)},m(e,i){pn(e,t,i),fn(t,n),fn(t,r)},p:nn,d(e){e&&dn(t)}}}function Yl(e){var t,n,r,i=e.section.title+"";return{c(){t=mn("a"),n=gn(i),r=vn(),$n(t,"href","#"+e.section.id)},m(e,i){pn(e,t,i),fn(t,n),fn(t,r)},p:nn,d(e){e&&dn(t)}}}function Zl(e){var t,n,r,i,o,a=e.section.title+"";let l=e.sortedArticles(e.section.articles),s=[];for(let t=0;t<l.length;t+=1)s[t]=Ql(Fl(e,l,t));return{c(){t=mn("p"),n=gn(a),r=vn(),i=mn("ul");for(let e=0;e<s.length;e+=1)s[e].c();o=vn(),$n(t,"class","menu-label"),$n(i,"class","menu-list")},m(e,a){pn(e,t,a),fn(t,n),pn(e,r,a),pn(e,i,a);for(let e=0;e<s.length;e+=1)s[e].m(i,null);fn(i,o)},p(e,t){if(e.article&&a!==(a=t.section.title+"")&&kn(n,a),e.article||e.sortedArticles||e.rul||e.activeOption){let n;for(l=t.sortedArticles(t.section.articles),n=0;n<l.length;n+=1){const r=Fl(t,l,n);s[n]?s[n].p(e,r):(s[n]=Ql(r),s[n].c(),s[n].m(i,o))}for(;n<s.length;n+=1)s[n].d(1);s.length=l.length}},d(e){e&&(dn(t),dn(r),dn(i)),hn(s,e)}}}function Xl(e){var t,n,r,i,o=e.option.title+"";return{c(){t=mn("a"),n=gn(o),$n(t,"href",r="#"+e.option.id),i=bn(t,"click",e.click_handler_1)},m(e,r){pn(e,t,r),fn(t,n)},p(e,i){(e.sortedArticles||e.article)&&o!==(o=i.option.title+"")&&kn(n,o),(e.sortedArticles||e.article)&&r!==(r="#"+i.option.id)&&$n(t,"href",r)},d(e){e&&dn(t),i()}}}function Jl(e){var t,n,r,i=e.option.title+"";return{c(){t=mn("a"),n=gn(i),$n(t,"href",r="#"+e.option.id),$n(t,"class","active-article-option svelte-1bogsca")},m(r,i){pn(r,t,i),fn(t,n),e.a_binding(t)},p(e,o){(e.sortedArticles||e.article)&&i!==(i=o.option.title+"")&&kn(n,i),(e.sortedArticles||e.article)&&r!==(r="#"+o.option.id)&&$n(t,"href",r)},d(n){n&&dn(t),e.a_binding(null)}}}function Ql(e){var t;function n(e,t){return t.article&&t.article.id==t.option.id?Jl:Xl}var r=n(0,e),i=r(e);return{c(){t=mn("li"),i.c()},m(e,n){pn(e,t,n),i.m(t,null)},p(e,o){r===(r=n(0,o))&&i?i.p(e,o):(i.d(1),(i=r(o))&&(i.c(),i.m(t,null)))},d(e){e&&dn(t),i.d()}}}function es(e){var t,n=(!e.currentSection||e.section.id==e.currentSection.id)&&Zl(e);return{c(){n&&n.c(),t=yn()},m(e,r){n&&n.m(e,r),pn(e,t,r)},p(e,r){r.currentSection&&r.section.id!=r.currentSection.id?n&&(n.d(1),n=null):n?n.p(e,r):((n=Zl(r)).c(),n.m(t.parentNode,t))},d(e){n&&n.d(e),e&&dn(t)}}}function ts(e){var t,n=new cr({});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p:nn,i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function ns(e){var t,n,r,i,o,a,l,s,c,u,f=[ls,as,os,is],p=[];function d(e,t){return t.found&&t.found.length>0?0:t.query.length<2?1:t.searchDelayHandle?2:3}return l=d(0,e),s=p[l]=f[l](e),{c(){t=gn('Searching "\r\n        '),n=mn("em"),r=gn(e.query),i=gn('\r\n        ":\r\n        '),o=mn("br"),a=vn(),s.c(),c=yn()},m(e,s){pn(e,t,s),pn(e,n,s),fn(n,r),pn(e,i,s),pn(e,o,s),pn(e,a,s),p[l].m(e,s),pn(e,c,s),u=!0},p(e,t){u&&!e.query||kn(r,t.query);var n=l;(l=d(0,t))===n?p[l].p(e,t):(zn(),Rn(p[n],1,1,()=>{p[n]=null}),qn(),(s=p[l])||(s=p[l]=f[l](t)).c(),Pn(s,1),s.m(c.parentNode,c))},i(e){u||(Pn(s),u=!0)},o(e){Rn(s),u=!1},d(e){e&&(dn(t),dn(n),dn(i),dn(o),dn(a)),p[l].d(e),e&&dn(c)}}}function rs(e){var t,n=new Nl({props:{article:e.article,query:e.query}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.article&&(r.article=t.article),e.query&&(r.query=t.query),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function is(e){var t;return{c(){(t=mn("i")).textContent="Nothing found"},m(e,n){pn(e,t,n)},p:nn,i:nn,o:nn,d(e){e&&dn(t)}}}function os(e){var t;return{c(){t=gn("...")},m(e,n){pn(e,t,n)},p:nn,i:nn,o:nn,d(e){e&&dn(t)}}}function as(e){var t;return{c(){(t=mn("i")).textContent="Query too short"},m(e,n){pn(e,t,n)},p:nn,i:nn,o:nn,d(e){e&&dn(t)}}}function ls(e){var t,n=new lr({props:{links:e.found}});return{c(){n.$$.fragment.c()},m(e,r){Gn(n,e,r),t=!0},p(e,t){var r={};e.found&&(r.links=t.found),n.$set(r)},i(e){t||(Pn(n.$$.fragment,e),t=!0)},o(e){Rn(n.$$.fragment,e),t=!1},d(e){Un(n,e)}}}function ss(e){var t;return{c(){$n(t=mn("img"),"class","centered svelte-1bogsca"),$n(t,"alt","Loading rules..."),$n(t,"src","xpedia/spinner.svg")},m(e,n){pn(e,t,n)},p:nn,i:nn,o:nn,d(e){e&&dn(t)}}}function cs(e){var t,n,r,i,o=!e.article&&Pl();let a={ctx:e,current:null,token:null,pending:ss,then:Wl,catch:Rl,value:"null",error:"null",blocks:[,,,]};return function(e,t){const n=t.token={};function r(e,r,i,o){if(t.token!==n)return;t.resolved=i&&{[i]:o};const a=rn(rn({},t.ctx),t.resolved),l=e&&(t.current=e)(a);t.block&&(t.blocks?t.blocks.forEach((e,n)=>{n!==r&&e&&(zn(),Rn(e,1,1,()=>{t.blocks[n]=null}),qn())}):t.block.d(1),l.c(),Pn(l,1),l.m(t.mount(),t.anchor),Fn()),t.block=l,t.blocks&&(t.blocks[r]=l)}if((i=e)&&"object"==typeof i&&"function"==typeof i.then){const n=_n();if(e.then(e=>{On(n),r(t.then,1,t.value,e),On(null)},e=>{On(n),r(t.catch,2,t.error,e),On(null)}),t.current!==t.pending)return r(t.pending,0),!0}else{if(t.current!==t.then)return r(t.then,1,t.value,e),!0;t.resolved={[t.value]:e}}var i}(e.rulesLoaded,a),{c(){o&&o.c(),t=yn(),n=vn(),r=yn(),a.block.c()},m(e,l){o&&o.m(Ll.head,null),fn(Ll.head,t),pn(e,n,l),pn(e,r,l),a.block.m(e,a.anchor=l),a.mount=(()=>r.parentNode),a.anchor=r,i=!0},p(n,r){(e=r).article?o&&(o.d(1),o=null):o||((o=Pl()).c(),o.m(t.parentNode,t)),a.block.p(n,rn(rn({},e),a.resolved))},i(e){i||(Pn(a.block),i=!0)},o(e){for(let e=0;e<3;e+=1){Rn(a.blocks[e])}i=!1},d(e){o&&o.d(e),dn(t),e&&(dn(n),dn(r)),a.block.d(e),a.token=null,a=null}}}function us(e){window.location.hash="#"+e}function fs(e,t,n){let r,{source:i}=t,o=null,a=null,l="",s=null,c=!1,u="",f=null;let p=async function(){await Lt.load(i)}();function d(){let e=document.location.hash.replace("%20"," ");if(e){let t=e.indexOf("::");-1!=t?(u=e.substr(1,t-1),n("query",l=e.substr(t+2))):u=e.substr(1),"SEARCH"==u?(l.length>=2?n("found",a=Lt.search.findArticles(l).map(e=>e.id)):n("found",a=0),n("article",o=null)):(n("found",a=null),o&&o.id==u||n("article",o=Lt.article(u))),console.log(u),console.log(o)}o?o.section&&s!=o.section&&n("currentSection",s=o.section):n("currentSection",s=null)}function h(e){let t=Lt.findNextArticle(o,e);t&&us(t.id)}var m;document.addEventListener("keydown",e=>{const t=e.key;"ArrowRight"==t&&h(1),"ArrowLeft"==t&&h(-1)}),window.onhashchange=d,p.then(d),m=(()=>{r&&(Nn(),In).then(()=>r.scrollIntoView({behavior:"auto",block:"center"}))}),_n().$$.after_update.push(m);let g=!1;let v;return e.$set=(e=>{"source"in e&&n("source",i=e.source)}),e.$$.update=((e={article:1,sortArticles:1})=>{e.article&&console.info(o||"no article"),e.sortArticles&&n("sortedArticles",v=(e=>g?e.slice().sort((e,t)=>e.title>t.title?1:-1):e))}),{source:i,article:o,found:a,query:l,currentSection:s,activeOption:r,ignoreNextAutoscroll:c,searchDelayHandle:f,rulesLoaded:p,searchKeyUp:function(e){f&&clearTimeout(f),n("searchDelayHandle",f=setTimeout(()=>{us("SEARCH::"+e.target.value),n("searchDelayHandle",f=null)},"Enter"==e.key?10:1e3))},sortArticles:g,window:window,sortedArticles:v,click_handler:e=>window.scrollTo(0,0),input0_input_handler:function(){l=this.value,n("query",l)},input1_input_handler:function(){l=this.value,n("query",l)},input2_input_handler:function(){l=this.value,n("query",l)},a_binding:function(e){Tn[e?"unshift":"push"](()=>{n("activeOption",r=e)})},click_handler_1:()=>n("ignoreNextAutoscroll",c=!0),click_handler_2:e=>n("sortArticles",g=!g)}}class ps extends Kn{constructor(e){super(),Vn(this,e,fs,cs,cn,["source"])}}return window.onload=function(){let e=document.body.textContent;document.body.innerHTML="",document.body.style.display="block",new tn,app=new ps({props:{source:e},target:document.body})},app}(JSZip);
+
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.head.appendChild(r) })(window.document);
+var app = (function (JSZip) {
+    'use strict';
+
+    JSZip = JSZip && JSZip.hasOwnProperty('default') ? JSZip['default'] : JSZip;
+
+    /*! *****************************************************************************
+    Copyright (c) Microsoft Corporation. All rights reserved.
+    Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+    this file except in compliance with the License. You may obtain a copy of the
+    License at http://www.apache.org/licenses/LICENSE-2.0
+
+    THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+    WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+    MERCHANTABLITY OR NON-INFRINGEMENT.
+
+    See the Apache Version 2.0 License for specific language governing permissions
+    and limitations under the License.
+    ***************************************************************************** */
+
+    function __awaiter(thisArg, _arguments, P, generator) {
+        return new (P || (P = Promise))(function (resolve, reject) {
+            function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+            function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+            function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+            step((generator = generator.apply(thisArg, _arguments || [])).next());
+        });
+    }
+
+    function __generator(thisArg, body) {
+        var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+        return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+        function verb(n) { return function (v) { return step([n, v]); }; }
+        function step(op) {
+            if (f) throw new TypeError("Generator is already executing.");
+            while (_) try {
+                if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+                if (y = 0, t) op = [op[0] & 2, t.value];
+                switch (op[0]) {
+                    case 0: case 1: t = op; break;
+                    case 4: _.label++; return { value: op[1], done: false };
+                    case 5: _.label++; y = op[1]; op = [0]; continue;
+                    case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                    default:
+                        if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                        if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                        if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                        if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                        if (t[2]) _.ops.pop();
+                        _.trys.pop(); continue;
+                }
+                op = body.call(thisArg, _);
+            } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+            if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+        }
+    }
+
+    var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+    function commonjsRequire () {
+    	throw new Error('Dynamic requires are not currently supported by rollup-plugin-commonjs');
+    }
+
+    function unwrapExports (x) {
+    	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+    }
+
+    function createCommonjsModule(fn, module) {
+    	return module = { exports: {} }, fn(module, module.exports), module.exports;
+    }
+
+    var fuse = createCommonjsModule(function (module, exports) {
+    /*!
+     * Fuse.js v3.4.5 - Lightweight fuzzy-search (http://fusejs.io)
+     * 
+     * Copyright (c) 2012-2017 Kirollos Risk (http://kiro.me)
+     * All Rights Reserved. Apache Software License 2.0
+     * 
+     * http://www.apache.org/licenses/LICENSE-2.0
+     */
+    !function(e,t){module.exports=t();}(commonjsGlobal,function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r});},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0});},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=1)}([function(e,t){e.exports=function(e){return Array.isArray?Array.isArray(e):"[object Array]"===Object.prototype.toString.call(e)};},function(e,t,n){function r(e){return (r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function o(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r);}}var i=n(2),a=n(8),s=n(0),c=function(){function e(t,n){var r=n.location,o=void 0===r?0:r,i=n.distance,s=void 0===i?100:i,c=n.threshold,h=void 0===c?.6:c,l=n.maxPatternLength,u=void 0===l?32:l,f=n.caseSensitive,d=void 0!==f&&f,v=n.tokenSeparator,p=void 0===v?/ +/g:v,g=n.findAllMatches,y=void 0!==g&&g,m=n.minMatchCharLength,k=void 0===m?1:m,S=n.id,x=void 0===S?null:S,b=n.keys,M=void 0===b?[]:b,_=n.shouldSort,L=void 0===_||_,w=n.getFn,A=void 0===w?a:w,C=n.sortFn,I=void 0===C?function(e,t){return e.score-t.score}:C,O=n.tokenize,j=void 0!==O&&O,P=n.matchAllTokens,F=void 0!==P&&P,T=n.includeMatches,z=void 0!==T&&T,E=n.includeScore,K=void 0!==E&&E,$=n.verbose,J=void 0!==$&&$;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.options={location:o,distance:s,threshold:h,maxPatternLength:u,isCaseSensitive:d,tokenSeparator:p,findAllMatches:y,minMatchCharLength:k,id:x,keys:M,includeMatches:z,includeScore:K,shouldSort:L,getFn:A,sortFn:I,verbose:J,tokenize:j,matchAllTokens:F},this.setCollection(t);}var t,n;return t=e,(n=[{key:"setCollection",value:function(e){return this.list=e,e}},{key:"search",value:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{limit:!1};this._log('---------\nSearch pattern: "'.concat(e,'"'));var n=this._prepareSearchers(e),r=n.tokenSearchers,o=n.fullSearcher,i=this._search(r,o),a=i.weights,s=i.results;return this._computeScore(a,s),this.options.shouldSort&&this._sort(s),t.limit&&"number"==typeof t.limit&&(s=s.slice(0,t.limit)),this._format(s)}},{key:"_prepareSearchers",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=[];if(this.options.tokenize)for(var n=e.split(this.options.tokenSeparator),r=0,o=n.length;r<o;r+=1)t.push(new i(n[r],this.options));return {tokenSearchers:t,fullSearcher:new i(e,this.options)}}},{key:"_search",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],t=arguments.length>1?arguments[1]:void 0,n=this.list,r={},o=[];if("string"==typeof n[0]){for(var i=0,a=n.length;i<a;i+=1)this._analyze({key:"",value:n[i],record:i,index:i},{resultMap:r,results:o,tokenSearchers:e,fullSearcher:t});return {weights:null,results:o}}for(var s={},c=0,h=n.length;c<h;c+=1)for(var l=n[c],u=0,f=this.options.keys.length;u<f;u+=1){var d=this.options.keys[u];if("string"!=typeof d){if(s[d.name]={weight:1-d.weight||1},d.weight<=0||d.weight>1)throw new Error("Key weight has to be > 0 and <= 1");d=d.name;}else s[d]={weight:1};this._analyze({key:d,value:this.options.getFn(l,d),record:l,index:c},{resultMap:r,results:o,tokenSearchers:e,fullSearcher:t});}return {weights:s,results:o}}},{key:"_analyze",value:function(e,t){var n=e.key,r=e.arrayIndex,o=void 0===r?-1:r,i=e.value,a=e.record,c=e.index,h=t.tokenSearchers,l=void 0===h?[]:h,u=t.fullSearcher,f=void 0===u?[]:u,d=t.resultMap,v=void 0===d?{}:d,p=t.results,g=void 0===p?[]:p;if(null!=i){var y=!1,m=-1,k=0;if("string"==typeof i){this._log("\nKey: ".concat(""===n?"-":n));var S=f.search(i);if(this._log('Full text: "'.concat(i,'", score: ').concat(S.score)),this.options.tokenize){for(var x=i.split(this.options.tokenSeparator),b=[],M=0;M<l.length;M+=1){var _=l[M];this._log('\nPattern: "'.concat(_.pattern,'"'));for(var L=!1,w=0;w<x.length;w+=1){var A=x[w],C=_.search(A),I={};C.isMatch?(I[A]=C.score,y=!0,L=!0,b.push(C.score)):(I[A]=1,this.options.matchAllTokens||b.push(1)),this._log('Token: "'.concat(A,'", score: ').concat(I[A]));}L&&(k+=1);}m=b[0];for(var O=b.length,j=1;j<O;j+=1)m+=b[j];m/=O,this._log("Token score average:",m);}var P=S.score;m>-1&&(P=(P+m)/2),this._log("Score average:",P);var F=!this.options.tokenize||!this.options.matchAllTokens||k>=l.length;if(this._log("\nCheck Matches: ".concat(F)),(y||S.isMatch)&&F){var T=v[c];T?T.output.push({key:n,arrayIndex:o,value:i,score:P,matchedIndices:S.matchedIndices}):(v[c]={item:a,output:[{key:n,arrayIndex:o,value:i,score:P,matchedIndices:S.matchedIndices}]},g.push(v[c]));}}else if(s(i))for(var z=0,E=i.length;z<E;z+=1)this._analyze({key:n,arrayIndex:z,value:i[z],record:a,index:c},{resultMap:v,results:g,tokenSearchers:l,fullSearcher:f});}}},{key:"_computeScore",value:function(e,t){this._log("\n\nComputing score:\n");for(var n=0,r=t.length;n<r;n+=1){for(var o=t[n].output,i=o.length,a=1,s=1,c=0;c<i;c+=1){var h=e?e[o[c].key].weight:1,l=(1===h?o[c].score:o[c].score||.001)*h;1!==h?s=Math.min(s,l):(o[c].nScore=l,a*=l);}t[n].score=1===s?a:s,this._log(t[n]);}}},{key:"_sort",value:function(e){this._log("\n\nSorting...."),e.sort(this.options.sortFn);}},{key:"_format",value:function(e){var t=[];if(this.options.verbose){var n=[];this._log("\n\nOutput:\n\n",JSON.stringify(e,function(e,t){if("object"===r(t)&&null!==t){if(-1!==n.indexOf(t))return;n.push(t);}return t})),n=null;}var o=[];this.options.includeMatches&&o.push(function(e,t){var n=e.output;t.matches=[];for(var r=0,o=n.length;r<o;r+=1){var i=n[r];if(0!==i.matchedIndices.length){var a={indices:i.matchedIndices,value:i.value};i.key&&(a.key=i.key),i.hasOwnProperty("arrayIndex")&&i.arrayIndex>-1&&(a.arrayIndex=i.arrayIndex),t.matches.push(a);}}}),this.options.includeScore&&o.push(function(e,t){t.score=e.score;});for(var i=0,a=e.length;i<a;i+=1){var s=e[i];if(this.options.id&&(s.item=this.options.getFn(s.item,this.options.id)[0]),o.length){for(var c={item:s.item},h=0,l=o.length;h<l;h+=1)o[h](s,c);t.push(c);}else t.push(s.item);}return t}},{key:"_log",value:function(){var e;this.options.verbose&&(e=console).log.apply(e,arguments);}}])&&o(t.prototype,n),e}();e.exports=c;},function(e,t,n){function r(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r);}}var o=n(3),i=n(4),a=n(7),s=function(){function e(t,n){var r=n.location,o=void 0===r?0:r,i=n.distance,s=void 0===i?100:i,c=n.threshold,h=void 0===c?.6:c,l=n.maxPatternLength,u=void 0===l?32:l,f=n.isCaseSensitive,d=void 0!==f&&f,v=n.tokenSeparator,p=void 0===v?/ +/g:v,g=n.findAllMatches,y=void 0!==g&&g,m=n.minMatchCharLength,k=void 0===m?1:m;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.options={location:o,distance:s,threshold:h,maxPatternLength:u,isCaseSensitive:d,tokenSeparator:p,findAllMatches:y,minMatchCharLength:k},this.pattern=this.options.isCaseSensitive?t:t.toLowerCase(),this.pattern.length<=u&&(this.patternAlphabet=a(this.pattern));}var t,n;return t=e,(n=[{key:"search",value:function(e){if(this.options.isCaseSensitive||(e=e.toLowerCase()),this.pattern===e)return {isMatch:!0,score:0,matchedIndices:[[0,e.length-1]]};var t=this.options,n=t.maxPatternLength,r=t.tokenSeparator;if(this.pattern.length>n)return o(e,this.pattern,r);var a=this.options,s=a.location,c=a.distance,h=a.threshold,l=a.findAllMatches,u=a.minMatchCharLength;return i(e,this.pattern,this.patternAlphabet,{location:s,distance:c,threshold:h,findAllMatches:l,minMatchCharLength:u})}}])&&r(t.prototype,n),e}();e.exports=s;},function(e,t){var n=/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g;e.exports=function(e,t){var r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:/ +/g,o=new RegExp(t.replace(n,"\\$&").replace(r,"|")),i=e.match(o),a=!!i,s=[];if(a)for(var c=0,h=i.length;c<h;c+=1){var l=i[c];s.push([e.indexOf(l),l.length-1]);}return {score:a?.5:1,isMatch:a,matchedIndices:s}};},function(e,t,n){var r=n(5),o=n(6);e.exports=function(e,t,n,i){for(var a=i.location,s=void 0===a?0:a,c=i.distance,h=void 0===c?100:c,l=i.threshold,u=void 0===l?.6:l,f=i.findAllMatches,d=void 0!==f&&f,v=i.minMatchCharLength,p=void 0===v?1:v,g=s,y=e.length,m=u,k=e.indexOf(t,g),S=t.length,x=[],b=0;b<y;b+=1)x[b]=0;if(-1!==k){var M=r(t,{errors:0,currentLocation:k,expectedLocation:g,distance:h});if(m=Math.min(M,m),-1!==(k=e.lastIndexOf(t,g+S))){var _=r(t,{errors:0,currentLocation:k,expectedLocation:g,distance:h});m=Math.min(_,m);}}k=-1;for(var L=[],w=1,A=S+y,C=1<<S-1,I=0;I<S;I+=1){for(var O=0,j=A;O<j;){r(t,{errors:I,currentLocation:g+j,expectedLocation:g,distance:h})<=m?O=j:A=j,j=Math.floor((A-O)/2+O);}A=j;var P=Math.max(1,g-j+1),F=d?y:Math.min(g+j,y)+S,T=Array(F+2);T[F+1]=(1<<I)-1;for(var z=F;z>=P;z-=1){var E=z-1,K=n[e.charAt(E)];if(K&&(x[E]=1),T[z]=(T[z+1]<<1|1)&K,0!==I&&(T[z]|=(L[z+1]|L[z])<<1|1|L[z+1]),T[z]&C&&(w=r(t,{errors:I,currentLocation:E,expectedLocation:g,distance:h}))<=m){if(m=w,(k=E)<=g)break;P=Math.max(1,2*g-k);}}if(r(t,{errors:I+1,currentLocation:g,expectedLocation:g,distance:h})>m)break;L=T;}return {isMatch:k>=0,score:0===w?.001:w,matchedIndices:o(x,p)}};},function(e,t){e.exports=function(e,t){var n=t.errors,r=void 0===n?0:n,o=t.currentLocation,i=void 0===o?0:o,a=t.expectedLocation,s=void 0===a?0:a,c=t.distance,h=void 0===c?100:c,l=r/e.length,u=Math.abs(s-i);return h?l+u/h:u?1:l};},function(e,t){e.exports=function(){for(var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:1,n=[],r=-1,o=-1,i=0,a=e.length;i<a;i+=1){var s=e[i];s&&-1===r?r=i:s||-1===r||((o=i-1)-r+1>=t&&n.push([r,o]),r=-1);}return e[i-1]&&i-r>=t&&n.push([r,i-1]),n};},function(e,t){e.exports=function(e){for(var t={},n=e.length,r=0;r<n;r+=1)t[e.charAt(r)]=0;for(var o=0;o<n;o+=1)t[e.charAt(o)]|=1<<n-o-1;return t};},function(e,t,n){var r=n(0);e.exports=function(e,t){return function e(t,n,o){if(n){var i=n.indexOf("."),a=n,s=null;-1!==i&&(a=n.slice(0,i),s=n.slice(i+1));var c=t[a];if(null!=c)if(s||"string"!=typeof c&&"number"!=typeof c)if(r(c))for(var h=0,l=c.length;h<l;h+=1)e(c[h],s,o);else s&&e(c,s,o);else o.push(c.toString());}else o.push(t);return o}(e,t,[])};}])});
+    });
+
+    var Fuse = unwrapExports(fuse);
+    var fuse_1 = fuse.Fuse;
+
+    function isNothing(subject) {
+      return (typeof subject === 'undefined') || (subject === null);
+    }
+
+
+    function isObject(subject) {
+      return (typeof subject === 'object') && (subject !== null);
+    }
+
+
+    function toArray(sequence) {
+      if (Array.isArray(sequence)) return sequence;
+      else if (isNothing(sequence)) return [];
+
+      return [ sequence ];
+    }
+
+
+    function extend(target, source) {
+      var index, length, key, sourceKeys;
+
+      if (source) {
+        sourceKeys = Object.keys(source);
+
+        for (index = 0, length = sourceKeys.length; index < length; index += 1) {
+          key = sourceKeys[index];
+          target[key] = source[key];
+        }
+      }
+
+      return target;
+    }
+
+
+    function repeat(string, count) {
+      var result = '', cycle;
+
+      for (cycle = 0; cycle < count; cycle += 1) {
+        result += string;
+      }
+
+      return result;
+    }
+
+
+    function isNegativeZero(number) {
+      return (number === 0) && (Number.NEGATIVE_INFINITY === 1 / number);
+    }
+
+
+    var isNothing_1      = isNothing;
+    var isObject_1       = isObject;
+    var toArray_1        = toArray;
+    var repeat_1         = repeat;
+    var isNegativeZero_1 = isNegativeZero;
+    var extend_1         = extend;
+
+    var common = {
+    	isNothing: isNothing_1,
+    	isObject: isObject_1,
+    	toArray: toArray_1,
+    	repeat: repeat_1,
+    	isNegativeZero: isNegativeZero_1,
+    	extend: extend_1
+    };
+
+    // YAML error class. http://stackoverflow.com/questions/8458984
+
+    function YAMLException(reason, mark) {
+      // Super constructor
+      Error.call(this);
+
+      this.name = 'YAMLException';
+      this.reason = reason;
+      this.mark = mark;
+      this.message = (this.reason || '(unknown reason)') + (this.mark ? ' ' + this.mark.toString() : '');
+
+      // Include stack trace in error object
+      if (Error.captureStackTrace) {
+        // Chrome and NodeJS
+        Error.captureStackTrace(this, this.constructor);
+      } else {
+        // FF, IE 10+ and Safari 6+. Fallback for others
+        this.stack = (new Error()).stack || '';
+      }
+    }
+
+
+    // Inherit from Error
+    YAMLException.prototype = Object.create(Error.prototype);
+    YAMLException.prototype.constructor = YAMLException;
+
+
+    YAMLException.prototype.toString = function toString(compact) {
+      var result = this.name + ': ';
+
+      result += this.reason || '(unknown reason)';
+
+      if (!compact && this.mark) {
+        result += ' ' + this.mark.toString();
+      }
+
+      return result;
+    };
+
+
+    var exception = YAMLException;
+
+    function Mark(name, buffer, position, line, column) {
+      this.name     = name;
+      this.buffer   = buffer;
+      this.position = position;
+      this.line     = line;
+      this.column   = column;
+    }
+
+
+    Mark.prototype.getSnippet = function getSnippet(indent, maxLength) {
+      var head, start, tail, end, snippet;
+
+      if (!this.buffer) return null;
+
+      indent = indent || 4;
+      maxLength = maxLength || 75;
+
+      head = '';
+      start = this.position;
+
+      while (start > 0 && '\x00\r\n\x85\u2028\u2029'.indexOf(this.buffer.charAt(start - 1)) === -1) {
+        start -= 1;
+        if (this.position - start > (maxLength / 2 - 1)) {
+          head = ' ... ';
+          start += 5;
+          break;
+        }
+      }
+
+      tail = '';
+      end = this.position;
+
+      while (end < this.buffer.length && '\x00\r\n\x85\u2028\u2029'.indexOf(this.buffer.charAt(end)) === -1) {
+        end += 1;
+        if (end - this.position > (maxLength / 2 - 1)) {
+          tail = ' ... ';
+          end -= 5;
+          break;
+        }
+      }
+
+      snippet = this.buffer.slice(start, end);
+
+      return common.repeat(' ', indent) + head + snippet + tail + '\n' +
+             common.repeat(' ', indent + this.position - start + head.length) + '^';
+    };
+
+
+    Mark.prototype.toString = function toString(compact) {
+      var snippet, where = '';
+
+      if (this.name) {
+        where += 'in "' + this.name + '" ';
+      }
+
+      where += 'at line ' + (this.line + 1) + ', column ' + (this.column + 1);
+
+      if (!compact) {
+        snippet = this.getSnippet();
+
+        if (snippet) {
+          where += ':\n' + snippet;
+        }
+      }
+
+      return where;
+    };
+
+
+    var mark = Mark;
+
+    var TYPE_CONSTRUCTOR_OPTIONS = [
+      'kind',
+      'resolve',
+      'construct',
+      'instanceOf',
+      'predicate',
+      'represent',
+      'defaultStyle',
+      'styleAliases'
+    ];
+
+    var YAML_NODE_KINDS = [
+      'scalar',
+      'sequence',
+      'mapping'
+    ];
+
+    function compileStyleAliases(map) {
+      var result = {};
+
+      if (map !== null) {
+        Object.keys(map).forEach(function (style) {
+          map[style].forEach(function (alias) {
+            result[String(alias)] = style;
+          });
+        });
+      }
+
+      return result;
+    }
+
+    function Type(tag, options) {
+      options = options || {};
+
+      Object.keys(options).forEach(function (name) {
+        if (TYPE_CONSTRUCTOR_OPTIONS.indexOf(name) === -1) {
+          throw new exception('Unknown option "' + name + '" is met in definition of "' + tag + '" YAML type.');
+        }
+      });
+
+      // TODO: Add tag format check.
+      this.tag          = tag;
+      this.kind         = options['kind']         || null;
+      this.resolve      = options['resolve']      || function () { return true; };
+      this.construct    = options['construct']    || function (data) { return data; };
+      this.instanceOf   = options['instanceOf']   || null;
+      this.predicate    = options['predicate']    || null;
+      this.represent    = options['represent']    || null;
+      this.defaultStyle = options['defaultStyle'] || null;
+      this.styleAliases = compileStyleAliases(options['styleAliases'] || null);
+
+      if (YAML_NODE_KINDS.indexOf(this.kind) === -1) {
+        throw new exception('Unknown kind "' + this.kind + '" is specified for "' + tag + '" YAML type.');
+      }
+    }
+
+    var type = Type;
+
+    /*eslint-disable max-len*/
+
+
+
+
+
+
+    function compileList(schema, name, result) {
+      var exclude = [];
+
+      schema.include.forEach(function (includedSchema) {
+        result = compileList(includedSchema, name, result);
+      });
+
+      schema[name].forEach(function (currentType) {
+        result.forEach(function (previousType, previousIndex) {
+          if (previousType.tag === currentType.tag && previousType.kind === currentType.kind) {
+            exclude.push(previousIndex);
+          }
+        });
+
+        result.push(currentType);
+      });
+
+      return result.filter(function (type, index) {
+        return exclude.indexOf(index) === -1;
+      });
+    }
+
+
+    function compileMap(/* lists... */) {
+      var result = {
+            scalar: {},
+            sequence: {},
+            mapping: {},
+            fallback: {}
+          }, index, length;
+
+      function collectType(type) {
+        result[type.kind][type.tag] = result['fallback'][type.tag] = type;
+      }
+
+      for (index = 0, length = arguments.length; index < length; index += 1) {
+        arguments[index].forEach(collectType);
+      }
+      return result;
+    }
+
+
+    function Schema(definition) {
+      this.include  = definition.include  || [];
+      this.implicit = definition.implicit || [];
+      this.explicit = definition.explicit || [];
+
+      this.implicit.forEach(function (type) {
+        if (type.loadKind && type.loadKind !== 'scalar') {
+          throw new exception('There is a non-scalar type in the implicit list of a schema. Implicit resolving of such types is not supported.');
+        }
+      });
+
+      this.compiledImplicit = compileList(this, 'implicit', []);
+      this.compiledExplicit = compileList(this, 'explicit', []);
+      this.compiledTypeMap  = compileMap(this.compiledImplicit, this.compiledExplicit);
+    }
+
+
+    Schema.DEFAULT = null;
+
+
+    Schema.create = function createSchema() {
+      var schemas, types;
+
+      switch (arguments.length) {
+        case 1:
+          schemas = Schema.DEFAULT;
+          types = arguments[0];
+          break;
+
+        case 2:
+          schemas = arguments[0];
+          types = arguments[1];
+          break;
+
+        default:
+          throw new exception('Wrong number of arguments for Schema.create function');
+      }
+
+      schemas = common.toArray(schemas);
+      types = common.toArray(types);
+
+      if (!schemas.every(function (schema) { return schema instanceof Schema; })) {
+        throw new exception('Specified list of super schemas (or a single Schema object) contains a non-Schema object.');
+      }
+
+      if (!types.every(function (type$1) { return type$1 instanceof type; })) {
+        throw new exception('Specified list of YAML types (or a single Type object) contains a non-Type object.');
+      }
+
+      return new Schema({
+        include: schemas,
+        explicit: types
+      });
+    };
+
+
+    var schema = Schema;
+
+    var str = new type('tag:yaml.org,2002:str', {
+      kind: 'scalar',
+      construct: function (data) { return data !== null ? data : ''; }
+    });
+
+    var seq = new type('tag:yaml.org,2002:seq', {
+      kind: 'sequence',
+      construct: function (data) { return data !== null ? data : []; }
+    });
+
+    var map = new type('tag:yaml.org,2002:map', {
+      kind: 'mapping',
+      construct: function (data) { return data !== null ? data : {}; }
+    });
+
+    var failsafe = new schema({
+      explicit: [
+        str,
+        seq,
+        map
+      ]
+    });
+
+    function resolveYamlNull(data) {
+      if (data === null) return true;
+
+      var max = data.length;
+
+      return (max === 1 && data === '~') ||
+             (max === 4 && (data === 'null' || data === 'Null' || data === 'NULL'));
+    }
+
+    function constructYamlNull() {
+      return null;
+    }
+
+    function isNull(object) {
+      return object === null;
+    }
+
+    var _null = new type('tag:yaml.org,2002:null', {
+      kind: 'scalar',
+      resolve: resolveYamlNull,
+      construct: constructYamlNull,
+      predicate: isNull,
+      represent: {
+        canonical: function () { return '~';    },
+        lowercase: function () { return 'null'; },
+        uppercase: function () { return 'NULL'; },
+        camelcase: function () { return 'Null'; }
+      },
+      defaultStyle: 'lowercase'
+    });
+
+    function resolveYamlBoolean(data) {
+      if (data === null) return false;
+
+      var max = data.length;
+
+      return (max === 4 && (data === 'true' || data === 'True' || data === 'TRUE')) ||
+             (max === 5 && (data === 'false' || data === 'False' || data === 'FALSE'));
+    }
+
+    function constructYamlBoolean(data) {
+      return data === 'true' ||
+             data === 'True' ||
+             data === 'TRUE';
+    }
+
+    function isBoolean(object) {
+      return Object.prototype.toString.call(object) === '[object Boolean]';
+    }
+
+    var bool = new type('tag:yaml.org,2002:bool', {
+      kind: 'scalar',
+      resolve: resolveYamlBoolean,
+      construct: constructYamlBoolean,
+      predicate: isBoolean,
+      represent: {
+        lowercase: function (object) { return object ? 'true' : 'false'; },
+        uppercase: function (object) { return object ? 'TRUE' : 'FALSE'; },
+        camelcase: function (object) { return object ? 'True' : 'False'; }
+      },
+      defaultStyle: 'lowercase'
+    });
+
+    function isHexCode(c) {
+      return ((0x30/* 0 */ <= c) && (c <= 0x39/* 9 */)) ||
+             ((0x41/* A */ <= c) && (c <= 0x46/* F */)) ||
+             ((0x61/* a */ <= c) && (c <= 0x66/* f */));
+    }
+
+    function isOctCode(c) {
+      return ((0x30/* 0 */ <= c) && (c <= 0x37/* 7 */));
+    }
+
+    function isDecCode(c) {
+      return ((0x30/* 0 */ <= c) && (c <= 0x39/* 9 */));
+    }
+
+    function resolveYamlInteger(data) {
+      if (data === null) return false;
+
+      var max = data.length,
+          index = 0,
+          hasDigits = false,
+          ch;
+
+      if (!max) return false;
+
+      ch = data[index];
+
+      // sign
+      if (ch === '-' || ch === '+') {
+        ch = data[++index];
+      }
+
+      if (ch === '0') {
+        // 0
+        if (index + 1 === max) return true;
+        ch = data[++index];
+
+        // base 2, base 8, base 16
+
+        if (ch === 'b') {
+          // base 2
+          index++;
+
+          for (; index < max; index++) {
+            ch = data[index];
+            if (ch === '_') continue;
+            if (ch !== '0' && ch !== '1') return false;
+            hasDigits = true;
+          }
+          return hasDigits && ch !== '_';
+        }
+
+
+        if (ch === 'x') {
+          // base 16
+          index++;
+
+          for (; index < max; index++) {
+            ch = data[index];
+            if (ch === '_') continue;
+            if (!isHexCode(data.charCodeAt(index))) return false;
+            hasDigits = true;
+          }
+          return hasDigits && ch !== '_';
+        }
+
+        // base 8
+        for (; index < max; index++) {
+          ch = data[index];
+          if (ch === '_') continue;
+          if (!isOctCode(data.charCodeAt(index))) return false;
+          hasDigits = true;
+        }
+        return hasDigits && ch !== '_';
+      }
+
+      // base 10 (except 0) or base 60
+
+      // value should not start with `_`;
+      if (ch === '_') return false;
+
+      for (; index < max; index++) {
+        ch = data[index];
+        if (ch === '_') continue;
+        if (ch === ':') break;
+        if (!isDecCode(data.charCodeAt(index))) {
+          return false;
+        }
+        hasDigits = true;
+      }
+
+      // Should have digits and should not end with `_`
+      if (!hasDigits || ch === '_') return false;
+
+      // if !base60 - done;
+      if (ch !== ':') return true;
+
+      // base60 almost not used, no needs to optimize
+      return /^(:[0-5]?[0-9])+$/.test(data.slice(index));
+    }
+
+    function constructYamlInteger(data) {
+      var value = data, sign = 1, ch, base, digits = [];
+
+      if (value.indexOf('_') !== -1) {
+        value = value.replace(/_/g, '');
+      }
+
+      ch = value[0];
+
+      if (ch === '-' || ch === '+') {
+        if (ch === '-') sign = -1;
+        value = value.slice(1);
+        ch = value[0];
+      }
+
+      if (value === '0') return 0;
+
+      if (ch === '0') {
+        if (value[1] === 'b') return sign * parseInt(value.slice(2), 2);
+        if (value[1] === 'x') return sign * parseInt(value, 16);
+        return sign * parseInt(value, 8);
+      }
+
+      if (value.indexOf(':') !== -1) {
+        value.split(':').forEach(function (v) {
+          digits.unshift(parseInt(v, 10));
+        });
+
+        value = 0;
+        base = 1;
+
+        digits.forEach(function (d) {
+          value += (d * base);
+          base *= 60;
+        });
+
+        return sign * value;
+
+      }
+
+      return sign * parseInt(value, 10);
+    }
+
+    function isInteger(object) {
+      return (Object.prototype.toString.call(object)) === '[object Number]' &&
+             (object % 1 === 0 && !common.isNegativeZero(object));
+    }
+
+    var int_1 = new type('tag:yaml.org,2002:int', {
+      kind: 'scalar',
+      resolve: resolveYamlInteger,
+      construct: constructYamlInteger,
+      predicate: isInteger,
+      represent: {
+        binary:      function (obj) { return obj >= 0 ? '0b' + obj.toString(2) : '-0b' + obj.toString(2).slice(1); },
+        octal:       function (obj) { return obj >= 0 ? '0'  + obj.toString(8) : '-0'  + obj.toString(8).slice(1); },
+        decimal:     function (obj) { return obj.toString(10); },
+        /* eslint-disable max-len */
+        hexadecimal: function (obj) { return obj >= 0 ? '0x' + obj.toString(16).toUpperCase() :  '-0x' + obj.toString(16).toUpperCase().slice(1); }
+      },
+      defaultStyle: 'decimal',
+      styleAliases: {
+        binary:      [ 2,  'bin' ],
+        octal:       [ 8,  'oct' ],
+        decimal:     [ 10, 'dec' ],
+        hexadecimal: [ 16, 'hex' ]
+      }
+    });
+
+    var YAML_FLOAT_PATTERN = new RegExp(
+      // 2.5e4, 2.5 and integers
+      '^(?:[-+]?(?:0|[1-9][0-9_]*)(?:\\.[0-9_]*)?(?:[eE][-+]?[0-9]+)?' +
+      // .2e4, .2
+      // special case, seems not from spec
+      '|\\.[0-9_]+(?:[eE][-+]?[0-9]+)?' +
+      // 20:59
+      '|[-+]?[0-9][0-9_]*(?::[0-5]?[0-9])+\\.[0-9_]*' +
+      // .inf
+      '|[-+]?\\.(?:inf|Inf|INF)' +
+      // .nan
+      '|\\.(?:nan|NaN|NAN))$');
+
+    function resolveYamlFloat(data) {
+      if (data === null) return false;
+
+      if (!YAML_FLOAT_PATTERN.test(data) ||
+          // Quick hack to not allow integers end with `_`
+          // Probably should update regexp & check speed
+          data[data.length - 1] === '_') {
+        return false;
+      }
+
+      return true;
+    }
+
+    function constructYamlFloat(data) {
+      var value, sign, base, digits;
+
+      value  = data.replace(/_/g, '').toLowerCase();
+      sign   = value[0] === '-' ? -1 : 1;
+      digits = [];
+
+      if ('+-'.indexOf(value[0]) >= 0) {
+        value = value.slice(1);
+      }
+
+      if (value === '.inf') {
+        return (sign === 1) ? Number.POSITIVE_INFINITY : Number.NEGATIVE_INFINITY;
+
+      } else if (value === '.nan') {
+        return NaN;
+
+      } else if (value.indexOf(':') >= 0) {
+        value.split(':').forEach(function (v) {
+          digits.unshift(parseFloat(v, 10));
+        });
+
+        value = 0.0;
+        base = 1;
+
+        digits.forEach(function (d) {
+          value += d * base;
+          base *= 60;
+        });
+
+        return sign * value;
+
+      }
+      return sign * parseFloat(value, 10);
+    }
+
+
+    var SCIENTIFIC_WITHOUT_DOT = /^[-+]?[0-9]+e/;
+
+    function representYamlFloat(object, style) {
+      var res;
+
+      if (isNaN(object)) {
+        switch (style) {
+          case 'lowercase': return '.nan';
+          case 'uppercase': return '.NAN';
+          case 'camelcase': return '.NaN';
+        }
+      } else if (Number.POSITIVE_INFINITY === object) {
+        switch (style) {
+          case 'lowercase': return '.inf';
+          case 'uppercase': return '.INF';
+          case 'camelcase': return '.Inf';
+        }
+      } else if (Number.NEGATIVE_INFINITY === object) {
+        switch (style) {
+          case 'lowercase': return '-.inf';
+          case 'uppercase': return '-.INF';
+          case 'camelcase': return '-.Inf';
+        }
+      } else if (common.isNegativeZero(object)) {
+        return '-0.0';
+      }
+
+      res = object.toString(10);
+
+      // JS stringifier can build scientific format without dots: 5e-100,
+      // while YAML requres dot: 5.e-100. Fix it with simple hack
+
+      return SCIENTIFIC_WITHOUT_DOT.test(res) ? res.replace('e', '.e') : res;
+    }
+
+    function isFloat(object) {
+      return (Object.prototype.toString.call(object) === '[object Number]') &&
+             (object % 1 !== 0 || common.isNegativeZero(object));
+    }
+
+    var float_1 = new type('tag:yaml.org,2002:float', {
+      kind: 'scalar',
+      resolve: resolveYamlFloat,
+      construct: constructYamlFloat,
+      predicate: isFloat,
+      represent: representYamlFloat,
+      defaultStyle: 'lowercase'
+    });
+
+    var json = new schema({
+      include: [
+        failsafe
+      ],
+      implicit: [
+        _null,
+        bool,
+        int_1,
+        float_1
+      ]
+    });
+
+    var core = new schema({
+      include: [
+        json
+      ]
+    });
+
+    var YAML_DATE_REGEXP = new RegExp(
+      '^([0-9][0-9][0-9][0-9])'          + // [1] year
+      '-([0-9][0-9])'                    + // [2] month
+      '-([0-9][0-9])$');                   // [3] day
+
+    var YAML_TIMESTAMP_REGEXP = new RegExp(
+      '^([0-9][0-9][0-9][0-9])'          + // [1] year
+      '-([0-9][0-9]?)'                   + // [2] month
+      '-([0-9][0-9]?)'                   + // [3] day
+      '(?:[Tt]|[ \\t]+)'                 + // ...
+      '([0-9][0-9]?)'                    + // [4] hour
+      ':([0-9][0-9])'                    + // [5] minute
+      ':([0-9][0-9])'                    + // [6] second
+      '(?:\\.([0-9]*))?'                 + // [7] fraction
+      '(?:[ \\t]*(Z|([-+])([0-9][0-9]?)' + // [8] tz [9] tz_sign [10] tz_hour
+      '(?::([0-9][0-9]))?))?$');           // [11] tz_minute
+
+    function resolveYamlTimestamp(data) {
+      if (data === null) return false;
+      if (YAML_DATE_REGEXP.exec(data) !== null) return true;
+      if (YAML_TIMESTAMP_REGEXP.exec(data) !== null) return true;
+      return false;
+    }
+
+    function constructYamlTimestamp(data) {
+      var match, year, month, day, hour, minute, second, fraction = 0,
+          delta = null, tz_hour, tz_minute, date;
+
+      match = YAML_DATE_REGEXP.exec(data);
+      if (match === null) match = YAML_TIMESTAMP_REGEXP.exec(data);
+
+      if (match === null) throw new Error('Date resolve error');
+
+      // match: [1] year [2] month [3] day
+
+      year = +(match[1]);
+      month = +(match[2]) - 1; // JS month starts with 0
+      day = +(match[3]);
+
+      if (!match[4]) { // no hour
+        return new Date(Date.UTC(year, month, day));
+      }
+
+      // match: [4] hour [5] minute [6] second [7] fraction
+
+      hour = +(match[4]);
+      minute = +(match[5]);
+      second = +(match[6]);
+
+      if (match[7]) {
+        fraction = match[7].slice(0, 3);
+        while (fraction.length < 3) { // milli-seconds
+          fraction += '0';
+        }
+        fraction = +fraction;
+      }
+
+      // match: [8] tz [9] tz_sign [10] tz_hour [11] tz_minute
+
+      if (match[9]) {
+        tz_hour = +(match[10]);
+        tz_minute = +(match[11] || 0);
+        delta = (tz_hour * 60 + tz_minute) * 60000; // delta in mili-seconds
+        if (match[9] === '-') delta = -delta;
+      }
+
+      date = new Date(Date.UTC(year, month, day, hour, minute, second, fraction));
+
+      if (delta) date.setTime(date.getTime() - delta);
+
+      return date;
+    }
+
+    function representYamlTimestamp(object /*, style*/) {
+      return object.toISOString();
+    }
+
+    var timestamp = new type('tag:yaml.org,2002:timestamp', {
+      kind: 'scalar',
+      resolve: resolveYamlTimestamp,
+      construct: constructYamlTimestamp,
+      instanceOf: Date,
+      represent: representYamlTimestamp
+    });
+
+    function resolveYamlMerge(data) {
+      return data === '<<' || data === null;
+    }
+
+    var merge = new type('tag:yaml.org,2002:merge', {
+      kind: 'scalar',
+      resolve: resolveYamlMerge
+    });
+
+    /*eslint-disable no-bitwise*/
+
+    var NodeBuffer;
+
+    try {
+      // A trick for browserified version, to not include `Buffer` shim
+      var _require = commonjsRequire;
+      NodeBuffer = _require('buffer').Buffer;
+    } catch (__) {}
+
+
+
+
+    // [ 64, 65, 66 ] -> [ padding, CR, LF ]
+    var BASE64_MAP = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=\n\r';
+
+
+    function resolveYamlBinary(data) {
+      if (data === null) return false;
+
+      var code, idx, bitlen = 0, max = data.length, map = BASE64_MAP;
+
+      // Convert one by one.
+      for (idx = 0; idx < max; idx++) {
+        code = map.indexOf(data.charAt(idx));
+
+        // Skip CR/LF
+        if (code > 64) continue;
+
+        // Fail on illegal characters
+        if (code < 0) return false;
+
+        bitlen += 6;
+      }
+
+      // If there are any bits left, source was corrupted
+      return (bitlen % 8) === 0;
+    }
+
+    function constructYamlBinary(data) {
+      var idx, tailbits,
+          input = data.replace(/[\r\n=]/g, ''), // remove CR/LF & padding to simplify scan
+          max = input.length,
+          map = BASE64_MAP,
+          bits = 0,
+          result = [];
+
+      // Collect by 6*4 bits (3 bytes)
+
+      for (idx = 0; idx < max; idx++) {
+        if ((idx % 4 === 0) && idx) {
+          result.push((bits >> 16) & 0xFF);
+          result.push((bits >> 8) & 0xFF);
+          result.push(bits & 0xFF);
+        }
+
+        bits = (bits << 6) | map.indexOf(input.charAt(idx));
+      }
+
+      // Dump tail
+
+      tailbits = (max % 4) * 6;
+
+      if (tailbits === 0) {
+        result.push((bits >> 16) & 0xFF);
+        result.push((bits >> 8) & 0xFF);
+        result.push(bits & 0xFF);
+      } else if (tailbits === 18) {
+        result.push((bits >> 10) & 0xFF);
+        result.push((bits >> 2) & 0xFF);
+      } else if (tailbits === 12) {
+        result.push((bits >> 4) & 0xFF);
+      }
+
+      // Wrap into Buffer for NodeJS and leave Array for browser
+      if (NodeBuffer) {
+        // Support node 6.+ Buffer API when available
+        return NodeBuffer.from ? NodeBuffer.from(result) : new NodeBuffer(result);
+      }
+
+      return result;
+    }
+
+    function representYamlBinary(object /*, style*/) {
+      var result = '', bits = 0, idx, tail,
+          max = object.length,
+          map = BASE64_MAP;
+
+      // Convert every three bytes to 4 ASCII characters.
+
+      for (idx = 0; idx < max; idx++) {
+        if ((idx % 3 === 0) && idx) {
+          result += map[(bits >> 18) & 0x3F];
+          result += map[(bits >> 12) & 0x3F];
+          result += map[(bits >> 6) & 0x3F];
+          result += map[bits & 0x3F];
+        }
+
+        bits = (bits << 8) + object[idx];
+      }
+
+      // Dump tail
+
+      tail = max % 3;
+
+      if (tail === 0) {
+        result += map[(bits >> 18) & 0x3F];
+        result += map[(bits >> 12) & 0x3F];
+        result += map[(bits >> 6) & 0x3F];
+        result += map[bits & 0x3F];
+      } else if (tail === 2) {
+        result += map[(bits >> 10) & 0x3F];
+        result += map[(bits >> 4) & 0x3F];
+        result += map[(bits << 2) & 0x3F];
+        result += map[64];
+      } else if (tail === 1) {
+        result += map[(bits >> 2) & 0x3F];
+        result += map[(bits << 4) & 0x3F];
+        result += map[64];
+        result += map[64];
+      }
+
+      return result;
+    }
+
+    function isBinary(object) {
+      return NodeBuffer && NodeBuffer.isBuffer(object);
+    }
+
+    var binary = new type('tag:yaml.org,2002:binary', {
+      kind: 'scalar',
+      resolve: resolveYamlBinary,
+      construct: constructYamlBinary,
+      predicate: isBinary,
+      represent: representYamlBinary
+    });
+
+    var _hasOwnProperty = Object.prototype.hasOwnProperty;
+    var _toString       = Object.prototype.toString;
+
+    function resolveYamlOmap(data) {
+      if (data === null) return true;
+
+      var objectKeys = [], index, length, pair, pairKey, pairHasKey,
+          object = data;
+
+      for (index = 0, length = object.length; index < length; index += 1) {
+        pair = object[index];
+        pairHasKey = false;
+
+        if (_toString.call(pair) !== '[object Object]') return false;
+
+        for (pairKey in pair) {
+          if (_hasOwnProperty.call(pair, pairKey)) {
+            if (!pairHasKey) pairHasKey = true;
+            else return false;
+          }
+        }
+
+        if (!pairHasKey) return false;
+
+        if (objectKeys.indexOf(pairKey) === -1) objectKeys.push(pairKey);
+        else return false;
+      }
+
+      return true;
+    }
+
+    function constructYamlOmap(data) {
+      return data !== null ? data : [];
+    }
+
+    var omap = new type('tag:yaml.org,2002:omap', {
+      kind: 'sequence',
+      resolve: resolveYamlOmap,
+      construct: constructYamlOmap
+    });
+
+    var _toString$1 = Object.prototype.toString;
+
+    function resolveYamlPairs(data) {
+      if (data === null) return true;
+
+      var index, length, pair, keys, result,
+          object = data;
+
+      result = new Array(object.length);
+
+      for (index = 0, length = object.length; index < length; index += 1) {
+        pair = object[index];
+
+        if (_toString$1.call(pair) !== '[object Object]') return false;
+
+        keys = Object.keys(pair);
+
+        if (keys.length !== 1) return false;
+
+        result[index] = [ keys[0], pair[keys[0]] ];
+      }
+
+      return true;
+    }
+
+    function constructYamlPairs(data) {
+      if (data === null) return [];
+
+      var index, length, pair, keys, result,
+          object = data;
+
+      result = new Array(object.length);
+
+      for (index = 0, length = object.length; index < length; index += 1) {
+        pair = object[index];
+
+        keys = Object.keys(pair);
+
+        result[index] = [ keys[0], pair[keys[0]] ];
+      }
+
+      return result;
+    }
+
+    var pairs = new type('tag:yaml.org,2002:pairs', {
+      kind: 'sequence',
+      resolve: resolveYamlPairs,
+      construct: constructYamlPairs
+    });
+
+    var _hasOwnProperty$1 = Object.prototype.hasOwnProperty;
+
+    function resolveYamlSet(data) {
+      if (data === null) return true;
+
+      var key, object = data;
+
+      for (key in object) {
+        if (_hasOwnProperty$1.call(object, key)) {
+          if (object[key] !== null) return false;
+        }
+      }
+
+      return true;
+    }
+
+    function constructYamlSet(data) {
+      return data !== null ? data : {};
+    }
+
+    var set = new type('tag:yaml.org,2002:set', {
+      kind: 'mapping',
+      resolve: resolveYamlSet,
+      construct: constructYamlSet
+    });
+
+    var default_safe = new schema({
+      include: [
+        core
+      ],
+      implicit: [
+        timestamp,
+        merge
+      ],
+      explicit: [
+        binary,
+        omap,
+        pairs,
+        set
+      ]
+    });
+
+    function resolveJavascriptUndefined() {
+      return true;
+    }
+
+    function constructJavascriptUndefined() {
+      /*eslint-disable no-undefined*/
+      return undefined;
+    }
+
+    function representJavascriptUndefined() {
+      return '';
+    }
+
+    function isUndefined(object) {
+      return typeof object === 'undefined';
+    }
+
+    var _undefined = new type('tag:yaml.org,2002:js/undefined', {
+      kind: 'scalar',
+      resolve: resolveJavascriptUndefined,
+      construct: constructJavascriptUndefined,
+      predicate: isUndefined,
+      represent: representJavascriptUndefined
+    });
+
+    function resolveJavascriptRegExp(data) {
+      if (data === null) return false;
+      if (data.length === 0) return false;
+
+      var regexp = data,
+          tail   = /\/([gim]*)$/.exec(data),
+          modifiers = '';
+
+      // if regexp starts with '/' it can have modifiers and must be properly closed
+      // `/foo/gim` - modifiers tail can be maximum 3 chars
+      if (regexp[0] === '/') {
+        if (tail) modifiers = tail[1];
+
+        if (modifiers.length > 3) return false;
+        // if expression starts with /, is should be properly terminated
+        if (regexp[regexp.length - modifiers.length - 1] !== '/') return false;
+      }
+
+      return true;
+    }
+
+    function constructJavascriptRegExp(data) {
+      var regexp = data,
+          tail   = /\/([gim]*)$/.exec(data),
+          modifiers = '';
+
+      // `/foo/gim` - tail can be maximum 4 chars
+      if (regexp[0] === '/') {
+        if (tail) modifiers = tail[1];
+        regexp = regexp.slice(1, regexp.length - modifiers.length - 1);
+      }
+
+      return new RegExp(regexp, modifiers);
+    }
+
+    function representJavascriptRegExp(object /*, style*/) {
+      var result = '/' + object.source + '/';
+
+      if (object.global) result += 'g';
+      if (object.multiline) result += 'm';
+      if (object.ignoreCase) result += 'i';
+
+      return result;
+    }
+
+    function isRegExp(object) {
+      return Object.prototype.toString.call(object) === '[object RegExp]';
+    }
+
+    var regexp = new type('tag:yaml.org,2002:js/regexp', {
+      kind: 'scalar',
+      resolve: resolveJavascriptRegExp,
+      construct: constructJavascriptRegExp,
+      predicate: isRegExp,
+      represent: representJavascriptRegExp
+    });
+
+    var esprima;
+
+    // Browserified version does not have esprima
+    //
+    // 1. For node.js just require module as deps
+    // 2. For browser try to require mudule via external AMD system.
+    //    If not found - try to fallback to window.esprima. If not
+    //    found too - then fail to parse.
+    //
+    try {
+      // workaround to exclude package from browserify list.
+      var _require$1 = commonjsRequire;
+      esprima = _require$1('esprima');
+    } catch (_) {
+      /*global window */
+      if (typeof window !== 'undefined') esprima = window.esprima;
+    }
+
+
+
+    function resolveJavascriptFunction(data) {
+      if (data === null) return false;
+
+      try {
+        var source = '(' + data + ')',
+            ast    = esprima.parse(source, { range: true });
+
+        if (ast.type                    !== 'Program'             ||
+            ast.body.length             !== 1                     ||
+            ast.body[0].type            !== 'ExpressionStatement' ||
+            (ast.body[0].expression.type !== 'ArrowFunctionExpression' &&
+              ast.body[0].expression.type !== 'FunctionExpression')) {
+          return false;
+        }
+
+        return true;
+      } catch (err) {
+        return false;
+      }
+    }
+
+    function constructJavascriptFunction(data) {
+      /*jslint evil:true*/
+
+      var source = '(' + data + ')',
+          ast    = esprima.parse(source, { range: true }),
+          params = [],
+          body;
+
+      if (ast.type                    !== 'Program'             ||
+          ast.body.length             !== 1                     ||
+          ast.body[0].type            !== 'ExpressionStatement' ||
+          (ast.body[0].expression.type !== 'ArrowFunctionExpression' &&
+            ast.body[0].expression.type !== 'FunctionExpression')) {
+        throw new Error('Failed to resolve function');
+      }
+
+      ast.body[0].expression.params.forEach(function (param) {
+        params.push(param.name);
+      });
+
+      body = ast.body[0].expression.body.range;
+
+      // Esprima's ranges include the first '{' and the last '}' characters on
+      // function expressions. So cut them out.
+      if (ast.body[0].expression.body.type === 'BlockStatement') {
+        /*eslint-disable no-new-func*/
+        return new Function(params, source.slice(body[0] + 1, body[1] - 1));
+      }
+      // ES6 arrow functions can omit the BlockStatement. In that case, just return
+      // the body.
+      /*eslint-disable no-new-func*/
+      return new Function(params, 'return ' + source.slice(body[0], body[1]));
+    }
+
+    function representJavascriptFunction(object /*, style*/) {
+      return object.toString();
+    }
+
+    function isFunction(object) {
+      return Object.prototype.toString.call(object) === '[object Function]';
+    }
+
+    var _function = new type('tag:yaml.org,2002:js/function', {
+      kind: 'scalar',
+      resolve: resolveJavascriptFunction,
+      construct: constructJavascriptFunction,
+      predicate: isFunction,
+      represent: representJavascriptFunction
+    });
+
+    var default_full = schema.DEFAULT = new schema({
+      include: [
+        default_safe
+      ],
+      explicit: [
+        _undefined,
+        regexp,
+        _function
+      ]
+    });
+
+    /*eslint-disable max-len,no-use-before-define*/
+
+
+
+
+
+
+
+
+    var _hasOwnProperty$2 = Object.prototype.hasOwnProperty;
+
+
+    var CONTEXT_FLOW_IN   = 1;
+    var CONTEXT_FLOW_OUT  = 2;
+    var CONTEXT_BLOCK_IN  = 3;
+    var CONTEXT_BLOCK_OUT = 4;
+
+
+    var CHOMPING_CLIP  = 1;
+    var CHOMPING_STRIP = 2;
+    var CHOMPING_KEEP  = 3;
+
+
+    var PATTERN_NON_PRINTABLE         = /[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x84\x86-\x9F\uFFFE\uFFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]/;
+    var PATTERN_NON_ASCII_LINE_BREAKS = /[\x85\u2028\u2029]/;
+    var PATTERN_FLOW_INDICATORS       = /[,\[\]\{\}]/;
+    var PATTERN_TAG_HANDLE            = /^(?:!|!!|![a-z\-]+!)$/i;
+    var PATTERN_TAG_URI               = /^(?:!|[^,\[\]\{\}])(?:%[0-9a-f]{2}|[0-9a-z\-#;\/\?:@&=\+\$,_\.!~\*'\(\)\[\]])*$/i;
+
+
+    function _class(obj) { return Object.prototype.toString.call(obj); }
+
+    function is_EOL(c) {
+      return (c === 0x0A/* LF */) || (c === 0x0D/* CR */);
+    }
+
+    function is_WHITE_SPACE(c) {
+      return (c === 0x09/* Tab */) || (c === 0x20/* Space */);
+    }
+
+    function is_WS_OR_EOL(c) {
+      return (c === 0x09/* Tab */) ||
+             (c === 0x20/* Space */) ||
+             (c === 0x0A/* LF */) ||
+             (c === 0x0D/* CR */);
+    }
+
+    function is_FLOW_INDICATOR(c) {
+      return c === 0x2C/* , */ ||
+             c === 0x5B/* [ */ ||
+             c === 0x5D/* ] */ ||
+             c === 0x7B/* { */ ||
+             c === 0x7D/* } */;
+    }
+
+    function fromHexCode(c) {
+      var lc;
+
+      if ((0x30/* 0 */ <= c) && (c <= 0x39/* 9 */)) {
+        return c - 0x30;
+      }
+
+      /*eslint-disable no-bitwise*/
+      lc = c | 0x20;
+
+      if ((0x61/* a */ <= lc) && (lc <= 0x66/* f */)) {
+        return lc - 0x61 + 10;
+      }
+
+      return -1;
+    }
+
+    function escapedHexLen(c) {
+      if (c === 0x78/* x */) { return 2; }
+      if (c === 0x75/* u */) { return 4; }
+      if (c === 0x55/* U */) { return 8; }
+      return 0;
+    }
+
+    function fromDecimalCode(c) {
+      if ((0x30/* 0 */ <= c) && (c <= 0x39/* 9 */)) {
+        return c - 0x30;
+      }
+
+      return -1;
+    }
+
+    function simpleEscapeSequence(c) {
+      /* eslint-disable indent */
+      return (c === 0x30/* 0 */) ? '\x00' :
+            (c === 0x61/* a */) ? '\x07' :
+            (c === 0x62/* b */) ? '\x08' :
+            (c === 0x74/* t */) ? '\x09' :
+            (c === 0x09/* Tab */) ? '\x09' :
+            (c === 0x6E/* n */) ? '\x0A' :
+            (c === 0x76/* v */) ? '\x0B' :
+            (c === 0x66/* f */) ? '\x0C' :
+            (c === 0x72/* r */) ? '\x0D' :
+            (c === 0x65/* e */) ? '\x1B' :
+            (c === 0x20/* Space */) ? ' ' :
+            (c === 0x22/* " */) ? '\x22' :
+            (c === 0x2F/* / */) ? '/' :
+            (c === 0x5C/* \ */) ? '\x5C' :
+            (c === 0x4E/* N */) ? '\x85' :
+            (c === 0x5F/* _ */) ? '\xA0' :
+            (c === 0x4C/* L */) ? '\u2028' :
+            (c === 0x50/* P */) ? '\u2029' : '';
+    }
+
+    function charFromCodepoint(c) {
+      if (c <= 0xFFFF) {
+        return String.fromCharCode(c);
+      }
+      // Encode UTF-16 surrogate pair
+      // https://en.wikipedia.org/wiki/UTF-16#Code_points_U.2B010000_to_U.2B10FFFF
+      return String.fromCharCode(
+        ((c - 0x010000) >> 10) + 0xD800,
+        ((c - 0x010000) & 0x03FF) + 0xDC00
+      );
+    }
+
+    var simpleEscapeCheck = new Array(256); // integer, for fast access
+    var simpleEscapeMap = new Array(256);
+    for (var i = 0; i < 256; i++) {
+      simpleEscapeCheck[i] = simpleEscapeSequence(i) ? 1 : 0;
+      simpleEscapeMap[i] = simpleEscapeSequence(i);
+    }
+
+
+    function State(input, options) {
+      this.input = input;
+
+      this.filename  = options['filename']  || null;
+      this.schema    = options['schema']    || default_full;
+      this.onWarning = options['onWarning'] || null;
+      this.legacy    = options['legacy']    || false;
+      this.json      = options['json']      || false;
+      this.listener  = options['listener']  || null;
+
+      this.implicitTypes = this.schema.compiledImplicit;
+      this.typeMap       = this.schema.compiledTypeMap;
+
+      this.length     = input.length;
+      this.position   = 0;
+      this.line       = 0;
+      this.lineStart  = 0;
+      this.lineIndent = 0;
+
+      this.documents = [];
+
+      /*
+      this.version;
+      this.checkLineBreaks;
+      this.tagMap;
+      this.anchorMap;
+      this.tag;
+      this.anchor;
+      this.kind;
+      this.result;*/
+
+    }
+
+
+    function generateError(state, message) {
+      return new exception(
+        message,
+        new mark(state.filename, state.input, state.position, state.line, (state.position - state.lineStart)));
+    }
+
+    function throwError(state, message) {
+      throw generateError(state, message);
+    }
+
+    function throwWarning(state, message) {
+      if (state.onWarning) {
+        state.onWarning.call(null, generateError(state, message));
+      }
+    }
+
+
+    var directiveHandlers = {
+
+      YAML: function handleYamlDirective(state, name, args) {
+
+        var match, major, minor;
+
+        if (state.version !== null) {
+          throwError(state, 'duplication of %YAML directive');
+        }
+
+        if (args.length !== 1) {
+          throwError(state, 'YAML directive accepts exactly one argument');
+        }
+
+        match = /^([0-9]+)\.([0-9]+)$/.exec(args[0]);
+
+        if (match === null) {
+          throwError(state, 'ill-formed argument of the YAML directive');
+        }
+
+        major = parseInt(match[1], 10);
+        minor = parseInt(match[2], 10);
+
+        if (major !== 1) {
+          throwError(state, 'unacceptable YAML version of the document');
+        }
+
+        state.version = args[0];
+        state.checkLineBreaks = (minor < 2);
+
+        if (minor !== 1 && minor !== 2) {
+          throwWarning(state, 'unsupported YAML version of the document');
+        }
+      },
+
+      TAG: function handleTagDirective(state, name, args) {
+
+        var handle, prefix;
+
+        if (args.length !== 2) {
+          throwError(state, 'TAG directive accepts exactly two arguments');
+        }
+
+        handle = args[0];
+        prefix = args[1];
+
+        if (!PATTERN_TAG_HANDLE.test(handle)) {
+          throwError(state, 'ill-formed tag handle (first argument) of the TAG directive');
+        }
+
+        if (_hasOwnProperty$2.call(state.tagMap, handle)) {
+          throwError(state, 'there is a previously declared suffix for "' + handle + '" tag handle');
+        }
+
+        if (!PATTERN_TAG_URI.test(prefix)) {
+          throwError(state, 'ill-formed tag prefix (second argument) of the TAG directive');
+        }
+
+        state.tagMap[handle] = prefix;
+      }
+    };
+
+
+    function captureSegment(state, start, end, checkJson) {
+      var _position, _length, _character, _result;
+
+      if (start < end) {
+        _result = state.input.slice(start, end);
+
+        if (checkJson) {
+          for (_position = 0, _length = _result.length; _position < _length; _position += 1) {
+            _character = _result.charCodeAt(_position);
+            if (!(_character === 0x09 ||
+                  (0x20 <= _character && _character <= 0x10FFFF))) {
+              throwError(state, 'expected valid JSON character');
+            }
+          }
+        } else if (PATTERN_NON_PRINTABLE.test(_result)) {
+          throwError(state, 'the stream contains non-printable characters');
+        }
+
+        state.result += _result;
+      }
+    }
+
+    function mergeMappings(state, destination, source, overridableKeys) {
+      var sourceKeys, key, index, quantity;
+
+      if (!common.isObject(source)) {
+        throwError(state, 'cannot merge mappings; the provided source object is unacceptable');
+      }
+
+      sourceKeys = Object.keys(source);
+
+      for (index = 0, quantity = sourceKeys.length; index < quantity; index += 1) {
+        key = sourceKeys[index];
+
+        if (!_hasOwnProperty$2.call(destination, key)) {
+          destination[key] = source[key];
+          overridableKeys[key] = true;
+        }
+      }
+    }
+
+    function storeMappingPair(state, _result, overridableKeys, keyTag, keyNode, valueNode, startLine, startPos) {
+      var index, quantity;
+
+      // The output is a plain object here, so keys can only be strings.
+      // We need to convert keyNode to a string, but doing so can hang the process
+      // (deeply nested arrays that explode exponentially using aliases).
+      if (Array.isArray(keyNode)) {
+        keyNode = Array.prototype.slice.call(keyNode);
+
+        for (index = 0, quantity = keyNode.length; index < quantity; index += 1) {
+          if (Array.isArray(keyNode[index])) {
+            throwError(state, 'nested arrays are not supported inside keys');
+          }
+
+          if (typeof keyNode === 'object' && _class(keyNode[index]) === '[object Object]') {
+            keyNode[index] = '[object Object]';
+          }
+        }
+      }
+
+      // Avoid code execution in load() via toString property
+      // (still use its own toString for arrays, timestamps,
+      // and whatever user schema extensions happen to have @@toStringTag)
+      if (typeof keyNode === 'object' && _class(keyNode) === '[object Object]') {
+        keyNode = '[object Object]';
+      }
+
+
+      keyNode = String(keyNode);
+
+      if (_result === null) {
+        _result = {};
+      }
+
+      if (keyTag === 'tag:yaml.org,2002:merge') {
+        if (Array.isArray(valueNode)) {
+          for (index = 0, quantity = valueNode.length; index < quantity; index += 1) {
+            mergeMappings(state, _result, valueNode[index], overridableKeys);
+          }
+        } else {
+          mergeMappings(state, _result, valueNode, overridableKeys);
+        }
+      } else {
+        if (!state.json &&
+            !_hasOwnProperty$2.call(overridableKeys, keyNode) &&
+            _hasOwnProperty$2.call(_result, keyNode)) {
+          state.line = startLine || state.line;
+          state.position = startPos || state.position;
+          throwError(state, 'duplicated mapping key');
+        }
+        _result[keyNode] = valueNode;
+        delete overridableKeys[keyNode];
+      }
+
+      return _result;
+    }
+
+    function readLineBreak(state) {
+      var ch;
+
+      ch = state.input.charCodeAt(state.position);
+
+      if (ch === 0x0A/* LF */) {
+        state.position++;
+      } else if (ch === 0x0D/* CR */) {
+        state.position++;
+        if (state.input.charCodeAt(state.position) === 0x0A/* LF */) {
+          state.position++;
+        }
+      } else {
+        throwError(state, 'a line break is expected');
+      }
+
+      state.line += 1;
+      state.lineStart = state.position;
+    }
+
+    function skipSeparationSpace(state, allowComments, checkIndent) {
+      var lineBreaks = 0,
+          ch = state.input.charCodeAt(state.position);
+
+      while (ch !== 0) {
+        while (is_WHITE_SPACE(ch)) {
+          ch = state.input.charCodeAt(++state.position);
+        }
+
+        if (allowComments && ch === 0x23/* # */) {
+          do {
+            ch = state.input.charCodeAt(++state.position);
+          } while (ch !== 0x0A/* LF */ && ch !== 0x0D/* CR */ && ch !== 0);
+        }
+
+        if (is_EOL(ch)) {
+          readLineBreak(state);
+
+          ch = state.input.charCodeAt(state.position);
+          lineBreaks++;
+          state.lineIndent = 0;
+
+          while (ch === 0x20/* Space */) {
+            state.lineIndent++;
+            ch = state.input.charCodeAt(++state.position);
+          }
+        } else {
+          break;
+        }
+      }
+
+      if (checkIndent !== -1 && lineBreaks !== 0 && state.lineIndent < checkIndent) {
+        throwWarning(state, 'deficient indentation');
+      }
+
+      return lineBreaks;
+    }
+
+    function testDocumentSeparator(state) {
+      var _position = state.position,
+          ch;
+
+      ch = state.input.charCodeAt(_position);
+
+      // Condition state.position === state.lineStart is tested
+      // in parent on each call, for efficiency. No needs to test here again.
+      if ((ch === 0x2D/* - */ || ch === 0x2E/* . */) &&
+          ch === state.input.charCodeAt(_position + 1) &&
+          ch === state.input.charCodeAt(_position + 2)) {
+
+        _position += 3;
+
+        ch = state.input.charCodeAt(_position);
+
+        if (ch === 0 || is_WS_OR_EOL(ch)) {
+          return true;
+        }
+      }
+
+      return false;
+    }
+
+    function writeFoldedLines(state, count) {
+      if (count === 1) {
+        state.result += ' ';
+      } else if (count > 1) {
+        state.result += common.repeat('\n', count - 1);
+      }
+    }
+
+
+    function readPlainScalar(state, nodeIndent, withinFlowCollection) {
+      var preceding,
+          following,
+          captureStart,
+          captureEnd,
+          hasPendingContent,
+          _line,
+          _lineStart,
+          _lineIndent,
+          _kind = state.kind,
+          _result = state.result,
+          ch;
+
+      ch = state.input.charCodeAt(state.position);
+
+      if (is_WS_OR_EOL(ch)      ||
+          is_FLOW_INDICATOR(ch) ||
+          ch === 0x23/* # */    ||
+          ch === 0x26/* & */    ||
+          ch === 0x2A/* * */    ||
+          ch === 0x21/* ! */    ||
+          ch === 0x7C/* | */    ||
+          ch === 0x3E/* > */    ||
+          ch === 0x27/* ' */    ||
+          ch === 0x22/* " */    ||
+          ch === 0x25/* % */    ||
+          ch === 0x40/* @ */    ||
+          ch === 0x60/* ` */) {
+        return false;
+      }
+
+      if (ch === 0x3F/* ? */ || ch === 0x2D/* - */) {
+        following = state.input.charCodeAt(state.position + 1);
+
+        if (is_WS_OR_EOL(following) ||
+            withinFlowCollection && is_FLOW_INDICATOR(following)) {
+          return false;
+        }
+      }
+
+      state.kind = 'scalar';
+      state.result = '';
+      captureStart = captureEnd = state.position;
+      hasPendingContent = false;
+
+      while (ch !== 0) {
+        if (ch === 0x3A/* : */) {
+          following = state.input.charCodeAt(state.position + 1);
+
+          if (is_WS_OR_EOL(following) ||
+              withinFlowCollection && is_FLOW_INDICATOR(following)) {
+            break;
+          }
+
+        } else if (ch === 0x23/* # */) {
+          preceding = state.input.charCodeAt(state.position - 1);
+
+          if (is_WS_OR_EOL(preceding)) {
+            break;
+          }
+
+        } else if ((state.position === state.lineStart && testDocumentSeparator(state)) ||
+                   withinFlowCollection && is_FLOW_INDICATOR(ch)) {
+          break;
+
+        } else if (is_EOL(ch)) {
+          _line = state.line;
+          _lineStart = state.lineStart;
+          _lineIndent = state.lineIndent;
+          skipSeparationSpace(state, false, -1);
+
+          if (state.lineIndent >= nodeIndent) {
+            hasPendingContent = true;
+            ch = state.input.charCodeAt(state.position);
+            continue;
+          } else {
+            state.position = captureEnd;
+            state.line = _line;
+            state.lineStart = _lineStart;
+            state.lineIndent = _lineIndent;
+            break;
+          }
+        }
+
+        if (hasPendingContent) {
+          captureSegment(state, captureStart, captureEnd, false);
+          writeFoldedLines(state, state.line - _line);
+          captureStart = captureEnd = state.position;
+          hasPendingContent = false;
+        }
+
+        if (!is_WHITE_SPACE(ch)) {
+          captureEnd = state.position + 1;
+        }
+
+        ch = state.input.charCodeAt(++state.position);
+      }
+
+      captureSegment(state, captureStart, captureEnd, false);
+
+      if (state.result) {
+        return true;
+      }
+
+      state.kind = _kind;
+      state.result = _result;
+      return false;
+    }
+
+    function readSingleQuotedScalar(state, nodeIndent) {
+      var ch,
+          captureStart, captureEnd;
+
+      ch = state.input.charCodeAt(state.position);
+
+      if (ch !== 0x27/* ' */) {
+        return false;
+      }
+
+      state.kind = 'scalar';
+      state.result = '';
+      state.position++;
+      captureStart = captureEnd = state.position;
+
+      while ((ch = state.input.charCodeAt(state.position)) !== 0) {
+        if (ch === 0x27/* ' */) {
+          captureSegment(state, captureStart, state.position, true);
+          ch = state.input.charCodeAt(++state.position);
+
+          if (ch === 0x27/* ' */) {
+            captureStart = state.position;
+            state.position++;
+            captureEnd = state.position;
+          } else {
+            return true;
+          }
+
+        } else if (is_EOL(ch)) {
+          captureSegment(state, captureStart, captureEnd, true);
+          writeFoldedLines(state, skipSeparationSpace(state, false, nodeIndent));
+          captureStart = captureEnd = state.position;
+
+        } else if (state.position === state.lineStart && testDocumentSeparator(state)) {
+          throwError(state, 'unexpected end of the document within a single quoted scalar');
+
+        } else {
+          state.position++;
+          captureEnd = state.position;
+        }
+      }
+
+      throwError(state, 'unexpected end of the stream within a single quoted scalar');
+    }
+
+    function readDoubleQuotedScalar(state, nodeIndent) {
+      var captureStart,
+          captureEnd,
+          hexLength,
+          hexResult,
+          tmp,
+          ch;
+
+      ch = state.input.charCodeAt(state.position);
+
+      if (ch !== 0x22/* " */) {
+        return false;
+      }
+
+      state.kind = 'scalar';
+      state.result = '';
+      state.position++;
+      captureStart = captureEnd = state.position;
+
+      while ((ch = state.input.charCodeAt(state.position)) !== 0) {
+        if (ch === 0x22/* " */) {
+          captureSegment(state, captureStart, state.position, true);
+          state.position++;
+          return true;
+
+        } else if (ch === 0x5C/* \ */) {
+          captureSegment(state, captureStart, state.position, true);
+          ch = state.input.charCodeAt(++state.position);
+
+          if (is_EOL(ch)) {
+            skipSeparationSpace(state, false, nodeIndent);
+
+            // TODO: rework to inline fn with no type cast?
+          } else if (ch < 256 && simpleEscapeCheck[ch]) {
+            state.result += simpleEscapeMap[ch];
+            state.position++;
+
+          } else if ((tmp = escapedHexLen(ch)) > 0) {
+            hexLength = tmp;
+            hexResult = 0;
+
+            for (; hexLength > 0; hexLength--) {
+              ch = state.input.charCodeAt(++state.position);
+
+              if ((tmp = fromHexCode(ch)) >= 0) {
+                hexResult = (hexResult << 4) + tmp;
+
+              } else {
+                throwError(state, 'expected hexadecimal character');
+              }
+            }
+
+            state.result += charFromCodepoint(hexResult);
+
+            state.position++;
+
+          } else {
+            throwError(state, 'unknown escape sequence');
+          }
+
+          captureStart = captureEnd = state.position;
+
+        } else if (is_EOL(ch)) {
+          captureSegment(state, captureStart, captureEnd, true);
+          writeFoldedLines(state, skipSeparationSpace(state, false, nodeIndent));
+          captureStart = captureEnd = state.position;
+
+        } else if (state.position === state.lineStart && testDocumentSeparator(state)) {
+          throwError(state, 'unexpected end of the document within a double quoted scalar');
+
+        } else {
+          state.position++;
+          captureEnd = state.position;
+        }
+      }
+
+      throwError(state, 'unexpected end of the stream within a double quoted scalar');
+    }
+
+    function readFlowCollection(state, nodeIndent) {
+      var readNext = true,
+          _line,
+          _tag     = state.tag,
+          _result,
+          _anchor  = state.anchor,
+          following,
+          terminator,
+          isPair,
+          isExplicitPair,
+          isMapping,
+          overridableKeys = {},
+          keyNode,
+          keyTag,
+          valueNode,
+          ch;
+
+      ch = state.input.charCodeAt(state.position);
+
+      if (ch === 0x5B/* [ */) {
+        terminator = 0x5D;/* ] */
+        isMapping = false;
+        _result = [];
+      } else if (ch === 0x7B/* { */) {
+        terminator = 0x7D;/* } */
+        isMapping = true;
+        _result = {};
+      } else {
+        return false;
+      }
+
+      if (state.anchor !== null) {
+        state.anchorMap[state.anchor] = _result;
+      }
+
+      ch = state.input.charCodeAt(++state.position);
+
+      while (ch !== 0) {
+        skipSeparationSpace(state, true, nodeIndent);
+
+        ch = state.input.charCodeAt(state.position);
+
+        if (ch === terminator) {
+          state.position++;
+          state.tag = _tag;
+          state.anchor = _anchor;
+          state.kind = isMapping ? 'mapping' : 'sequence';
+          state.result = _result;
+          return true;
+        } else if (!readNext) {
+          throwError(state, 'missed comma between flow collection entries');
+        }
+
+        keyTag = keyNode = valueNode = null;
+        isPair = isExplicitPair = false;
+
+        if (ch === 0x3F/* ? */) {
+          following = state.input.charCodeAt(state.position + 1);
+
+          if (is_WS_OR_EOL(following)) {
+            isPair = isExplicitPair = true;
+            state.position++;
+            skipSeparationSpace(state, true, nodeIndent);
+          }
+        }
+
+        _line = state.line;
+        composeNode(state, nodeIndent, CONTEXT_FLOW_IN, false, true);
+        keyTag = state.tag;
+        keyNode = state.result;
+        skipSeparationSpace(state, true, nodeIndent);
+
+        ch = state.input.charCodeAt(state.position);
+
+        if ((isExplicitPair || state.line === _line) && ch === 0x3A/* : */) {
+          isPair = true;
+          ch = state.input.charCodeAt(++state.position);
+          skipSeparationSpace(state, true, nodeIndent);
+          composeNode(state, nodeIndent, CONTEXT_FLOW_IN, false, true);
+          valueNode = state.result;
+        }
+
+        if (isMapping) {
+          storeMappingPair(state, _result, overridableKeys, keyTag, keyNode, valueNode);
+        } else if (isPair) {
+          _result.push(storeMappingPair(state, null, overridableKeys, keyTag, keyNode, valueNode));
+        } else {
+          _result.push(keyNode);
+        }
+
+        skipSeparationSpace(state, true, nodeIndent);
+
+        ch = state.input.charCodeAt(state.position);
+
+        if (ch === 0x2C/* , */) {
+          readNext = true;
+          ch = state.input.charCodeAt(++state.position);
+        } else {
+          readNext = false;
+        }
+      }
+
+      throwError(state, 'unexpected end of the stream within a flow collection');
+    }
+
+    function readBlockScalar(state, nodeIndent) {
+      var captureStart,
+          folding,
+          chomping       = CHOMPING_CLIP,
+          didReadContent = false,
+          detectedIndent = false,
+          textIndent     = nodeIndent,
+          emptyLines     = 0,
+          atMoreIndented = false,
+          tmp,
+          ch;
+
+      ch = state.input.charCodeAt(state.position);
+
+      if (ch === 0x7C/* | */) {
+        folding = false;
+      } else if (ch === 0x3E/* > */) {
+        folding = true;
+      } else {
+        return false;
+      }
+
+      state.kind = 'scalar';
+      state.result = '';
+
+      while (ch !== 0) {
+        ch = state.input.charCodeAt(++state.position);
+
+        if (ch === 0x2B/* + */ || ch === 0x2D/* - */) {
+          if (CHOMPING_CLIP === chomping) {
+            chomping = (ch === 0x2B/* + */) ? CHOMPING_KEEP : CHOMPING_STRIP;
+          } else {
+            throwError(state, 'repeat of a chomping mode identifier');
+          }
+
+        } else if ((tmp = fromDecimalCode(ch)) >= 0) {
+          if (tmp === 0) {
+            throwError(state, 'bad explicit indentation width of a block scalar; it cannot be less than one');
+          } else if (!detectedIndent) {
+            textIndent = nodeIndent + tmp - 1;
+            detectedIndent = true;
+          } else {
+            throwError(state, 'repeat of an indentation width identifier');
+          }
+
+        } else {
+          break;
+        }
+      }
+
+      if (is_WHITE_SPACE(ch)) {
+        do { ch = state.input.charCodeAt(++state.position); }
+        while (is_WHITE_SPACE(ch));
+
+        if (ch === 0x23/* # */) {
+          do { ch = state.input.charCodeAt(++state.position); }
+          while (!is_EOL(ch) && (ch !== 0));
+        }
+      }
+
+      while (ch !== 0) {
+        readLineBreak(state);
+        state.lineIndent = 0;
+
+        ch = state.input.charCodeAt(state.position);
+
+        while ((!detectedIndent || state.lineIndent < textIndent) &&
+               (ch === 0x20/* Space */)) {
+          state.lineIndent++;
+          ch = state.input.charCodeAt(++state.position);
+        }
+
+        if (!detectedIndent && state.lineIndent > textIndent) {
+          textIndent = state.lineIndent;
+        }
+
+        if (is_EOL(ch)) {
+          emptyLines++;
+          continue;
+        }
+
+        // End of the scalar.
+        if (state.lineIndent < textIndent) {
+
+          // Perform the chomping.
+          if (chomping === CHOMPING_KEEP) {
+            state.result += common.repeat('\n', didReadContent ? 1 + emptyLines : emptyLines);
+          } else if (chomping === CHOMPING_CLIP) {
+            if (didReadContent) { // i.e. only if the scalar is not empty.
+              state.result += '\n';
+            }
+          }
+
+          // Break this `while` cycle and go to the funciton's epilogue.
+          break;
+        }
+
+        // Folded style: use fancy rules to handle line breaks.
+        if (folding) {
+
+          // Lines starting with white space characters (more-indented lines) are not folded.
+          if (is_WHITE_SPACE(ch)) {
+            atMoreIndented = true;
+            // except for the first content line (cf. Example 8.1)
+            state.result += common.repeat('\n', didReadContent ? 1 + emptyLines : emptyLines);
+
+          // End of more-indented block.
+          } else if (atMoreIndented) {
+            atMoreIndented = false;
+            state.result += common.repeat('\n', emptyLines + 1);
+
+          // Just one line break - perceive as the same line.
+          } else if (emptyLines === 0) {
+            if (didReadContent) { // i.e. only if we have already read some scalar content.
+              state.result += ' ';
+            }
+
+          // Several line breaks - perceive as different lines.
+          } else {
+            state.result += common.repeat('\n', emptyLines);
+          }
+
+        // Literal style: just add exact number of line breaks between content lines.
+        } else {
+          // Keep all line breaks except the header line break.
+          state.result += common.repeat('\n', didReadContent ? 1 + emptyLines : emptyLines);
+        }
+
+        didReadContent = true;
+        detectedIndent = true;
+        emptyLines = 0;
+        captureStart = state.position;
+
+        while (!is_EOL(ch) && (ch !== 0)) {
+          ch = state.input.charCodeAt(++state.position);
+        }
+
+        captureSegment(state, captureStart, state.position, false);
+      }
+
+      return true;
+    }
+
+    function readBlockSequence(state, nodeIndent) {
+      var _line,
+          _tag      = state.tag,
+          _anchor   = state.anchor,
+          _result   = [],
+          following,
+          detected  = false,
+          ch;
+
+      if (state.anchor !== null) {
+        state.anchorMap[state.anchor] = _result;
+      }
+
+      ch = state.input.charCodeAt(state.position);
+
+      while (ch !== 0) {
+
+        if (ch !== 0x2D/* - */) {
+          break;
+        }
+
+        following = state.input.charCodeAt(state.position + 1);
+
+        if (!is_WS_OR_EOL(following)) {
+          break;
+        }
+
+        detected = true;
+        state.position++;
+
+        if (skipSeparationSpace(state, true, -1)) {
+          if (state.lineIndent <= nodeIndent) {
+            _result.push(null);
+            ch = state.input.charCodeAt(state.position);
+            continue;
+          }
+        }
+
+        _line = state.line;
+        composeNode(state, nodeIndent, CONTEXT_BLOCK_IN, false, true);
+        _result.push(state.result);
+        skipSeparationSpace(state, true, -1);
+
+        ch = state.input.charCodeAt(state.position);
+
+        if ((state.line === _line || state.lineIndent > nodeIndent) && (ch !== 0)) {
+          throwError(state, 'bad indentation of a sequence entry');
+        } else if (state.lineIndent < nodeIndent) {
+          break;
+        }
+      }
+
+      if (detected) {
+        state.tag = _tag;
+        state.anchor = _anchor;
+        state.kind = 'sequence';
+        state.result = _result;
+        return true;
+      }
+      return false;
+    }
+
+    function readBlockMapping(state, nodeIndent, flowIndent) {
+      var following,
+          allowCompact,
+          _line,
+          _pos,
+          _tag          = state.tag,
+          _anchor       = state.anchor,
+          _result       = {},
+          overridableKeys = {},
+          keyTag        = null,
+          keyNode       = null,
+          valueNode     = null,
+          atExplicitKey = false,
+          detected      = false,
+          ch;
+
+      if (state.anchor !== null) {
+        state.anchorMap[state.anchor] = _result;
+      }
+
+      ch = state.input.charCodeAt(state.position);
+
+      while (ch !== 0) {
+        following = state.input.charCodeAt(state.position + 1);
+        _line = state.line; // Save the current line.
+        _pos = state.position;
+
+        //
+        // Explicit notation case. There are two separate blocks:
+        // first for the key (denoted by "?") and second for the value (denoted by ":")
+        //
+        if ((ch === 0x3F/* ? */ || ch === 0x3A/* : */) && is_WS_OR_EOL(following)) {
+
+          if (ch === 0x3F/* ? */) {
+            if (atExplicitKey) {
+              storeMappingPair(state, _result, overridableKeys, keyTag, keyNode, null);
+              keyTag = keyNode = valueNode = null;
+            }
+
+            detected = true;
+            atExplicitKey = true;
+            allowCompact = true;
+
+          } else if (atExplicitKey) {
+            // i.e. 0x3A/* : */ === character after the explicit key.
+            atExplicitKey = false;
+            allowCompact = true;
+
+          } else {
+            throwError(state, 'incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line');
+          }
+
+          state.position += 1;
+          ch = following;
+
+        //
+        // Implicit notation case. Flow-style node as the key first, then ":", and the value.
+        //
+        } else if (composeNode(state, flowIndent, CONTEXT_FLOW_OUT, false, true)) {
+
+          if (state.line === _line) {
+            ch = state.input.charCodeAt(state.position);
+
+            while (is_WHITE_SPACE(ch)) {
+              ch = state.input.charCodeAt(++state.position);
+            }
+
+            if (ch === 0x3A/* : */) {
+              ch = state.input.charCodeAt(++state.position);
+
+              if (!is_WS_OR_EOL(ch)) {
+                throwError(state, 'a whitespace character is expected after the key-value separator within a block mapping');
+              }
+
+              if (atExplicitKey) {
+                storeMappingPair(state, _result, overridableKeys, keyTag, keyNode, null);
+                keyTag = keyNode = valueNode = null;
+              }
+
+              detected = true;
+              atExplicitKey = false;
+              allowCompact = false;
+              keyTag = state.tag;
+              keyNode = state.result;
+
+            } else if (detected) {
+              throwError(state, 'can not read an implicit mapping pair; a colon is missed');
+
+            } else {
+              state.tag = _tag;
+              state.anchor = _anchor;
+              return true; // Keep the result of `composeNode`.
+            }
+
+          } else if (detected) {
+            throwError(state, 'can not read a block mapping entry; a multiline key may not be an implicit key');
+
+          } else {
+            state.tag = _tag;
+            state.anchor = _anchor;
+            return true; // Keep the result of `composeNode`.
+          }
+
+        } else {
+          break; // Reading is done. Go to the epilogue.
+        }
+
+        //
+        // Common reading code for both explicit and implicit notations.
+        //
+        if (state.line === _line || state.lineIndent > nodeIndent) {
+          if (composeNode(state, nodeIndent, CONTEXT_BLOCK_OUT, true, allowCompact)) {
+            if (atExplicitKey) {
+              keyNode = state.result;
+            } else {
+              valueNode = state.result;
+            }
+          }
+
+          if (!atExplicitKey) {
+            storeMappingPair(state, _result, overridableKeys, keyTag, keyNode, valueNode, _line, _pos);
+            keyTag = keyNode = valueNode = null;
+          }
+
+          skipSeparationSpace(state, true, -1);
+          ch = state.input.charCodeAt(state.position);
+        }
+
+        if (state.lineIndent > nodeIndent && (ch !== 0)) {
+          throwError(state, 'bad indentation of a mapping entry');
+        } else if (state.lineIndent < nodeIndent) {
+          break;
+        }
+      }
+
+      //
+      // Epilogue.
+      //
+
+      // Special case: last mapping's node contains only the key in explicit notation.
+      if (atExplicitKey) {
+        storeMappingPair(state, _result, overridableKeys, keyTag, keyNode, null);
+      }
+
+      // Expose the resulting mapping.
+      if (detected) {
+        state.tag = _tag;
+        state.anchor = _anchor;
+        state.kind = 'mapping';
+        state.result = _result;
+      }
+
+      return detected;
+    }
+
+    function readTagProperty(state) {
+      var _position,
+          isVerbatim = false,
+          isNamed    = false,
+          tagHandle,
+          tagName,
+          ch;
+
+      ch = state.input.charCodeAt(state.position);
+
+      if (ch !== 0x21/* ! */) return false;
+
+      if (state.tag !== null) {
+        throwError(state, 'duplication of a tag property');
+      }
+
+      ch = state.input.charCodeAt(++state.position);
+
+      if (ch === 0x3C/* < */) {
+        isVerbatim = true;
+        ch = state.input.charCodeAt(++state.position);
+
+      } else if (ch === 0x21/* ! */) {
+        isNamed = true;
+        tagHandle = '!!';
+        ch = state.input.charCodeAt(++state.position);
+
+      } else {
+        tagHandle = '!';
+      }
+
+      _position = state.position;
+
+      if (isVerbatim) {
+        do { ch = state.input.charCodeAt(++state.position); }
+        while (ch !== 0 && ch !== 0x3E/* > */);
+
+        if (state.position < state.length) {
+          tagName = state.input.slice(_position, state.position);
+          ch = state.input.charCodeAt(++state.position);
+        } else {
+          throwError(state, 'unexpected end of the stream within a verbatim tag');
+        }
+      } else {
+        while (ch !== 0 && !is_WS_OR_EOL(ch)) {
+
+          if (ch === 0x21/* ! */) {
+            if (!isNamed) {
+              tagHandle = state.input.slice(_position - 1, state.position + 1);
+
+              if (!PATTERN_TAG_HANDLE.test(tagHandle)) {
+                throwError(state, 'named tag handle cannot contain such characters');
+              }
+
+              isNamed = true;
+              _position = state.position + 1;
+            } else {
+              throwError(state, 'tag suffix cannot contain exclamation marks');
+            }
+          }
+
+          ch = state.input.charCodeAt(++state.position);
+        }
+
+        tagName = state.input.slice(_position, state.position);
+
+        if (PATTERN_FLOW_INDICATORS.test(tagName)) {
+          throwError(state, 'tag suffix cannot contain flow indicator characters');
+        }
+      }
+
+      if (tagName && !PATTERN_TAG_URI.test(tagName)) {
+        throwError(state, 'tag name cannot contain such characters: ' + tagName);
+      }
+
+      if (isVerbatim) {
+        state.tag = tagName;
+
+      } else if (_hasOwnProperty$2.call(state.tagMap, tagHandle)) {
+        state.tag = state.tagMap[tagHandle] + tagName;
+
+      } else if (tagHandle === '!') {
+        state.tag = '!' + tagName;
+
+      } else if (tagHandle === '!!') {
+        state.tag = 'tag:yaml.org,2002:' + tagName;
+
+      } else {
+        throwError(state, 'undeclared tag handle "' + tagHandle + '"');
+      }
+
+      return true;
+    }
+
+    function readAnchorProperty(state) {
+      var _position,
+          ch;
+
+      ch = state.input.charCodeAt(state.position);
+
+      if (ch !== 0x26/* & */) return false;
+
+      if (state.anchor !== null) {
+        throwError(state, 'duplication of an anchor property');
+      }
+
+      ch = state.input.charCodeAt(++state.position);
+      _position = state.position;
+
+      while (ch !== 0 && !is_WS_OR_EOL(ch) && !is_FLOW_INDICATOR(ch)) {
+        ch = state.input.charCodeAt(++state.position);
+      }
+
+      if (state.position === _position) {
+        throwError(state, 'name of an anchor node must contain at least one character');
+      }
+
+      state.anchor = state.input.slice(_position, state.position);
+      return true;
+    }
+
+    function readAlias(state) {
+      var _position, alias,
+          ch;
+
+      ch = state.input.charCodeAt(state.position);
+
+      if (ch !== 0x2A/* * */) return false;
+
+      ch = state.input.charCodeAt(++state.position);
+      _position = state.position;
+
+      while (ch !== 0 && !is_WS_OR_EOL(ch) && !is_FLOW_INDICATOR(ch)) {
+        ch = state.input.charCodeAt(++state.position);
+      }
+
+      if (state.position === _position) {
+        throwError(state, 'name of an alias node must contain at least one character');
+      }
+
+      alias = state.input.slice(_position, state.position);
+
+      if (!state.anchorMap.hasOwnProperty(alias)) {
+        throwError(state, 'unidentified alias "' + alias + '"');
+      }
+
+      state.result = state.anchorMap[alias];
+      skipSeparationSpace(state, true, -1);
+      return true;
+    }
+
+    function composeNode(state, parentIndent, nodeContext, allowToSeek, allowCompact) {
+      var allowBlockStyles,
+          allowBlockScalars,
+          allowBlockCollections,
+          indentStatus = 1, // 1: this>parent, 0: this=parent, -1: this<parent
+          atNewLine  = false,
+          hasContent = false,
+          typeIndex,
+          typeQuantity,
+          type,
+          flowIndent,
+          blockIndent;
+
+      if (state.listener !== null) {
+        state.listener('open', state);
+      }
+
+      state.tag    = null;
+      state.anchor = null;
+      state.kind   = null;
+      state.result = null;
+
+      allowBlockStyles = allowBlockScalars = allowBlockCollections =
+        CONTEXT_BLOCK_OUT === nodeContext ||
+        CONTEXT_BLOCK_IN  === nodeContext;
+
+      if (allowToSeek) {
+        if (skipSeparationSpace(state, true, -1)) {
+          atNewLine = true;
+
+          if (state.lineIndent > parentIndent) {
+            indentStatus = 1;
+          } else if (state.lineIndent === parentIndent) {
+            indentStatus = 0;
+          } else if (state.lineIndent < parentIndent) {
+            indentStatus = -1;
+          }
+        }
+      }
+
+      if (indentStatus === 1) {
+        while (readTagProperty(state) || readAnchorProperty(state)) {
+          if (skipSeparationSpace(state, true, -1)) {
+            atNewLine = true;
+            allowBlockCollections = allowBlockStyles;
+
+            if (state.lineIndent > parentIndent) {
+              indentStatus = 1;
+            } else if (state.lineIndent === parentIndent) {
+              indentStatus = 0;
+            } else if (state.lineIndent < parentIndent) {
+              indentStatus = -1;
+            }
+          } else {
+            allowBlockCollections = false;
+          }
+        }
+      }
+
+      if (allowBlockCollections) {
+        allowBlockCollections = atNewLine || allowCompact;
+      }
+
+      if (indentStatus === 1 || CONTEXT_BLOCK_OUT === nodeContext) {
+        if (CONTEXT_FLOW_IN === nodeContext || CONTEXT_FLOW_OUT === nodeContext) {
+          flowIndent = parentIndent;
+        } else {
+          flowIndent = parentIndent + 1;
+        }
+
+        blockIndent = state.position - state.lineStart;
+
+        if (indentStatus === 1) {
+          if (allowBlockCollections &&
+              (readBlockSequence(state, blockIndent) ||
+               readBlockMapping(state, blockIndent, flowIndent)) ||
+              readFlowCollection(state, flowIndent)) {
+            hasContent = true;
+          } else {
+            if ((allowBlockScalars && readBlockScalar(state, flowIndent)) ||
+                readSingleQuotedScalar(state, flowIndent) ||
+                readDoubleQuotedScalar(state, flowIndent)) {
+              hasContent = true;
+
+            } else if (readAlias(state)) {
+              hasContent = true;
+
+              if (state.tag !== null || state.anchor !== null) {
+                throwError(state, 'alias node should not have any properties');
+              }
+
+            } else if (readPlainScalar(state, flowIndent, CONTEXT_FLOW_IN === nodeContext)) {
+              hasContent = true;
+
+              if (state.tag === null) {
+                state.tag = '?';
+              }
+            }
+
+            if (state.anchor !== null) {
+              state.anchorMap[state.anchor] = state.result;
+            }
+          }
+        } else if (indentStatus === 0) {
+          // Special case: block sequences are allowed to have same indentation level as the parent.
+          // http://www.yaml.org/spec/1.2/spec.html#id2799784
+          hasContent = allowBlockCollections && readBlockSequence(state, blockIndent);
+        }
+      }
+
+      if (state.tag !== null && state.tag !== '!') {
+        if (state.tag === '?') {
+          for (typeIndex = 0, typeQuantity = state.implicitTypes.length; typeIndex < typeQuantity; typeIndex += 1) {
+            type = state.implicitTypes[typeIndex];
+
+            // Implicit resolving is not allowed for non-scalar types, and '?'
+            // non-specific tag is only assigned to plain scalars. So, it isn't
+            // needed to check for 'kind' conformity.
+
+            if (type.resolve(state.result)) { // `state.result` updated in resolver if matched
+              state.result = type.construct(state.result);
+              state.tag = type.tag;
+              if (state.anchor !== null) {
+                state.anchorMap[state.anchor] = state.result;
+              }
+              break;
+            }
+          }
+        } else if (_hasOwnProperty$2.call(state.typeMap[state.kind || 'fallback'], state.tag)) {
+          type = state.typeMap[state.kind || 'fallback'][state.tag];
+
+          if (state.result !== null && type.kind !== state.kind) {
+            throwError(state, 'unacceptable node kind for !<' + state.tag + '> tag; it should be "' + type.kind + '", not "' + state.kind + '"');
+          }
+
+          if (!type.resolve(state.result)) { // `state.result` updated in resolver if matched
+            throwError(state, 'cannot resolve a node with !<' + state.tag + '> explicit tag');
+          } else {
+            state.result = type.construct(state.result);
+            if (state.anchor !== null) {
+              state.anchorMap[state.anchor] = state.result;
+            }
+          }
+        } else {
+          throwError(state, 'unknown tag !<' + state.tag + '>');
+        }
+      }
+
+      if (state.listener !== null) {
+        state.listener('close', state);
+      }
+      return state.tag !== null ||  state.anchor !== null || hasContent;
+    }
+
+    function readDocument(state) {
+      var documentStart = state.position,
+          _position,
+          directiveName,
+          directiveArgs,
+          hasDirectives = false,
+          ch;
+
+      state.version = null;
+      state.checkLineBreaks = state.legacy;
+      state.tagMap = {};
+      state.anchorMap = {};
+
+      while ((ch = state.input.charCodeAt(state.position)) !== 0) {
+        skipSeparationSpace(state, true, -1);
+
+        ch = state.input.charCodeAt(state.position);
+
+        if (state.lineIndent > 0 || ch !== 0x25/* % */) {
+          break;
+        }
+
+        hasDirectives = true;
+        ch = state.input.charCodeAt(++state.position);
+        _position = state.position;
+
+        while (ch !== 0 && !is_WS_OR_EOL(ch)) {
+          ch = state.input.charCodeAt(++state.position);
+        }
+
+        directiveName = state.input.slice(_position, state.position);
+        directiveArgs = [];
+
+        if (directiveName.length < 1) {
+          throwError(state, 'directive name must not be less than one character in length');
+        }
+
+        while (ch !== 0) {
+          while (is_WHITE_SPACE(ch)) {
+            ch = state.input.charCodeAt(++state.position);
+          }
+
+          if (ch === 0x23/* # */) {
+            do { ch = state.input.charCodeAt(++state.position); }
+            while (ch !== 0 && !is_EOL(ch));
+            break;
+          }
+
+          if (is_EOL(ch)) break;
+
+          _position = state.position;
+
+          while (ch !== 0 && !is_WS_OR_EOL(ch)) {
+            ch = state.input.charCodeAt(++state.position);
+          }
+
+          directiveArgs.push(state.input.slice(_position, state.position));
+        }
+
+        if (ch !== 0) readLineBreak(state);
+
+        if (_hasOwnProperty$2.call(directiveHandlers, directiveName)) {
+          directiveHandlers[directiveName](state, directiveName, directiveArgs);
+        } else {
+          throwWarning(state, 'unknown document directive "' + directiveName + '"');
+        }
+      }
+
+      skipSeparationSpace(state, true, -1);
+
+      if (state.lineIndent === 0 &&
+          state.input.charCodeAt(state.position)     === 0x2D/* - */ &&
+          state.input.charCodeAt(state.position + 1) === 0x2D/* - */ &&
+          state.input.charCodeAt(state.position + 2) === 0x2D/* - */) {
+        state.position += 3;
+        skipSeparationSpace(state, true, -1);
+
+      } else if (hasDirectives) {
+        throwError(state, 'directives end mark is expected');
+      }
+
+      composeNode(state, state.lineIndent - 1, CONTEXT_BLOCK_OUT, false, true);
+      skipSeparationSpace(state, true, -1);
+
+      if (state.checkLineBreaks &&
+          PATTERN_NON_ASCII_LINE_BREAKS.test(state.input.slice(documentStart, state.position))) {
+        throwWarning(state, 'non-ASCII line breaks are interpreted as content');
+      }
+
+      state.documents.push(state.result);
+
+      if (state.position === state.lineStart && testDocumentSeparator(state)) {
+
+        if (state.input.charCodeAt(state.position) === 0x2E/* . */) {
+          state.position += 3;
+          skipSeparationSpace(state, true, -1);
+        }
+        return;
+      }
+
+      if (state.position < (state.length - 1)) {
+        throwError(state, 'end of the stream or a document separator is expected');
+      } else {
+        return;
+      }
+    }
+
+
+    function loadDocuments(input, options) {
+      input = String(input);
+      options = options || {};
+
+      if (input.length !== 0) {
+
+        // Add tailing `\n` if not exists
+        if (input.charCodeAt(input.length - 1) !== 0x0A/* LF */ &&
+            input.charCodeAt(input.length - 1) !== 0x0D/* CR */) {
+          input += '\n';
+        }
+
+        // Strip BOM
+        if (input.charCodeAt(0) === 0xFEFF) {
+          input = input.slice(1);
+        }
+      }
+
+      var state = new State(input, options);
+
+      // Use 0 as string terminator. That significantly simplifies bounds check.
+      state.input += '\0';
+
+      while (state.input.charCodeAt(state.position) === 0x20/* Space */) {
+        state.lineIndent += 1;
+        state.position += 1;
+      }
+
+      while (state.position < (state.length - 1)) {
+        readDocument(state);
+      }
+
+      return state.documents;
+    }
+
+
+    function loadAll(input, iterator, options) {
+      var documents = loadDocuments(input, options), index, length;
+
+      if (typeof iterator !== 'function') {
+        return documents;
+      }
+
+      for (index = 0, length = documents.length; index < length; index += 1) {
+        iterator(documents[index]);
+      }
+    }
+
+
+    function load(input, options) {
+      var documents = loadDocuments(input, options);
+
+      if (documents.length === 0) {
+        /*eslint-disable no-undefined*/
+        return undefined;
+      } else if (documents.length === 1) {
+        return documents[0];
+      }
+      throw new exception('expected a single document in the stream, but found more');
+    }
+
+
+    function safeLoadAll(input, output, options) {
+      if (typeof output === 'function') {
+        loadAll(input, output, common.extend({ schema: default_safe }, options));
+      } else {
+        return loadAll(input, common.extend({ schema: default_safe }, options));
+      }
+    }
+
+
+    function safeLoad(input, options) {
+      return load(input, common.extend({ schema: default_safe }, options));
+    }
+
+
+    var loadAll_1     = loadAll;
+    var load_1        = load;
+    var safeLoadAll_1 = safeLoadAll;
+    var safeLoad_1    = safeLoad;
+
+    var loader = {
+    	loadAll: loadAll_1,
+    	load: load_1,
+    	safeLoadAll: safeLoadAll_1,
+    	safeLoad: safeLoad_1
+    };
+
+    /*eslint-disable no-use-before-define*/
+
+
+
+
+
+
+    var _toString$2       = Object.prototype.toString;
+    var _hasOwnProperty$3 = Object.prototype.hasOwnProperty;
+
+    var CHAR_TAB                  = 0x09; /* Tab */
+    var CHAR_LINE_FEED            = 0x0A; /* LF */
+    var CHAR_SPACE                = 0x20; /* Space */
+    var CHAR_EXCLAMATION          = 0x21; /* ! */
+    var CHAR_DOUBLE_QUOTE         = 0x22; /* " */
+    var CHAR_SHARP                = 0x23; /* # */
+    var CHAR_PERCENT              = 0x25; /* % */
+    var CHAR_AMPERSAND            = 0x26; /* & */
+    var CHAR_SINGLE_QUOTE         = 0x27; /* ' */
+    var CHAR_ASTERISK             = 0x2A; /* * */
+    var CHAR_COMMA                = 0x2C; /* , */
+    var CHAR_MINUS                = 0x2D; /* - */
+    var CHAR_COLON                = 0x3A; /* : */
+    var CHAR_GREATER_THAN         = 0x3E; /* > */
+    var CHAR_QUESTION             = 0x3F; /* ? */
+    var CHAR_COMMERCIAL_AT        = 0x40; /* @ */
+    var CHAR_LEFT_SQUARE_BRACKET  = 0x5B; /* [ */
+    var CHAR_RIGHT_SQUARE_BRACKET = 0x5D; /* ] */
+    var CHAR_GRAVE_ACCENT         = 0x60; /* ` */
+    var CHAR_LEFT_CURLY_BRACKET   = 0x7B; /* { */
+    var CHAR_VERTICAL_LINE        = 0x7C; /* | */
+    var CHAR_RIGHT_CURLY_BRACKET  = 0x7D; /* } */
+
+    var ESCAPE_SEQUENCES = {};
+
+    ESCAPE_SEQUENCES[0x00]   = '\\0';
+    ESCAPE_SEQUENCES[0x07]   = '\\a';
+    ESCAPE_SEQUENCES[0x08]   = '\\b';
+    ESCAPE_SEQUENCES[0x09]   = '\\t';
+    ESCAPE_SEQUENCES[0x0A]   = '\\n';
+    ESCAPE_SEQUENCES[0x0B]   = '\\v';
+    ESCAPE_SEQUENCES[0x0C]   = '\\f';
+    ESCAPE_SEQUENCES[0x0D]   = '\\r';
+    ESCAPE_SEQUENCES[0x1B]   = '\\e';
+    ESCAPE_SEQUENCES[0x22]   = '\\"';
+    ESCAPE_SEQUENCES[0x5C]   = '\\\\';
+    ESCAPE_SEQUENCES[0x85]   = '\\N';
+    ESCAPE_SEQUENCES[0xA0]   = '\\_';
+    ESCAPE_SEQUENCES[0x2028] = '\\L';
+    ESCAPE_SEQUENCES[0x2029] = '\\P';
+
+    var DEPRECATED_BOOLEANS_SYNTAX = [
+      'y', 'Y', 'yes', 'Yes', 'YES', 'on', 'On', 'ON',
+      'n', 'N', 'no', 'No', 'NO', 'off', 'Off', 'OFF'
+    ];
+
+    function compileStyleMap(schema, map) {
+      var result, keys, index, length, tag, style, type;
+
+      if (map === null) return {};
+
+      result = {};
+      keys = Object.keys(map);
+
+      for (index = 0, length = keys.length; index < length; index += 1) {
+        tag = keys[index];
+        style = String(map[tag]);
+
+        if (tag.slice(0, 2) === '!!') {
+          tag = 'tag:yaml.org,2002:' + tag.slice(2);
+        }
+        type = schema.compiledTypeMap['fallback'][tag];
+
+        if (type && _hasOwnProperty$3.call(type.styleAliases, style)) {
+          style = type.styleAliases[style];
+        }
+
+        result[tag] = style;
+      }
+
+      return result;
+    }
+
+    function encodeHex(character) {
+      var string, handle, length;
+
+      string = character.toString(16).toUpperCase();
+
+      if (character <= 0xFF) {
+        handle = 'x';
+        length = 2;
+      } else if (character <= 0xFFFF) {
+        handle = 'u';
+        length = 4;
+      } else if (character <= 0xFFFFFFFF) {
+        handle = 'U';
+        length = 8;
+      } else {
+        throw new exception('code point within a string may not be greater than 0xFFFFFFFF');
+      }
+
+      return '\\' + handle + common.repeat('0', length - string.length) + string;
+    }
+
+    function State$1(options) {
+      this.schema        = options['schema'] || default_full;
+      this.indent        = Math.max(1, (options['indent'] || 2));
+      this.noArrayIndent = options['noArrayIndent'] || false;
+      this.skipInvalid   = options['skipInvalid'] || false;
+      this.flowLevel     = (common.isNothing(options['flowLevel']) ? -1 : options['flowLevel']);
+      this.styleMap      = compileStyleMap(this.schema, options['styles'] || null);
+      this.sortKeys      = options['sortKeys'] || false;
+      this.lineWidth     = options['lineWidth'] || 80;
+      this.noRefs        = options['noRefs'] || false;
+      this.noCompatMode  = options['noCompatMode'] || false;
+      this.condenseFlow  = options['condenseFlow'] || false;
+
+      this.implicitTypes = this.schema.compiledImplicit;
+      this.explicitTypes = this.schema.compiledExplicit;
+
+      this.tag = null;
+      this.result = '';
+
+      this.duplicates = [];
+      this.usedDuplicates = null;
+    }
+
+    // Indents every line in a string. Empty lines (\n only) are not indented.
+    function indentString(string, spaces) {
+      var ind = common.repeat(' ', spaces),
+          position = 0,
+          next = -1,
+          result = '',
+          line,
+          length = string.length;
+
+      while (position < length) {
+        next = string.indexOf('\n', position);
+        if (next === -1) {
+          line = string.slice(position);
+          position = length;
+        } else {
+          line = string.slice(position, next + 1);
+          position = next + 1;
+        }
+
+        if (line.length && line !== '\n') result += ind;
+
+        result += line;
+      }
+
+      return result;
+    }
+
+    function generateNextLine(state, level) {
+      return '\n' + common.repeat(' ', state.indent * level);
+    }
+
+    function testImplicitResolving(state, str) {
+      var index, length, type;
+
+      for (index = 0, length = state.implicitTypes.length; index < length; index += 1) {
+        type = state.implicitTypes[index];
+
+        if (type.resolve(str)) {
+          return true;
+        }
+      }
+
+      return false;
+    }
+
+    // [33] s-white ::= s-space | s-tab
+    function isWhitespace(c) {
+      return c === CHAR_SPACE || c === CHAR_TAB;
+    }
+
+    // Returns true if the character can be printed without escaping.
+    // From YAML 1.2: "any allowed characters known to be non-printable
+    // should also be escaped. [However,] This isn’t mandatory"
+    // Derived from nb-char - \t - #x85 - #xA0 - #x2028 - #x2029.
+    function isPrintable(c) {
+      return  (0x00020 <= c && c <= 0x00007E)
+          || ((0x000A1 <= c && c <= 0x00D7FF) && c !== 0x2028 && c !== 0x2029)
+          || ((0x0E000 <= c && c <= 0x00FFFD) && c !== 0xFEFF /* BOM */)
+          ||  (0x10000 <= c && c <= 0x10FFFF);
+    }
+
+    // Simplified test for values allowed after the first character in plain style.
+    function isPlainSafe(c) {
+      // Uses a subset of nb-char - c-flow-indicator - ":" - "#"
+      // where nb-char ::= c-printable - b-char - c-byte-order-mark.
+      return isPrintable(c) && c !== 0xFEFF
+        // - c-flow-indicator
+        && c !== CHAR_COMMA
+        && c !== CHAR_LEFT_SQUARE_BRACKET
+        && c !== CHAR_RIGHT_SQUARE_BRACKET
+        && c !== CHAR_LEFT_CURLY_BRACKET
+        && c !== CHAR_RIGHT_CURLY_BRACKET
+        // - ":" - "#"
+        && c !== CHAR_COLON
+        && c !== CHAR_SHARP;
+    }
+
+    // Simplified test for values allowed as the first character in plain style.
+    function isPlainSafeFirst(c) {
+      // Uses a subset of ns-char - c-indicator
+      // where ns-char = nb-char - s-white.
+      return isPrintable(c) && c !== 0xFEFF
+        && !isWhitespace(c) // - s-white
+        // - (c-indicator ::=
+        // “-” | “?” | “:” | “,” | “[” | “]” | “{” | “}”
+        && c !== CHAR_MINUS
+        && c !== CHAR_QUESTION
+        && c !== CHAR_COLON
+        && c !== CHAR_COMMA
+        && c !== CHAR_LEFT_SQUARE_BRACKET
+        && c !== CHAR_RIGHT_SQUARE_BRACKET
+        && c !== CHAR_LEFT_CURLY_BRACKET
+        && c !== CHAR_RIGHT_CURLY_BRACKET
+        // | “#” | “&” | “*” | “!” | “|” | “>” | “'” | “"”
+        && c !== CHAR_SHARP
+        && c !== CHAR_AMPERSAND
+        && c !== CHAR_ASTERISK
+        && c !== CHAR_EXCLAMATION
+        && c !== CHAR_VERTICAL_LINE
+        && c !== CHAR_GREATER_THAN
+        && c !== CHAR_SINGLE_QUOTE
+        && c !== CHAR_DOUBLE_QUOTE
+        // | “%” | “@” | “`”)
+        && c !== CHAR_PERCENT
+        && c !== CHAR_COMMERCIAL_AT
+        && c !== CHAR_GRAVE_ACCENT;
+    }
+
+    // Determines whether block indentation indicator is required.
+    function needIndentIndicator(string) {
+      var leadingSpaceRe = /^\n* /;
+      return leadingSpaceRe.test(string);
+    }
+
+    var STYLE_PLAIN   = 1,
+        STYLE_SINGLE  = 2,
+        STYLE_LITERAL = 3,
+        STYLE_FOLDED  = 4,
+        STYLE_DOUBLE  = 5;
+
+    // Determines which scalar styles are possible and returns the preferred style.
+    // lineWidth = -1 => no limit.
+    // Pre-conditions: str.length > 0.
+    // Post-conditions:
+    //    STYLE_PLAIN or STYLE_SINGLE => no \n are in the string.
+    //    STYLE_LITERAL => no lines are suitable for folding (or lineWidth is -1).
+    //    STYLE_FOLDED => a line > lineWidth and can be folded (and lineWidth != -1).
+    function chooseScalarStyle(string, singleLineOnly, indentPerLevel, lineWidth, testAmbiguousType) {
+      var i;
+      var char;
+      var hasLineBreak = false;
+      var hasFoldableLine = false; // only checked if shouldTrackWidth
+      var shouldTrackWidth = lineWidth !== -1;
+      var previousLineBreak = -1; // count the first line correctly
+      var plain = isPlainSafeFirst(string.charCodeAt(0))
+              && !isWhitespace(string.charCodeAt(string.length - 1));
+
+      if (singleLineOnly) {
+        // Case: no block styles.
+        // Check for disallowed characters to rule out plain and single.
+        for (i = 0; i < string.length; i++) {
+          char = string.charCodeAt(i);
+          if (!isPrintable(char)) {
+            return STYLE_DOUBLE;
+          }
+          plain = plain && isPlainSafe(char);
+        }
+      } else {
+        // Case: block styles permitted.
+        for (i = 0; i < string.length; i++) {
+          char = string.charCodeAt(i);
+          if (char === CHAR_LINE_FEED) {
+            hasLineBreak = true;
+            // Check if any line can be folded.
+            if (shouldTrackWidth) {
+              hasFoldableLine = hasFoldableLine ||
+                // Foldable line = too long, and not more-indented.
+                (i - previousLineBreak - 1 > lineWidth &&
+                 string[previousLineBreak + 1] !== ' ');
+              previousLineBreak = i;
+            }
+          } else if (!isPrintable(char)) {
+            return STYLE_DOUBLE;
+          }
+          plain = plain && isPlainSafe(char);
+        }
+        // in case the end is missing a \n
+        hasFoldableLine = hasFoldableLine || (shouldTrackWidth &&
+          (i - previousLineBreak - 1 > lineWidth &&
+           string[previousLineBreak + 1] !== ' '));
+      }
+      // Although every style can represent \n without escaping, prefer block styles
+      // for multiline, since they're more readable and they don't add empty lines.
+      // Also prefer folding a super-long line.
+      if (!hasLineBreak && !hasFoldableLine) {
+        // Strings interpretable as another type have to be quoted;
+        // e.g. the string 'true' vs. the boolean true.
+        return plain && !testAmbiguousType(string)
+          ? STYLE_PLAIN : STYLE_SINGLE;
+      }
+      // Edge case: block indentation indicator can only have one digit.
+      if (indentPerLevel > 9 && needIndentIndicator(string)) {
+        return STYLE_DOUBLE;
+      }
+      // At this point we know block styles are valid.
+      // Prefer literal style unless we want to fold.
+      return hasFoldableLine ? STYLE_FOLDED : STYLE_LITERAL;
+    }
+
+    // Note: line breaking/folding is implemented for only the folded style.
+    // NB. We drop the last trailing newline (if any) of a returned block scalar
+    //  since the dumper adds its own newline. This always works:
+    //    • No ending newline => unaffected; already using strip "-" chomping.
+    //    • Ending newline    => removed then restored.
+    //  Importantly, this keeps the "+" chomp indicator from gaining an extra line.
+    function writeScalar(state, string, level, iskey) {
+      state.dump = (function () {
+        if (string.length === 0) {
+          return "''";
+        }
+        if (!state.noCompatMode &&
+            DEPRECATED_BOOLEANS_SYNTAX.indexOf(string) !== -1) {
+          return "'" + string + "'";
+        }
+
+        var indent = state.indent * Math.max(1, level); // no 0-indent scalars
+        // As indentation gets deeper, let the width decrease monotonically
+        // to the lower bound min(state.lineWidth, 40).
+        // Note that this implies
+        //  state.lineWidth ≤ 40 + state.indent: width is fixed at the lower bound.
+        //  state.lineWidth > 40 + state.indent: width decreases until the lower bound.
+        // This behaves better than a constant minimum width which disallows narrower options,
+        // or an indent threshold which causes the width to suddenly increase.
+        var lineWidth = state.lineWidth === -1
+          ? -1 : Math.max(Math.min(state.lineWidth, 40), state.lineWidth - indent);
+
+        // Without knowing if keys are implicit/explicit, assume implicit for safety.
+        var singleLineOnly = iskey
+          // No block styles in flow mode.
+          || (state.flowLevel > -1 && level >= state.flowLevel);
+        function testAmbiguity(string) {
+          return testImplicitResolving(state, string);
+        }
+
+        switch (chooseScalarStyle(string, singleLineOnly, state.indent, lineWidth, testAmbiguity)) {
+          case STYLE_PLAIN:
+            return string;
+          case STYLE_SINGLE:
+            return "'" + string.replace(/'/g, "''") + "'";
+          case STYLE_LITERAL:
+            return '|' + blockHeader(string, state.indent)
+              + dropEndingNewline(indentString(string, indent));
+          case STYLE_FOLDED:
+            return '>' + blockHeader(string, state.indent)
+              + dropEndingNewline(indentString(foldString(string, lineWidth), indent));
+          case STYLE_DOUBLE:
+            return '"' + escapeString(string) + '"';
+          default:
+            throw new exception('impossible error: invalid scalar style');
+        }
+      }());
+    }
+
+    // Pre-conditions: string is valid for a block scalar, 1 <= indentPerLevel <= 9.
+    function blockHeader(string, indentPerLevel) {
+      var indentIndicator = needIndentIndicator(string) ? String(indentPerLevel) : '';
+
+      // note the special case: the string '\n' counts as a "trailing" empty line.
+      var clip =          string[string.length - 1] === '\n';
+      var keep = clip && (string[string.length - 2] === '\n' || string === '\n');
+      var chomp = keep ? '+' : (clip ? '' : '-');
+
+      return indentIndicator + chomp + '\n';
+    }
+
+    // (See the note for writeScalar.)
+    function dropEndingNewline(string) {
+      return string[string.length - 1] === '\n' ? string.slice(0, -1) : string;
+    }
+
+    // Note: a long line without a suitable break point will exceed the width limit.
+    // Pre-conditions: every char in str isPrintable, str.length > 0, width > 0.
+    function foldString(string, width) {
+      // In folded style, $k$ consecutive newlines output as $k+1$ newlines—
+      // unless they're before or after a more-indented line, or at the very
+      // beginning or end, in which case $k$ maps to $k$.
+      // Therefore, parse each chunk as newline(s) followed by a content line.
+      var lineRe = /(\n+)([^\n]*)/g;
+
+      // first line (possibly an empty line)
+      var result = (function () {
+        var nextLF = string.indexOf('\n');
+        nextLF = nextLF !== -1 ? nextLF : string.length;
+        lineRe.lastIndex = nextLF;
+        return foldLine(string.slice(0, nextLF), width);
+      }());
+      // If we haven't reached the first content line yet, don't add an extra \n.
+      var prevMoreIndented = string[0] === '\n' || string[0] === ' ';
+      var moreIndented;
+
+      // rest of the lines
+      var match;
+      while ((match = lineRe.exec(string))) {
+        var prefix = match[1], line = match[2];
+        moreIndented = (line[0] === ' ');
+        result += prefix
+          + (!prevMoreIndented && !moreIndented && line !== ''
+            ? '\n' : '')
+          + foldLine(line, width);
+        prevMoreIndented = moreIndented;
+      }
+
+      return result;
+    }
+
+    // Greedy line breaking.
+    // Picks the longest line under the limit each time,
+    // otherwise settles for the shortest line over the limit.
+    // NB. More-indented lines *cannot* be folded, as that would add an extra \n.
+    function foldLine(line, width) {
+      if (line === '' || line[0] === ' ') return line;
+
+      // Since a more-indented line adds a \n, breaks can't be followed by a space.
+      var breakRe = / [^ ]/g; // note: the match index will always be <= length-2.
+      var match;
+      // start is an inclusive index. end, curr, and next are exclusive.
+      var start = 0, end, curr = 0, next = 0;
+      var result = '';
+
+      // Invariants: 0 <= start <= length-1.
+      //   0 <= curr <= next <= max(0, length-2). curr - start <= width.
+      // Inside the loop:
+      //   A match implies length >= 2, so curr and next are <= length-2.
+      while ((match = breakRe.exec(line))) {
+        next = match.index;
+        // maintain invariant: curr - start <= width
+        if (next - start > width) {
+          end = (curr > start) ? curr : next; // derive end <= length-2
+          result += '\n' + line.slice(start, end);
+          // skip the space that was output as \n
+          start = end + 1;                    // derive start <= length-1
+        }
+        curr = next;
+      }
+
+      // By the invariants, start <= length-1, so there is something left over.
+      // It is either the whole string or a part starting from non-whitespace.
+      result += '\n';
+      // Insert a break if the remainder is too long and there is a break available.
+      if (line.length - start > width && curr > start) {
+        result += line.slice(start, curr) + '\n' + line.slice(curr + 1);
+      } else {
+        result += line.slice(start);
+      }
+
+      return result.slice(1); // drop extra \n joiner
+    }
+
+    // Escapes a double-quoted string.
+    function escapeString(string) {
+      var result = '';
+      var char, nextChar;
+      var escapeSeq;
+
+      for (var i = 0; i < string.length; i++) {
+        char = string.charCodeAt(i);
+        // Check for surrogate pairs (reference Unicode 3.0 section "3.7 Surrogates").
+        if (char >= 0xD800 && char <= 0xDBFF/* high surrogate */) {
+          nextChar = string.charCodeAt(i + 1);
+          if (nextChar >= 0xDC00 && nextChar <= 0xDFFF/* low surrogate */) {
+            // Combine the surrogate pair and store it escaped.
+            result += encodeHex((char - 0xD800) * 0x400 + nextChar - 0xDC00 + 0x10000);
+            // Advance index one extra since we already used that char here.
+            i++; continue;
+          }
+        }
+        escapeSeq = ESCAPE_SEQUENCES[char];
+        result += !escapeSeq && isPrintable(char)
+          ? string[i]
+          : escapeSeq || encodeHex(char);
+      }
+
+      return result;
+    }
+
+    function writeFlowSequence(state, level, object) {
+      var _result = '',
+          _tag    = state.tag,
+          index,
+          length;
+
+      for (index = 0, length = object.length; index < length; index += 1) {
+        // Write only valid elements.
+        if (writeNode(state, level, object[index], false, false)) {
+          if (index !== 0) _result += ',' + (!state.condenseFlow ? ' ' : '');
+          _result += state.dump;
+        }
+      }
+
+      state.tag = _tag;
+      state.dump = '[' + _result + ']';
+    }
+
+    function writeBlockSequence(state, level, object, compact) {
+      var _result = '',
+          _tag    = state.tag,
+          index,
+          length;
+
+      for (index = 0, length = object.length; index < length; index += 1) {
+        // Write only valid elements.
+        if (writeNode(state, level + 1, object[index], true, true)) {
+          if (!compact || index !== 0) {
+            _result += generateNextLine(state, level);
+          }
+
+          if (state.dump && CHAR_LINE_FEED === state.dump.charCodeAt(0)) {
+            _result += '-';
+          } else {
+            _result += '- ';
+          }
+
+          _result += state.dump;
+        }
+      }
+
+      state.tag = _tag;
+      state.dump = _result || '[]'; // Empty sequence if no valid values.
+    }
+
+    function writeFlowMapping(state, level, object) {
+      var _result       = '',
+          _tag          = state.tag,
+          objectKeyList = Object.keys(object),
+          index,
+          length,
+          objectKey,
+          objectValue,
+          pairBuffer;
+
+      for (index = 0, length = objectKeyList.length; index < length; index += 1) {
+        pairBuffer = state.condenseFlow ? '"' : '';
+
+        if (index !== 0) pairBuffer += ', ';
+
+        objectKey = objectKeyList[index];
+        objectValue = object[objectKey];
+
+        if (!writeNode(state, level, objectKey, false, false)) {
+          continue; // Skip this pair because of invalid key;
+        }
+
+        if (state.dump.length > 1024) pairBuffer += '? ';
+
+        pairBuffer += state.dump + (state.condenseFlow ? '"' : '') + ':' + (state.condenseFlow ? '' : ' ');
+
+        if (!writeNode(state, level, objectValue, false, false)) {
+          continue; // Skip this pair because of invalid value.
+        }
+
+        pairBuffer += state.dump;
+
+        // Both key and value are valid.
+        _result += pairBuffer;
+      }
+
+      state.tag = _tag;
+      state.dump = '{' + _result + '}';
+    }
+
+    function writeBlockMapping(state, level, object, compact) {
+      var _result       = '',
+          _tag          = state.tag,
+          objectKeyList = Object.keys(object),
+          index,
+          length,
+          objectKey,
+          objectValue,
+          explicitPair,
+          pairBuffer;
+
+      // Allow sorting keys so that the output file is deterministic
+      if (state.sortKeys === true) {
+        // Default sorting
+        objectKeyList.sort();
+      } else if (typeof state.sortKeys === 'function') {
+        // Custom sort function
+        objectKeyList.sort(state.sortKeys);
+      } else if (state.sortKeys) {
+        // Something is wrong
+        throw new exception('sortKeys must be a boolean or a function');
+      }
+
+      for (index = 0, length = objectKeyList.length; index < length; index += 1) {
+        pairBuffer = '';
+
+        if (!compact || index !== 0) {
+          pairBuffer += generateNextLine(state, level);
+        }
+
+        objectKey = objectKeyList[index];
+        objectValue = object[objectKey];
+
+        if (!writeNode(state, level + 1, objectKey, true, true, true)) {
+          continue; // Skip this pair because of invalid key.
+        }
+
+        explicitPair = (state.tag !== null && state.tag !== '?') ||
+                       (state.dump && state.dump.length > 1024);
+
+        if (explicitPair) {
+          if (state.dump && CHAR_LINE_FEED === state.dump.charCodeAt(0)) {
+            pairBuffer += '?';
+          } else {
+            pairBuffer += '? ';
+          }
+        }
+
+        pairBuffer += state.dump;
+
+        if (explicitPair) {
+          pairBuffer += generateNextLine(state, level);
+        }
+
+        if (!writeNode(state, level + 1, objectValue, true, explicitPair)) {
+          continue; // Skip this pair because of invalid value.
+        }
+
+        if (state.dump && CHAR_LINE_FEED === state.dump.charCodeAt(0)) {
+          pairBuffer += ':';
+        } else {
+          pairBuffer += ': ';
+        }
+
+        pairBuffer += state.dump;
+
+        // Both key and value are valid.
+        _result += pairBuffer;
+      }
+
+      state.tag = _tag;
+      state.dump = _result || '{}'; // Empty mapping if no valid pairs.
+    }
+
+    function detectType(state, object, explicit) {
+      var _result, typeList, index, length, type, style;
+
+      typeList = explicit ? state.explicitTypes : state.implicitTypes;
+
+      for (index = 0, length = typeList.length; index < length; index += 1) {
+        type = typeList[index];
+
+        if ((type.instanceOf  || type.predicate) &&
+            (!type.instanceOf || ((typeof object === 'object') && (object instanceof type.instanceOf))) &&
+            (!type.predicate  || type.predicate(object))) {
+
+          state.tag = explicit ? type.tag : '?';
+
+          if (type.represent) {
+            style = state.styleMap[type.tag] || type.defaultStyle;
+
+            if (_toString$2.call(type.represent) === '[object Function]') {
+              _result = type.represent(object, style);
+            } else if (_hasOwnProperty$3.call(type.represent, style)) {
+              _result = type.represent[style](object, style);
+            } else {
+              throw new exception('!<' + type.tag + '> tag resolver accepts not "' + style + '" style');
+            }
+
+            state.dump = _result;
+          }
+
+          return true;
+        }
+      }
+
+      return false;
+    }
+
+    // Serializes `object` and writes it to global `result`.
+    // Returns true on success, or false on invalid object.
+    //
+    function writeNode(state, level, object, block, compact, iskey) {
+      state.tag = null;
+      state.dump = object;
+
+      if (!detectType(state, object, false)) {
+        detectType(state, object, true);
+      }
+
+      var type = _toString$2.call(state.dump);
+
+      if (block) {
+        block = (state.flowLevel < 0 || state.flowLevel > level);
+      }
+
+      var objectOrArray = type === '[object Object]' || type === '[object Array]',
+          duplicateIndex,
+          duplicate;
+
+      if (objectOrArray) {
+        duplicateIndex = state.duplicates.indexOf(object);
+        duplicate = duplicateIndex !== -1;
+      }
+
+      if ((state.tag !== null && state.tag !== '?') || duplicate || (state.indent !== 2 && level > 0)) {
+        compact = false;
+      }
+
+      if (duplicate && state.usedDuplicates[duplicateIndex]) {
+        state.dump = '*ref_' + duplicateIndex;
+      } else {
+        if (objectOrArray && duplicate && !state.usedDuplicates[duplicateIndex]) {
+          state.usedDuplicates[duplicateIndex] = true;
+        }
+        if (type === '[object Object]') {
+          if (block && (Object.keys(state.dump).length !== 0)) {
+            writeBlockMapping(state, level, state.dump, compact);
+            if (duplicate) {
+              state.dump = '&ref_' + duplicateIndex + state.dump;
+            }
+          } else {
+            writeFlowMapping(state, level, state.dump);
+            if (duplicate) {
+              state.dump = '&ref_' + duplicateIndex + ' ' + state.dump;
+            }
+          }
+        } else if (type === '[object Array]') {
+          var arrayLevel = (state.noArrayIndent && (level > 0)) ? level - 1 : level;
+          if (block && (state.dump.length !== 0)) {
+            writeBlockSequence(state, arrayLevel, state.dump, compact);
+            if (duplicate) {
+              state.dump = '&ref_' + duplicateIndex + state.dump;
+            }
+          } else {
+            writeFlowSequence(state, arrayLevel, state.dump);
+            if (duplicate) {
+              state.dump = '&ref_' + duplicateIndex + ' ' + state.dump;
+            }
+          }
+        } else if (type === '[object String]') {
+          if (state.tag !== '?') {
+            writeScalar(state, state.dump, level, iskey);
+          }
+        } else {
+          if (state.skipInvalid) return false;
+          throw new exception('unacceptable kind of an object to dump ' + type);
+        }
+
+        if (state.tag !== null && state.tag !== '?') {
+          state.dump = '!<' + state.tag + '> ' + state.dump;
+        }
+      }
+
+      return true;
+    }
+
+    function getDuplicateReferences(object, state) {
+      var objects = [],
+          duplicatesIndexes = [],
+          index,
+          length;
+
+      inspectNode(object, objects, duplicatesIndexes);
+
+      for (index = 0, length = duplicatesIndexes.length; index < length; index += 1) {
+        state.duplicates.push(objects[duplicatesIndexes[index]]);
+      }
+      state.usedDuplicates = new Array(length);
+    }
+
+    function inspectNode(object, objects, duplicatesIndexes) {
+      var objectKeyList,
+          index,
+          length;
+
+      if (object !== null && typeof object === 'object') {
+        index = objects.indexOf(object);
+        if (index !== -1) {
+          if (duplicatesIndexes.indexOf(index) === -1) {
+            duplicatesIndexes.push(index);
+          }
+        } else {
+          objects.push(object);
+
+          if (Array.isArray(object)) {
+            for (index = 0, length = object.length; index < length; index += 1) {
+              inspectNode(object[index], objects, duplicatesIndexes);
+            }
+          } else {
+            objectKeyList = Object.keys(object);
+
+            for (index = 0, length = objectKeyList.length; index < length; index += 1) {
+              inspectNode(object[objectKeyList[index]], objects, duplicatesIndexes);
+            }
+          }
+        }
+      }
+    }
+
+    function dump(input, options) {
+      options = options || {};
+
+      var state = new State$1(options);
+
+      if (!state.noRefs) getDuplicateReferences(input, state);
+
+      if (writeNode(state, 0, input, true, true)) return state.dump + '\n';
+
+      return '';
+    }
+
+    function safeDump(input, options) {
+      return dump(input, common.extend({ schema: default_safe }, options));
+    }
+
+    var dump_1     = dump;
+    var safeDump_1 = safeDump;
+
+    var dumper = {
+    	dump: dump_1,
+    	safeDump: safeDump_1
+    };
+
+    function deprecated(name) {
+      return function () {
+        throw new Error('Function ' + name + ' is deprecated and cannot be used.');
+      };
+    }
+
+
+    var Type$1                = type;
+    var Schema$1              = schema;
+    var FAILSAFE_SCHEMA     = failsafe;
+    var JSON_SCHEMA         = json;
+    var CORE_SCHEMA         = core;
+    var DEFAULT_SAFE_SCHEMA = default_safe;
+    var DEFAULT_FULL_SCHEMA = default_full;
+    var load$1                = loader.load;
+    var loadAll$1             = loader.loadAll;
+    var safeLoad$1            = loader.safeLoad;
+    var safeLoadAll$1         = loader.safeLoadAll;
+    var dump$1                = dumper.dump;
+    var safeDump$1            = dumper.safeDump;
+    var YAMLException$1       = exception;
+
+    // Deprecated schema names from JS-YAML 2.0.x
+    var MINIMAL_SCHEMA = failsafe;
+    var SAFE_SCHEMA    = default_safe;
+    var DEFAULT_SCHEMA = default_full;
+
+    // Deprecated functions from JS-YAML 1.x.x
+    var scan           = deprecated('scan');
+    var parse          = deprecated('parse');
+    var compose        = deprecated('compose');
+    var addConstructor = deprecated('addConstructor');
+
+    var jsYaml = {
+    	Type: Type$1,
+    	Schema: Schema$1,
+    	FAILSAFE_SCHEMA: FAILSAFE_SCHEMA,
+    	JSON_SCHEMA: JSON_SCHEMA,
+    	CORE_SCHEMA: CORE_SCHEMA,
+    	DEFAULT_SAFE_SCHEMA: DEFAULT_SAFE_SCHEMA,
+    	DEFAULT_FULL_SCHEMA: DEFAULT_FULL_SCHEMA,
+    	load: load$1,
+    	loadAll: loadAll$1,
+    	safeLoad: safeLoad$1,
+    	safeLoadAll: safeLoadAll$1,
+    	dump: dump$1,
+    	safeDump: safeDump$1,
+    	YAMLException: YAMLException$1,
+    	MINIMAL_SCHEMA: MINIMAL_SCHEMA,
+    	SAFE_SCHEMA: SAFE_SCHEMA,
+    	DEFAULT_SCHEMA: DEFAULT_SCHEMA,
+    	scan: scan,
+    	parse: parse,
+    	compose: compose,
+    	addConstructor: addConstructor
+    };
+
+    var jsYaml$1 = jsYaml;
+
+    var rul;
+    function backLink(id, list, to, field) {
+        if (!list)
+            return;
+        for (var _i = 0, list_1 = list; _i < list_1.length; _i++) {
+            var key = list_1[_i];
+            var back = to[key];
+            back[field] = back[field] || [];
+            back[field].push(id);
+        }
+    }
+    function parseYaml(text) {
+        var data = [];
+        var reg = /^FILE: (.+)\n/gm;
+        var matches = [];
+        var match;
+        while ((match = reg.exec(text)))
+            matches.push(match);
+        for (var i = 0; i < matches.length; i++) {
+            var title = matches[i][1];
+            var file = void 0;
+            if (i < matches.length - 1) {
+                file = text.substr(matches[i].index + 7 + title.length, matches[i + 1].index - matches[i].index - 7 - title.length);
+            }
+            else
+                file = text.substr(matches[i].index + 7 + title.length);
+            if (file.substr(1, 3) == "п»ї")
+                file = file.substr(4);
+            var parsed = void 0;
+            try {
+                parsed = jsYaml$1.load(file, { json: true, filename: title });
+            }
+            catch (e) {
+                console.log(e.message);
+            }
+            if (parsed)
+                data.push(parsed);
+        }
+        return data;
+    }
+    var Search = /** @class */ (function () {
+        function Search() {
+            this.articles = new Fuse(rul.articlesOrder, {
+                keys: ["id", "type", "title", "text"],
+                tokenize: true,
+                matchAllTokens: true,
+                distance: 10,
+                threshold: 0.1
+            });
+        }
+        Search.prototype.findArticles = function (query) {
+            return this.articles.search(query);
+        };
+        return Search;
+    }());
+    var Manufacture = /** @class */ (function () {
+        function Manufacture(raw) {
+            Object.assign(this, raw);
+            rul.manufacture[this.name] = this;
+            if (this.requires) {
+                for (var _i = 0, _a = this.requires; _i < _a.length; _i++) {
+                    var resName = _a[_i];
+                    var res = rul.research[resName];
+                    if (!res.manufacture)
+                        res.manufacture = [];
+                    res.manufacture.push(this.name);
+                }
+            }
+            if (this.producedItems) {
+                for (var _b = 0, _c = Object.keys(this.producedItems); _b < _c.length; _b++) {
+                    var itemName = _c[_b];
+                    var item = rul.items[itemName];
+                    if (!item)
+                        continue;
+                    if (!item.manufacture)
+                        item.manufacture = {};
+                    item.manufacture[this.name] = this.producedItems[itemName];
+                }
+            }
+            if (this.requiredItems) {
+                for (var _d = 0, _e = Object.keys(this.requiredItems); _d < _e.length; _d++) {
+                    var itemName = _e[_d];
+                    var item = rul.items[itemName];
+                    if (!item)
+                        continue;
+                    if (!item.componentOf)
+                        item.componentOf = {};
+                    item.componentOf[this.name] = this.requiredItems[itemName];
+                }
+            }
+            if (this.randomProducedItems) {
+                this.chanceSum = 0;
+                for (var _f = 0, _g = this.randomProducedItems; _f < _g.length; _f++) {
+                    var chance = _g[_f];
+                    this.chanceSum += chance[0];
+                }
+            }
+            Service.add("allowsManufacture", this.name, this.requiresBaseFunc);
+            Article.create({
+                id: this.name,
+                section: "MANUFACTURE",
+                type_id: "MANUFACTURE"
+            });
+        }
+        return Manufacture;
+    }());
+    var Research = /** @class */ (function () {
+        function Research(raw) {
+            Object.assign(this, raw);
+            rul.research[this.name] = this;
+            Service.add("allowsResearching", this.name, this.requiresBaseFunc);
+            Article.create({
+                id: this.name,
+                section: "RESEARCH",
+                type_id: "RESEARCH"
+            });
+        }
+        return Research;
+    }());
+    var Service = /** @class */ (function () {
+        function Service(id) {
+            this.id = id;
+            Article.create({
+                id: id,
+                type_id: "SERVICES",
+                section: "SERVICES"
+            });
+        }
+        Service.add = function (prop, id, entries) {
+            if (entries) {
+                for (var _i = 0, entries_1 = entries; _i < entries_1.length; _i++) {
+                    var s = entries_1[_i];
+                    if (!(s in rul.baseServices))
+                        rul.baseServices[s] = new Service(s);
+                    if (!(prop in rul.baseServices[s]))
+                        rul.baseServices[s][prop] = [];
+                    rul.baseServices[s][prop].push(id);
+                }
+            }
+        };
+        return Service;
+    }());
+    var AlienDeployment = /** @class */ (function () {
+        function AlienDeployment(raw) {
+            Object.assign(this, raw);
+            rul.alienDeployments[this.type] = this;
+            var condition = rul.startingConditions[this.startingCondition];
+            if (condition)
+                condition.deployments.push(this.type);
+        }
+        return AlienDeployment;
+    }());
+    var CraftWeapon = /** @class */ (function () {
+        function CraftWeapon(raw) {
+            Object.assign(this, raw);
+            rul.craftWeapons[this.type] = this;
+            Service.add("canBuy", this.type, this.requiresBuyBaseFunc);
+        }
+        return CraftWeapon;
+    }());
+    var Craft = /** @class */ (function () {
+        function Craft(raw) {
+            this.startingConditions = [];
+            Object.assign(this, raw);
+            rul.crafts[this.type] = this;
+        }
+        return Craft;
+    }());
+    var Ufo = /** @class */ (function () {
+        function Ufo(raw) {
+            Object.assign(this, raw);
+            rul.ufos[this.type] = this;
+        }
+        return Ufo;
+    }());
+    var Facility = /** @class */ (function () {
+        function Facility(raw) {
+            Object.assign(this, raw);
+            rul.facilities[this.type] = this;
+            Service.add("providedBy", this.type, this.provideBaseFunc);
+            Service.add("allowsBuilding", this.type, this.requiresBaseFunc);
+            Service.add("forbidsBuilding", this.type, this.forbiddenBaseFunc);
+        }
+        return Facility;
+    }());
+    var StartingConditions = /** @class */ (function () {
+        function StartingConditions(raw) {
+            this.allowedCraft = [];
+            this.allowedItemCategories = [];
+            this.allowedArmors = [];
+            this.allowedVehicles = [];
+            this.deployments = [];
+            Object.assign(this, raw);
+            rul.startingConditions[this.type] = this;
+            rul.lang[this.type] = rul.decamelize(this.type.substr(11));
+            for (var _i = 0, _a = this.allowedCraft; _i < _a.length; _i++) {
+                var craft = _a[_i];
+                rul.crafts[craft].startingConditions.push(this.type);
+            }
+            Article.create({
+                id: this.type,
+                section: "CONDITIONS",
+                type_id: "CONDITIONS"
+            });
+        }
+        return StartingConditions;
+    }());
+    var Unit = /** @class */ (function () {
+        function Unit(raw) {
+            Object.assign(this, raw);
+            rul.units[this.type] = this;
+            var armor = rul.armors[raw.armor];
+            if (armor) {
+                armor.users = armor.users || [];
+                armor.users.push(this.type);
+            }
+        }
+        return Unit;
+    }());
+    var Attack = /** @class */ (function () {
+        function Attack(item, mode) {
+            this.mode = mode;
+            this.possible = false;
+            this.flatTime = false;
+            this.shots = 1;
+            this.pellets = 1;
+            var capMode = mode.charAt(0).toUpperCase() + mode.substr(1);
+            var isDefaultAttack = (mode == "ammo" && item.battleType == 2) ||
+                (mode == "melee" && item.battleType == 3) ||
+                (mode == "psi" && item.battleType == 9) ||
+                (mode == "throw" && [4, 5].includes(item.battleType));
+            var exists = item["accuracy" + capMode] || isDefaultAttack;
+            if (!exists)
+                return null;
+            if (mode == "melee" && item.battleType != 3) {
+                this.damage = item.meleePower;
+                this.damageBonus = item.meleeBonus;
+                this.damageType = item.meleeType;
+            }
+            else if (!item.compatibleAmmo) {
+                this.damage = item.power;
+                this.damageBonus = item.damageBonus;
+                this.damageType = item.damageType;
+            }
+            this.pellets = item.shotgunPellets || 1;
+            this.shots = mode == "auto" ? item.autoShots || 3 : 1;
+            this.name = mode.substr(0, 1).toUpperCase() + mode.substr(1);
+            var confId = "conf" + this.name;
+            if (confId in item) {
+                var conf = item[confId];
+                if (conf.name)
+                    this.name = rul.str(conf.name);
+                if (conf.shots)
+                    this.shots = conf.shots;
+                delete item[confId];
+            }
+            if (item[mode + "AttackName"])
+                this.name = rul.str(item[mode + "AttackName"]);
+            if (mode == "melee")
+                this.alter = item.meleeAlter;
+            if (item.battleType == 3 || mode != "melee")
+                this.alter = item.damageAlter;
+            if (mode != "ammo") {
+                if (((mode == "melee" && item.battleType == 3) || mode != "melee") &&
+                    item.flatRate)
+                    this.flatTime = item.flatRate;
+                if (item["flat" + capMode] && item["flat" + capMode].time)
+                    this.flatTime = true;
+                if (capMode == "Psi")
+                    capMode = "Use";
+                this.cost = this.cost = item["cost" + capMode] || {
+                    time: item["tu" + capMode],
+                    energy: 0
+                };
+                this.accuracy = item["accuracy" + capMode] || 100;
+                var accuracyMultiplier = mode == "throw"
+                    ? item.throwMultiplier
+                    : mode == "melee"
+                        ? item.meleeMultiplier
+                        : item.accuracyMultiplier;
+                if (!accuracyMultiplier) {
+                    var defaultAccuracyStat = mode == "throw" ? "throwing" : mode == "melee" ? "melee" : "firing";
+                    accuracyMultiplier = {};
+                    accuracyMultiplier[defaultAccuracyStat] = 1;
+                }
+                this.accuracyMultiplier = accuracyMultiplier;
+            }
+            if (this.alter && this.alter.ResistType) {
+                this.damageType = this.alter.ResistType;
+            }
+            if (mode + "Range" in item) {
+                this.alter = this.alter || {};
+                this.alter.range = item[mode + "Range"];
+            }
+            this.possible = true;
+        }
+        return Attack;
+    }());
+    var Article = /** @class */ (function () {
+        function Article(raw) {
+            this.id = raw.id;
+            this.title = raw.title || rul.str(raw.id);
+            rul.lang[this.id] = this.title;
+            this.text = rul.lang[raw.text] || rul.lang[raw.id + "_UFOPEDIA"];
+            this.image_id = raw.image_id;
+            this.type_id = raw.type_id || "-1";
+            rul.articles[this.id] = this;
+            var id = raw.id;
+            rul.articles[id] = this;
+            if (raw.section) {
+                rul.addToSection(this, raw.section);
+            }
+        }
+        Article.create = function (raw) {
+            if (raw.id in rul.articles) {
+                var article = rul.articles[raw.id];
+                if (raw.section && article.section != raw.section) {
+                    rul.sections[raw.section].add(article);
+                }
+                return article;
+            }
+            return new Article(raw);
+        };
+        return Article;
+    }());
+    var Section = /** @class */ (function () {
+        function Section(id, type_id) {
+            if (type_id === void 0) { type_id = "PEDIA"; }
+            this.id = id;
+            this.type_id = type_id;
+            this._articles = [];
+            rul.sections[id] = this;
+            if (this.isType()) {
+                rul.typeSectionsOrder.push(this);
+            }
+            else {
+                rul.sectionsOrder.push(this);
+            }
+            this.title = rul.str(id);
+            Article.create({ id: id, section: id, type_id: type_id });
+        }
+        Object.defineProperty(Section.prototype, "articles", {
+            get: function () {
+                return this._articles;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Section.prototype.isType = function () {
+            return this.type_id == "TYPE";
+        };
+        Section.prototype.add = function (article) {
+            if (!this._articles.includes(article))
+                this._articles.push(article);
+            if (!article.section)
+                article.section = this;
+        };
+        return Section;
+    }());
+    var Sprite = /** @class */ (function () {
+        function Sprite(raw) {
+            this.id = raw.type || raw.typeSingle;
+            if (raw.files) {
+                this.path = raw.files[0];
+                this.extra = raw.files;
+            }
+            if (raw.fileSingle)
+                this.path = raw.fileSingle;
+        }
+        return Sprite;
+    }());
+    var Armor = /** @class */ (function () {
+        function Armor(raw) {
+            this.dollSprites = {};
+            this.armor = {};
+            Object.assign(this, raw);
+            rul.armors[raw.type] = this;
+            if (this.layersDefinition) {
+                var prefix = this.layersDefaultPrefix;
+                for (var body in this.layersDefinition) {
+                    var layersDef = this.layersDefinition[body];
+                    var layers = [];
+                    for (var layer in layersDef) {
+                        var name_1 = layersDef[layer];
+                        if (name_1 && name_1.length) {
+                            var id = prefix + "__" + layer + "__" + name_1;
+                            layers.push(rul.sprite(id));
+                        }
+                    }
+                    this.dollSprites[body] = layers;
+                }
+            }
+            else if (this.spriteInv) {
+                var name_2 = this.spriteInv;
+                var l = name_2.length;
+                if (this.spriteInv + ".SPK" in rul.sprites) {
+                    this.dollSprites = {
+                        0: [rul.path + rul.sprites[this.spriteInv + ".SPK"].path]
+                    };
+                }
+                else {
+                    for (var s in rul.sprites) {
+                        if (s.substr(0, l) == name_2) {
+                            this.dollSprites[s.substr(l, s.length - l - 4)] = [
+                                rul.path + rul.sprites[s].path
+                            ];
+                        }
+                    }
+                }
+            }
+            this.armor = {
+                Front: this.frontArmor,
+                Side: this.sideArmor,
+                Rear: this.rearArmor,
+                Under: this.underArmor
+            };
+            if (this.storeItem && rul.items[this.storeItem]) {
+                var item = rul.items[this.storeItem];
+                if (!item.armors)
+                    item.armors = [];
+                item.armors.push(this.type);
+            }
+        }
+        return Armor;
+    }());
+    var Item = /** @class */ (function () {
+        function Item(raw) {
+            this.invWidth = 1;
+            this.invHeight = 1;
+            Object.assign(this, raw);
+            rul.items[raw.type] = this;
+            this.sprite = rul.bigSprite[this.bigSprite];
+            var t = this;
+            if ("flatThrow" in t) {
+                t.flatThrowTime = t.flatThrow.time;
+                delete t.flatThrow;
+            }
+            Service.add("canBuyItem", this.type, this.requiresBuyBaseFunc);
+            if (this.categories) {
+                for (var _i = 0, _a = this.categories; _i < _a.length; _i++) {
+                    var cat = _a[_i];
+                    this.addCategory(cat);
+                }
+            }
+            Article.create({
+                id: this.type,
+                type_id: "ITEMS",
+                section: "ITEMS"
+            });
+        }
+        Item.prototype.attacks = function () {
+            if (!this._attacks) {
+                this._attacks = [];
+                for (var _i = 0, _a = [
+                    "ammo",
+                    "melee",
+                    "snap",
+                    "aimed",
+                    "auto",
+                    "throw",
+                    "psi"
+                ]; _i < _a.length; _i++) {
+                    var mode = _a[_i];
+                    var attack = new Attack(this, mode);
+                    if (attack.possible) {
+                        this._attacks.push(attack);
+                        if (!isNaN(+attack.damageType))
+                            this.addCategory("dmg=" + rul.damageTypes[attack.damageType]);
+                        if (attack.damageBonus) {
+                            for (var k in attack.damageBonus)
+                                this.addCategory("dmg*" + k);
+                            for (var k in attack.accuracyMultiplier)
+                                this.addCategory("acc*" + k);
+                        }
+                    }
+                }
+            }
+            return this._attacks;
+        };
+        Item.prototype.addCategory = function (catName) {
+            var cat = rul.categories[catName] || [];
+            if (!cat.includes(this))
+                cat.push(this);
+            rul.categories[catName] = cat;
+        };
+        return Item;
+    }());
+    var Ruleset = /** @class */ (function () {
+        function Ruleset() {
+            this.articles = {};
+            this.articlesOrder = [];
+            this.sections = {};
+            this.sectionsOrder = [];
+            this.typeSectionsOrder = [];
+            this.sprites = {};
+            this.raw = {};
+            this.items = {};
+            this.categories = {};
+            this.armors = {};
+            this.units = {};
+            this.crafts = {};
+            this.ufos = {};
+            this.facilities = {};
+            this.craftWeapons = {};
+            this.alienDeployments = {};
+            this.research = {};
+            this.manufacture = {};
+            this.startingConditions = {};
+            this.bigSprite = [];
+            this.floorSprite = [];
+            this.handSprite = [];
+            this.baseSprite = [];
+            this.sounds = [];
+            this.baseServices = {};
+            this.redirect = {};
+            this.lang = {};
+            this.damageTypes = [
+                "STR_DAMAGE_NONE",
+                "STR_DAMAGE_ARMOR_PIERCING",
+                "STR_DAMAGE_INCENDIARY",
+                "STR_DAMAGE_HIGH_EXPLOSIVE",
+                "STR_DAMAGE_LASER_BEAM",
+                "STR_DAMAGE_PLASMA_BEAM",
+                "STR_DAMAGE_STUN",
+                "STR_DAMAGE_MELEE",
+                "STR_DAMAGE_ACID",
+                "STR_DAMAGE_SMOKE",
+                "STR_DAMAGE_10",
+                "STR_DAMAGE_11",
+                "STR_DAMAGE_12",
+                "STR_DAMAGE_13",
+                "STR_DAMAGE_14",
+                "STR_DAMAGE_15",
+                "STR_DAMAGE_16",
+                "STR_DAMAGE_17",
+                "STR_DAMAGE_18",
+                "STR_DAMAGE_19",
+                "STR_DAMAGE_20",
+                "STR_DAMAGE_21",
+                "STR_DAMAGE_22",
+                "STR_MANA",
+            ];
+            this.battleTypes = [
+                "None (Geoscape-only item)",
+                "Firearm",
+                "Ammo",
+                "Melee",
+                "Grenade",
+                "Proximity Grenade",
+                "Medi-Kit",
+                "Motion Scanner",
+                "Mind Probe",
+                "Psi-Amp",
+                "Electro-flare",
+                "Corpse"
+            ];
+            rul = this;
+        }
+        Ruleset.prototype.damageTypeName = function (type) {
+            return this.lang[this.damageTypes[type]];
+        };
+        Ruleset.prototype.sound = function (id) {
+            return this.path + this.sounds[id];
+        };
+        Ruleset.prototype.str = function (id) {
+            return this.lang[id] || id;
+        };
+        Ruleset.prototype.specialSprite = function (type, num) {
+            return num in this[type] ? this.path + this[type][num] : "xpedia/0.png";
+        };
+        Ruleset.prototype.parse = function (data) {
+            for (var _i = 0, data_1 = data; _i < data_1.length; _i++) {
+                var file = data_1[_i];
+                for (var key in file) {
+                    if (key.substr(0, 4) == "lang") {
+                        Object.assign(this.lang, file[key]);
+                    }
+                    if (!(key in this.raw)) {
+                        this.raw[key] = file[key];
+                    }
+                    else {
+                        var old = this.raw[key];
+                        var adding = file[key];
+                        if (old.concat) {
+                            this.raw[key] = old.concat(adding);
+                        }
+                        else {
+                            for (var _a = 0, adding_1 = adding; _a < adding_1.length; _a++) {
+                                var k = adding_1[_a];
+                                if (k in old)
+                                    Object.assign(old[k], adding[k]);
+                                else
+                                    old[k] = adding[k];
+                            }
+                        }
+                    }
+                }
+            }
+            var articleTypes = [
+                "Items",
+                "Conditions",
+                "Categories",
+                "Research",
+                "Manufacture",
+                "Services"
+            ];
+            for (var _b = 0, articleTypes_1 = articleTypes; _b < articleTypes_1.length; _b++) {
+                var type = articleTypes_1[_b];
+                new Section(type, "TYPE");
+            }
+            for (var _c = 0, _d = [
+                "items",
+                "armors",
+                "ufopaedia",
+                "manufacture",
+                "units",
+                "alienDeployments",
+                "research"
+            ]; _c < _d.length; _c++) {
+                var category = _d[_c];
+                var merged = {};
+                for (var _e = 0, _f = this.raw[category]; _e < _f.length; _e++) {
+                    var data_2 = _f[_e];
+                    var id = data_2.type || data_2.id || data_2.name || data_2.delete;
+                    if ("delete" in data_2) {
+                        delete merged[id];
+                    }
+                    else {
+                        if (id && id in merged) {
+                            Object.assign(merged[id], data_2);
+                        }
+                        else {
+                            merged[id] = data_2;
+                        }
+                    }
+                }
+                this.raw[category] = Object.values(merged);
+            }
+            this.modName = this.raw.modName;
+            this.path = "user/mods/" + rul.modName + "/";
+            for (var k in this.lang) {
+                var text = this.lang[k];
+                if (typeof text === "string") {
+                    text = text.replace(/^({NEWLINE})+/, "");
+                    text = text.replace(/{NEWLINE}/g, "<br/>");
+                    this.lang[k] = text;
+                }
+            }
+            for (var _g = 0, _h = rul.damageTypes; _g < _h.length; _g++) {
+                var damage = _h[_g];
+                rul.categories["dmg=" + damage] = [];
+                this.redirect[damage] = "dmg=" + damage;
+                this.lang["dmg=" + damage] = this.lang[damage];
+            }
+            this.parsePedia(this.raw.ufopaedia);
+            this.parseSprites(this.raw.extraSprites);
+            if (this.sprites["BIGOBS.PCK"])
+                this.bigSprite = this.sprites["BIGOBS.PCK"].extra;
+            if (this.sprites["FLOOROB.PCK"])
+                this.floorSprite = this.sprites["FLOOROB.PCK"].extra;
+            if (this.sprites["HANDOB.PCK"])
+                this.handSprite = this.sprites["HANDOB.PCK"].extra;
+            if (this.sprites["BASEBITS.PCK"])
+                this.baseSprite = this.sprites["BASEBITS.PCK"].extra;
+            if (this.raw.extraSounds && this.raw.extraSounds[0])
+                this.sounds = this.raw.extraSounds[0].files;
+            for (var _j = 0, _k = this.raw.items; _j < _k.length; _j++) {
+                var data_3 = _k[_j];
+                new Item(data_3);
+            }
+            for (var _l = 0, _m = this.raw.armors; _l < _m.length; _l++) {
+                var data_4 = _m[_l];
+                new Armor(data_4);
+            }
+            for (var _o = 0, _p = this.raw.units; _o < _p.length; _o++) {
+                var data_5 = _p[_o];
+                new Unit(data_5);
+            }
+            for (var _q = 0, _r = this.raw.crafts; _q < _r.length; _q++) {
+                var data_6 = _r[_q];
+                new Craft(data_6);
+            }
+            for (var _s = 0, _t = this.raw.craftWeapons; _s < _t.length; _s++) {
+                var data_7 = _t[_s];
+                new CraftWeapon(data_7);
+            }
+            for (var _u = 0, _v = this.raw.ufos; _u < _v.length; _u++) {
+                var data_8 = _v[_u];
+                new Ufo(data_8);
+            }
+            for (var _w = 0, _x = this.raw.facilities; _w < _x.length; _w++) {
+                var data_9 = _x[_w];
+                new Facility(data_9);
+            }
+            if (this.raw.startingConditions)
+                for (var _y = 0, _z = this.raw.startingConditions; _y < _z.length; _y++) {
+                    var data_10 = _z[_y];
+                    new StartingConditions(data_10);
+                }
+            for (var _0 = 0, _1 = this.raw.alienDeployments; _0 < _1.length; _0++) {
+                var data_11 = _1[_0];
+                new AlienDeployment(data_11);
+            }
+            for (var _2 = 0, _3 = this.raw.research; _2 < _3.length; _2++) {
+                var data_12 = _3[_2];
+                new Research(data_12);
+            }
+            for (var _4 = 0, _5 = this.raw.manufacture; _4 < _5.length; _4++) {
+                var data_13 = _5[_4];
+                new Manufacture(data_13);
+            }
+            for (var _6 = 0, _7 = Object.values(this.facilities); _6 < _7.length; _6++) {
+                var facility = _7[_6];
+                if (facility.buildCostItems) {
+                    for (var _8 = 0, _9 = Object.keys(facility.buildCostItems); _8 < _9.length; _8++) {
+                        var itemName = _9[_8];
+                        var item = rul.items[itemName];
+                        if (!item)
+                            continue;
+                        if (!item.componentOf)
+                            item.componentOf = {};
+                        item.componentOf[facility.type] =
+                            facility.buildCostItems[itemName].build;
+                        if (!item.manufacture)
+                            item.manufacture = {};
+                        item.manufacture[facility.type] =
+                            facility.buildCostItems[itemName].refund;
+                    }
+                }
+            }
+            for (var _10 = 0, _11 = Object.values(this.items); _10 < _11.length; _10++) {
+                var item = _11[_10];
+                item.attacks();
+                if (item.compatibleAmmo) {
+                    for (var _12 = 0, _13 = item.compatibleAmmo; _12 < _13.length; _12++) {
+                        var ammoId = _13[_12];
+                        var ammo = this.items[ammoId];
+                        if (ammo) {
+                            ammo.compatibleWeapons = ammo.compatibleWeapons || [];
+                            ammo.compatibleWeapons.push(item.type);
+                        }
+                    }
+                }
+            }
+            for (var _14 = 0, _15 = Object.values(this.research); _14 < _15.length; _14++) {
+                var research = _15[_14];
+                backLink(research.name, research.dependencies, rul.research, "leadsTo");
+                backLink(research.name, research.getOneFree, rul.research, "freeFrom");
+                if (research.lookup && research.name == research.lookup) {
+                    console.warn(research.lookup + " lookup is to itself");
+                }
+                if (research.lookup && research.name != research.lookup) {
+                    var lookup = this.research[research.lookup];
+                    lookup.seeAlso = lookup.seeAlso || [];
+                    lookup.seeAlso.push(research.name);
+                    var lookUpArticle = this.article(research.lookup);
+                    var article = this.article(research.name);
+                    if (!rul.lang[article.id])
+                        article.title = lookUpArticle.title;
+                    article.text = lookUpArticle.text;
+                    article.image_id = lookUpArticle.image_id;
+                }
+                if (research.spawnedItem) {
+                    var item = rul.items[research.spawnedItem];
+                    item.spawnedBy = item.spawnedBy || [];
+                    item.spawnedBy.push(research.name);
+                }
+            }
+            this.ourArmors = Object.values(this.armors)
+                .filter(function (a) { return a.units; })
+                .map(function (a) { return a.type; });
+            for (var _16 = 0, articleTypes_2 = articleTypes; _16 < articleTypes_2.length; _16++) {
+                var type = articleTypes_2[_16];
+                rul.sections[type]._articles = rul.sections[type].articles.sort(function (a, b) {
+                    return a.title < b.title ? -1 : 1;
+                });
+            }
+            Article.create({
+                id: "BASE_FUNC",
+                title: "Base Services",
+                type_id: "OTHER",
+                section: "OTHER"
+            });
+            for (var _17 = 0, _18 = Object.keys(this.categories); _17 < _18.length; _17++) {
+                var cat = _18[_17];
+                console.log(cat);
+                Article.create({
+                    id: cat,
+                    title: rul.str(cat),
+                    type_id: "CATEGORIES",
+                    section: "Categories"
+                });
+            }
+            console.log(this);
+            this.search = new Search();
+        };
+        Ruleset.prototype.parsePedia = function (data) {
+            for (var _i = 0, data_14 = data; _i < data_14.length; _i++) {
+                var articleData = data_14[_i];
+                if (articleData.id) {
+                    var article = new Article(articleData);
+                    this.articlesOrder.push(article);
+                    this.articles[article.id] = article;
+                }
+            }
+        };
+        Ruleset.prototype.parseSprites = function (data) {
+            for (var _i = 0, data_15 = data; _i < data_15.length; _i++) {
+                var spriteData = data_15[_i];
+                var sprite = new Sprite(spriteData);
+                this.sprites[sprite.id] = sprite;
+            }
+        };
+        Ruleset.prototype.findNextArticle = function (current, delta) {
+            if (!current)
+                return null;
+            var section = current.section;
+            var list = section ? section.articles : this.articlesOrder;
+            var index = list.findIndex(function (a) { return a.id == current.id; });
+            if (index != undefined) {
+                var nextIndex = index + delta;
+                var nextArticle = list[nextIndex];
+                return nextArticle;
+            }
+        };
+        Ruleset.prototype.decamelize = function (str, separ) {
+            if (separ === void 0) { separ = " "; }
+            if (typeof str === "string") {
+                if (str.includes("_") && str.search(/[a-z]/) == -1)
+                    str = str.replace(/_/g, " ");
+                else
+                    str = str.replace(/([^A-Z])([A-Z])/g, "$1" + separ + "$2");
+                str = str.substr(0, 1).toUpperCase() + str.substr(1).toLowerCase();
+            }
+            return str;
+        };
+        Ruleset.prototype.sprite = function (id) {
+            if (id in this.sprites)
+                return this.path + this.sprites[id].path;
+            return this.path + id;
+        };
+        Ruleset.prototype.load = function (text) {
+            return __awaiter(this, void 0, void 0, function () {
+                var zip, data;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            text = text.trim();
+                            if (!(text.substr(0, 6) == "base64")) return [3 /*break*/, 3];
+                            text = text.substr(6);
+                            zip = new JSZip();
+                            return [4 /*yield*/, zip.loadAsync(text, { base64: true })];
+                        case 1:
+                            _a.sent();
+                            return [4 /*yield*/, zip.file("xpedia").async("text")];
+                        case 2:
+                            text = _a.sent();
+                            _a.label = 3;
+                        case 3:
+                            data = parseYaml(text);
+                            try {
+                                this.parse(data);
+                            }
+                            catch (e) {
+                                console.error(e);
+                            }
+                            return [2 /*return*/];
+                    }
+                });
+            });
+        };
+        Ruleset.prototype.addToSection = function (article, sectionId) {
+            var section;
+            if (sectionId in rul.sections)
+                section = rul.sections[sectionId];
+            else
+                section = rul.sections[sectionId] = new Section(sectionId);
+            if (article.id != section.id)
+                section.add(article);
+            article.section = section;
+            return section;
+        };
+        Ruleset.prototype.linksByType = function (type) {
+            switch (type) {
+                case "CONDITIONS":
+                    return Object.keys(this.startingConditions).map(function (a) { return "CONDITIONS_" + a; });
+            }
+            return [];
+        };
+        Ruleset.prototype.bodiesCompare = function (strs) {
+            for (var i in strs) {
+                if (strs[i].length == 2)
+                    strs[i] =
+                        (strs[i].charAt(0) == "M" ? "A" : "B") + "0" + strs[i].substr(1);
+            }
+            return strs[0] > strs[1] ? 1 : -1;
+        };
+        Ruleset.prototype.article = function (id) {
+            var a = this.articles[this.redirect[id] || id];
+            return a;
+        };
+        return Ruleset;
+    }());
+
+    function noop() { }
+    function assign(tar, src) {
+        // @ts-ignore
+        for (const k in src)
+            tar[k] = src[k];
+        return tar;
+    }
+    function is_promise(value) {
+        return value && typeof value === 'object' && typeof value.then === 'function';
+    }
+    function add_location(element, file, line, column, char) {
+        element.__svelte_meta = {
+            loc: { file, line, column, char }
+        };
+    }
+    function run(fn) {
+        return fn();
+    }
+    function blank_object() {
+        return Object.create(null);
+    }
+    function run_all(fns) {
+        fns.forEach(run);
+    }
+    function is_function(thing) {
+        return typeof thing === 'function';
+    }
+    function safe_not_equal(a, b) {
+        return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+    }
+    function null_to_empty(value) {
+        return value == null ? '' : value;
+    }
+
+    function append(target, node) {
+        target.appendChild(node);
+    }
+    function insert(target, node, anchor) {
+        target.insertBefore(node, anchor || null);
+    }
+    function detach(node) {
+        node.parentNode.removeChild(node);
+    }
+    function destroy_each(iterations, detaching) {
+        for (let i = 0; i < iterations.length; i += 1) {
+            if (iterations[i])
+                iterations[i].d(detaching);
+        }
+    }
+    function element(name) {
+        return document.createElement(name);
+    }
+    function text(data) {
+        return document.createTextNode(data);
+    }
+    function space() {
+        return text(' ');
+    }
+    function empty() {
+        return text('');
+    }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
+    }
+    function attr(node, attribute, value) {
+        if (value == null)
+            node.removeAttribute(attribute);
+        else
+            node.setAttribute(attribute, value);
+    }
+    function children(element) {
+        return Array.from(element.childNodes);
+    }
+    function set_input_value(input, value) {
+        if (value != null || input.value) {
+            input.value = value;
+        }
+    }
+    function set_style(node, key, value, important) {
+        node.style.setProperty(key, value, important ? 'important' : '');
+    }
+    function custom_event(type, detail) {
+        const e = document.createEvent('CustomEvent');
+        e.initCustomEvent(type, false, false, detail);
+        return e;
+    }
+    class HtmlTag {
+        constructor(html, anchor = null) {
+            this.e = element('div');
+            this.a = anchor;
+            this.u(html);
+        }
+        m(target, anchor = null) {
+            for (let i = 0; i < this.n.length; i += 1) {
+                insert(target, this.n[i], anchor);
+            }
+            this.t = target;
+        }
+        u(html) {
+            this.e.innerHTML = html;
+            this.n = Array.from(this.e.childNodes);
+        }
+        p(html) {
+            this.d();
+            this.u(html);
+            this.m(this.t, this.a);
+        }
+        d() {
+            this.n.forEach(detach);
+        }
+    }
+
+    let current_component;
+    function set_current_component(component) {
+        current_component = component;
+    }
+    function get_current_component() {
+        if (!current_component)
+            throw new Error(`Function called outside component initialization`);
+        return current_component;
+    }
+    function afterUpdate(fn) {
+        get_current_component().$$.after_update.push(fn);
+    }
+
+    const dirty_components = [];
+    const binding_callbacks = [];
+    const render_callbacks = [];
+    const flush_callbacks = [];
+    const resolved_promise = Promise.resolve();
+    let update_scheduled = false;
+    function schedule_update() {
+        if (!update_scheduled) {
+            update_scheduled = true;
+            resolved_promise.then(flush);
+        }
+    }
+    function tick() {
+        schedule_update();
+        return resolved_promise;
+    }
+    function add_render_callback(fn) {
+        render_callbacks.push(fn);
+    }
+    function flush() {
+        const seen_callbacks = new Set();
+        do {
+            // first, call beforeUpdate functions
+            // and update components
+            while (dirty_components.length) {
+                const component = dirty_components.shift();
+                set_current_component(component);
+                update(component.$$);
+            }
+            while (binding_callbacks.length)
+                binding_callbacks.pop()();
+            // then, once components are updated, call
+            // afterUpdate functions. This may cause
+            // subsequent updates...
+            for (let i = 0; i < render_callbacks.length; i += 1) {
+                const callback = render_callbacks[i];
+                if (!seen_callbacks.has(callback)) {
+                    callback();
+                    // ...so guard against infinite loops
+                    seen_callbacks.add(callback);
+                }
+            }
+            render_callbacks.length = 0;
+        } while (dirty_components.length);
+        while (flush_callbacks.length) {
+            flush_callbacks.pop()();
+        }
+        update_scheduled = false;
+    }
+    function update($$) {
+        if ($$.fragment) {
+            $$.update($$.dirty);
+            run_all($$.before_update);
+            $$.fragment.p($$.dirty, $$.ctx);
+            $$.dirty = null;
+            $$.after_update.forEach(add_render_callback);
+        }
+    }
+    const outroing = new Set();
+    let outros;
+    function group_outros() {
+        outros = {
+            r: 0,
+            c: [],
+            p: outros // parent group
+        };
+    }
+    function check_outros() {
+        if (!outros.r) {
+            run_all(outros.c);
+        }
+        outros = outros.p;
+    }
+    function transition_in(block, local) {
+        if (block && block.i) {
+            outroing.delete(block);
+            block.i(local);
+        }
+    }
+    function transition_out(block, local, detach, callback) {
+        if (block && block.o) {
+            if (outroing.has(block))
+                return;
+            outroing.add(block);
+            outros.c.push(() => {
+                outroing.delete(block);
+                if (callback) {
+                    if (detach)
+                        block.d(1);
+                    callback();
+                }
+            });
+            block.o(local);
+        }
+    }
+
+    function handle_promise(promise, info) {
+        const token = info.token = {};
+        function update(type, index, key, value) {
+            if (info.token !== token)
+                return;
+            info.resolved = key && { [key]: value };
+            const child_ctx = assign(assign({}, info.ctx), info.resolved);
+            const block = type && (info.current = type)(child_ctx);
+            if (info.block) {
+                if (info.blocks) {
+                    info.blocks.forEach((block, i) => {
+                        if (i !== index && block) {
+                            group_outros();
+                            transition_out(block, 1, 1, () => {
+                                info.blocks[i] = null;
+                            });
+                            check_outros();
+                        }
+                    });
+                }
+                else {
+                    info.block.d(1);
+                }
+                block.c();
+                transition_in(block, 1);
+                block.m(info.mount(), info.anchor);
+                flush();
+            }
+            info.block = block;
+            if (info.blocks)
+                info.blocks[index] = block;
+        }
+        if (is_promise(promise)) {
+            const current_component = get_current_component();
+            promise.then(value => {
+                set_current_component(current_component);
+                update(info.then, 1, info.value, value);
+                set_current_component(null);
+            }, error => {
+                set_current_component(current_component);
+                update(info.catch, 2, info.error, error);
+                set_current_component(null);
+            });
+            // if we previously had a then/catch block, destroy it
+            if (info.current !== info.pending) {
+                update(info.pending, 0);
+                return true;
+            }
+        }
+        else {
+            if (info.current !== info.then) {
+                update(info.then, 1, info.value, promise);
+                return true;
+            }
+            info.resolved = { [info.value]: promise };
+        }
+    }
+
+    const globals = (typeof window !== 'undefined' ? window : global);
+    function mount_component(component, target, anchor) {
+        const { fragment, on_mount, on_destroy, after_update } = component.$$;
+        fragment.m(target, anchor);
+        // onMount happens before the initial afterUpdate
+        add_render_callback(() => {
+            const new_on_destroy = on_mount.map(run).filter(is_function);
+            if (on_destroy) {
+                on_destroy.push(...new_on_destroy);
+            }
+            else {
+                // Edge case - component was destroyed immediately,
+                // most likely as a result of a binding initialising
+                run_all(new_on_destroy);
+            }
+            component.$$.on_mount = [];
+        });
+        after_update.forEach(add_render_callback);
+    }
+    function destroy_component(component, detaching) {
+        if (component.$$.fragment) {
+            run_all(component.$$.on_destroy);
+            component.$$.fragment.d(detaching);
+            // TODO null out other refs, including component.$$ (but need to
+            // preserve final state?)
+            component.$$.on_destroy = component.$$.fragment = null;
+            component.$$.ctx = {};
+        }
+    }
+    function make_dirty(component, key) {
+        if (!component.$$.dirty) {
+            dirty_components.push(component);
+            schedule_update();
+            component.$$.dirty = blank_object();
+        }
+        component.$$.dirty[key] = true;
+    }
+    function init(component, options, instance, create_fragment, not_equal, prop_names) {
+        const parent_component = current_component;
+        set_current_component(component);
+        const props = options.props || {};
+        const $$ = component.$$ = {
+            fragment: null,
+            ctx: null,
+            // state
+            props: prop_names,
+            update: noop,
+            not_equal,
+            bound: blank_object(),
+            // lifecycle
+            on_mount: [],
+            on_destroy: [],
+            before_update: [],
+            after_update: [],
+            context: new Map(parent_component ? parent_component.$$.context : []),
+            // everything else
+            callbacks: blank_object(),
+            dirty: null
+        };
+        let ready = false;
+        $$.ctx = instance
+            ? instance(component, props, (key, ret, value = ret) => {
+                if ($$.ctx && not_equal($$.ctx[key], $$.ctx[key] = value)) {
+                    if ($$.bound[key])
+                        $$.bound[key](value);
+                    if (ready)
+                        make_dirty(component, key);
+                }
+                return ret;
+            })
+            : props;
+        $$.update();
+        ready = true;
+        run_all($$.before_update);
+        $$.fragment = create_fragment($$.ctx);
+        if (options.target) {
+            if (options.hydrate) {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment.l(children(options.target));
+            }
+            else {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment.c();
+            }
+            if (options.intro)
+                transition_in(component.$$.fragment);
+            mount_component(component, options.target, options.anchor);
+            flush();
+        }
+        set_current_component(parent_component);
+    }
+    class SvelteComponent {
+        $destroy() {
+            destroy_component(this, 1);
+            this.$destroy = noop;
+        }
+        $on(type, callback) {
+            const callbacks = (this.$$.callbacks[type] || (this.$$.callbacks[type] = []));
+            callbacks.push(callback);
+            return () => {
+                const index = callbacks.indexOf(callback);
+                if (index !== -1)
+                    callbacks.splice(index, 1);
+            };
+        }
+        $set() {
+            // overridden by instance, if it has props
+        }
+    }
+
+    function dispatch_dev(type, detail) {
+        document.dispatchEvent(custom_event(type, detail));
+    }
+    function append_dev(target, node) {
+        dispatch_dev("SvelteDOMInsert", { target, node });
+        append(target, node);
+    }
+    function insert_dev(target, node, anchor) {
+        dispatch_dev("SvelteDOMInsert", { target, node, anchor });
+        insert(target, node, anchor);
+    }
+    function detach_dev(node) {
+        dispatch_dev("SvelteDOMRemove", { node });
+        detach(node);
+    }
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+        const modifiers = options === true ? ["capture"] : options ? Array.from(Object.keys(options)) : [];
+        if (has_prevent_default)
+            modifiers.push('preventDefault');
+        if (has_stop_propagation)
+            modifiers.push('stopPropagation');
+        dispatch_dev("SvelteDOMAddEventListener", { node, event, handler, modifiers });
+        const dispose = listen(node, event, handler, options);
+        return () => {
+            dispatch_dev("SvelteDOMRemoveEventListener", { node, event, handler, modifiers });
+            dispose();
+        };
+    }
+    function attr_dev(node, attribute, value) {
+        attr(node, attribute, value);
+        if (value == null)
+            dispatch_dev("SvelteDOMRemoveAttribute", { node, attribute });
+        else
+            dispatch_dev("SvelteDOMSetAttribute", { node, attribute, value });
+    }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.data === data)
+            return;
+        dispatch_dev("SvelteDOMSetData", { node: text, data });
+        text.data = data;
+    }
+    class SvelteComponentDev extends SvelteComponent {
+        constructor(options) {
+            if (!options || (!options.target && !options.$$inline)) {
+                throw new Error(`'target' is a required option`);
+            }
+            super();
+        }
+        $destroy() {
+            super.$destroy();
+            this.$destroy = () => {
+                console.warn(`Component was already destroyed`); // eslint-disable-line no-console
+            };
+        }
+    }
+
+    /* src\Link.svelte generated by Svelte v3.12.1 */
+
+    const file = "src\\Link.svelte";
+
+    // (13:0) {:else}
+    function create_else_block(ctx) {
+    	var t_value = rul.str(ctx.href) + "", t;
+
+    	const block = {
+    		c: function create() {
+    			t = text(t_value);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.href) && t_value !== (t_value = rul.str(ctx.href) + "")) {
+    				set_data_dev(t, t_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(t);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block.name, type: "else", source: "(13:0) {:else}", ctx });
+    	return block;
+    }
+
+    // (11:0) {#if rul.article(href)}
+    function create_if_block(ctx) {
+    	var a, t_value = rul.str(ctx.href) + "", t, a_href_value;
+
+    	const block = {
+    		c: function create() {
+    			a = element("a");
+    			t = text(t_value);
+    			attr_dev(a, "href", a_href_value = '#' + ctx.href);
+    			add_location(a, file, 11, 2, 172);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, a, anchor);
+    			append_dev(a, t);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.href) && t_value !== (t_value = rul.str(ctx.href) + "")) {
+    				set_data_dev(t, t_value);
+    			}
+
+    			if ((changed.href) && a_href_value !== (a_href_value = '#' + ctx.href)) {
+    				attr_dev(a, "href", a_href_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(a);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block.name, type: "if", source: "(11:0) {#if rul.article(href)}", ctx });
+    	return block;
+    }
+
+    function create_fragment(ctx) {
+    	var show_if, if_block_anchor;
+
+    	function select_block_type(changed, ctx) {
+    		if ((show_if == null) || changed.href) show_if = !!(rul.article(ctx.href));
+    		if (show_if) return create_if_block;
+    		return create_else_block;
+    	}
+
+    	var current_block_type = select_block_type(null, ctx);
+    	var if_block = current_block_type(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (current_block_type === (current_block_type = select_block_type(changed, ctx)) && if_block) {
+    				if_block.p(changed, ctx);
+    			} else {
+    				if_block.d(1);
+    				if_block = current_block_type(ctx);
+    				if (if_block) {
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance($$self, $$props, $$invalidate) {
+    	let { href } = $$props;
+
+    	const writable_props = ['href'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Link> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('href' in $$props) $$invalidate('href', href = $$props.href);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { href };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('href' in $$props) $$invalidate('href', href = $$props.href);
+    	};
+
+    	$$self.$$.update = ($$dirty = { href: 1 }) => {
+    		if ($$dirty.href) { {
+            if(href && href.type)
+              $$invalidate('href', href = href.type);
+          } }
+    	};
+
+    	return { href };
+    }
+
+    class Link extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance, create_fragment, safe_not_equal, ["href"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Link", options, id: create_fragment.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.href === undefined && !('href' in props)) {
+    			console.warn("<Link> was created without expected prop 'href'");
+    		}
+    	}
+
+    	get href() {
+    		throw new Error("<Link>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set href(value) {
+    		throw new Error("<Link>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\LinksPage.svelte generated by Svelte v3.12.1 */
+
+    const file$1 = "src\\LinksPage.svelte";
+
+    function get_each_context(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.option = list[i];
+    	return child_ctx;
+    }
+
+    // (13:0) {#if links && links.length > 0}
+    function create_if_block$1(ctx) {
+    	var t0, div1, t1, div0, ol, current;
+
+    	var if_block0 = (!ctx.title) && create_if_block_2(ctx);
+
+    	var if_block1 = (ctx.title) && create_if_block_1(ctx);
+
+    	let each_value = ctx.sortedList;
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			if (if_block0) if_block0.c();
+    			t0 = space();
+    			div1 = element("div");
+    			if (if_block1) if_block1.c();
+    			t1 = space();
+    			div0 = element("div");
+    			ol = element("ol");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			add_location(ol, file$1, 23, 6, 625);
+    			attr_dev(div0, "class", "cols");
+    			add_location(div0, file$1, 22, 4, 597);
+    			attr_dev(div1, "class", "links-page");
+    			add_location(div1, file$1, 18, 2, 485);
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block0) if_block0.m(target, anchor);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, div1, anchor);
+    			if (if_block1) if_block1.m(div1, null);
+    			append_dev(div1, t1);
+    			append_dev(div1, div0);
+    			append_dev(div0, ol);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(ol, null);
+    			}
+
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (!ctx.title) {
+    				if (if_block0) {
+    					if_block0.p(changed, ctx);
+    				} else {
+    					if_block0 = create_if_block_2(ctx);
+    					if_block0.c();
+    					if_block0.m(t0.parentNode, t0);
+    				}
+    			} else if (if_block0) {
+    				if_block0.d(1);
+    				if_block0 = null;
+    			}
+
+    			if (ctx.title) {
+    				if (if_block1) {
+    					if_block1.p(changed, ctx);
+    				} else {
+    					if_block1 = create_if_block_1(ctx);
+    					if_block1.c();
+    					if_block1.m(div1, t1);
+    				}
+    			} else if (if_block1) {
+    				if_block1.d(1);
+    				if_block1 = null;
+    			}
+
+    			if (changed.sortedList) {
+    				each_value = ctx.sortedList;
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(ol, null);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block0) if_block0.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(t0);
+    				detach_dev(div1);
+    			}
+
+    			if (if_block1) if_block1.d();
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$1.name, type: "if", source: "(13:0) {#if links && links.length > 0}", ctx });
+    	return block;
+    }
+
+    // (14:2) {#if !title}
+    function create_if_block_2(ctx) {
+    	var div, button, t, button_style_value, dispose;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			button = element("button");
+    			t = text("A-Z");
+    			attr_dev(button, "style", button_style_value = ctx.sorted?"":"text-decoration:line-through");
+    			add_location(button, file$1, 15, 6, 358);
+    			attr_dev(div, "class", "links-page-button");
+    			add_location(div, file$1, 14, 4, 319);
+    			dispose = listen_dev(button, "click", ctx.click_handler);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, button);
+    			append_dev(button, t);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.sorted) && button_style_value !== (button_style_value = ctx.sorted?"":"text-decoration:line-through")) {
+    				attr_dev(button, "style", button_style_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+
+    			dispose();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2.name, type: "if", source: "(14:2) {#if !title}", ctx });
+    	return block;
+    }
+
+    // (20:4) {#if title}
+    function create_if_block_1(ctx) {
+    	var div, t;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			t = text(ctx.title);
+    			attr_dev(div, "class", "links-page-header");
+    			add_location(div, file$1, 20, 6, 534);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, t);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.title) {
+    				set_data_dev(t, ctx.title);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1.name, type: "if", source: "(20:4) {#if title}", ctx });
+    	return block;
+    }
+
+    // (25:8) {#each sortedList as option}
+    function create_each_block(ctx) {
+    	var li, t, current;
+
+    	var link = new Link({
+    		props: { href: ctx.option },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			li = element("li");
+    			link.$$.fragment.c();
+    			t = space();
+    			add_location(li, file$1, 25, 10, 679);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, li, anchor);
+    			mount_component(link, li, null);
+    			append_dev(li, t);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var link_changes = {};
+    			if (changed.sortedList) link_changes.href = ctx.option;
+    			link.$set(link_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(link.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(link.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(li);
+    			}
+
+    			destroy_component(link);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block.name, type: "each", source: "(25:8) {#each sortedList as option}", ctx });
+    	return block;
+    }
+
+    function create_fragment$1(ctx) {
+    	var if_block_anchor, current;
+
+    	var if_block = (ctx.links && ctx.links.length > 0) && create_if_block$1(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (ctx.links && ctx.links.length > 0) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    					transition_in(if_block, 1);
+    				} else {
+    					if_block = create_if_block$1(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$1.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$1($$self, $$props, $$invalidate) {
+    	
+
+      let { links, title = null } = $$props;  
+      let sorted = false;
+
+    	const writable_props = ['links', 'title'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<LinksPage> was created with unknown prop '${key}'`);
+    	});
+
+    	const click_handler = (e) => $$invalidate('sorted', sorted = !sorted);
+
+    	$$self.$set = $$props => {
+    		if ('links' in $$props) $$invalidate('links', links = $$props.links);
+    		if ('title' in $$props) $$invalidate('title', title = $$props.title);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { links, title, sorted, sortedList };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('links' in $$props) $$invalidate('links', links = $$props.links);
+    		if ('title' in $$props) $$invalidate('title', title = $$props.title);
+    		if ('sorted' in $$props) $$invalidate('sorted', sorted = $$props.sorted);
+    		if ('sortedList' in $$props) $$invalidate('sortedList', sortedList = $$props.sortedList);
+    	};
+
+    	let sortedList;
+
+    	$$self.$$.update = ($$dirty = { sorted: 1, links: 1 }) => {
+    		if ($$dirty.sorted || $$dirty.links) { $$invalidate('sortedList', sortedList = sorted?links.slice().sort((a,b) => rul.str(a) > rul.str(b)?1:-1):links); }
+    	};
+
+    	return {
+    		links,
+    		title,
+    		sorted,
+    		sortedList,
+    		click_handler
+    	};
+    }
+
+    class LinksPage extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, ["links", "title"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "LinksPage", options, id: create_fragment$1.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.links === undefined && !('links' in props)) {
+    			console.warn("<LinksPage> was created without expected prop 'links'");
+    		}
+    	}
+
+    	get links() {
+    		throw new Error("<LinksPage>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set links(value) {
+    		throw new Error("<LinksPage>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get title() {
+    		throw new Error("<LinksPage>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set title(value) {
+    		throw new Error("<LinksPage>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\Intro.svelte generated by Svelte v3.12.1 */
+
+    const file$2 = "src\\Intro.svelte";
+
+    function create_fragment$2(ctx) {
+    	var div6, div3, h1, t1, t2_value = rul.str("Welcome onboard, seagal! Take your bunk at da orlop and have some X-Grog, yarrr!") + "", t2, t3, br0, t4, h40, t5_value = rul.str("Arrr, what da FLUFF is X-Piratez stuff?") + "", t5, t6, t7_value = rul.str("X-Piratez is a total conversion mod designed for OpenXcom, a free open-source reimplementation of") + "", t7, t8, t9_value = rul.str("and Terror From The Deep. There are major gameplay differences, as well as many additions to research, manufacture, base facilities, and so on. Piratez is designed for the veteran X-Com player seeking a much longer and challenging campaign.") + "", t9, br1, t10, br2, t11, t12_value = rul.str("The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. Piratez is the biggest OpenXcom mod to date.") + "", t12, br3, t13, br4, t14, a0, t15_value = rul.str("Download mod") + "", t15, t16, t17_value = rul.str("join our community with") + "", t17, t18, a1, t19_value = rul.str("Discord server") + "", t19, t20, t21_value = rul.str("and") + "", t21, t22, a2, t23_value = rul.str("forum") + "", t23, t24, br5, t25, br6, t26, h41, t27_value = rul.str("Current mod version is") + "", t27, t28, t29, div2, div0, t30, t31_value = rul.str("READ OR DIE. The Bootypedia is your friend. Trust me on that.") + "", t31, t32, t33, div1, t34, t35_value = rul.str("mod author, lead designer") + "", t35, t36, h42, t37_value = rul.str("WARNINGS") + "", t37, t38, t39_value = rul.str("Contains some NUDITY of both sexes. You've been warned. Also take note this is not any porn-quality T&A since it's not a porn game.") + "", t39, br7, t40, t41_value = rul.str("Do not install OpenXcom nightlies! They are not compatible with Piratez.") + "", t41, br8, t42, t43_value = rul.str("If you absolutely can't stand bikini babes fighting Nazis with chainsaws, you may suffer some trauma.") + "", t43, br9, t44, t45_value = rul.str("If you're looking for a tactical game that doesn't require brains, try DOTA instead.") + "", t45, br10, t46, t47_value = rul.str("Read or Die.") + "", t47, br11, t48, t49_value = rul.str("Contains riddles. Not everything is what it seems.") + "", t49, br12, t50, t51_value = rul.str("A single campaign might take as much as 400 hours.") + "", t51, br13, t52, br14, t53, t54_value = rul.str("Wiki is powered by") + "", t54, t55, a3, t57, t58, div5, button0, t59_value = rul.str("Download (forum link)") + "", t59, t60, button1, t61_value = rul.str("Download (from mod.io)") + "", t61, t62, div4, img0, t63, img1, t64, img2, t65, img3, t66, img4;
+
+    	const block = {
+    		c: function create() {
+    			div6 = element("div");
+    			div3 = element("div");
+    			h1 = element("h1");
+    			h1.textContent = "X-PirateZ";
+    			t1 = space();
+    			t2 = text(t2_value);
+    			t3 = space();
+    			br0 = element("br");
+    			t4 = space();
+    			h40 = element("h4");
+    			t5 = text(t5_value);
+    			t6 = space();
+    			t7 = text(t7_value);
+    			t8 = text(" X-Com: Enemy Unknown (1994) ");
+    			t9 = text(t9_value);
+    			br1 = element("br");
+    			t10 = space();
+    			br2 = element("br");
+    			t11 = space();
+    			t12 = text(t12_value);
+    			br3 = element("br");
+    			t13 = space();
+    			br4 = element("br");
+    			t14 = space();
+    			a0 = element("a");
+    			t15 = text(t15_value);
+    			t16 = text(", ");
+    			t17 = text(t17_value);
+    			t18 = space();
+    			a1 = element("a");
+    			t19 = text(t19_value);
+    			t20 = space();
+    			t21 = text(t21_value);
+    			t22 = space();
+    			a2 = element("a");
+    			t23 = text(t23_value);
+    			t24 = text("!");
+    			br5 = element("br");
+    			t25 = space();
+    			br6 = element("br");
+    			t26 = space();
+    			h41 = element("h4");
+    			t27 = text(t27_value);
+    			t28 = text(" K2");
+    			t29 = space();
+    			div2 = element("div");
+    			div0 = element("div");
+    			t30 = text("\"");
+    			t31 = text(t31_value);
+    			t32 = text("\"");
+    			t33 = space();
+    			div1 = element("div");
+    			t34 = text("– Dioxine, ");
+    			t35 = text(t35_value);
+    			t36 = space();
+    			h42 = element("h4");
+    			t37 = text(t37_value);
+    			t38 = text("\r\n      1. ");
+    			t39 = text(t39_value);
+    			br7 = element("br");
+    			t40 = text("\r\n      2. ");
+    			t41 = text(t41_value);
+    			br8 = element("br");
+    			t42 = text("\r\n      3. ");
+    			t43 = text(t43_value);
+    			br9 = element("br");
+    			t44 = text("\r\n      4. ");
+    			t45 = text(t45_value);
+    			br10 = element("br");
+    			t46 = text("\r\n      5. ");
+    			t47 = text(t47_value);
+    			br11 = element("br");
+    			t48 = text("\r\n      6. ");
+    			t49 = text(t49_value);
+    			br12 = element("br");
+    			t50 = text("\r\n      7. ");
+    			t51 = text(t51_value);
+    			br13 = element("br");
+    			t52 = space();
+    			br14 = element("br");
+    			t53 = space();
+    			t54 = text(t54_value);
+    			t55 = space();
+    			a3 = element("a");
+    			a3.textContent = "Baturinsky's XPedia";
+    			t57 = text(".");
+    			t58 = space();
+    			div5 = element("div");
+    			button0 = element("button");
+    			t59 = text(t59_value);
+    			t60 = space();
+    			button1 = element("button");
+    			t61 = text(t61_value);
+    			t62 = space();
+    			div4 = element("div");
+    			img0 = element("img");
+    			t63 = space();
+    			img1 = element("img");
+    			t64 = space();
+    			img2 = element("img");
+    			t65 = space();
+    			img3 = element("img");
+    			t66 = space();
+    			img4 = element("img");
+    			add_location(h1, file$2, 7, 4, 185);
+    			add_location(br0, file$2, 9, 4, 310);
+    			add_location(h40, file$2, 10, 4, 321);
+    			add_location(br1, file$2, 11, 398, 782);
+    			add_location(br2, file$2, 12, 6, 795);
+    			add_location(br3, file$2, 13, 222, 1024);
+    			add_location(br4, file$2, 14, 6, 1038);
+    			attr_dev(a0, "href", "https://openxcom.org/forum/index.php/topic,3626.0.html");
+    			attr_dev(a0, "target", "_blank");
+    			add_location(a0, file$2, 15, 6, 1051);
+    			attr_dev(a1, "href", "https://discord.gg/b5KXPvX");
+    			attr_dev(a1, "target", "_blank");
+    			add_location(a1, file$2, 15, 155, 1200);
+    			attr_dev(a2, "href", "https://openxcom.org/forum/index.php/board,18.0.html");
+    			attr_dev(a2, "target", "_blank");
+    			add_location(a2, file$2, 15, 257, 1302);
+    			add_location(br5, file$2, 15, 359, 1404);
+    			add_location(br6, file$2, 16, 6, 1417);
+    			add_location(h41, file$2, 17, 4, 1428);
+    			attr_dev(div0, "class", "quote");
+    			add_location(div0, file$2, 19, 8, 1498);
+    			attr_dev(div1, "class", "qsign");
+    			add_location(div1, file$2, 22, 8, 1631);
+    			add_location(div2, file$2, 18, 6, 1483);
+    			add_location(h42, file$2, 26, 6, 1750);
+    			add_location(br7, file$2, 27, 153, 1935);
+    			add_location(br8, file$2, 28, 94, 2036);
+    			add_location(br9, file$2, 29, 123, 2166);
+    			add_location(br10, file$2, 30, 106, 2279);
+    			add_location(br11, file$2, 31, 34, 2320);
+    			add_location(br12, file$2, 32, 72, 2399);
+    			add_location(br13, file$2, 33, 72, 2478);
+    			add_location(br14, file$2, 34, 4, 2489);
+    			attr_dev(a3, "href", "https://github.com/baturinsky/xpedia/");
+    			add_location(a3, file$2, 36, 36, 2534);
+    			attr_dev(div3, "class", "column is-full-touch is-9-desktop");
+    			add_location(div3, file$2, 6, 2, 132);
+    			attr_dev(button0, "title", "Download");
+    			attr_dev(button0, "class", "downloadbtn");
+    			attr_dev(button0, "onclick", " window.open('https://openxcom.org/forum/index.php/topic,3626.0.html', '_blank'); return false;");
+    			add_location(button0, file$2, 40, 4, 2677);
+    			attr_dev(button1, "title", "Download");
+    			attr_dev(button1, "class", "downloadbtn");
+    			attr_dev(button1, "onclick", " window.open('https://openxcom.mod.io/x-piratez', '_blank'); return false;");
+    			add_location(button1, file$2, 41, 4, 2877);
+    			attr_dev(img0, "class", "imgbox");
+    			attr_dev(img0, "src", "https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen1209.png");
+    			attr_dev(img0, "alt", "screen1209.png");
+    			add_location(img0, file$2, 43, 6, 3085);
+    			attr_dev(img1, "class", "imgbox");
+    			attr_dev(img1, "src", "https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen334.png");
+    			attr_dev(img1, "alt", "screen334.png");
+    			add_location(img1, file$2, 44, 6, 3206);
+    			attr_dev(img2, "class", "imgbox");
+    			attr_dev(img2, "src", "https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen757.png");
+    			attr_dev(img2, "alt", "screen757.png");
+    			add_location(img2, file$2, 45, 6, 3325);
+    			attr_dev(img3, "class", "imgbox");
+    			attr_dev(img3, "src", "https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen135.png");
+    			attr_dev(img3, "alt", "screen135.png");
+    			add_location(img3, file$2, 46, 6, 3444);
+    			attr_dev(img4, "class", "imgbox");
+    			attr_dev(img4, "src", "https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen789.png");
+    			attr_dev(img4, "alt", "screen789.png");
+    			add_location(img4, file$2, 47, 6, 3563);
+    			attr_dev(div4, "class", "imgcol");
+    			add_location(div4, file$2, 42, 4, 3057);
+    			attr_dev(div5, "class", "column is-hidden-touch is-3-desktop");
+    			add_location(div5, file$2, 39, 2, 2622);
+    			attr_dev(div6, "class", "columns");
+    			add_location(div6, file$2, 5, 0, 107);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div6, anchor);
+    			append_dev(div6, div3);
+    			append_dev(div3, h1);
+    			append_dev(div3, t1);
+    			append_dev(div3, t2);
+    			append_dev(div3, t3);
+    			append_dev(div3, br0);
+    			append_dev(div3, t4);
+    			append_dev(div3, h40);
+    			append_dev(h40, t5);
+    			append_dev(div3, t6);
+    			append_dev(div3, t7);
+    			append_dev(div3, t8);
+    			append_dev(div3, t9);
+    			append_dev(div3, br1);
+    			append_dev(div3, t10);
+    			append_dev(div3, br2);
+    			append_dev(div3, t11);
+    			append_dev(div3, t12);
+    			append_dev(div3, br3);
+    			append_dev(div3, t13);
+    			append_dev(div3, br4);
+    			append_dev(div3, t14);
+    			append_dev(div3, a0);
+    			append_dev(a0, t15);
+    			append_dev(div3, t16);
+    			append_dev(div3, t17);
+    			append_dev(div3, t18);
+    			append_dev(div3, a1);
+    			append_dev(a1, t19);
+    			append_dev(div3, t20);
+    			append_dev(div3, t21);
+    			append_dev(div3, t22);
+    			append_dev(div3, a2);
+    			append_dev(a2, t23);
+    			append_dev(div3, t24);
+    			append_dev(div3, br5);
+    			append_dev(div3, t25);
+    			append_dev(div3, br6);
+    			append_dev(div3, t26);
+    			append_dev(div3, h41);
+    			append_dev(h41, t27);
+    			append_dev(h41, t28);
+    			append_dev(div3, t29);
+    			append_dev(div3, div2);
+    			append_dev(div2, div0);
+    			append_dev(div0, t30);
+    			append_dev(div0, t31);
+    			append_dev(div0, t32);
+    			append_dev(div2, t33);
+    			append_dev(div2, div1);
+    			append_dev(div1, t34);
+    			append_dev(div1, t35);
+    			append_dev(div3, t36);
+    			append_dev(div3, h42);
+    			append_dev(h42, t37);
+    			append_dev(div3, t38);
+    			append_dev(div3, t39);
+    			append_dev(div3, br7);
+    			append_dev(div3, t40);
+    			append_dev(div3, t41);
+    			append_dev(div3, br8);
+    			append_dev(div3, t42);
+    			append_dev(div3, t43);
+    			append_dev(div3, br9);
+    			append_dev(div3, t44);
+    			append_dev(div3, t45);
+    			append_dev(div3, br10);
+    			append_dev(div3, t46);
+    			append_dev(div3, t47);
+    			append_dev(div3, br11);
+    			append_dev(div3, t48);
+    			append_dev(div3, t49);
+    			append_dev(div3, br12);
+    			append_dev(div3, t50);
+    			append_dev(div3, t51);
+    			append_dev(div3, br13);
+    			append_dev(div3, t52);
+    			append_dev(div3, br14);
+    			append_dev(div3, t53);
+    			append_dev(div3, t54);
+    			append_dev(div3, t55);
+    			append_dev(div3, a3);
+    			append_dev(div3, t57);
+    			append_dev(div6, t58);
+    			append_dev(div6, div5);
+    			append_dev(div5, button0);
+    			append_dev(button0, t59);
+    			append_dev(div5, t60);
+    			append_dev(div5, button1);
+    			append_dev(button1, t61);
+    			append_dev(div5, t62);
+    			append_dev(div5, div4);
+    			append_dev(div4, img0);
+    			append_dev(div4, t63);
+    			append_dev(div4, img1);
+    			append_dev(div4, t64);
+    			append_dev(div4, img2);
+    			append_dev(div4, t65);
+    			append_dev(div4, img3);
+    			append_dev(div4, t66);
+    			append_dev(div4, img4);
+    		},
+
+    		p: noop,
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div6);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$2.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    class Intro extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, null, create_fragment$2, safe_not_equal, []);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Intro", options, id: create_fragment$2.name });
+    	}
+    }
+
+    /* src\LinksList.svelte generated by Svelte v3.12.1 */
+
+    function get_each_context$1(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.item = list[i];
+    	child_ctx.i = i;
+    	return child_ctx;
+    }
+
+    // (9:0) {#each items as item, i}
+    function create_each_block$1(ctx) {
+    	var html_tag, raw_value = ctx.i==0?"":(ctx.vertical?"</br>":", ") + "", t, current;
+
+    	var link = new Link({
+    		props: { href: ctx.item },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			t = space();
+    			link.$$.fragment.c();
+    			html_tag = new HtmlTag(raw_value, t);
+    		},
+
+    		m: function mount(target, anchor) {
+    			html_tag.m(target, anchor);
+    			insert_dev(target, t, anchor);
+    			mount_component(link, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.vertical) && raw_value !== (raw_value = ctx.i==0?"":(ctx.vertical?"</br>":", ") + "")) {
+    				html_tag.p(raw_value);
+    			}
+
+    			var link_changes = {};
+    			if (changed.items) link_changes.href = ctx.item;
+    			link.$set(link_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(link.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(link.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				html_tag.d();
+    				detach_dev(t);
+    			}
+
+    			destroy_component(link, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$1.name, type: "each", source: "(9:0) {#each items as item, i}", ctx });
+    	return block;
+    }
+
+    function create_fragment$3(ctx) {
+    	var each_1_anchor, current;
+
+    	let each_value = ctx.items;
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.items || changed.vertical) {
+    				each_value = ctx.items;
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$1(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$1(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(each_1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$3.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$2($$self, $$props, $$invalidate) {
+    	
+      
+      let { items, vertical=false } = $$props;
+
+    	const writable_props = ['items', 'vertical'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<LinksList> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('items' in $$props) $$invalidate('items', items = $$props.items);
+    		if ('vertical' in $$props) $$invalidate('vertical', vertical = $$props.vertical);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { items, vertical };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('items' in $$props) $$invalidate('items', items = $$props.items);
+    		if ('vertical' in $$props) $$invalidate('vertical', vertical = $$props.vertical);
+    	};
+
+    	return { items, vertical };
+    }
+
+    class LinksList extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$2, create_fragment$3, safe_not_equal, ["items", "vertical"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "LinksList", options, id: create_fragment$3.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.items === undefined && !('items' in props)) {
+    			console.warn("<LinksList> was created without expected prop 'items'");
+    		}
+    	}
+
+    	get items() {
+    		throw new Error("<LinksList>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set items(value) {
+    		throw new Error("<LinksList>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get vertical() {
+    		throw new Error("<LinksList>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set vertical(value) {
+    		throw new Error("<LinksList>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\Value.svelte generated by Svelte v3.12.1 */
+
+    const file$3 = "src\\Value.svelte";
+
+    function get_each_context$2(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.field = list[i];
+    	child_ctx.i = i;
+    	return child_ctx;
+    }
+
+    // (28:0) {:else}
+    function create_else_block$1(ctx) {
+    	var current;
+
+    	var link = new Link({
+    		props: { href: ctx.val },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			link.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(link, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var link_changes = {};
+    			if (changed.val) link_changes.href = ctx.val;
+    			link.$set(link_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(link.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(link.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(link, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block$1.name, type: "else", source: "(28:0) {:else}", ctx });
+    	return block;
+    }
+
+    // (26:23) 
+    function create_if_block_3(ctx) {
+    	var em, t_value = ctx.val.toLocaleString() + "", t;
+
+    	const block = {
+    		c: function create() {
+    			em = element("em");
+    			t = text(t_value);
+    			attr_dev(em, "class", "num");
+    			add_location(em, file$3, 26, 2, 691);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, em, anchor);
+    			append_dev(em, t);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.val) && t_value !== (t_value = ctx.val.toLocaleString() + "")) {
+    				set_data_dev(t, t_value);
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(em);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_3.name, type: "if", source: "(26:23) ", ctx });
+    	return block;
+    }
+
+    // (24:37) 
+    function create_if_block_2$1(ctx) {
+    	var span, t;
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			t = text(ctx.val);
+    			set_style(span, "color", (ctx.val?'lime':'red'));
+    			add_location(span, file$3, 24, 2, 611);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    			append_dev(span, t);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.val) {
+    				set_data_dev(t, ctx.val);
+    				set_style(span, "color", (ctx.val?'lime':'red'));
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(span);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2$1.name, type: "if", source: "(24:37) ", ctx });
+    	return block;
+    }
+
+    // (11:32) 
+    function create_if_block_1$1(ctx) {
+    	var table, current;
+
+    	let each_value = Object.keys(ctx.val).sort();
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			table = element("table");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr_dev(table, "class", "number-table");
+    			add_location(table, file$3, 11, 2, 283);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, table, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table, null);
+    			}
+
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.val || changed.rul) {
+    				each_value = Object.keys(ctx.val).sort();
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$2(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$2(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(table, null);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(table);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$1.name, type: "if", source: "(11:32) ", ctx });
+    	return block;
+    }
+
+    // (9:0) {#if Array.isArray(val)}
+    function create_if_block$2(ctx) {
+    	var current;
+
+    	var linkslist = new LinksList({
+    		props: {
+    		items: ctx.val,
+    		vertical: true
+    	},
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			linkslist.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(linkslist, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var linkslist_changes = {};
+    			if (changed.val) linkslist_changes.items = ctx.val;
+    			linkslist.$set(linkslist_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(linkslist.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(linkslist.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(linkslist, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$2.name, type: "if", source: "(9:0) {#if Array.isArray(val)}", ctx });
+    	return block;
+    }
+
+    // (13:4) {#each Object.keys(val).sort() as field, i}
+    function create_each_block$2(ctx) {
+    	var tr, td0, nobr, raw_value = rul.decamelize(ctx.field) + "", t0, td1, em, t1, current;
+
+    	var link = new Link({
+    		props: { href: ctx.val[ctx.field] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			nobr = element("nobr");
+    			t0 = space();
+    			td1 = element("td");
+    			em = element("em");
+    			link.$$.fragment.c();
+    			t1 = space();
+    			add_location(nobr, file$3, 15, 10, 398);
+    			add_location(td0, file$3, 14, 8, 382);
+    			add_location(em, file$3, 18, 10, 481);
+    			add_location(td1, file$3, 17, 8, 465);
+    			add_location(tr, file$3, 13, 6, 368);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			append_dev(td0, nobr);
+    			nobr.innerHTML = raw_value;
+    			append_dev(tr, t0);
+    			append_dev(tr, td1);
+    			append_dev(td1, em);
+    			mount_component(link, em, null);
+    			append_dev(tr, t1);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.val) && raw_value !== (raw_value = rul.decamelize(ctx.field) + "")) {
+    				nobr.innerHTML = raw_value;
+    			}
+
+    			var link_changes = {};
+    			if (changed.val) link_changes.href = ctx.val[ctx.field];
+    			link.$set(link_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(link.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(link.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+
+    			destroy_component(link);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$2.name, type: "each", source: "(13:4) {#each Object.keys(val).sort() as field, i}", ctx });
+    	return block;
+    }
+
+    function create_fragment$4(ctx) {
+    	var show_if, show_if_1, current_block_type_index, if_block, if_block_anchor, current;
+
+    	var if_block_creators = [
+    		create_if_block$2,
+    		create_if_block_1$1,
+    		create_if_block_2$1,
+    		create_if_block_3,
+    		create_else_block$1
+    	];
+
+    	var if_blocks = [];
+
+    	function select_block_type(changed, ctx) {
+    		if ((show_if == null) || changed.val) show_if = !!(Array.isArray(ctx.val));
+    		if (show_if) return 0;
+    		if (ctx.val instanceof Object) return 1;
+    		if (ctx.val===true || ctx.val ===false) return 2;
+    		if ((show_if_1 == null) || changed.val) show_if_1 = !!(!isNaN(+ctx.val));
+    		if (show_if_1) return 3;
+    		return 4;
+    	}
+
+    	current_block_type_index = select_block_type(null, ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	const block = {
+    		c: function create() {
+    			if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			if_blocks[current_block_type_index].m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type(changed, ctx);
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(changed, ctx);
+    			} else {
+    				group_outros();
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+    				check_outros();
+
+    				if_block = if_blocks[current_block_type_index];
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				}
+    				transition_in(if_block, 1);
+    				if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if_blocks[current_block_type_index].d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$4.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$3($$self, $$props, $$invalidate) {
+    	
+
+      let { val } = $$props;
+
+    	const writable_props = ['val'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Value> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('val' in $$props) $$invalidate('val', val = $$props.val);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { val };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('val' in $$props) $$invalidate('val', val = $$props.val);
+    	};
+
+    	return { val };
+    }
+
+    class Value extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$3, create_fragment$4, safe_not_equal, ["val"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Value", options, id: create_fragment$4.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.val === undefined && !('val' in props)) {
+    			console.warn("<Value> was created without expected prop 'val'");
+    		}
+    	}
+
+    	get val() {
+    		throw new Error("<Value>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set val(value) {
+    		throw new Error("<Value>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\BaseServiceList.svelte generated by Svelte v3.12.1 */
+
+    function get_each_context$3(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.item = list[i];
+    	child_ctx.i = i;
+    	return child_ctx;
+    }
+
+    // (9:0) {#each items as item, i}
+    function create_each_block$3(ctx) {
+    	var html_tag, raw_value = ctx.i==0?"":(ctx.vertical?"</br>":", ") + "", t, current;
+
+    	var link = new Link({
+    		props: { href: ctx.item },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			t = space();
+    			link.$$.fragment.c();
+    			html_tag = new HtmlTag(raw_value, t);
+    		},
+
+    		m: function mount(target, anchor) {
+    			html_tag.m(target, anchor);
+    			insert_dev(target, t, anchor);
+    			mount_component(link, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.vertical) && raw_value !== (raw_value = ctx.i==0?"":(ctx.vertical?"</br>":", ") + "")) {
+    				html_tag.p(raw_value);
+    			}
+
+    			var link_changes = {};
+    			if (changed.items) link_changes.href = ctx.item;
+    			link.$set(link_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(link.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(link.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				html_tag.d();
+    				detach_dev(t);
+    			}
+
+    			destroy_component(link, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$3.name, type: "each", source: "(9:0) {#each items as item, i}", ctx });
+    	return block;
+    }
+
+    function create_fragment$5(ctx) {
+    	var each_1_anchor, current;
+
+    	let each_value = ctx.items;
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.items || changed.vertical) {
+    				each_value = ctx.items;
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$3(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$3(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(each_1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$5.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$4($$self, $$props, $$invalidate) {
+    	
+      
+      let { items, vertical=false } = $$props;
+
+    	const writable_props = ['items', 'vertical'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<BaseServiceList> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('items' in $$props) $$invalidate('items', items = $$props.items);
+    		if ('vertical' in $$props) $$invalidate('vertical', vertical = $$props.vertical);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { items, vertical };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('items' in $$props) $$invalidate('items', items = $$props.items);
+    		if ('vertical' in $$props) $$invalidate('vertical', vertical = $$props.vertical);
+    	};
+
+    	return { items, vertical };
+    }
+
+    class BaseServiceList extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$4, create_fragment$5, safe_not_equal, ["items", "vertical"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "BaseServiceList", options, id: create_fragment$5.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.items === undefined && !('items' in props)) {
+    			console.warn("<BaseServiceList> was created without expected prop 'items'");
+    		}
+    	}
+
+    	get items() {
+    		throw new Error("<BaseServiceList>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set items(value) {
+    		throw new Error("<BaseServiceList>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get vertical() {
+    		throw new Error("<BaseServiceList>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set vertical(value) {
+    		throw new Error("<BaseServiceList>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\Illustration.svelte generated by Svelte v3.12.1 */
+    const { console: console_1 } = globals;
+
+    const file$4 = "src\\Illustration.svelte";
+
+    // (30:0) {#if id && rul.sprite(id)}
+    function create_if_block$3(ctx) {
+    	var div, img, img_style_value, img_alt_value, img_src_value, dispose;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			img = element("img");
+    			attr_dev(img, "class", "pedia-image svelte-3txty7");
+    			attr_dev(img, "style", img_style_value = ctx.style + (ctx.left?"float:left":""));
+    			attr_dev(img, "alt", img_alt_value = ctx.id || '');
+    			attr_dev(img, "src", img_src_value = rul.sprite(ctx.id));
+    			add_location(img, file$4, 31, 4, 632);
+    			add_location(div, file$4, 30, 2, 621);
+    			dispose = listen_dev(img, "load", ctx.load_handler);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, img);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.style || changed.left) && img_style_value !== (img_style_value = ctx.style + (ctx.left?"float:left":""))) {
+    				attr_dev(img, "style", img_style_value);
+    			}
+
+    			if ((changed.id) && img_alt_value !== (img_alt_value = ctx.id || '')) {
+    				attr_dev(img, "alt", img_alt_value);
+    			}
+
+    			if ((changed.id) && img_src_value !== (img_src_value = rul.sprite(ctx.id))) {
+    				attr_dev(img, "src", img_src_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+
+    			dispose();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$3.name, type: "if", source: "(30:0) {#if id && rul.sprite(id)}", ctx });
+    	return block;
+    }
+
+    function create_fragment$6(ctx) {
+    	var show_if = ctx.id && rul.sprite(ctx.id), if_block_anchor;
+
+    	var if_block = (show_if) && create_if_block$3(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.id) show_if = ctx.id && rul.sprite(ctx.id);
+
+    			if (show_if) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    				} else {
+    					if_block = create_if_block$3(ctx);
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$6.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$5($$self, $$props, $$invalidate) {
+    	let { id, left = false, maxWidth = 640, maxZoom = 4, style = "" } = $$props;
+
+      function loaded(img) {
+        console.info(img);
+        let zoom = Math.min(maxZoom, Math.max(1, Math.floor(maxWidth / img.naturalWidth)));
+        img.width = img.naturalWidth * zoom;
+        img.height = img.naturalHeight * zoom;
+      }
+
+      console.log(id);
+
+    	const writable_props = ['id', 'left', 'maxWidth', 'maxZoom', 'style'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console_1.warn(`<Illustration> was created with unknown prop '${key}'`);
+    	});
+
+    	const load_handler = (e) => loaded(e.target);
+
+    	$$self.$set = $$props => {
+    		if ('id' in $$props) $$invalidate('id', id = $$props.id);
+    		if ('left' in $$props) $$invalidate('left', left = $$props.left);
+    		if ('maxWidth' in $$props) $$invalidate('maxWidth', maxWidth = $$props.maxWidth);
+    		if ('maxZoom' in $$props) $$invalidate('maxZoom', maxZoom = $$props.maxZoom);
+    		if ('style' in $$props) $$invalidate('style', style = $$props.style);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { id, left, maxWidth, maxZoom, style };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('id' in $$props) $$invalidate('id', id = $$props.id);
+    		if ('left' in $$props) $$invalidate('left', left = $$props.left);
+    		if ('maxWidth' in $$props) $$invalidate('maxWidth', maxWidth = $$props.maxWidth);
+    		if ('maxZoom' in $$props) $$invalidate('maxZoom', maxZoom = $$props.maxZoom);
+    		if ('style' in $$props) $$invalidate('style', style = $$props.style);
+    	};
+
+    	return {
+    		id,
+    		left,
+    		maxWidth,
+    		maxZoom,
+    		style,
+    		loaded,
+    		load_handler
+    	};
+    }
+
+    class Illustration extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$5, create_fragment$6, safe_not_equal, ["id", "left", "maxWidth", "maxZoom", "style"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Illustration", options, id: create_fragment$6.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.id === undefined && !('id' in props)) {
+    			console_1.warn("<Illustration> was created without expected prop 'id'");
+    		}
+    	}
+
+    	get id() {
+    		throw new Error("<Illustration>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set id(value) {
+    		throw new Error("<Illustration>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get left() {
+    		throw new Error("<Illustration>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set left(value) {
+    		throw new Error("<Illustration>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get maxWidth() {
+    		throw new Error("<Illustration>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set maxWidth(value) {
+    		throw new Error("<Illustration>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get maxZoom() {
+    		throw new Error("<Illustration>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set maxZoom(value) {
+    		throw new Error("<Illustration>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get style() {
+    		throw new Error("<Illustration>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set style(value) {
+    		throw new Error("<Illustration>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\SpecialBonus.svelte generated by Svelte v3.12.1 */
+    const { Object: Object_1 } = globals;
+
+    function get_each_context$4(ctx, list, i) {
+    	const child_ctx = Object_1.create(ctx);
+    	child_ctx.b = list[i];
+    	child_ctx.i = i;
+    	return child_ctx;
+    }
+
+    // (37:0) {#if flat.length>0 && plus}
+    function create_if_block_2$2(ctx) {
+    	var t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("+");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(t);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2$2.name, type: "if", source: "(37:0) {#if flat.length>0 && plus}", ctx });
+    	return block;
+    }
+
+    // (39:2) {#if i != 0}
+    function create_if_block_1$2(ctx) {
+    	var t;
+
+    	const block = {
+    		c: function create() {
+    			t = text(" +");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(t);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$2.name, type: "if", source: "(39:2) {#if i != 0}", ctx });
+    	return block;
+    }
+
+    // (42:2) {:else}
+    function create_else_block$2(ctx) {
+    	var html_tag, raw_value = ctx.b[0] + (ctx.b[1] != 1 ? '×<em>' + ctx.b[1] + '</em>' : '') + "";
+
+    	const block = {
+    		c: function create() {
+    			html_tag = new HtmlTag(raw_value, null);
+    		},
+
+    		m: function mount(target, anchor) {
+    			html_tag.m(target, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.flat) && raw_value !== (raw_value = ctx.b[0] + (ctx.b[1] != 1 ? '×<em>' + ctx.b[1] + '</em>' : '') + "")) {
+    				html_tag.p(raw_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				html_tag.d();
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block$2.name, type: "else", source: "(42:2) {:else}", ctx });
+    	return block;
+    }
+
+    // (40:2) {#if b[0] == 'flatHundred'}
+    function create_if_block$4(ctx) {
+    	var html_tag, raw_value = ctx.b[1] * 100 + "";
+
+    	const block = {
+    		c: function create() {
+    			html_tag = new HtmlTag(raw_value, null);
+    		},
+
+    		m: function mount(target, anchor) {
+    			html_tag.m(target, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.flat) && raw_value !== (raw_value = ctx.b[1] * 100 + "")) {
+    				html_tag.p(raw_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				html_tag.d();
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$4.name, type: "if", source: "(40:2) {#if b[0] == 'flatHundred'}", ctx });
+    	return block;
+    }
+
+    // (38:0) {#each flat as b, i}
+    function create_each_block$4(ctx) {
+    	var t, if_block1_anchor;
+
+    	var if_block0 = (ctx.i != 0) && create_if_block_1$2(ctx);
+
+    	function select_block_type(changed, ctx) {
+    		if (ctx.b[0] == 'flatHundred') return create_if_block$4;
+    		return create_else_block$2;
+    	}
+
+    	var current_block_type = select_block_type(null, ctx);
+    	var if_block1 = current_block_type(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block0) if_block0.c();
+    			t = space();
+    			if_block1.c();
+    			if_block1_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block0) if_block0.m(target, anchor);
+    			insert_dev(target, t, anchor);
+    			if_block1.m(target, anchor);
+    			insert_dev(target, if_block1_anchor, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (current_block_type === (current_block_type = select_block_type(changed, ctx)) && if_block1) {
+    				if_block1.p(changed, ctx);
+    			} else {
+    				if_block1.d(1);
+    				if_block1 = current_block_type(ctx);
+    				if (if_block1) {
+    					if_block1.c();
+    					if_block1.m(if_block1_anchor.parentNode, if_block1_anchor);
+    				}
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block0) if_block0.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(t);
+    			}
+
+    			if_block1.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$4.name, type: "each", source: "(38:0) {#each flat as b, i}", ctx });
+    	return block;
+    }
+
+    function create_fragment$7(ctx) {
+    	var t, each_1_anchor;
+
+    	var if_block = (ctx.flat.length>0 && ctx.plus) && create_if_block_2$2(ctx);
+
+    	let each_value = ctx.flat;
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$4(get_each_context$4(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			t = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, t, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (ctx.flat.length>0 && ctx.plus) {
+    				if (!if_block) {
+    					if_block = create_if_block_2$2(ctx);
+    					if_block.c();
+    					if_block.m(t.parentNode, t);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			if (changed.flat) {
+    				each_value = ctx.flat;
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$4(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block$4(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(t);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(each_1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$7.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function f(bonus) {
+      if(!bonus)
+        return [];
+      let flat = [];
+      for (let type of Object.keys(bonus)) {
+        if (bonus[type].length) {
+          for (let power in bonus[type]) {
+            let b = bonus[type][power];
+            if (b != 0) {
+              power = power * 1 + 1;
+              flat.push([
+                type + (power == 1 ? "" : "<sup>" + power + "</sup>"),
+                b
+              ]);
+            }
+          }
+        } else {
+          if (bonus[type] != 0) flat.push([type, bonus[type]]);
+        }
+      }
+      flat = flat.sort((a,b) => (a[0] == 'flatHundred' || a[0] < b[0])?-1:1);
+      return flat;
+    }
+
+    function instance$6($$self, $$props, $$invalidate) {
+    	let { bonus, plus = false } = $$props;
+
+      let flat;
+
+    	const writable_props = ['bonus', 'plus'];
+    	Object_1.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<SpecialBonus> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('bonus' in $$props) $$invalidate('bonus', bonus = $$props.bonus);
+    		if ('plus' in $$props) $$invalidate('plus', plus = $$props.plus);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { bonus, plus, flat };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('bonus' in $$props) $$invalidate('bonus', bonus = $$props.bonus);
+    		if ('plus' in $$props) $$invalidate('plus', plus = $$props.plus);
+    		if ('flat' in $$props) $$invalidate('flat', flat = $$props.flat);
+    	};
+
+    	$$self.$$.update = ($$dirty = { bonus: 1 }) => {
+    		if ($$dirty.bonus) { {
+            $$invalidate('flat', flat = f (bonus));
+          } }
+    	};
+
+    	return { bonus, plus, flat };
+    }
+
+    class SpecialBonus extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$6, create_fragment$7, safe_not_equal, ["bonus", "plus"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "SpecialBonus", options, id: create_fragment$7.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.bonus === undefined && !('bonus' in props)) {
+    			console.warn("<SpecialBonus> was created without expected prop 'bonus'");
+    		}
+    	}
+
+    	get bonus() {
+    		throw new Error("<SpecialBonus>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set bonus(value) {
+    		throw new Error("<SpecialBonus>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get plus() {
+    		throw new Error("<SpecialBonus>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set plus(value) {
+    		throw new Error("<SpecialBonus>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\CanvasImage.svelte generated by Svelte v3.12.1 */
+
+    const file$5 = "src\\CanvasImage.svelte";
+
+    function create_fragment$8(ctx) {
+    	var a, canvas_1, prepareCanvas_action;
+
+    	const block = {
+    		c: function create() {
+    			a = element("a");
+    			canvas_1 = element("canvas");
+    			attr_dev(canvas_1, "class", "pixelated");
+    			set_style(canvas_1, "display", (ctx.loaded?'inline':'none'));
+    			add_location(canvas_1, file$5, 38, 0, 880);
+    			attr_dev(a, "href", ctx.src);
+    			add_location(a, file$5, 37, 0, 864);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, a, anchor);
+    			append_dev(a, canvas_1);
+    			ctx.canvas_1_binding(canvas_1);
+    			prepareCanvas_action = ctx.prepareCanvas.call(null, canvas_1) || {};
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.loaded) {
+    				set_style(canvas_1, "display", (ctx.loaded?'inline':'none'));
+    			}
+
+    			if (changed.src) {
+    				attr_dev(a, "href", ctx.src);
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(a);
+    			}
+
+    			ctx.canvas_1_binding(null);
+    			if (prepareCanvas_action && typeof prepareCanvas_action.destroy === 'function') prepareCanvas_action.destroy();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$8.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$7($$self, $$props, $$invalidate) {
+    	let { src, maxWidth = 1e6, maxHeight = 1e6, zoom = 1 } = $$props;
+
+      let canvas;
+      let ctx;
+      let img = null;
+      let loaded = false;
+
+      function updateImage() {
+        $$invalidate('canvas', canvas.width = Math.min(maxWidth, img.naturalWidth * zoom), canvas);
+        $$invalidate('canvas', canvas.height = Math.min(maxHeight, img.naturalHeight * zoom), canvas);
+        ctx.imageSmoothingEnabled = false;
+        ctx.mozImageSmoothingEnabled = false;
+        ctx.webkitImageSmoothingEnabled = false;
+        ctx.drawImage(img, 0, 0, img.naturalWidth * zoom, img.naturalHeight * zoom);
+        $$invalidate('loaded', loaded = true);
+      }
+
+      function prepareCanvas(node) {
+        $$invalidate('canvas', canvas = node);
+        ctx = canvas.getContext("2d");
+        $$invalidate('img', img = new Image());
+        $$invalidate('img', img.onload = updateImage, img);
+        $$invalidate('img', img.src = src, img);
+      }
+
+    	const writable_props = ['src', 'maxWidth', 'maxHeight', 'zoom'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<CanvasImage> was created with unknown prop '${key}'`);
+    	});
+
+    	function canvas_1_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			$$invalidate('canvas', canvas = $$value);
+    		});
+    	}
+
+    	$$self.$set = $$props => {
+    		if ('src' in $$props) $$invalidate('src', src = $$props.src);
+    		if ('maxWidth' in $$props) $$invalidate('maxWidth', maxWidth = $$props.maxWidth);
+    		if ('maxHeight' in $$props) $$invalidate('maxHeight', maxHeight = $$props.maxHeight);
+    		if ('zoom' in $$props) $$invalidate('zoom', zoom = $$props.zoom);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { src, maxWidth, maxHeight, zoom, canvas, ctx, img, loaded };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('src' in $$props) $$invalidate('src', src = $$props.src);
+    		if ('maxWidth' in $$props) $$invalidate('maxWidth', maxWidth = $$props.maxWidth);
+    		if ('maxHeight' in $$props) $$invalidate('maxHeight', maxHeight = $$props.maxHeight);
+    		if ('zoom' in $$props) $$invalidate('zoom', zoom = $$props.zoom);
+    		if ('canvas' in $$props) $$invalidate('canvas', canvas = $$props.canvas);
+    		if ('ctx' in $$props) ctx = $$props.ctx;
+    		if ('img' in $$props) $$invalidate('img', img = $$props.img);
+    		if ('loaded' in $$props) $$invalidate('loaded', loaded = $$props.loaded);
+    	};
+
+    	$$self.$$.update = ($$dirty = { src: 1, img: 1 }) => {
+    		if ($$dirty.src || $$dirty.img) { {
+            if (src && img) {      
+              $$invalidate('loaded', loaded = false);
+              $$invalidate('img', img.src = src, img);
+            }
+          } }
+    	};
+
+    	return {
+    		src,
+    		maxWidth,
+    		maxHeight,
+    		zoom,
+    		canvas,
+    		loaded,
+    		prepareCanvas,
+    		canvas_1_binding
+    	};
+    }
+
+    class CanvasImage extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$7, create_fragment$8, safe_not_equal, ["src", "maxWidth", "maxHeight", "zoom"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "CanvasImage", options, id: create_fragment$8.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.src === undefined && !('src' in props)) {
+    			console.warn("<CanvasImage> was created without expected prop 'src'");
+    		}
+    	}
+
+    	get src() {
+    		throw new Error("<CanvasImage>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set src(value) {
+    		throw new Error("<CanvasImage>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get maxWidth() {
+    		throw new Error("<CanvasImage>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set maxWidth(value) {
+    		throw new Error("<CanvasImage>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get maxHeight() {
+    		throw new Error("<CanvasImage>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set maxHeight(value) {
+    		throw new Error("<CanvasImage>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get zoom() {
+    		throw new Error("<CanvasImage>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set zoom(value) {
+    		throw new Error("<CanvasImage>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\Item.svelte generated by Svelte v3.12.1 */
+    const { console: console_1$1 } = globals;
+
+    const file$6 = "src\\Item.svelte";
+
+    function get_each_context_2(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.sound = list[i];
+    	child_ctx.i = i;
+    	return child_ctx;
+    }
+
+    function get_each_context_1(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.field = list[i];
+    	child_ctx.i = i;
+    	return child_ctx;
+    }
+
+    function get_each_context$5(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.key = list[i][0];
+    	child_ctx.prop = list[i][1];
+    	return child_ctx;
+    }
+
+    function get_each_context_4(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.field = list[i];
+    	child_ctx.i = i;
+    	return child_ctx;
+    }
+
+    function get_each_context_5(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.res = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_3(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.attack = list[i];
+    	return child_ctx;
+    }
+
+    // (64:2) {#if (item.sprite && item.sprite != "Resources/Blanks/Blank.png") ||attacks.length > 0}
+    function create_if_block_8(ctx) {
+    	var tr, td, div, t, current;
+
+    	var canvasimage = new CanvasImage({
+    		props: {
+    		src: rul.sprite(ctx.item.sprite),
+    		maxWidth: 32*ctx.item.invWidth,
+    		maxHeight: 32*ctx.item.invHeight,
+    		zoom: "2"
+    	},
+    		$$inline: true
+    	});
+
+    	var if_block = (ctx.attacks.length > 0) && create_if_block_9(ctx);
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td = element("td");
+    			div = element("div");
+    			canvasimage.$$.fragment.c();
+    			t = space();
+    			if (if_block) if_block.c();
+    			set_style(div, "display", "flex");
+    			set_style(div, "align-items", "flex-start");
+    			set_style(div, "margin", "5px 3px");
+    			add_location(div, file$6, 65, 6, 1547);
+    			attr_dev(td, "colspan", "2");
+    			attr_dev(td, "class", "svelte-yer6ww");
+    			add_location(td, file$6, 64, 9, 1523);
+    			add_location(tr, file$6, 64, 4, 1518);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td);
+    			append_dev(td, div);
+    			mount_component(canvasimage, div, null);
+    			append_dev(div, t);
+    			if (if_block) if_block.m(div, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var canvasimage_changes = {};
+    			if (changed.item) canvasimage_changes.src = rul.sprite(ctx.item.sprite);
+    			if (changed.item) canvasimage_changes.maxWidth = 32*ctx.item.invWidth;
+    			if (changed.item) canvasimage_changes.maxHeight = 32*ctx.item.invHeight;
+    			canvasimage.$set(canvasimage_changes);
+
+    			if (ctx.attacks.length > 0) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    					transition_in(if_block, 1);
+    				} else {
+    					if_block = create_if_block_9(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(div, null);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(canvasimage.$$.fragment, local);
+
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(canvasimage.$$.fragment, local);
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+
+    			destroy_component(canvasimage);
+
+    			if (if_block) if_block.d();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_8.name, type: "if", source: "(64:2) {#if (item.sprite && item.sprite != \"Resources/Blanks/Blank.png\") ||attacks.length > 0}", ctx });
+    	return block;
+    }
+
+    // (68:6) {#if attacks.length > 0}
+    function create_if_block_9(ctx) {
+    	var table, thead, t0, td, t2, current;
+
+    	var if_block = (ctx.item.battleType != 2) && create_if_block_15(ctx);
+
+    	let each_value_3 = ctx.attacks;
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_3.length; i += 1) {
+    		each_blocks[i] = create_each_block_3(get_each_context_3(ctx, each_value_3, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			table = element("table");
+    			thead = element("thead");
+    			if (if_block) if_block.c();
+    			t0 = space();
+    			td = element("td");
+    			td.textContent = "damage";
+    			t2 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr_dev(td, "class", "svelte-yer6ww");
+    			add_location(td, file$6, 75, 12, 1990);
+    			add_location(thead, file$6, 69, 10, 1819);
+    			attr_dev(table, "class", "attacks-table");
+    			add_location(table, file$6, 68, 8, 1778);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, table, anchor);
+    			append_dev(table, thead);
+    			if (if_block) if_block.m(thead, null);
+    			append_dev(thead, t0);
+    			append_dev(thead, td);
+    			append_dev(table, t2);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table, null);
+    			}
+
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (ctx.item.battleType != 2) {
+    				if (!if_block) {
+    					if_block = create_if_block_15(ctx);
+    					if_block.c();
+    					if_block.m(thead, t0);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			if (changed.attacks || changed.rul || changed.item) {
+    				each_value_3 = ctx.attacks;
+
+    				let i;
+    				for (i = 0; i < each_value_3.length; i += 1) {
+    					const child_ctx = get_each_context_3(ctx, each_value_3, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block_3(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(table, null);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value_3.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value_3.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(table);
+    			}
+
+    			if (if_block) if_block.d();
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_9.name, type: "if", source: "(68:6) {#if attacks.length > 0}", ctx });
+    	return block;
+    }
+
+    // (71:12) {#if item.battleType != 2}
+    function create_if_block_15(ctx) {
+    	var td0, t1, td1, t3, td2;
+
+    	const block = {
+    		c: function create() {
+    			td0 = element("td");
+    			td0.textContent = "mode";
+    			t1 = space();
+    			td1 = element("td");
+    			td1.textContent = "accuracy";
+    			t3 = space();
+    			td2 = element("td");
+    			td2.textContent = "cost";
+    			attr_dev(td0, "class", "svelte-yer6ww");
+    			add_location(td0, file$6, 71, 14, 1882);
+    			attr_dev(td1, "class", "svelte-yer6ww");
+    			add_location(td1, file$6, 72, 14, 1911);
+    			attr_dev(td2, "class", "svelte-yer6ww");
+    			add_location(td2, file$6, 73, 14, 1944);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, td0, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, td1, anchor);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, td2, anchor);
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(td0);
+    				detach_dev(t1);
+    				detach_dev(td1);
+    				detach_dev(t3);
+    				detach_dev(td2);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_15.name, type: "if", source: "(71:12) {#if item.battleType != 2}", ctx });
+    	return block;
+    }
+
+    // (90:14) {:else}
+    function create_else_block_1(ctx) {
+    	var td0, t0_value = ctx.attack.name + "", t0, t1_value = ctx.attack.shots==1?"":"×" + ctx.attack.shots + "", t1, t2, td1, nobr, em0, t3_value = ctx.attack.accuracy + "", t3, small0, t4, br, t5, td2, em1, t6_value = ctx.attack.cost.time + (ctx.attack.flatTime?"":"%") + "", t6, t7, small1, t9, current;
+
+    	var specialbonus = new SpecialBonus({
+    		props: { bonus: ctx.attack.accuracyMultiplier },
+    		$$inline: true
+    	});
+
+    	let each_value_5 = Object.keys(ctx.attack.cost);
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_5.length; i += 1) {
+    		each_blocks[i] = create_each_block_5(get_each_context_5(ctx, each_value_5, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			td0 = element("td");
+    			t0 = text(t0_value);
+    			t1 = text(t1_value);
+    			t2 = space();
+    			td1 = element("td");
+    			nobr = element("nobr");
+    			em0 = element("em");
+    			t3 = text(t3_value);
+    			small0 = element("small");
+    			t4 = text("%");
+    			br = element("br");
+    			specialbonus.$$.fragment.c();
+    			t5 = space();
+    			td2 = element("td");
+    			em1 = element("em");
+    			t6 = text(t6_value);
+    			t7 = space();
+    			small1 = element("small");
+    			small1.textContent = "TU";
+    			t9 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr_dev(td0, "rowspan", "2");
+    			attr_dev(td0, "class", "svelte-yer6ww");
+    			add_location(td0, file$6, 90, 16, 2819);
+    			add_location(em0, file$6, 91, 26, 2921);
+    			add_location(br, file$6, 91, 60, 2955);
+    			add_location(small0, file$6, 91, 52, 2947);
+    			add_location(nobr, file$6, 91, 20, 2915);
+    			attr_dev(td1, "class", "svelte-yer6ww");
+    			add_location(td1, file$6, 91, 16, 2911);
+    			add_location(em1, file$6, 93, 16, 3069);
+    			add_location(small1, file$6, 93, 71, 3124);
+    			attr_dev(td2, "class", "svelte-yer6ww");
+    			add_location(td2, file$6, 92, 16, 3047);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, td0, anchor);
+    			append_dev(td0, t0);
+    			append_dev(td0, t1);
+    			insert_dev(target, t2, anchor);
+    			insert_dev(target, td1, anchor);
+    			append_dev(td1, nobr);
+    			append_dev(nobr, em0);
+    			append_dev(em0, t3);
+    			append_dev(nobr, small0);
+    			append_dev(small0, t4);
+    			append_dev(small0, br);
+    			mount_component(specialbonus, small0, null);
+    			insert_dev(target, t5, anchor);
+    			insert_dev(target, td2, anchor);
+    			append_dev(td2, em1);
+    			append_dev(em1, t6);
+    			append_dev(td2, t7);
+    			append_dev(td2, small1);
+    			append_dev(td2, t9);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(td2, null);
+    			}
+
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.attacks) && t0_value !== (t0_value = ctx.attack.name + "")) {
+    				set_data_dev(t0, t0_value);
+    			}
+
+    			if ((!current || changed.attacks) && t1_value !== (t1_value = ctx.attack.shots==1?"":"×" + ctx.attack.shots + "")) {
+    				set_data_dev(t1, t1_value);
+    			}
+
+    			if ((!current || changed.attacks) && t3_value !== (t3_value = ctx.attack.accuracy + "")) {
+    				set_data_dev(t3, t3_value);
+    			}
+
+    			var specialbonus_changes = {};
+    			if (changed.attacks) specialbonus_changes.bonus = ctx.attack.accuracyMultiplier;
+    			specialbonus.$set(specialbonus_changes);
+
+    			if ((!current || changed.attacks) && t6_value !== (t6_value = ctx.attack.cost.time + (ctx.attack.flatTime?"":"%") + "")) {
+    				set_data_dev(t6, t6_value);
+    			}
+
+    			if (changed.attacks) {
+    				each_value_5 = Object.keys(ctx.attack.cost);
+
+    				let i;
+    				for (i = 0; i < each_value_5.length; i += 1) {
+    					const child_ctx = get_each_context_5(ctx, each_value_5, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block_5(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(td2, null);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value_5.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(specialbonus.$$.fragment, local);
+
+    			for (let i = 0; i < each_value_5.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(specialbonus.$$.fragment, local);
+
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(td0);
+    				detach_dev(t2);
+    				detach_dev(td1);
+    			}
+
+    			destroy_component(specialbonus);
+
+    			if (detaching) {
+    				detach_dev(t5);
+    				detach_dev(td2);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block_1.name, type: "else", source: "(90:14) {:else}", ctx });
+    	return block;
+    }
+
+    // (80:14) {#if attack.mode == "ammo"}
+    function create_if_block_12(ctx) {
+    	var if_block_anchor, current;
+
+    	var if_block = (ctx.item.battleType != 2) && create_if_block_13(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (ctx.item.battleType != 2) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    					transition_in(if_block, 1);
+    				} else {
+    					if_block = create_if_block_13(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_12.name, type: "if", source: "(80:14) {#if attack.mode == \"ammo\"}", ctx });
+    	return block;
+    }
+
+    // (96:18) {#if res != 'time' && attack.cost[res] != 0}
+    function create_if_block_14(ctx) {
+    	var br, t0, small, t1_value = ctx.res + "", t1, current;
+
+    	var value = new Value({
+    		props: { val: ctx.attack.cost[ctx.res] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			br = element("br");
+    			value.$$.fragment.c();
+    			t0 = text(" ");
+    			small = element("small");
+    			t1 = text(t1_value);
+    			add_location(br, file$6, 95, 62, 3278);
+    			add_location(small, file$6, 95, 104, 3320);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, br, anchor);
+    			mount_component(value, target, anchor);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, small, anchor);
+    			append_dev(small, t1);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var value_changes = {};
+    			if (changed.attacks) value_changes.val = ctx.attack.cost[ctx.res];
+    			value.$set(value_changes);
+
+    			if ((!current || changed.attacks) && t1_value !== (t1_value = ctx.res + "")) {
+    				set_data_dev(t1, t1_value);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(value.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(value.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(br);
+    			}
+
+    			destroy_component(value, detaching);
+
+    			if (detaching) {
+    				detach_dev(t0);
+    				detach_dev(small);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_14.name, type: "if", source: "(96:18) {#if res != 'time' && attack.cost[res] != 0}", ctx });
+    	return block;
+    }
+
+    // (95:16) {#each Object.keys(attack.cost) as res}
+    function create_each_block_5(ctx) {
+    	var if_block_anchor, current;
+
+    	var if_block = (ctx.res != 'time' && ctx.attack.cost[ctx.res] != 0) && create_if_block_14(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (ctx.res != 'time' && ctx.attack.cost[ctx.res] != 0) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    					transition_in(if_block, 1);
+    				} else {
+    					if_block = create_if_block_14(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_5.name, type: "each", source: "(95:16) {#each Object.keys(attack.cost) as res}", ctx });
+    	return block;
+    }
+
+    // (81:16) {#if item.battleType != 2}
+    function create_if_block_13(ctx) {
+    	var td0, t0, td1, br, small, t1, t2_value = ctx.attack.item.clipSize + "", t2, t3, t4_value = ctx.attack.item.weight + "", t4, current;
+
+    	var canvasimage = new CanvasImage({
+    		props: {
+    		src: rul.sprite(ctx.attack.item.sprite),
+    		maxWidth: 32*ctx.attack.item.invWidth,
+    		maxHeight: 32*ctx.attack.item.invHeight,
+    		zoom: "2"
+    	},
+    		$$inline: true
+    	});
+
+    	var link = new Link({
+    		props: { href: ctx.attack.item.type },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			td0 = element("td");
+    			canvasimage.$$.fragment.c();
+    			t0 = space();
+    			td1 = element("td");
+    			link.$$.fragment.c();
+    			br = element("br");
+    			small = element("small");
+    			t1 = text("Clip: ");
+    			t2 = text(t2_value);
+    			t3 = text(" Wgt: ");
+    			t4 = text(t4_value);
+    			attr_dev(td0, "rowspan", "2");
+    			attr_dev(td0, "class", "ammo-img svelte-yer6ww");
+    			add_location(td0, file$6, 81, 18, 2187);
+    			add_location(br, file$6, 86, 51, 2646);
+    			add_location(small, file$6, 86, 56, 2651);
+    			attr_dev(td1, "colspan", "2");
+    			attr_dev(td1, "class", "svelte-yer6ww");
+    			add_location(td1, file$6, 85, 18, 2577);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, td0, anchor);
+    			mount_component(canvasimage, td0, null);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, td1, anchor);
+    			mount_component(link, td1, null);
+    			append_dev(td1, br);
+    			append_dev(td1, small);
+    			append_dev(small, t1);
+    			append_dev(small, t2);
+    			append_dev(small, t3);
+    			append_dev(small, t4);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var canvasimage_changes = {};
+    			if (changed.attacks) canvasimage_changes.src = rul.sprite(ctx.attack.item.sprite);
+    			if (changed.attacks) canvasimage_changes.maxWidth = 32*ctx.attack.item.invWidth;
+    			if (changed.attacks) canvasimage_changes.maxHeight = 32*ctx.attack.item.invHeight;
+    			canvasimage.$set(canvasimage_changes);
+
+    			var link_changes = {};
+    			if (changed.attacks) link_changes.href = ctx.attack.item.type;
+    			link.$set(link_changes);
+
+    			if ((!current || changed.attacks) && t2_value !== (t2_value = ctx.attack.item.clipSize + "")) {
+    				set_data_dev(t2, t2_value);
+    			}
+
+    			if ((!current || changed.attacks) && t4_value !== (t4_value = ctx.attack.item.weight + "")) {
+    				set_data_dev(t4, t4_value);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(canvasimage.$$.fragment, local);
+
+    			transition_in(link.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(canvasimage.$$.fragment, local);
+    			transition_out(link.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(td0);
+    			}
+
+    			destroy_component(canvasimage);
+
+    			if (detaching) {
+    				detach_dev(t0);
+    				detach_dev(td1);
+    			}
+
+    			destroy_component(link);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_13.name, type: "if", source: "(81:16) {#if item.battleType != 2}", ctx });
+    	return block;
+    }
+
+    // (100:18) {#if 'damage' in attack || 'damageType' in attack}
+    function create_if_block_11(ctx) {
+    	var nobr, t0_value = ctx.attack.pellets>1 && ctx.attack.damageBonus?"(":"" + "", t0, em, t1_value = ctx.attack.damage || 0 + "", t1, t2, small, t3_value = ctx.attack.pellets>1 && ctx.attack.damageBonus?")":"" + "", t3, t4, t5_value = ctx.attack.pellets>1?" ×" + ctx.attack.pellets:"" + "", t5, t6, br, current;
+
+    	var specialbonus = new SpecialBonus({
+    		props: {
+    		plus: true,
+    		bonus: ctx.attack.damageBonus
+    	},
+    		$$inline: true
+    	});
+
+    	var link = new Link({
+    		props: { href: rul.damageTypes[ctx.attack.damageType] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			nobr = element("nobr");
+    			t0 = text(t0_value);
+    			em = element("em");
+    			t1 = text(t1_value);
+    			t2 = space();
+    			small = element("small");
+    			specialbonus.$$.fragment.c();
+    			t3 = text(t3_value);
+    			t4 = space();
+    			t5 = text(t5_value);
+    			t6 = space();
+    			br = element("br");
+    			link.$$.fragment.c();
+    			add_location(em, file$6, 100, 69, 3581);
+    			add_location(small, file$6, 101, 16, 3628);
+    			add_location(nobr, file$6, 100, 16, 3528);
+    			add_location(br, file$6, 106, 16, 3886);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, nobr, anchor);
+    			append_dev(nobr, t0);
+    			append_dev(nobr, em);
+    			append_dev(em, t1);
+    			append_dev(nobr, t2);
+    			append_dev(nobr, small);
+    			mount_component(specialbonus, small, null);
+    			append_dev(small, t3);
+    			append_dev(nobr, t4);
+    			append_dev(nobr, t5);
+    			insert_dev(target, t6, anchor);
+    			insert_dev(target, br, anchor);
+    			mount_component(link, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.attacks) && t0_value !== (t0_value = ctx.attack.pellets>1 && ctx.attack.damageBonus?"(":"" + "")) {
+    				set_data_dev(t0, t0_value);
+    			}
+
+    			if ((!current || changed.attacks) && t1_value !== (t1_value = ctx.attack.damage || 0 + "")) {
+    				set_data_dev(t1, t1_value);
+    			}
+
+    			var specialbonus_changes = {};
+    			if (changed.attacks) specialbonus_changes.bonus = ctx.attack.damageBonus;
+    			specialbonus.$set(specialbonus_changes);
+
+    			if ((!current || changed.attacks) && t3_value !== (t3_value = ctx.attack.pellets>1 && ctx.attack.damageBonus?")":"" + "")) {
+    				set_data_dev(t3, t3_value);
+    			}
+
+    			if ((!current || changed.attacks) && t5_value !== (t5_value = ctx.attack.pellets>1?" ×" + ctx.attack.pellets:"" + "")) {
+    				set_data_dev(t5, t5_value);
+    			}
+
+    			var link_changes = {};
+    			if (changed.attacks) link_changes.href = rul.damageTypes[ctx.attack.damageType];
+    			link.$set(link_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(specialbonus.$$.fragment, local);
+
+    			transition_in(link.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(specialbonus.$$.fragment, local);
+    			transition_out(link.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(nobr);
+    			}
+
+    			destroy_component(specialbonus);
+
+    			if (detaching) {
+    				detach_dev(t6);
+    				detach_dev(br);
+    			}
+
+    			destroy_component(link, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_11.name, type: "if", source: "(100:18) {#if 'damage' in attack || 'damageType' in attack}", ctx });
+    	return block;
+    }
+
+    // (114:16) {#if attack.alter}
+    function create_if_block_10(ctx) {
+    	var each_1_anchor, current;
+
+    	let each_value_4 = Object.keys(ctx.attack.alter).sort();
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_4.length; i += 1) {
+    		each_blocks[i] = create_each_block_4(get_each_context_4(ctx, each_value_4, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.attacks) {
+    				each_value_4 = Object.keys(ctx.attack.alter).sort();
+
+    				let i;
+    				for (i = 0; i < each_value_4.length; i += 1) {
+    					const child_ctx = get_each_context_4(ctx, each_value_4, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block_4(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value_4.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value_4.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(each_1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_10.name, type: "if", source: "(114:16) {#if attack.alter}", ctx });
+    	return block;
+    }
+
+    // (115:18) {#each Object.keys(attack.alter).sort() as field, i}
+    function create_each_block_4(ctx) {
+    	var t0_value = ctx.field + "", t0, t1, br, current;
+
+    	var value = new Value({
+    		props: { val: ctx.attack.alter[ctx.field] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			t0 = text(t0_value);
+    			t1 = text(": ");
+    			value.$$.fragment.c();
+    			br = element("br");
+    			add_location(br, file$6, 115, 68, 4290);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, t1, anchor);
+    			mount_component(value, target, anchor);
+    			insert_dev(target, br, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.attacks) && t0_value !== (t0_value = ctx.field + "")) {
+    				set_data_dev(t0, t0_value);
+    			}
+
+    			var value_changes = {};
+    			if (changed.attacks) value_changes.val = ctx.attack.alter[ctx.field];
+    			value.$set(value_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(value.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(value.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(t0);
+    				detach_dev(t1);
+    			}
+
+    			destroy_component(value, detaching);
+
+    			if (detaching) {
+    				detach_dev(br);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_4.name, type: "each", source: "(115:18) {#each Object.keys(attack.alter).sort() as field, i}", ctx });
+    	return block;
+    }
+
+    // (78:10) {#each attacks as attack}
+    function create_each_block_3(ctx) {
+    	var tr0, current_block_type_index, if_block0, t0, td0, t1, tr1, td1, small, t2, current;
+
+    	var if_block_creators = [
+    		create_if_block_12,
+    		create_else_block_1
+    	];
+
+    	var if_blocks = [];
+
+    	function select_block_type(changed, ctx) {
+    		if (ctx.attack.mode == "ammo") return 0;
+    		return 1;
+    	}
+
+    	current_block_type_index = select_block_type(null, ctx);
+    	if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	var if_block1 = ('damage' in ctx.attack || 'damageType' in ctx.attack) && create_if_block_11(ctx);
+
+    	var if_block2 = (ctx.attack.alter) && create_if_block_10(ctx);
+
+    	const block = {
+    		c: function create() {
+    			tr0 = element("tr");
+    			if_block0.c();
+    			t0 = space();
+    			td0 = element("td");
+    			if (if_block1) if_block1.c();
+    			t1 = space();
+    			tr1 = element("tr");
+    			td1 = element("td");
+    			small = element("small");
+    			if (if_block2) if_block2.c();
+    			t2 = space();
+    			attr_dev(td0, "class", "svelte-yer6ww");
+    			add_location(td0, file$6, 99, 14, 3456);
+    			add_location(tr0, file$6, 78, 12, 2076);
+    			add_location(small, file$6, 112, 16, 4093);
+    			attr_dev(td1, "colspan", "3");
+    			set_style(td1, "columns", "2");
+    			attr_dev(td1, "class", "svelte-yer6ww");
+    			add_location(td1, file$6, 111, 14, 4039);
+    			add_location(tr1, file$6, 110, 14, 4019);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr0, anchor);
+    			if_blocks[current_block_type_index].m(tr0, null);
+    			append_dev(tr0, t0);
+    			append_dev(tr0, td0);
+    			if (if_block1) if_block1.m(td0, null);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, tr1, anchor);
+    			append_dev(tr1, td1);
+    			append_dev(td1, small);
+    			if (if_block2) if_block2.m(small, null);
+    			append_dev(tr1, t2);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type(changed, ctx);
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(changed, ctx);
+    			} else {
+    				group_outros();
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+    				check_outros();
+
+    				if_block0 = if_blocks[current_block_type_index];
+    				if (!if_block0) {
+    					if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block0.c();
+    				}
+    				transition_in(if_block0, 1);
+    				if_block0.m(tr0, t0);
+    			}
+
+    			if ('damage' in ctx.attack || 'damageType' in ctx.attack) {
+    				if (if_block1) {
+    					if_block1.p(changed, ctx);
+    					transition_in(if_block1, 1);
+    				} else {
+    					if_block1 = create_if_block_11(ctx);
+    					if_block1.c();
+    					transition_in(if_block1, 1);
+    					if_block1.m(td0, null);
+    				}
+    			} else if (if_block1) {
+    				group_outros();
+    				transition_out(if_block1, 1, 1, () => {
+    					if_block1 = null;
+    				});
+    				check_outros();
+    			}
+
+    			if (ctx.attack.alter) {
+    				if (if_block2) {
+    					if_block2.p(changed, ctx);
+    					transition_in(if_block2, 1);
+    				} else {
+    					if_block2 = create_if_block_10(ctx);
+    					if_block2.c();
+    					transition_in(if_block2, 1);
+    					if_block2.m(small, null);
+    				}
+    			} else if (if_block2) {
+    				group_outros();
+    				transition_out(if_block2, 1, 1, () => {
+    					if_block2 = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block0);
+    			transition_in(if_block1);
+    			transition_in(if_block2);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block0);
+    			transition_out(if_block1);
+    			transition_out(if_block2);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr0);
+    			}
+
+    			if_blocks[current_block_type_index].d();
+    			if (if_block1) if_block1.d();
+
+    			if (detaching) {
+    				detach_dev(t1);
+    				detach_dev(tr1);
+    			}
+
+    			if (if_block2) if_block2.d();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_3.name, type: "each", source: "(78:10) {#each attacks as attack}", ctx });
+    	return block;
+    }
+
+    // (132:4) {#if !['sprite', 'type', '_attacks', 'damageAlter'].includes(key)}
+    function create_if_block$5(ctx) {
+    	var tr, td0, raw_value = rul.decamelize(ctx.key) + "", t0, td1, show_if, show_if_1, show_if_2, show_if_3, show_if_4, show_if_5, current_block_type_index, if_block, t1, current;
+
+    	var if_block_creators = [
+    		create_if_block_1$3,
+    		create_if_block_2$3,
+    		create_if_block_3$1,
+    		create_if_block_4,
+    		create_if_block_5,
+    		create_if_block_6,
+    		create_if_block_7,
+    		create_else_block$3
+    	];
+
+    	var if_blocks = [];
+
+    	function select_block_type_1(changed, ctx) {
+    		if ((show_if == null) || changed.item) show_if = !!(['requiresBuyBaseFunc' ].includes(ctx.key));
+    		if (show_if) return 0;
+    		if ((show_if_1 == null) || changed.item) show_if_1 = !!(['manufacture', 'componentOf'].includes(ctx.key));
+    		if (show_if_1) return 1;
+    		if ((show_if_2 == null) || changed.item) show_if_2 = !!(['damageBonus', 'meleeBonus', 'accuracyMultiplier', 'meleeMultiplier', 'closeQuartersMultiplier'].includes(ctx.key));
+    		if (show_if_2) return 2;
+    		if ((show_if_3 == null) || changed.item) show_if_3 = !!(['damageType', 'meleeType'].includes(ctx.key));
+    		if (show_if_3) return 3;
+    		if (ctx.key == 'battleType') return 4;
+    		if ((show_if_4 == null) || changed.item) show_if_4 = !!(ctx.key.includes("Sound"));
+    		if (show_if_4) return 5;
+    		if ((show_if_5 == null) || changed.item) show_if_5 = !!(['floorSprite', 'handSprite'].includes(ctx.key));
+    		if (show_if_5) return 6;
+    		return 7;
+    	}
+
+    	current_block_type_index = select_block_type_1(null, ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t0 = space();
+    			td1 = element("td");
+    			if_block.c();
+    			t1 = space();
+    			attr_dev(td0, "class", "svelte-yer6ww");
+    			add_location(td0, file$6, 133, 8, 4689);
+    			attr_dev(td1, "class", "right-column svelte-yer6ww");
+    			add_location(td1, file$6, 134, 8, 4735);
+    			add_location(tr, file$6, 132, 6, 4675);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			td0.innerHTML = raw_value;
+    			append_dev(tr, t0);
+    			append_dev(tr, td1);
+    			if_blocks[current_block_type_index].m(td1, null);
+    			append_dev(tr, t1);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.item) && raw_value !== (raw_value = rul.decamelize(ctx.key) + "")) {
+    				td0.innerHTML = raw_value;
+    			}
+
+    			var previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type_1(changed, ctx);
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(changed, ctx);
+    			} else {
+    				group_outros();
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+    				check_outros();
+
+    				if_block = if_blocks[current_block_type_index];
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				}
+    				transition_in(if_block, 1);
+    				if_block.m(td1, null);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+
+    			if_blocks[current_block_type_index].d();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$5.name, type: "if", source: "(132:4) {#if !['sprite', 'type', '_attacks', 'damageAlter'].includes(key)}", ctx });
+    	return block;
+    }
+
+    // (158:8) {:else}
+    function create_else_block$3(ctx) {
+    	var current;
+
+    	var value = new Value({
+    		props: { val: ctx.prop },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			value.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(value, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var value_changes = {};
+    			if (changed.item) value_changes.val = ctx.prop;
+    			value.$set(value_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(value.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(value.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(value, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block$3.name, type: "else", source: "(158:8) {:else}", ctx });
+    	return block;
+    }
+
+    // (155:62) 
+    function create_if_block_7(ctx) {
+    	var a, t0_value = ctx.prop + "", t0, a_href_value, t1, img, img_alt_value, img_src_value;
+
+    	const block = {
+    		c: function create() {
+    			a = element("a");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			img = element("img");
+    			set_style(a, "vertical-align", "top");
+    			attr_dev(a, "href", a_href_value = rul.specialSprite(ctx.key, ctx.prop));
+    			add_location(a, file$6, 155, 10, 5798);
+    			attr_dev(img, "class", "sprite svelte-yer6ww");
+    			attr_dev(img, "alt", img_alt_value = ctx.prop);
+    			attr_dev(img, "src", img_src_value = rul.specialSprite(ctx.key, ctx.prop));
+    			add_location(img, file$6, 156, 10, 5887);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, a, anchor);
+    			append_dev(a, t0);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, img, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.item) && t0_value !== (t0_value = ctx.prop + "")) {
+    				set_data_dev(t0, t0_value);
+    			}
+
+    			if ((changed.item) && a_href_value !== (a_href_value = rul.specialSprite(ctx.key, ctx.prop))) {
+    				attr_dev(a, "href", a_href_value);
+    			}
+
+    			if ((changed.item) && img_alt_value !== (img_alt_value = ctx.prop)) {
+    				attr_dev(img, "alt", img_alt_value);
+    			}
+
+    			if ((changed.item) && img_src_value !== (img_src_value = rul.specialSprite(ctx.key, ctx.prop))) {
+    				attr_dev(img, "src", img_src_value);
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(a);
+    				detach_dev(t1);
+    				detach_dev(img);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_7.name, type: "if", source: "(155:62) ", ctx });
+    	return block;
+    }
+
+    // (150:40) 
+    function create_if_block_6(ctx) {
+    	var each_1_anchor;
+
+    	let each_value_2 = soundsFrom(ctx.prop);
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_2.length; i += 1) {
+    		each_blocks[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.soundsFrom || changed.item) {
+    				each_value_2 = soundsFrom(ctx.prop);
+
+    				let i;
+    				for (i = 0; i < each_value_2.length; i += 1) {
+    					const child_ctx = get_each_context_2(ctx, each_value_2, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block_2(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+    				each_blocks.length = each_value_2.length;
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(each_1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_6.name, type: "if", source: "(150:40) ", ctx });
+    	return block;
+    }
+
+    // (148:38) 
+    function create_if_block_5(ctx) {
+    	var t0_value = ctx.prop + "", t0, t1, t2_value = rul.battleTypes[ctx.prop] + "", t2;
+
+    	const block = {
+    		c: function create() {
+    			t0 = text(t0_value);
+    			t1 = text(": ");
+    			t2 = text(t2_value);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, t2, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.item) && t0_value !== (t0_value = ctx.prop + "")) {
+    				set_data_dev(t0, t0_value);
+    			}
+
+    			if ((changed.item) && t2_value !== (t2_value = rul.battleTypes[ctx.prop] + "")) {
+    				set_data_dev(t2, t2_value);
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(t0);
+    				detach_dev(t1);
+    				detach_dev(t2);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_5.name, type: "if", source: "(148:38) ", ctx });
+    	return block;
+    }
+
+    // (146:60) 
+    function create_if_block_4(ctx) {
+    	var t_value = rul.damageTypeName(ctx.prop) + "", t;
+
+    	const block = {
+    		c: function create() {
+    			t = text(t_value);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.item) && t_value !== (t_value = rul.damageTypeName(ctx.prop) + "")) {
+    				set_data_dev(t, t_value);
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(t);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_4.name, type: "if", source: "(146:60) ", ctx });
+    	return block;
+    }
+
+    // (144:130) 
+    function create_if_block_3$1(ctx) {
+    	var current;
+
+    	var specialbonus = new SpecialBonus({
+    		props: { bonus: ctx.prop },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			specialbonus.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(specialbonus, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var specialbonus_changes = {};
+    			if (changed.item) specialbonus_changes.bonus = ctx.prop;
+    			specialbonus.$set(specialbonus_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(specialbonus.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(specialbonus.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(specialbonus, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_3$1.name, type: "if", source: "(144:130) ", ctx });
+    	return block;
+    }
+
+    // (138:63) 
+    function create_if_block_2$3(ctx) {
+    	var table, current;
+
+    	let each_value_1 = Object.keys(ctx.prop);
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			table = element("table");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr_dev(table, "class", "number-table");
+    			add_location(table, file$6, 138, 10, 4952);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, table, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table, null);
+    			}
+
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.item) {
+    				each_value_1 = Object.keys(ctx.prop);
+
+    				let i;
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block_1(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(table, null);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value_1.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value_1.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(table);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2$3.name, type: "if", source: "(138:63) ", ctx });
+    	return block;
+    }
+
+    // (136:8) {#if ['requiresBuyBaseFunc' ].includes(key)}
+    function create_if_block_1$3(ctx) {
+    	var current;
+
+    	var baseservicelist = new BaseServiceList({
+    		props: {
+    		items: ctx.prop,
+    		vertical: true
+    	},
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			baseservicelist.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(baseservicelist, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var baseservicelist_changes = {};
+    			if (changed.item) baseservicelist_changes.items = ctx.prop;
+    			baseservicelist.$set(baseservicelist_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(baseservicelist.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(baseservicelist.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(baseservicelist, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$3.name, type: "if", source: "(136:8) {#if ['requiresBuyBaseFunc' ].includes(key)}", ctx });
+    	return block;
+    }
+
+    // (151:10) {#each soundsFrom(prop) as sound, i}
+    function create_each_block_2(ctx) {
+    	var html_tag, raw_value = ctx.i>0?"<br/>":"" + "", t0, audio, t1, audio_src_value;
+
+    	const block = {
+    		c: function create() {
+    			t0 = space();
+    			audio = element("audio");
+    			t1 = text("Audio tag not working");
+    			html_tag = new HtmlTag(raw_value, t0);
+    			audio.controls = true;
+    			attr_dev(audio, "src", audio_src_value = ctx.sound);
+    			add_location(audio, file$6, 152, 12, 5646);
+    		},
+
+    		m: function mount(target, anchor) {
+    			html_tag.m(target, anchor);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, audio, anchor);
+    			append_dev(audio, t1);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.item) && audio_src_value !== (audio_src_value = ctx.sound)) {
+    				attr_dev(audio, "src", audio_src_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				html_tag.d();
+    				detach_dev(t0);
+    				detach_dev(audio);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_2.name, type: "each", source: "(151:10) {#each soundsFrom(prop) as sound, i}", ctx });
+    	return block;
+    }
+
+    // (140:10) {#each Object.keys(prop) as field, i}
+    function create_each_block_1(ctx) {
+    	var tr, td0, em, t_value = ctx.prop[ctx.field] + "", t, td1, current;
+
+    	var link = new Link({
+    		props: { href: ctx.field },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			em = element("em");
+    			t = text(t_value);
+    			td1 = element("td");
+    			link.$$.fragment.c();
+    			add_location(em, file$6, 140, 20, 5051);
+    			attr_dev(td0, "class", "svelte-yer6ww");
+    			add_location(td0, file$6, 140, 16, 5047);
+    			attr_dev(td1, "class", "svelte-yer6ww");
+    			add_location(td1, file$6, 140, 47, 5078);
+    			add_location(tr, file$6, 140, 12, 5043);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			append_dev(td0, em);
+    			append_dev(em, t);
+    			append_dev(tr, td1);
+    			mount_component(link, td1, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.item) && t_value !== (t_value = ctx.prop[ctx.field] + "")) {
+    				set_data_dev(t, t_value);
+    			}
+
+    			var link_changes = {};
+    			if (changed.item) link_changes.href = ctx.field;
+    			link.$set(link_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(link.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(link.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+
+    			destroy_component(link);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_1.name, type: "each", source: "(140:10) {#each Object.keys(prop) as field, i}", ctx });
+    	return block;
+    }
+
+    // (131:2) {#each Object.entries(item).sort((a,b) => a[0]>b[0]?1:-1) as [key, prop]}
+    function create_each_block$5(ctx) {
+    	var show_if = !['sprite', 'type', '_attacks', 'damageAlter'].includes(ctx.key), if_block_anchor, current;
+
+    	var if_block = (show_if) && create_if_block$5(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.item) show_if = !['sprite', 'type', '_attacks', 'damageAlter'].includes(ctx.key);
+
+    			if (show_if) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    					transition_in(if_block, 1);
+    				} else {
+    					if_block = create_if_block$5(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$5.name, type: "each", source: "(131:2) {#each Object.entries(item).sort((a,b) => a[0]>b[0]?1:-1) as [key, prop]}", ctx });
+    	return block;
+    }
+
+    function create_fragment$9(ctx) {
+    	var tr, td, t0, t1, t2, each_1_anchor, current;
+
+    	var if_block = ((ctx.item.sprite && ctx.item.sprite != "Resources/Blanks/Blank.png") ||ctx.attacks.length > 0) && create_if_block_8(ctx);
+
+    	let each_value = Object.entries(ctx.item).sort(func);
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$5(get_each_context$5(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td = element("td");
+    			t0 = text(ctx.title);
+    			t1 = space();
+    			if (if_block) if_block.c();
+    			t2 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    			attr_dev(td, "colspan", "2");
+    			attr_dev(td, "class", "table-header svelte-yer6ww");
+    			add_location(td, file$6, 62, 7, 1366);
+    			add_location(tr, file$6, 62, 2, 1361);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td);
+    			append_dev(td, t0);
+    			insert_dev(target, t1, anchor);
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, t2, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (!current || changed.title) {
+    				set_data_dev(t0, ctx.title);
+    			}
+
+    			if ((ctx.item.sprite && ctx.item.sprite != "Resources/Blanks/Blank.png") ||ctx.attacks.length > 0) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    					transition_in(if_block, 1);
+    				} else {
+    					if_block = create_if_block_8(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(t2.parentNode, t2);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+    				check_outros();
+    			}
+
+    			if (changed.item || changed.rul || changed.soundsFrom) {
+    				each_value = Object.entries(ctx.item).sort(func);
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$5(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$5(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    				detach_dev(t1);
+    			}
+
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(t2);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(each_1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$9.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function soundsFrom(sounds){
+      if(!sounds)
+        return []
+      if(!sounds.length)
+        sounds = [sounds];
+      return sounds.map(s => rul.path + rul.sounds[s]).filter(s => s)
+    }
+
+    const func = (a,b) => a[0]>b[0]?1:-1;
+
+    function instance$8($$self, $$props, $$invalidate) {
+    	  
+
+      let { item, title = "Item" } = $$props;
+      let attacks;
+
+      console.info(item);
+
+    	const writable_props = ['item', 'title'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console_1$1.warn(`<Item> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('item' in $$props) $$invalidate('item', item = $$props.item);
+    		if ('title' in $$props) $$invalidate('title', title = $$props.title);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { item, title, attacks };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('item' in $$props) $$invalidate('item', item = $$props.item);
+    		if ('title' in $$props) $$invalidate('title', title = $$props.title);
+    		if ('attacks' in $$props) $$invalidate('attacks', attacks = $$props.attacks);
+    	};
+
+    	$$self.$$.update = ($$dirty = { item: 1, attacks: 1 }) => {
+    		if ($$dirty.item || $$dirty.attacks) { { 
+              $$invalidate('attacks', attacks = item.attacks().slice());
+              if(item.compatibleAmmo)
+                for(let ammoId of item.compatibleAmmo){
+                  let ammo = rul.items[ammoId];
+                  let ammoAttack = ammo.attacks()[0];
+                  ammoAttack.item = ammo;
+                  attacks.push(ammoAttack);
+                }
+        
+              console.info(attacks);
+            } }
+    	};
+
+    	return { item, title, attacks };
+    }
+
+    class Item$1 extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$8, create_fragment$9, safe_not_equal, ["item", "title"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Item", options, id: create_fragment$9.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.item === undefined && !('item' in props)) {
+    			console_1$1.warn("<Item> was created without expected prop 'item'");
+    		}
+    	}
+
+    	get item() {
+    		throw new Error("<Item>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set item(value) {
+    		throw new Error("<Item>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get title() {
+    		throw new Error("<Item>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set title(value) {
+    		throw new Error("<Item>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\Armor.svelte generated by Svelte v3.12.1 */
+    const { console: console_1$2 } = globals;
+
+    const file$7 = "src\\Armor.svelte";
+
+    function get_each_context_2$1(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.field = list[i];
+    	child_ctx.i = i;
+    	return child_ctx;
+    }
+
+    function get_each_context_1$1(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.res = list[i];
+    	child_ctx.i = i;
+    	return child_ctx;
+    }
+
+    function get_each_context$6(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.key = list[i][0];
+    	child_ctx.prop = list[i][1];
+    	return child_ctx;
+    }
+
+    function get_each_context_5$1(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.subfield = list[i];
+    	child_ctx.j = i;
+    	return child_ctx;
+    }
+
+    function get_each_context_4$1(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.key = list[i][0];
+    	child_ctx.val = list[i][1];
+    	child_ctx.i = i;
+    	return child_ctx;
+    }
+
+    function get_each_context_3$1(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.prop = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_7(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.url = list[i];
+    	child_ctx.j = i;
+    	return child_ctx;
+    }
+
+    function get_each_context_6(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.body = list[i];
+    	child_ctx.i = i;
+    	return child_ctx;
+    }
+
+    // (39:6) {#if seeAlso.length > 0}
+    function create_if_block_14$1(ctx) {
+    	var span, t_1, current;
+
+    	var linkslist = new LinksList({
+    		props: { items: ctx.seeAlso },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			span.textContent = "- see also";
+    			t_1 = space();
+    			linkslist.$$.fragment.c();
+    			set_style(span, "color", "white");
+    			add_location(span, file$7, 39, 8, 851);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    			insert_dev(target, t_1, anchor);
+    			mount_component(linkslist, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var linkslist_changes = {};
+    			if (changed.seeAlso) linkslist_changes.items = ctx.seeAlso;
+    			linkslist.$set(linkslist_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(linkslist.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(linkslist.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(span);
+    				detach_dev(t_1);
+    			}
+
+    			destroy_component(linkslist, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_14$1.name, type: "if", source: "(39:6) {#if seeAlso.length > 0}", ctx });
+    	return block;
+    }
+
+    // (48:8) {#if Object.keys(armor.dollSprites).length > 1}
+    function create_if_block_13$1(ctx) {
+    	var p, button, t0_value = ctx.seeAllVariants ? 'Hide' : 'See' + "", t0, t1, dispose;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			button = element("button");
+    			t0 = text(t0_value);
+    			t1 = text(" all variants");
+    			attr_dev(button, "class", "btn-hover-effect btn-hover-effect--effect-1");
+    			add_location(button, file$7, 49, 12, 1110);
+    			add_location(p, file$7, 48, 10, 1093);
+    			dispose = listen_dev(button, "click", ctx.click_handler);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			append_dev(p, button);
+    			append_dev(button, t0);
+    			append_dev(button, t1);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.seeAllVariants) && t0_value !== (t0_value = ctx.seeAllVariants ? 'Hide' : 'See' + "")) {
+    				set_data_dev(t0, t0_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(p);
+    			}
+
+    			dispose();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_13$1.name, type: "if", source: "(48:8) {#if Object.keys(armor.dollSprites).length > 1}", ctx });
+    	return block;
+    }
+
+    // (58:8) {#if armor.dollSprites}
+    function create_if_block_10$1(ctx) {
+    	var t, div, div_style_value;
+
+    	let each_value_6 = Object.keys(ctx.armor.dollSprites).sort(ctx.func
+              );
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_6.length; i += 1) {
+    		each_blocks[i] = create_each_block_6(get_each_context_6(ctx, each_value_6, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t = space();
+    			div = element("div");
+    			attr_dev(div, "style", div_style_value = 'height:' + (ctx.seeAllVariants ? (Math.floor(Object.keys(ctx.armor.dollSprites).length / dollColumns) + 1) * 120 : 120) + 'px');
+    			add_location(div, file$7, 74, 10, 2071);
+    		},
+
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, t, anchor);
+    			insert_dev(target, div, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.seeAllVariants || changed.dollColumns || changed.armor || changed.rul) {
+    				each_value_6 = Object.keys(ctx.armor.dollSprites).sort(ctx.func
+              );
+
+    				let i;
+    				for (i = 0; i < each_value_6.length; i += 1) {
+    					const child_ctx = get_each_context_6(ctx, each_value_6, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block_6(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(t.parentNode, t);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+    				each_blocks.length = each_value_6.length;
+    			}
+
+    			if ((changed.seeAllVariants || changed.armor) && div_style_value !== (div_style_value = 'height:' + (ctx.seeAllVariants ? (Math.floor(Object.keys(ctx.armor.dollSprites).length / dollColumns) + 1) * 120 : 120) + 'px')) {
+    				attr_dev(div, "style", div_style_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(t);
+    				detach_dev(div);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_10$1.name, type: "if", source: "(58:8) {#if armor.dollSprites}", ctx });
+    	return block;
+    }
+
+    // (62:12) {#if seeAllVariants || i == 0}
+    function create_if_block_11$1(ctx) {
+    	var div, t;
+
+    	var if_block = (ctx.seeAllVariants) && create_if_block_12$1(ctx);
+
+    	let each_value_7 = ctx.armor.dollSprites[ctx.body];
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_7.length; i += 1) {
+    		each_blocks[i] = create_each_block_7(get_each_context_7(ctx, each_value_7, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			if (if_block) if_block.c();
+    			t = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr_dev(div, "class", "armor");
+    			set_style(div, "left", "" + (ctx.i % dollColumns) * 80 + "px");
+    			set_style(div, "top", "" + Math.floor(ctx.i / dollColumns) * 120 + "px");
+    			add_location(div, file$7, 62, 14, 1590);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			if (if_block) if_block.m(div, null);
+    			append_dev(div, t);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div, null);
+    			}
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (ctx.seeAllVariants) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    				} else {
+    					if_block = create_if_block_12$1(ctx);
+    					if_block.c();
+    					if_block.m(div, t);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			if (changed.armor || changed.rul) {
+    				each_value_7 = ctx.armor.dollSprites[ctx.body];
+
+    				let i;
+    				for (i = 0; i < each_value_7.length; i += 1) {
+    					const child_ctx = get_each_context_7(ctx, each_value_7, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block_7(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+    				each_blocks.length = each_value_7.length;
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+
+    			if (if_block) if_block.d();
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_11$1.name, type: "if", source: "(62:12) {#if seeAllVariants || i == 0}", ctx });
+    	return block;
+    }
+
+    // (66:16) {#if seeAllVariants}
+    function create_if_block_12$1(ctx) {
+    	var div, t_value = ctx.body + "", t;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			t = text(t_value);
+    			attr_dev(div, "class", "armor-variant");
+    			add_location(div, file$7, 66, 18, 1785);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, t);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.armor) && t_value !== (t_value = ctx.body + "")) {
+    				set_data_dev(t, t_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_12$1.name, type: "if", source: "(66:16) {#if seeAllVariants}", ctx });
+    	return block;
+    }
+
+    // (69:16) {#each armor.dollSprites[body] as url, j}
+    function create_each_block_7(ctx) {
+    	var img, img_src_value, img_alt_value;
+
+    	const block = {
+    		c: function create() {
+    			img = element("img");
+    			attr_dev(img, "src", img_src_value = ctx.url);
+    			attr_dev(img, "alt", img_alt_value = ctx.body);
+    			attr_dev(img, "class", "armor-layer");
+    			add_location(img, file$7, 69, 18, 1926);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, img, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.armor) && img_src_value !== (img_src_value = ctx.url)) {
+    				attr_dev(img, "src", img_src_value);
+    			}
+
+    			if ((changed.armor) && img_alt_value !== (img_alt_value = ctx.body)) {
+    				attr_dev(img, "alt", img_alt_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(img);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_7.name, type: "each", source: "(69:16) {#each armor.dollSprites[body] as url, j}", ctx });
+    	return block;
+    }
+
+    // (59:10) {#each Object.keys(armor.dollSprites).sort((a, b) =>              rul.bodiesCompare([a, b])            ) as body, i}
+    function create_each_block_6(ctx) {
+    	var if_block_anchor;
+
+    	var if_block = (ctx.seeAllVariants || ctx.i == 0) && create_if_block_11$1(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (ctx.seeAllVariants || ctx.i == 0) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    				} else {
+    					if_block = create_if_block_11$1(ctx);
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_6.name, type: "each", source: "(59:10) {#each Object.keys(armor.dollSprites).sort((a, b) =>              rul.bodiesCompare([a, b])            ) as body, i}", ctx });
+    	return block;
+    }
+
+    // (85:10) {#if armor[prop]}
+    function create_if_block_6$1(ctx) {
+    	var table, thead, tr, td, raw_value = rul.decamelize(ctx.prop) + "", t0, t1, current;
+
+    	let each_value_4 = Object.entries(ctx.armor[ctx.prop]).sort(ctx.func_1
+                  );
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_4.length; i += 1) {
+    		each_blocks[i] = create_each_block_4$1(get_each_context_4$1(ctx, each_value_4, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			table = element("table");
+    			thead = element("thead");
+    			tr = element("tr");
+    			td = element("td");
+    			t0 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t1 = space();
+    			attr_dev(td, "colspan", "2");
+    			attr_dev(td, "class", "number-table-header");
+    			set_style(td, "text-align", "center");
+    			add_location(td, file$7, 88, 18, 2558);
+    			add_location(tr, file$7, 87, 16, 2534);
+    			add_location(thead, file$7, 86, 14, 2509);
+    			attr_dev(table, "class", "number-table armor-column");
+    			add_location(table, file$7, 85, 12, 2452);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, table, anchor);
+    			append_dev(table, thead);
+    			append_dev(thead, tr);
+    			append_dev(tr, td);
+    			td.innerHTML = raw_value;
+    			append_dev(table, t0);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table, null);
+    			}
+
+    			append_dev(table, t1);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.armor || changed.rul) {
+    				each_value_4 = Object.entries(ctx.armor[ctx.prop]).sort(ctx.func_1
+                  );
+
+    				let i;
+    				for (i = 0; i < each_value_4.length; i += 1) {
+    					const child_ctx = get_each_context_4$1(ctx, each_value_4, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block_4$1(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(table, t1);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value_4.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value_4.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(table);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_6$1.name, type: "if", source: "(85:10) {#if armor[prop]}", ctx });
+    	return block;
+    }
+
+    // (104:20) {:else}
+    function create_else_block_2(ctx) {
+    	var nobr, t_value = rul.decamelize(ctx.key) + "", t;
+
+    	const block = {
+    		c: function create() {
+    			nobr = element("nobr");
+    			t = text(t_value);
+    			add_location(nobr, file$7, 104, 22, 3181);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, nobr, anchor);
+    			append_dev(nobr, t);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.armor) && t_value !== (t_value = rul.decamelize(ctx.key) + "")) {
+    				set_data_dev(t, t_value);
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(nobr);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block_2.name, type: "else", source: "(104:20) {:else}", ctx });
+    	return block;
+    }
+
+    // (102:20) {#if prop == 'damageModifier'}
+    function create_if_block_9$1(ctx) {
+    	var current;
+
+    	var link = new Link({
+    		props: { href: rul.damageTypes[ctx.key] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			link.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(link, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var link_changes = {};
+    			if (changed.armor) link_changes.href = rul.damageTypes[ctx.key];
+    			link.$set(link_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(link.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(link.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(link, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_9$1.name, type: "if", source: "(102:20) {#if prop == 'damageModifier'}", ctx });
+    	return block;
+    }
+
+    // (120:20) {:else}
+    function create_else_block_1$1(ctx) {
+    	var em, raw_value = ctx.prop == 'damageModifier' ? Math.floor(ctx.val * 100) : rul.decamelize(ctx.val) + "";
+
+    	const block = {
+    		c: function create() {
+    			em = element("em");
+    			add_location(em, file$7, 120, 22, 3798);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, em, anchor);
+    			em.innerHTML = raw_value;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.armor) && raw_value !== (raw_value = ctx.prop == 'damageModifier' ? Math.floor(ctx.val * 100) : rul.decamelize(ctx.val) + "")) {
+    				em.innerHTML = raw_value;
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(em);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block_1$1.name, type: "else", source: "(120:20) {:else}", ctx });
+    	return block;
+    }
+
+    // (109:20) {#if 'recovery' == prop}
+    function create_if_block_7$1(ctx) {
+    	var each_1_anchor;
+
+    	let each_value_5 = Object.keys(ctx.val);
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_5.length; i += 1) {
+    		each_blocks[i] = create_each_block_5$1(get_each_context_5$1(ctx, each_value_5, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.rul || changed.armor) {
+    				each_value_5 = Object.keys(ctx.val);
+
+    				let i;
+    				for (i = 0; i < each_value_5.length; i += 1) {
+    					const child_ctx = get_each_context_5$1(ctx, each_value_5, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block_5$1(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+    				each_blocks.length = each_value_5.length;
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(each_1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_7$1.name, type: "if", source: "(109:20) {#if 'recovery' == prop}", ctx });
+    	return block;
+    }
+
+    // (111:24) {#if j != 0}
+    function create_if_block_8$1(ctx) {
+    	var br;
+
+    	const block = {
+    		c: function create() {
+    			br = element("br");
+    			add_location(br, file$7, 111, 26, 3466);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, br, anchor);
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(br);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_8$1.name, type: "if", source: "(111:24) {#if j != 0}", ctx });
+    	return block;
+    }
+
+    // (110:22) {#each Object.keys(val) as subfield, j}
+    function create_each_block_5$1(ctx) {
+    	var t0, html_tag, raw0_value = rul.decamelize(ctx.subfield) + "", t1, em, raw1_value = rul.decamelize(ctx.val[ctx.subfield]) + "";
+
+    	var if_block = (ctx.j != 0) && create_if_block_8$1(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			t0 = space();
+    			t1 = text("\r\n                        :\r\n                        ");
+    			em = element("em");
+    			html_tag = new HtmlTag(raw0_value, t1);
+    			add_location(em, file$7, 115, 24, 3614);
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, t0, anchor);
+    			html_tag.m(target, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, em, anchor);
+    			em.innerHTML = raw1_value;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.armor) && raw0_value !== (raw0_value = rul.decamelize(ctx.subfield) + "")) {
+    				html_tag.p(raw0_value);
+    			}
+
+    			if ((changed.armor) && raw1_value !== (raw1_value = rul.decamelize(ctx.val[ctx.subfield]) + "")) {
+    				em.innerHTML = raw1_value;
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(t0);
+    				html_tag.d();
+    				detach_dev(t1);
+    				detach_dev(em);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_5$1.name, type: "each", source: "(110:22) {#each Object.keys(val) as subfield, j}", ctx });
+    	return block;
+    }
+
+    // (97:14) {#each Object.entries(armor[prop]).sort((a, b) =>                  rul.str(a[0]) > rul.str(b[0]) ? 1 : -1                ) as [key, val], i}
+    function create_each_block_4$1(ctx) {
+    	var tr, td0, current_block_type_index, if_block0, t, td1, current;
+
+    	var if_block_creators = [
+    		create_if_block_9$1,
+    		create_else_block_2
+    	];
+
+    	var if_blocks = [];
+
+    	function select_block_type(changed, ctx) {
+    		if (ctx.prop == 'damageModifier') return 0;
+    		return 1;
+    	}
+
+    	current_block_type_index = select_block_type(null, ctx);
+    	if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	function select_block_type_1(changed, ctx) {
+    		if ('recovery' == ctx.prop) return create_if_block_7$1;
+    		return create_else_block_1$1;
+    	}
+
+    	var current_block_type = select_block_type_1(null, ctx);
+    	var if_block1 = current_block_type(ctx);
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			if_block0.c();
+    			t = space();
+    			td1 = element("td");
+    			if_block1.c();
+    			add_location(td0, file$7, 100, 18, 3012);
+    			add_location(td1, file$7, 107, 18, 3287);
+    			add_location(tr, file$7, 99, 16, 2988);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			if_blocks[current_block_type_index].m(td0, null);
+    			append_dev(tr, t);
+    			append_dev(tr, td1);
+    			if_block1.m(td1, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if_block0.p(changed, ctx);
+    			if_block1.p(changed, ctx);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block0);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block0);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+
+    			if_blocks[current_block_type_index].d();
+    			if_block1.d();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_4$1.name, type: "each", source: "(97:14) {#each Object.entries(armor[prop]).sort((a, b) =>                  rul.str(a[0]) > rul.str(b[0]) ? 1 : -1                ) as [key, val], i}", ctx });
+    	return block;
+    }
+
+    // (84:8) {#each ['armor', 'damageModifier', 'stats', 'recovery'] as prop}
+    function create_each_block_3$1(ctx) {
+    	var if_block_anchor, current;
+
+    	var if_block = (ctx.armor[ctx.prop]) && create_if_block_6$1(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (ctx.armor[ctx.prop]) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    					transition_in(if_block, 1);
+    				} else {
+    					if_block = create_if_block_6$1(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_3$1.name, type: "each", source: "(84:8) {#each ['armor', 'damageModifier', 'stats', 'recovery'] as prop}", ctx });
+    	return block;
+    }
+
+    // (138:4) {#if !['recovery', 'type', 'layersDefinition', 'spriteFaceColor', 'spriteHairColor', 'spriteUtileColor', 'spriteFaceGroup', 'spriteHairGroup', 'spriteUtileGroup', 'customArmorPreviewIndex', 'dollSprites', 'layersDefaultPrefix', 'frontArmor', 'sideArmor', 'rearArmor', 'underArmor', 'spriteInv', 'scripts', 'armor', 'damageModifier', 'stats'].includes(key)}
+    function create_if_block$6(ctx) {
+    	var tr, td0, raw_value = rul.decamelize(ctx.key) + "", t0, td1, show_if, show_if_1, current_block_type_index, if_block, t1, current;
+
+    	var if_block_creators = [
+    		create_if_block_1$4,
+    		create_if_block_2$4,
+    		create_if_block_3$2,
+    		create_if_block_4$1,
+    		create_else_block$4
+    	];
+
+    	var if_blocks = [];
+
+    	function select_block_type_2(changed, ctx) {
+    		if (ctx.key == 'damageModifier') return 0;
+    		if ((show_if == null) || changed.armor) show_if = !!(['corpseBattle'].includes(ctx.key));
+    		if (show_if) return 1;
+    		if ('spriteSheet' == ctx.key) return 2;
+    		if ((show_if_1 == null) || changed.armor) show_if_1 = !!(['builtInWeapons', 'users', 'units'].includes(ctx.key));
+    		if (show_if_1) return 3;
+    		return 4;
+    	}
+
+    	current_block_type_index = select_block_type_2(null, ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t0 = space();
+    			td1 = element("td");
+    			if_block.c();
+    			t1 = space();
+    			add_location(td0, file$7, 139, 8, 4603);
+    			add_location(td1, file$7, 142, 8, 4671);
+    			add_location(tr, file$7, 138, 6, 4589);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			td0.innerHTML = raw_value;
+    			append_dev(tr, t0);
+    			append_dev(tr, td1);
+    			if_blocks[current_block_type_index].m(td1, null);
+    			append_dev(tr, t1);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.armor) && raw_value !== (raw_value = rul.decamelize(ctx.key) + "")) {
+    				td0.innerHTML = raw_value;
+    			}
+
+    			var previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type_2(changed, ctx);
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(changed, ctx);
+    			} else {
+    				group_outros();
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+    				check_outros();
+
+    				if_block = if_blocks[current_block_type_index];
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				}
+    				transition_in(if_block, 1);
+    				if_block.m(td1, null);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+
+    			if_blocks[current_block_type_index].d();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$6.name, type: "if", source: "(138:4) {#if !['recovery', 'type', 'layersDefinition', 'spriteFaceColor', 'spriteHairColor', 'spriteUtileColor', 'spriteFaceGroup', 'spriteHairGroup', 'spriteUtileGroup', 'customArmorPreviewIndex', 'dollSprites', 'layersDefaultPrefix', 'frontArmor', 'sideArmor', 'rearArmor', 'underArmor', 'spriteInv', 'scripts', 'armor', 'damageModifier', 'stats'].includes(key)}", ctx });
+    	return block;
+    }
+
+    // (166:10) {:else}
+    function create_else_block$4(ctx) {
+    	var current;
+
+    	var value = new Value({
+    		props: { val: ctx.prop },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			value.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(value, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var value_changes = {};
+    			if (changed.armor) value_changes.val = ctx.prop;
+    			value.$set(value_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(value.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(value.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(value, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block$4.name, type: "else", source: "(166:10) {:else}", ctx });
+    	return block;
+    }
+
+    // (161:71) 
+    function create_if_block_4$1(ctx) {
+    	var each_1_anchor, current;
+
+    	let each_value_2 = ctx.prop.filter(func_3);
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_2.length; i += 1) {
+    		each_blocks[i] = create_each_block_2$1(get_each_context_2$1(ctx, each_value_2, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.armor) {
+    				each_value_2 = ctx.prop.filter(func_3);
+
+    				let i;
+    				for (i = 0; i < each_value_2.length; i += 1) {
+    					const child_ctx = get_each_context_2$1(ctx, each_value_2, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block_2$1(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value_2.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value_2.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(each_1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_4$1.name, type: "if", source: "(161:71) ", ctx });
+    	return block;
+    }
+
+    // (159:41) 
+    function create_if_block_3$2(ctx) {
+    	var a, t_value = ctx.prop + "", t, a_href_value;
+
+    	const block = {
+    		c: function create() {
+    			a = element("a");
+    			t = text(t_value);
+    			attr_dev(a, "href", a_href_value = rul.sprite(ctx.prop));
+    			add_location(a, file$7, 159, 12, 5290);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, a, anchor);
+    			append_dev(a, t);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.armor) && t_value !== (t_value = ctx.prop + "")) {
+    				set_data_dev(t, t_value);
+    			}
+
+    			if ((changed.armor) && a_href_value !== (a_href_value = rul.sprite(ctx.prop))) {
+    				attr_dev(a, "href", a_href_value);
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(a);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_3$2.name, type: "if", source: "(159:41) ", ctx });
+    	return block;
+    }
+
+    // (157:51) 
+    function create_if_block_2$4(ctx) {
+    	var current;
+
+    	var link = new Link({
+    		props: { href: ctx.prop[0] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			link.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(link, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var link_changes = {};
+    			if (changed.armor) link_changes.href = ctx.prop[0];
+    			link.$set(link_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(link.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(link.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(link, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2$4.name, type: "if", source: "(157:51) ", ctx });
+    	return block;
+    }
+
+    // (144:10) {#if key == 'damageModifier'}
+    function create_if_block_1$4(ctx) {
+    	var table;
+
+    	let each_value_1 = ctx.prop;
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			table = element("table");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr_dev(table, "class", "number-table");
+    			add_location(table, file$7, 144, 12, 4730);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, table, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table, null);
+    			}
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.armor || changed.rul) {
+    				each_value_1 = ctx.prop;
+
+    				let i;
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1$1(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block_1$1(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(table, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+    				each_blocks.length = each_value_1.length;
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(table);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$4.name, type: "if", source: "(144:10) {#if key == 'damageModifier'}", ctx });
+    	return block;
+    }
+
+    // (163:14) {#if i != 0}
+    function create_if_block_5$1(ctx) {
+    	var t;
+
+    	const block = {
+    		c: function create() {
+    			t = text(",");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(t);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_5$1.name, type: "if", source: "(163:14) {#if i != 0}", ctx });
+    	return block;
+    }
+
+    // (162:12) {#each prop.filter(s => s.substr(0, 8) != 'INV_NULL') as field, i}
+    function create_each_block_2$1(ctx) {
+    	var t, current;
+
+    	var if_block = (ctx.i != 0) && create_if_block_5$1(ctx);
+
+    	var link = new Link({
+    		props: { href: ctx.field },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			t = space();
+    			link.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, t, anchor);
+    			mount_component(link, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var link_changes = {};
+    			if (changed.armor) link_changes.href = ctx.field;
+    			link.$set(link_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(link.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(link.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(t);
+    			}
+
+    			destroy_component(link, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_2$1.name, type: "each", source: "(162:12) {#each prop.filter(s => s.substr(0, 8) != 'INV_NULL') as field, i}", ctx });
+    	return block;
+    }
+
+    // (146:14) {#each prop as res, i}
+    function create_each_block_1$1(ctx) {
+    	var tr, td0, t0_value = rul.damageTypeName(ctx.i) + "", t0, t1, td1, t2_value = Math.round(ctx.res * 100) + "", t2, t3, t4;
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			td1 = element("td");
+    			t2 = text(t2_value);
+    			t3 = text("%");
+    			t4 = space();
+    			attr_dev(td0, "width", "50%");
+    			attr_dev(td0, "class", "number-table1");
+    			add_location(td0, file$7, 147, 18, 4838);
+    			attr_dev(td1, "width", "50%");
+    			attr_dev(td1, "class", "number-table2");
+    			add_location(td1, file$7, 150, 18, 4966);
+    			add_location(tr, file$7, 146, 16, 4814);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			append_dev(td0, t0);
+    			append_dev(tr, t1);
+    			append_dev(tr, td1);
+    			append_dev(td1, t2);
+    			append_dev(td1, t3);
+    			append_dev(tr, t4);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.armor) && t2_value !== (t2_value = Math.round(ctx.res * 100) + "")) {
+    				set_data_dev(t2, t2_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_1$1.name, type: "each", source: "(146:14) {#each prop as res, i}", ctx });
+    	return block;
+    }
+
+    // (135:2) {#each Object.entries(armor).sort((a, b) =>      a[0] > b[0] ? 1 : -1    ) as [key, prop]}
+    function create_each_block$6(ctx) {
+    	var show_if = !['recovery', 'type', 'layersDefinition', 'spriteFaceColor', 'spriteHairColor', 'spriteUtileColor', 'spriteFaceGroup', 'spriteHairGroup', 'spriteUtileGroup', 'customArmorPreviewIndex', 'dollSprites', 'layersDefaultPrefix', 'frontArmor', 'sideArmor', 'rearArmor', 'underArmor', 'spriteInv', 'scripts', 'armor', 'damageModifier', 'stats'].includes(ctx.key), if_block_anchor, current;
+
+    	var if_block = (show_if) && create_if_block$6(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.armor) show_if = !['recovery', 'type', 'layersDefinition', 'spriteFaceColor', 'spriteHairColor', 'spriteUtileColor', 'spriteFaceGroup', 'spriteHairGroup', 'spriteUtileGroup', 'customArmorPreviewIndex', 'dollSprites', 'layersDefaultPrefix', 'frontArmor', 'sideArmor', 'rearArmor', 'underArmor', 'spriteInv', 'scripts', 'armor', 'damageModifier', 'stats'].includes(ctx.key);
+
+    			if (show_if) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    					transition_in(if_block, 1);
+    				} else {
+    					if_block = create_if_block$6(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$6.name, type: "each", source: "(135:2) {#each Object.entries(armor).sort((a, b) =>      a[0] > b[0] ? 1 : -1    ) as [key, prop]}", ctx });
+    	return block;
+    }
+
+    function create_fragment$a(ctx) {
+    	var table, tr0, td0, t0_value = rul.str("Armor") + "", t0, t1, t2, tr1, td1, div0, show_if = Object.keys(ctx.armor.dollSprites).length > 1, t3, t4, tr2, td2, div1, t5, current;
+
+    	var if_block0 = (ctx.seeAlso.length > 0) && create_if_block_14$1(ctx);
+
+    	var if_block1 = (show_if) && create_if_block_13$1(ctx);
+
+    	var if_block2 = (ctx.armor.dollSprites) && create_if_block_10$1(ctx);
+
+    	let each_value_3 = ['armor', 'damageModifier', 'stats', 'recovery'];
+
+    	let each_blocks_1 = [];
+
+    	for (let i = 0; i < 4; i += 1) {
+    		each_blocks_1[i] = create_each_block_3$1(get_each_context_3$1(ctx, each_value_3, i));
+    	}
+
+    	const out = i => transition_out(each_blocks_1[i], 1, 1, () => {
+    		each_blocks_1[i] = null;
+    	});
+
+    	let each_value = Object.entries(ctx.armor).sort(func_2
+      );
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$6(get_each_context$6(ctx, each_value, i));
+    	}
+
+    	const out_1 = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			table = element("table");
+    			tr0 = element("tr");
+    			td0 = element("td");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			if (if_block0) if_block0.c();
+    			t2 = space();
+    			tr1 = element("tr");
+    			td1 = element("td");
+    			div0 = element("div");
+    			if (if_block1) if_block1.c();
+    			t3 = space();
+    			if (if_block2) if_block2.c();
+    			t4 = space();
+    			tr2 = element("tr");
+    			td2 = element("td");
+    			div1 = element("div");
+
+    			for (let i = 0; i < 4; i += 1) {
+    				each_blocks_1[i].c();
+    			}
+
+    			t5 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr_dev(td0, "colspan", "2");
+    			attr_dev(td0, "class", "table-header");
+    			add_location(td0, file$7, 36, 4, 746);
+    			add_location(tr0, file$7, 35, 2, 736);
+    			attr_dev(div0, "class", "armors");
+    			add_location(div0, file$7, 46, 6, 1004);
+    			attr_dev(td1, "colspan", "2");
+    			add_location(td1, file$7, 45, 4, 980);
+    			add_location(tr1, file$7, 44, 2, 970);
+    			attr_dev(div1, "class", "flex-horisontal");
+    			add_location(div1, file$7, 82, 6, 2306);
+    			attr_dev(td2, "colspan", "2");
+    			add_location(td2, file$7, 81, 4, 2282);
+    			add_location(tr2, file$7, 80, 2, 2272);
+    			attr_dev(table, "class", "main-table");
+    			add_location(table, file$7, 34, 0, 706);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, table, anchor);
+    			append_dev(table, tr0);
+    			append_dev(tr0, td0);
+    			append_dev(td0, t0);
+    			append_dev(td0, t1);
+    			if (if_block0) if_block0.m(td0, null);
+    			append_dev(table, t2);
+    			append_dev(table, tr1);
+    			append_dev(tr1, td1);
+    			append_dev(td1, div0);
+    			if (if_block1) if_block1.m(div0, null);
+    			append_dev(div0, t3);
+    			if (if_block2) if_block2.m(div0, null);
+    			append_dev(table, t4);
+    			append_dev(table, tr2);
+    			append_dev(tr2, td2);
+    			append_dev(td2, div1);
+
+    			for (let i = 0; i < 4; i += 1) {
+    				each_blocks_1[i].m(div1, null);
+    			}
+
+    			append_dev(table, t5);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table, null);
+    			}
+
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (ctx.seeAlso.length > 0) {
+    				if (if_block0) {
+    					if_block0.p(changed, ctx);
+    					transition_in(if_block0, 1);
+    				} else {
+    					if_block0 = create_if_block_14$1(ctx);
+    					if_block0.c();
+    					transition_in(if_block0, 1);
+    					if_block0.m(td0, null);
+    				}
+    			} else if (if_block0) {
+    				group_outros();
+    				transition_out(if_block0, 1, 1, () => {
+    					if_block0 = null;
+    				});
+    				check_outros();
+    			}
+
+    			if (changed.armor) show_if = Object.keys(ctx.armor.dollSprites).length > 1;
+
+    			if (show_if) {
+    				if (if_block1) {
+    					if_block1.p(changed, ctx);
+    				} else {
+    					if_block1 = create_if_block_13$1(ctx);
+    					if_block1.c();
+    					if_block1.m(div0, t3);
+    				}
+    			} else if (if_block1) {
+    				if_block1.d(1);
+    				if_block1 = null;
+    			}
+
+    			if (ctx.armor.dollSprites) {
+    				if (if_block2) {
+    					if_block2.p(changed, ctx);
+    				} else {
+    					if_block2 = create_if_block_10$1(ctx);
+    					if_block2.c();
+    					if_block2.m(div0, null);
+    				}
+    			} else if (if_block2) {
+    				if_block2.d(1);
+    				if_block2 = null;
+    			}
+
+    			if (changed.armor || changed.rul) {
+    				each_value_3 = ['armor', 'damageModifier', 'stats', 'recovery'];
+
+    				let i;
+    				for (i = 0; i < each_value_3.length; i += 1) {
+    					const child_ctx = get_each_context_3$1(ctx, each_value_3, i);
+
+    					if (each_blocks_1[i]) {
+    						each_blocks_1[i].p(changed, child_ctx);
+    						transition_in(each_blocks_1[i], 1);
+    					} else {
+    						each_blocks_1[i] = create_each_block_3$1(child_ctx);
+    						each_blocks_1[i].c();
+    						transition_in(each_blocks_1[i], 1);
+    						each_blocks_1[i].m(div1, null);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value_3.length; i < 4; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+
+    			if (changed.armor || changed.rul) {
+    				each_value = Object.entries(ctx.armor).sort(func_2
+      );
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$6(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$6(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(table, null);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out_1(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block0);
+
+    			for (let i = 0; i < 4; i += 1) {
+    				transition_in(each_blocks_1[i]);
+    			}
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block0);
+
+    			each_blocks_1 = each_blocks_1.filter(Boolean);
+    			for (let i = 0; i < 4; i += 1) {
+    				transition_out(each_blocks_1[i]);
+    			}
+
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(table);
+    			}
+
+    			if (if_block0) if_block0.d();
+    			if (if_block1) if_block1.d();
+    			if (if_block2) if_block2.d();
+
+    			destroy_each(each_blocks_1, detaching);
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$a.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    let dollColumns = 6;
+
+    let zoom = 1;
+
+    const func_2 = (a, b) => a[0] > b[0] ? 1 : -1;
+
+    const func_3 = (s) => s.substr(0, 8) != 'INV_NULL';
+
+    function instance$9($$self, $$props, $$invalidate) {
+    	
+
+      let { armor } = $$props;
+      let seeAllVariants = false;
+      let seeAlso = [];
+
+    	const writable_props = ['armor'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console_1$2.warn(`<Armor> was created with unknown prop '${key}'`);
+    	});
+
+    	const click_handler = (e) => ($$invalidate('seeAllVariants', seeAllVariants = !seeAllVariants));
+
+    	const func = (a, b) => rul.bodiesCompare([a, b]);
+
+    	const func_1 = (a, b) => rul.str(a[0]) > rul.str(b[0]) ? 1 : -1;
+
+    	$$self.$set = $$props => {
+    		if ('armor' in $$props) $$invalidate('armor', armor = $$props.armor);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { armor, dollColumns, seeAllVariants, zoom, seeAlso };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('armor' in $$props) $$invalidate('armor', armor = $$props.armor);
+    		if ('dollColumns' in $$props) $$invalidate('dollColumns', dollColumns = $$props.dollColumns);
+    		if ('seeAllVariants' in $$props) $$invalidate('seeAllVariants', seeAllVariants = $$props.seeAllVariants);
+    		if ('zoom' in $$props) zoom = $$props.zoom;
+    		if ('seeAlso' in $$props) $$invalidate('seeAlso', seeAlso = $$props.seeAlso);
+    	};
+
+    	$$self.$$.update = ($$dirty = { armor: 1, seeAlso: 1 }) => {
+    		if ($$dirty.armor || $$dirty.seeAlso) { {
+            console.log(armor);
+        
+            $$invalidate('seeAlso', seeAlso = []);
+            if ("storeItem" in armor && armor.storeItem != "STR_NONE") {
+              seeAlso.push(armor.storeItem);
+            }
+            if ("users" in armor) {
+              for (let item of armor.users.filter(
+                s =>
+                  s.substr(0, 8) != "INV_NULL" &&
+                  s != armor.type &&
+                  "#" + s != window.location.hash
+              )) {
+                seeAlso.push(item);
+              }
+            }
+          } }
+    	};
+
+    	return {
+    		armor,
+    		seeAllVariants,
+    		seeAlso,
+    		click_handler,
+    		func,
+    		func_1
+    	};
+    }
+
+    class Armor$1 extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$9, create_fragment$a, safe_not_equal, ["armor"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Armor", options, id: create_fragment$a.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.armor === undefined && !('armor' in props)) {
+    			console_1$2.warn("<Armor> was created without expected prop 'armor'");
+    		}
+    	}
+
+    	get armor() {
+    		throw new Error("<Armor>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set armor(value) {
+    		throw new Error("<Armor>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\Craft.svelte generated by Svelte v3.12.1 */
+    const { console: console_1$3 } = globals;
+
+    const file$8 = "src\\Craft.svelte";
+
+    function get_each_context$7(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.key = list[i][0];
+    	child_ctx.prop = list[i][1];
+    	return child_ctx;
+    }
+
+    // (15:4) {#if !['type', 'battlescapeTerrainData', 'craftInventoryTile', 'deployment'].includes(key)}
+    function create_if_block$7(ctx) {
+    	var tr, td0, raw_value = rul.decamelize(ctx.key) + "", t0, td1, show_if, show_if_1, show_if_2, current_block_type_index, if_block, t1, current;
+
+    	var if_block_creators = [
+    		create_if_block_1$5,
+    		create_if_block_2$5,
+    		create_if_block_3$3,
+    		create_else_block$5
+    	];
+
+    	var if_blocks = [];
+
+    	function select_block_type(changed, ctx) {
+    		if ((show_if == null) || changed.craft) show_if = !!(['weaponStrings'].includes(ctx.key));
+    		if (show_if) return 0;
+    		if ((show_if_1 == null) || changed.craft) show_if_1 = !!(['sprite'].includes(ctx.key));
+    		if (show_if_1) return 1;
+    		if ((show_if_2 == null) || changed.craft) show_if_2 = !!(['requiresBaseFunc' ].includes(ctx.key));
+    		if (show_if_2) return 2;
+    		return 3;
+    	}
+
+    	current_block_type_index = select_block_type(null, ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t0 = space();
+    			td1 = element("td");
+    			if_block.c();
+    			t1 = space();
+    			attr_dev(td0, "class", "padding-right");
+    			add_location(td0, file$8, 16, 8, 533);
+    			add_location(td1, file$8, 17, 8, 601);
+    			add_location(tr, file$8, 15, 6, 519);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			td0.innerHTML = raw_value;
+    			append_dev(tr, t0);
+    			append_dev(tr, td1);
+    			if_blocks[current_block_type_index].m(td1, null);
+    			append_dev(tr, t1);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.craft) && raw_value !== (raw_value = rul.decamelize(ctx.key) + "")) {
+    				td0.innerHTML = raw_value;
+    			}
+
+    			var previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type(changed, ctx);
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(changed, ctx);
+    			} else {
+    				group_outros();
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+    				check_outros();
+
+    				if_block = if_blocks[current_block_type_index];
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				}
+    				transition_in(if_block, 1);
+    				if_block.m(td1, null);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+
+    			if_blocks[current_block_type_index].d();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$7.name, type: "if", source: "(15:4) {#if !['type', 'battlescapeTerrainData', 'craftInventoryTile', 'deployment'].includes(key)}", ctx });
+    	return block;
+    }
+
+    // (25:10) {:else}
+    function create_else_block$5(ctx) {
+    	var current;
+
+    	var value = new Value({
+    		props: { val: ctx.prop },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			value.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(value, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var value_changes = {};
+    			if (changed.craft) value_changes.val = ctx.prop;
+    			value.$set(value_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(value.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(value.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(value, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block$5.name, type: "else", source: "(25:10) {:else}", ctx });
+    	return block;
+    }
+
+    // (23:56) 
+    function create_if_block_3$3(ctx) {
+    	var current;
+
+    	var baseservicelist = new BaseServiceList({
+    		props: {
+    		items: ctx.prop,
+    		vertical: true
+    	},
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			baseservicelist.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(baseservicelist, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var baseservicelist_changes = {};
+    			if (changed.craft) baseservicelist_changes.items = ctx.prop;
+    			baseservicelist.$set(baseservicelist_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(baseservicelist.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(baseservicelist.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(baseservicelist, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_3$3.name, type: "if", source: "(23:56) ", ctx });
+    	return block;
+    }
+
+    // (21:45) 
+    function create_if_block_2$5(ctx) {
+    	var img, img_src_value;
+
+    	const block = {
+    		c: function create() {
+    			img = element("img");
+    			attr_dev(img, "class", "sprite");
+    			attr_dev(img, "alt", "X");
+    			attr_dev(img, "src", img_src_value = rul.specialSprite("baseSprite", ctx.prop*1 + 33));
+    			add_location(img, file$8, 21, 12, 799);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, img, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.craft) && img_src_value !== (img_src_value = rul.specialSprite("baseSprite", ctx.prop*1 + 33))) {
+    				attr_dev(img, "src", img_src_value);
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(img);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2$5.name, type: "if", source: "(21:45) ", ctx });
+    	return block;
+    }
+
+    // (19:10) {#if ['weaponStrings'].includes(key)}
+    function create_if_block_1$5(ctx) {
+    	var current;
+
+    	var value = new Value({
+    		props: { val: ctx.prop.map(ctx.func_1) },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			value.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(value, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var value_changes = {};
+    			if (changed.craft) value_changes.val = ctx.prop.map(ctx.func_1);
+    			value.$set(value_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(value.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(value.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(value, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$5.name, type: "if", source: "(19:10) {#if ['weaponStrings'].includes(key)}", ctx });
+    	return block;
+    }
+
+    // (14:2) {#each Object.entries(craft).sort((a, b) => (a[0] > b[0] ? 1 : -1)) as [key, prop]}
+    function create_each_block$7(ctx) {
+    	var show_if = !['type', 'battlescapeTerrainData', 'craftInventoryTile', 'deployment'].includes(ctx.key), if_block_anchor, current;
+
+    	var if_block = (show_if) && create_if_block$7(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.craft) show_if = !['type', 'battlescapeTerrainData', 'craftInventoryTile', 'deployment'].includes(ctx.key);
+
+    			if (show_if) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    					transition_in(if_block, 1);
+    				} else {
+    					if_block = create_if_block$7(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$7.name, type: "each", source: "(14:2) {#each Object.entries(craft).sort((a, b) => (a[0] > b[0] ? 1 : -1)) as [key, prop]}", ctx });
+    	return block;
+    }
+
+    function create_fragment$b(ctx) {
+    	var table, tr, td, t_1, current;
+
+    	let each_value = Object.entries(ctx.craft).sort(func$1);
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$7(get_each_context$7(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			table = element("table");
+    			tr = element("tr");
+    			td = element("td");
+    			td.textContent = "Craft";
+    			t_1 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr_dev(td, "colspan", "2");
+    			attr_dev(td, "class", "table-header");
+    			add_location(td, file$8, 12, 7, 274);
+    			add_location(tr, file$8, 12, 2, 269);
+    			attr_dev(table, "class", "main-table");
+    			add_location(table, file$8, 11, 0, 239);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, table, anchor);
+    			append_dev(table, tr);
+    			append_dev(tr, td);
+    			append_dev(table, t_1);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table, null);
+    			}
+
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.craft || changed.rul) {
+    				each_value = Object.entries(ctx.craft).sort(func$1);
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$7(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$7(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(table, null);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(table);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$b.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    const func$1 = (a, b) => (a[0] > b[0] ? 1 : -1);
+
+    function instance$a($$self, $$props, $$invalidate) {
+    	
+      
+      let { craft } = $$props;
+
+    	const writable_props = ['craft'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console_1$3.warn(`<Craft> was created with unknown prop '${key}'`);
+    	});
+
+    	const func_1 = (slot) => rul.str(slot).replace(">{ALT}{0}","");
+
+    	$$self.$set = $$props => {
+    		if ('craft' in $$props) $$invalidate('craft', craft = $$props.craft);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { craft };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('craft' in $$props) $$invalidate('craft', craft = $$props.craft);
+    	};
+
+    	$$self.$$.update = ($$dirty = { craft: 1 }) => {
+    		if ($$dirty.craft) { {console.info(craft);} }
+    	};
+
+    	return { craft, func_1 };
+    }
+
+    class Craft$1 extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$a, create_fragment$b, safe_not_equal, ["craft"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Craft", options, id: create_fragment$b.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.craft === undefined && !('craft' in props)) {
+    			console_1$3.warn("<Craft> was created without expected prop 'craft'");
+    		}
+    	}
+
+    	get craft() {
+    		throw new Error("<Craft>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set craft(value) {
+    		throw new Error("<Craft>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\CraftWeapon.svelte generated by Svelte v3.12.1 */
+    const { console: console_1$4 } = globals;
+
+    const file$9 = "src\\CraftWeapon.svelte";
+
+    function get_each_context$8(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.prop = list[i];
+    	return child_ctx;
+    }
+
+    // (30:10) {#if !['type'].includes(prop[0])}
+    function create_if_block_2$6(ctx) {
+    	var tr, td0, raw_value = rul.decamelize(ctx.prop[0]) + "", t0, td1, t1, current;
+
+    	var value = new Value({
+    		props: { val: ctx.prop[1] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t0 = space();
+    			td1 = element("td");
+    			value.$$.fragment.c();
+    			t1 = space();
+    			attr_dev(td0, "class", "padding-right svelte-8df2j8");
+    			add_location(td0, file$9, 31, 14, 674);
+    			attr_dev(td1, "class", "svelte-8df2j8");
+    			add_location(td1, file$9, 34, 14, 786);
+    			add_location(tr, file$9, 30, 12, 654);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			td0.innerHTML = raw_value;
+    			append_dev(tr, t0);
+    			append_dev(tr, td1);
+    			mount_component(value, td1, null);
+    			append_dev(tr, t1);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.weapon) && raw_value !== (raw_value = rul.decamelize(ctx.prop[0]) + "")) {
+    				td0.innerHTML = raw_value;
+    			}
+
+    			var value_changes = {};
+    			if (changed.weapon) value_changes.val = ctx.prop[1];
+    			value.$set(value_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(value.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(value.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+
+    			destroy_component(value);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2$6.name, type: "if", source: "(30:10) {#if !['type'].includes(prop[0])}", ctx });
+    	return block;
+    }
+
+    // (27:8) {#each Object.entries(weapon).sort((a, b) =>            a[0] > b[0] ? 1 : -1          ) as prop}
+    function create_each_block$8(ctx) {
+    	var show_if = !['type'].includes(ctx.prop[0]), if_block_anchor, current;
+
+    	var if_block = (show_if) && create_if_block_2$6(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.weapon) show_if = !['type'].includes(ctx.prop[0]);
+
+    			if (show_if) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    					transition_in(if_block, 1);
+    				} else {
+    					if_block = create_if_block_2$6(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$8.name, type: "each", source: "(27:8) {#each Object.entries(weapon).sort((a, b) =>            a[0] > b[0] ? 1 : -1          ) as prop}", ctx });
+    	return block;
+    }
+
+    // (45:4) {#if weapon.launcher}
+    function create_if_block_1$6(ctx) {
+    	var current;
+
+    	var item = new Item$1({
+    		props: {
+    		item: rul.items[ctx.weapon.launcher],
+    		title: "Launcher: " + rul.str(ctx.weapon.launcher)
+    	},
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			item.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(item, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var item_changes = {};
+    			if (changed.weapon) item_changes.item = rul.items[ctx.weapon.launcher];
+    			if (changed.weapon) item_changes.title = "Launcher: " + rul.str(ctx.weapon.launcher);
+    			item.$set(item_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(item.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(item.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(item, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$6.name, type: "if", source: "(45:4) {#if weapon.launcher}", ctx });
+    	return block;
+    }
+
+    // (48:4) {#if weapon.clip}
+    function create_if_block$8(ctx) {
+    	var current;
+
+    	var item = new Item$1({
+    		props: {
+    		item: rul.items[ctx.weapon.clip],
+    		title: "Clip: " + rul.str(ctx.weapon.clip)
+    	},
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			item.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(item, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var item_changes = {};
+    			if (changed.weapon) item_changes.item = rul.items[ctx.weapon.clip];
+    			if (changed.weapon) item_changes.title = "Clip: " + rul.str(ctx.weapon.clip);
+    			item.$set(item_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(item.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(item.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(item, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$8.name, type: "if", source: "(48:4) {#if weapon.clip}", ctx });
+    	return block;
+    }
+
+    function create_fragment$c(ctx) {
+    	var table2, tr1, td1, table0, tr0, td0, t0_value = rul.str("Weapon") + "", t0, t1, t2, td2, table1, t3, current;
+
+    	let each_value = Object.entries(ctx.weapon).sort(func$2
+            );
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$8(get_each_context$8(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	var if_block0 = (ctx.weapon.launcher) && create_if_block_1$6(ctx);
+
+    	var if_block1 = (ctx.weapon.clip) && create_if_block$8(ctx);
+
+    	const block = {
+    		c: function create() {
+    			table2 = element("table");
+    			tr1 = element("tr");
+    			td1 = element("td");
+    			table0 = element("table");
+    			tr0 = element("tr");
+    			td0 = element("td");
+    			t0 = text(t0_value);
+    			t1 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t2 = space();
+    			td2 = element("td");
+    			table1 = element("table");
+    			if (if_block0) if_block0.c();
+    			t3 = space();
+    			if (if_block1) if_block1.c();
+    			attr_dev(td0, "colspan", "2");
+    			attr_dev(td0, "class", "table-header svelte-8df2j8");
+    			add_location(td0, file$9, 24, 10, 413);
+    			add_location(tr0, file$9, 23, 8, 397);
+    			attr_dev(table0, "class", "main-table");
+    			add_location(table0, file$9, 22, 6, 361);
+    			attr_dev(td1, "class", "svelte-8df2j8");
+    			add_location(td1, file$9, 21, 4, 349);
+    			attr_dev(table1, "class", "main-table");
+    			add_location(table1, file$9, 43, 4, 948);
+    			attr_dev(td2, "class", "svelte-8df2j8");
+    			add_location(td2, file$9, 42, 4, 938);
+    			add_location(tr1, file$9, 20, 2, 339);
+    			attr_dev(table2, "class", "panels3 svelte-8df2j8");
+    			add_location(table2, file$9, 19, 0, 312);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, table2, anchor);
+    			append_dev(table2, tr1);
+    			append_dev(tr1, td1);
+    			append_dev(td1, table0);
+    			append_dev(table0, tr0);
+    			append_dev(tr0, td0);
+    			append_dev(td0, t0);
+    			append_dev(table0, t1);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table0, null);
+    			}
+
+    			append_dev(tr1, t2);
+    			append_dev(tr1, td2);
+    			append_dev(td2, table1);
+    			if (if_block0) if_block0.m(table1, null);
+    			append_dev(table1, t3);
+    			if (if_block1) if_block1.m(table1, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.weapon || changed.rul) {
+    				each_value = Object.entries(ctx.weapon).sort(func$2
+            );
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$8(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$8(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(table0, null);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+
+    			if (ctx.weapon.launcher) {
+    				if (if_block0) {
+    					if_block0.p(changed, ctx);
+    					transition_in(if_block0, 1);
+    				} else {
+    					if_block0 = create_if_block_1$6(ctx);
+    					if_block0.c();
+    					transition_in(if_block0, 1);
+    					if_block0.m(table1, t3);
+    				}
+    			} else if (if_block0) {
+    				group_outros();
+    				transition_out(if_block0, 1, 1, () => {
+    					if_block0 = null;
+    				});
+    				check_outros();
+    			}
+
+    			if (ctx.weapon.clip) {
+    				if (if_block1) {
+    					if_block1.p(changed, ctx);
+    					transition_in(if_block1, 1);
+    				} else {
+    					if_block1 = create_if_block$8(ctx);
+    					if_block1.c();
+    					transition_in(if_block1, 1);
+    					if_block1.m(table1, null);
+    				}
+    			} else if (if_block1) {
+    				group_outros();
+    				transition_out(if_block1, 1, 1, () => {
+    					if_block1 = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			transition_in(if_block0);
+    			transition_in(if_block1);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			transition_out(if_block0);
+    			transition_out(if_block1);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(table2);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+
+    			if (if_block0) if_block0.d();
+    			if (if_block1) if_block1.d();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$c.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    const func$2 = (a, b) => a[0] > b[0] ? 1 : -1;
+
+    function instance$b($$self, $$props, $$invalidate) {
+    	
+
+      let { weapon } = $$props;
+
+    	const writable_props = ['weapon'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console_1$4.warn(`<CraftWeapon> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('weapon' in $$props) $$invalidate('weapon', weapon = $$props.weapon);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { weapon };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('weapon' in $$props) $$invalidate('weapon', weapon = $$props.weapon);
+    	};
+
+    	$$self.$$.update = ($$dirty = { weapon: 1 }) => {
+    		if ($$dirty.weapon) { {
+            console.log(weapon);
+          } }
+    	};
+
+    	return { weapon };
+    }
+
+    class CraftWeapon$1 extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$b, create_fragment$c, safe_not_equal, ["weapon"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "CraftWeapon", options, id: create_fragment$c.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.weapon === undefined && !('weapon' in props)) {
+    			console_1$4.warn("<CraftWeapon> was created without expected prop 'weapon'");
+    		}
+    	}
+
+    	get weapon() {
+    		throw new Error("<CraftWeapon>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set weapon(value) {
+    		throw new Error("<CraftWeapon>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\Unit.svelte generated by Svelte v3.12.1 */
+    const { console: console_1$5 } = globals;
+
+    const file$a = "src\\Unit.svelte";
+
+    function get_each_context_2$2(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.field = list[i];
+    	child_ctx.j = i;
+    	return child_ctx;
+    }
+
+    function get_each_context_1$2(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.set = list[i];
+    	child_ctx.i = i;
+    	return child_ctx;
+    }
+
+    function get_each_context$9(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.key = list[i][0];
+    	child_ctx.prop = list[i][1];
+    	return child_ctx;
+    }
+
+    // (16:4) {#if !['type', 'deathSound', 'scripts'].includes(key)}
+    function create_if_block$9(ctx) {
+    	var tr, td0, raw_value = rul.decamelize(ctx.key) + "", t0, td1, show_if, current_block_type_index, if_block, t1, current;
+
+    	var if_block_creators = [
+    		create_if_block_1$7,
+    		create_else_block$6
+    	];
+
+    	var if_blocks = [];
+
+    	function select_block_type(changed, ctx) {
+    		if ((show_if == null) || changed.unit) show_if = !!(['builtInWeaponSets'].includes(ctx.prop[0]));
+    		if (show_if) return 0;
+    		return 1;
+    	}
+
+    	current_block_type_index = select_block_type(null, ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t0 = space();
+    			td1 = element("td");
+    			if_block.c();
+    			t1 = space();
+    			attr_dev(td0, "class", "padding-right");
+    			add_location(td0, file$a, 17, 8, 448);
+    			add_location(td1, file$a, 18, 8, 516);
+    			add_location(tr, file$a, 16, 6, 434);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			td0.innerHTML = raw_value;
+    			append_dev(tr, t0);
+    			append_dev(tr, td1);
+    			if_blocks[current_block_type_index].m(td1, null);
+    			append_dev(tr, t1);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.unit) && raw_value !== (raw_value = rul.decamelize(ctx.key) + "")) {
+    				td0.innerHTML = raw_value;
+    			}
+
+    			var previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type(changed, ctx);
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(changed, ctx);
+    			} else {
+    				group_outros();
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+    				check_outros();
+
+    				if_block = if_blocks[current_block_type_index];
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				}
+    				transition_in(if_block, 1);
+    				if_block.m(td1, null);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+
+    			if_blocks[current_block_type_index].d();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$9.name, type: "if", source: "(16:4) {#if !['type', 'deathSound', 'scripts'].includes(key)}", ctx });
+    	return block;
+    }
+
+    // (28:10) {:else}
+    function create_else_block$6(ctx) {
+    	var current;
+
+    	var value = new Value({
+    		props: { val: ctx.prop },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			value.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(value, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var value_changes = {};
+    			if (changed.unit) value_changes.val = ctx.prop;
+    			value.$set(value_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(value.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(value.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(value, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block$6.name, type: "else", source: "(28:10) {:else}", ctx });
+    	return block;
+    }
+
+    // (20:10) {#if ['builtInWeaponSets'].includes(prop[0])}
+    function create_if_block_1$7(ctx) {
+    	var each_1_anchor, current;
+
+    	let each_value_1 = Object.values(ctx.prop);
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1$2(get_each_context_1$2(ctx, each_value_1, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.unit) {
+    				each_value_1 = Object.values(ctx.prop);
+
+    				let i;
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1$2(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block_1$2(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value_1.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value_1.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(each_1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$7.name, type: "if", source: "(20:10) {#if ['builtInWeaponSets'].includes(prop[0])}", ctx });
+    	return block;
+    }
+
+    // (22:14) {#if i != 0}
+    function create_if_block_3$4(ctx) {
+    	var br;
+
+    	const block = {
+    		c: function create() {
+    			br = element("br");
+    			add_location(br, file$a, 21, 26, 656);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, br, anchor);
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(br);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_3$4.name, type: "if", source: "(22:14) {#if i != 0}", ctx });
+    	return block;
+    }
+
+    // (24:16) {#if j != 0}
+    function create_if_block_2$7(ctx) {
+    	var t;
+
+    	const block = {
+    		c: function create() {
+    			t = text(",");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(t);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2$7.name, type: "if", source: "(24:16) {#if j != 0}", ctx });
+    	return block;
+    }
+
+    // (23:14) {#each set as field, j}
+    function create_each_block_2$2(ctx) {
+    	var t, current;
+
+    	var if_block = (ctx.j != 0) && create_if_block_2$7(ctx);
+
+    	var link = new Link({
+    		props: { href: ctx.field },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			t = space();
+    			link.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, t, anchor);
+    			mount_component(link, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var link_changes = {};
+    			if (changed.unit) link_changes.href = ctx.field;
+    			link.$set(link_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(link.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(link.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(t);
+    			}
+
+    			destroy_component(link, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_2$2.name, type: "each", source: "(23:14) {#each set as field, j}", ctx });
+    	return block;
+    }
+
+    // (21:12) {#each Object.values(prop) as set, i}
+    function create_each_block_1$2(ctx) {
+    	var t, each_1_anchor, current;
+
+    	var if_block = (ctx.i != 0) && create_if_block_3$4(ctx);
+
+    	let each_value_2 = ctx.set;
+
+    	let each_blocks = [];
+
+    	for (let i_1 = 0; i_1 < each_value_2.length; i_1 += 1) {
+    		each_blocks[i_1] = create_each_block_2$2(get_each_context_2$2(ctx, each_value_2, i_1));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			t = space();
+
+    			for (let i_1 = 0; i_1 < each_blocks.length; i_1 += 1) {
+    				each_blocks[i_1].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, t, anchor);
+
+    			for (let i_1 = 0; i_1 < each_blocks.length; i_1 += 1) {
+    				each_blocks[i_1].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.unit) {
+    				each_value_2 = ctx.set;
+
+    				let i_1;
+    				for (i_1 = 0; i_1 < each_value_2.length; i_1 += 1) {
+    					const child_ctx = get_each_context_2$2(ctx, each_value_2, i_1);
+
+    					if (each_blocks[i_1]) {
+    						each_blocks[i_1].p(changed, child_ctx);
+    						transition_in(each_blocks[i_1], 1);
+    					} else {
+    						each_blocks[i_1] = create_each_block_2$2(child_ctx);
+    						each_blocks[i_1].c();
+    						transition_in(each_blocks[i_1], 1);
+    						each_blocks[i_1].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+    				for (i_1 = each_value_2.length; i_1 < each_blocks.length; i_1 += 1) {
+    					out(i_1);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i_1 = 0; i_1 < each_value_2.length; i_1 += 1) {
+    				transition_in(each_blocks[i_1]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i_1 = 0; i_1 < each_blocks.length; i_1 += 1) {
+    				transition_out(each_blocks[i_1]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(t);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(each_1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_1$2.name, type: "each", source: "(21:12) {#each Object.values(prop) as set, i}", ctx });
+    	return block;
+    }
+
+    // (15:2) {#each Object.entries(unit).sort((a, b) => (a[0] > b[0] ? 1 : -1)) as [key, prop]}
+    function create_each_block$9(ctx) {
+    	var show_if = !['type', 'deathSound', 'scripts'].includes(ctx.key), if_block_anchor, current;
+
+    	var if_block = (show_if) && create_if_block$9(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.unit) show_if = !['type', 'deathSound', 'scripts'].includes(ctx.key);
+
+    			if (show_if) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    					transition_in(if_block, 1);
+    				} else {
+    					if_block = create_if_block$9(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$9.name, type: "each", source: "(15:2) {#each Object.entries(unit).sort((a, b) => (a[0] > b[0] ? 1 : -1)) as [key, prop]}", ctx });
+    	return block;
+    }
+
+    function create_fragment$d(ctx) {
+    	var tr, td, t_1, each_1_anchor, current;
+
+    	let each_value = Object.entries(ctx.unit).sort(func$3);
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$9(get_each_context$9(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td = element("td");
+    			td.textContent = "Unit";
+    			t_1 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    			attr_dev(td, "colspan", "2");
+    			attr_dev(td, "class", "table-header");
+    			add_location(td, file$a, 13, 7, 228);
+    			add_location(tr, file$a, 13, 2, 223);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td);
+    			insert_dev(target, t_1, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.unit || changed.rul) {
+    				each_value = Object.entries(ctx.unit).sort(func$3);
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$9(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$9(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    				detach_dev(t_1);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(each_1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$d.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    const func$3 = (a, b) => (a[0] > b[0] ? 1 : -1);
+
+    function instance$c($$self, $$props, $$invalidate) {
+    	
+      
+
+      let { unit } = $$props;
+
+    	const writable_props = ['unit'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console_1$5.warn(`<Unit> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('unit' in $$props) $$invalidate('unit', unit = $$props.unit);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { unit };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('unit' in $$props) $$invalidate('unit', unit = $$props.unit);
+    	};
+
+    	$$self.$$.update = ($$dirty = { unit: 1 }) => {
+    		if ($$dirty.unit) { {console.log(unit);} }
+    	};
+
+    	return { unit };
+    }
+
+    class Unit$1 extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$c, create_fragment$d, safe_not_equal, ["unit"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Unit", options, id: create_fragment$d.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.unit === undefined && !('unit' in props)) {
+    			console_1$5.warn("<Unit> was created without expected prop 'unit'");
+    		}
+    	}
+
+    	get unit() {
+    		throw new Error("<Unit>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set unit(value) {
+    		throw new Error("<Unit>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\Research.svelte generated by Svelte v3.12.1 */
+    const { console: console_1$6 } = globals;
+
+    const file$b = "src\\Research.svelte";
+
+    function get_each_context_2$3(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.key = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_1$3(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.field = list[i];
+    	child_ctx.i = i;
+    	return child_ctx;
+    }
+
+    function get_each_context$a(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.key = list[i][0];
+    	child_ctx.prop = list[i][1];
+    	return child_ctx;
+    }
+
+    // (39:6) {#if !['name'].includes(key)}
+    function create_if_block_3$5(ctx) {
+    	var tr, td0, raw_value = rul.decamelize(ctx.key) + "", t0, td1, t1, current;
+
+    	var value = new Value({
+    		props: { val: ctx.prop },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t0 = space();
+    			td1 = element("td");
+    			value.$$.fragment.c();
+    			t1 = space();
+    			add_location(td0, file$b, 40, 12, 1462);
+    			add_location(td1, file$b, 43, 12, 1542);
+    			add_location(tr, file$b, 39, 8, 1436);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			td0.innerHTML = raw_value;
+    			append_dev(tr, t0);
+    			append_dev(tr, td1);
+    			mount_component(value, td1, null);
+    			append_dev(tr, t1);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.research) && raw_value !== (raw_value = rul.decamelize(ctx.key) + "")) {
+    				td0.innerHTML = raw_value;
+    			}
+
+    			var value_changes = {};
+    			if (changed.research) value_changes.val = ctx.prop;
+    			value.$set(value_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(value.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(value.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+
+    			destroy_component(value);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_3$5.name, type: "if", source: "(39:6) {#if !['name'].includes(key)}", ctx });
+    	return block;
+    }
+
+    // (33:43) 
+    function create_if_block_2$8(ctx) {
+    	var tr, td, t0_value = rul.decamelize(ctx.key) + "", t0, t1, each_1_anchor, current;
+
+    	let each_value_2 = Object.keys(ctx.prop);
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_2.length; i += 1) {
+    		each_blocks[i] = create_each_block_2$3(get_each_context_2$3(ctx, each_value_2, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td = element("td");
+    			t0 = text(t0_value);
+    			t1 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    			attr_dev(td, "colspan", "2");
+    			attr_dev(td, "class", "table-subheader");
+    			add_location(td, file$b, 33, 10, 1167);
+    			add_location(tr, file$b, 33, 6, 1163);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td);
+    			append_dev(td, t0);
+    			insert_dev(target, t1, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.research) && t0_value !== (t0_value = rul.decamelize(ctx.key) + "")) {
+    				set_data_dev(t0, t0_value);
+    			}
+
+    			if (changed.research || changed.longLists) {
+    				each_value_2 = Object.keys(ctx.prop);
+
+    				let i;
+    				for (i = 0; i < each_value_2.length; i += 1) {
+    					const child_ctx = get_each_context_2$3(ctx, each_value_2, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block_2$3(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value_2.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value_2.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    				detach_dev(t1);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(each_1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2$8.name, type: "if", source: "(33:43) ", ctx });
+    	return block;
+    }
+
+    // (31:50) 
+    function create_if_block_1$8(ctx) {
+    	var current;
+
+    	var baseservicelist = new BaseServiceList({
+    		props: {
+    		items: ctx.prop,
+    		vertical: true
+    	},
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			baseservicelist.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(baseservicelist, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var baseservicelist_changes = {};
+    			if (changed.research) baseservicelist_changes.items = ctx.prop;
+    			baseservicelist.$set(baseservicelist_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(baseservicelist.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(baseservicelist.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(baseservicelist, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$8.name, type: "if", source: "(31:50) ", ctx });
+    	return block;
+    }
+
+    // (22:4) {#if longLists.includes(key) && prop && prop.length>0}
+    function create_if_block$a(ctx) {
+    	var tr0, td0, t0_value = rul.decamelize(ctx.key) + "", t0, t1, tr1, td1, ul, t2, current;
+
+    	let each_value_1 = ctx.prop;
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1$3(get_each_context_1$3(ctx, each_value_1, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			tr0 = element("tr");
+    			td0 = element("td");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			tr1 = element("tr");
+    			td1 = element("td");
+    			ul = element("ul");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t2 = space();
+    			attr_dev(td0, "colspan", "2");
+    			attr_dev(td0, "class", "table-subheader");
+    			add_location(td0, file$b, 22, 10, 703);
+    			add_location(tr0, file$b, 22, 6, 699);
+    			attr_dev(ul, "class", "research-links");
+    			add_location(ul, file$b, 24, 8, 844);
+    			attr_dev(td1, "colspan", "2");
+    			attr_dev(td1, "class", "cols");
+    			set_style(td1, "columns", "2");
+    			add_location(td1, file$b, 23, 10, 786);
+    			add_location(tr1, file$b, 23, 6, 782);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr0, anchor);
+    			append_dev(tr0, td0);
+    			append_dev(td0, t0);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, tr1, anchor);
+    			append_dev(tr1, td1);
+    			append_dev(td1, ul);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(ul, null);
+    			}
+
+    			append_dev(td1, t2);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.research) && t0_value !== (t0_value = rul.decamelize(ctx.key) + "")) {
+    				set_data_dev(t0, t0_value);
+    			}
+
+    			if (changed.research || changed.longLists) {
+    				each_value_1 = ctx.prop;
+
+    				let i;
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1$3(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block_1$3(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(ul, null);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value_1.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value_1.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr0);
+    				detach_dev(t1);
+    				detach_dev(tr1);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$a.name, type: "if", source: "(22:4) {#if longLists.includes(key) && prop && prop.length>0}", ctx });
+    	return block;
+    }
+
+    // (35:6) {#each Object.keys(prop) as key}
+    function create_each_block_2$3(ctx) {
+    	var tr, td0, td1, current;
+
+    	var link = new Link({
+    		props: { href: ctx.key },
+    		$$inline: true
+    	});
+
+    	var linkslist = new LinksList({
+    		props: { items: ctx.prop[ctx.key] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			link.$$.fragment.c();
+    			td1 = element("td");
+    			linkslist.$$.fragment.c();
+    			add_location(td0, file$b, 35, 10, 1290);
+    			add_location(td1, file$b, 35, 37, 1317);
+    			add_location(tr, file$b, 35, 6, 1286);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			mount_component(link, td0, null);
+    			append_dev(tr, td1);
+    			mount_component(linkslist, td1, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var link_changes = {};
+    			if (changed.research) link_changes.href = ctx.key;
+    			link.$set(link_changes);
+
+    			var linkslist_changes = {};
+    			if (changed.research) linkslist_changes.items = ctx.prop[ctx.key];
+    			linkslist.$set(linkslist_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(link.$$.fragment, local);
+
+    			transition_in(linkslist.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(link.$$.fragment, local);
+    			transition_out(linkslist.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+
+    			destroy_component(link);
+
+    			destroy_component(linkslist);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_2$3.name, type: "each", source: "(35:6) {#each Object.keys(prop) as key}", ctx });
+    	return block;
+    }
+
+    // (26:10) {#each prop as field, i}
+    function create_each_block_1$3(ctx) {
+    	var li, current;
+
+    	var link = new Link({
+    		props: { href: ctx.field },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			li = element("li");
+    			link.$$.fragment.c();
+    			add_location(li, file$b, 26, 12, 921);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, li, anchor);
+    			mount_component(link, li, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var link_changes = {};
+    			if (changed.research) link_changes.href = ctx.field;
+    			link.$set(link_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(link.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(link.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(li);
+    			}
+
+    			destroy_component(link);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_1$3.name, type: "each", source: "(26:10) {#each prop as field, i}", ctx });
+    	return block;
+    }
+
+    // (21:2) {#each Object.entries(research).sort((a, b) => (longLists.includes(b[0])?-10:10) + (a[0] > b[0] ? 1 : -1)) as [key, prop]}
+    function create_each_block$a(ctx) {
+    	var show_if, show_if_1, show_if_2, current_block_type_index, if_block, if_block_anchor, current;
+
+    	var if_block_creators = [
+    		create_if_block$a,
+    		create_if_block_1$8,
+    		create_if_block_2$8,
+    		create_if_block_3$5
+    	];
+
+    	var if_blocks = [];
+
+    	function select_block_type(changed, ctx) {
+    		if ((show_if == null) || changed.research) show_if = !!(ctx.longLists.includes(ctx.key) && ctx.prop && ctx.prop.length>0);
+    		if (show_if) return 0;
+    		if ((show_if_1 == null) || changed.research) show_if_1 = !!(['requiresBaseFunc' ].includes(ctx.key));
+    		if (show_if_1) return 1;
+    		if (ctx.key == 'getOneFreeProtected') return 2;
+    		if ((show_if_2 == null) || changed.research) show_if_2 = !!(!['name'].includes(ctx.key));
+    		if (show_if_2) return 3;
+    		return -1;
+    	}
+
+    	if (~(current_block_type_index = select_block_type(null, ctx))) {
+    		if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    	}
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (~current_block_type_index) if_blocks[current_block_type_index].m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type(changed, ctx);
+    			if (current_block_type_index === previous_block_index) {
+    				if (~current_block_type_index) if_blocks[current_block_type_index].p(changed, ctx);
+    			} else {
+    				if (if_block) {
+    					group_outros();
+    					transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    						if_blocks[previous_block_index] = null;
+    					});
+    					check_outros();
+    				}
+
+    				if (~current_block_type_index) {
+    					if_block = if_blocks[current_block_type_index];
+    					if (!if_block) {
+    						if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    						if_block.c();
+    					}
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				} else {
+    					if_block = null;
+    				}
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (~current_block_type_index) if_blocks[current_block_type_index].d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$a.name, type: "each", source: "(21:2) {#each Object.entries(research).sort((a, b) => (longLists.includes(b[0])?-10:10) + (a[0] > b[0] ? 1 : -1)) as [key, prop]}", ctx });
+    	return block;
+    }
+
+    function create_fragment$e(ctx) {
+    	var tr, td, t0_value = rul.str("Research") + "", t0, t1, each_1_anchor, current;
+
+    	let each_value = Object.entries(ctx.research).sort(ctx.func);
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$a(get_each_context$a(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td = element("td");
+    			t0 = text(t0_value);
+    			t1 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    			attr_dev(td, "colspan", "2");
+    			attr_dev(td, "class", "table-header");
+    			add_location(td, file$b, 18, 4, 433);
+    			add_location(tr, file$b, 17, 2, 423);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td);
+    			append_dev(td, t0);
+    			insert_dev(target, t1, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.longLists || changed.research || changed.rul) {
+    				each_value = Object.entries(ctx.research).sort(ctx.func);
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$a(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$a(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    				detach_dev(t1);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(each_1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$e.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$d($$self, $$props, $$invalidate) {
+    	
+
+      
+      let { research, title = "Research" } = $$props;
+      let longLists = ['seeAlso', 'requiresBaseFunc', 'manufacture', 'getOneFree', 'freeFrom', 'unlocks', 'dependencies', 'leadsTo', 'disables'];
+
+    	const writable_props = ['research', 'title'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console_1$6.warn(`<Research> was created with unknown prop '${key}'`);
+    	});
+
+    	const func = (a, b) => (longLists.includes(b[0])?-10:10) + (a[0] > b[0] ? 1 : -1);
+
+    	$$self.$set = $$props => {
+    		if ('research' in $$props) $$invalidate('research', research = $$props.research);
+    		if ('title' in $$props) $$invalidate('title', title = $$props.title);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { research, title, longLists };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('research' in $$props) $$invalidate('research', research = $$props.research);
+    		if ('title' in $$props) $$invalidate('title', title = $$props.title);
+    		if ('longLists' in $$props) $$invalidate('longLists', longLists = $$props.longLists);
+    	};
+
+    	$$self.$$.update = ($$dirty = { research: 1 }) => {
+    		if ($$dirty.research) { {
+            console.log(research);
+          } }
+    	};
+
+    	return { research, title, longLists, func };
+    }
+
+    class Research$1 extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$d, create_fragment$e, safe_not_equal, ["research", "title"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Research", options, id: create_fragment$e.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.research === undefined && !('research' in props)) {
+    			console_1$6.warn("<Research> was created without expected prop 'research'");
+    		}
+    	}
+
+    	get research() {
+    		throw new Error("<Research>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set research(value) {
+    		throw new Error("<Research>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get title() {
+    		throw new Error("<Research>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set title(value) {
+    		throw new Error("<Research>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\Manufacture.svelte generated by Svelte v3.12.1 */
+    const { console: console_1$7 } = globals;
+
+    const file$c = "src\\Manufacture.svelte";
+
+    function get_each_context_1$4(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.field = list[i];
+    	child_ctx.i = i;
+    	return child_ctx;
+    }
+
+    function get_each_context$b(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.prop = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_3$2(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.field = list[i];
+    	child_ctx.i = i;
+    	return child_ctx;
+    }
+
+    function get_each_context_2$4(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.chance = list[i];
+    	return child_ctx;
+    }
+
+    // (20:2) {#if 'randomProducedItems' in manufacture}
+    function create_if_block_3$6(ctx) {
+    	var tr0, td0, t0_value = rul.decamelize('randomProducedItems') + "", t0, t1, tr1, td1, table, current;
+
+    	let each_value_2 = ctx.manufacture.randomProducedItems;
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_2.length; i += 1) {
+    		each_blocks[i] = create_each_block_2$4(get_each_context_2$4(ctx, each_value_2, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			tr0 = element("tr");
+    			td0 = element("td");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			tr1 = element("tr");
+    			td1 = element("td");
+    			table = element("table");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr_dev(td0, "colspan", "2");
+    			attr_dev(td0, "class", "table-subheader");
+    			add_location(td0, file$c, 20, 8, 425);
+    			add_location(tr0, file$c, 20, 4, 421);
+    			attr_dev(table, "class", "number-table");
+    			attr_dev(table, "width", "100%");
+    			set_style(table, "margin", "0px");
+    			add_location(table, file$c, 22, 6, 548);
+    			attr_dev(td1, "colspan", "2");
+    			add_location(td1, file$c, 21, 8, 524);
+    			add_location(tr1, file$c, 21, 4, 520);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr0, anchor);
+    			append_dev(tr0, td0);
+    			append_dev(td0, t0);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, tr1, anchor);
+    			append_dev(tr1, td1);
+    			append_dev(td1, table);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table, null);
+    			}
+
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.manufacture) {
+    				each_value_2 = ctx.manufacture.randomProducedItems;
+
+    				let i;
+    				for (i = 0; i < each_value_2.length; i += 1) {
+    					const child_ctx = get_each_context_2$4(ctx, each_value_2, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block_2$4(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(table, null);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value_2.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value_2.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr0);
+    				detach_dev(t1);
+    				detach_dev(tr1);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_3$6.name, type: "if", source: "(20:2) {#if 'randomProducedItems' in manufacture}", ctx });
+    	return block;
+    }
+
+    // (25:8) {#if Object.keys(chance[1]).length == 0}
+    function create_if_block_4$2(ctx) {
+    	var tr, td;
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td = element("td");
+    			td.textContent = "NOTHING";
+    			attr_dev(td, "colspan", "2");
+    			set_style(td, "text-align", "center");
+    			add_location(td, file$c, 25, 14, 731);
+    			add_location(tr, file$c, 25, 10, 727);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td);
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_4$2.name, type: "if", source: "(25:8) {#if Object.keys(chance[1]).length == 0}", ctx });
+    	return block;
+    }
+
+    // (28:8) {#each Object.keys(chance[1]).sort() as field, i}
+    function create_each_block_3$2(ctx) {
+    	var tr, td0, t_value = ctx.chance[1][ctx.field] + "", t, td1, current;
+
+    	var link = new Link({
+    		props: { href: ctx.field },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t = text(t_value);
+    			td1 = element("td");
+    			link.$$.fragment.c();
+    			add_location(td0, file$c, 28, 14, 881);
+    			add_location(td1, file$c, 28, 41, 908);
+    			add_location(tr, file$c, 28, 10, 877);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			append_dev(td0, t);
+    			append_dev(tr, td1);
+    			mount_component(link, td1, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.manufacture) && t_value !== (t_value = ctx.chance[1][ctx.field] + "")) {
+    				set_data_dev(t, t_value);
+    			}
+
+    			var link_changes = {};
+    			if (changed.manufacture) link_changes.href = ctx.field;
+    			link.$set(link_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(link.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(link.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+
+    			destroy_component(link);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_3$2.name, type: "each", source: "(28:8) {#each Object.keys(chance[1]).sort() as field, i}", ctx });
+    	return block;
+    }
+
+    // (24:6) {#each manufacture.randomProducedItems as chance}
+    function create_each_block_2$4(ctx) {
+    	var show_if = Object.keys(ctx.chance[1]).length == 0, t0, t1, tr, td, t2, t3_value = ctx.chance[0] + "", t3, t4, t5_value = (ctx.chance[0]/ctx.manufacture.chanceSum*100).toFixed(3) + "", t5, t6, current;
+
+    	var if_block = (show_if) && create_if_block_4$2(ctx);
+
+    	let each_value_3 = Object.keys(ctx.chance[1]).sort();
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_3.length; i += 1) {
+    		each_blocks[i] = create_each_block_3$2(get_each_context_3$2(ctx, each_value_3, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			t0 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t1 = space();
+    			tr = element("tr");
+    			td = element("td");
+    			t2 = text("×");
+    			t3 = text(t3_value);
+    			t4 = text(" / ");
+    			t5 = text(t5_value);
+    			t6 = text("%");
+    			attr_dev(td, "colspan", "2");
+    			set_style(td, "text-align", "center");
+    			set_style(td, "border-bottom", "solid 0.3px #382C44");
+    			add_location(td, file$c, 30, 12, 973);
+    			add_location(tr, file$c, 30, 8, 969);
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, t0, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td);
+    			append_dev(td, t2);
+    			append_dev(td, t3);
+    			append_dev(td, t4);
+    			append_dev(td, t5);
+    			append_dev(td, t6);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.manufacture) show_if = Object.keys(ctx.chance[1]).length == 0;
+
+    			if (show_if) {
+    				if (!if_block) {
+    					if_block = create_if_block_4$2(ctx);
+    					if_block.c();
+    					if_block.m(t0.parentNode, t0);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			if (changed.manufacture) {
+    				each_value_3 = Object.keys(ctx.chance[1]).sort();
+
+    				let i;
+    				for (i = 0; i < each_value_3.length; i += 1) {
+    					const child_ctx = get_each_context_3$2(ctx, each_value_3, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block_3$2(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(t1.parentNode, t1);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value_3.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+
+    			if ((!current || changed.manufacture) && t3_value !== (t3_value = ctx.chance[0] + "")) {
+    				set_data_dev(t3, t3_value);
+    			}
+
+    			if ((!current || changed.manufacture) && t5_value !== (t5_value = (ctx.chance[0]/ctx.manufacture.chanceSum*100).toFixed(3) + "")) {
+    				set_data_dev(t5, t5_value);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value_3.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(t0);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(t1);
+    				detach_dev(tr);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_2$4.name, type: "each", source: "(24:6) {#each manufacture.randomProducedItems as chance}", ctx });
+    	return block;
+    }
+
+    // (40:4) {#if !['name', 'randomProducedItems'].includes(prop[0])}
+    function create_if_block$b(ctx) {
+    	var tr, td0, raw_value = rul.decamelize(ctx.prop[0]) + "", t0, td1, show_if, show_if_1, current_block_type_index, if_block, t1, current;
+
+    	var if_block_creators = [
+    		create_if_block_1$9,
+    		create_if_block_2$9,
+    		create_else_block$7
+    	];
+
+    	var if_blocks = [];
+
+    	function select_block_type(changed, ctx) {
+    		if ((show_if == null) || changed.manufacture) show_if = !!(['requiresBaseFunc' ].includes(ctx.prop[0]));
+    		if (show_if) return 0;
+    		if ((show_if_1 == null) || changed.manufacture) show_if_1 = !!(['producedItems', 'requiredItems'].includes(ctx.prop[0]));
+    		if (show_if_1) return 1;
+    		return 2;
+    	}
+
+    	current_block_type_index = select_block_type(null, ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t0 = space();
+    			td1 = element("td");
+    			if_block.c();
+    			t1 = space();
+    			attr_dev(td0, "class", "padding-right");
+    			add_location(td0, file$c, 41, 8, 1363);
+    			add_location(td1, file$c, 44, 8, 1457);
+    			add_location(tr, file$c, 40, 6, 1349);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			td0.innerHTML = raw_value;
+    			append_dev(tr, t0);
+    			append_dev(tr, td1);
+    			if_blocks[current_block_type_index].m(td1, null);
+    			append_dev(tr, t1);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.manufacture) && raw_value !== (raw_value = rul.decamelize(ctx.prop[0]) + "")) {
+    				td0.innerHTML = raw_value;
+    			}
+
+    			var previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type(changed, ctx);
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(changed, ctx);
+    			} else {
+    				group_outros();
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+    				check_outros();
+
+    				if_block = if_blocks[current_block_type_index];
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				}
+    				transition_in(if_block, 1);
+    				if_block.m(td1, null);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+
+    			if_blocks[current_block_type_index].d();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$b.name, type: "if", source: "(40:4) {#if !['name', 'randomProducedItems'].includes(prop[0])}", ctx });
+    	return block;
+    }
+
+    // (54:10) {:else}
+    function create_else_block$7(ctx) {
+    	var current;
+
+    	var value = new Value({
+    		props: { val: ctx.prop[1] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			value.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(value, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var value_changes = {};
+    			if (changed.manufacture) value_changes.val = ctx.prop[1];
+    			value.$set(value_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(value.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(value.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(value, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block$7.name, type: "else", source: "(54:10) {:else}", ctx });
+    	return block;
+    }
+
+    // (48:73) 
+    function create_if_block_2$9(ctx) {
+    	var table, current;
+
+    	let each_value_1 = Object.keys(ctx.prop[1]).sort();
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1$4(get_each_context_1$4(ctx, each_value_1, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			table = element("table");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr_dev(table, "class", "number-table");
+    			add_location(table, file$c, 48, 12, 1671);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, table, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table, null);
+    			}
+
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.manufacture) {
+    				each_value_1 = Object.keys(ctx.prop[1]).sort();
+
+    				let i;
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1$4(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block_1$4(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(table, null);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value_1.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value_1.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(table);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2$9.name, type: "if", source: "(48:73) ", ctx });
+    	return block;
+    }
+
+    // (46:10) {#if ['requiresBaseFunc' ].includes(prop[0])}
+    function create_if_block_1$9(ctx) {
+    	var current;
+
+    	var baseservicelist = new BaseServiceList({
+    		props: {
+    		items: ctx.prop[1],
+    		vertical: true
+    	},
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			baseservicelist.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(baseservicelist, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var baseservicelist_changes = {};
+    			if (changed.manufacture) baseservicelist_changes.items = ctx.prop[1];
+    			baseservicelist.$set(baseservicelist_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(baseservicelist.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(baseservicelist.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(baseservicelist, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$9.name, type: "if", source: "(46:10) {#if ['requiresBaseFunc' ].includes(prop[0])}", ctx });
+    	return block;
+    }
+
+    // (50:12) {#each Object.keys(prop[1]).sort() as field, i}
+    function create_each_block_1$4(ctx) {
+    	var tr, td0, t_value = ctx.prop[1][ctx.field] + "", t, td1, current;
+
+    	var link = new Link({
+    		props: { href: ctx.field },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t = text(t_value);
+    			td1 = element("td");
+    			link.$$.fragment.c();
+    			add_location(td0, file$c, 50, 18, 1780);
+    			add_location(td1, file$c, 50, 43, 1805);
+    			add_location(tr, file$c, 50, 14, 1776);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			append_dev(td0, t);
+    			append_dev(tr, td1);
+    			mount_component(link, td1, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.manufacture) && t_value !== (t_value = ctx.prop[1][ctx.field] + "")) {
+    				set_data_dev(t, t_value);
+    			}
+
+    			var link_changes = {};
+    			if (changed.manufacture) link_changes.href = ctx.field;
+    			link.$set(link_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(link.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(link.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+
+    			destroy_component(link);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_1$4.name, type: "each", source: "(50:12) {#each Object.keys(prop[1]).sort() as field, i}", ctx });
+    	return block;
+    }
+
+    // (37:2) {#each Object.entries(manufacture).sort((a, b) =>      a[0] > b[0] ? 1 : -1    ) as prop}
+    function create_each_block$b(ctx) {
+    	var show_if = !['name', 'randomProducedItems'].includes(ctx.prop[0]), if_block_anchor, current;
+
+    	var if_block = (show_if) && create_if_block$b(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.manufacture) show_if = !['name', 'randomProducedItems'].includes(ctx.prop[0]);
+
+    			if (show_if) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    					transition_in(if_block, 1);
+    				} else {
+    					if_block = create_if_block$b(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$b.name, type: "each", source: "(37:2) {#each Object.entries(manufacture).sort((a, b) =>      a[0] > b[0] ? 1 : -1    ) as prop}", ctx });
+    	return block;
+    }
+
+    function create_fragment$f(ctx) {
+    	var tr, td, t0_value = rul.str("Manufacture") + "", t0, t1, t2, each_1_anchor, current;
+
+    	var if_block = ('randomProducedItems' in ctx.manufacture) && create_if_block_3$6(ctx);
+
+    	let each_value = Object.entries(ctx.manufacture).sort(func$4
+      );
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$b(get_each_context$b(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td = element("td");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			if (if_block) if_block.c();
+    			t2 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    			attr_dev(td, "colspan", "2");
+    			attr_dev(td, "class", "table-header");
+    			add_location(td, file$c, 16, 4, 292);
+    			add_location(tr, file$c, 15, 2, 282);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td);
+    			append_dev(td, t0);
+    			insert_dev(target, t1, anchor);
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, t2, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ('randomProducedItems' in ctx.manufacture) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    					transition_in(if_block, 1);
+    				} else {
+    					if_block = create_if_block_3$6(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(t2.parentNode, t2);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+    				check_outros();
+    			}
+
+    			if (changed.manufacture || changed.rul) {
+    				each_value = Object.entries(ctx.manufacture).sort(func$4
+      );
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$b(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$b(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    				detach_dev(t1);
+    			}
+
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(t2);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(each_1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$f.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    const func$4 = (a, b) => a[0] > b[0] ? 1 : -1;
+
+    function instance$e($$self, $$props, $$invalidate) {
+    	
+      
+      let { manufacture } = $$props;
+
+    	const writable_props = ['manufacture'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console_1$7.warn(`<Manufacture> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('manufacture' in $$props) $$invalidate('manufacture', manufacture = $$props.manufacture);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { manufacture };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('manufacture' in $$props) $$invalidate('manufacture', manufacture = $$props.manufacture);
+    	};
+
+    	$$self.$$.update = ($$dirty = { manufacture: 1 }) => {
+    		if ($$dirty.manufacture) { {
+            console.log(manufacture);
+          } }
+    	};
+
+    	return { manufacture };
+    }
+
+    class Manufacture$1 extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$e, create_fragment$f, safe_not_equal, ["manufacture"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Manufacture", options, id: create_fragment$f.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.manufacture === undefined && !('manufacture' in props)) {
+    			console_1$7.warn("<Manufacture> was created without expected prop 'manufacture'");
+    		}
+    	}
+
+    	get manufacture() {
+    		throw new Error("<Manufacture>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set manufacture(value) {
+    		throw new Error("<Manufacture>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\Conditions.svelte generated by Svelte v3.12.1 */
+
+    function create_fragment$g(ctx) {
+    	var t0, t1, t2, t3, current;
+
+    	var linkspage0 = new LinksPage({
+    		props: { links: ctx.conditions.allowedCraft, title: rul.str("Allowed Craft") },
+    		$$inline: true
+    	});
+
+    	var linkspage1 = new LinksPage({
+    		props: { links: ctx.conditions.allowedItemCategories, title: rul.str("Allowed Item Categories") },
+    		$$inline: true
+    	});
+
+    	var linkspage2 = new LinksPage({
+    		props: { links: ctx.conditions.allowedArmors, title: rul.str("Allowed Armors") },
+    		$$inline: true
+    	});
+
+    	var linkspage3 = new LinksPage({
+    		props: { links: ctx.conditions.allowedVehicles, title: rul.str("Allowed Vehicles") },
+    		$$inline: true
+    	});
+
+    	var linkspage4 = new LinksPage({
+    		props: { links: ctx.conditions.deployments, title: rul.str("Deployments") },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			linkspage0.$$.fragment.c();
+    			t0 = space();
+    			linkspage1.$$.fragment.c();
+    			t1 = space();
+    			linkspage2.$$.fragment.c();
+    			t2 = space();
+    			linkspage3.$$.fragment.c();
+    			t3 = space();
+    			linkspage4.$$.fragment.c();
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(linkspage0, target, anchor);
+    			insert_dev(target, t0, anchor);
+    			mount_component(linkspage1, target, anchor);
+    			insert_dev(target, t1, anchor);
+    			mount_component(linkspage2, target, anchor);
+    			insert_dev(target, t2, anchor);
+    			mount_component(linkspage3, target, anchor);
+    			insert_dev(target, t3, anchor);
+    			mount_component(linkspage4, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var linkspage0_changes = {};
+    			if (changed.conditions) linkspage0_changes.links = ctx.conditions.allowedCraft;
+    			linkspage0.$set(linkspage0_changes);
+
+    			var linkspage1_changes = {};
+    			if (changed.conditions) linkspage1_changes.links = ctx.conditions.allowedItemCategories;
+    			linkspage1.$set(linkspage1_changes);
+
+    			var linkspage2_changes = {};
+    			if (changed.conditions) linkspage2_changes.links = ctx.conditions.allowedArmors;
+    			linkspage2.$set(linkspage2_changes);
+
+    			var linkspage3_changes = {};
+    			if (changed.conditions) linkspage3_changes.links = ctx.conditions.allowedVehicles;
+    			linkspage3.$set(linkspage3_changes);
+
+    			var linkspage4_changes = {};
+    			if (changed.conditions) linkspage4_changes.links = ctx.conditions.deployments;
+    			linkspage4.$set(linkspage4_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(linkspage0.$$.fragment, local);
+
+    			transition_in(linkspage1.$$.fragment, local);
+
+    			transition_in(linkspage2.$$.fragment, local);
+
+    			transition_in(linkspage3.$$.fragment, local);
+
+    			transition_in(linkspage4.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(linkspage0.$$.fragment, local);
+    			transition_out(linkspage1.$$.fragment, local);
+    			transition_out(linkspage2.$$.fragment, local);
+    			transition_out(linkspage3.$$.fragment, local);
+    			transition_out(linkspage4.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(linkspage0, detaching);
+
+    			if (detaching) {
+    				detach_dev(t0);
+    			}
+
+    			destroy_component(linkspage1, detaching);
+
+    			if (detaching) {
+    				detach_dev(t1);
+    			}
+
+    			destroy_component(linkspage2, detaching);
+
+    			if (detaching) {
+    				detach_dev(t2);
+    			}
+
+    			destroy_component(linkspage3, detaching);
+
+    			if (detaching) {
+    				detach_dev(t3);
+    			}
+
+    			destroy_component(linkspage4, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$g.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$f($$self, $$props, $$invalidate) {
+    	  
+
+      let { conditions } = $$props;
+
+    	const writable_props = ['conditions'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Conditions> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('conditions' in $$props) $$invalidate('conditions', conditions = $$props.conditions);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { conditions };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('conditions' in $$props) $$invalidate('conditions', conditions = $$props.conditions);
+    	};
+
+    	return { conditions };
+    }
+
+    class Conditions extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$f, create_fragment$g, safe_not_equal, ["conditions"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Conditions", options, id: create_fragment$g.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.conditions === undefined && !('conditions' in props)) {
+    			console.warn("<Conditions> was created without expected prop 'conditions'");
+    		}
+    	}
+
+    	get conditions() {
+    		throw new Error("<Conditions>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set conditions(value) {
+    		throw new Error("<Conditions>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\Ufo.svelte generated by Svelte v3.12.1 */
+    const { console: console_1$8 } = globals;
+
+    const file$d = "src\\Ufo.svelte";
+
+    function get_each_context_2$5(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.field2 = list[i];
+    	child_ctx.i2 = i;
+    	return child_ctx;
+    }
+
+    function get_each_context_1$5(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.field = list[i];
+    	child_ctx.i = i;
+    	return child_ctx;
+    }
+
+    function get_each_context$c(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.key = list[i][0];
+    	child_ctx.prop = list[i][1];
+    	return child_ctx;
+    }
+
+    // (16:4) {#if !['type', 'battlescapeTerrainData', 'craftInventoryTile', 'deployment'].includes(key)}
+    function create_if_block$c(ctx) {
+    	var tr, td0, raw_value = rul.decamelize(ctx.key) + "", t0, td1, show_if, current_block_type_index, if_block, t1, current;
+
+    	var if_block_creators = [
+    		create_if_block_1$a,
+    		create_if_block_2$a,
+    		create_else_block$8
+    	];
+
+    	var if_blocks = [];
+
+    	function select_block_type(changed, ctx) {
+    		if ((show_if == null) || changed.ufo) show_if = !!(['modSprite'].includes(ctx.key));
+    		if (show_if) return 0;
+    		if (ctx.key == "raceBonus") return 1;
+    		return 2;
+    	}
+
+    	current_block_type_index = select_block_type(null, ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t0 = space();
+    			td1 = element("td");
+    			if_block.c();
+    			t1 = space();
+    			attr_dev(td0, "class", "padding-right");
+    			add_location(td0, file$d, 17, 8, 521);
+    			add_location(td1, file$d, 18, 8, 589);
+    			add_location(tr, file$d, 16, 6, 507);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			td0.innerHTML = raw_value;
+    			append_dev(tr, t0);
+    			append_dev(tr, td1);
+    			if_blocks[current_block_type_index].m(td1, null);
+    			append_dev(tr, t1);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.ufo) && raw_value !== (raw_value = rul.decamelize(ctx.key) + "")) {
+    				td0.innerHTML = raw_value;
+    			}
+
+    			var previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type(changed, ctx);
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(changed, ctx);
+    			} else {
+    				group_outros();
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+    				check_outros();
+
+    				if_block = if_blocks[current_block_type_index];
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				}
+    				transition_in(if_block, 1);
+    				if_block.m(td1, null);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+
+    			if_blocks[current_block_type_index].d();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$c.name, type: "if", source: "(16:4) {#if !['type', 'battlescapeTerrainData', 'craftInventoryTile', 'deployment'].includes(key)}", ctx });
+    	return block;
+    }
+
+    // (32:10) {:else}
+    function create_else_block$8(ctx) {
+    	var current;
+
+    	var value = new Value({
+    		props: { val: ctx.prop },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			value.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(value, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var value_changes = {};
+    			if (changed.ufo) value_changes.val = ctx.prop;
+    			value.$set(value_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(value.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(value.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(value, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block$8.name, type: "else", source: "(32:10) {:else}", ctx });
+    	return block;
+    }
+
+    // (22:39) 
+    function create_if_block_2$a(ctx) {
+    	var table, current;
+
+    	let each_value_1 = Object.keys(ctx.prop).sort();
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1$5(get_each_context_1$5(ctx, each_value_1, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			table = element("table");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr_dev(table, "class", "number-table");
+    			add_location(table, file$d, 22, 12, 759);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, table, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table, null);
+    			}
+
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.ufo || changed.rul) {
+    				each_value_1 = Object.keys(ctx.prop).sort();
+
+    				let i;
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1$5(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block_1$5(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(table, null);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value_1.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value_1.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(table);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2$a.name, type: "if", source: "(22:39) ", ctx });
+    	return block;
+    }
+
+    // (20:10) {#if ['modSprite'].includes(key)}
+    function create_if_block_1$a(ctx) {
+    	var img, img_src_value;
+
+    	const block = {
+    		c: function create() {
+    			img = element("img");
+    			attr_dev(img, "class", "sprite");
+    			attr_dev(img, "alt", "X");
+    			attr_dev(img, "src", img_src_value = rul.sprite(ctx.prop));
+    			add_location(img, file$d, 20, 12, 652);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, img, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.ufo) && img_src_value !== (img_src_value = rul.sprite(ctx.prop))) {
+    				attr_dev(img, "src", img_src_value);
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(img);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$a.name, type: "if", source: "(20:10) {#if ['modSprite'].includes(key)}", ctx });
+    	return block;
+    }
+
+    // (26:16) {#each Object.keys(prop[field]).sort() as field2, i2}
+    function create_each_block_2$5(ctx) {
+    	var t0_value = ctx.field2 + "", t0, t1, em, br, current;
+
+    	var link = new Link({
+    		props: { href: ctx.prop[ctx.field][ctx.field2] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			t0 = text(t0_value);
+    			t1 = text(": ");
+    			em = element("em");
+    			link.$$.fragment.c();
+    			br = element("br");
+    			add_location(em, file$d, 26, 33, 1000);
+    			add_location(br, file$d, 26, 76, 1043);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, em, anchor);
+    			mount_component(link, em, null);
+    			insert_dev(target, br, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.ufo) && t0_value !== (t0_value = ctx.field2 + "")) {
+    				set_data_dev(t0, t0_value);
+    			}
+
+    			var link_changes = {};
+    			if (changed.ufo) link_changes.href = ctx.prop[ctx.field][ctx.field2];
+    			link.$set(link_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(link.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(link.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(t0);
+    				detach_dev(t1);
+    				detach_dev(em);
+    			}
+
+    			destroy_component(link);
+
+    			if (detaching) {
+    				detach_dev(br);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_2$5.name, type: "each", source: "(26:16) {#each Object.keys(prop[field]).sort() as field2, i2}", ctx });
+    	return block;
+    }
+
+    // (24:12) {#each Object.keys(prop).sort() as field, i}
+    function create_each_block_1$5(ctx) {
+    	var tr, td0, t0_value = rul.str(ctx.field) + "", t0, td1, t1, current;
+
+    	let each_value_2 = Object.keys(ctx.prop[ctx.field]).sort();
+
+    	let each_blocks = [];
+
+    	for (let i_1 = 0; i_1 < each_value_2.length; i_1 += 1) {
+    		each_blocks[i_1] = create_each_block_2$5(get_each_context_2$5(ctx, each_value_2, i_1));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t0 = text(t0_value);
+    			td1 = element("td");
+
+    			for (let i_1 = 0; i_1 < each_blocks.length; i_1 += 1) {
+    				each_blocks[i_1].c();
+    			}
+
+    			t1 = space();
+    			add_location(td0, file$d, 24, 18, 865);
+    			add_location(td1, file$d, 24, 43, 890);
+    			add_location(tr, file$d, 24, 14, 861);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			append_dev(td0, t0);
+    			append_dev(tr, td1);
+
+    			for (let i_1 = 0; i_1 < each_blocks.length; i_1 += 1) {
+    				each_blocks[i_1].m(td1, null);
+    			}
+
+    			append_dev(td1, t1);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.ufo) && t0_value !== (t0_value = rul.str(ctx.field) + "")) {
+    				set_data_dev(t0, t0_value);
+    			}
+
+    			if (changed.ufo) {
+    				each_value_2 = Object.keys(ctx.prop[ctx.field]).sort();
+
+    				let i_1;
+    				for (i_1 = 0; i_1 < each_value_2.length; i_1 += 1) {
+    					const child_ctx = get_each_context_2$5(ctx, each_value_2, i_1);
+
+    					if (each_blocks[i_1]) {
+    						each_blocks[i_1].p(changed, child_ctx);
+    						transition_in(each_blocks[i_1], 1);
+    					} else {
+    						each_blocks[i_1] = create_each_block_2$5(child_ctx);
+    						each_blocks[i_1].c();
+    						transition_in(each_blocks[i_1], 1);
+    						each_blocks[i_1].m(td1, t1);
+    					}
+    				}
+
+    				group_outros();
+    				for (i_1 = each_value_2.length; i_1 < each_blocks.length; i_1 += 1) {
+    					out(i_1);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i_1 = 0; i_1 < each_value_2.length; i_1 += 1) {
+    				transition_in(each_blocks[i_1]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i_1 = 0; i_1 < each_blocks.length; i_1 += 1) {
+    				transition_out(each_blocks[i_1]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_1$5.name, type: "each", source: "(24:12) {#each Object.keys(prop).sort() as field, i}", ctx });
+    	return block;
+    }
+
+    // (15:2) {#each Object.entries(ufo).sort((a, b) => (a[0] > b[0] ? 1 : -1)) as [key, prop]}
+    function create_each_block$c(ctx) {
+    	var show_if = !['type', 'battlescapeTerrainData', 'craftInventoryTile', 'deployment'].includes(ctx.key), if_block_anchor, current;
+
+    	var if_block = (show_if) && create_if_block$c(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.ufo) show_if = !['type', 'battlescapeTerrainData', 'craftInventoryTile', 'deployment'].includes(ctx.key);
+
+    			if (show_if) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    					transition_in(if_block, 1);
+    				} else {
+    					if_block = create_if_block$c(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$c.name, type: "each", source: "(15:2) {#each Object.entries(ufo).sort((a, b) => (a[0] > b[0] ? 1 : -1)) as [key, prop]}", ctx });
+    	return block;
+    }
+
+    function create_fragment$h(ctx) {
+    	var table, tr, td, t_1, current;
+
+    	let each_value = Object.entries(ctx.ufo).sort(func$5);
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$c(get_each_context$c(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			table = element("table");
+    			tr = element("tr");
+    			td = element("td");
+    			td.textContent = "Craft";
+    			t_1 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr_dev(td, "colspan", "2");
+    			attr_dev(td, "class", "table-header");
+    			add_location(td, file$d, 13, 7, 264);
+    			add_location(tr, file$d, 13, 2, 259);
+    			attr_dev(table, "class", "main-table");
+    			add_location(table, file$d, 12, 0, 229);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, table, anchor);
+    			append_dev(table, tr);
+    			append_dev(tr, td);
+    			append_dev(table, t_1);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table, null);
+    			}
+
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.ufo || changed.rul) {
+    				each_value = Object.entries(ctx.ufo).sort(func$5);
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$c(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$c(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(table, null);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(table);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$h.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    const func$5 = (a, b) => (a[0] > b[0] ? 1 : -1);
+
+    function instance$g($$self, $$props, $$invalidate) {
+    	
+
+      let { ufo } = $$props;
+
+    	const writable_props = ['ufo'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console_1$8.warn(`<Ufo> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('ufo' in $$props) $$invalidate('ufo', ufo = $$props.ufo);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { ufo };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('ufo' in $$props) $$invalidate('ufo', ufo = $$props.ufo);
+    	};
+
+    	$$self.$$.update = ($$dirty = { ufo: 1 }) => {
+    		if ($$dirty.ufo) { {console.info(ufo);} }
+    	};
+
+    	return { ufo };
+    }
+
+    class Ufo$1 extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$g, create_fragment$h, safe_not_equal, ["ufo"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Ufo", options, id: create_fragment$h.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.ufo === undefined && !('ufo' in props)) {
+    			console_1$8.warn("<Ufo> was created without expected prop 'ufo'");
+    		}
+    	}
+
+    	get ufo() {
+    		throw new Error("<Ufo>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set ufo(value) {
+    		throw new Error("<Ufo>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\Facility.svelte generated by Svelte v3.12.1 */
+    const { console: console_1$9 } = globals;
+
+    const file$e = "src\\Facility.svelte";
+
+    function get_each_context_3$3(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx._ = list[i];
+    	child_ctx.x = i;
+    	return child_ctx;
+    }
+
+    function get_each_context_2$6(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx._ = list[i];
+    	child_ctx.y = i;
+    	return child_ctx;
+    }
+
+    function get_each_context_1$6(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.field = list[i];
+    	child_ctx.i = i;
+    	return child_ctx;
+    }
+
+    function get_each_context$d(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.key = list[i][0];
+    	child_ctx.prop = list[i][1];
+    	return child_ctx;
+    }
+
+    // (32:4) {#if !['type', 'battlescapeTerrainData', 'craftInventoryTile', 'deployment'].includes(key)}
+    function create_if_block$d(ctx) {
+    	var tr, td0, raw_value = rul.decamelize(ctx.key) + "", t0, td1, show_if, show_if_1, show_if_2, show_if_3, current_block_type_index, if_block, t1, current;
+
+    	var if_block_creators = [
+    		create_if_block_1$b,
+    		create_if_block_3$7,
+    		create_if_block_4$3,
+    		create_if_block_5$2,
+    		create_else_block$9
+    	];
+
+    	var if_blocks = [];
+
+    	function select_block_type(changed, ctx) {
+    		if ((show_if == null) || changed.facility) show_if = !!(['buildCostItems'].includes(ctx.key));
+    		if (show_if) return 0;
+    		if ((show_if_1 == null) || changed.facility) show_if_1 = !!(['storageTiles'].includes(ctx.key));
+    		if (show_if_1) return 1;
+    		if ((show_if_2 == null) || changed.facility) show_if_2 = !!(['provideBaseFunc', 'requiresBaseFunc', 'forbiddenBaseFunc'].includes(ctx.key));
+    		if (show_if_2) return 2;
+    		if ((show_if_3 == null) || changed.facility) show_if_3 = !!(['spriteFacility', 'spriteShape'].includes(ctx.key));
+    		if (show_if_3) return 3;
+    		return 4;
+    	}
+
+    	current_block_type_index = select_block_type(null, ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t0 = space();
+    			td1 = element("td");
+    			if_block.c();
+    			t1 = space();
+    			attr_dev(td0, "class", "padding-right");
+    			add_location(td0, file$e, 33, 8, 822);
+    			add_location(td1, file$e, 36, 8, 912);
+    			add_location(tr, file$e, 32, 6, 808);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			td0.innerHTML = raw_value;
+    			append_dev(tr, t0);
+    			append_dev(tr, td1);
+    			if_blocks[current_block_type_index].m(td1, null);
+    			append_dev(tr, t1);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.facility) && raw_value !== (raw_value = rul.decamelize(ctx.key) + "")) {
+    				td0.innerHTML = raw_value;
+    			}
+
+    			var previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type(changed, ctx);
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(changed, ctx);
+    			} else {
+    				group_outros();
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+    				check_outros();
+
+    				if_block = if_blocks[current_block_type_index];
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				}
+    				transition_in(if_block, 1);
+    				if_block.m(td1, null);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+
+    			if_blocks[current_block_type_index].d();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$d.name, type: "if", source: "(32:4) {#if !['type', 'battlescapeTerrainData', 'craftInventoryTile', 'deployment'].includes(key)}", ctx });
+    	return block;
+    }
+
+    // (75:10) {:else}
+    function create_else_block$9(ctx) {
+    	var current;
+
+    	var value = new Value({
+    		props: { val: ctx.prop },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			value.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(value, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var value_changes = {};
+    			if (changed.facility) value_changes.val = ctx.prop;
+    			value.$set(value_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(value.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(value.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(value, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block$9.name, type: "else", source: "(75:10) {:else}", ctx });
+    	return block;
+    }
+
+    // (64:68) 
+    function create_if_block_5$2(ctx) {
+    	var div;
+
+    	let each_value_2 = { length: ctx.size };
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_2.length; i += 1) {
+    		each_blocks[i] = create_each_block_2$6(get_each_context_2$6(ctx, each_value_2, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr_dev(div, "class", "tight");
+    			set_style(div, "columns", ctx.size);
+    			set_style(div, "width", "" + 32 * ctx.size + "px");
+    			add_location(div, file$e, 64, 12, 2100);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div, null);
+    			}
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.size || changed.rul || changed.facility) {
+    				each_value_2 = { length: ctx.size };
+
+    				let i;
+    				for (i = 0; i < each_value_2.length; i += 1) {
+    					const child_ctx = get_each_context_2$6(ctx, each_value_2, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block_2$6(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+    				each_blocks.length = each_value_2.length;
+    			}
+
+    			if (changed.size) {
+    				set_style(div, "columns", ctx.size);
+    				set_style(div, "width", "" + 32 * ctx.size + "px");
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_5$2.name, type: "if", source: "(64:68) ", ctx });
+    	return block;
+    }
+
+    // (62:95) 
+    function create_if_block_4$3(ctx) {
+    	var current;
+
+    	var baseservicelist = new BaseServiceList({
+    		props: {
+    		items: ctx.prop,
+    		vertical: true
+    	},
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			baseservicelist.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(baseservicelist, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var baseservicelist_changes = {};
+    			if (changed.facility) baseservicelist_changes.items = ctx.prop;
+    			baseservicelist.$set(baseservicelist_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(baseservicelist.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(baseservicelist.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(baseservicelist, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_4$3.name, type: "if", source: "(62:95) ", ctx });
+    	return block;
+    }
+
+    // (46:51) 
+    function create_if_block_3$7(ctx) {
+    	var div3, div0, button, t_1, div2, div1, current;
+
+    	var linkslist = new LinksList({
+    		props: {
+    		items: ctx.prop,
+    		vertical: true
+    	},
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			div3 = element("div");
+    			div0 = element("div");
+    			button = element("button");
+    			button.textContent = "Expand";
+    			t_1 = space();
+    			div2 = element("div");
+    			div1 = element("div");
+    			linkslist.$$.fragment.c();
+    			attr_dev(button, "class", "button");
+    			attr_dev(button, "aria-haspopup", "true");
+    			attr_dev(button, "aria-controls", "dropdown-tiles");
+    			add_location(button, file$e, 48, 16, 1381);
+    			attr_dev(div0, "class", "dropdown-trigger");
+    			add_location(div0, file$e, 47, 14, 1333);
+    			attr_dev(div1, "class", "dropdown-content svelte-fh4l44");
+    			set_style(div1, "columns", "6");
+    			add_location(div1, file$e, 56, 16, 1681);
+    			attr_dev(div2, "class", "dropdown-menu");
+    			attr_dev(div2, "id", "dropdown-tiles");
+    			attr_dev(div2, "role", "menu");
+    			add_location(div2, file$e, 55, 14, 1604);
+    			attr_dev(div3, "class", "dropdown is-hoverable");
+    			add_location(div3, file$e, 46, 12, 1282);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div3, anchor);
+    			append_dev(div3, div0);
+    			append_dev(div0, button);
+    			append_dev(div3, t_1);
+    			append_dev(div3, div2);
+    			append_dev(div2, div1);
+    			mount_component(linkslist, div1, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var linkslist_changes = {};
+    			if (changed.facility) linkslist_changes.items = ctx.prop;
+    			linkslist.$set(linkslist_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(linkslist.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(linkslist.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div3);
+    			}
+
+    			destroy_component(linkslist);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_3$7.name, type: "if", source: "(46:51) ", ctx });
+    	return block;
+    }
+
+    // (38:10) {#if ['buildCostItems'].includes(key)}
+    function create_if_block_1$b(ctx) {
+    	var each_1_anchor, current;
+
+    	let each_value_1 = Object.keys(ctx.prop).sort();
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1$6(get_each_context_1$6(ctx, each_value_1, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.facility) {
+    				each_value_1 = Object.keys(ctx.prop).sort();
+
+    				let i;
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1$6(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block_1$6(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value_1.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value_1.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(each_1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$b.name, type: "if", source: "(38:10) {#if ['buildCostItems'].includes(key)}", ctx });
+    	return block;
+    }
+
+    // (67:16) {#each { length: size } as _, x}
+    function create_each_block_3$3(ctx) {
+    	var img, img_src_value;
+
+    	const block = {
+    		c: function create() {
+    			img = element("img");
+    			attr_dev(img, "class", "sprite");
+    			attr_dev(img, "alt", "X");
+    			attr_dev(img, "src", img_src_value = rul.specialSprite('baseSprite', ctx.prop * 1 + ctx.x * ctx.size + ctx.y));
+    			add_location(img, file$e, 67, 18, 2281);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, img, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.facility || changed.size) && img_src_value !== (img_src_value = rul.specialSprite('baseSprite', ctx.prop * 1 + ctx.x * ctx.size + ctx.y))) {
+    				attr_dev(img, "src", img_src_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(img);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_3$3.name, type: "each", source: "(67:16) {#each { length: size } as _, x}", ctx });
+    	return block;
+    }
+
+    // (66:14) {#each { length: size } as _, y}
+    function create_each_block_2$6(ctx) {
+    	var each_1_anchor;
+
+    	let each_value_3 = { length: ctx.size };
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_3.length; i += 1) {
+    		each_blocks[i] = create_each_block_3$3(get_each_context_3$3(ctx, each_value_3, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.rul || changed.facility || changed.size) {
+    				each_value_3 = { length: ctx.size };
+
+    				let i;
+    				for (i = 0; i < each_value_3.length; i += 1) {
+    					const child_ctx = get_each_context_3$3(ctx, each_value_3, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block_3$3(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+    				each_blocks.length = each_value_3.length;
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(each_1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_2$6.name, type: "each", source: "(66:14) {#each { length: size } as _, y}", ctx });
+    	return block;
+    }
+
+    // (40:14) {#if i != 0}
+    function create_if_block_2$b(ctx) {
+    	var br;
+
+    	const block = {
+    		c: function create() {
+    			br = element("br");
+    			add_location(br, file$e, 40, 16, 1070);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, br, anchor);
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(br);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2$b.name, type: "if", source: "(40:14) {#if i != 0}", ctx });
+    	return block;
+    }
+
+    // (39:12) {#each Object.keys(prop).sort() as field, i}
+    function create_each_block_1$6(ctx) {
+    	var t0, t1, t2_value = ctx.prop[ctx.field].build + "", t2, t3, t4_value = ctx.prop[ctx.field].refund + "", t4, current;
+
+    	var if_block = (ctx.i != 0) && create_if_block_2$b(ctx);
+
+    	var link = new Link({
+    		props: { href: ctx.field },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			t0 = space();
+    			link.$$.fragment.c();
+    			t1 = text("\r\n              : ");
+    			t2 = text(t2_value);
+    			t3 = text(" / ");
+    			t4 = text(t4_value);
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, t0, anchor);
+    			mount_component(link, target, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, t2, anchor);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, t4, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var link_changes = {};
+    			if (changed.facility) link_changes.href = ctx.field;
+    			link.$set(link_changes);
+
+    			if ((!current || changed.facility) && t2_value !== (t2_value = ctx.prop[ctx.field].build + "")) {
+    				set_data_dev(t2, t2_value);
+    			}
+
+    			if ((!current || changed.facility) && t4_value !== (t4_value = ctx.prop[ctx.field].refund + "")) {
+    				set_data_dev(t4, t4_value);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(link.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(link.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(t0);
+    			}
+
+    			destroy_component(link, detaching);
+
+    			if (detaching) {
+    				detach_dev(t1);
+    				detach_dev(t2);
+    				detach_dev(t3);
+    				detach_dev(t4);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_1$6.name, type: "each", source: "(39:12) {#each Object.keys(prop).sort() as field, i}", ctx });
+    	return block;
+    }
+
+    // (29:2) {#each Object.entries(facility).sort((a, b) =>      a[0] > b[0] && a[0] != 'storageTiles' ? 1 : -1    ) as [key, prop]}
+    function create_each_block$d(ctx) {
+    	var show_if = !['type', 'battlescapeTerrainData', 'craftInventoryTile', 'deployment'].includes(ctx.key), if_block_anchor, current;
+
+    	var if_block = (show_if) && create_if_block$d(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.facility) show_if = !['type', 'battlescapeTerrainData', 'craftInventoryTile', 'deployment'].includes(ctx.key);
+
+    			if (show_if) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    					transition_in(if_block, 1);
+    				} else {
+    					if_block = create_if_block$d(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$d.name, type: "each", source: "(29:2) {#each Object.entries(facility).sort((a, b) =>      a[0] > b[0] && a[0] != 'storageTiles' ? 1 : -1    ) as [key, prop]}", ctx });
+    	return block;
+    }
+
+    function create_fragment$i(ctx) {
+    	var table, tr, td, t_1, current;
+
+    	let each_value = Object.entries(ctx.facility).sort(func$6
+      );
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$d(get_each_context$d(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			table = element("table");
+    			tr = element("tr");
+    			td = element("td");
+    			td.textContent = "Craft";
+    			t_1 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr_dev(td, "colspan", "2");
+    			attr_dev(td, "class", "table-header");
+    			add_location(td, file$e, 26, 4, 524);
+    			add_location(tr, file$e, 25, 2, 514);
+    			attr_dev(table, "class", "main-table");
+    			add_location(table, file$e, 24, 0, 484);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, table, anchor);
+    			append_dev(table, tr);
+    			append_dev(tr, td);
+    			append_dev(table, t_1);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table, null);
+    			}
+
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.facility || changed.size || changed.rul) {
+    				each_value = Object.entries(ctx.facility).sort(func$6
+      );
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$d(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$d(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(table, null);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(table);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$i.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    const func$6 = (a, b) => a[0] > b[0] && a[0] != 'storageTiles' ? 1 : -1;
+
+    function instance$h($$self, $$props, $$invalidate) {
+    	
+
+      let { facility } = $$props;
+      let size = 1;
+
+    	const writable_props = ['facility'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console_1$9.warn(`<Facility> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('facility' in $$props) $$invalidate('facility', facility = $$props.facility);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { facility, size };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('facility' in $$props) $$invalidate('facility', facility = $$props.facility);
+    		if ('size' in $$props) $$invalidate('size', size = $$props.size);
+    	};
+
+    	$$self.$$.update = ($$dirty = { facility: 1, size: 1 }) => {
+    		if ($$dirty.facility || $$dirty.size) { {
+            $$invalidate('size', size = facility.size || 1);
+            console.log(size);
+            console.info(facility);
+          } }
+    	};
+
+    	return { facility, size };
+    }
+
+    class Facility$1 extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$h, create_fragment$i, safe_not_equal, ["facility"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Facility", options, id: create_fragment$i.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.facility === undefined && !('facility' in props)) {
+    			console_1$9.warn("<Facility> was created without expected prop 'facility'");
+    		}
+    	}
+
+    	get facility() {
+    		throw new Error("<Facility>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set facility(value) {
+    		throw new Error("<Facility>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\BaseService.svelte generated by Svelte v3.12.1 */
+
+    const file$f = "src\\BaseService.svelte";
+
+    function get_each_context$e(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.prop = list[i];
+    	return child_ctx;
+    }
+
+    // (15:4) {#if !['id'].includes(prop[0])}
+    function create_if_block$e(ctx) {
+    	var tr, td0, t0_value = rul.decamelize(ctx.prop[0]) + "", t0, t1, td1, current;
+
+    	var linkslist = new LinksList({
+    		props: { items: ctx.prop[1] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			td1 = element("td");
+    			linkslist.$$.fragment.c();
+    			add_location(td0, file$f, 15, 10, 371);
+    			add_location(td1, file$f, 16, 6, 413);
+    			add_location(tr, file$f, 15, 6, 367);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			append_dev(td0, t0);
+    			append_dev(tr, t1);
+    			append_dev(tr, td1);
+    			mount_component(linkslist, td1, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.service) && t0_value !== (t0_value = rul.decamelize(ctx.prop[0]) + "")) {
+    				set_data_dev(t0, t0_value);
+    			}
+
+    			var linkslist_changes = {};
+    			if (changed.service) linkslist_changes.items = ctx.prop[1];
+    			linkslist.$set(linkslist_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(linkslist.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(linkslist.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+
+    			destroy_component(linkslist);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$e.name, type: "if", source: "(15:4) {#if !['id'].includes(prop[0])}", ctx });
+    	return block;
+    }
+
+    // (14:2) {#each Object.entries(service).sort((a, b) => (a[0]=="providedBy"?-10:10) + (a[0] > b[0] ? 1 : -1)) as prop}
+    function create_each_block$e(ctx) {
+    	var show_if = !['id'].includes(ctx.prop[0]), if_block_anchor, current;
+
+    	var if_block = (show_if) && create_if_block$e(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.service) show_if = !['id'].includes(ctx.prop[0]);
+
+    			if (show_if) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    					transition_in(if_block, 1);
+    				} else {
+    					if_block = create_if_block$e(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$e.name, type: "each", source: "(14:2) {#each Object.entries(service).sort((a, b) => (a[0]==\"providedBy\"?-10:10) + (a[0] > b[0] ? 1 : -1)) as prop}", ctx });
+    	return block;
+    }
+
+    function create_fragment$j(ctx) {
+    	var table, current;
+
+    	let each_value = Object.entries(ctx.service).sort(func$7);
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$e(get_each_context$e(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			table = element("table");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr_dev(table, "class", "main-table");
+    			add_location(table, file$f, 11, 0, 182);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, table, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table, null);
+    			}
+
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.service || changed.rul) {
+    				each_value = Object.entries(ctx.service).sort(func$7);
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$e(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$e(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(table, null);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(table);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$j.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    const func$7 = (a, b) => (a[0]=="providedBy"?-10:10) + (a[0] > b[0] ? 1 : -1);
+
+    function instance$i($$self, $$props, $$invalidate) {
+    	
+
+      let { service } = $$props;
+
+    	const writable_props = ['service'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<BaseService> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('service' in $$props) $$invalidate('service', service = $$props.service);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { service };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('service' in $$props) $$invalidate('service', service = $$props.service);
+    	};
+
+    	return { service };
+    }
+
+    class BaseService extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$i, create_fragment$j, safe_not_equal, ["service"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "BaseService", options, id: create_fragment$j.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.service === undefined && !('service' in props)) {
+    			console.warn("<BaseService> was created without expected prop 'service'");
+    		}
+    	}
+
+    	get service() {
+    		throw new Error("<BaseService>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set service(value) {
+    		throw new Error("<BaseService>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\BaseServices.svelte generated by Svelte v3.12.1 */
+    const { console: console_1$a } = globals;
+
+    const file$g = "src\\BaseServices.svelte";
+
+    function get_each_context$f(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.service = list[i];
+    	return child_ctx;
+    }
+
+    // (21:2) {#each Object.entries(rul.baseServices) as service}
+    function create_each_block$f(ctx) {
+    	var tr, td0, a, raw_value = rul.str(ctx.service[0]) + "", t0, td1, t1, tr_class_value, current;
+
+    	var linkslist = new LinksList({
+    		props: { items: ctx.service[1].providedBy },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			a = element("a");
+    			t0 = space();
+    			td1 = element("td");
+    			linkslist.$$.fragment.c();
+    			t1 = space();
+    			attr_dev(a, "color", "cyan");
+    			attr_dev(a, "href", '#' + ctx.service[0]);
+    			attr_dev(a, "class", "svelte-edz6kn");
+    			add_location(a, file$g, 22, 10, 423);
+    			attr_dev(td0, "class", "svelte-edz6kn");
+    			add_location(td0, file$g, 22, 6, 419);
+    			attr_dev(td1, "class", "svelte-edz6kn");
+    			add_location(td1, file$g, 23, 6, 505);
+    			attr_dev(tr, "class", tr_class_value = "" + null_to_empty((ctx.service[0] == ctx.query?"highlight":"")) + " svelte-edz6kn");
+    			add_location(tr, file$g, 21, 4, 364);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			append_dev(td0, a);
+    			a.innerHTML = raw_value;
+    			append_dev(tr, t0);
+    			append_dev(tr, td1);
+    			mount_component(linkslist, td1, null);
+    			append_dev(tr, t1);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.query) && tr_class_value !== (tr_class_value = "" + null_to_empty((ctx.service[0] == ctx.query?"highlight":"")) + " svelte-edz6kn")) {
+    				attr_dev(tr, "class", tr_class_value);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(linkslist.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(linkslist.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(tr);
+    			}
+
+    			destroy_component(linkslist);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$f.name, type: "each", source: "(21:2) {#each Object.entries(rul.baseServices) as service}", ctx });
+    	return block;
+    }
+
+    function create_fragment$k(ctx) {
+    	var table, current;
+
+    	let each_value = Object.entries(rul.baseServices);
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$f(get_each_context$f(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			table = element("table");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr_dev(table, "class", "main-table");
+    			add_location(table, file$g, 18, 0, 275);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, table, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table, null);
+    			}
+
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.rul || changed.query) {
+    				each_value = Object.entries(rul.baseServices);
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$f(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$f(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(table, null);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(table);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$k.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$j($$self, $$props, $$invalidate) {
+    	
+
+      let { query = null } = $$props;
+
+      console.log(query);
+
+    	const writable_props = ['query'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console_1$a.warn(`<BaseServices> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('query' in $$props) $$invalidate('query', query = $$props.query);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { query };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('query' in $$props) $$invalidate('query', query = $$props.query);
+    	};
+
+    	return { query };
+    }
+
+    class BaseServices extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$j, create_fragment$k, safe_not_equal, ["query"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "BaseServices", options, id: create_fragment$k.name });
+    	}
+
+    	get query() {
+    		throw new Error("<BaseServices>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set query(value) {
+    		throw new Error("<BaseServices>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\Article.svelte generated by Svelte v3.12.1 */
+
+    const file$h = "src\\Article.svelte";
+
+    // (50:0) {#if !(article.id in rul.units)}
+    function create_if_block_15$1(ctx) {
+    	var current;
+
+    	var illustration = new Illustration({
+    		props: { id: ctx.article.image_id },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			illustration.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(illustration, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var illustration_changes = {};
+    			if (changed.article) illustration_changes.id = ctx.article.image_id;
+    			illustration.$set(illustration_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(illustration.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(illustration.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(illustration, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_15$1.name, type: "if", source: "(50:0) {#if !(article.id in rul.units)}", ctx });
+    	return block;
+    }
+
+    // (64:66) 
+    function create_if_block_14$2(ctx) {
+    	var current;
+
+    	var linkspage = new LinksPage({
+    		props: { links: rul.sections[ctx.article.id].articles.map(func$8) },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			linkspage.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(linkspage, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var linkspage_changes = {};
+    			if (changed.article) linkspage_changes.links = rul.sections[ctx.article.id].articles.map(func$8);
+    			linkspage.$set(linkspage_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(linkspage.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(linkspage.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(linkspage, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_14$2.name, type: "if", source: "(64:66) ", ctx });
+    	return block;
+    }
+
+    // (62:42) 
+    function create_if_block_13$2(ctx) {
+    	var current;
+
+    	var linkspage = new LinksPage({
+    		props: { links: rul.categories[ctx.article.id] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			linkspage.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(linkspage, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var linkspage_changes = {};
+    			if (changed.article) linkspage_changes.links = rul.categories[ctx.article.id];
+    			linkspage.$set(linkspage_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(linkspage.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(linkspage.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(linkspage, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_13$2.name, type: "if", source: "(62:42) ", ctx });
+    	return block;
+    }
+
+    // (60:42) 
+    function create_if_block_12$2(ctx) {
+    	var current;
+
+    	var conditions = new Conditions({
+    		props: { conditions: rul.startingConditions[ctx.article.id] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			conditions.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(conditions, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var conditions_changes = {};
+    			if (changed.article) conditions_changes.conditions = rul.startingConditions[ctx.article.id];
+    			conditions.$set(conditions_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(conditions.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(conditions.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(conditions, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_12$2.name, type: "if", source: "(60:42) ", ctx });
+    	return block;
+    }
+
+    // (58:0) {#if article.id == 'SERVICES'}
+    function create_if_block_11$2(ctx) {
+    	var current;
+
+    	var baseservices = new BaseServices({ $$inline: true });
+
+    	const block = {
+    		c: function create() {
+    			baseservices.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(baseservices, target, anchor);
+    			current = true;
+    		},
+
+    		p: noop,
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(baseservices.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(baseservices.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(baseservices, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_11$2.name, type: "if", source: "(58:0) {#if article.id == 'SERVICES'}", ctx });
+    	return block;
+    }
+
+    // (73:4) {#if article.id in rul.units}
+    function create_if_block_10$2(ctx) {
+    	var current;
+
+    	var unit = new Unit$1({
+    		props: { unit: rul.units[ctx.article.id] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			unit.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(unit, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var unit_changes = {};
+    			if (changed.article) unit_changes.unit = rul.units[ctx.article.id];
+    			unit.$set(unit_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(unit.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(unit.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(unit, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_10$2.name, type: "if", source: "(73:4) {#if article.id in rul.units}", ctx });
+    	return block;
+    }
+
+    // (77:4) {#if article.id in rul.items}
+    function create_if_block_9$2(ctx) {
+    	var current;
+
+    	var item = new Item$1({
+    		props: { item: rul.items[ctx.article.id] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			item.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(item, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var item_changes = {};
+    			if (changed.article) item_changes.item = rul.items[ctx.article.id];
+    			item.$set(item_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(item.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(item.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(item, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_9$2.name, type: "if", source: "(77:4) {#if article.id in rul.items}", ctx });
+    	return block;
+    }
+
+    // (85:67) 
+    function create_if_block_8$2(ctx) {
+    	var current;
+
+    	var armor = new Armor$1({
+    		props: { armor: rul.armors[rul.units[ctx.article.id].armor] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			armor.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(armor, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var armor_changes = {};
+    			if (changed.article) armor_changes.armor = rul.armors[rul.units[ctx.article.id].armor];
+    			armor.$set(armor_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(armor.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(armor.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(armor, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_8$2.name, type: "if", source: "(85:67) ", ctx });
+    	return block;
+    }
+
+    // (83:2) {#if article.id in rul.armors}
+    function create_if_block_7$2(ctx) {
+    	var current;
+
+    	var armor = new Armor$1({
+    		props: { armor: rul.armors[ctx.article.id] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			armor.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(armor, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var armor_changes = {};
+    			if (changed.article) armor_changes.armor = rul.armors[ctx.article.id];
+    			armor.$set(armor_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(armor.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(armor.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(armor, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_7$2.name, type: "if", source: "(83:2) {#if article.id in rul.armors}", ctx });
+    	return block;
+    }
+
+    // (89:2) {#if article.id in rul.baseServices}
+    function create_if_block_6$2(ctx) {
+    	var current;
+
+    	var baseservice = new BaseService({
+    		props: { service: rul.baseServices[ctx.article.id] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			baseservice.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(baseservice, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var baseservice_changes = {};
+    			if (changed.article) baseservice_changes.service = rul.baseServices[ctx.article.id];
+    			baseservice.$set(baseservice_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(baseservice.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(baseservice.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(baseservice, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_6$2.name, type: "if", source: "(89:2) {#if article.id in rul.baseServices}", ctx });
+    	return block;
+    }
+
+    // (93:2) {#if article.id in rul.crafts}
+    function create_if_block_5$3(ctx) {
+    	var current;
+
+    	var craft = new Craft$1({
+    		props: { craft: rul.crafts[ctx.article.id] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			craft.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(craft, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var craft_changes = {};
+    			if (changed.article) craft_changes.craft = rul.crafts[ctx.article.id];
+    			craft.$set(craft_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(craft.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(craft.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(craft, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_5$3.name, type: "if", source: "(93:2) {#if article.id in rul.crafts}", ctx });
+    	return block;
+    }
+
+    // (97:2) {#if article.id in rul.craftWeapons}
+    function create_if_block_4$4(ctx) {
+    	var current;
+
+    	var craftweapon = new CraftWeapon$1({
+    		props: { weapon: rul.craftWeapons[ctx.article.id] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			craftweapon.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(craftweapon, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var craftweapon_changes = {};
+    			if (changed.article) craftweapon_changes.weapon = rul.craftWeapons[ctx.article.id];
+    			craftweapon.$set(craftweapon_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(craftweapon.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(craftweapon.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(craftweapon, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_4$4.name, type: "if", source: "(97:2) {#if article.id in rul.craftWeapons}", ctx });
+    	return block;
+    }
+
+    // (101:2) {#if article.id in rul.ufos}
+    function create_if_block_3$8(ctx) {
+    	var current;
+
+    	var ufo = new Ufo$1({
+    		props: { ufo: rul.ufos[ctx.article.id] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			ufo.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(ufo, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var ufo_changes = {};
+    			if (changed.article) ufo_changes.ufo = rul.ufos[ctx.article.id];
+    			ufo.$set(ufo_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(ufo.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(ufo.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(ufo, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_3$8.name, type: "if", source: "(101:2) {#if article.id in rul.ufos}", ctx });
+    	return block;
+    }
+
+    // (105:2) {#if article.id in rul.facilities}
+    function create_if_block_2$c(ctx) {
+    	var current;
+
+    	var facility = new Facility$1({
+    		props: { facility: rul.facilities[ctx.article.id] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			facility.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(facility, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var facility_changes = {};
+    			if (changed.article) facility_changes.facility = rul.facilities[ctx.article.id];
+    			facility.$set(facility_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(facility.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(facility.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(facility, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2$c.name, type: "if", source: "(105:2) {#if article.id in rul.facilities}", ctx });
+    	return block;
+    }
+
+    // (111:6) {#if article.id in rul.manufacture}
+    function create_if_block_1$c(ctx) {
+    	var current;
+
+    	var manufacture = new Manufacture$1({
+    		props: { manufacture: rul.manufacture[ctx.article.id] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			manufacture.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(manufacture, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var manufacture_changes = {};
+    			if (changed.article) manufacture_changes.manufacture = rul.manufacture[ctx.article.id];
+    			manufacture.$set(manufacture_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(manufacture.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(manufacture.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(manufacture, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$c.name, type: "if", source: "(111:6) {#if article.id in rul.manufacture}", ctx });
+    	return block;
+    }
+
+    // (115:6) {#if article.id in rul.research}
+    function create_if_block$f(ctx) {
+    	var current;
+
+    	var research = new Research$1({
+    		props: { research: rul.research[ctx.article.id] },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			research.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(research, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var research_changes = {};
+    			if (changed.article) research_changes.research = rul.research[ctx.article.id];
+    			research.$set(research_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(research.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(research.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(research, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$f.name, type: "if", source: "(115:6) {#if article.id in rul.research}", ctx });
+    	return block;
+    }
+
+    function create_fragment$l(ctx) {
+    	var title_value, t0, h1, t1_value = ctx.article.title || ctx.article.id + "", t1, t2, t3, div0, t4, current_block_type_index, if_block1, t5, div3, t6, div1, table0, t7, t8, current_block_type_index_1, if_block4, t9, t10, t11, t12, t13, t14, div2, table1, t15, current;
+
+    	document.title = title_value = ctx.article.title || 'XPedia';
+
+    	var if_block0 = (!(ctx.article.id in rul.units)) && create_if_block_15$1(ctx);
+
+    	var if_block_creators = [
+    		create_if_block_11$2,
+    		create_if_block_12$2,
+    		create_if_block_13$2,
+    		create_if_block_14$2
+    	];
+
+    	var if_blocks = [];
+
+    	function select_block_type(changed, ctx) {
+    		if (ctx.article.id == 'SERVICES') return 0;
+    		if (ctx.article.type_id == 'CONDITIONS') return 1;
+    		if (ctx.article.type_id == 'CATEGORIES') return 2;
+    		if (ctx.article.type_id == 'PEDIA' || ctx.article.type_id == 'TYPE') return 3;
+    		return -1;
+    	}
+
+    	if (~(current_block_type_index = select_block_type(null, ctx))) {
+    		if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    	}
+
+    	var switch_value = ctx.other;
+
+    	function switch_props(ctx) {
+    		return {
+    			props: { query: ctx.query },
+    			$$inline: true
+    		};
+    	}
+
+    	if (switch_value) {
+    		var switch_instance = new switch_value(switch_props(ctx));
+    	}
+
+    	var if_block2 = (ctx.article.id in rul.units) && create_if_block_10$2(ctx);
+
+    	var if_block3 = (ctx.article.id in rul.items) && create_if_block_9$2(ctx);
+
+    	var if_block_creators_1 = [
+    		create_if_block_7$2,
+    		create_if_block_8$2
+    	];
+
+    	var if_blocks_1 = [];
+
+    	function select_block_type_1(changed, ctx) {
+    		if (ctx.article.id in rul.armors) return 0;
+    		if (ctx.article.id in rul.units && rul.units[ctx.article.id].armor) return 1;
+    		return -1;
+    	}
+
+    	if (~(current_block_type_index_1 = select_block_type_1(null, ctx))) {
+    		if_block4 = if_blocks_1[current_block_type_index_1] = if_block_creators_1[current_block_type_index_1](ctx);
+    	}
+
+    	var if_block5 = (ctx.article.id in rul.baseServices) && create_if_block_6$2(ctx);
+
+    	var if_block6 = (ctx.article.id in rul.crafts) && create_if_block_5$3(ctx);
+
+    	var if_block7 = (ctx.article.id in rul.craftWeapons) && create_if_block_4$4(ctx);
+
+    	var if_block8 = (ctx.article.id in rul.ufos) && create_if_block_3$8(ctx);
+
+    	var if_block9 = (ctx.article.id in rul.facilities) && create_if_block_2$c(ctx);
+
+    	var if_block10 = (ctx.article.id in rul.manufacture) && create_if_block_1$c(ctx);
+
+    	var if_block11 = (ctx.article.id in rul.research) && create_if_block$f(ctx);
+
+    	const block = {
+    		c: function create() {
+    			t0 = space();
+    			h1 = element("h1");
+    			t1 = text(t1_value);
+    			t2 = space();
+    			if (if_block0) if_block0.c();
+    			t3 = space();
+    			div0 = element("div");
+    			t4 = space();
+    			if (if_block1) if_block1.c();
+    			t5 = space();
+    			div3 = element("div");
+    			if (switch_instance) switch_instance.$$.fragment.c();
+    			t6 = space();
+    			div1 = element("div");
+    			table0 = element("table");
+    			if (if_block2) if_block2.c();
+    			t7 = space();
+    			if (if_block3) if_block3.c();
+    			t8 = space();
+    			if (if_block4) if_block4.c();
+    			t9 = space();
+    			if (if_block5) if_block5.c();
+    			t10 = space();
+    			if (if_block6) if_block6.c();
+    			t11 = space();
+    			if (if_block7) if_block7.c();
+    			t12 = space();
+    			if (if_block8) if_block8.c();
+    			t13 = space();
+    			if (if_block9) if_block9.c();
+    			t14 = space();
+    			div2 = element("div");
+    			table1 = element("table");
+    			if (if_block10) if_block10.c();
+    			t15 = space();
+    			if (if_block11) if_block11.c();
+    			add_location(h1, file$h, 47, 0, 1313);
+    			attr_dev(div0, "class", "article-text");
+    			add_location(div0, file$h, 53, 0, 1440);
+    			attr_dev(table0, "class", "main-table");
+    			add_location(table0, file$h, 71, 2, 2027);
+    			attr_dev(div1, "class", "flex-vertical");
+    			add_location(div1, file$h, 70, 2, 1996);
+    			attr_dev(table1, "class", "main-table");
+    			add_location(table1, file$h, 109, 4, 3023);
+    			attr_dev(div2, "class", "flex-vertical");
+    			add_location(div2, file$h, 108, 2, 2990);
+    			attr_dev(div3, "class", "flex-horisontal");
+    			add_location(div3, file$h, 67, 0, 1917);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, h1, anchor);
+    			append_dev(h1, t1);
+    			insert_dev(target, t2, anchor);
+    			if (if_block0) if_block0.m(target, anchor);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, div0, anchor);
+    			div0.innerHTML = ctx.textwithHighlights;
+    			insert_dev(target, t4, anchor);
+    			if (~current_block_type_index) if_blocks[current_block_type_index].m(target, anchor);
+    			insert_dev(target, t5, anchor);
+    			insert_dev(target, div3, anchor);
+
+    			if (switch_instance) {
+    				mount_component(switch_instance, div3, null);
+    			}
+
+    			append_dev(div3, t6);
+    			append_dev(div3, div1);
+    			append_dev(div1, table0);
+    			if (if_block2) if_block2.m(table0, null);
+    			append_dev(table0, t7);
+    			if (if_block3) if_block3.m(table0, null);
+    			append_dev(div3, t8);
+    			if (~current_block_type_index_1) if_blocks_1[current_block_type_index_1].m(div3, null);
+    			append_dev(div3, t9);
+    			if (if_block5) if_block5.m(div3, null);
+    			append_dev(div3, t10);
+    			if (if_block6) if_block6.m(div3, null);
+    			append_dev(div3, t11);
+    			if (if_block7) if_block7.m(div3, null);
+    			append_dev(div3, t12);
+    			if (if_block8) if_block8.m(div3, null);
+    			append_dev(div3, t13);
+    			if (if_block9) if_block9.m(div3, null);
+    			append_dev(div3, t14);
+    			append_dev(div3, div2);
+    			append_dev(div2, table1);
+    			if (if_block10) if_block10.m(table1, null);
+    			append_dev(table1, t15);
+    			if (if_block11) if_block11.m(table1, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.article) && title_value !== (title_value = ctx.article.title || 'XPedia')) {
+    				document.title = title_value;
+    			}
+
+    			if ((!current || changed.article) && t1_value !== (t1_value = ctx.article.title || ctx.article.id + "")) {
+    				set_data_dev(t1, t1_value);
+    			}
+
+    			if (!(ctx.article.id in rul.units)) {
+    				if (if_block0) {
+    					if_block0.p(changed, ctx);
+    					transition_in(if_block0, 1);
+    				} else {
+    					if_block0 = create_if_block_15$1(ctx);
+    					if_block0.c();
+    					transition_in(if_block0, 1);
+    					if_block0.m(t3.parentNode, t3);
+    				}
+    			} else if (if_block0) {
+    				group_outros();
+    				transition_out(if_block0, 1, 1, () => {
+    					if_block0 = null;
+    				});
+    				check_outros();
+    			}
+
+    			if (!current || changed.textwithHighlights) {
+    				div0.innerHTML = ctx.textwithHighlights;
+    			}
+
+    			var previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type(changed, ctx);
+    			if (current_block_type_index === previous_block_index) {
+    				if (~current_block_type_index) if_blocks[current_block_type_index].p(changed, ctx);
+    			} else {
+    				if (if_block1) {
+    					group_outros();
+    					transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    						if_blocks[previous_block_index] = null;
+    					});
+    					check_outros();
+    				}
+
+    				if (~current_block_type_index) {
+    					if_block1 = if_blocks[current_block_type_index];
+    					if (!if_block1) {
+    						if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    						if_block1.c();
+    					}
+    					transition_in(if_block1, 1);
+    					if_block1.m(t5.parentNode, t5);
+    				} else {
+    					if_block1 = null;
+    				}
+    			}
+
+    			var switch_instance_changes = {};
+    			if (changed.query) switch_instance_changes.query = ctx.query;
+
+    			if (switch_value !== (switch_value = ctx.other)) {
+    				if (switch_instance) {
+    					group_outros();
+    					const old_component = switch_instance;
+    					transition_out(old_component.$$.fragment, 1, 0, () => {
+    						destroy_component(old_component, 1);
+    					});
+    					check_outros();
+    				}
+
+    				if (switch_value) {
+    					switch_instance = new switch_value(switch_props(ctx));
+
+    					switch_instance.$$.fragment.c();
+    					transition_in(switch_instance.$$.fragment, 1);
+    					mount_component(switch_instance, div3, t6);
+    				} else {
+    					switch_instance = null;
+    				}
+    			}
+
+    			else if (switch_value) {
+    				switch_instance.$set(switch_instance_changes);
+    			}
+
+    			if (ctx.article.id in rul.units) {
+    				if (if_block2) {
+    					if_block2.p(changed, ctx);
+    					transition_in(if_block2, 1);
+    				} else {
+    					if_block2 = create_if_block_10$2(ctx);
+    					if_block2.c();
+    					transition_in(if_block2, 1);
+    					if_block2.m(table0, t7);
+    				}
+    			} else if (if_block2) {
+    				group_outros();
+    				transition_out(if_block2, 1, 1, () => {
+    					if_block2 = null;
+    				});
+    				check_outros();
+    			}
+
+    			if (ctx.article.id in rul.items) {
+    				if (if_block3) {
+    					if_block3.p(changed, ctx);
+    					transition_in(if_block3, 1);
+    				} else {
+    					if_block3 = create_if_block_9$2(ctx);
+    					if_block3.c();
+    					transition_in(if_block3, 1);
+    					if_block3.m(table0, null);
+    				}
+    			} else if (if_block3) {
+    				group_outros();
+    				transition_out(if_block3, 1, 1, () => {
+    					if_block3 = null;
+    				});
+    				check_outros();
+    			}
+
+    			var previous_block_index_1 = current_block_type_index_1;
+    			current_block_type_index_1 = select_block_type_1(changed, ctx);
+    			if (current_block_type_index_1 === previous_block_index_1) {
+    				if (~current_block_type_index_1) if_blocks_1[current_block_type_index_1].p(changed, ctx);
+    			} else {
+    				if (if_block4) {
+    					group_outros();
+    					transition_out(if_blocks_1[previous_block_index_1], 1, 1, () => {
+    						if_blocks_1[previous_block_index_1] = null;
+    					});
+    					check_outros();
+    				}
+
+    				if (~current_block_type_index_1) {
+    					if_block4 = if_blocks_1[current_block_type_index_1];
+    					if (!if_block4) {
+    						if_block4 = if_blocks_1[current_block_type_index_1] = if_block_creators_1[current_block_type_index_1](ctx);
+    						if_block4.c();
+    					}
+    					transition_in(if_block4, 1);
+    					if_block4.m(div3, t9);
+    				} else {
+    					if_block4 = null;
+    				}
+    			}
+
+    			if (ctx.article.id in rul.baseServices) {
+    				if (if_block5) {
+    					if_block5.p(changed, ctx);
+    					transition_in(if_block5, 1);
+    				} else {
+    					if_block5 = create_if_block_6$2(ctx);
+    					if_block5.c();
+    					transition_in(if_block5, 1);
+    					if_block5.m(div3, t10);
+    				}
+    			} else if (if_block5) {
+    				group_outros();
+    				transition_out(if_block5, 1, 1, () => {
+    					if_block5 = null;
+    				});
+    				check_outros();
+    			}
+
+    			if (ctx.article.id in rul.crafts) {
+    				if (if_block6) {
+    					if_block6.p(changed, ctx);
+    					transition_in(if_block6, 1);
+    				} else {
+    					if_block6 = create_if_block_5$3(ctx);
+    					if_block6.c();
+    					transition_in(if_block6, 1);
+    					if_block6.m(div3, t11);
+    				}
+    			} else if (if_block6) {
+    				group_outros();
+    				transition_out(if_block6, 1, 1, () => {
+    					if_block6 = null;
+    				});
+    				check_outros();
+    			}
+
+    			if (ctx.article.id in rul.craftWeapons) {
+    				if (if_block7) {
+    					if_block7.p(changed, ctx);
+    					transition_in(if_block7, 1);
+    				} else {
+    					if_block7 = create_if_block_4$4(ctx);
+    					if_block7.c();
+    					transition_in(if_block7, 1);
+    					if_block7.m(div3, t12);
+    				}
+    			} else if (if_block7) {
+    				group_outros();
+    				transition_out(if_block7, 1, 1, () => {
+    					if_block7 = null;
+    				});
+    				check_outros();
+    			}
+
+    			if (ctx.article.id in rul.ufos) {
+    				if (if_block8) {
+    					if_block8.p(changed, ctx);
+    					transition_in(if_block8, 1);
+    				} else {
+    					if_block8 = create_if_block_3$8(ctx);
+    					if_block8.c();
+    					transition_in(if_block8, 1);
+    					if_block8.m(div3, t13);
+    				}
+    			} else if (if_block8) {
+    				group_outros();
+    				transition_out(if_block8, 1, 1, () => {
+    					if_block8 = null;
+    				});
+    				check_outros();
+    			}
+
+    			if (ctx.article.id in rul.facilities) {
+    				if (if_block9) {
+    					if_block9.p(changed, ctx);
+    					transition_in(if_block9, 1);
+    				} else {
+    					if_block9 = create_if_block_2$c(ctx);
+    					if_block9.c();
+    					transition_in(if_block9, 1);
+    					if_block9.m(div3, t14);
+    				}
+    			} else if (if_block9) {
+    				group_outros();
+    				transition_out(if_block9, 1, 1, () => {
+    					if_block9 = null;
+    				});
+    				check_outros();
+    			}
+
+    			if (ctx.article.id in rul.manufacture) {
+    				if (if_block10) {
+    					if_block10.p(changed, ctx);
+    					transition_in(if_block10, 1);
+    				} else {
+    					if_block10 = create_if_block_1$c(ctx);
+    					if_block10.c();
+    					transition_in(if_block10, 1);
+    					if_block10.m(table1, t15);
+    				}
+    			} else if (if_block10) {
+    				group_outros();
+    				transition_out(if_block10, 1, 1, () => {
+    					if_block10 = null;
+    				});
+    				check_outros();
+    			}
+
+    			if (ctx.article.id in rul.research) {
+    				if (if_block11) {
+    					if_block11.p(changed, ctx);
+    					transition_in(if_block11, 1);
+    				} else {
+    					if_block11 = create_if_block$f(ctx);
+    					if_block11.c();
+    					transition_in(if_block11, 1);
+    					if_block11.m(table1, null);
+    				}
+    			} else if (if_block11) {
+    				group_outros();
+    				transition_out(if_block11, 1, 1, () => {
+    					if_block11 = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block0);
+    			transition_in(if_block1);
+
+    			if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+
+    			transition_in(if_block2);
+    			transition_in(if_block3);
+    			transition_in(if_block4);
+    			transition_in(if_block5);
+    			transition_in(if_block6);
+    			transition_in(if_block7);
+    			transition_in(if_block8);
+    			transition_in(if_block9);
+    			transition_in(if_block10);
+    			transition_in(if_block11);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block0);
+    			transition_out(if_block1);
+    			if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+    			transition_out(if_block2);
+    			transition_out(if_block3);
+    			transition_out(if_block4);
+    			transition_out(if_block5);
+    			transition_out(if_block6);
+    			transition_out(if_block7);
+    			transition_out(if_block8);
+    			transition_out(if_block9);
+    			transition_out(if_block10);
+    			transition_out(if_block11);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(t0);
+    				detach_dev(h1);
+    				detach_dev(t2);
+    			}
+
+    			if (if_block0) if_block0.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(t3);
+    				detach_dev(div0);
+    				detach_dev(t4);
+    			}
+
+    			if (~current_block_type_index) if_blocks[current_block_type_index].d(detaching);
+
+    			if (detaching) {
+    				detach_dev(t5);
+    				detach_dev(div3);
+    			}
+
+    			if (switch_instance) destroy_component(switch_instance);
+    			if (if_block2) if_block2.d();
+    			if (if_block3) if_block3.d();
+    			if (~current_block_type_index_1) if_blocks_1[current_block_type_index_1].d();
+    			if (if_block5) if_block5.d();
+    			if (if_block6) if_block6.d();
+    			if (if_block7) if_block7.d();
+    			if (if_block8) if_block8.d();
+    			if (if_block9) if_block9.d();
+    			if (if_block10) if_block10.d();
+    			if (if_block11) if_block11.d();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$l.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    const func$8 = (a) => a.id;
+
+    function instance$k($$self, $$props, $$invalidate) {
+    	
+
+
+      let { article, query } = $$props;
+      let textwithHighlights;
+      let other = false;
+
+    	const writable_props = ['article', 'query'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Article> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('article' in $$props) $$invalidate('article', article = $$props.article);
+    		if ('query' in $$props) $$invalidate('query', query = $$props.query);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { article, query, textwithHighlights, other };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('article' in $$props) $$invalidate('article', article = $$props.article);
+    		if ('query' in $$props) $$invalidate('query', query = $$props.query);
+    		if ('textwithHighlights' in $$props) $$invalidate('textwithHighlights', textwithHighlights = $$props.textwithHighlights);
+    		if ('other' in $$props) $$invalidate('other', other = $$props.other);
+    	};
+
+    	$$self.$$.update = ($$dirty = { article: 1, query: 1, textwithHighlights: 1 }) => {
+    		if ($$dirty.article || $$dirty.query || $$dirty.textwithHighlights) { {
+            $$invalidate('textwithHighlights', textwithHighlights = article.text || "");
+        
+            $$invalidate('other', other = article.type_id == "OTHER" ? {BaseServices}[article.id] : false);
+        
+            if (query) {
+              for (let word of query.split()) {
+                let regEx = new RegExp(word, "ig");
+                $$invalidate('textwithHighlights', textwithHighlights = textwithHighlights.replace(
+                  regEx,
+                  "<span class='queried'>$&</span>"
+                ));
+              }
+            }
+          } }
+    	};
+
+    	return {
+    		article,
+    		query,
+    		textwithHighlights,
+    		other
+    	};
+    }
+
+    class Article$1 extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$k, create_fragment$l, safe_not_equal, ["article", "query"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Article", options, id: create_fragment$l.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.article === undefined && !('article' in props)) {
+    			console.warn("<Article> was created without expected prop 'article'");
+    		}
+    		if (ctx.query === undefined && !('query' in props)) {
+    			console.warn("<Article> was created without expected prop 'query'");
+    		}
+    	}
+
+    	get article() {
+    		throw new Error("<Article>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set article(value) {
+    		throw new Error("<Article>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get query() {
+    		throw new Error("<Article>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set query(value) {
+    		throw new Error("<Article>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\App.svelte generated by Svelte v3.12.1 */
+    const { console: console_1$b, document: document_1 } = globals;
+
+    const file$i = "src\\App.svelte";
+
+    function get_each_context_1$7(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.option = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context$g(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.section = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_2$7(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.section = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_3$4(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.section = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_4$2(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.section = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_5$2(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.section = list[i];
+    	return child_ctx;
+    }
+
+    // (143:2) {#if !article}
+    function create_if_block_9$3(ctx) {
+    	const block = {
+    		c: function create() {
+    			document_1.title = "XPedia";
+    		},
+
+    		m: noop,
+    		d: noop
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_9$3.name, type: "if", source: "(143:2) {#if !article}", ctx });
+    	return block;
+    }
+
+    // (1:0) <script>    import { tick, afterUpdate }
+    function create_catch_block(ctx) {
+    	const block = {
+    		c: noop,
+    		m: noop,
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: noop
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_catch_block.name, type: "catch", source: "(1:0) <script>    import { tick, afterUpdate }", ctx });
+    	return block;
+    }
+
+    // (150:0) {:then}
+    function create_then_block(ctx) {
+    	var nav0, div6, div4, a0, img, t0, t1_value = rul.modName + "", t1, t2, t3, div3, div2, div0, t4, div1, t5, div5, a1, t6_value = ctx.currentSection ? ctx.currentSection.title : '' + "", t6, a1_href_value, t7, show_if = ctx.article && !['TYPE', 'PEDIA'].includes(ctx.article.type_id), t8, div12, div9, div8, button0, t9_value = rul.str("Language") + "", t9, t10, div7, a2, t12, a3, t14, a4, t16, div11, div10, p0, input0, t17, nav1, div16, button1, t18_value = rul.modName + "", t18, t19, div15, div13, a5, t20_value = rul.str("HOME") + "", t20, t21, t22, hr, t23, div14, t24, div21, div18, button2, t25_value = rul.str("Lang") + "", t25, t26, div17, a6, t28, a7, t30, a8, t32, div20, div19, p1, input1, t33, div26, div23, button3, t34_value = rul.str("Language") + "", t34, t35, div22, a9, t37, a10, t39, a11, t41, div25, div24, p2, input2, t42, div31, div27, t43, div28, t44, div29, button4, t45, button4_style_value, t46, div30, current_block_type_index, if_block1, current, dispose;
+
+    	let each_value_5 = rul.sectionsOrder;
+
+    	let each_blocks_4 = [];
+
+    	for (let i = 0; i < each_value_5.length; i += 1) {
+    		each_blocks_4[i] = create_each_block_5$2(get_each_context_5$2(ctx, each_value_5, i));
+    	}
+
+    	let each_value_4 = rul.typeSectionsOrder;
+
+    	let each_blocks_3 = [];
+
+    	for (let i = 0; i < each_value_4.length; i += 1) {
+    		each_blocks_3[i] = create_each_block_4$2(get_each_context_4$2(ctx, each_value_4, i));
+    	}
+
+    	var if_block0 = (show_if) && create_if_block_8$3(ctx);
+
+    	let each_value_3 = rul.sectionsOrder;
+
+    	let each_blocks_2 = [];
+
+    	for (let i = 0; i < each_value_3.length; i += 1) {
+    		each_blocks_2[i] = create_each_block_3$4(get_each_context_3$4(ctx, each_value_3, i));
+    	}
+
+    	let each_value_2 = rul.typeSectionsOrder;
+
+    	let each_blocks_1 = [];
+
+    	for (let i = 0; i < each_value_2.length; i += 1) {
+    		each_blocks_1[i] = create_each_block_2$7(get_each_context_2$7(ctx, each_value_2, i));
+    	}
+
+    	let each_value = ctx.article && ctx.article.section && ctx.article.section.isType() ? rul.typeSectionsOrder : rul.sectionsOrder;
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$g(get_each_context$g(ctx, each_value, i));
+    	}
+
+    	var if_block_creators = [
+    		create_if_block$g,
+    		create_if_block_1$d,
+    		create_if_block_5$4
+    	];
+
+    	var if_blocks = [];
+
+    	function select_block_type_1(changed, ctx) {
+    		if (ctx.article) return 0;
+    		if (ctx.query) return 1;
+    		if (!ctx.query) return 2;
+    		return -1;
+    	}
+
+    	if (~(current_block_type_index = select_block_type_1(null, ctx))) {
+    		if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    	}
+
+    	const block = {
+    		c: function create() {
+    			nav0 = element("nav");
+    			div6 = element("div");
+    			div4 = element("div");
+    			a0 = element("a");
+    			img = element("img");
+    			t0 = space();
+    			t1 = text(t1_value);
+    			t2 = text(" XPedia");
+    			t3 = space();
+    			div3 = element("div");
+    			div2 = element("div");
+    			div0 = element("div");
+
+    			for (let i = 0; i < each_blocks_4.length; i += 1) {
+    				each_blocks_4[i].c();
+    			}
+
+    			t4 = space();
+    			div1 = element("div");
+
+    			for (let i = 0; i < each_blocks_3.length; i += 1) {
+    				each_blocks_3[i].c();
+    			}
+
+    			t5 = space();
+    			div5 = element("div");
+    			a1 = element("a");
+    			t6 = text(t6_value);
+    			t7 = space();
+    			if (if_block0) if_block0.c();
+    			t8 = space();
+    			div12 = element("div");
+    			div9 = element("div");
+    			div8 = element("div");
+    			button0 = element("button");
+    			t9 = text(t9_value);
+    			t10 = space();
+    			div7 = element("div");
+    			a2 = element("a");
+    			a2.textContent = "English";
+    			t12 = space();
+    			a3 = element("a");
+    			a3.textContent = "Русский";
+    			t14 = space();
+    			a4 = element("a");
+    			a4.textContent = "Polski";
+    			t16 = space();
+    			div11 = element("div");
+    			div10 = element("div");
+    			p0 = element("p");
+    			input0 = element("input");
+    			t17 = space();
+    			nav1 = element("nav");
+    			div16 = element("div");
+    			button1 = element("button");
+    			t18 = text(t18_value);
+    			t19 = space();
+    			div15 = element("div");
+    			div13 = element("div");
+    			a5 = element("a");
+    			t20 = text(t20_value);
+    			t21 = space();
+
+    			for (let i = 0; i < each_blocks_2.length; i += 1) {
+    				each_blocks_2[i].c();
+    			}
+
+    			t22 = space();
+    			hr = element("hr");
+    			t23 = space();
+    			div14 = element("div");
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].c();
+    			}
+
+    			t24 = space();
+    			div21 = element("div");
+    			div18 = element("div");
+    			button2 = element("button");
+    			t25 = text(t25_value);
+    			t26 = space();
+    			div17 = element("div");
+    			a6 = element("a");
+    			a6.textContent = "Eng";
+    			t28 = space();
+    			a7 = element("a");
+    			a7.textContent = "Рус";
+    			t30 = space();
+    			a8 = element("a");
+    			a8.textContent = "Pol";
+    			t32 = space();
+    			div20 = element("div");
+    			div19 = element("div");
+    			p1 = element("p");
+    			input1 = element("input");
+    			t33 = space();
+    			div26 = element("div");
+    			div23 = element("div");
+    			button3 = element("button");
+    			t34 = text(t34_value);
+    			t35 = space();
+    			div22 = element("div");
+    			a9 = element("a");
+    			a9.textContent = "English";
+    			t37 = space();
+    			a10 = element("a");
+    			a10.textContent = "Русский";
+    			t39 = space();
+    			a11 = element("a");
+    			a11.textContent = "Polski";
+    			t41 = space();
+    			div25 = element("div");
+    			div24 = element("div");
+    			p2 = element("p");
+    			input2 = element("input");
+    			t42 = space();
+    			div31 = element("div");
+    			div27 = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t43 = space();
+    			div28 = element("div");
+    			t44 = space();
+    			div29 = element("div");
+    			button4 = element("button");
+    			t45 = text("A-Z");
+    			t46 = space();
+    			div30 = element("div");
+    			if (if_block1) if_block1.c();
+    			attr_dev(img, "src", "xpedia/favicon.png");
+    			attr_dev(img, "alt", "favicon");
+    			add_location(img, file$i, 159, 10, 3653);
+    			attr_dev(a0, "href", "#MAIN");
+    			attr_dev(a0, "class", "navbar-link");
+    			add_location(a0, file$i, 158, 8, 3605);
+    			add_location(div0, file$i, 164, 12, 3836);
+    			add_location(div1, file$i, 171, 12, 4072);
+    			set_style(div2, "display", "flex");
+    			add_location(div2, file$i, 163, 10, 3796);
+    			attr_dev(div3, "class", "navbar-dropdown");
+    			add_location(div3, file$i, 162, 8, 3755);
+    			attr_dev(div4, "class", "navbar-item has-dropdown is-hoverable ");
+    			add_location(div4, file$i, 157, 6, 3543);
+    			set_style(a1, "color", "white");
+    			attr_dev(a1, "href", a1_href_value = '#' + (ctx.currentSection ? ctx.currentSection.id : 'MAIN'));
+    			add_location(a1, file$i, 183, 8, 4391);
+    			attr_dev(div5, "class", "navbar-item");
+    			add_location(div5, file$i, 182, 6, 4356);
+    			attr_dev(div6, "class", "navbar-brand ");
+    			add_location(div6, file$i, 156, 4, 3508);
+    			attr_dev(button0, "class", "dropbtn navbar-link");
+    			add_location(button0, file$i, 205, 10, 5032);
+    			attr_dev(a2, "href", "index.html");
+    			add_location(a2, file$i, 207, 12, 5154);
+    			attr_dev(a3, "href", "xpedia_ru.html");
+    			add_location(a3, file$i, 208, 12, 5200);
+    			attr_dev(a4, "href", "xpedia_pl.html");
+    			add_location(a4, file$i, 209, 12, 5250);
+    			attr_dev(div7, "class", "dropdown-content");
+    			add_location(div7, file$i, 206, 10, 5110);
+    			attr_dev(div8, "class", "dropdown");
+    			add_location(div8, file$i, 204, 8, 4998);
+    			attr_dev(div9, "class", "navbar-item is-paddingless");
+    			add_location(div9, file$i, 203, 6, 4947);
+    			attr_dev(input0, "class", "input");
+    			attr_dev(input0, "type", "text");
+    			attr_dev(input0, "placeholder", rul.str("Search..."));
+    			add_location(input0, file$i, 216, 12, 5451);
+    			attr_dev(p0, "class", "control");
+    			add_location(p0, file$i, 215, 10, 5418);
+    			attr_dev(div10, "class", "field has-addons");
+    			add_location(div10, file$i, 214, 8, 5376);
+    			attr_dev(div11, "class", "navbar-item");
+    			add_location(div11, file$i, 213, 6, 5341);
+    			attr_dev(div12, "class", "navbar-end");
+    			add_location(div12, file$i, 202, 4, 4915);
+    			attr_dev(nav0, "class", "navbar is-fixed-top is-hidden-touch");
+    			attr_dev(nav0, "role", "navigation");
+    			attr_dev(nav0, "aria-label", "main navigation");
+    			add_location(nav0, file$i, 151, 2, 3388);
+    			attr_dev(button1, "class", "dropbtn navbar-link");
+    			add_location(button1, file$i, 235, 6, 5969);
+    			attr_dev(a5, "href", "#MAIN");
+    			add_location(a5, file$i, 240, 10, 6153);
+    			add_location(div13, file$i, 239, 8, 6136);
+    			attr_dev(hr, "class", "dropdown-divider");
+    			add_location(hr, file$i, 247, 8, 6373);
+    			add_location(div14, file$i, 248, 8, 6412);
+    			attr_dev(div15, "class", "dropdown-content");
+    			set_style(div15, "height", "300px");
+    			set_style(div15, "overflow-y", "scroll");
+    			add_location(div15, file$i, 238, 6, 6053);
+    			attr_dev(div16, "class", "dropdown is-inline-block");
+    			add_location(div16, file$i, 234, 4, 5923);
+    			attr_dev(button2, "class", "dropbtn navbar-link");
+    			add_location(button2, file$i, 260, 8, 6768);
+    			attr_dev(a6, "href", "index.html");
+    			add_location(a6, file$i, 264, 10, 6904);
+    			attr_dev(a7, "href", "xpedia_ru.html");
+    			add_location(a7, file$i, 265, 10, 6944);
+    			attr_dev(a8, "href", "xpedia_pl.html");
+    			add_location(a8, file$i, 266, 10, 6988);
+    			attr_dev(div17, "class", "dropdown-content");
+    			add_location(div17, file$i, 263, 8, 6862);
+    			attr_dev(div18, "class", "dropdown is-inline-block");
+    			add_location(div18, file$i, 259, 6, 6720);
+    			attr_dev(input1, "class", "input");
+    			attr_dev(input1, "type", "text");
+    			attr_dev(input1, "placeholder", rul.str("Search..."));
+    			add_location(input1, file$i, 273, 12, 7255);
+    			attr_dev(p1, "class", "control");
+    			add_location(p1, file$i, 272, 10, 7222);
+    			attr_dev(div19, "class", "field has-addons");
+    			add_location(div19, file$i, 271, 8, 7180);
+    			attr_dev(div20, "class", "navbar-item  is-inline-block");
+    			set_style(div20, "width", "100px");
+    			set_style(div20, "padding-left", "0px");
+    			set_style(div20, "padding-right", "8px");
+    			add_location(div20, file$i, 269, 6, 7058);
+    			attr_dev(div21, "class", "is-pulled-right is-hidden-tablet is-inline-block");
+    			add_location(div21, file$i, 258, 4, 6650);
+    			attr_dev(button3, "class", "dropbtn navbar-link");
+    			add_location(button3, file$i, 286, 8, 7647);
+    			attr_dev(a9, "href", "index.html");
+    			add_location(a9, file$i, 290, 10, 7787);
+    			attr_dev(a10, "href", "xpedia_ru.html");
+    			add_location(a10, file$i, 291, 10, 7831);
+    			attr_dev(a11, "href", "xpedia_pl.html");
+    			add_location(a11, file$i, 292, 10, 7879);
+    			attr_dev(div22, "class", "dropdown-content");
+    			add_location(div22, file$i, 289, 8, 7745);
+    			attr_dev(div23, "class", "dropdown is-inline-block");
+    			add_location(div23, file$i, 285, 6, 7599);
+    			attr_dev(input2, "class", "input");
+    			attr_dev(input2, "type", "text");
+    			attr_dev(input2, "placeholder", rul.str("Search..."));
+    			add_location(input2, file$i, 298, 12, 8079);
+    			attr_dev(p2, "class", "control");
+    			add_location(p2, file$i, 297, 10, 8046);
+    			attr_dev(div24, "class", "field has-addons");
+    			add_location(div24, file$i, 296, 8, 8004);
+    			attr_dev(div25, "class", "navbar-item  is-inline-block");
+    			add_location(div25, file$i, 295, 6, 7952);
+    			attr_dev(div26, "class", "is-pulled-right is-hidden-mobile is-inline-block");
+    			add_location(div26, file$i, 284, 4, 7529);
+    			attr_dev(nav1, "class", "navbar is-fixed-top is-hidden-desktop");
+    			attr_dev(nav1, "role", "navigation");
+    			attr_dev(nav1, "aria-label", "main navigation");
+    			set_style(nav1, "border-left-width", "0px");
+    			set_style(nav1, "border-right-width", "0px");
+    			add_location(nav1, file$i, 229, 2, 5738);
+    			attr_dev(div27, "class", "column is-2 is-sidebar-menu is-hidden-touch sidebar svelte-1bogsca");
+    			add_location(div27, file$i, 312, 4, 8403);
+    			attr_dev(div28, "class", "column is-2 is-hidden-touch");
+    			add_location(div28, file$i, 341, 4, 9471);
+    			attr_dev(button4, "class", "is-hidden-touch");
+    			attr_dev(button4, "style", button4_style_value = ctx.sortArticles?"":"text-decoration:line-through");
+    			add_location(button4, file$i, 343, 6, 9558);
+    			attr_dev(div29, "class", "side-sort-button");
+    			add_location(div29, file$i, 342, 4, 9520);
+    			attr_dev(div30, "class", "column is-main-content main");
+    			set_style(div30, "padding-top", "0px");
+    			add_location(div30, file$i, 346, 4, 9722);
+    			attr_dev(div31, "class", "columns is-fullheight is-marginless");
+    			add_location(div31, file$i, 310, 2, 8342);
+
+    			dispose = [
+    				listen_dev(input0, "input", ctx.input0_input_handler),
+    				listen_dev(input0, "keyup", ctx.searchKeyUp),
+    				listen_dev(input1, "input", ctx.input1_input_handler),
+    				listen_dev(input1, "keyup", ctx.searchKeyUp),
+    				listen_dev(input2, "input", ctx.input2_input_handler),
+    				listen_dev(input2, "keyup", ctx.searchKeyUp),
+    				listen_dev(button4, "click", ctx.click_handler_2)
+    			];
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, nav0, anchor);
+    			append_dev(nav0, div6);
+    			append_dev(div6, div4);
+    			append_dev(div4, a0);
+    			append_dev(a0, img);
+    			append_dev(a0, t0);
+    			append_dev(a0, t1);
+    			append_dev(a0, t2);
+    			append_dev(div4, t3);
+    			append_dev(div4, div3);
+    			append_dev(div3, div2);
+    			append_dev(div2, div0);
+
+    			for (let i = 0; i < each_blocks_4.length; i += 1) {
+    				each_blocks_4[i].m(div0, null);
+    			}
+
+    			append_dev(div2, t4);
+    			append_dev(div2, div1);
+
+    			for (let i = 0; i < each_blocks_3.length; i += 1) {
+    				each_blocks_3[i].m(div1, null);
+    			}
+
+    			append_dev(div6, t5);
+    			append_dev(div6, div5);
+    			append_dev(div5, a1);
+    			append_dev(a1, t6);
+    			append_dev(div6, t7);
+    			if (if_block0) if_block0.m(div6, null);
+    			append_dev(nav0, t8);
+    			append_dev(nav0, div12);
+    			append_dev(div12, div9);
+    			append_dev(div9, div8);
+    			append_dev(div8, button0);
+    			append_dev(button0, t9);
+    			append_dev(div8, t10);
+    			append_dev(div8, div7);
+    			append_dev(div7, a2);
+    			append_dev(div7, t12);
+    			append_dev(div7, a3);
+    			append_dev(div7, t14);
+    			append_dev(div7, a4);
+    			append_dev(div12, t16);
+    			append_dev(div12, div11);
+    			append_dev(div11, div10);
+    			append_dev(div10, p0);
+    			append_dev(p0, input0);
+
+    			set_input_value(input0, ctx.query);
+
+    			insert_dev(target, t17, anchor);
+    			insert_dev(target, nav1, anchor);
+    			append_dev(nav1, div16);
+    			append_dev(div16, button1);
+    			append_dev(button1, t18);
+    			append_dev(div16, t19);
+    			append_dev(div16, div15);
+    			append_dev(div15, div13);
+    			append_dev(div13, a5);
+    			append_dev(a5, t20);
+    			append_dev(div13, t21);
+
+    			for (let i = 0; i < each_blocks_2.length; i += 1) {
+    				each_blocks_2[i].m(div13, null);
+    			}
+
+    			append_dev(div15, t22);
+    			append_dev(div15, hr);
+    			append_dev(div15, t23);
+    			append_dev(div15, div14);
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].m(div14, null);
+    			}
+
+    			append_dev(nav1, t24);
+    			append_dev(nav1, div21);
+    			append_dev(div21, div18);
+    			append_dev(div18, button2);
+    			append_dev(button2, t25);
+    			append_dev(div18, t26);
+    			append_dev(div18, div17);
+    			append_dev(div17, a6);
+    			append_dev(div17, t28);
+    			append_dev(div17, a7);
+    			append_dev(div17, t30);
+    			append_dev(div17, a8);
+    			append_dev(div21, t32);
+    			append_dev(div21, div20);
+    			append_dev(div20, div19);
+    			append_dev(div19, p1);
+    			append_dev(p1, input1);
+
+    			set_input_value(input1, ctx.query);
+
+    			append_dev(nav1, t33);
+    			append_dev(nav1, div26);
+    			append_dev(div26, div23);
+    			append_dev(div23, button3);
+    			append_dev(button3, t34);
+    			append_dev(div23, t35);
+    			append_dev(div23, div22);
+    			append_dev(div22, a9);
+    			append_dev(div22, t37);
+    			append_dev(div22, a10);
+    			append_dev(div22, t39);
+    			append_dev(div22, a11);
+    			append_dev(div26, t41);
+    			append_dev(div26, div25);
+    			append_dev(div25, div24);
+    			append_dev(div24, p2);
+    			append_dev(p2, input2);
+
+    			set_input_value(input2, ctx.query);
+
+    			insert_dev(target, t42, anchor);
+    			insert_dev(target, div31, anchor);
+    			append_dev(div31, div27);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div27, null);
+    			}
+
+    			append_dev(div31, t43);
+    			append_dev(div31, div28);
+    			append_dev(div31, t44);
+    			append_dev(div31, div29);
+    			append_dev(div29, button4);
+    			append_dev(button4, t45);
+    			append_dev(div31, t46);
+    			append_dev(div31, div30);
+    			if (~current_block_type_index) if_blocks[current_block_type_index].m(div30, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.rul) {
+    				each_value_5 = rul.sectionsOrder;
+
+    				let i;
+    				for (i = 0; i < each_value_5.length; i += 1) {
+    					const child_ctx = get_each_context_5$2(ctx, each_value_5, i);
+
+    					if (each_blocks_4[i]) {
+    						each_blocks_4[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks_4[i] = create_each_block_5$2(child_ctx);
+    						each_blocks_4[i].c();
+    						each_blocks_4[i].m(div0, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_4.length; i += 1) {
+    					each_blocks_4[i].d(1);
+    				}
+    				each_blocks_4.length = each_value_5.length;
+    			}
+
+    			if (changed.rul) {
+    				each_value_4 = rul.typeSectionsOrder;
+
+    				let i;
+    				for (i = 0; i < each_value_4.length; i += 1) {
+    					const child_ctx = get_each_context_4$2(ctx, each_value_4, i);
+
+    					if (each_blocks_3[i]) {
+    						each_blocks_3[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks_3[i] = create_each_block_4$2(child_ctx);
+    						each_blocks_3[i].c();
+    						each_blocks_3[i].m(div1, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_3.length; i += 1) {
+    					each_blocks_3[i].d(1);
+    				}
+    				each_blocks_3.length = each_value_4.length;
+    			}
+
+    			if ((!current || changed.currentSection) && t6_value !== (t6_value = ctx.currentSection ? ctx.currentSection.title : '' + "")) {
+    				set_data_dev(t6, t6_value);
+    			}
+
+    			if ((!current || changed.currentSection) && a1_href_value !== (a1_href_value = '#' + (ctx.currentSection ? ctx.currentSection.id : 'MAIN'))) {
+    				attr_dev(a1, "href", a1_href_value);
+    			}
+
+    			if (changed.article) show_if = ctx.article && !['TYPE', 'PEDIA'].includes(ctx.article.type_id);
+
+    			if (show_if) {
+    				if (if_block0) {
+    					if_block0.p(changed, ctx);
+    				} else {
+    					if_block0 = create_if_block_8$3(ctx);
+    					if_block0.c();
+    					if_block0.m(div6, null);
+    				}
+    			} else if (if_block0) {
+    				if_block0.d(1);
+    				if_block0 = null;
+    			}
+
+    			if (changed.query && (input0.value !== ctx.query)) set_input_value(input0, ctx.query);
+
+    			if (changed.rul) {
+    				each_value_3 = rul.sectionsOrder;
+
+    				let i;
+    				for (i = 0; i < each_value_3.length; i += 1) {
+    					const child_ctx = get_each_context_3$4(ctx, each_value_3, i);
+
+    					if (each_blocks_2[i]) {
+    						each_blocks_2[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks_2[i] = create_each_block_3$4(child_ctx);
+    						each_blocks_2[i].c();
+    						each_blocks_2[i].m(div13, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_2.length; i += 1) {
+    					each_blocks_2[i].d(1);
+    				}
+    				each_blocks_2.length = each_value_3.length;
+    			}
+
+    			if (changed.rul) {
+    				each_value_2 = rul.typeSectionsOrder;
+
+    				let i;
+    				for (i = 0; i < each_value_2.length; i += 1) {
+    					const child_ctx = get_each_context_2$7(ctx, each_value_2, i);
+
+    					if (each_blocks_1[i]) {
+    						each_blocks_1[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks_1[i] = create_each_block_2$7(child_ctx);
+    						each_blocks_1[i].c();
+    						each_blocks_1[i].m(div14, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_1.length; i += 1) {
+    					each_blocks_1[i].d(1);
+    				}
+    				each_blocks_1.length = each_value_2.length;
+    			}
+
+    			if (changed.query && (input1.value !== ctx.query)) set_input_value(input1, ctx.query);
+    			if (changed.query && (input2.value !== ctx.query)) set_input_value(input2, ctx.query);
+
+    			if (changed.currentSection || changed.article || changed.rul || changed.sortedArticles || changed.activeOption) {
+    				each_value = ctx.article && ctx.article.section && ctx.article.section.isType() ? rul.typeSectionsOrder : rul.sectionsOrder;
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$g(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block$g(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div27, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+    				each_blocks.length = each_value.length;
+    			}
+
+    			if ((!current || changed.sortArticles) && button4_style_value !== (button4_style_value = ctx.sortArticles?"":"text-decoration:line-through")) {
+    				attr_dev(button4, "style", button4_style_value);
+    			}
+
+    			var previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type_1(changed, ctx);
+    			if (current_block_type_index === previous_block_index) {
+    				if (~current_block_type_index) if_blocks[current_block_type_index].p(changed, ctx);
+    			} else {
+    				if (if_block1) {
+    					group_outros();
+    					transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    						if_blocks[previous_block_index] = null;
+    					});
+    					check_outros();
+    				}
+
+    				if (~current_block_type_index) {
+    					if_block1 = if_blocks[current_block_type_index];
+    					if (!if_block1) {
+    						if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    						if_block1.c();
+    					}
+    					transition_in(if_block1, 1);
+    					if_block1.m(div30, null);
+    				} else {
+    					if_block1 = null;
+    				}
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block1);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block1);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(nav0);
+    			}
+
+    			destroy_each(each_blocks_4, detaching);
+
+    			destroy_each(each_blocks_3, detaching);
+
+    			if (if_block0) if_block0.d();
+
+    			if (detaching) {
+    				detach_dev(t17);
+    				detach_dev(nav1);
+    			}
+
+    			destroy_each(each_blocks_2, detaching);
+
+    			destroy_each(each_blocks_1, detaching);
+
+    			if (detaching) {
+    				detach_dev(t42);
+    				detach_dev(div31);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+
+    			if (~current_block_type_index) if_blocks[current_block_type_index].d();
+    			run_all(dispose);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_then_block.name, type: "then", source: "(150:0) {:then}", ctx });
+    	return block;
+    }
+
+    // (166:14) {#each rul.sectionsOrder as section}
+    function create_each_block_5$2(ctx) {
+    	var a, t0_value = ctx.section.title + "", t0, t1;
+
+    	const block = {
+    		c: function create() {
+    			a = element("a");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			attr_dev(a, "class", "navbar-item");
+    			attr_dev(a, "href", '#' + ctx.section.id);
+    			add_location(a, file$i, 166, 16, 3911);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, a, anchor);
+    			append_dev(a, t0);
+    			append_dev(a, t1);
+    		},
+
+    		p: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(a);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_5$2.name, type: "each", source: "(166:14) {#each rul.sectionsOrder as section}", ctx });
+    	return block;
+    }
+
+    // (173:14) {#each rul.typeSectionsOrder as section}
+    function create_each_block_4$2(ctx) {
+    	var a, t0_value = ctx.section.title + "", t0, t1;
+
+    	const block = {
+    		c: function create() {
+    			a = element("a");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			attr_dev(a, "class", "navbar-item");
+    			attr_dev(a, "href", '#' + ctx.section.id);
+    			add_location(a, file$i, 173, 16, 4151);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, a, anchor);
+    			append_dev(a, t0);
+    			append_dev(a, t1);
+    		},
+
+    		p: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(a);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_4$2.name, type: "each", source: "(173:14) {#each rul.typeSectionsOrder as section}", ctx });
+    	return block;
+    }
+
+    // (190:6) {#if article && !['TYPE', 'PEDIA'].includes(article.type_id)}
+    function create_if_block_8$3(ctx) {
+    	var div, a, t_value = ctx.article.title + "", t, a_href_value, dispose;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			a = element("a");
+    			t = text(t_value);
+    			set_style(a, "color", "white");
+    			attr_dev(a, "href", a_href_value = '#' + ctx.article.id);
+    			add_location(a, file$i, 191, 10, 4695);
+    			attr_dev(div, "class", "navbar-item");
+    			add_location(div, file$i, 190, 8, 4658);
+    			dispose = listen_dev(a, "click", ctx.click_handler);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, a);
+    			append_dev(a, t);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.article) && t_value !== (t_value = ctx.article.title + "")) {
+    				set_data_dev(t, t_value);
+    			}
+
+    			if ((changed.article) && a_href_value !== (a_href_value = '#' + ctx.article.id)) {
+    				attr_dev(a, "href", a_href_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+
+    			dispose();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_8$3.name, type: "if", source: "(190:6) {#if article && !['TYPE', 'PEDIA'].includes(article.type_id)}", ctx });
+    	return block;
+    }
+
+    // (242:10) {#each rul.sectionsOrder as section}
+    function create_each_block_3$4(ctx) {
+    	var a, t0_value = ctx.section.title + "", t0, t1;
+
+    	const block = {
+    		c: function create() {
+    			a = element("a");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			attr_dev(a, "href", '#' + ctx.section.id);
+    			add_location(a, file$i, 242, 12, 6252);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, a, anchor);
+    			append_dev(a, t0);
+    			append_dev(a, t1);
+    		},
+
+    		p: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(a);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_3$4.name, type: "each", source: "(242:10) {#each rul.sectionsOrder as section}", ctx });
+    	return block;
+    }
+
+    // (250:10) {#each rul.typeSectionsOrder as section}
+    function create_each_block_2$7(ctx) {
+    	var a, t0_value = ctx.section.title + "", t0, t1;
+
+    	const block = {
+    		c: function create() {
+    			a = element("a");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			attr_dev(a, "href", '#' + ctx.section.id);
+    			add_location(a, file$i, 250, 12, 6483);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, a, anchor);
+    			append_dev(a, t0);
+    			append_dev(a, t1);
+    		},
+
+    		p: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(a);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_2$7.name, type: "each", source: "(250:10) {#each rul.typeSectionsOrder as section}", ctx });
+    	return block;
+    }
+
+    // (317:8) {#if !currentSection || section.id == currentSection.id}
+    function create_if_block_6$3(ctx) {
+    	var p, t0_value = ctx.section.title + "", t0, t1, ul, t2;
+
+    	let each_value_1 = ctx.sortedArticles(ctx.section.articles);
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1$7(get_each_context_1$7(ctx, each_value_1, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			ul = element("ul");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t2 = space();
+    			attr_dev(p, "class", "menu-label");
+    			add_location(p, file$i, 317, 10, 8680);
+    			attr_dev(ul, "class", "menu-list");
+    			add_location(ul, file$i, 318, 10, 8733);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t0);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, ul, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(ul, null);
+    			}
+
+    			append_dev(ul, t2);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.article) && t0_value !== (t0_value = ctx.section.title + "")) {
+    				set_data_dev(t0, t0_value);
+    			}
+
+    			if (changed.article || changed.sortedArticles || changed.rul || changed.activeOption) {
+    				each_value_1 = ctx.sortedArticles(ctx.section.articles);
+
+    				let i;
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1$7(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block_1$7(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(ul, t2);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+    				each_blocks.length = each_value_1.length;
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(p);
+    				detach_dev(t1);
+    				detach_dev(ul);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_6$3.name, type: "if", source: "(317:8) {#if !currentSection || section.id == currentSection.id}", ctx });
+    	return block;
+    }
+
+    // (329:16) {:else}
+    function create_else_block_1$2(ctx) {
+    	var a, t_value = ctx.option.title + "", t, a_href_value, dispose;
+
+    	const block = {
+    		c: function create() {
+    			a = element("a");
+    			t = text(t_value);
+    			attr_dev(a, "href", a_href_value = '#' + ctx.option.id);
+    			add_location(a, file$i, 329, 18, 9166);
+    			dispose = listen_dev(a, "click", ctx.click_handler_1);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, a, anchor);
+    			append_dev(a, t);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.sortedArticles || changed.article) && t_value !== (t_value = ctx.option.title + "")) {
+    				set_data_dev(t, t_value);
+    			}
+
+    			if ((changed.sortedArticles || changed.article) && a_href_value !== (a_href_value = '#' + ctx.option.id)) {
+    				attr_dev(a, "href", a_href_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(a);
+    			}
+
+    			dispose();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block_1$2.name, type: "else", source: "(329:16) {:else}", ctx });
+    	return block;
+    }
+
+    // (322:16) {#if article && article.id == option.id}
+    function create_if_block_7$3(ctx) {
+    	var a, t_value = ctx.option.title + "", t, a_href_value;
+
+    	const block = {
+    		c: function create() {
+    			a = element("a");
+    			t = text(t_value);
+    			attr_dev(a, "href", a_href_value = '#' + ctx.option.id);
+    			attr_dev(a, "class", "active-article-option svelte-1bogsca");
+    			add_location(a, file$i, 322, 18, 8917);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, a, anchor);
+    			append_dev(a, t);
+    			ctx.a_binding(a);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.sortedArticles || changed.article) && t_value !== (t_value = ctx.option.title + "")) {
+    				set_data_dev(t, t_value);
+    			}
+
+    			if ((changed.sortedArticles || changed.article) && a_href_value !== (a_href_value = '#' + ctx.option.id)) {
+    				attr_dev(a, "href", a_href_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(a);
+    			}
+
+    			ctx.a_binding(null);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_7$3.name, type: "if", source: "(322:16) {#if article && article.id == option.id}", ctx });
+    	return block;
+    }
+
+    // (320:12) {#each sortedArticles(section.articles) as option}
+    function create_each_block_1$7(ctx) {
+    	var li;
+
+    	function select_block_type(changed, ctx) {
+    		if (ctx.article && ctx.article.id == ctx.option.id) return create_if_block_7$3;
+    		return create_else_block_1$2;
+    	}
+
+    	var current_block_type = select_block_type(null, ctx);
+    	var if_block = current_block_type(ctx);
+
+    	const block = {
+    		c: function create() {
+    			li = element("li");
+    			if_block.c();
+    			add_location(li, file$i, 320, 14, 8835);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, li, anchor);
+    			if_block.m(li, null);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (current_block_type === (current_block_type = select_block_type(changed, ctx)) && if_block) {
+    				if_block.p(changed, ctx);
+    			} else {
+    				if_block.d(1);
+    				if_block = current_block_type(ctx);
+    				if (if_block) {
+    					if_block.c();
+    					if_block.m(li, null);
+    				}
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(li);
+    			}
+
+    			if_block.d();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_1$7.name, type: "each", source: "(320:12) {#each sortedArticles(section.articles) as option}", ctx });
+    	return block;
+    }
+
+    // (316:6) {#each article && article.section && article.section.isType() ? rul.typeSectionsOrder : rul.sectionsOrder as section}
+    function create_each_block$g(ctx) {
+    	var if_block_anchor;
+
+    	var if_block = (!ctx.currentSection || ctx.section.id == ctx.currentSection.id) && create_if_block_6$3(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (!ctx.currentSection || ctx.section.id == ctx.currentSection.id) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    				} else {
+    					if_block = create_if_block_6$3(ctx);
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$g.name, type: "each", source: "(316:6) {#each article && article.section && article.section.isType() ? rul.typeSectionsOrder : rul.sectionsOrder as section}", ctx });
+    	return block;
+    }
+
+    // (365:23) 
+    function create_if_block_5$4(ctx) {
+    	var current;
+
+    	var intro = new Intro({ $$inline: true });
+
+    	const block = {
+    		c: function create() {
+    			intro.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(intro, target, anchor);
+    			current = true;
+    		},
+
+    		p: noop,
+
+    		i: function intro_1(local) {
+    			if (current) return;
+    			transition_in(intro.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(intro.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(intro, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_5$4.name, type: "if", source: "(365:23) ", ctx });
+    	return block;
+    }
+
+    // (351:22) 
+    function create_if_block_1$d(ctx) {
+    	var t0, em, t1, t2, br, t3, current_block_type_index, if_block, if_block_anchor, current;
+
+    	var if_block_creators = [
+    		create_if_block_2$d,
+    		create_if_block_3$9,
+    		create_if_block_4$5,
+    		create_else_block$a
+    	];
+
+    	var if_blocks = [];
+
+    	function select_block_type_2(changed, ctx) {
+    		if (ctx.found && ctx.found.length > 0) return 0;
+    		if (ctx.query.length < 2) return 1;
+    		if (ctx.searchDelayHandle) return 2;
+    		return 3;
+    	}
+
+    	current_block_type_index = select_block_type_2(null, ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	const block = {
+    		c: function create() {
+    			t0 = text("Searching \"\r\n        ");
+    			em = element("em");
+    			t1 = text(ctx.query);
+    			t2 = text("\r\n        \":\r\n        ");
+    			br = element("br");
+    			t3 = space();
+    			if_block.c();
+    			if_block_anchor = empty();
+    			add_location(em, file$i, 352, 8, 9906);
+    			add_location(br, file$i, 354, 8, 9944);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, em, anchor);
+    			append_dev(em, t1);
+    			insert_dev(target, t2, anchor);
+    			insert_dev(target, br, anchor);
+    			insert_dev(target, t3, anchor);
+    			if_blocks[current_block_type_index].m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (!current || changed.query) {
+    				set_data_dev(t1, ctx.query);
+    			}
+
+    			var previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type_2(changed, ctx);
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(changed, ctx);
+    			} else {
+    				group_outros();
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+    				check_outros();
+
+    				if_block = if_blocks[current_block_type_index];
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				}
+    				transition_in(if_block, 1);
+    				if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(t0);
+    				detach_dev(em);
+    				detach_dev(t2);
+    				detach_dev(br);
+    				detach_dev(t3);
+    			}
+
+    			if_blocks[current_block_type_index].d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$d.name, type: "if", source: "(351:22) ", ctx });
+    	return block;
+    }
+
+    // (349:6) {#if article}
+    function create_if_block$g(ctx) {
+    	var current;
+
+    	var article_1 = new Article$1({
+    		props: {
+    		article: ctx.article,
+    		query: ctx.query
+    	},
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			article_1.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(article_1, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var article_1_changes = {};
+    			if (changed.article) article_1_changes.article = ctx.article;
+    			if (changed.query) article_1_changes.query = ctx.query;
+    			article_1.$set(article_1_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(article_1.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(article_1.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(article_1, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$g.name, type: "if", source: "(349:6) {#if article}", ctx });
+    	return block;
+    }
+
+    // (362:8) {:else}
+    function create_else_block$a(ctx) {
+    	var i;
+
+    	const block = {
+    		c: function create() {
+    			i = element("i");
+    			i.textContent = "Nothing found";
+    			add_location(i, file$i, 362, 10, 10183);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, i, anchor);
+    		},
+
+    		p: noop,
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(i);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block$a.name, type: "else", source: "(362:8) {:else}", ctx });
+    	return block;
+    }
+
+    // (360:36) 
+    function create_if_block_4$5(ctx) {
+    	var t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("...");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+
+    		p: noop,
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(t);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_4$5.name, type: "if", source: "(360:36) ", ctx });
+    	return block;
+    }
+
+    // (358:35) 
+    function create_if_block_3$9(ctx) {
+    	var i;
+
+    	const block = {
+    		c: function create() {
+    			i = element("i");
+    			i.textContent = "Query too short";
+    			add_location(i, file$i, 358, 10, 10079);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, i, anchor);
+    		},
+
+    		p: noop,
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(i);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_3$9.name, type: "if", source: "(358:35) ", ctx });
+    	return block;
+    }
+
+    // (356:8) {#if found && found.length > 0}
+    function create_if_block_2$d(ctx) {
+    	var current;
+
+    	var linkspage = new LinksPage({
+    		props: { links: ctx.found },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			linkspage.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(linkspage, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var linkspage_changes = {};
+    			if (changed.found) linkspage_changes.links = ctx.found;
+    			linkspage.$set(linkspage_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(linkspage.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(linkspage.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(linkspage, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2$d.name, type: "if", source: "(356:8) {#if found && found.length > 0}", ctx });
+    	return block;
+    }
+
+    // (148:20)     <img class="centered" alt="Loading rules..." src="xpedia/spinner.svg" />  {:then}
+    function create_pending_block(ctx) {
+    	var img;
+
+    	const block = {
+    		c: function create() {
+    			img = element("img");
+    			attr_dev(img, "class", "centered svelte-1bogsca");
+    			attr_dev(img, "alt", "Loading rules...");
+    			attr_dev(img, "src", "xpedia/spinner.svg");
+    			add_location(img, file$i, 148, 2, 3279);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, img, anchor);
+    		},
+
+    		p: noop,
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(img);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_pending_block.name, type: "pending", source: "(148:20)     <img class=\"centered\" alt=\"Loading rules...\" src=\"xpedia/spinner.svg\" />  {:then}", ctx });
+    	return block;
+    }
+
+    function create_fragment$m(ctx) {
+    	var if_block_anchor, t, await_block_anchor, promise, current;
+
+    	var if_block = (!ctx.article) && create_if_block_9$3(ctx);
+
+    	let info = {
+    		ctx,
+    		current: null,
+    		token: null,
+    		pending: create_pending_block,
+    		then: create_then_block,
+    		catch: create_catch_block,
+    		value: 'null',
+    		error: 'null',
+    		blocks: [,,,]
+    	};
+
+    	handle_promise(promise = ctx.rulesLoaded, info);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    			t = space();
+    			await_block_anchor = empty();
+
+    			info.block.c();
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(document_1.head, null);
+    			append_dev(document_1.head, if_block_anchor);
+    			insert_dev(target, t, anchor);
+    			insert_dev(target, await_block_anchor, anchor);
+
+    			info.block.m(target, info.anchor = anchor);
+    			info.mount = () => await_block_anchor.parentNode;
+    			info.anchor = await_block_anchor;
+
+    			current = true;
+    		},
+
+    		p: function update(changed, new_ctx) {
+    			ctx = new_ctx;
+    			if (!ctx.article) {
+    				if (!if_block) {
+    					if_block = create_if_block_9$3(ctx);
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			info.block.p(changed, assign(assign({}, ctx), info.resolved));
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(info.block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			for (let i = 0; i < 3; i += 1) {
+    				const block = info.blocks[i];
+    				transition_out(block);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+    			detach_dev(if_block_anchor);
+
+    			if (detaching) {
+    				detach_dev(t);
+    				detach_dev(await_block_anchor);
+    			}
+
+    			info.block.d(detaching);
+    			info.token = null;
+    			info = null;
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$m.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function goTo(id) {
+      window.location.hash = "#" + id;
+    }
+
+    function instance$l($$self, $$props, $$invalidate) {
+    	
+
+      let { source } = $$props;
+
+      let article = null;
+      let found = null;
+      let query = "";
+      let currentSection = null;
+      let activeOption;
+      let ignoreNextAutoscroll = false;
+      let id = "";
+      let searchDelayHandle = null;
+
+      async function loadRules() {
+        await rul.load(source);
+      }
+
+      let rulesLoaded = loadRules();
+
+      function checkHash() {
+        let hash = document.location.hash.replace("%20", " ");
+        if (hash) {
+          let dd = hash.indexOf("::");
+          if (dd != -1) {
+            id = hash.substr(1, dd - 1);
+            $$invalidate('query', query = hash.substr(dd + 2));
+          } else {
+            id = hash.substr(1);
+          }
+
+          if (id == "SEARCH") {
+            if (query.length >= 2)
+              $$invalidate('found', found = rul.search.findArticles(query).map(a => a.id));
+            else $$invalidate('found', found = 0);
+            $$invalidate('article', article = null);
+          } else {
+            $$invalidate('found', found = null);
+            if (!article || article.id != id) $$invalidate('article', article = rul.article(id));
+          }
+
+          console.log(id);
+          console.log(article);
+        }
+
+        if (article) {
+          if (article.section && currentSection != article.section)
+            $$invalidate('currentSection', currentSection = article.section);
+        } else {
+          $$invalidate('currentSection', currentSection = null);
+        }
+      }
+
+      function nextArticle(delta) {
+        let nextArticle = rul.findNextArticle(article, delta);
+        if (nextArticle) {
+          goTo(nextArticle.id);
+        }
+      }
+
+      document.addEventListener("keydown", event => {
+        const keyName = event.key;
+        if (keyName == "ArrowRight") nextArticle(1);
+        if (keyName == "ArrowLeft") nextArticle(-1);
+      });
+
+      function searchKeyUp(e) {
+        if (searchDelayHandle) clearTimeout(searchDelayHandle);
+
+        $$invalidate('searchDelayHandle', searchDelayHandle = setTimeout(
+          () => {
+            goTo("SEARCH::" + e.target.value);
+            $$invalidate('searchDelayHandle', searchDelayHandle = null);
+          },
+          e.key == "Enter" ? 10 : 1000
+        ));
+      }
+
+      window.onhashchange = checkHash;
+
+      rulesLoaded.then(checkHash);
+
+      afterUpdate(() => {
+        if (activeOption) {
+          tick().then(() =>
+            activeOption.scrollIntoView({ behavior: "auto", block: "center" })
+          );
+        }
+      });
+
+      let sortArticles = false;
+
+    	const writable_props = ['source'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console_1$b.warn(`<App> was created with unknown prop '${key}'`);
+    	});
+
+    	const click_handler = (e) => window.scrollTo(0, 0);
+
+    	function input0_input_handler() {
+    		query = this.value;
+    		$$invalidate('query', query);
+    	}
+
+    	function input1_input_handler() {
+    		query = this.value;
+    		$$invalidate('query', query);
+    	}
+
+    	function input2_input_handler() {
+    		query = this.value;
+    		$$invalidate('query', query);
+    	}
+
+    	function a_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			$$invalidate('activeOption', activeOption = $$value);
+    		});
+    	}
+
+    	const click_handler_1 = () => ($$invalidate('ignoreNextAutoscroll', ignoreNextAutoscroll = true));
+
+    	const click_handler_2 = (e) => $$invalidate('sortArticles', sortArticles = !sortArticles);
+
+    	$$self.$set = $$props => {
+    		if ('source' in $$props) $$invalidate('source', source = $$props.source);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { source, article, found, query, currentSection, activeOption, ignoreNextAutoscroll, id, searchDelayHandle, rulesLoaded, sortArticles, sortedArticles };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('source' in $$props) $$invalidate('source', source = $$props.source);
+    		if ('article' in $$props) $$invalidate('article', article = $$props.article);
+    		if ('found' in $$props) $$invalidate('found', found = $$props.found);
+    		if ('query' in $$props) $$invalidate('query', query = $$props.query);
+    		if ('currentSection' in $$props) $$invalidate('currentSection', currentSection = $$props.currentSection);
+    		if ('activeOption' in $$props) $$invalidate('activeOption', activeOption = $$props.activeOption);
+    		if ('ignoreNextAutoscroll' in $$props) $$invalidate('ignoreNextAutoscroll', ignoreNextAutoscroll = $$props.ignoreNextAutoscroll);
+    		if ('id' in $$props) id = $$props.id;
+    		if ('searchDelayHandle' in $$props) $$invalidate('searchDelayHandle', searchDelayHandle = $$props.searchDelayHandle);
+    		if ('rulesLoaded' in $$props) $$invalidate('rulesLoaded', rulesLoaded = $$props.rulesLoaded);
+    		if ('sortArticles' in $$props) $$invalidate('sortArticles', sortArticles = $$props.sortArticles);
+    		if ('sortedArticles' in $$props) $$invalidate('sortedArticles', sortedArticles = $$props.sortedArticles);
+    	};
+
+    	let sortedArticles;
+
+    	$$self.$$.update = ($$dirty = { article: 1, sortArticles: 1 }) => {
+    		if ($$dirty.article) { {
+            console.info(article || "no article");
+          } }
+    		if ($$dirty.sortArticles) { $$invalidate('sortedArticles', sortedArticles = (articles) => sortArticles?articles.slice().sort((a,b) => a.title > b.title?1:-1):articles); }
+    	};
+
+    	return {
+    		source,
+    		article,
+    		found,
+    		query,
+    		currentSection,
+    		activeOption,
+    		ignoreNextAutoscroll,
+    		searchDelayHandle,
+    		rulesLoaded,
+    		searchKeyUp,
+    		sortArticles,
+    		window,
+    		sortedArticles,
+    		click_handler,
+    		input0_input_handler,
+    		input1_input_handler,
+    		input2_input_handler,
+    		a_binding,
+    		click_handler_1,
+    		click_handler_2
+    	};
+    }
+
+    class App extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$l, create_fragment$m, safe_not_equal, ["source"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "App", options, id: create_fragment$m.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.source === undefined && !('source' in props)) {
+    			console_1$b.warn("<App> was created without expected prop 'source'");
+    		}
+    	}
+
+    	get source() {
+    		throw new Error("<App>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set source(value) {
+    		throw new Error("<App>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    window.onload = function(){
+
+      let rulesText = document.body.textContent;
+      document.body.innerHTML = "";
+      document.body.style.display = "block";
+
+      new Ruleset();
+      app = new App({
+        props: {source: rulesText},
+        target: document.body
+      });
+        
+    };
+
+    return app;
+
+}(JSZip));
