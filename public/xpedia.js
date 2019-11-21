@@ -4,7 +4,7 @@ const JSZip = require("./xpedia/jszip.min.js");
 let packed = false;
 
 let mod_name = "Piratez";
-var laguages = ["en-US", "ru", "pl"];
+var laguages = ["en-US", "ru", "pl", "cs", "es-ES"];
 let saveAs;
 let header;
 let text;

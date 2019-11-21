@@ -208,6 +208,8 @@
             <a href="index.html">English</a>
             <a href="xpedia_ru.html">Русский</a>
             <a href="xpedia_pl.html">Polski</a>
+            <a href="xpedia_cs.html">Česky</a>
+            <a href="xpedia_es-ES.html">Español</a>
           </div>
         </div>
       </div>
