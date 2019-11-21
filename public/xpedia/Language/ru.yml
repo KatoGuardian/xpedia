@@ -1,5 +1,5 @@
 ru:
-  # UI
+ # UI
   Items: "Предметы"
   Item: "Предмет"
   Conditions: "Условия"
@@ -15,12 +15,34 @@ ru:
   Search...: "Поиск..."
   Language: "Язык"
   Lang: "Язык" #five letters max!
-  Download: "Скачать"
-  # intro
-  Welcome to The X-COM Files mod to OpenXcom website.: "Мутное приветствие"
-  Current mod version is: "Свежайшая версия мода:"
-  Download mod: "Скачайте мод"
-  Discord server: "Дискорд-сервере"
-  Arrr, whats dat X-Piratez?: "Что такое X-Piratez?"
+  Download (forum link): "Скачать с форума"
+  Download (from mod.io): "Скачать на mod.io"
+ # intro
+  # Pt.1
   Welcome onboard, seagal! Take your bunk at da orlop and have some X-Grog, yarrr!: "Добро пожаловать на борт, матрос! Займи койку на нижней палубе да выпей немного Икс-Грога, йаррр!"
-  mod author, lead designer: автор мода и ведущий разработчик
+  # Pt.2
+  Arrr, what da FLUFF is X-Piratez stuff?: "Аррр, что еще за чертовщина эти ваши X-Piratez?"
+  X-Piratez is a total conversion mod designed for OpenXcom, a free open-source reimplementation of: "X-Piratez - это глобальный мод для OpenXcom - распространяемого на бесплатной основе переосмысления"
+  and Terror From The Deep. There are major gameplay differences, as well as many additions to research, manufacture, base facilities, and so on. Piratez is designed for the veteran X-Com player seeking a much longer and challenging campaign.: "и Terror From The Deep с открытым кодом. В игровой процесс внесены существенные изменения: множество дополнительных исследований, производственных проектов, модулей базы и так далее. Целевая аудитория - ветераны X-Com, заинтересованные в более длительной и сложной кампании."
+  The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. Piratez is the biggest OpenXcom mod to date.: "На дворе 2601 год. Земля уже давным-давно завоёвана пришельцами. Вы - лидер шайки мутанток-пираток. Грабьте пришельцев и их прихвостней из числа землян ради поживы, поддержания авторитета и просто по приколу. Piratez - это самый крупный на сегодняшний день мод для OpenXcom."
+  # Pt.2,5
+  Download mod: "Скачайте мод"
+  join our community with: "присоединитесь к нашему сообществу на"
+  Discord server: "Дискорд-сервере"
+  and: "и на"
+  forum: "форуме"
+  # Pt.3
+  Current mod version is: "Свежайшая версия мода:"
+  READ OR DIE. The Bootypedia is your friend. Trust me on that.: "ЧИТАЙ ИЛИ СДОХНИ. Хабаропедия - твой друг. Уж поверь."
+  mod author, lead designer: "автор мода и ведущий разработчик"
+  # Pt.4
+  WARNINGS: "ПРЕДУПРЕЖДЕНИЯ"
+  Contains some NUDITY of both sexes. You've been warned. Also take note this is not any porn-quality T&A since it's not a porn game.: "Есть немного мужской и женской ОБНАЖЁНКИ. Вы предупреждены. Учтите, что здесь нет прелестей порнографического качества, поскольку это не порноигра."
+  Do not install OpenXcom nightlies! They are not compatible with Piratez.: "Не устанавливайте Nightly-сборки OpenXcom! Они несовместимы с Piratez."
+  If you absolutely can't stand bikini babes fighting Nazis with chainsaws, you may suffer some trauma.: "Если вы абсолютно не приемлите девушек в бикини, распиливающих нацистов бензопилами, то можете получить психологическую травму."
+  If you're looking for a tactical game that doesn't require brains, try DOTA instead.: "Если вам нужна тактическая игра, не требующая мозгов, играйте лучше в DOTA."
+  Read or Die.: "Читай или сдохни."
+  Contains riddles. Not everything is what it seems.: "Присутствуют загадки. Не всё то, чем кажется."
+  A single campaign might take as much as 400 hours.: "Одно прохождение может занять до 400 часов."
+  # Pt.4,5
+  Wiki is powered by: "Сайт построен на движке"
