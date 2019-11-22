@@ -9,7 +9,7 @@
       {rul.str("Welcome onboard, seagal! Take your bunk at da orlop and have some X-Grog, yarrr!")}
     <br/>
     <h4>{rul.str("Arrr, what da FLUFF is X-Piratez stuff?")}</h4>
-      {rul.str("X-Piratez is a total conversion mod designed for OpenXcom, a free open-source reimplementation of")} X-Com: Enemy Unknown (1994) {rul.str("and Terror From The Deep. There are major gameplay differences, as well as many additions to research, manufacture, base facilities, and so on. Piratez is designed for the veteran X-Com player seeking a much longer and challenging campaign.")}<br/>
+      {rul.str("X-Piratez is a total conversion mod designed for OpenXcom, a free open-source reimplementation of")} X-Com: {rul.str("Enemy Unknown (1994) and Terror From The Deep. There are major gameplay differences, as well as many additions to research, manufacture, base facilities, and so on. Piratez is designed for the veteran X-Com player seeking a much longer and challenging campaign.")}<br/>
       <br/>
       {rul.str("The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. Piratez is the biggest OpenXcom mod to date.")}<br/> 
       <br/>
