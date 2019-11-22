@@ -24,7 +24,7 @@
 
 <table class="main-table">
   <tr>
-    <td colspan="2" class="table-header">Craft</td>
+    <td colspan="2" class="table-header">{rul.str("Facility")}</td>
   </tr>
   {#each Object.entries(facility).sort((a, b) =>
     a[0] > b[0] && a[0] != 'storageTiles' ? 1 : -1

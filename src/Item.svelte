@@ -60,7 +60,7 @@
   }
 </style>
 
-  <tr> <td colspan="2" class="table-header">{title}</td> </tr>
+  <tr> <td colspan="2" class="table-header">{rul.str("Item")}</td> </tr>
   {#if (item.sprite && item.sprite != "Resources/Blanks/Blank.png") ||attacks.length > 0}
     <tr> <td colspan="2">
       <div style="display: flex; align-items: flex-start; margin: 5px 3px;">

@@ -10,7 +10,7 @@
 </script>
 
 <table class="main-table">
-  <tr> <td colspan="2" class="table-header">Craft</td> </tr>
+  <tr> <td colspan="2" class="table-header">{rul.str("Craft")}</td> </tr>
   {#each Object.entries(craft).sort((a, b) => (a[0] > b[0] ? 1 : -1)) as [key, prop]}
     {#if !['type', 'battlescapeTerrainData', 'craftInventoryTile', 'deployment'].includes(key)}
       <tr>
