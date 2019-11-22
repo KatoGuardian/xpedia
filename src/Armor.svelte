@@ -37,7 +37,7 @@
     <td colspan="2" class="table-header">
       {rul.str("Armor")}
       {#if seeAlso.length > 0}
-        <span style="color:white">- see also</span>
+        <span style="color:white">- {rul.str("see also")}</span>
         <LinksList items={seeAlso} />
       {/if}
     </td>
@@ -50,7 +50,7 @@
             <button
               class="btn-hover-effect btn-hover-effect--effect-1"
               on:click={e => (seeAllVariants = !seeAllVariants)}>
-              {seeAllVariants ? 'Hide' : 'See'} all variants
+              {seeAllVariants ? '' : ''} {rul.str("See/Hide all variants")}
             </button>
           </p>
         {/if}
