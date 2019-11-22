@@ -124,7 +124,7 @@
     color: white;
   } */
   .active-article-option {
-    background: white;
+    background: rgb(231, 168, 96);
     color: black;
   }
 
@@ -141,7 +141,7 @@
 
 <svelte:head>
   {#if !article}
-    <title>XPedia</title>
+    <title>X-Piratez XPedia</title>
   {/if}
 </svelte:head>
 
