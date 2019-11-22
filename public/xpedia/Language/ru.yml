@@ -18,6 +18,10 @@ ru:
   Unit: "Персонаж"
   HOME: "НА ГЛАВНУЮ"
   Search...: "Поиск..."
+  A-Z: "А-Я"
+  Searching: "Ищем"
+  Query too short: "Запрос слишком короткий!"
+  Nothing found: "Ничего не найдено."
   Language: "Язык"
   Lang: "Язык" #five letters max!
   Download (forum link): "Скачать с форума"

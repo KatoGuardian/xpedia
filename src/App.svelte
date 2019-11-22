@@ -343,7 +343,7 @@
     </div>
     <div class="column is-2 is-hidden-touch" />
     <div class="side-sort-button">
-      <button class="is-hidden-touch" style={sortArticles?"":"text-decoration:line-through"} on:click={e => sortArticles = !sortArticles}>A-Z</button>
+      <button class="is-hidden-touch" style={sortArticles?"":"text-decoration:line-through"} on:click={e => sortArticles = !sortArticles}>{rul.str("A-Z")}</button>
     </div>
 
     <div class="column is-main-content main" style="padding-top: 0px;">
@@ -351,18 +351,18 @@
       {#if article}
         <Article {article} {query} />
       {:else if query}
-        Searching "
+        {rul.str("Searching")} "
         <em>{query}</em>
         ":
         <br />
         {#if found && found.length > 0}
           <LinksPage links={found} />
         {:else if query.length < 2}
-          <i>Query too short</i>
+          <i>{rul.str("Query too short")}</i>
         {:else if searchDelayHandle}
           ...
         {:else}
-          <i>Nothing found</i>
+          <i>{rul.str("Nothing found")}</i>
         {/if}
       {:else if !query}
         <Intro />
