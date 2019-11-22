@@ -23,7 +23,7 @@ ru:
   Query too short: "Запрос слишком короткий!"
   Nothing found: "Ничего не найдено."
   Language: "Язык"
-  Lang: "Язык" #five letters max!
+  Lang: "Язык" #mobile, five letters max!
   Download (forum link): "Скачать с форума"
   Download (from mod.io): "Скачать на mod.io"
  # intro

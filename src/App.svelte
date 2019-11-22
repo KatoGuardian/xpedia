@@ -264,9 +264,11 @@
           {rul.str("Lang")}
         </button>
         <div class="dropdown-content">
-          <a href="index.html">Eng</a>
-          <a href="xpedia_ru.html">Рус</a>
-          <a href="xpedia_pl.html">Pol</a>
+          <a href="index.html">English</a>
+          <a href="xpedia_ru.html">Русский</a>
+          <a href="xpedia_pl.html">Polski</a>
+          <a href="xpedia_cs.html">Česky</a>
+          <a href="xpedia_es-ES.html">Español</a>
         </div>
       </div>
       <div class="navbar-item  is-inline-block"
@@ -293,6 +295,8 @@
           <a href="index.html">English</a>
           <a href="xpedia_ru.html">Русский</a>
           <a href="xpedia_pl.html">Polski</a>
+          <a href="xpedia_cs.html">Česky</a>
+          <a href="xpedia_es-ES.html">Español</a>
         </div>
       </div>
       <div class="navbar-item  is-inline-block">
