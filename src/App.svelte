@@ -26,7 +26,7 @@
   }
 
   function checkHash() {
-    let hash = document.location.hash.replace("%20", " ");
+    let hash = decodeURI(document.location.hash);
     if (hash) {
       let dd = hash.indexOf("::");
       if (dd != -1) {
