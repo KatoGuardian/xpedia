@@ -1,5 +1,56 @@
 cs:
-  # UI
+ # UI
+  ITEMS: "ПРЕДМЕТЫ"
+  CONDITIONS: "УСЛОВИЯ"
+  CATEGORIES: "КАТЕГОРИИ"
+  MANUFACTURE: "ПРОИЗВОДСТВО"
+  RESEARCH: "ИССЛЕДОВАНИЯ"
+  SERVICES: "ФУНКЦИИ"
+  Base Services: "Службы базы"
+  Craft: "Судно"
+  Weapon: "Орудие"
+  Armor: "Броня"
+  see also: "см. также"
+  See/Hide all variants: "Показать/Скрыть все варианты"
+  Item: "Предмет"
+  damage: "урон"
+  Facility: "Сооружение"
+  Unit: "Персонаж"
+  HOME: "НА ГЛАВНУЮ"
+  Search...: "Najít..."
+  Searching: "Ищем"
+  Query too short: "Запрос слишком короткий!"
+  Nothing found: "Ничего не найдено."
+  Language: "Jazyk"
+  Lang: "Jazyk" #mobile, five letters max!
+  Download (forum link): "Stáhnout (odkaz na fóru)"
+  Download (from mod.io): "Stáhnout (mod.io)"
  # intro
+  # Pt.1
+  Welcome onboard, seagal! Take your bunk at da orlop and have some X-Grog, yarrr!: "Vítej na palubě, plavčice! Vyber si kavalec někde na spodní palubě a dej si na uvítanou trochu X-grogu!"
   # Pt.2
-  Arrr, what da FLUFF is X-Piratez stuff?: "Co je to X-Piratez?"
+  Arrr, what da FLUFF is X-Piratez stuff?: "Co jsou X-Piratez zač?"
+  X-Piratez is a total conversion mod designed for OpenXcom, a free open-source reimplementation of: "Jedná se o totální předělávku OpenXcomu, bezplatné open-sourcové reimplementace her"
+  Enemy Unknown (1994) and Terror From The Deep. There are major gameplay differences, as well as many additions to research, manufacture, base facilities, and so on. Piratez is designed for the veteran X-Com player seeking a much longer and challenging campaign.: "Enemy Unknown (z roku 1994) a Terror From The Deep. Oproti originálu se ale předělávka hraje v mnohých ohledech jinak a obsahuje, mimo jiné, také obsáhlejší výzkum, výrobu a množství zařízení základny. Piratez je určen především zkušeným hráčům X-Comu, kteří by rádi delší a náročnější kampaň."
+  The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. Piratez is the biggest OpenXcom mod to date.: "Píše se rok 2601. Země si již před dlouhou násilím podmanili cizáci. Ty stojíš v čele bandy pirátek, které obírají cizáky a jejich přisluhovače nejen jen tak pro radost, ale také kvůli bohatství a slávě. Piratez je doposud nejrozsálejší modifikace OpenXcomu."
+  # Pt.2,5
+  Download mod: "Stáhni si mod"
+  join our community with: "přidej se k naší komunitě na"
+  Discord server: "Discordu"
+  and: "a na"
+  forum: "fóru"
+  # Pt.3
+  Current mod version is: "Aktuální verze modu je"
+  READ OR DIE. The Bootypedia is your friend. Trust me on that.: "ČTI NEBO ZEMŘEŠ. Kořisťopedie je tvou věrnou přítelkyní. Věř mi."
+  mod author, lead designer: "autor a hlavní designer modu"
+  # Pt.4
+  WARNINGS: "VAROVÁNÍ"
+  Contains some NUDITY of both sexes. You've been warned. Also take note this is not any porn-quality T&A since it's not a porn game.: "Obsahuje NAHOTU obou, všemi uznávaných, pohlaví. Rozlišení detailů není tak velké jako na pornostránkách, protože se nejedná o pornohru."
+  Do not install OpenXcom nightlies! They are not compatible with Piratez.: "Neinstaluj „nigtie“ verze OpenXcom! Ty nebývají s Piratez kompatibilní."
+  If you absolutely can't stand bikini babes fighting Nazis with chainsaws, you may suffer some trauma.: "Pokud ti jsou proti srsti holky v bikinách a s motorovými pilami, které bojují proti náckům, čeká na tebe nepříjemné překvapení."
+  If you're looking for a tactical game that doesn't require brains, try DOTA instead.: "Pokud toužíš po taktické hře, ve které nemusíš používat mozek, zkus DOTA."
+  Read or Die.: "Čti, nebo zemřeš."
+  Contains riddles. Not everything is what it seems.: "Ne vše ve hře je tím, čím se zprvu zdá."
+  A single campaign might take as much as 400 hours.: "Dohrání kampaně může zabrat i 400 hodin."
+  # Pt.4,5
+  Wiki is powered by: "Wiki využívá technologii"
