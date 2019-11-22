@@ -152,10 +152,10 @@
   <nav
     class="navbar is-fixed-top is-hidden-touch"
     role="navigation"
-    aria-label="main navigation"> 
+    aria-label="main navigation">
 
-    <div class="navbar-brand ">
-      <div class="navbar-item has-dropdown is-hoverable ">
+    <div class="navbar-brand">
+      <div class="navbar-item has-dropdown is-hoverable">
         <a href="#MAIN" class="navbar-link">
           <img src="xpedia/favicon.png" alt="favicon" />
           {rul.modName} XPedia
