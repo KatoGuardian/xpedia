@@ -1,11 +1,11 @@
 ru:
  # UI
-  Items: "Предметы"
-  Conditions: "Условия"
-  Categories: "Категории"
-  Manufacture: "Производство"
-  Research: "Исследования"
-  Services: "Службы"
+  ITEMS: "ПРЕДМЕТЫ"
+  CONDITIONS: "УСЛОВИЯ"
+  CATEGORIES: "КАТЕГОРИИ"
+  MANUFACTURE: "ПРОИЗВОДСТВО"
+  RESEARCH: "ИССЛЕДОВАНИЯ"
+  SERVICES: "ФУНКЦИИ"
   Base Services: "Службы базы"
   Craft: "Судно"
   Weapon: "Орудие"
@@ -28,7 +28,7 @@ ru:
   # Pt.2
   Arrr, what da FLUFF is X-Piratez stuff?: "Аррр, что еще за чертовщина эти ваши X-Piratez?"
   X-Piratez is a total conversion mod designed for OpenXcom, a free open-source reimplementation of: "X-Piratez - это глобальный мод для OpenXcom - распространяемого на бесплатной основе переосмысления"
-  and Terror From The Deep. There are major gameplay differences, as well as many additions to research, manufacture, base facilities, and so on. Piratez is designed for the veteran X-Com player seeking a much longer and challenging campaign.: "и Terror From The Deep с открытым кодом. В игровой процесс внесены существенные изменения: множество дополнительных исследований, производственных проектов, модулей базы и так далее. Целевая аудитория - ветераны X-Com, заинтересованные в более длительной и сложной кампании."
+  Enemy Unknown (1994) and Terror From The Deep. There are major gameplay differences, as well as many additions to research, manufacture, base facilities, and so on. Piratez is designed for the veteran X-Com player seeking a much longer and challenging campaign.: "и Terror From The Deep с открытым кодом. В игровой процесс внесены существенные изменения: множество дополнительных исследований, производственных проектов, модулей базы и так далее. Целевая аудитория - ветераны X-Com, заинтересованные в более длительной и сложной кампании."
   The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. Piratez is the biggest OpenXcom mod to date.: "На дворе 2601 год. Земля уже давным-давно завоёвана пришельцами. Вы - лидер шайки мутанток-пираток. Грабьте пришельцев и их прихвостней из числа землян ради поживы, поддержания авторитета и просто по приколу. Piratez - это самый крупный на сегодняшний день мод для OpenXcom."
   # Pt.2,5
   Download mod: "Скачайте мод"
