@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'font1';
-  src: url('font1.woff') format('woff');
+  font-family: 'Calibri';
+  src: url('Calibri.woff') format('woff');
   font-weight: 300;
   font-style: normal;
 } 
@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  font-family: font1, Helvetica, Ubuntu, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen-Sans, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: Calibri, Helvetica, Ubuntu, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen-Sans, Cantarell, "Helvetica Neue", sans-serif;
   letter-spacing: 0.1pt;
 }
 

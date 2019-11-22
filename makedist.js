@@ -21,7 +21,7 @@ let files = [
   "xpedia/xpedia.html.header",
   "xpedia/jszip.min.js",
   "xpedia/spinner.svg",
-  "xpedia/font1.woff",
+  "xpedia/Calibri.woff",
   "xpedia.js",
   "xpedia.bat",
   "XPEDIA_README.txt"
