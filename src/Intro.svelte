@@ -26,7 +26,7 @@
       </div>
       <h4>{rul.str("WARNINGS")}</h4>
       1. {rul.str("Contains some NUDITY of both sexes. You've been warned. Also take note this is not any porn-quality T&A since it's not a porn game.")}<br/>
-      2. {rul.str("Do not install OpenXcom nightlies! They are not compatible with X-Piratez. (Requires OXCE version).")}<br/>
+      2. {rul.str("Do not install OpenXcom nightlies! They are not compatible with X-Piratez. (Requires OXCE version.)")}<br/>
       3. {rul.str("If you absolutely can't stand bikini babes fighting Nazis with chainsaws, you may suffer some trauma.")}<br/>
       4. {rul.str("If you're looking for a tactical game that doesn't require brains, try DOTA instead.")}<br/>
       5. {rul.str("Read or Die.")}<br/>
