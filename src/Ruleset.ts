@@ -780,6 +780,8 @@ export default class Ruleset {
     for (let k in this.lang) {
       let text: string = this.lang[k];
       if (typeof text === "string") {
+        text = text.replace(/^({ALT})+/, "");
+        text = text.replace(/{ALT}/g, "");
         text = text.replace(/^({NEWLINE})+/, "");
         text = text.replace(/{NEWLINE}/g, "<br/>");
         this.lang[k] = text;
