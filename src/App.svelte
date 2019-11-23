@@ -115,7 +115,7 @@
     position: fixed;
     overflow-y: auto;
     overflow-x: hidden;
-    background:#141d3d;
+    background:rgb(82, 54, 31);
   }
   .narrow {
     max-width: 800px;

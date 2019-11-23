@@ -12,7 +12,7 @@
   background: #685C74;
 }
 a{
-  color:cyan;
+  color:white;
 }
 </style>
 

@@ -6,7 +6,7 @@
 } 
 
 html {
-  background:#25315a;
+  background:rgb(110, 83, 61)
   /* #180C24 */
 }
 
@@ -16,22 +16,22 @@ body {
 }
 
 a {
-	color: #90ee90;
+	color: #ffc67c;
 	text-decoration: none;
 }
 
 a:hover {
   text-decoration: none;
-  color: white;
+  color: #ff7600;
 }
 
 .main-table > tr:nth-child(odd){
-  background: #252e4f;
+  background: rgb(68, 64, 63);
   /*  #141d3d #20152B */
 }
 
 .main-table > tr:nth-child(even){
-  background: #3c4564;;
+  background: rgb(92, 86, 80);
     /* #180C24 */
 }
 
@@ -99,7 +99,7 @@ h4{
 }
 
 em{
-  color: #66ffff;
+  color: greenyellow;
   font-style: normal;  
 }
 
@@ -108,7 +108,7 @@ h1{
 }
 
 h1, h4{
-  border-bottom: solid 1px #8dc9ec; 
+  border-bottom: solid 1px rgb(218, 187, 163); 
   /* #483C54 */
   margin: 10px 0px;
   color: white;
@@ -116,16 +116,16 @@ h1, h4{
 }
 
 .table-header{
-  color: #66ffff;
-  background: #141d3d; 
+  color: #ffdf40;
+  background: rgb(82, 54, 31); 
   /* #483C54 */
   text-align: center;
   font-size: larger;
 }
 
 .table-subheader{
-  color: white;
-  background: #141d3d;
+  color: #ffdf40;
+  background: rgb(35, 39, 39);
   /* #382C44 */
   text-align: center;
 }
@@ -160,7 +160,7 @@ input::placeholder {
 .cols {
   columns: 250px;
   padding-left: 20px;
-  color: green;
+  color: #ffbb0096;
   margin-right: 10px;
   padding-top: 0px;
 }
@@ -230,12 +230,13 @@ audio{
 }
 
 .attacks-table td{
-  border: solid 0.3px  #141d3d;
+  border: solid 0.3px  #382C44;
   /* #382C44 */
   font-size: 14pt;
 }
 .attacks-table thead{
-  background: #141d3d;
+  color: #ff9c40;
+  background: rgb(35, 39, 39);
   /* #382C44 */
 }
 
@@ -346,8 +347,8 @@ button{
 
 .links-page-header {
   text-align: center;
-  color: #66ffff;
-  background: #281c34;
+  color: #ffdf40;
+  background: rgb(82, 54, 31);
   padding: 2px;
 }
 
@@ -371,7 +372,7 @@ button{
   font-size: 1em;
   overflow-x: auto;
   padding: 0.5rem 1rem;
-  border-left: 2px solid #fff; /* Параметры линии */ 
+  border-left: 2px solid rgb(218, 187, 163); /* Параметры линии */ 
   margin-left: 20px; /* Отступ слева */
   padding-left: 10px; /* Расстояние от линии до текста */ 
 }
@@ -381,7 +382,7 @@ button{
 
 
 .imgcol {
-  background-color: #141d3d;
+  background-color: rgb(82, 54, 31);
   padding: 10px;
   padding-bottom: 0;
   border-radius: 5px;
@@ -392,7 +393,7 @@ button{
 }
 
 .downloadbtn {
-  background-color: #8dc9ec;
+  background-color: #ffc040;
   border: none;
   color: white;
   width:100%;
@@ -404,7 +405,7 @@ button{
   border-radius: 5px;
 }
 .downloadbtn:hover {
-  background-color: RoyalBlue;
+  background-color: #ffab00;
 }
 
 .dropbtn {
@@ -457,7 +458,7 @@ button{
 .sidebar::-webkit-scrollbar-track
 {
 /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
-  background:#3f4c7a;  /* default is 141d3d */
+  background:rgb(53, 33, 17);  /* default is 141d3d */
 }
 
 .sidebar::-webkit-scrollbar
@@ -468,6 +469,6 @@ button{
 
 .sidebar::-webkit-scrollbar-thumb
 {
-  background-color:#0b1124;
+  background-color:rgb(231, 168, 96);
   border-radius: 5px;
 }
