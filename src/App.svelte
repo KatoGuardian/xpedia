@@ -362,11 +362,11 @@
         {#if found && found.length > 0}
           <LinksPage links={found} />
         {:else if query.length < 2}
-          <i>{rul.str("Query too short")}</i>
+          <i>{rul.str("Query too short")}!</i>
         {:else if searchDelayHandle}
           ...
         {:else}
-          <i>{rul.str("Nothing found")}</i>
+          <i>{rul.str("Nothing found")}.</i>
         {/if}
       {:else if !query}
         <Intro />
