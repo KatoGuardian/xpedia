@@ -9,9 +9,9 @@
       {rul.str("Welcome onboard, seagal! Take your bunk at da orlop and have some X-Grog, yarrr!")}
     <br/>
     <h4>{rul.str("Arrr, what da FLUFF is X-Piratez stuff?")}</h4>
-      {rul.str("X-Piratez is a total conversion mod designed for OpenXcom, a free open-source reimplementation of")} X-Com: {rul.str("Enemy Unknown (1994) and Terror From The Deep. There are major gameplay differences, as well as many additions to research, manufacture, base facilities, and so on. Piratez is designed for the veteran X-Com player seeking a much longer and challenging campaign.")}<br/>
+      {rul.str("X-Piratez is a total conversion mod designed for OpenXcom, a free open-source reimplementation of UFO")}: {rul.str("Enemy Unknown (1994) and X-Com")}: {rul.str("Terror From The Deep. There are major gameplay differences, as well as a complete overhaul of research, manufacture, base facilities, and so on. X-Piratez is designed for the veteran X-Com player seeking a much longer and complex campaign.")}<br/>
       <br/>
-      {rul.str("The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. Piratez is the biggest OpenXcom mod to date.")}<br/> 
+      {rul.str("The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. X-Piratez is the biggest OpenXcom mod to date.")}<br/> 
       <br/>
       <a href="https://openxcom.org/forum/index.php/topic,3626.0.html" target="_blank">{rul.str("Download mod")}</a>, {rul.str("join our community with")} <a href="https://discord.gg/b5KXPvX" target="_blank">{rul.str("Discord server")}</a> {rul.str("and")} <a href="https://openxcom.org/forum/index.php/board,18.0.html" target="_blank">{rul.str("forum")}</a>!<br/>
       <br/>
@@ -26,7 +26,7 @@
       </div>
       <h4>{rul.str("WARNINGS")}</h4>
       1. {rul.str("Contains some NUDITY of both sexes. You've been warned. Also take note this is not any porn-quality T&A since it's not a porn game.")}<br/>
-      2. {rul.str("Do not install OpenXcom nightlies! They are not compatible with Piratez.")}<br/>
+      2. {rul.str("Do not install OpenXcom nightlies! They are not compatible with X-Piratez. (Requires OXCE version).")}<br/>
       3. {rul.str("If you absolutely can't stand bikini babes fighting Nazis with chainsaws, you may suffer some trauma.")}<br/>
       4. {rul.str("If you're looking for a tactical game that doesn't require brains, try DOTA instead.")}<br/>
       5. {rul.str("Read or Die.")}<br/>
