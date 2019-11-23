@@ -886,12 +886,12 @@ export default class Ruleset {
         a.title < b.title ? -1 : 1
       );
 
-    Article.create({
+/*    Article.create({
       id: "BASE_FUNC",
       title: "Base Services",
       type_id: "OTHER",
       section: "OTHER"
-    });
+    });*/
 
     for (let cat of Object.keys(this.categories)) {
       console.log(cat);
