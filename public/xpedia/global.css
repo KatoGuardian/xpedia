@@ -230,7 +230,7 @@ audio{
 }
 
 .attacks-table td{
-  border: solid 0.3px  #382C44;
+  border: solid 0.3px  rgb(181, 184, 175);
   /* #382C44 */
   font-size: 14pt;
 }

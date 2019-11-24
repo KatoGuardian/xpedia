@@ -37,7 +37,7 @@
 
 <style>
   td{
-    padding:0px 2px;
+    padding:0px 7px;
   }
   .sprite{
     image-rendering: pixelated;
@@ -69,11 +69,11 @@
         <table class="attacks-table">
           <thead>
             {#if item.battleType != 2}
-              <td>mode</td>
-              <td>accuracy</td>
-              <td>cost</td>
+              <td>{rul.str("mode")}</td>
+              <td>{rul.str("accuracy")}</td>
+              <td>{rul.str("cost")}</td>
             {/if}
-            <td>damage</td>
+            <td>{rul.str("damage")}</td>
           </thead>
           {#each attacks as attack}
             <tr>
