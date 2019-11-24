@@ -6,22 +6,44 @@ ru:
   MANUFACTURE: "ПРОИЗВОДСТВО"
   RESEARCH: "ИССЛЕДОВАНИЯ"
   SERVICES: "ФУНКЦИИ"
-  Base Services: "Службы базы"
+  A-Z: "А-Я"
+ #Tables
   Craft: "Судно"
   Weapon: "Орудие"
   Armor: "Броня"
   see also: "см. также"
-  See/Hide all variants: "Показать/Скрыть все варианты"
+  Show/Hide all variants: "Показать/Скрыть все варианты"
   Item: "Предмет"
+  mode: "режим"
+  accuracy: "точность"
+  cost: "стоимость"
   damage: "урон"
   Facility: "Сооружение"
+  Expand: "Показать"
+  Research: "Исследования"
+  Manufacture: "Производство"
   Unit: "Персонаж"
+  Allowed Craft: "Допустимый транспорт"
+  Allowed Item Categories: "Допустимые категории снаряжения"
+  Allowed Armors: "Допустимая броня"
+  Allowed Vehicles: "Допустимая поддержка"
+  Deployments: "Миссии"
+ #Subheaders
+  dependencies: "Зависит от:" #STR_DEPENDS_ON
+  seeAlso: "Необходимо:" #STR_ITEM_REQUIRED
+  requiresBaseFunc: "Необходимые функции:" #STR_SERVICES_REQUIRED
+  freeFrom: "Получить бесплатно от:" #STR_GET_FOR_FREE_FROM
+  leadsTo: "Ведет к:" #STR_LEADS_TO
+  unlocks: "Открывает:" #STR_UNLOCKS
+  disables: "Блокирует:" #STR_DISABLES
+  getOneFree: "Дает бесплатно:" #STR_GIVES_ONE_FOR_FREE
+  manufacture: "Требуется для производства:" #STR_REQUIRED_BY(partly)
+
   HOME: "НА ГЛАВНУЮ"
   Search...: "Поиск..."
-  A-Z: "А-Я"
   Searching: "Ищем"
-  Query too short: "Запрос слишком короткий!"
-  Nothing found: "Ничего не найдено."
+  Query too short: "Запрос слишком короткий"
+  Nothing found: "Ничего не найдено"
   Language: "Язык"
   Lang: "Язык" #mobile, five letters max!
   Download (forum link): "Скачать с форума"
@@ -31,9 +53,10 @@ ru:
   Welcome onboard, seagal! Take your bunk at da orlop and have some X-Grog, yarrr!: "Добро пожаловать на борт, матрос! Займи койку на нижней палубе да выпей немного Икс-Грога, йаррр!"
   # Pt.2
   Arrr, what da FLUFF is X-Piratez stuff?: "Аррр, что еще за чертовщина эти ваши X-Piratez?"
-  X-Piratez is a total conversion mod designed for OpenXcom, a free open-source reimplementation of: "X-Piratez - это глобальный мод для OpenXcom - распространяемого на бесплатной основе переосмысления"
-  Enemy Unknown (1994) and Terror From The Deep. There are major gameplay differences, as well as many additions to research, manufacture, base facilities, and so on. Piratez is designed for the veteran X-Com player seeking a much longer and challenging campaign.: "Enemy Unknown (1994) и Terror From The Deep с открытым кодом. В игровой процесс внесены существенные изменения: множество дополнительных исследований, производственных проектов, модулей базы и так далее. Целевая аудитория - ветераны X-Com, заинтересованные в более длительной и сложной кампании."
-  The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. Piratez is the biggest OpenXcom mod to date.: "На дворе 2601 год. Земля уже давным-давно завоёвана пришельцами. Вы - лидер шайки мутанток-пираток. Грабьте пришельцев и их прихвостней из числа землян ради поживы, поддержания авторитета и просто по приколу. Piratez - это самый крупный на сегодняшний день мод для OpenXcom."
+  X-Piratez is a total conversion mod designed for OpenXcom, a free open-source reimplementation of UFO: "X-Piratez - это глобальный мод для OpenXcom - распространяемого на бесплатной основе переосмысления UFO"
+  Enemy Unknown (1994) and X-Com: "Enemy Unknown (1994) и X-Com"
+  Terror From The Deep. There are major gameplay differences, as well as a complete overhaul of research, manufacture, base facilities, and so on. X-Piratez is designed for the veteran X-Com player seeking a much longer and complex campaign.: "Terror From The Deep с открытым кодом. В игровой процесс внесены существенные изменения, а также полностью переработаны исследования, производственные проекты, модули базы и так далее. Целевая аудитория - ветераны X-Com, заинтересованные в более длительной и сложной кампании."
+  The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. X-Piratez is the biggest OpenXcom mod to date.: "На дворе 2601 год. Земля уже давным-давно завоёвана пришельцами. Вы - лидер шайки мутанток-пираток. Грабьте пришельцев и их прихвостней из числа землян ради поживы, поддержания авторитета и просто по приколу. X-Piratez - это самый крупный на сегодняшний день мод для OpenXcom."
   # Pt.2,5
   Download mod: "Скачайте мод"
   join our community with: "присоединитесь к нашему сообществу на"
@@ -47,7 +70,7 @@ ru:
   # Pt.4
   WARNINGS: "ПРЕДУПРЕЖДЕНИЯ"
   Contains some NUDITY of both sexes. You've been warned. Also take note this is not any porn-quality T&A since it's not a porn game.: "Есть немного мужской и женской ОБНАЖЁНКИ. Вы предупреждены. Учтите, что здесь нет прелестей порнографического качества, поскольку это не порноигра."
-  Do not install OpenXcom nightlies! They are not compatible with Piratez.: "Не устанавливайте Nightly-сборки OpenXcom! Они несовместимы с Piratez."
+  Do not install OpenXcom nightlies! They are not compatible with X-Piratez. (Requires OXCE version.): "Не устанавливайте Nightly-сборки OpenXcom! Они несовместимы с X-Piratez. (Требуется использовать только OXCE)."
   If you absolutely can't stand bikini babes fighting Nazis with chainsaws, you may suffer some trauma.: "Если вы абсолютно не приемлите девушек в бикини, распиливающих нацистов бензопилами, то можете получить психологическую травму."
   If you're looking for a tactical game that doesn't require brains, try DOTA instead.: "Если вам нужна тактическая игра, не требующая мозгов, играйте лучше в DOTA."
   Read or Die.: "Читай или сдохни."
