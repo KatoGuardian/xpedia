@@ -71,7 +71,7 @@ a:hover {
 }
 
 .number-table td{
-  border-left: solid 0.3px  #141d3d;
+  border-left: solid 0.3px  #8d8570;
   /* #382C44 */
 }
 
@@ -82,7 +82,7 @@ a:hover {
 }
 
 .number-table-header{
-  border-bottom: solid 0.3px #141d3d;
+  border-bottom: solid 0.3px #8d8570;
   /* #382C44 */
 }
 
@@ -230,7 +230,7 @@ audio{
 }
 
 .attacks-table td{
-  border: solid 0.3px  rgb(181, 184, 175);
+  border: solid 0.3px  #8d8570;
   /* #382C44 */
   font-size: 14pt;
 }
