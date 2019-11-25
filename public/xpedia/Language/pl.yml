@@ -1,21 +1,80 @@
 pl:
-  # UI
-  Items: "Предметы"
-  Item: "Предмет"
-  Conditions: "Условия"
-  Categories: "Категории"
-  Manufacture: "Производство"
-  Research: "Исследования"
-  Services: "Службы"
-  Base Services: "Службы базы"
-  Armor: "Броня"
-  Weapon: "Оружие"
-  damage: "урон"
-  HOME: "НА ГЛАВНУЮ"
-  Search...: "Поиск..."
-  Language: "Язык"
-  Lang: "Язык"
-  Download: "Скачать"
-  # intro
-  Welcome to The X-COM Files mod to OpenXcom website.: "Дорбро пожаловать на сайт мода к OpenXcom - The X-COM Files."
-  
+ # UI
+  ITEMS: "PRZEDMIOTY"
+  CONDITIONS: "WARUNKI"
+  CATEGORIES: "KATEGORIE"
+  MANUFACTURE: "PRODUKCJA"
+  RESEARCH: "BADANIA"
+  SERVICES: "FUNKCJE"
+
+ #Tables
+  Craft: "Statek"
+  Weapon: "Broń"
+  Armor: "Pancerz"
+  see also: "zobacz też"
+  Show/Hide all variants: "Pokaż/Ukryj wszystkie warianty"
+  Item: "Przedmiot"
+  mode: "typ ataku"
+  accuracy: "celność"
+  cost: "koszt"
+  damage: "obrażenia"
+  Facility: "Instalacja"
+  Expand: "Rozszerzać"
+  Research: "Badania"
+  Manufacture: "Produkcja"
+  Unit: "Jednostka"
+  Allowed Craft: "Dozwolone Statki"
+  Allowed Item Categories: "Dozwolone Kategorie Przedmiotów"
+  Allowed Armors: "Dozwolone Pancerze"
+  Allowed Vehicles: "Dozwolone Pomocniki"
+  Deployments: "Misje"
+ #Subheaders
+  dependencies: "Wymaga:" #STR_DEPENDS_ON
+  seeAlso: "Przedmioty wymagane:" #STR_ITEM_REQUIRED
+  requiresBaseFunc: "Wymagane funkcje:" #STR_SERVICES_REQUIRED
+  freeFrom: "Za darmo od:" #STR_GET_FOR_FREE_FROM
+  leadsTo: "Prowadzi do:" #STR_LEADS_TO
+  unlocks: "Odblokowuje:" #STR_UNLOCKS
+  disables: "Wyłącza:" #STR_DISABLES
+  getOneFree: "Daje jedno za darmo:" #STR_GIVES_ONE_FOR_FREE
+  manufacture: "Wymagane do produkcji:" #STR_REQUIRED_BY(partly)
+
+  HOME: "STRONA GŁÓWNA"
+  Search...: "Szukaj..."
+  Searching: "Szukanie"
+  Query too short: "Zapytanie za krótkie"
+  Nothing found: "Nic nie znaleziono"
+  Language: "Język"
+  Lang: "Język" #mobile, five letters max!
+  Download (forum link): "Pobierz (Łącze do forum)"
+  Download (from mod.io): "Pobierz (z mod.io)"
+ # intro
+  # Pt.1
+  Welcome onboard, seagal! Take your bunk at da orlop and have some X-Grog, yarrr!: "Witam na pokładzie, wilczyco morska! Zajmij koję pod pokładem i łyknij se X-Grogu, jo!"
+  # Pt.2
+  Arrr, what da FLUFF is X-Piratez stuff?: "Do stu tysięcy beczek zgniłej uberkapusty, co to jest to całe X-Piratez?"
+  X-Piratez is a total conversion mod designed for OpenXcom, a free open-source reimplementation of UFO: "X-Piratez to całkowita przeróbka gry OpenXcom, darmowej reimplementacji tytułu UFO"
+  Enemy Unknown (1994) and X-Com: "Enemy Unknown (1994) i X-Com"
+  Terror From The Deep. There are major gameplay differences, as well as a complete overhaul of research, manufacture, base facilities, and so on. X-Piratez is designed for the veteran X-Com player seeking a much longer and complex campaign.: "Terror From The Deep. Zawiera wiele zmian w mechanizmach rozgrywki, a także zupełna przebudowa struktury badań, projektów produkcyjnych, pomieszczeń bazy itd. Mod X-Piratez jest przeznaczony dla doświadczonych graczy w X-Com, którzy oczekują znacznie dłuższej i bardziej złożonej kampanii."
+  The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. X-Piratez is the biggest OpenXcom mod to date.: "Jest rok 2601. Ziemię dawno temu podbili kosmici. Dowodzisz bandą mutanckich piratek. Rabuj obcych i ich ludzkich sługusów dla zabawy, zysku i władzy. X-Piratez to obecnie największy mod dla OpenXcom."
+  # Pt.2,5
+  Download mod: "Pobierz modyfikację"
+  join our community with: "dołącz do naszej społeczności na"
+  Discord server: "Discordzie"
+  and: "i na"
+  forum: "forum"
+  # Pt.3
+  Current mod version is: "Obecna wersja moda to"
+  READ OR DIE. The Bootypedia is your friend. Trust me on that.: "CZYTAJ LUB GIŃ. Łupopedia to twój druh. Uwierz mi na słowo."
+  mod author, lead designer: "autor moda, główny projektant"
+  # Pt.4
+  WARNINGS: "UWAGA"
+  Contains some NUDITY of both sexes. You've been warned. Also take note this is not any porn-quality T&A since it's not a porn game.: "Zawiera trochę NAGOŚCI płci obojga. Zostałeś ostrzeżony. Poza tym miej na uwadze, że nie jest to wysokiej jakości porno, bo to nie gra porno."
+  Do not install OpenXcom nightlies! They are not compatible with X-Piratez. (Requires OXCE version.): "Nie instaluj podstawowego OpenXcom! Nie jest kompatybilne z X-Piratez. (Wymaga wersji OXCE.)"
+  If you absolutely can't stand bikini babes fighting Nazis with chainsaws, you may suffer some trauma.: "Jeśli odrzucają cię takie pomysły, jak laski w bikini walczące z hitlerowcami za pomocą pił motorowych, możesz odnieść obrażenia umysłowe."
+  If you're looking for a tactical game that doesn't require brains, try DOTA instead.: "Jeśli szukasz gry taktycznej niewymagającej mózgu, spróbuj raczej pograć w DOTA."
+  Read or Die.: "Czytaj lub giń."
+  Contains riddles. Not everything is what it seems.: "Zawiera łamigłówki. Nie wszystko jest takie, jak się wydaje."
+  A single campaign might take as much as 400 hours.: "Pojedyncza kampania może zająć nawet 400 godzin."
+  # Pt.4,5
+  Wiki is powered by: "Wiki jest zasilany przez"
