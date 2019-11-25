@@ -6,7 +6,7 @@
 } 
 
 html {
-  background:rgb(110, 83, 61)
+  background:rgb(110, 83, 61);
   /* #180C24 */
 }
 
@@ -91,20 +91,28 @@ a:hover {
 }
 
 h1{
-  font-size: larger;
+  font-size: 24pt;
+  text-shadow: 2px 2px 2px black;
 }
+
+h2{
+  font-size: large;
+}
+
+h3{
+  font-size: large;
+  position: relative;
+  bottom: 18px;
+} /* for "icon+text" headers, eg. warnings */
 
 h4{
   font-size: large;
+  text-shadow: 1px 1px 2px black;
 }
 
 em{
   color: greenyellow;
   font-style: normal;  
-}
-
-h1{
-  font-size: 24pt;
 }
 
 h1, h4{
@@ -385,7 +393,7 @@ button{
   background-color: rgb(82, 54, 31);
   padding: 10px;
   padding-bottom: 0;
-  border-radius: 5px;
+  border-radius: 15px;
 }
 
 .imgbox{
@@ -471,4 +479,48 @@ button{
 {
   background-color:rgb(231, 168, 96);
   border-radius: 5px;
+}
+
+.media-bar {
+  text-align: center;
+}
+
+.media-icon {
+  max-width: 48px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.guide {
+  background-color: #52361f;
+  border-radius: 15px;
+  padding: 0.5rem 1rem;
+  padding-left: 16px; /* Расстояние от линии до текста */ 
+}
+
+.guide ul {
+  list-style-type: decimal;
+}
+
+.warnings {
+  background-color: #52361f;
+  border-radius: 15px;
+  padding: 0.5rem 1rem;
+  padding-left: 16px; /* Расстояние от линии до текста */ 
+}
+
+.warnings ul {
+  font-size: 11pt;
+  list-style-type: square;
+}
+
+.warnings-icon {
+  max-width: 48px;
+  margin-right: 16px;
+  position: relative;
+  top: 20px;
+}
+
+.title-image {
+  max-width: justify;
 }

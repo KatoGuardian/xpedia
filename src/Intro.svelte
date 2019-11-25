@@ -5,7 +5,7 @@
 
 <div class="columns">
   <div class="column is-full-touch is-9-desktop">
-    <h1>X-PirateZ</h1>
+    <img class="title-image" src="https://i.imgur.com/mf3akiw.png" alt="Title art by Anna Zemlina" title="Art by Anna Zemlina. X-Piratez logo by Alla Panova.">
       {rul.str("Welcome onboard, seagal! Take your bunk at da orlop and have some X-Grog, yarrr!")}
     <br/>
     <h4>{rul.str("Arrr, what da FLUFF is X-Piratez stuff?")}</h4>
@@ -13,9 +13,29 @@
       <br/>
       {rul.str("The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. X-Piratez is the biggest OpenXcom mod to date.")}<br/> 
       <br/>
-      <a href="https://openxcom.org/forum/index.php/topic,3626.0.html" target="_blank">{rul.str("Download mod")}</a>, {rul.str("join our community with")} <a href="https://discord.gg/b5KXPvX" target="_blank">{rul.str("Discord server")}</a> {rul.str("and")} <a href="https://openxcom.org/forum/index.php/board,18.0.html" target="_blank">{rul.str("forum")}</a>!<br/>
+      <a href="https://openxcom.org/forum/index.php/topic,3626.0.html" target="_blank">{rul.str("Download mod")}</a>, {rul.str("join our community with")} <a href="https://discordapp.com/invite/b5KXPvX" target="_blank">{rul.str("Discord server")}</a> {rul.str("and")} <a href="https://openxcom.org/forum/index.php/board,18.0.html" target="_blank">{rul.str("forum")}</a>!<br/>
       <br/>
-    <h4>{rul.str("Current mod version is")} K2</h4>
+      <div class="columns">
+      <div class="column media-bar" style="padding-bottom: 0px;">
+        <a href="https://discordapp.com/invite/b5KXPvX" target="_blank"><img class="media-icon" src="https://cdn3.iconfinder.com/data/icons/popular-services-brands-vol-2/512/discord-256.png" alt="Discord" title="Discord server"></a>
+        <a href="https://openxcom.org/forum/index.php/board,18.0.html" target="_blank"><img class="media-icon" src="https://www.gamerguides.com/forum/uploads/FG4SCQ58YFXV.jpg" alt="Forum" title="Forum"></a>
+        <a href="https://vk.com/xpiratez" target="_blank"><img class="media-icon" src="https://cdn3.iconfinder.com/data/icons/social-network-icon/112/vk-256.png" alt="VK" title="VK community"></a>
+      </div>
+    </div>
+    <h1>{rul.str("Current mod version is")} K2</h1>
+      <div class="guide">
+      <h2>{rul.str("PC Installation & Update Guide")}</h2>
+      <ul class="guide">
+        <li>{rul.str("Download the X-Piratez archive via the forum link (the main one) or from mod.io (alternatively.)")}</li>
+        <li>{rul.str("Unzip the archive to a NEW folder. It strongly recommended not merging the contents with your existing Dioxine_XPiratez folder, as this can lead to various problems.")}</li>
+        <li>{rul.str("You need your files of the original UFO")}: {rul.str("Enemy Unknown or X-Com")}: {rul.str("UFO Defense game (either DOS or Steam version) to launch the mod. Copy them to the Dioxine_XPiratez\\UFO folder.")}</li>
+        <li>{rul.str("X-Piratez is distributed with the compatible OXCE engine version. There is no need to replace or upgrade OXCE, as other builds may not be compatible with your version of X-Piratez. For this reason, we recommend that you turn off the 'Automatic update check' user option (options/advanced/general.) This option does not check for updates of the mod itself, in any case it will have to be downloaded from the forum or mod.io")}</li>
+        <li>{rul.str("If you already have X-Piratez saves, you can copy them from the old Dioxine_XPiratez\\user\\piratez folder to the new one.")}</li>
+        <li>{rul.str("Optionally, you can also copy user settings from the old Dioxine_XPiratez\\user folder to the new one (options.cfg file.)")}</li>
+        <li>{rul.str("Optionally, don't delete your outdated verion. Just in case.")}</li>
+      </ul>
+    </div>
+    <h4> </h4>
       <div>
         <div class="quote">
           "{rul.str("READ OR DIE. The Bootypedia is your friend. Trust me on that.")}"
@@ -24,17 +44,22 @@
           – Dioxine, {rul.str("mod author, lead designer")}
         </div> 
       </div>
-      <h4>{rul.str("WARNINGS")}</h4>
-      1. {rul.str("Contains some NUDITY of both sexes. You've been warned. Also take note this is not any porn-quality T&A since it's not a porn game.")}<br/>
-      2. {rul.str("Do not install OpenXcom nightlies! They are not compatible with X-Piratez. (Requires OXCE version.)")}<br/>
-      3. {rul.str("If you absolutely can't stand bikini babes fighting Nazis with chainsaws, you may suffer some trauma.")}<br/>
-      4. {rul.str("If you're looking for a tactical game that doesn't require brains, try DOTA instead.")}<br/>
-      5. {rul.str("Read or Die.")}<br/>
-      6. {rul.str("Contains riddles. Not everything is what it seems.")}<br/>
-      7. {rul.str("A single campaign might take as much as 400 hours.")}<br/>
+      <h4> </h4>
+      <div class="warnings">
+      <h3><img class="warnings-icon" src="https://i.imgur.com/IUs2g5H.png" alt="!!">{rul.str("WARNINGS")}</h3>
+      <ul class="warnings">
+        <li>{rul.str("Contains some NUDITY of both sexes. You've been warned. Also take note this is not any porn-quality T&A since it's not a porn game.")}</li>
+        <li>{rul.str("Do not install OpenXcom nightlies! They are not compatible with X-Piratez. (Requires OXCE version.)")}</li>
+        <li>{rul.str("If you absolutely can't stand bikini babes fighting Nazis with chainsaws, you may suffer some trauma.")}</li>
+        <li>{rul.str("If you're looking for a tactical game that doesn't require brains, try DOTA instead.")}</li>
+        <li>{rul.str("A single campaign might take as much as 400 hours.")}</li>
+        <li>{rul.str("Contains riddles. Not everything is what it seems.")}</li>
+        <li>{rul.str("Read or Die.")}</li>
+      </ul>
+    </div>
     <br/>
 
-    {rul.str("Wiki is powered by")} <a href="https://github.com/baturinsky/xpedia/">Baturinsky's XPedia</a>.
+    {rul.str("Wiki is powered by")} <a href="https://github.com/baturinsky/xpedia/" target="_blank">Baturinsky's XPedia</a>.
 
   </div>
   <div class="column is-hidden-touch is-3-desktop">
@@ -42,10 +67,12 @@
     <button title="Download" class="downloadbtn" onclick=" window.open('https://openxcom.mod.io/x-piratez', '_blank'); return false;">{rul.str("Download (from mod.io)")}</button>
     <div class="imgcol">
       <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen1209.png" alt="screen1209.png">
-      <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen334.png" alt="screen334.png">
+      <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen164.png" alt="screen164.png">
       <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen757.png" alt="screen757.png">
       <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen135.png" alt="screen135.png">
       <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen789.png" alt="screen789.png">
+      <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen692.png" alt="screen692.png">
+      <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen064.png" alt="screen064.png">
     </div>
   </div>
 </div>
