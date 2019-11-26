@@ -16,8 +16,9 @@ body {
 }
 
 a {
-	color: #ffc67c;
-	text-decoration: none;
+  color: #ffc67c;
+  text-shadow: 0px 1px 0px black;
+  text-decoration: none;
 }
 
 a:hover {
@@ -483,13 +484,13 @@ button{
 }
 
 .media-bar {
-  padding-top: 50px;
+  padding-top: 40px;
   padding-bottom: 0px;
   text-align: center;
 }
 
 .media-icon {
-  max-width: 64px;
+  max-width: 48px;
   margin-left: 16px;
   margin-right: 16px;
 }
@@ -559,6 +560,7 @@ button{
 
 .man {
   color: #ffc67c;
+  text-shadow: 0px 1px 1px black;
 }
 
 .credits {
