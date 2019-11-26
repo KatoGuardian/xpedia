@@ -117,10 +117,10 @@
     overflow-x: hidden;
     background:rgb(82, 54, 31);
   }
-  .narrow {
+/*  .narrow {
     max-width: 800px;
   }
-  /* .menu-list a:visited {
+ .menu-list a:visited {
     color: white;
   } */
   .active-article-option {
