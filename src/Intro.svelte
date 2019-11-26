@@ -5,18 +5,15 @@
 
 <div class="columns">
   <div class="column is-full-touch is-9-desktop">
-    <img class="title-image" src="https://i.imgur.com/mf3akiw.png" alt="Title art by Anna Zemlina" title="Art by Anna Zemlina. X-Piratez logo by Alla Panova.">
+    <img class="title-image" src="xpedia/images/Title.png" alt="Title art by Anna Zemlina" title="Art by Anna Zemlina. X-Piratez logo by Alla Panova.">
       {rul.str("Welcome onboard, seagal! Take your bunk at da orlop and have some X-Grog, yarrr!")}
     <br/>
     <h4>{rul.str("Arrr, what da FLUFF is X-Piratez stuff?")}</h4>
       {rul.str("X-Piratez is a total conversion mod designed for OpenXcom, a free open-source reimplementation of UFO")}: {rul.str("Enemy Unknown (1994) and X-Com")}: {rul.str("Terror From The Deep. There are major gameplay differences, as well as a complete overhaul of research, manufacture, base facilities, and so on. X-Piratez is designed for the veteran X-Com player seeking a much longer and complex campaign.")}<br/>
       <br/>
-      {rul.str("The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. X-Piratez is the biggest OpenXcom mod to date.")}<br/> 
-      <br/>
-      <a href="https://openxcom.org/forum/index.php/topic,3626.0.html" target="_blank">{rul.str("Download mod")}</a>, {rul.str("join our community with")} <a href="https://discordapp.com/invite/b5KXPvX" target="_blank">{rul.str("Discord server")}</a> {rul.str("and")} <a href="https://openxcom.org/forum/index.php/board,18.0.html" target="_blank">{rul.str("forum")}</a>!<br/>
-      <br/>
+      {rul.str("The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. X-Piratez is the biggest OpenXcom mod to date.")}
       <div class="columns">
-      <div class="column media-bar" style="padding-bottom: 0px;">
+      <div class="column media-bar">
         <a href="https://discordapp.com/invite/b5KXPvX" target="_blank"><img class="media-icon" src="https://cdn3.iconfinder.com/data/icons/popular-services-brands-vol-2/512/discord-256.png" alt="Discord" title="Discord server"></a>
         <a href="https://openxcom.org/forum/index.php/board,18.0.html" target="_blank"><img class="media-icon" src="https://www.gamerguides.com/forum/uploads/FG4SCQ58YFXV.jpg" alt="Forum" title="Forum"></a>
         <a href="https://vk.com/xpiratez" target="_blank"><img class="media-icon" src="https://cdn3.iconfinder.com/data/icons/social-network-icon/112/vk-256.png" alt="VK" title="VK community"></a>
@@ -29,10 +26,10 @@
         <li>{rul.str("Download the X-Piratez archive via the forum link (the main one) or from mod.io (alternatively.)")}</li>
         <li>{rul.str("Unzip the archive to a NEW folder. It strongly recommended not merging the contents with your existing Dioxine_XPiratez folder, as this can lead to various problems.")}</li>
         <li>{rul.str("You need your files of the original UFO")}: {rul.str("Enemy Unknown or X-Com")}: {rul.str("UFO Defense game (either DOS or Steam version) to launch the mod. Copy them to the Dioxine_XPiratez\\UFO folder.")}</li>
-        <li>{rul.str("X-Piratez is distributed with the compatible OXCE engine version. There is no need to replace or upgrade OXCE, as other builds may not be compatible with your version of X-Piratez. For this reason, we recommend that you turn off the 'Automatic update check' user option (options/advanced/general.) This option does not check for updates of the mod itself, in any case it will have to be downloaded from the forum or mod.io")}</li>
+        <li>{rul.str("X-Piratez is distributed with the compatible OXCE engine version. There is no need to replace or upgrade OXCE, as other builds may not be compatible with your version of X-Piratez. Because of that, we recommend you turn off the 'Automatic update check' user option (options/advanced/general.) This option does not check for updates of the mod itself, in any case it has to be downloaded from the forum or mod.io")}</li>
         <li>{rul.str("If you already have X-Piratez saves, you can copy them from the old Dioxine_XPiratez\\user\\piratez folder to the new one.")}</li>
         <li>{rul.str("Optionally, you can also copy user settings from the old Dioxine_XPiratez\\user folder to the new one (options.cfg file.)")}</li>
-        <li>{rul.str("Optionally, don't delete your outdated verion. Just in case.")}</li>
+        <li>{rul.str("Optionally, don't delete your outdated version. Just in case.")}</li>
       </ul>
     </div>
     <h4> </h4>
@@ -46,7 +43,7 @@
       </div>
       <h4> </h4>
       <div class="warnings">
-      <h3><img class="warnings-icon" src="https://i.imgur.com/IUs2g5H.png" alt="!!">{rul.str("WARNINGS")}</h3>
+      <h3><img class="warnings-icon" src="xpedia/images/warning.png" alt="!!">{rul.str("WARNINGS")}</h3>
       <ul class="warnings">
         <li>{rul.str("Contains some NUDITY of both sexes. You've been warned. Also take note this is not any porn-quality T&A since it's not a porn game.")}</li>
         <li>{rul.str("Do not install OpenXcom nightlies! They are not compatible with X-Piratez. (Requires OXCE version.)")}</li>
@@ -58,21 +55,79 @@
       </ul>
     </div>
     <br/>
-
-    {rul.str("Wiki is powered by")} <a href="https://github.com/baturinsky/xpedia/" target="_blank">Baturinsky's XPedia</a>.
-
+    <div class="cellar">
+<!-- Block#1 -->
+      <div class="extlink" onclick="window.open('https://www.paypal.com/myaccount/transfer/homepage', '_blank')">
+        <img class="extlink-icon" src="xpedia/images/Dioxine.png" alt="Dioxine">
+        <br>
+        <strong class="man">Dioxine</strong>
+        <br>
+        {rul.str("mod author, Grand Master")}
+        <br>
+        <br>
+        {rul.str("You can send your donations through PayPal to")}
+        <br>
+        GSDioxine@gmail.com
+      </div>
+<!-- Block#2 -->
+      <div class="extlink" onclick="window.open('https://www.patreon.com/meridian', '_blank')">
+        <img class="extlink-icon" src="xpedia/images/Meridian.png" alt="Meridian">
+        <br>
+        <strong class="man">Meridian</strong>
+        <br>
+        {rul.str("chief OXCE programmer, Wise Alchemist")}
+        <br>
+        <br>
+        {rul.str("You can send your donations on Patreon.")}
+      </div>      
+    </div>
+    <br/>
+    <h4> </h4>
+    <div class="cellar">
+<!-- Block#3 -->
+      <div class="extlink" onclick="window.open('https://www.transifex.com/openxcom/openxcom-mods/dashboard', '_blank')">
+        <img class="extlink-icon" src="xpedia/images/TX.png" alt="Transifex">
+        <br>
+        <strong class="man">{rul.str("Join Transifex team!")}</strong>
+        <br>
+        {rul.str("All mods are translated by the players")}
+        <br>
+        <br>
+        {rul.str("OpenXcom needs your translation skills!")}
+      </div>
+<!-- Block#4 -->      
+      <div class="extlink" onclick="window.open('https://discordapp.com/invite/b5KXPvX', '_blank')">
+        <img class="extlink-icon" src="xpedia/images/XPZ.png" alt="Troubleshooting here">
+        <br>
+        <strong class="man">X-Piratez Discord</strong>
+        <br>
+        {rul.str("Community & support")}
+        <br>        
+        <br>
+        {rul.str("Here you can ask any questions associated with this site.")}
+        <br/>
+        {rul.str("Ping @Kato_guardian and we will hear you.")}
+      </div>      
+    </div>
+    <br/>
+    <h4> </h4>
+    <br/>
+    <div class="credits">{rul.str("Wiki is powered by")} <a href="https://github.com/baturinsky/xpedia/" target="_blank">Baturinsky's XPedia</a>.
+    </div>
   </div>
   <div class="column is-hidden-touch is-3-desktop">
     <button title="Download" class="downloadbtn" onclick=" window.open('https://openxcom.org/forum/index.php/topic,3626.0.html', '_blank'); return false;">{rul.str("Download (forum link)")}</button>
     <button title="Download" class="downloadbtn" onclick=" window.open('https://openxcom.mod.io/x-piratez', '_blank'); return false;">{rul.str("Download (from mod.io)")}</button>
     <div class="imgcol">
+      <img class="imgbox" src="xpedia/images/screen034.png" alt="screen034.png">
+      <img class="imgbox" src="xpedia/images/screen033.png" alt="screen033.png">
       <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen1209.png" alt="screen1209.png">
       <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen164.png" alt="screen164.png">
       <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen757.png" alt="screen757.png">
       <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen135.png" alt="screen135.png">
       <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen789.png" alt="screen789.png">
       <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen692.png" alt="screen692.png">
-      <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen064.png" alt="screen064.png">
+      <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen064.png" alt="screen064.png">      
     </div>
   </div>
 </div>
