@@ -13,6 +13,7 @@ let files = [
   "xpedia/Language/cs.yml",
   "xpedia/Language/es-ES.yml",
   "xpedia/images/Dioxine.png",
+  "xpedia/images/Emerald.png",
   "xpedia/images/Meridian.png",
   "xpedia/images/screen033.png",
   "xpedia/images/screen034.png",

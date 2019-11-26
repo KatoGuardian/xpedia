@@ -11,12 +11,15 @@
     <h4>{rul.str("Arrr, what da FLUFF is X-Piratez stuff?")}</h4>
       {rul.str("X-Piratez is a total conversion mod designed for OpenXcom, a free open-source reimplementation of UFO")}: {rul.str("Enemy Unknown (1994) and X-Com")}: {rul.str("Terror From The Deep. There are major gameplay differences, as well as a complete overhaul of research, manufacture, base facilities, and so on. X-Piratez is designed for the veteran X-Com player seeking a much longer and complex campaign.")}<br/>
       <br/>
-      {rul.str("The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. X-Piratez is the biggest OpenXcom mod to date.")}
+      {rul.str("The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. X-Piratez is the biggest OpenXcom mod to date.")}<br/>
+      <br/>
+      {rul.str("We appreciate Anna Zemlina for her fantastic artworks made especially for the mod.")}
       <div class="columns">
       <div class="column media-bar">
         <a href="https://discordapp.com/invite/b5KXPvX" target="_blank"><img class="media-icon" src="https://cdn3.iconfinder.com/data/icons/popular-services-brands-vol-2/512/discord-256.png" alt="Discord" title="Discord server"></a>
         <a href="https://openxcom.org/forum/index.php/board,18.0.html" target="_blank"><img class="media-icon" src="https://www.gamerguides.com/forum/uploads/FG4SCQ58YFXV.jpg" alt="Forum" title="Forum"></a>
         <a href="https://vk.com/xpiratez" target="_blank"><img class="media-icon" src="https://cdn3.iconfinder.com/data/icons/social-network-icon/112/vk-256.png" alt="VK" title="VK community"></a>
+        <a href="https://www.deviantart.com/emerald--weapon" target="_blank"><img class="media-icon" src="xpedia/images/Emerald.png" alt="Anna Zemlina (artist)" title="Anna Zemlina (artist)"></a>
       </div>
     </div>
     <h1>{rul.str("Current mod version is")} K2</h1>
@@ -62,7 +65,7 @@
         <br>
         <strong class="man">Dioxine</strong>
         <br>
-        {rul.str("mod author, Grand Master")}
+        {rul.str("mod author, the Grand Master")}
         <br>
         <br>
         {rul.str("You can send your donations through PayPal to")}
@@ -75,7 +78,7 @@
         <br>
         <strong class="man">Meridian</strong>
         <br>
-        {rul.str("chief OXCE programmer, Wise Alchemist")}
+        {rul.str("chief OXCE programmer, the Wise Alchemist")}
         <br>
         <br>
         {rul.str("You can send your donations on Patreon.")}
