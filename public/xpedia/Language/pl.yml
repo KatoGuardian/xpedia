@@ -15,18 +15,24 @@ pl:
   Show/Hide all variants: "Pokaż/Ukryj wszystkie warianty"
   Item: "Przedmiot"
   mode: "typ ataku"
+  Snap: "Szybki"
+  Aimed: "Celowany"
+  Auto: "Seria"
+  Melee: "Cios"
   accuracy: "celność"
   cost: "koszt"
   damage: "obrażenia"
+  Launcher: "Wyrzutnia"
+  Clip: "Amunicja"
   Facility: "Instalacja"
   Expand: "Rozszerzać"
   Research: "Badania"
   Manufacture: "Produkcja"
   Unit: "Jednostka"
-  Allowed Craft: "Dozwolone Statki"
-  Allowed Item Categories: "Dozwolone Kategorie Przedmiotów"
-  Allowed Armors: "Dozwolone Pancerze"
-  Allowed Vehicles: "Dozwolone Pomocniki"
+  Allowed Craft: "Dozwolone statki"
+  Allowed Item Categories: "Dozwolone kategorie przedmiotów"
+  Allowed Armors: "Dozwolone pancerze"
+  Allowed Vehicles: "Dozwolone pomocniki"
   Deployments: "Misje"
  #Subheaders
   dependencies: "Wymaga:" #STR_DEPENDS_ON
@@ -38,6 +44,7 @@ pl:
   disables: "Wyłącza:" #STR_DISABLES
   getOneFree: "Daje jedno za darmo:" #STR_GIVES_ONE_FOR_FREE
   manufacture: "Wymagane do produkcji:" #STR_REQUIRED_BY(partly)
+  randomProducedItems: "Produkcja losowa" #STR_RANDOM_PRODUCTION_DISCLAIMER
 
   HOME: "STRONA GŁÓWNA"
   Search...: "Szukaj..."
@@ -57,17 +64,29 @@ pl:
   Enemy Unknown (1994) and X-Com: "Enemy Unknown (1994) i X-Com"
   Terror From The Deep. There are major gameplay differences, as well as a complete overhaul of research, manufacture, base facilities, and so on. X-Piratez is designed for the veteran X-Com player seeking a much longer and complex campaign.: "Terror From The Deep. Zawiera wiele zmian w mechanizmach rozgrywki, a także zupełna przebudowa struktury badań, projektów produkcyjnych, pomieszczeń bazy itd. Mod X-Piratez jest przeznaczony dla doświadczonych graczy w X-Com, którzy oczekują znacznie dłuższej i bardziej złożonej kampanii."
   The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. X-Piratez is the biggest OpenXcom mod to date.: "Jest rok 2601. Ziemię dawno temu podbili kosmici. Dowodzisz bandą mutanckich piratek. Rabuj obcych i ich ludzkich sługusów dla zabawy, zysku i władzy. X-Piratez to obecnie największy mod dla OpenXcom."
+  We appreciate Anna Zemlina for her fantastic artworks created especially for the mod.: "Dziękujemy Anna Zemlina za jej fantastyczne dzieła sztuki stworzone specjalnie na potrzeby moda."
   # Pt.2,5
-  Download mod: "Pobierz modyfikację"
-  join our community with: "dołącz do naszej społeczności na"
-  Discord server: "Discordzie"
-  and: "i na"
-  forum: "forum"
+  #Download mod: "Pobierz modyfikację"
+  #join our community with: "dołącz do naszej społeczności na"
+  #Discord server: "Discordzie"
+  #and: "i na"
+  #forum: "forum"
   # Pt.3
   Current mod version is: "Obecna wersja moda to"
+  PC Installation & Update Guide: ""
+  Download the X-Piratez archive via the forum link (the main one) or from mod.io (alternatively.): ""
+  Unzip the archive to a NEW folder. It strongly recommended not merging the contents with your existing Dioxine_XPiratez folder, as this can lead to various problems.: ""
+  You need your files of the original UFO: ""
+  Enemy Unknown or X-Com: ""
+  UFO Defense game (either DOS or Steam version) to launch the mod. Copy them to the Dioxine_XPiratez\UFO folder.: ""
+  X-Piratez is distributed with the compatible OXCE engine version. There is no need to replace or upgrade OXCE, as other builds may not be compatible with your version of X-Piratez. Because of that, we recommend you turn off the 'Automatic update check' user option (options/advanced/general.) This option does not check for updates of the mod itself, in any case it has to be downloaded from the forum or mod.io: ""
+  If you already have X-Piratez saves, you can copy them from the old Dioxine_XPiratez\user\piratez folder to the new one.: ""
+  Optionally, you can also copy user settings from the old Dioxine_XPiratez\user folder to the new one (options.cfg file.): ""
+  Optionally, don't delete your outdated version. Just in case.: ""
+  # Pt.4
   READ OR DIE. The Bootypedia is your friend. Trust me on that.: "CZYTAJ LUB GIŃ. Łupopedia to twój druh. Uwierz mi na słowo."
   mod author, lead designer: "autor moda, główny projektant"
-  # Pt.4
+  # Pt.5
   WARNINGS: "UWAGA"
   Contains some NUDITY of both sexes. You've been warned. Also take note this is not any porn-quality T&A since it's not a porn game.: "Zawiera trochę NAGOŚCI płci obojga. Zostałeś ostrzeżony. Poza tym miej na uwadze, że nie jest to wysokiej jakości porno, bo to nie gra porno."
   Do not install OpenXcom nightlies! They are not compatible with X-Piratez. (Requires OXCE version.): "Nie instaluj podstawowego OpenXcom! Nie jest kompatybilne z X-Piratez. (Wymaga wersji OXCE.)"
@@ -76,5 +95,20 @@ pl:
   Read or Die.: "Czytaj lub giń."
   Contains riddles. Not everything is what it seems.: "Zawiera łamigłówki. Nie wszystko jest takie, jak się wydaje."
   A single campaign might take as much as 400 hours.: "Pojedyncza kampania może zająć nawet 400 godzin."
-  # Pt.4,5
+ #External Links
+  #Block1
+  mod author, the Grand Master: "autor moda, Wielki Mistrz"
+  You can send your donations through PayPal to: "Możesz wysłać swoje darowizny za pośrednictwem PayPal na adres"
+  #Block2
+  chief OXCE programmer, the Wise Alchemist: "główny programista OXCE, Mądry Alchemik"
+  You can send your donations on Patreon.: "Możesz wysłać swoje darowizny na Patreon."
+  #Block3
+  Join the Transifex team!: "Dołącz do zespołu Transifex!"
+  All mods are translated by the players: "Wszystkie mody są tłumaczone przez graczy"
+  OpenXcom needs your translation skills!: "OpenXcom potrzebuje Twoich umiejętności tłumaczeniowych!"
+  #Block4
+  Community & support: "Społeczność i wsparcie"
+  Here you can ask any questions associated with this site.: "Tutaj możesz zadawać pytania związane z tą serwis internetowy."
+  Ping @Kato_guardian and we will hear you.: "Ping @Kato_guardian, a my usłyszymy."
+ #Credits
   Wiki is powered by: "Wiki jest zasilany przez"
