@@ -18,7 +18,7 @@
   </tr>
 
   {#if 'randomProducedItems' in manufacture}
-    <tr><td colspan="2" class="table-subheader">{rul.decamelize('randomProducedItems')}</td></tr>
+    <tr><td colspan="2" class="table-subheader">{rul.str('randomProducedItems')}</td></tr>
     <tr><td colspan="2">
       <table class="number-table" width="100%" style="margin:0px">
       {#each manufacture.randomProducedItems as chance}
