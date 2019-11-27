@@ -64,7 +64,7 @@
   {#if (item.sprite && item.sprite != "Resources/Blanks/Blank.png") ||attacks.length > 0}
     <tr> <td colspan="2">
       <div style="display: flex; align-items: flex-start; margin: 5px 3px;">
-      <CanvasImage src={rul.sprite(item.sprite)} maxWidth={32*item.invWidth} maxHeight={32*item.invHeight} zoom="2"/>
+      <CanvasImage src={rul.sprite(item.sprite)} maxWidth={64*item.invWidth} maxHeight={96*item.invHeight} zoom="3"/>
       {#if attacks.length > 0}
         <table class="attacks-table">
           <thead>

@@ -5178,3 +5178,7 @@ dist/common/Language/Technical/es_419.yml
 dist/common/Language/OXCE/es_419.yml
 dist/common/Language/Android/es_419.yml
 dist/xpedia/Language/pl.yml
+public/common/
+public/standard/
+public/UFO/
+public/user/
