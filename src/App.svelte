@@ -125,7 +125,8 @@
   } */
   .active-article-option {
     background: rgb(231, 168, 96);
-    color: black;
+    font-weight: bold;
+    color: white;
   }
 
   .centered {
