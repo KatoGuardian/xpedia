@@ -13,7 +13,7 @@
       <br/>
       {rul.str("The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. X-Piratez is the biggest OpenXcom mod to date.")}<br/>
       <br/>
-      {rul.str("We appreciate Anna Zemlina for her fantastic artworks made especially for the mod.")}
+      {rul.str("We appreciate Anna Zemlina for her fantastic artworks created especially for the mod.")}
       <div class="columns">
       <div class="column media-bar">
         <a href="https://discordapp.com/invite/b5KXPvX" target="_blank"><img class="media-icon" src="https://cdn3.iconfinder.com/data/icons/popular-services-brands-vol-2/512/discord-256.png" alt="Discord" title="Discord server"></a>
@@ -91,7 +91,7 @@
       <div class="extlink" onclick="window.open('https://www.transifex.com/openxcom/openxcom-mods/dashboard', '_blank')">
         <img class="extlink-icon" src="xpedia/images/TX.png" alt="Transifex">
         <br>
-        <strong class="man">{rul.str("Join Transifex team!")}</strong>
+        <strong class="man">{rul.str("Join the Transifex team!")}</strong>
         <br>
         {rul.str("All mods are translated by the players")}
         <br>

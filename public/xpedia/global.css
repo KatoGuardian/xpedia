@@ -37,7 +37,7 @@ a:hover {
 }
 
 .main-table{	
-  border: solid 0.3px #141d3d;
+  border: solid 0.3px black;
   /* #382C44 */
   margin: 0px;
 }
@@ -169,7 +169,7 @@ input::placeholder {
 .cols {
   columns: 250px;
   padding-left: 20px;
-  color: #ffbb0096;
+  color: #ffffffad;
   margin-right: 10px;
   padding-top: 0px;
 }
