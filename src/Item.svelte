@@ -88,7 +88,7 @@
                   </td>
                 {/if}          
               {:else}
-                <td rowspan="2">{attack.name}{attack.shots==1?"":"×" + attack.shots}</td> 
+                <td rowspan="2">{rul.str(attack.name)}{attack.shots==1?"":"×" + attack.shots}</td> 
                 <td><nobr><em>{attack.accuracy}</em><small>%<br/><SpecialBonus bonus={attack.accuracyMultiplier}/></small></nobr></td>
                 <td>
                 <em>{attack.cost.time + (attack.flatTime?"":"%")}</em> <small>TU</small>                
