@@ -16,9 +16,9 @@
       {rul.str("We appreciate Anna Zemlina for her fantastic artworks created especially for the mod.")}
       <div class="columns">
       <div class="column media-bar">
-        <a href="https://discordapp.com/invite/b5KXPvX" target="_blank"><img class="media-icon" src="https://cdn3.iconfinder.com/data/icons/popular-services-brands-vol-2/512/discord-256.png" alt="Discord" title="Discord server"></a>
-        <a href="https://openxcom.org/forum/index.php/board,18.0.html" target="_blank"><img class="media-icon" src="https://www.gamerguides.com/forum/uploads/FG4SCQ58YFXV.jpg" alt="Forum" title="Forum"></a>
-        <a href="https://vk.com/xpiratez" target="_blank"><img class="media-icon" src="https://cdn3.iconfinder.com/data/icons/social-network-icon/112/vk-256.png" alt="VK" title="VK community"></a>
+        <a href="https://discordapp.com/invite/b5KXPvX" target="_blank"><img class="media-icon" src="xpedia/images/discord-256.png" alt="Discord" title="Discord server"></a>
+        <a href="https://openxcom.org/forum/index.php/board,18.0.html" target="_blank"><img class="media-icon" src="xpedia/images/FG4SCQ58YFXV.jpg" alt="Forum" title="Forum"></a>
+        <a href="https://vk.com/xpiratez" target="_blank"><img class="media-icon" src="xpedia/images/vk-256.png" alt="VK" title="VK community"></a>
         <a href="https://www.deviantart.com/emerald--weapon" target="_blank"><img class="media-icon" src="xpedia/images/Emerald.png" alt="Anna Zemlina (artist)" title="Anna Zemlina (artist)"></a>
       </div>
     </div>
@@ -119,18 +119,19 @@
     </div>
   </div>
   <div class="column is-hidden-touch is-3-desktop">
-    <button title="Download" class="downloadbtn" onclick=" window.open('https://openxcom.org/forum/index.php/topic,3626.0.html', '_blank'); return false;">{rul.str("Download (forum link)")}</button>
-    <button title="Download" class="downloadbtn" onclick=" window.open('https://openxcom.mod.io/x-piratez', '_blank'); return false;">{rul.str("Download (from mod.io)")}</button>
+    <button title="Download (main)" class="downloadbtn" onclick=" window.open('https://openxcom.org/forum/index.php/topic,3626.0.html', '_blank'); return false;">{rul.str("Download (forum link)")}</button>
+    <button title="Download (alt)" class="downloadbtn" onclick=" window.open('https://openxcom.mod.io/x-piratez', '_blank'); return false;">{rul.str("Download (from mod.io)")}</button>
     <div class="imgcol">
-      <img class="imgbox" src="xpedia/images/screen034.png" alt="screen034.png">
-      <img class="imgbox" src="xpedia/images/screen033.png" alt="screen033.png">
-      <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen1209.png" alt="screen1209.png">
-      <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen164.png" alt="screen164.png">
-      <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen757.png" alt="screen757.png">
-      <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen135.png" alt="screen135.png">
-      <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen789.png" alt="screen789.png">
-      <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen692.png" alt="screen692.png">
-      <img class="imgbox" src="https://thumb.mod.io/mods/077e/249/thumb_1020x2000/screen064.png" alt="screen064.png">      
+      <img class="imgbox" src="xpedia/images/screen035.png" alt="screen035.png">
+      <img class="imgbox" src="xpedia/images/screen226.png" alt="screen226.png">
+      <img class="imgbox" src="xpedia/images/screen1209.png" alt="screen1209.png">
+      <img class="imgbox" src="xpedia/images/screen164.png" alt="screen164.png">
+      <img class="imgbox" src="xpedia/images/screen757.png" alt="screen757.png">
+      <img class="imgbox" src="xpedia/images/screen1325.png" alt="screen1325.png">
+      <img class="imgbox" src="xpedia/images/screen135.png" alt="screen135.png">
+      <img class="imgbox" src="xpedia/images/screen692.png" alt="screen692.png">
+      <img class="imgbox" src="xpedia/images/screen064.png" alt="screen064.png">
+      <img class="imgbox" src="xpedia/images/screen789.png" alt="screen789.png">      
     </div>
   </div>
 </div>
