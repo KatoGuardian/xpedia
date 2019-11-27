@@ -14,10 +14,16 @@ ru:
   see also: "см. также"
   Show/Hide all variants: "Показать/Скрыть все варианты"
   Item: "Предмет"
-  mode: "режим"
+  mode: "тип атаки"
+  Snap: "Навскидку"
+  Aimed: "Прицельный"
+  Auto: "Очередь"
+  Melee: "Ближний бой"
   accuracy: "точность"
-  cost: "стоимость"
+  cost: "цена"
   damage: "урон"
+  Launcher: "Установка"
+  Clip: "Боеприпасы"
   Facility: "Сооружение"
   Expand: "Показать"
   Research: "Исследования"
@@ -38,6 +44,7 @@ ru:
   disables: "Блокирует:" #STR_DISABLES
   getOneFree: "Дает бесплатно:" #STR_GIVES_ONE_FOR_FREE
   manufacture: "Требуется для производства:" #STR_REQUIRED_BY(partly)
+  randomProducedItems: "Случайный результат" #STR_RANDOM_PRODUCTION_DISCLAIMER
 
   HOME: "НА ГЛАВНУЮ"
   Search...: "Поиск..."
@@ -57,17 +64,29 @@ ru:
   Enemy Unknown (1994) and X-Com: "Enemy Unknown (1994) и X-Com"
   Terror From The Deep. There are major gameplay differences, as well as a complete overhaul of research, manufacture, base facilities, and so on. X-Piratez is designed for the veteran X-Com player seeking a much longer and complex campaign.: "Terror From The Deep с открытым кодом. В игровой процесс внесены существенные изменения, а также полностью переработаны исследования, производственные проекты, модули базы и так далее. Целевая аудитория - ветераны X-Com, заинтересованные в более длительной и сложной кампании."
   The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. X-Piratez is the biggest OpenXcom mod to date.: "На дворе 2601 год. Земля уже давным-давно завоёвана пришельцами. Вы - лидер шайки мутанток-пираток. Грабьте пришельцев и их прихвостней из числа землян ради поживы, поддержания авторитета и просто по приколу. X-Piratez - это самый крупный на сегодняшний день мод для OpenXcom."
+  We appreciate Anna Zemlina for her fantastic artworks created especially for the mod.: "Выражаем признательность Анне Землиной за ее потрясающие иллюстрации, сделанные специально для мода."
   # Pt.2,5
-  Download mod: "Скачайте мод"
-  join our community with: "присоединитесь к нашему сообществу на"
-  Discord server: "Дискорд-сервере"
-  and: "и на"
-  forum: "форуме"
+  #Download mod: "Скачайте мод"
+  #join our community with: "присоединитесь к нашему сообществу на"
+  #Discord server: "Дискорд-сервере"
+  #and: "и на"
+  #forum: "форуме"
   # Pt.3
   Current mod version is: "Свежайшая версия мода:"
+  PC Installation & Update Guide: "Установка и обновление для ПК"
+  Download the X-Piratez archive via the forum link (the main one) or from mod.io (alternatively.): "Загрузите архив с X-Piratez по ссылке на форуме (основная) или с mod.io (альтернативная)."
+  Unzip the archive to a NEW folder. It strongly recommended not merging the contents with your existing Dioxine_XPiratez folder, as this can lead to various problems.: "Распакуйте архив в ОТДЕЛЬНУЮ папку. Настоятельно не рекомендуем выполнять слияние с уже существующей вашей папкой Dioxine_XPiratez, поскольку это может привести к различным проблемам."
+  You need your files of the original UFO: "Для запуска необходимы файлы оригинальной игры UFO"
+  Enemy Unknown or X-Com: "Enemy Unknown или X-Com"
+  UFO Defense game (either DOS or Steam version) to launch the mod. Copy them to the Dioxine_XPiratez\UFO folder.: "UFO Defense (DOS или Steam версия). Скопируйте их в папку Dioxine_XPiratez\\UFO."
+  X-Piratez is distributed with the compatible OXCE engine version. There is no need to replace or upgrade OXCE, as other builds may not be compatible with your version of X-Piratez. Because of that, we recommend you turn off the 'Automatic update check' user option (options/advanced/general.) This option does not check for updates of the mod itself, in any case it has to be downloaded from the forum or mod.io: "X-Piratez распространяется в комплекте с движком OXCE совместимой версии. Не нужно заменять или обновлять OXCE, так как другие сборки могут быть несовместимы с текущей версией X-Piratez. По этой причине рекомендуем выключить в игре опцию 'Автопроверка обновлений' (параметры\\дополнительно\\общие). Эта опция не проверяет обновления самого мода, его в любом случае придётся скачивать с форума или mod.io"
+  If you already have X-Piratez saves, you can copy them from the old Dioxine_XPiratez\user\piratez folder to the new one.: "Если у вас уже есть сохранения X-Piratez, их можно скопировать из старой папки Dioxine_XPiratez\\user\\piratez в новую."
+  Optionally, you can also copy user settings from the old Dioxine_XPiratez\user folder to the new one (options.cfg file.): "По желанию можете также скопировать пользовательские настройки из старой папки Dioxine_XPiratez\\user в новую (файл options.cfg)."
+  Optionally, don't delete your outdated version. Just in case.: "На всякий случай не удаляйте устаревшую версию (по желанию)."
+  # Pt.4
   READ OR DIE. The Bootypedia is your friend. Trust me on that.: "ЧИТАЙ ИЛИ СДОХНИ. Хабаропедия - твой друг. Уж поверь."
   mod author, lead designer: "автор мода и ведущий разработчик"
-  # Pt.4
+  # Pt.5
   WARNINGS: "ПРЕДУПРЕЖДЕНИЯ"
   Contains some NUDITY of both sexes. You've been warned. Also take note this is not any porn-quality T&A since it's not a porn game.: "Есть немного мужской и женской ОБНАЖЁНКИ. Вы предупреждены. Учтите, что здесь нет прелестей порнографического качества, поскольку это не порноигра."
   Do not install OpenXcom nightlies! They are not compatible with X-Piratez. (Requires OXCE version.): "Не устанавливайте Nightly-сборки OpenXcom! Они несовместимы с X-Piratez. (Требуется использовать только OXCE)."
@@ -76,5 +95,20 @@ ru:
   Read or Die.: "Читай или сдохни."
   Contains riddles. Not everything is what it seems.: "Присутствуют загадки. Не всё то, чем кажется."
   A single campaign might take as much as 400 hours.: "Одно прохождение может занять до 400 часов."
-  # Pt.4,5
+ #External Links
+  #Block1
+  mod author, the Grand Master: "автор мода, Гранд Мастер"
+  You can send your donations through PayPal to: "Вы можете сделать пожертвование на PayPal:"
+  #Block2
+  chief OXCE programmer, the Wise Alchemist: "ведущий программист OXCE, Мудрый Алхимик"
+  You can send your donations on Patreon.: "Вы можете сделать пожертвование на Patreon."
+  #Block3
+  Join the Transifex team!: "Вступите в команду Transifex!"
+  All mods are translated by the players: "Все моды переведены игроками"
+  OpenXcom needs your translation skills!: "OpenXcom нуждается в ваших навыках перевода!"
+  #Block4
+  Community & support: "Сообщество и поддержка"
+  Here you can ask any questions associated with this site.: "Вопросы об этом сайте можете задать здесь."
+  Ping @Kato_guardian and we will hear you.: "Вставьте в сообщение @Kato_guardian - и мы вас услышим."
+ #Credits
   Wiki is powered by: "Сайт построен на движке"
