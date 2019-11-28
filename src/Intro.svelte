@@ -113,9 +113,10 @@
       </div>      
     </div>
     <br/>
-    <h4> </h4>
+    <h4> </h4>     
+    <div class="credits">{rul.str("Thanks to")} Bartojan, Mey-ow {rul.str("&")} Solarius Scorch {rul.str("for translating the homepage and interfaces into not-English languages")}!
     <br/>
-    <div class="credits">{rul.str("Wiki is powered by")} <a href="https://github.com/baturinsky/xpedia/" target="_blank">Baturinsky's XPedia</a>.
+    {rul.str("Wiki is powered by")} <a href="https://github.com/baturinsky/xpedia/" target="_blank">Baturinsky's XPedia</a>.
     </div>
   </div>
   <div class="column is-hidden-touch is-3-desktop">
