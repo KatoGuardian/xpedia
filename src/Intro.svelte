@@ -17,19 +17,19 @@
       <div class="columns">
       <div class="column media-bar">
         <a href="https://discordapp.com/invite/b5KXPvX" target="_blank"><img class="media-icon" src="xpedia/images/discord-256.png" alt="Discord" title="Discord server"></a>
-        <a href="https://openxcom.org/forum/index.php/board,18.0.html" target="_blank"><img class="media-icon" src="xpedia/images/FG4SCQ58YFXV.jpg" alt="Forum" title="Forum"></a>
+        <a href="https://openxcom.org/forum/index.php/board,18.0.html" target="_blank"><img class="media-icon" src="xpedia/images/FG4SCQ58YFXV.png" alt="Forum" title="Forum"></a>
         <a href="https://vk.com/xpiratez" target="_blank"><img class="media-icon" src="xpedia/images/vk-256.png" alt="VK" title="VK community"></a>
         <a href="https://www.deviantart.com/emerald--weapon" target="_blank"><img class="media-icon" src="xpedia/images/Emerald.png" alt="Anna Zemlina (artist)" title="Anna Zemlina (artist)"></a>
       </div>
     </div>
-    <h1>{rul.str("Current mod version is")} K2</h1>
+    <h1>{rul.str("Current mod version is")} K3</h1>
       <div class="guide">
       <h2>{rul.str("PC Installation & Update Guide")}</h2>
       <ul class="guide">
-        <li>{rul.str("Download the X-Piratez archive via the forum link (the main one) or from mod.io (alternatively.)")}</li>
+        <!--<li>{rul.str("Download the X-Piratez archive via the forum link (the main one) or from mod.io (alternatively.)")}</li>-->
         <li>{rul.str("Unzip the archive to a NEW folder. It strongly recommended not merging the contents with your existing Dioxine_XPiratez folder, as this can lead to various problems.")}</li>
         <li>{rul.str("You need your files of the original UFO")}: {rul.str("Enemy Unknown or X-Com")}: {rul.str("UFO Defense game (either DOS or Steam version) to launch the mod. Copy them to the Dioxine_XPiratez\\UFO folder.")}</li>
-        <li>{rul.str("X-Piratez is distributed with the compatible OXCE engine version. There is no need to replace or upgrade OXCE, as other builds may not be compatible with your version of X-Piratez. Because of that, we recommend you turn off the 'Automatic update check' user option (options/advanced/general.) This option does not check for updates of the mod itself, in any case it has to be downloaded from the forum or mod.io")}</li>
+        <li>{rul.str("X-Piratez is distributed with the compatible OXCE engine version. There is no need to replace or upgrade OXCE, as other builds may not be compatible with your version of X-Piratez. Because of that, we recommend you turn off the 'Automatic update check' user option (options/advanced/general.) This option does not check for updates of the mod itself.")}</li>
         <li>{rul.str("If you already have X-Piratez saves, you can copy them from the old Dioxine_XPiratez\\user\\piratez folder to the new one.")}</li>
         <li>{rul.str("Optionally, you can also copy user settings from the old Dioxine_XPiratez\\user folder to the new one (options.cfg file.)")}</li>
         <li>{rul.str("Optionally, don't delete your outdated version. Just in case.")}</li>
@@ -119,8 +119,12 @@
     </div>
   </div>
   <div class="column is-hidden-touch is-3-desktop">
-    <button title="Download (main)" class="downloadbtn" onclick=" window.open('https://openxcom.org/forum/index.php/topic,3626.0.html', '_blank'); return false;">{rul.str("Download (forum link)")}</button>
-    <button title="Download (alt)" class="downloadbtn" onclick=" window.open('https://openxcom.mod.io/x-piratez', '_blank'); return false;">{rul.str("Download (from mod.io)")}</button>
+  <div class="imgcol" style="background-color:#232727">
+      <img class="imgbox" src="xpedia/images/XFox.png" alt="#StandWithXPZ" title="Download links will be available soon">
+      <div class="rejoice">#StandWithXPZ</div>
+  </div>
+  <!--  <button title="Download (main)" class="downloadbtn" onclick=" window.open('https://openxcom.org/forum/index.php/topic,3626.0.html', '_blank'); return false;">{rul.str("Download (forum link)")}</button>
+    <button title="Download (alt)" class="downloadbtn" onclick=" window.open('https://openxcom.mod.io/x-piratez', '_blank'); return false;">{rul.str("Download (from mod.io)")}</button> -->
     <div class="imgcol">
       <img class="imgbox" src="xpedia/images/screen035.png" alt="screen035.png">
       <img class="imgbox" src="xpedia/images/screen226.png" alt="screen226.png">
@@ -131,7 +135,7 @@
       <img class="imgbox" src="xpedia/images/screen135.png" alt="screen135.png">
       <img class="imgbox" src="xpedia/images/screen692.png" alt="screen692.png">
       <img class="imgbox" src="xpedia/images/screen064.png" alt="screen064.png">
-      <img class="imgbox" src="xpedia/images/screen789.png" alt="screen789.png">      
+      <!--<img class="imgbox" src="xpedia/images/screen789.png" alt="screen789.png">      -->
     </div>
   </div>
 </div>
