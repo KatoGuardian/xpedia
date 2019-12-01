@@ -27,6 +27,9 @@
 
   function checkHash() {
     let hash = decodeURI(document.location.hash);
+    if(hash == "#MAIN"){
+    query = "";
+    }
     if (hash) {
       let dd = hash.indexOf("::");
       if (dd != -1) {
