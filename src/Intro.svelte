@@ -29,7 +29,7 @@
         <!--<li>{rul.str("Download the X-Piratez archive via the forum link (the main one) or from mod.io (alternatively.)")}</li>-->
         <li>{rul.str("Unzip the archive to a NEW folder. It strongly recommended not merging the contents with your existing Dioxine_XPiratez folder, as this can lead to various problems.")}</li>
         <li>{rul.str("You need your files of the original UFO")}: {rul.str("Enemy Unknown or X-Com")}: {rul.str("UFO Defense game (either DOS or Steam version) to launch the mod. Copy them to the Dioxine_XPiratez\\UFO folder.")}</li>
-        <li>{rul.str("X-Piratez is distributed with the compatible OXCE engine version. There is no need to replace or upgrade OXCE, as other builds may not be compatible with your version of X-Piratez. Because of that, we recommend you turn off the 'Automatic update check' user option (options/advanced/general.) This option does not check for updates of the mod itself.")}</li>
+        <li>{rul.str("X-Piratez is distributed with the compatible OXCE engine version. There is no need to replace or upgrade OXCE, as other builds may not be compatible with your version of X-Piratez. Because of that, we recommend you turn off the 'Automatic update check' user option (options\\advanced\\general.) This option does not check for updates of the mod itself.")}</li>
         <li>{rul.str("If you already have X-Piratez saves, you can copy them from the old Dioxine_XPiratez\\user\\piratez folder to the new one.")}</li>
         <li>{rul.str("Optionally, you can also copy user settings from the old Dioxine_XPiratez\\user folder to the new one (options.cfg file.)")}</li>
         <li>{rul.str("Optionally, don't delete your outdated version. Just in case.")}</li>
@@ -114,7 +114,9 @@
     </div>
     <br/>
     <h4> </h4>     
-    <div class="credits">{rul.str("Thanks to")} Bartojan, Mey-ow {rul.str("&")} Solarius Scorch {rul.str("for translating the homepage and interfaces into not-English languages")}!
+    <div class="credits">{rul.str("Thanks to")} Bartojan, Mey-ow & Solarius Scorch
+    <br/>
+    {rul.str("for translating the homepage and interfaces into non-English languages")}!
     <br/>
     {rul.str("Wiki is powered by")} <a href="https://github.com/baturinsky/xpedia/" target="_blank">Baturinsky's XPedia</a>.
     </div>
