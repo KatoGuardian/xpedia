@@ -6,6 +6,7 @@ rimraf.sync("dist");
 fs.mkdirSync("dist");
 fs.mkdirSync("dist/xpedia");
 fs.mkdirSync("dist/xpedia/Language");
+fs.mkdirSync("dist/xpedia/images");
 
 let files = [
   "xpedia/Language/ru.yml",
