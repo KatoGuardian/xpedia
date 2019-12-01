@@ -114,7 +114,7 @@
     </div>
     <br/>
     <h4> </h4>     
-    <div class="credits">{rul.str("Thanks to")} Bartojan, Mey-ow & Solarius Scorch
+    <div class="credits">{rul.str("Thanks to")} Bartojan, Dorothy Haze, Mey-ow & Solarius Scorch
     <br/>
     {rul.str("for translating the homepage and interfaces into non-English languages")}!
     <br/>
