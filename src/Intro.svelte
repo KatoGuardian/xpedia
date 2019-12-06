@@ -73,7 +73,7 @@
         GSDioxine@gmail.com
       </div>
 <!-- Block#2 -->
-      <div class="extlink" onclick="window.open('https://www.patreon.com/meridian', '_blank')">
+      <div class="extlink" onclick="window.open('https://www.paypal.com/myaccount/transfer/homepage', '_blank')">
         <img class="extlink-icon" src="xpedia/images/Meridian.png" alt="Meridian">
         <br>
         <strong class="man">Meridian</strong>
@@ -81,7 +81,9 @@
         {rul.str("chief OXCE programmer, the Wise Alchemist")}
         <br>
         <br>
-        {rul.str("You can send your donations on Patreon.")}
+        {rul.str("You can send your donations through PayPal to")}
+        <br>
+        martin.dzurenko@gmail.com
       </div>      
     </div>
     <br/>
