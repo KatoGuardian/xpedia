@@ -209,11 +209,11 @@
         <div class="dropdown">
           <button class="dropbtn navbar-link">{rul.str("Language")}</button>
           <div class="dropdown-content">
-            <a href="index.html">English</a>
-            <a href="xpedia_ru.html">Русский</a>
-            <a href="xpedia_pl.html">Polski</a>
-            <a href="xpedia_cs.html">Čeština</a>
-            <a href="xpedia_es-ES.html">Español</a>
+            <a href="index.html#{id}">English</a>
+            <a href="xpedia_ru.html#{id}">Русский</a>
+            <a href="xpedia_pl.html#{id}">Polski</a>
+            <a href="xpedia_cs.html#{id}">Čeština</a>
+            <a href="xpedia_es-ES.html#{id}">Español</a>
           </div>
         </div>
       </div>
@@ -268,11 +268,11 @@
           {rul.str("Lang")}
         </button>
         <div class="dropdown-content">
-          <a href="index.html">English</a>
-          <a href="xpedia_ru.html">Русский</a>
-          <a href="xpedia_pl.html">Polski</a>
-          <a href="xpedia_cs.html">Čeština</a>
-          <a href="xpedia_es-ES.html">Español</a>
+          <a href="index.html#{id}">English</a>
+          <a href="xpedia_ru.html#{id}">Русский</a>
+          <a href="xpedia_pl.html#{id}">Polski</a>
+          <a href="xpedia_cs.html#{id}">Čeština</a>
+          <a href="xpedia_es-ES.html#{id}">Español</a>
         </div>
       </div>
       <div class="navbar-item  is-inline-block"
@@ -296,11 +296,11 @@
           {rul.str("Language")}
         </button>
         <div class="dropdown-content">
-          <a href="index.html">English</a>
-          <a href="xpedia_ru.html">Русский</a>
-          <a href="xpedia_pl.html">Polski</a>
-          <a href="xpedia_cs.html">Čeština</a>
-          <a href="xpedia_es-ES.html">Español</a>
+          <a href="index.html#{id}">English</a>
+          <a href="xpedia_ru.html#{id}">Русский</a>
+          <a href="xpedia_pl.html#{id}">Polski</a>
+          <a href="xpedia_cs.html#{id}">Čeština</a>
+          <a href="xpedia_es-ES.html#{id}">Español</a>
         </div>
       </div>
       <div class="navbar-item  is-inline-block">
