@@ -40,7 +40,7 @@
     {#if !['name', 'randomProducedItems'].includes(prop[0])}
       <tr>
         <td class="padding-right">
-          {@html rul.decamelize(prop[0])}
+          {@html rul.str(prop[0])}
         </td>
         <td>
           {#if ['requiresBaseFunc' ].includes(prop[0])}

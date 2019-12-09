@@ -15,7 +15,7 @@
   {#each Object.entries(unit).sort((a, b) => (a[0] > b[0] ? 1 : -1)) as [key, prop]}
     {#if !['type', 'deathSound', 'scripts'].includes(key)}
       <tr>
-        <td class="padding-right">{@html rul.decamelize(key)}</td>
+        <td class="padding-right">{@html rul.str(key)}</td>
         <td>
           {#if ['builtInWeaponSets'].includes(prop[0])}
             {#each Object.values(prop) as set, i}

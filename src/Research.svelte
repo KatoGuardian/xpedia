@@ -39,7 +39,7 @@
       {#if !['name'].includes(key)}
         <tr>        
             <td>
-              {@html rul.decamelize(key)}
+              {@html rul.str(key)}
             </td>
             <td>
               <Value val={prop}/>

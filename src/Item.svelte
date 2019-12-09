@@ -109,11 +109,11 @@
               </td>
               </tr>
               <tr>
-              <td colspan="3" style="columns: 2;">
+              <td colspan="3" style="columns: 1;">
                 <small>
                 {#if attack.alter}            
                   {#each Object.keys(attack.alter).sort() as field, i}
-                    {field}:&nbsp;<Value val={attack.alter[field]}/><br/>
+                    {rul.str(field)}:&nbsp;<Value val={attack.alter[field]}/><br/>
                   {/each}
                 {/if}
                 </small>
@@ -146,7 +146,7 @@
         {:else if ['damageType', 'meleeType'].includes(key)}
           {rul.damageTypeName(prop)}
         {:else if key == 'battleType'}
-          {prop}: {rul.battleTypes[prop]}
+          {prop}: {rul.str(rul.battleTypes[prop])}
         {:else if key.includes("Sound")}
           {#each soundsFrom(prop) as sound, i}
             {@html i>0?"<br/>":""}
