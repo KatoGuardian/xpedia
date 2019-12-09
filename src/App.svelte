@@ -145,7 +145,7 @@
 
 <svelte:head>
   {#if !article}
-    <title>X-Piratez XPedia</title>
+    <title>X-Piratez BootyPedia</title>
   {/if}
 </svelte:head>
 
@@ -162,7 +162,7 @@
       <div class="navbar-item has-dropdown is-hoverable">
         <a href="#MAIN" class="navbar-link">
           <img src="xpedia/favicon.png" alt="favicon" />
-          {rul.modName} XPedia
+          {rul.modName} BootyPedia
         </a>
         <div class="navbar-dropdown">
           <div style="display:flex">
