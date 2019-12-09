@@ -209,7 +209,7 @@
         <div class="dropdown">
           <button class="dropbtn navbar-link">{rul.str("Language")}</button>
           <div class="dropdown-content">
-            <a href="index.html#{id}">English</a>
+            <a href="xpedia_en-US.html#{id}">English</a>
             <a href="xpedia_ru.html#{id}">Русский</a>
             <a href="xpedia_pl.html#{id}">Polski</a>
             <a href="xpedia_cs.html#{id}">Čeština</a>
@@ -268,7 +268,7 @@
           {rul.str("Lang")}
         </button>
         <div class="dropdown-content">
-          <a href="index.html#{id}">English</a>
+          <a href="xpedia_en-US.html#{id}">English</a>
           <a href="xpedia_ru.html#{id}">Русский</a>
           <a href="xpedia_pl.html#{id}">Polski</a>
           <a href="xpedia_cs.html#{id}">Čeština</a>
@@ -296,7 +296,7 @@
           {rul.str("Language")}
         </button>
         <div class="dropdown-content">
-          <a href="index.html#{id}">English</a>
+          <a href="xpedia_en-US.html#{id}">English</a>
           <a href="xpedia_ru.html#{id}">Русский</a>
           <a href="xpedia_pl.html#{id}">Polski</a>
           <a href="xpedia_cs.html#{id}">Čeština</a>
