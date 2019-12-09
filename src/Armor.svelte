@@ -62,7 +62,7 @@
             {#if seeAllVariants || i == 0}
               <div
                 class="armor"
-                style="left:{(i % dollColumns) * 80}px; top:{Math.floor(i / dollColumns) * 120}px;">
+                style="left:{(i % dollColumns) * 90}px; top:{Math.floor(i / dollColumns) * 150}px;">
                 {#if seeAllVariants}
                   <div class="armor-variant">{body}</div>
                 {/if}
@@ -73,7 +73,7 @@
             {/if}
           {/each}
           <div
-            style={'height:' + (seeAllVariants ? (Math.floor(Object.keys(armor.dollSprites).length / dollColumns) + 1) * 120 : 120) + 'px'} />
+            style={'height:' + (seeAllVariants ? (Math.floor(Object.keys(armor.dollSprites).length / dollColumns) + 1) * 155 : 160) + 'px'} />
         {/if}
       </div>
     </td>
