@@ -34,7 +34,7 @@ set xpedia_language_path3=xpedia\Language\%language_name3%.yml
 set xpedia_language_path4=xpedia\Language\%language_name4%.yml
 set pedia_header=xpedia\xpedia.html.header
 
->index.html (
+>xpedia_en-US.html (
 	type %pedia_header%
 	
 	echo FILE: xpedia
@@ -59,6 +59,9 @@ set pedia_header=xpedia\xpedia.html.header
 	
 	echo | set /p langTag=langm-
 	type "%mod_language_path%"
+
+	echo | set /p langTag=langt-
+	type "%tech_language_path%"
 
 	rem echo | set /p langTag=langp-
 	rem type "%xpedia_language_path%"	
@@ -96,7 +99,7 @@ index.html
 	type "%xpedia_language_path1%"	
 
 	echo | set /p langTag=langt-
-	type "%xpedia_language_path1%"
+	type "%tech_language_path1%"
 )
 
 
@@ -128,6 +131,9 @@ index.html
 
 	echo | set /p langTag=langp-
 	type "%xpedia_language_path2%"		
+
+	echo | set /p langTag=langt-
+	type "%tech_language_path2%"
 )
 
 >xpedia_cs.html (
@@ -158,6 +164,9 @@ index.html
 
 	echo | set /p langTag=langp-
 	type "%xpedia_language_path3%"		
+
+	echo | set /p langTag=langt-
+	type "%tech_language_path3%"
 )
 
 >xpedia_es-ES.html (
@@ -188,4 +197,7 @@ index.html
 
 	echo | set /p langTag=langp-
 	type "%xpedia_language_path4%"		
+
+	echo | set /p langTag=langt-
+	type "%tech_language_path4%"
 )
