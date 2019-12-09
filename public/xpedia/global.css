@@ -246,6 +246,7 @@ ol li{
 .armor-layer {
   position: absolute;
   top: -10px;
+  zoom: 1.5;
   left: 0px;
 }
 .armor-variant {
