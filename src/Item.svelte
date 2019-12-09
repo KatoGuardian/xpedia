@@ -84,16 +84,16 @@
                     <!--<img class="sprite" use:ammoSprite style="position:relative;" alt="X" src={rul.sprite(attack.item.sprite)}/>-->                    
                   </td> 
                   <td colspan="2">
-                    <Link href={attack.item.type}/><br/><small>Clip: {attack.item.clipSize} Wgt: {attack.item.weight}</small>
+                    <Link href={attack.item.type}/><br/><small>{rul.str("Shots")}: {attack.item.clipSize}<br/>{rul.str("Wgt")}: {attack.item.weight}</small>
                   </td>
                 {/if}          
               {:else}
                 <td rowspan="2">{rul.str(attack.name)}{attack.shots==1?"":"×" + attack.shots}</td> 
                 <td><nobr><em>{attack.accuracy}</em><small>%<br/><SpecialBonus bonus={attack.accuracyMultiplier}/></small></nobr></td>
                 <td>
-                <em>{attack.cost.time + (attack.flatTime?"":"%")}</em> <small>TU</small>                
+                <em>{attack.cost.time + (attack.flatTime?"":"%")}</em> <small>{rul.str("TU")}</small>                
                 {#each Object.keys(attack.cost) as res}
-                  {#if res != 'time' && attack.cost[res] != 0}<br/><Value val={attack.cost[res]}/>&nbsp;<small>{res}</small>{/if}
+                  {#if res != 'time' && attack.cost[res] != 0}<br/><Value val={attack.cost[res]}/>&nbsp;<small>{rul.str(res)}</small>{/if}
                 {/each}                
                 </td>
               {/if}          
@@ -131,7 +131,7 @@
   {#each Object.entries(item).sort((a,b) => a[0]>b[0]?1:-1) as [key, prop]}
     {#if !['sprite', 'type', '_attacks', 'damageAlter'].includes(key)}
       <tr>
-        <td>{@html rul.decamelize(key)}</td>
+        <td>{@html rul.str(key)}</td>
         <td class="right-column">
         {#if ['requiresBuyBaseFunc' ].includes(key)}
             <BaseServiceList items={prop} vertical={true}/>
