@@ -21,12 +21,6 @@ set vanilla_language_path1=standard\xcom1\Language\%language_name1%.yml
 set vanilla_language_path2=standard\xcom1\Language\%language_name2%.yml
 set vanilla_language_path3=standard\xcom1\Language\%language_name3%.yml
 set vanilla_language_path4=standard\xcom1\Language\%language_name4%.yml
-set tech_rules_path=common
-set tech_language_path=common\Language\Technical\%language_name%.yml
-set tech_language_path1=common\Language\Technical\%language_name1%.yml
-set tech_language_path2=common\Language\Technical\%language_name2%.yml
-set tech_language_path3=common\Language\Technical\%language_name3%.yml
-set tech_language_path4=common\Language\Technical\%language_name4%.yml
 rem set xpedia_language_path=xpedia\Language\%language_name%.yml
 set xpedia_language_path1=xpedia\Language\%language_name1%.yml
 set xpedia_language_path2=xpedia\Language\%language_name2%.yml
@@ -59,9 +53,6 @@ set pedia_header=xpedia\xpedia.html.header
 	
 	echo | set /p langTag=langm-
 	type "%mod_language_path%"
-
-	echo | set /p langTag=langt-
-	type "%tech_language_path%"
 
 	rem echo | set /p langTag=langp-
 	rem type "%xpedia_language_path%"	
@@ -98,8 +89,6 @@ index.html
 	echo | set /p langTag=langp-
 	type "%xpedia_language_path1%"	
 
-	echo | set /p langTag=langt-
-	type "%tech_language_path1%"
 )
 
 
@@ -132,8 +121,6 @@ index.html
 	echo | set /p langTag=langp-
 	type "%xpedia_language_path2%"		
 
-	echo | set /p langTag=langt-
-	type "%tech_language_path2%"
 )
 
 >xpedia_cs.html (
@@ -165,8 +152,6 @@ index.html
 	echo | set /p langTag=langp-
 	type "%xpedia_language_path3%"		
 
-	echo | set /p langTag=langt-
-	type "%tech_language_path3%"
 )
 
 >xpedia_es-ES.html (
@@ -198,6 +183,4 @@ index.html
 	echo | set /p langTag=langp-
 	type "%xpedia_language_path4%"		
 
-	echo | set /p langTag=langt-
-	type "%tech_language_path4%"
 )
