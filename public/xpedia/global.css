@@ -47,7 +47,36 @@ a:hover {
 }
 
 .main-table > tr > td:first-child{
-  width: 150px;
+  width: 230px;
+}
+
+.armor-table > tr:nth-child(odd){
+  background: rgb(68, 64, 63);
+  /*  #141d3d #20152B */
+}
+
+.armor-table > tr:nth-child(even){
+  background: rgb(92, 86, 80);
+    /* #180C24 */
+}
+
+.armor-table > tr:nth-child(2){
+  background: black;
+  /*  #141d3d #20152B */
+}
+
+.armor-table{	
+  border: solid 0.3px black;
+  /* #382C44 */
+  margin: 0px;
+}
+
+.armor-table td{
+  padding: 2px 5px;
+}
+
+.armor-table > tr > td:first-child{
+  width: 230px;
 }
 
 .brighter{

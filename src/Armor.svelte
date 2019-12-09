@@ -32,7 +32,7 @@
 
 </style>
 
-<table class="main-table">
+<table class="armor-table">
   <tr>
     <td colspan="2" class="table-header">
       {rul.str("Armor")}
