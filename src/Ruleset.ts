@@ -238,7 +238,7 @@ export class StartingConditions {
   constructor(raw: any) {
     Object.assign(this, raw);
     rul.startingConditions[this.type] = this;
-    rul.lang[this.type] = rul.decamelize(this.type.substr(11));
+    rul.lang[this.type] = rul.str(this.type.substr(12));
     for (let craft of this.allowedCraft)
       rul.crafts[craft].startingConditions.push(this.type);
     Article.create({
