@@ -4,18 +4,14 @@ const JSZip = require("./xpedia/jszip.min.js");
 let packed = false;
 
 let mod_name = "Piratez";
-var laguages = ["en-US", "ru", "pl", "cs", "es-ES"];
+var laguages = ["en-US", "ru", "pl", "cs", "es-ES", "ruleset"];
 let saveAs;
 let header;
 let text;
 
 laguages.forEach(function(item, index, array){
-  if (item == "en-US") {
-    var filename = "xpedia_en-US.html";
-  }
-  if (item != "en-US") {
-    var filename = "xpedia_"+ item +".html";
-  }
+  var filename = "xpedia_"+ item +".html";
+
   saveAs = filename;
   console.log(saveAs)
   let language_name = item;
@@ -50,12 +46,11 @@ laguages.forEach(function(item, index, array){
     all.push(fs.readFileSync(f));
   }
 
+  if (item != "ruleset") {    
   all.push("FILE: Language");
-
   all.push("langv-" + fs.readFileSync(vanilla_language_path));
   all.push("langm-" + fs.readFileSync(mod_language_path));
-  if (item != "en-US") {
-    all.push("langp-" + fs.readFileSync(pedia_lang_path));
+  all.push("langp-" + fs.readFileSync(pedia_lang_path));
   }
   
 

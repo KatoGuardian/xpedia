@@ -214,6 +214,7 @@
             <a href="xpedia_pl.html#{id}">Polski</a>
             <a href="xpedia_cs.html#{id}">Čeština</a>
             <a href="xpedia_es-ES.html#{id}">Español</a>
+            <a href="xpedia_ruleset.html#{id}">Technical</a>
           </div>
         </div>
       </div>
@@ -273,6 +274,7 @@
           <a href="xpedia_pl.html#{id}">Polski</a>
           <a href="xpedia_cs.html#{id}">Čeština</a>
           <a href="xpedia_es-ES.html#{id}">Español</a>
+          <a href="xpedia_ruleset.html#{id}">Technical</a>
         </div>
       </div>
       <div class="navbar-item  is-inline-block"
@@ -301,6 +303,7 @@
           <a href="xpedia_pl.html#{id}">Polski</a>
           <a href="xpedia_cs.html#{id}">Čeština</a>
           <a href="xpedia_es-ES.html#{id}">Español</a>
+          <a href="xpedia_ruleset.html#{id}">Technical</a>
         </div>
       </div>
       <div class="navbar-item  is-inline-block">
