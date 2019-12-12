@@ -3,7 +3,7 @@
   import { Link, Intro, LinksPage, Value, LinksList } from "./Components";
 
   export let armor;
-  let dollColumns = 4;
+  let dollColumns = 3;
   let seeAllVariants = false;
   let zoom = 1;
   let seeAlso = [];
@@ -62,7 +62,7 @@
             {#if seeAllVariants || i == 0}
               <div
                 class="armor"
-                style="left:{(i % dollColumns) * 120}px; top:{Math.floor(i / dollColumns) * 230}px;">
+                style="left:{(i % dollColumns) * 180}px; top:{Math.floor(i / dollColumns) * 230}px;">
                 {#if seeAllVariants}
                   <div class="armor-variant">{body}</div>
                 {/if}
