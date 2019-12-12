@@ -8,14 +8,14 @@
 <style>
 </style>
 
-<LinksPage links={conditions.allowedCraft} title={rul.str("Allowed Craft")}/>
+<LinksPage links={conditions.allowedCraft} title={rul.str("Allowed crafts")}/>
 
-<LinksPage links={conditions.allowedItemCategories} title={rul.str("Allowed Item Categories")}/>
+<LinksPage links={conditions.allowedItemCategories} title={rul.str("Allowed item categories")}/>
 
-<LinksPage links={conditions.allowedArmors} title={rul.str("Allowed Armors")}/>
+<LinksPage links={conditions.allowedArmors} title={rul.str("Allowed armors")}/>
 
 <!--<LinksPage links={rul.ourArmors.filter(a => !conditions.allowedArmors.includes(a))} title={rul.str("Banned Armors")}/>-->
 
-<LinksPage links={conditions.allowedVehicles} title={rul.str("Allowed Vehicles")}/>
+<LinksPage links={conditions.allowedVehicles} title={rul.str("Allowed auxilia")}/>
 
 <LinksPage links={conditions.deployments} title={rul.str("Deployments")}/>

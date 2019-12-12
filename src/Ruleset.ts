@@ -691,7 +691,7 @@ export default class Ruleset {
     "Melee",
     "Grenade",
     "Proximity Grenade",
-    "Medi-Kit",
+    "Medikit",
     "Motion Scanner",
     "Mind Probe",
     "Psi-Amp",
