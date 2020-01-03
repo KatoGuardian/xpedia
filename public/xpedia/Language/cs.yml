@@ -1,5 +1,6 @@
 cs:
  # UI
+  BootyPedia: "Kořisťopedie"
   ITEMS: "PŘEDMĚTY"
   CONDITIONS: "PODMÍNKY"
   CATEGORIES: "KATEGORIE"
@@ -14,14 +15,14 @@ cs:
   see also: "viz také"
   Show/Hide all variants: "Zobrazit/Skrýt všechny varianty"
   Item: "Předmět"
-  mode: "typ útoku"
+  mode: "Typ útoku"
   Snap: "Od boku"
   Aimed: "Mířeně"
   Auto: "Dávka"
   Melee: "Na blízko"
-  accuracy: "přesnost"
-  cost: "časová náročnost"
-  damage: "účinek"
+  accuracy: "Přesnost"
+  cost: "Časová náročnost"
+  damage: "Účinek"
   Launcher: "Odpalovač"
   Clip: "Střelivo"
   Facility: "Zařízení"
@@ -29,10 +30,10 @@ cs:
   Research: "Bádání"
   Manufacture: "Vyrábění"
   Unit: "Jednotka"
-  Allowed Craft: "Povolená plavidla"
-  Allowed Item Categories: "Povolené kategorie předmětů"
-  Allowed Armors: "Povolené zbroje"
-  Allowed Vehicles: "Povolené pomocné jednotky"
+  Allowed crafts: "Povolená plavidla"
+  Allowed item categories: "Povolené kategorie předmětů"
+  Allowed armors: "Povolené zbroje"
+  Allowed auxilia: "Povolené pomocné jednotky"
   Deployments: "Mise"
  #Subheaders
   dependencies: "Závisí na:" #STR_DEPENDS_ON
@@ -43,7 +44,7 @@ cs:
   unlocks: "Odemyká:" #STR_UNLOCKS
   disables: "Znepřístupňuje:" #STR_DISABLES
   getOneFree: "Dává zdarma jeden z:" #STR_GIVES_ONE_FOR_FREE
-  manufacture: "Vyžaduje se pro výrobu:" #STR_REQUIRED_BY(partly)
+  manufacture: "Výrobní proces:" #STR_REQUIRED_BY(partly) - see STR_HEALING_GEL
   randomProducedItems: "Náhodná produkce" #STR_RANDOM_PRODUCTION_DISCLAIMER
 
   HOME: "JDI DOMŮ"
@@ -115,3 +116,5 @@ cs:
   Thanks to: "Děkujeme"
   for translating the homepage and interfaces into non-English languages: "za překlad domovské stránky a rozhraní do neanglických jazyků"
   Wiki is powered by: "Wiki využívá technologii"
+  Mobile version by: "Mobilní verze od"
+  Finnik, XCF junior developer: "Finnik, XCF mladší vývojář"

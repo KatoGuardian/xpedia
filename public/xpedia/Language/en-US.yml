@@ -260,6 +260,7 @@ en-US:
   meleeType: "Melee damage type"
   minRange: "Minimum range"
   monthlyMaintenance: "Monthly maintenance"
+  monthlySalary: "Monthly salary"
   noLOSAccuracyPenalty: "No-sight penalty multiplier"
   oneHandedPenalty: "One-hand use penalty"
   painKiller: "Painkiller uses"
@@ -277,6 +278,7 @@ en-US:
   shotgunChoke: "Shotgun choke"
   size: "Size"
   snapRange: "Snap shot range"
+  spawnedBy: "Spawned by"
   specialType: "MCD type"
   sprayWaypoints: "Spray shot waypoints"
   stimulant: "Stim uses"
@@ -328,6 +330,7 @@ en-US:
   lookup: "Report"
   needItem: "Item required?"
   destroyItem: "Item will be lost?"
+  spawnedItem: "Item created"
   # Manufacture
   category: "Category"
   producedItems: "Produced items"

@@ -1,5 +1,6 @@
 es-ES:
  # UI
+  BootyPedia: "BotínPedia"
   ITEMS: "OBJETOS"
   CONDITIONS: "CONDICIONES"
   CATEGORIES: "CATEGORIAS"
@@ -14,14 +15,14 @@ es-ES:
   see also: "ver también"
   Show/Hide all variants: "Mostrar/Ocultar todas las variantes"
   Item: "Objeto"
-  mode: "tipo de ataque"
+  mode: "Tipo de ataque"
   Snap: "Francotirador"
   Aimed: "Apuntando"
   Auto: "Auto"
   Melee: "Cuerpo a cuerpo"
-  accuracy: "precisión"
-  cost: "coste"
-  damage: "daño"
+  accuracy: "Precisión"
+  cost: "Coste"
+  damage: "Daño"
   Launcher: "Lanzador"
   Clip: "Munición"
   Facility: "Instalación"
@@ -29,21 +30,21 @@ es-ES:
   Research: "Investigar"
   Manufacture: "Fabricar"
   Unit: "Unidad"
-  Allowed Craft: "Naves permitidas"
-  Allowed Item Categories: "Categorías de objetos permitidos"
-  Allowed Armors: "Armaduras permitidas"
-  Allowed Vehicles: "Auxiliar permitidos"
+  Allowed crafts: "Naves permitidas"
+  Allowed item categories: "Categorías de objetos permitidos"
+  Allowed armors: "Armaduras permitidas"
+  Allowed auxilia: "Auxiliar permitidos"
   Deployments: "Misiones"
  #Subheaders
   dependencies: "Depende de:" #STR_DEPENDS_ON
   seeAlso: "Objeto requerido:" #STR_ITEM_REQUIRED
-  requiresBaseFunc: "Servicios requeridos:" #STR_SERVICES_REQUIRED
+  requiresBaseFunc: "Servicios requeridos" #STR_SERVICES_REQUIRED
   freeFrom: "Se consigue gratis de:" #STR_GET_FOR_FREE_FROM
   leadsTo: "Lleva a:" #STR_LEADS_TO
   unlocks: "Desbloquea:" #STR_UNLOCKS
   disables: "Deshabilita:" #STR_DISABLES
   getOneFree: "Da uno gratis:" #STR_GIVES_ONE_FOR_FREE
-  manufacture: "Necesario por:" #STR_REQUIRED_BY(partly)
+  manufacture: "Proceso de producción:" #STR_REQUIRED_BY(partly) - see STR_HEALING_GEL
   randomProducedItems: "Producción al azar" #STR_RANDOM_PRODUCTION_DISCLAIMER
 
   HOME: "PÁGINA DE INICIO"
@@ -115,3 +116,5 @@ es-ES:
   Thanks to: "¡Gracias a"
   for translating the homepage and interfaces into non-English languages: "por traducir la página de inicio y las interfaces a idiomas que no están en inglés"
   Wiki is powered by: "Wiki es impulsado por"
+  Mobile version by: "Versión móvil por"
+  Finnik, XCF junior developer: "Finnik, desarrollador júnior de XCF"

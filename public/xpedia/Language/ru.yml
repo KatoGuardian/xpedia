@@ -1,5 +1,6 @@
 ru:
  # UI
+  BootyPedia: "ХабароПедия"
   ITEMS: "ПРЕДМЕТЫ"
   CONDITIONS: "УСЛОВИЯ"
   CATEGORIES: "КАТЕГОРИИ"
@@ -310,6 +311,7 @@ ru:
   meleeType: "Тип урона в ближнем бою"
   minRange: "Минимальная дальность"
   monthlyMaintenance: "Содержание в месяц"
+  monthlySalary: "Месячный оклад"
   noLOSAccuracyPenalty: "Множитель штрафа за отсутствие видимости"
   oneHandedPenalty: "Штраф за наличие оружия в другой руке"
   painKiller: "Заряды анестетика"
@@ -327,6 +329,7 @@ ru:
   shotgunChoke: "Чок-бор для дробовика"
   size: "Размер"
   snapRange: "Дальность выстрела навскидку"
+  spawnedBy: "Создается через"
   specialType: "Тип MCD"
   sprayWaypoints: "Точек веерного огня"
   stimulant: "Заряды стимулятора"
@@ -380,6 +383,7 @@ ru:
   lookup: "Отчет"
   needItem: "Необходим предмет?"
   destroyItem: "Предмет будет уничтожен?"
+  spawnedItem: "Дает предмет"
 
   Manufacture: "Производство"
   category: "Категория"
@@ -487,3 +491,5 @@ ru:
   Thanks to: "Благодарим"
   for translating the homepage and interfaces into non-English languages: "за перевод главной страницы и интерфейсов на неанглийские языки"
   Wiki is powered by: "Сайт построен на движке"
+  Mobile version by: "Мобильная версия:"
+  Finnik, XCF junior developer: "Finnik, младший разработчик XCF"
