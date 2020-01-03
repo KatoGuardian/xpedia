@@ -162,7 +162,7 @@
       <div class="navbar-item has-dropdown is-hoverable">
         <a href="#MAIN" class="navbar-link">
           <img src="xpedia/favicon.png" alt="favicon" />
-          {rul.modName} BootyPedia
+          {rul.modName} {rul.str("BootyPedia")}
         </a>
         <div class="navbar-dropdown">
           <div style="display:flex">
@@ -214,7 +214,6 @@
             <a href="xpedia_pl.html#{id}">Polski</a>
             <a href="xpedia_cs.html#{id}">Čeština</a>
             <a href="xpedia_es-ES.html#{id}">Español</a>
-            <a href="xpedia_ruleset.html#{id}">Technical</a>
           </div>
         </div>
       </div>
@@ -274,7 +273,6 @@
           <a href="xpedia_pl.html#{id}">Polski</a>
           <a href="xpedia_cs.html#{id}">Čeština</a>
           <a href="xpedia_es-ES.html#{id}">Español</a>
-          <a href="xpedia_ruleset.html#{id}">Technical</a>
         </div>
       </div>
       <div class="navbar-item  is-inline-block"
@@ -303,7 +301,6 @@
           <a href="xpedia_pl.html#{id}">Polski</a>
           <a href="xpedia_cs.html#{id}">Čeština</a>
           <a href="xpedia_es-ES.html#{id}">Español</a>
-          <a href="xpedia_ruleset.html#{id}">Technical</a>
         </div>
       </div>
       <div class="navbar-item  is-inline-block">
