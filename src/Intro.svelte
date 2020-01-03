@@ -121,6 +121,8 @@
     {rul.str("for translating the homepage and interfaces into non-English languages")}!
     <br/>
     {rul.str("Wiki is powered by")} <a href="https://github.com/baturinsky/xpedia/" target="_blank">Baturinsky's XPedia</a>.
+    <br/>
+    {rul.str("Mobile version by")} <a href="http://thexcomfiles.xyz/" target="_blank">{rul.str("Finnik, XCF junior developer")}</a>.
     </div>
   </div>
   <div class="column is-hidden-touch is-3-desktop">
