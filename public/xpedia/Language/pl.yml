@@ -391,7 +391,7 @@ pl:
   refund: "Zwrot kosztów przy anulowaniu?"
   requiredItems: "Potrzebne zasoby"
   space: "Wymagana dodatkowa przestrzeń robocza"
-  time: "Czas produkcji"
+  time: "Czas"
   spawnedPersonType: "Kto się przyłącza"
 
   Unit: "Jednostka"
