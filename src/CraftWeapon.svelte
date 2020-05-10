@@ -1,7 +1,8 @@
 <script>
   import { rul } from "./Ruleset";
-  import { Link, Intro, LinksPage, Value } from "./Components";  
+  import { Link, LinksPage, Value } from "./Components";  
   import Item from "./Item.svelte"
+  import TableKey from "./TableKey.svelte";
 
   export let weapon;
 
@@ -10,45 +11,31 @@
   }
 </script>
 
-<style>
-.panels3 td{
-  padding-right:10px;
-  vertical-align: top;
-}
-</style>
-
-<table class="panels3">
-  <tr>
-    <td>
-      <table class="main-table">
+<div class="launchers">
+  <table class="main-table" style="min-width:25rem">
+    <tr>
+      <td colspan="2" class="table-header">{rul.str("Weapon")}</td>
+    </tr>
+    {#each Object.entries(weapon).sort((a, b) =>
+      a[0] > b[0] ? 1 : -1
+      ) as [key, prop]}
+      {#if !['type'].includes(key)}
         <tr>
-          <td colspan="2" class="table-header">{rul.str("Weapon")}</td>
+         <TableKey {key} />
+         <td>
+          <Value val={prop} />
+         </td>
         </tr>
-        {#each Object.entries(weapon).sort((a, b) =>
-          a[0] > b[0] ? 1 : -1
-        ) as prop}
-          {#if !['type'].includes(prop[0])}
-            <tr>
-              <td class="padding-right">
-                {@html rul.str(prop[0])}
-              </td>
-              <td>
-                <Value val={prop[1]} />
-              </td>
-            </tr>
-          {/if}
-        {/each}
-      </table>
-    </td>
-    <td>
-    <table class="main-table">
-    {#if weapon.launcher}
-      <Item item={rul.items[weapon.launcher]} title={rul.str("Launcher") + ": " + rul.str(weapon.launcher)}/>
-    {/if}
-    {#if weapon.clip}
-      <Item item={rul.items[weapon.clip]} title={rul.str("Clip") + ": " + rul.str(weapon.clip)}/>
-    {/if}
-    </table>
-    </td>
-  </tr>
-</table>
+      {/if}
+    {/each}
+  </table>
+
+  <table class="main-table" style="min-width:25rem">
+  {#if weapon.launcher}
+    <Item item={rul.items[weapon.launcher]} title={rul.str("Launcher") + ": " + rul.str(weapon.launcher)}/>
+  {/if}
+  {#if weapon.clip}
+    <Item item={rul.items[weapon.clip]} title={rul.str("Clip") + ": " + rul.str(weapon.clip)}/>
+  {/if}
+  </table>
+</div>

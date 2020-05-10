@@ -1,8 +1,9 @@
 <script>
   import { rul } from "./Ruleset";
   import BaseServiceList from "./BaseServiceList.svelte"
-  import { Link, Intro, LinksPage, Value } from "./Components";
-  
+  import { Link, LinksPage, Value } from "./Components";
+  import TableKey from "./TableKey.svelte";
+
   export let manufacture;
 
   $: {
@@ -17,8 +18,29 @@
     <td colspan="2" class="table-header">{rul.str("Manufacture")}</td>
   </tr>
 
+  {#each Object.entries(manufacture).sort((a, b) =>
+    a[0] > b[0] ? 1 : -1
+  ) as [key, prop]}
+    {#if !['name', 'randomProducedItems'].includes(key)}
+      <tr>
+        <TableKey {key} />
+        <td>
+          {#if ['requiresBaseFunc' ].includes(prop[0])}
+            <BaseServiceList items={prop[1]} vertical={true}/>
+          {:else if ['producedItems', 'requiredItems'].includes(key)}
+            <table class="number-table">
+            {#each Object.keys(prop).sort() as field, i}
+              <tr><td>{prop[field]}</td><td><Link href={field}/></td></tr>
+            {/each}
+            </table>
+          {:else}<Value val={prop}/>{/if}
+        </td>
+      </tr>
+    {/if}
+  {/each}
+
   {#if 'randomProducedItems' in manufacture}
-    <tr><td colspan="2" class="table-subheader">{rul.str('randomProducedItems')}</td></tr>
+    <tr><td colspan="2" class="table-subheader">{rul.decamelize('randomProducedItems')}</td></tr>
     <tr><td colspan="2">
       <table class="number-table" width="100%" style="margin:0px">
       {#each manufacture.randomProducedItems as chance}
@@ -33,26 +55,3 @@
       </table>
     </td></tr>
   {/if}
-
-  {#each Object.entries(manufacture).sort((a, b) =>
-    a[0] > b[0] ? 1 : -1
-  ) as prop}
-    {#if !['name', 'randomProducedItems'].includes(prop[0])}
-      <tr>
-        <td class="padding-right">
-          {@html rul.str(prop[0])}
-        </td>
-        <td>
-          {#if ['requiresBaseFunc' ].includes(prop[0])}
-            <BaseServiceList items={prop[1]} vertical={true}/>
-          {:else if ['producedItems', 'requiredItems'].includes(prop[0])}
-            <table class="number-table">
-            {#each Object.keys(prop[1]).sort() as field, i}
-              <tr><td>{prop[1][field]}</td><td><Link href={field}/></td></tr>
-            {/each}
-            </table>
-          {:else}<Value val={prop[1]}/>{/if}
-        </td>
-      </tr>
-    {/if}
-  {/each}

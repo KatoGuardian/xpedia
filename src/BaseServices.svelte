@@ -1,6 +1,6 @@
 <script>
   import { rul } from "./Ruleset";
-  import { Link, Intro, LinksPage, Value, LinksList } from "./Components";
+  import { Link, LinksPage, Value, LinksList } from "./Components";
 
   export let query = null
 
@@ -12,7 +12,7 @@
   background: #685C74;
 }
 a{
-  color:white;
+  color:cyan;
 }
 </style>
 

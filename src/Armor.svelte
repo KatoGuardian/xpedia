@@ -1,6 +1,7 @@
 <script>
   import { rul } from "./Ruleset";
-  import { Link, Intro, LinksPage, Value, LinksList } from "./Components";
+  import { Link, LinksPage, Value, LinksList } from "./Components";
+  import TableKey from "./TableKey.svelte";
 
   export let armor;
   let dollColumns = 3;
@@ -67,7 +68,7 @@
                   <div class="armor-variant">{body}</div>
                 {/if}
                 {#each armor.dollSprites[body] as url, j}
-                  <img src={url} alt={body} class="armor-layer" />
+                  <img src={url} alt={body} onerror="this.onerror=null; console.log(this.src + ' not found'); this.src='xpedia/0.png';" class="armor-layer" />
                 {/each}
               </div>
             {/if}
@@ -137,9 +138,7 @@
   ) as [key, prop]}
     {#if !['recovery', 'type', 'layersDefinition', 'spriteFaceColor', 'spriteHairColor', 'spriteUtileColor', 'spriteFaceGroup', 'spriteHairGroup', 'spriteUtileGroup', 'customArmorPreviewIndex', 'dollSprites', 'layersDefaultPrefix', 'frontArmor', 'sideArmor', 'rearArmor', 'underArmor', 'spriteInv', 'scripts', 'armor', 'damageModifier', 'stats'].includes(key)}
       <tr>
-        <td>
-          {@html rul.str(key)}
-        </td>
+        <TableKey {key} />
         <td>
           {#if key == 'damageModifier'}
             <table class="number-table">

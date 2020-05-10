@@ -1,14 +1,19 @@
 import Fuse from "fuse.js";
-import Yaml from "js-yaml";
-import JSZip from "jszip";
-import { throws } from "assert";
+//import Yaml from "yaml";
+import JsYaml from "./js-yaml";
+import pako from "pako/lib/inflate";
 
 export let rul!: Ruleset;
+
+function timeout(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 function backLink(id: string, list: string[], to: any, field: string) {
   if (!list) return;
   for (let key of list) {
     let back = to[key];
+    if (!back) continue;
     back[field] = back[field] || [];
     back[field].push(id);
   }
@@ -22,24 +27,50 @@ function parseYaml(text: string) {
   while ((match = reg.exec(text))) matches.push(match);
 
   for (let i = 0; i < matches.length; i++) {
-    let title = matches[i][1];
+    let filename = matches[i][1];
 
     let file: string;
     if (i < matches.length - 1) {
       file = text.substr(
-        matches[i].index + 7 + title.length,
-        matches[i + 1].index - matches[i].index - 7 - title.length
+        matches[i].index + 7 + filename.length,
+        matches[i + 1].index - matches[i].index - 7 - filename.length
       );
-    } else file = text.substr(matches[i].index + 7 + title.length);
+    } else file = text.substr(matches[i].index + 7 + filename.length);
 
     if (file.substr(1, 3) == "п»ї") file = file.substr(4);
 
+    //console.log(filename);
+
+    if (filename.substr(0, 5) == "TEXT@") {
+      rul.lang[filename.substr(5)] = file;
+      continue;
+    }
+
     let parsed;
 
-    try {
-      parsed = Yaml.load(file, { json: true, filename: title });
-    } catch (e) {
-      console.log(e.message);
+    if (filename.substr(0, 5) == "JSON@") {
+      parsed = JSON.parse(file);
+      filename = filename.substr(5);
+    } else {
+      try {
+        parsed = JsYaml.load(file, {
+          json: true,
+          filename,
+          onWarning: e => {
+            console.log(filename);
+            console.log(e.message);
+          }
+        });
+      } catch (e) {
+        console.log(e.message);
+      }
+    }
+
+    if (filename == "xpedia") {
+      //console.log(parsed);
+      rul.config = parsed;
+      rul.modName = parsed.mod_name;
+      continue;
     }
 
     if (parsed) data.push(parsed);
@@ -83,6 +114,8 @@ export class Manufacture {
     if (this.requires) {
       for (let resName of this.requires) {
         let res = rul.research[resName];
+        if(!res)        
+          continue;
         if (!res.manufacture) res.manufacture = [];
         res.manufacture.push(this.name);
       }
@@ -278,7 +311,7 @@ export class Unit {
   }
 }
 
-let defaultRange = { snap: 15, auto: 7, aim: 200 };
+let defaultRange = { snap: 15, auto: 7, aimed: 200 };
 
 export class Attack {
   possible = false;
@@ -286,14 +319,15 @@ export class Attack {
   flatTime = false;
   damage: number;
   damageBonus: { [key: string]: number };
-  damageType: number;
+  damageType: string;
   accuracy: number;
   accuracyMultiplier: { [key: string]: number };
-  alter: { [key: string]: number };
+  alter: { [key: string]: string };
   shots: number = 1;
   range: number;
   pellets: number = 1;
   name: string;
+  item: Item;
 
   constructor(item: Item, public mode: string) {
     let capMode = mode.charAt(0).toUpperCase() + mode.substr(1);
@@ -303,9 +337,18 @@ export class Attack {
       (mode == "melee" && item.battleType == 3) ||
       (mode == "psi" && item.battleType == 9) ||
       (mode == "throw" && [4, 5].includes(item.battleType));
-    let exists = item["accuracy" + capMode] || isDefaultAttack;
+
+    if (mode == "throw" && !isDefaultAttack) return null;
+
+    let exists =
+      item["accuracy" + capMode] || item["cost" + capMode] || isDefaultAttack;
 
     if (!exists) return null;
+
+    if (item.type == "STR_THROWING_HAMMER") {
+      console.log(item);
+      console.log(mode);
+    }
 
     if (mode == "melee" && item.battleType != 3) {
       this.damage = item.meleePower;
@@ -378,9 +421,19 @@ export class Attack {
     }
 
     if (mode + "Range" in item) {
-      this.alter = this.alter || {};
+      this.alter = Object.assign({}, this.alter || {});
       this.alter.range = item[mode + "Range"];
     }
+
+    for(let k in this.alter){
+      if(k == "damageType" || k == "ResistType")
+        this.alter[k] = rul.damageTypes[this.alter[k]];
+    }
+
+    this.range =
+      item[mode + "Range"] || item[mode.substr(0,3) + "Range"] ||
+      (this.alter && this.alter.range) ||
+      defaultRange[mode];
 
     this.possible = true;
   }
@@ -545,10 +598,10 @@ export class Item {
   bigSprite: string;
   meleePower: number;
   meleeBonus: any;
-  meleeType: number;
+  meleeType: string;
   power: number;
   damageBonus: any;
-  damageType: number;
+  damageType: string;
   shotgunPellets: number;
   meleeAlter: any;
   damageAlter: any;
@@ -558,7 +611,7 @@ export class Item {
   meleeMultiplier: any;
   throwMultiplier: any;
   accuracyMultiplier: any;
-  compatibleWeapons: any;
+  compatibleWeaponsList: any;
   categories: string[];
 
   constructor(raw: any) {
@@ -597,12 +650,15 @@ export class Item {
         "aimed",
         "auto",
         "throw",
-        "psi"
+        "psi",
+/*        "panic",
+        "mindControl"
+        "use"*/
       ]) {
         let attack = new Attack(this, mode);
         if (attack.possible) {
           this._attacks.push(attack);
-          if (!isNaN(+attack.damageType))
+          if (attack.damageType)
             this.addCategory("dmg=" + rul.damageTypes[attack.damageType]);
           if (attack.damageBonus) {
             for (let k in attack.damageBonus) this.addCategory("dmg*" + k);
@@ -613,6 +669,11 @@ export class Item {
       }
     }
 
+    if(this.battleType == 2){
+      this._attacks[0].item = this;
+      this._attacks[0].mode = "ammo";
+    }
+    
     return this._attacks;
   }
 
@@ -651,6 +712,7 @@ export default class Ruleset {
   baseSprite: string[] = [];
   sounds: string[] = [];
   modName: string;
+  config: Object;
   path: string;
   baseServices: { [key: string]: Service } = {};
   redirect: { [key: string]: string } = {};
@@ -681,7 +743,7 @@ export default class Ruleset {
     "STR_DAMAGE_20",
     "STR_DAMAGE_21",
     "STR_DAMAGE_22",*/
-    "STR_MANA",
+    "STR_MANA"
   ];
 
   battleTypes = [
@@ -691,12 +753,48 @@ export default class Ruleset {
     "Melee",
     "Grenade",
     "Proximity Grenade",
-    "Medikit",
+    "Medi-Kit",
     "Motion Scanner",
     "Mind Probe",
     "Psi-Amp",
     "Electro-flare",
     "Corpse"
+  ];
+
+  experienceTrainingModes = [
+    "default algorithm",
+    "train melee",
+    "train melee 50% chance",
+    "train melee 33% chance",
+    "train firing",
+    "train firing 50% chance",
+    "train firing 33% chance",
+    "train throwing",
+    "train throwing 50% chance",
+    "train throwing 33% chance",
+    "train firing and throwing",
+    "train firing or throwing (coinflip)",
+    "train reactions",
+    "train reactions and melee",
+    "train reactions and firing",
+    "train reactions and throwing",
+    "train reactions or melee (coinflip)",
+    "train reactions or firing (coinflip)",
+    "train reactions or throwing (coinflip)",
+    "train bravery",
+    "train bravery x2",
+    "train bravery and reactions",
+    "train bravery or reactions (coinflip)",
+    "train bravery or reactions (coinflip) x2",
+    "train VooDoo power",
+    "train VooDoo power x2",
+    "train VooDoo skill",
+    "train VooDoo skill x2",
+    "train VooDoo power and VooDoo skill",
+    "train VooDoo power and VooDoo skill x2",
+    "train VooDoo power or VooDoo skill (coinflip)",
+    "train VooDoo power or VooDoo skill (coinflip) x2",
+    "train nothing"
   ];
 
   damageTypeName(type: number) {
@@ -715,8 +813,8 @@ export default class Ruleset {
     return num in this[type] ? this.path + this[type][num] : "xpedia/0.png";
   }
 
-  parse(data: any) {
-    for (let file of data) {
+  combineFiles(data:any[], reversed = false){
+    for (let file of (reversed?data.reverse():data)) {
       for (let key in file) {
         if (key.substr(0, 4) == "lang") {
           Object.assign(this.lang, file[key]);
@@ -737,8 +835,68 @@ export default class Ruleset {
         }
       }
     }
+  }
 
-    let articleTypes = [
+
+  categoriesNames:[
+    "crafts",
+    "items",
+    "armors",
+    "ufopaedia",
+    "manufacture",
+    "units",
+    "alienDeployments",
+    "research"
+  ];
+
+  mergeRuls(reversed = false){
+    for (let categoryName in this.raw) {
+      let merged = {};
+      let deleted = {};
+
+      let category = this.raw[categoryName];
+      if(!Array.isArray(category))
+        continue;
+
+      for (let data of category) {        
+          
+        let id = data.type || data.id || data.name || data.delete || data.typeSingle;
+        
+        if(!id || deleted[id])
+          continue;
+
+        if ("delete" in data) {
+          if(reversed)
+            deleted[id] = true;
+          else
+            delete merged[id];
+          continue;
+        }
+
+        if (id && id in merged) {          
+          if(reversed) {
+            for(let k in data){
+              if(!(k in merged[id]))
+                merged[id][k] = data[k];
+            }
+          } else {
+            Object.assign(merged[id], data);
+          }
+        } else {
+          merged[id] = data;
+        }
+        
+      }
+      this.raw[categoryName] = Object.values(merged);
+    }
+  }
+
+  parse(data: any) {
+    let reversed = true;
+
+    this.combineFiles(data, reversed);
+
+    let specialSections = [
       "ITEMS",
       "CONDITIONS",
       "CATEGORIES",
@@ -747,34 +905,10 @@ export default class Ruleset {
       "SERVICES"
     ];
 
-    for (let type of articleTypes) new Section(type, "TYPE");
+    for (let type of specialSections) new Section(type, "TYPE");
 
-    for (let category of [
-      "items",
-      "armors",
-      "ufopaedia",
-      "manufacture",
-      "units",
-      "alienDeployments",
-      "research"
-    ]) {
-      let merged = {};
-      for (let data of this.raw[category]) {
-        let id = data.type || data.id || data.name || data.delete;
-        if ("delete" in data) {
-          delete merged[id];
-        } else {
-          if (id && id in merged) {
-            Object.assign(merged[id], data);
-          } else {
-            merged[id] = data;
-          }
-        }
-      }
-      this.raw[category] = Object.values(merged);
-    }
+    this.mergeRuls(reversed);
 
-    this.modName = this.raw.modName;
     this.path = "user/mods/" + rul.modName + "/";
 
     for (let k in this.lang) {
@@ -843,13 +977,13 @@ export default class Ruleset {
     }
 
     for (let item of Object.values(this.items)) {
-      item.attacks();
+      item.attacks();      
       if (item.compatibleAmmo) {
         for (let ammoId of item.compatibleAmmo) {
           let ammo = this.items[ammoId];
           if (ammo) {
-            ammo.compatibleWeapons = ammo.compatibleWeapons || [];
-            ammo.compatibleWeapons.push(item.type);
+            ammo.compatibleWeaponsList = ammo.compatibleWeaponsList || [];
+            ammo.compatibleWeaponsList.push(item.type);
           }
         }
       }
@@ -859,10 +993,11 @@ export default class Ruleset {
       backLink(research.name, research.dependencies, rul.research, "leadsTo");
       backLink(research.name, research.getOneFree, rul.research, "freeFrom");
 
-      if (research.lookup && research.name == research.lookup) {
-        console.warn(research.lookup + " lookup is to itself");
-      }
-      if (research.lookup && research.name != research.lookup) {
+      if (
+        research.lookup &&
+        research.name != research.lookup &&
+        this.research[research.lookup]
+      ) {
         let lookup = this.research[research.lookup];
         lookup.seeAlso = lookup.seeAlso || [];
         lookup.seeAlso.push(research.name);
@@ -883,12 +1018,12 @@ export default class Ruleset {
       .filter(a => a.units)
       .map(a => a.type);
 
-    for (let type of articleTypes)
-      rul.sections[type]._articles = rul.sections[type].articles.sort((a, b) =>
+    for (let sectionName of specialSections)
+      rul.sections[sectionName]._articles = rul.sections[sectionName].articles.sort((a, b) =>
         a.title < b.title ? -1 : 1
       );
 
-/*    Article.create({
+    /*Article.create({
       id: "BASE_FUNC",
       title: "Base Services",
       type_id: "OTHER",
@@ -896,7 +1031,6 @@ export default class Ruleset {
     });*/
 
     for (let cat of Object.keys(this.categories)) {
-      console.log(cat);
       Article.create({
         id: cat,
         title: rul.str(cat),
@@ -941,8 +1075,11 @@ export default class Ruleset {
 
   decamelize(str, separ = " ") {
     if (typeof str === "string") {
+      if (rul.lang[str]) return rul.lang[str];
+      if (this.lang[fieldNames[str]]) return this.lang[fieldNames[str]];
+
       if (str.includes("_") && str.search(/[a-z]/) == -1)
-        str = str.replace(/_/g, " ");
+        str = str.replace(/_/g, "_");
       else str = str.replace(/([^A-Z])([A-Z])/g, "$1" + separ + "$2");
       str = str.substr(0, 1).toUpperCase() + str.substr(1).toLowerCase();
     }
@@ -962,11 +1099,12 @@ export default class Ruleset {
   async load(text: string) {
     text = text.trim();
 
+    //await new Promise(resolve => requestAnimationFrame(() => resolve()));
+
     if (text.substr(0, 6) == "base64") {
       text = text.substr(6);
-      let zip = new JSZip();
-      await zip.loadAsync(text, { base64: true });
-      text = await zip.file("xpedia").async("text");
+      let strData = atob(text);
+      text = pako.inflate(strData, { to: "string" });
     }
 
     let data = parseYaml(text);
@@ -1011,3 +1149,17 @@ export default class Ruleset {
     return a;
   }
 }
+
+const fieldNames = {
+  dependencies: "STR_DEPENDS_ON",
+  seeAlso: "STR_ITEM_REQUIRED",
+  requiresBaseFunc: "STR_SERVICES_REQUIRED",
+  freeFrom: "STR_GET_FOR_FREE_FROM",
+  leadsTo: "STR_LEADS_TO",
+  unlocks: "STR_UNLOCKS",
+  disables: "STR_DISABLES",
+  getOneFree: "STR_GIVES_ONE_FOR_FREE",
+  manufacture: "STR_REQUIRED_BY",
+  randomProducedItems: "STR_RANDOM_PRODUCTION_DISCLAIMER",
+  cost: "STR_COST"
+};

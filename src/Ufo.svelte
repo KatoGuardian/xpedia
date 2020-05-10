@@ -1,8 +1,9 @@
 <script>
   import { rul } from "./Ruleset";
-  import SpecialBonus from "./SpecialBonus.svelte"
+  import SpecialBonus from "./SpecialBonus.svelte";
+  import TableKey from "./TableKey.svelte";
 
-  import { Link, Intro, LinksPage, Value } from "./Components";
+  import { Link, LinksPage, Value } from "./Components";
 
   export let ufo;
 
@@ -15,16 +16,18 @@
   {#each Object.entries(ufo).sort((a, b) => (a[0] > b[0] ? 1 : -1)) as [key, prop]}
     {#if !['type', 'battlescapeTerrainData', 'craftInventoryTile', 'deployment'].includes(key)}
       <tr>
-        <td class="padding-right">{@html rul.str(key)}</td>
+        <TableKey {key} />
         <td>
           {#if ['modSprite'].includes(key)}
-            <img class="sprite" alt='X' src={rul.sprite(prop)}/>
+            <img class="sprite" alt='X' src={rul.sprite(prop)} onerror="this.onerror=null; this.src='xpedia/0.jpg'"/>
           {:else if key == "raceBonus"}
             <table class="number-table">
             {#each Object.keys(prop).sort() as field, i}
               <tr><td>{rul.str(field)}</td><td>
                 {#each Object.keys(prop[field]).sort() as field2, i2}
-                  {rul.str(field2)}:&nbsp;<em><Link href={prop[field][field2]}/></em><br/>
+                  <div tooltip={'tip_' + field2}>
+                  {rul.decamelize(field2)}:&nbsp;<em><Link href={prop[field][field2]}/></em><br/>
+                  </div>
                 {/each}              
               </td></tr>
             {/each}

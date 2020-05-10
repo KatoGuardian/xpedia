@@ -3,14 +3,13 @@
 <head>
   <meta charset='utf8'>
   <meta name='viewport' content='width=device-width'>
+  <meta name='description' content='Bootypedia online for X-PirateZ computer game. If you absolutely cannot stand bikini babes fighting Nazis with chainsaws, just pass by.'>
 
   <title>X-Piratez BootyPedia</title>
 
   <link rel='icon' type='image/png' href='xpedia/favicon.png'>
-  <link rel='stylesheet' href='xpedia/bulmaswatch.min.css'>  
   <link rel='stylesheet' href='xpedia/global.css'>
   <link rel='stylesheet' href='xpedia/bundle.css'>
-  <script src='xpedia/jszip.min.js'></script>
   <script src='xpedia/bundle.js'></script>
 </head>
 <body style="display:none">

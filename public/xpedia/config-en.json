@@ -1,0 +1,17 @@
+{
+  "packed": true,
+  "json": true,
+  "mod_name": "Piratez",
+  "backup_language": "en-US",
+  "run": false,
+  "extra_language_yaml": ["xpedia/Language/default.yml"],
+
+  "languages": [
+    {
+      "language": "en-US",
+      "save_as": "en-US.html",
+      "name": "English",
+      "extra_language_yaml": ["xpedia/Language/en-US.yml"]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 es-ES:
  # UI
   BootyPedia: "BotínPedia"
+  STR_NOT_AVAILABLE: "SECCIÓN 404"
   ITEMS: "OBJETOS"
   CONDITIONS: "CONDICIONES"
   CATEGORIES: "CATEGORIAS"
@@ -54,8 +55,9 @@ es-ES:
   Nothing found: "¡Nada encontrado"
   Language: "Idioma"
   Lang: "Idioma" #mobile, five letters max!
-  Download (forum link): "Descargar (enlace del foro)"
-  Download (from mod.io): "Descargar (desde mod.io)"
+  Download: "Descargar"
+  (forum link): "(enlace del foro)"
+  (from mod.io): "(desde mod.io)"
  # intro
   # Pt.1
   Welcome onboard, seagal! Take your bunk at da orlop and have some X-Grog, yarrr!: "¡Bienvenido a bordo marinero! ¡Toma tu litera en la cubierta inferior y agarra uno X-Grog, yarrr!"
@@ -65,7 +67,7 @@ es-ES:
   Enemy Unknown (1994) and X-Com: "Enemy Unknown (1994) y X-Com"
   Terror From The Deep. There are major gameplay differences, as well as a complete overhaul of research, manufacture, base facilities, and so on. X-Piratez is designed for the veteran X-Com player seeking a much longer and complex campaign.: "Terror From The Deep. Existen importantes diferencias de juego, así como una nueva árbol tecnológica, la fabricación, las instalaciones de la base e mucho mais. X-Piratez es diseñado para jugadores veteranos de X-Com que buscan una campaña mucho más larga y compleja."
   The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. X-Piratez is the biggest OpenXcom mod to date.: "El año es 2601. La Tierra ha sido conquistada por extraterrestres. tu estás a cargo de una pandilla de piratas mutantes. Roba a los alienígenas y humanos que los representan por diversión, riqueza y poder. X-Piratez es el mod más grande de OpenXcom hasta la fecha."
-  We appreciate Anna Zemlina for her fantastic artworks created especially for the mod.: "Apreciamos a Anna Zemlina por sus fantásticas obras de arte creadas especialmente para el mod."
+  We appreciate Anna Zemlina for her fantastic artworks created especially for the X-Piratez Universe.: "Apreciamos a Anna Zemlina por sus fantásticas obras de arte creadas especialmente para el Universo de X-Piratez."
   # Pt.2,5
   #Download mod: "¡Descargue el mod"
   #join our community with: "únase a nuestra comunidad con"
@@ -103,7 +105,6 @@ es-ES:
   You can send your donations through PayPal to: "Puedes enviar tus donaciones a través de PayPal a"
   #Block2
   chief OXCE programmer, the Wise Alchemist: "programador jefe de OXCE, el Alquimista Sabio"
-  You can send your donations on Patreon.: "Puedes enviar tus donaciones en Patreon."
   #Block3
   Join the Transifex team!: "¡Únete al equipo de Transifex!"
   All mods are translated by the players: "Todos los mods son traducidos por los jugadores"
@@ -116,5 +117,4 @@ es-ES:
   Thanks to: "¡Gracias a"
   for translating the homepage and interfaces into non-English languages: "por traducir la página de inicio y las interfaces a idiomas que no están en inglés"
   Wiki is powered by: "Wiki es impulsado por"
-  Mobile version by: "Versión móvil por"
-  Finnik, XCF junior developer: "Finnik, desarrollador júnior de XCF"
+  Codemasters: "Maestros de código"

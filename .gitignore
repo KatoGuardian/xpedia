@@ -3,8 +3,10 @@ vanilla
 public/xpedia.html
 public/user
 public/standard
+public/common
 public/bundle.*
 .rpt2_cache
+xpedia_old.rar
 
 # Logs
 logs

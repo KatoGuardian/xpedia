@@ -2,10 +2,12 @@
   import { rul } from "./Ruleset";
   import BaseServiceList from "./BaseServiceList.svelte";
   import SpecialBonus from "./SpecialBonus.svelte";
+  import TableKey from "./TableKey.svelte";
 
-  import { Link, Intro, LinksPage, Value, LinksList } from "./Components";
+  import { Link, LinksPage, Value, LinksList } from "./Components";
 
   export let facility;
+  let seeStorageTiles = false;
   let size = 1;
 
   $: {
@@ -24,16 +26,14 @@
 
 <table class="main-table">
   <tr>
-    <td colspan="2" class="table-header">{rul.str("Facility")}</td>
+    <td colspan="2" class="table-header">{rul.str('Facility')}</td>
   </tr>
   {#each Object.entries(facility).sort((a, b) =>
     a[0] > b[0] && a[0] != 'storageTiles' ? 1 : -1
   ) as [key, prop]}
     {#if !['type', 'battlescapeTerrainData', 'craftInventoryTile', 'deployment'].includes(key)}
       <tr>
-        <td class="padding-right">
-          {@html rul.str(key)}
-        </td>
+        <TableKey {key} />
         <td>
           {#if ['buildCostItems'].includes(key)}
             {#each Object.keys(prop).sort() as field, i}
@@ -44,31 +44,33 @@
               : {prop[field].build} / {prop[field].refund}
             {/each}
           {:else if ['storageTiles'].includes(key)}
-            <div class="dropdown is-hoverable">
-              <div class="dropdown-trigger">
+            <div>
+              <div>
                 <button
-                  class="button"
-                  aria-haspopup="true"
-                  aria-controls="dropdown-tiles">
-                  {rul.str("Expand")}
+                  class="button dropdown-content"
+                  on:click={e => (seeStorageTiles = !seeStorageTiles)}>
+                  {seeStorageTiles ? rul.str("Hide") : rul.str("Show")}
                 </button>
               </div>
-              <div class="dropdown-menu" id="dropdown-tiles" role="menu">
-                <div class="dropdown-content" style="columns:6">
-                  <LinksList items={prop} vertical={true} />
-                </div>
+              <div>
+                {#if seeStorageTiles}
+                  <div style="columns:3">
+                    <LinksList items={prop} vertical={true} />
+                  </div>
+                {/if}
               </div>
             </div>
           {:else if ['provideBaseFunc', 'requiresBaseFunc', 'forbiddenBaseFunc'].includes(key)}
             <BaseServiceList items={prop} vertical={true} />
           {:else if ['spriteFacility', 'spriteShape'].includes(key)}
-            <div class="tight" style="columns:{size};width:{32 * size}px;zoom:2;">
+            <div class="tight" style="columns:{size};width:{64 * size}px;">
               {#each { length: size } as _, y}
                 {#each { length: size } as _, x}
                   <img
-                      class="sprite"
-                      alt="X"
-                      src={rul.specialSprite('baseSprite', prop * 1 + x * size + y)} />
+                    class="facility sprite"
+                    onerror="this.onerror=null; this.src='xpedia/0.jpg'"
+                    alt="X"
+                    src={rul.specialSprite('baseSprite', prop * 1 + x * size + y)} />
                 {/each}
               {/each}
             </div>

@@ -1,6 +1,7 @@
 cs:
  # UI
   BootyPedia: "Kořisťopedie"
+  STR_NOT_AVAILABLE: "SEKCE 404"
   ITEMS: "PŘEDMĚTY"
   CONDITIONS: "PODMÍNKY"
   CATEGORIES: "KATEGORIE"
@@ -54,8 +55,9 @@ cs:
   Nothing found: "Nic nenalezeno"
   Language: "Jazyk"
   Lang: "Jazyk" #mobile, five letters max!
-  Download (forum link): "Stáhnout (odkaz na fóru)"
-  Download (from mod.io): "Stáhnout (mod.io)"
+  Download: "Stáhnout"
+  (forum link): "(odkaz na fóru)"
+  (from mod.io): "(mod.io)"
  # intro
   # Pt.1
   Welcome onboard, seagal! Take your bunk at da orlop and have some X-Grog, yarrr!: "Vítej na palubě, plavčice! Vyber si kavalec někde na spodní palubě a dej si na uvítanou trochu X-Grogu!"
@@ -65,7 +67,7 @@ cs:
   Enemy Unknown (1994) and X-Com: "Enemy Unknown (z roku 1994) a X-Com"
   Terror From The Deep. There are major gameplay differences, as well as a complete overhaul of research, manufacture, base facilities, and so on. X-Piratez is designed for the veteran X-Com player seeking a much longer and complex campaign.: "Terror From The Deep. Oproti originálu se ale předělávka hraje v mnohých ohledech jinak a obsahuje, mimo jiné, také obsáhlejší výzkum, výrobu a množství zařízení základny. X-Piratez je určen především zkušeným hráčům X-Comu, kteří by rádi delší a náročnější kampaň."
   The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. X-Piratez is the biggest OpenXcom mod to date.: "Píše se rok 2601. Země si již před dlouhou násilím podmanili cizáci. Ty stojíš v čele bandy pirátek, které obírají cizáky a jejich přisluhovače nejen jen tak pro radost, ale také kvůli bohatství a slávě. X-Piratez je doposud nejrozsálejší modifikace OpenXcomu."
-  We appreciate Anna Zemlina for her fantastic artworks created especially for the mod.: "Děkujeme Anně Zemlině za její fantastická umělecká díla vytvořená speciálně pro X-Piratez."
+  We appreciate Anna Zemlina for her fantastic artworks created especially for the X-Piratez Universe.: "Děkujeme Anně Zemlině za její fantastická umělecká díla vytvořená speciálně pro X-Piratez Vesmír."
   # Pt.2,5
   #Download mod: "Stáhni si mod"
   #join our community with: "přidej se k naší komunitě na"
@@ -81,7 +83,7 @@ cs:
   Enemy Unknown or X-Com: "Enemy Unknown nebo X-Com"
   UFO Defense game (either DOS or Steam version) to launch the mod. Copy them to the Dioxine_XPiratez\UFO folder.: "UFO Defense (ať už verze pro DOS, nebo Steam). S modem nejsou kompatibilní soubory počeštěné hry, která kdysi vyšla jako příloha jednoho z herních časopisů. Soubory originální hry nakopíruj do složky Dioxine_XPiratez\\UFO."
   X-Piratez is distributed with the compatible OXCE engine version. There is no need to replace or upgrade OXCE, as other builds may not be compatible with your version of X-Piratez. Because of that, we recommend you turn off the 'Automatic update check' user option (options\advanced\general.) This option does not check for updates of the mod itself, in any case it has to be downloaded from the forum or mod.io: "Mód X-Piratez je distribuován s kompatibilní verzí enginu OXCE, takže ho není nutné nahrazovat nebo ugradovat. Navíc jiné verze s modem nemusí být nutně kompatibilní. I z tohoto důvodu je dobré vypnout volbu automatické kontroly aktualizací ve hře (možnosti\\další\\hlavní), která nekontroluje verzi módu, ale jen enginu. Mód je třeba stahovat z fóra, nebo stránek mod.io."
-  X-Piratez is distributed with the compatible OXCE engine version. There is no need to replace or upgrade OXCE, as other builds may not be compatible with your version of X-Piratez. Because of that, we recommend you turn off the 'Automatic update check' user option (options/advanced/general.) This option does not check for updates of the mod itself.: "Mód X-Piratez je distribuován s kompatibilní verzí enginu OXCE, takže ho není nutné nahrazovat nebo ugradovat. Navíc jiné verze s modem nemusí být nutně kompatibilní. I z tohoto důvodu je dobré vypnout volbu automatické kontroly aktualizací ve hře (možnosti\\další\\hlavní), která nekontroluje verzi módu, ale jen enginu."
+  X-Piratez is distributed with the compatible OXCE engine version. There is no need to replace or upgrade OXCE, as other builds may not be compatible with your version of X-Piratez. Because of that, we recommend you turn off the 'Automatic update check' user option (options\advanced\general.) This option does not check for updates of the mod itself.: "Mód X-Piratez je distribuován s kompatibilní verzí enginu OXCE, takže ho není nutné nahrazovat nebo ugradovat. Navíc jiné verze s modem nemusí být nutně kompatibilní. I z tohoto důvodu je dobré vypnout volbu automatické kontroly aktualizací ve hře (možnosti\\další\\hlavní), která nekontroluje verzi módu, ale jen enginu."
   If you already have X-Piratez saves, you can copy them from the old Dioxine_XPiratez\user\piratez folder to the new one.: "Pokud chceš zachovat již uložené pozice X-Piratez, nakopíruje je ze složky Dioxine_XPiratez\\user\\piratez dřívější verze do stejně pojmenované složky v adresáři s novou verzí."
   Optionally, you can also copy user settings from the old Dioxine_XPiratez\user folder to the new one (options.cfg file.): "Obdobně můžeš zachovat i uživatelská nastavení ze složky Dioxine_XPiratez\\user, uložená v souboru options.cfg."
   Optionally, don't delete your outdated version. Just in case.: "Pro jistotu je dobré okamžitě nemazat starší verzi, kdyby bylo něco špatného v nové."
@@ -103,7 +105,6 @@ cs:
   You can send your donations through PayPal to: "Můžete poslat své dary přes PayPal na"
   #Block2
   chief OXCE programmer, the Wise Alchemist: "hlavní programátor OXCE, Moudrý Alchymista"
-  You can send your donations on Patreon.: "Můžete poslat své dary na Patreon."
   #Block3
   Join the Transifex team!: "Připojte se k týmu Transifexu!"
   All mods are translated by the players: "Všechny mody jsou přeloženy hráči"
@@ -116,5 +117,4 @@ cs:
   Thanks to: "Děkujeme"
   for translating the homepage and interfaces into non-English languages: "za překlad domovské stránky a rozhraní do neanglických jazyků"
   Wiki is powered by: "Wiki využívá technologii"
-  Mobile version by: "Mobilní verze od"
-  Finnik, XCF junior developer: "Finnik, XCF mladší vývojář"
+  Codemasters: "Programátoři stránek"

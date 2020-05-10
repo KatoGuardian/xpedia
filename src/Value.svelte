@@ -13,7 +13,7 @@
     {#each Object.keys(val).sort() as field, i}
       <tr>
         <td>
-          <nobr>{@html rul.str(field)}</nobr>
+          <nobr>{@html rul.decamelize(field)}</nobr>
         </td>
         <td>
           <em><Link href={val[field]}/></em>
@@ -22,7 +22,7 @@
     {/each}
   </table>
 {:else if val===true || val ===false}
-  <span style="color:{val?'lime':'red'}">{rul.str(val)}</span>
+  <span style="color:{val?'lime':'red'}">{rul.str(val.toString())}</span>
 {:else if !isNaN(+val)}
   <em class="num">{val.toLocaleString()}</em>
 {:else}
