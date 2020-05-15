@@ -9,6 +9,7 @@ set mod_rules_path=user\mods\%mod_name%\Ruleset
 set mod_language_path=user\mods\%mod_name%\Language\%language_name%.yml
 set vanilla_rules_path=standard\xcom1
 set vanilla_language_path=standard\xcom1\Language\%language_name%.yml
+set pedia_language_path=xpedia\Language\%language_name%.yml
 set pedia_header=xpedia\xpedia.html.header
 
 rem echo %mod_rules_path%
@@ -41,6 +42,10 @@ rem echo %vanilla_language_path%
 	
 	echo | set /p langTag=langm-
 	type "%mod_language_path%"	
+	
+	echo | set /p langTag=langp-
+	type "%pedia_language_path%"
+	
 )
 
 xpedia.html
