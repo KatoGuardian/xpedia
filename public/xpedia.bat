@@ -21,7 +21,7 @@ rem echo %vanilla_language_path%
 	type %pedia_header%
 	
 	echo FILE: xpedia
-	echo {modName: %mod_name%}
+	echo {mod_name: %mod_name%}
 
 	for /r %vanilla_rules_path% %%F in (*.rul) do (
 		echo FILE: %%F
