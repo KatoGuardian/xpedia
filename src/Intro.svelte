@@ -22,7 +22,7 @@
         <a href="https://www.deviantart.com/emerald--weapon" target="_blank"><img class="media-icon" src="xpedia/images/Emerald.png" alt="Anna Zemlina (artist)" title="Anna Zemlina (artist)"></a>
       </div>
     </div>
-    <h1>{rul.str("Current mod version is")} L1A1</h1>
+    <h1>{rul.str("Current mod version is")} L2</h1>
       <div class="guide">
       <h2>{rul.str("PC Installation & Update Guide")}</h2>
       <ul class="guide">
