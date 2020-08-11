@@ -45,7 +45,7 @@
       <table class="number-table" width="100%" style="margin:0px">
       {#each manufacture.randomProducedItems as chance}
         {#if Object.keys(chance[1]).length == 0}
-          <tr><td colspan="2" style="text-align:center;">NOTHING</td></tr>
+          <tr><td colspan="2" style="text-align:center;">{rul.str("NOTHING")}</td></tr>
         {/if}
         {#each Object.keys(chance[1]).sort() as field, i}
           <tr><td>{chance[1][field]}</td><td><Link href={field}/></td></tr>
