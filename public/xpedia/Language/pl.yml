@@ -6,6 +6,7 @@ pl:
   CONDITIONS: "WARUNKI"
   CATEGORIES: "KATEGORIE"
   MANUFACTURE: "PRODUKCJA"
+  NOTHING: ""
   RESEARCH: "BADANIA"
   SERVICES: "FUNKCJE"
 
@@ -21,6 +22,7 @@ pl:
   Download: "Pobierz"
   (forum link): "(Łącze do forum)"
   (from mod.io): "(z mod.io)"
+
  # STARTING CONDITIONS
   ACADEMY_CRUISE: "Jacht Akademii"
   AIRCAR_RACE: "Aerowyścigi Yello"
@@ -29,6 +31,7 @@ pl:
   DISC_DUEL: "Pojedynek na dyski"
   EMANSION: "Napad na posiadłość"
   EXO: "Tylko stroje hermetyczne"
+  GAL_PARTY: ""
   MOSTLY_HARMLESS: "Przeważnie niegroźna broń"
   NOHEAVYARMOREXCEPTFLYING: "Bez ciężkich pancerzy, oprócz latających"
   NOHELMET: "Tylko odsłonięte twarze"
@@ -49,106 +52,148 @@ pl:
   #Vessels
   Craft: "Statek"
   accel: "Przyspieszenie"
-  tip_accel: "Szybkość przerwania walki zależna od przyspieszenia statku (gdy możliwe):
+  tip_accel: "accel<br><br>Szybkość przerwania walki zależna od przyspieszenia statku (gdy możliwe):
     <ul><li> 0-2 = połowa szybkości;</li>
     <li> 3-5 = normalna szybkość;</li>
     <li> 6-8 = +50% do szybkości;</li>
     <li> 9+ = podwójna szybkość.</li></ul>"
   allowLanding: "Może lądować?"
-  tip_allowLanding: "Czy ta maszyna powinna umożliwiać rozpoczęcie misji naziemnej?" 
+  tip_allowLanding: "allowLanding<br><br>Czy ta maszyna powinna umożliwiać rozpoczęcie misji naziemnej?" 
   autoPatrol: "Patrol automatyczny"
-  tip_autoPatrol: "Czy ta maszyna powinna automatycznie wracać do punktu patrolowego po zatankowaniu?"
+  tip_autoPatrol: "autoPatrol<br><br>Czy ta maszyna powinna automatycznie wracać do punktu patrolowego po zatankowaniu?"
   avoidBonus: "Premia do uników"
-  tip_avoidBonus: "Premia procentowa do szansy uniknięcia ostrzału wroga."
+  tip_avoidBonus: "avoidBonus<br><br>Premia procentowa do szansy uniknięcia ostrzału wroga."
   costRent: "Koszt wynajmu"
-  tip_costRent: "Miesięczna opłata pieniężna za utrzymanie tego pojazdu. Jeśli 0, pojazd nie wymaga opłat i nie będzie wliczał się do kosztów utrzymania bazy."
+  tip_costRent: "costRent<br><br>Miesięczna opłata pieniężna za utrzymanie tego pojazdu. Jeśli 0, pojazd nie wymaga opłat i nie będzie wliczał się do kosztów utrzymania bazy."
   damageMax: "Wytrzymałość"
-  tip_damageMax: "Maksymalne obrażenia, jakie to UFO może odnieść. Jeśli odniesie 50% obrażeń, rozbije się. Przy 100% ulegnie zniszczeniu."
+  tip_damageMax: "damageMax<br><br>Maksymalne obrażenia, jakie to UFO może odnieść. Jeśli odniesie 50% obrażeń, rozbije się. Przy 100% ulegnie zniszczeniu."
   forceShowInMonthlyCosts: "Wymuś pokazywanie kosztów miesięcznych"
-  tip_forceShowInMonthlyCosts: "Wymusza pokazywanie tego typu maszyny na wykazie kosztów miesięcznych, nawet jeśli nie ma jej w bazie."
+  tip_forceShowInMonthlyCosts: "forceShowInMonthlyCosts<br><br>Wymusza pokazywanie tego typu maszyny na wykazie kosztów miesięcznych, nawet jeśli nie ma jej w bazie."
   fuelMax: "Zapas paliwa"
-  tip_fuelMax: "Maksymalna ilość paliwa, jak ta maszyna może zabrać. Paliwo jest zużywane w trasie zależnie od prędkości."
+  tip_fuelMax: "fuelMax<br><br>Maksymalna ilość paliwa, jak ta maszyna może zabrać. Paliwo jest zużywane w trasie zależnie od prędkości."
   hitBonus: "Premia do trafienia"
-  tip_hitBonus: "Premia procentowa do szans na trafienie ze wszystkich broni pokładowych."
+  tip_hitBonus: "hitBonus<br><br>Premia procentowa do szans na trafienie ze wszystkich broni pokładowych."
   maxAltitude: "Maksymalny pułap"
-  tip_maxAltitude: "Maksymalna wysokość (0-4), na której ta maszyna może brać udział w walce powietrznej."
+  tip_maxAltitude: "maxAltitude<br><br>Maksymalna wysokość (0-4), na której ta maszyna może brać udział w walce powietrznej."
   pilots: "Piloci"
-  tip_pilots: "Ilu pilotów potrzeba do obsługi tej maszyny.
+  tip_pilots: "pilots<br><br>Ilu pilotów potrzeba do obsługi tej maszyny.
     <ul><li> piloci są też żołnierzami i będą walczyć na ziemi;</li>
     <li> piloci dają maszynie premie/kary w walce powietrznej (zależnie od ich umiejętności);</li>
     <li> piloci zyskują doświadczenie w starciach powietrznych;</li>
     <li> pilotów można wyznaczyć ręcznie; jeśli wolisz tego nie robić, można ich przydzielać automatycznie.</li></ul>"
   powerBonus: "Premia do obrażeń"
-  tip_powerBonus: "Mnożnik do siły broni pokładowych, np. 20 = moc broni zwiększona do 120% oryginalnej wartości, -20 = zmniejszona do 80%."
+  tip_powerBonus: "powerBonus<br><br>Mnożnik do siły broni pokładowych, np. 20 = moc broni zwiększona do 120% oryginalnej wartości, -20 = zmniejszona do 80%."
   radarChance: "Skuteczność radaru"
-  tip_radarChance: "Szansa (0-100%) na wykrycie wrogiego obiektu wchodzącego w zasięg radaru."
+  tip_radarChance: "radarChance<br><br>Szansa (0-100%) na wykrycie wrogiego obiektu wchodzącego w zasięg radaru."
   radarRange: "Zasięg radaru"
-  tip_radarRange: "Maksymalny zasięg wykrywania radarowego, podany w milach morskich."
+  tip_radarRange: "radarRange<br><br>Maksymalny zasięg wykrywania radarowego, podany w milach morskich."
   refuelItem: "Rodzaj paliwa"
-  tip_refuelItem: "Przedmiot wymagany do zatankowania maszyny. Jeśli nie jest określony, maszyna używa zwykłego paliwa."
+  tip_refuelItem: "refuelItem<br><br>Przedmiot wymagany do zatankowania maszyny. Jeśli nie jest określony, maszyna używa zwykłego paliwa."
   refuelRate: "Szybkość tankowania"
-  tip_refuelRate: "Ilość paliwa tankowanego w bazie w ciągu 30 minut. Jeśli dotyczy, za każdym razem zużywany jest refuelItem."
+  tip_refuelRate: "refuelRate<br><br>Ilość paliwa tankowanego w bazie w ciągu 30 minut. Jeśli dotyczy, za każdym razem zużywany jest refuelItem."
   repairRate: "Szybkość naprawy"
-  tip_repairRate: "Liczba punktów obrażeń usuwanych na godzinę podczas napraw w bazie."
+  tip_repairRate: "repairRate<br><br>Liczba punktów obrażeń usuwanych na godzinę podczas napraw w bazie."
   score: "Punktacja"
-  tip_score: "Punktu uzyskane w wypadku zniszczenia tej maszyny.
+  tip_score: "score<br><br>Punktu uzyskane w wypadku zniszczenia tej maszyny.
     <ul><li> dla wrogich maszyn - połowa tej wartości, gdy cel się rozbije;</li>
     <li> dla własnych maszyn - punkty utracone w przypadku zniszczenia.</li></ul>"
   shieldBleedThrough: "Współczynnik przełamania tarcz"
-  tip_shieldBleedThrough: "Określa procent obrażeń, który przechodzi przez tarczę po jej przeciążeniu. Wartość 0 oznacza, że nawet przy tarcza o mocy 1 punktu zablokuje dowolny jeden atak, zaś 100 znaczy, że 100% obrażeń pozostałych po zablokowaniu przez tarczę zostanie przeniesione na maszynę."
+  tip_shieldBleedThrough: "shieldBleedThrough<br><br>Określa procent obrażeń, który przechodzi przez tarczę po jej przeciążeniu. Wartość 0 oznacza, że nawet przy tarcza o mocy 1 punktu zablokuje dowolny jeden atak, zaś 100 znaczy, że 100% obrażeń pozostałych po zablokowaniu przez tarczę zostanie przeniesione na maszynę."
   shieldCapacity: "Moc tarcz"
-  tip_shieldCapacity: "Maksymalna moc tarcz."
+  tip_shieldCapacity: "shieldCapacity<br><br>Maksymalna moc tarcz."
   shieldRecharge: "Regeneracja tarcz (w walce)"
-  tip_shieldRecharge: "Określa szansę procentową na odzyskanie jednego punktu tarcz na sekundę w grze (SG) podczas walki powietrznej. Wartości poniżej 100 to szansa procentowa, natomiast powyżej 100, każde +100 oznacza automatyczne +1 do tarcz na SG.<br><br>Zatem shieldRecharge: 250 oznacza +2 tarcz/SG, z 50% szansą na jeszcze +1 do tego."
+  tip_shieldRecharge: "shieldRecharge<br><br>Określa szansę procentową na odzyskanie jednego punktu tarcz na sekundę w grze (SG) podczas walki powietrznej. Wartości poniżej 100 to szansa procentowa, natomiast powyżej 100, każde +100 oznacza automatyczne +1 do tarcz na SG.<br><br>Zatem shieldRecharge: 250 oznacza +2 tarcz/SG, z 50% szansą na jeszcze +1 do tego."
   shieldRechargeInGeoscape: "Regeneracja tarcz (poza walką)"
-  tip_shieldRechargeInGeoscape: "Działa podobnie jak shieldRecharge, ale co 5 sekund w widoku globu. Nadanie wartości -1 oznacza natychmiastową pełną odnowę po upływie 5 sekund."
+  tip_shieldRechargeInGeoscape: "shieldRechargeInGeoscape<br><br>Działa podobnie jak shieldRecharge, ale co 5 sekund w widoku globu. Nadanie wartości -1 oznacza natychmiastową pełną odnowę po upływie 5 sekund."
   soldiers: "Załoga"
-  tip_soldiers: "Liczba żołnierzy, których pojazd może przewozić."
+  tip_soldiers: "soldiers<br><br>Liczba żołnierzy, których pojazd może przewozić."
   spacecraft: "Pojazd kosmiczny?"
-  tip_spacecraft: "Czy ta maszyna może lecieć do Cydonii?"
+  tip_spacecraft: "spacecraft<br><br>Czy ta maszyna może lecieć do Cydonii?"
   speedMax: "Prędkość maksymalna"
-  tip_speedMax: "Prędkość maksymalna w milach morskich.<br><br>Twoje maszyny podróżują z pełną prędkością i patrolują z połową prędkości."
+  tip_speedMax: "speedMax<br><br>Prędkość maksymalna w milach morskich.<br><br>Twoje maszyny podróżują z pełną prędkością i patrolują z połową prędkości."
   sprite: "Duszek"
-  tip_sprite: "Dwuwymiarowa bitmapa, używana do rysowania grafiki w grze."
-  startingConditions: "Warunki początkowe"
-  tip_startingConditions: "Różne uwarunkowania i ograniczenia nakładane przed startem danej misji naziemnej."
+  tip_sprite: "sprite<br><br>Dwuwymiarowa bitmapa, używana do rysowania grafiki w grze."
   vehicles: "Pomocniki"
-  tip_vehicles: "Liczba jednostek wsparcia, które ten pojazd może przewozić."
+  tip_vehicles: "vehicles<br><br>Liczba jednostek wsparcia, które ten pojazd może przewozić."
   weaponStrings: "Nazwy broni"
-  tip_weaponStrings: "Lista opisująca mocowania broni w tej maszynie (do 4 sztuk)."
+  tip_weaponStrings: "weaponStrings<br><br>Lista opisująca mocowania broni w tej maszynie (do 4 sztuk)."
   weaponTypes: "Dozwolone typy broni"
-  tip_weaponTypes: "Lista definiująca kompatybilne typy broni dla tej maszyny. Do 4 mocowań, a każde może mieć do 4 kompatybilnych typów broni."
+  tip_weaponTypes: "weaponTypes<br><br>Lista definiująca kompatybilne typy broni dla tej maszyny. Do 4 mocowań, a każde może mieć do 4 kompatybilnych typów broni."
   weapons: "Broń"
-  tip_weapons: "Liczba broni, które można zamontować na tej maszynie."
+  tip_weapons: "weapons<br><br>Liczba broni, które można zamontować na tej maszynie."
 
   Weapon: "Broń"
   ammoMax: "Pojemność amunicji"
+  tip_ammoMax: "ammoMax<br><br>Limit amunicji możliwej do załadowania do tej broni."
   clip: "Magazynek"
+  tip_clip: "clip<br><br>Przedmiot wymagany do uzbrojenia tej broni."
   launcher: "Wyrzutnia"
+  tip_launcher: "launcher<br><br>Przedmiot wymagany do zamontowania tej broni."
   projectileSpeed: "Szybkość pocisku"
+  tip_projectileSpeed: "projectileSpeed<br><br>Prędkość pocisku wystrzelonego z tej broni w walce powietrznej."
   projectileType: "Typ pocisku"
+  tip_projectileType: "projectileType<br><br>Typ pocisku tej broni, wyznacza duszka pocisku w walce powietrznej:
+    <ul><li> 0 = Trygon;</li>
+    <li> 1 = Lawina;</li>
+    <li> 2 = Działko;</li>
+    <li> 3 = Kula fuzyjna;</li>
+    <li> 4 = Działko laserowe;</li>
+    <li> 5 = Wiązka plazmowa.</li></ul>"
   rearmRate: "Szybkość przeładowania"
+  tip_rearmRate: "rearmRate<br><br>Ilość amunicji ładowanej w ciągu godziny podczas uzbrajania maszyny w kryjówce."
   reloadAggressive: "Przeładowanie agresywne"
+  tip_reloadAggressive: "reloadAggressive<br><br>Czas upływający pomiędzy wystrzałami z tej broni w trybie DO ABORDAŻU!"
   reloadCautious: "Przeładowanie ostrożne"
+  tip_reloadCautious: "reloadCautious<br><br>Czas upływający pomiędzy wystrzałami z tej broni w trybie STRZELAĆ NA DYSTANS."
   reloadStandard: "Przeładowanie standardowe"
+  tip_reloadStandard: "reloadStandard<br><br>Czas upływający pomiędzy wystrzałami z tej broni w trybie PEŁNA BURTOWA!"
   shieldDamageModifier: "Modyfikator uszkodzeń tarcz"
+  tip_shieldDamageModifier: "shieldDamageModifier<br><br>Określa procent mocy broni aplikowanej do tarcz."
   sound: "Odgłos strzału"
+  tip_sound: "sound<br><br>Definicja dźwięku z pliku GEO.CAT odtwarzanego podczas wystrzału z tej broni."
   weaponType: "Typ broni"
+  tip_weaponType: "weaponType<br><br>Stosowane do ograniczana niektórych broni/wyposażenia do określonych punktów mocowania."
 
   Launcher: "Wyrzutnia"
   Clip: "Amunicja"
 
+  #UFO
   alertSound: "Dźwięk ostrzegawczy"
+  tip_alertSound: "alertSound<br><br>Dźwięk odgrywany przy wykryciu tego typu UFO, z pliku GEO.CAT."
   breakOffTime: "Czas do ucieczki"
+  tip_breakOffTime: "breakOffTime<br><br>Minimalny czas, po którym UFO może wyrwać się z walki powietrznej."
   craftCustomDeploy: "Alternatywna załoga statku"
+  tip_craftCustomDeploy: "craftCustomDeploy<br><br>Nadpisuje dane rozstawienia używane podczas generacji misji naziemnej, gdy UFO się rozbije lub wyląduje."
   huntBehavior: "Żyłka myśliwska"
+  tip_huntBehavior: "huntBehavior<br><br>Algorytm używany przy rozważaniu wycofania się z walki powietrznej:
+    <ul><li> 0 = uciekaj, gdy przegrywasz;</li>
+    <li> 1 = nigdy nie uciekaj ani się nie rozbijaj (zamiast tego UFO jest niszczone);</li>
+    <li> 2 = wybór losowy (0 lub 1), określany przy tworzeniu UFO.</li></ul>"
   huntMode: "Ulubiona zwierzyna"
+  tip_huntMode: "huntMode<br><br>Algorytm używany do wyboru celów:
+    <ul><li> 0 = wybieraj najpierw polowanie na myśliwce gracza;</li>
+    <li> 1 = wybieraj najpierw polowanie na transportowce gracza;</li>
+    <li> 2 = wybór losowy (0 lub 1), określany przy tworzeniu UFO.</li></ul>"
   hunterKillerPercentage: "Szansa na bycie łowcą"
+  tip_hunterKillerPercentage: "hunterKillerPercentage<br><br>Szansa (0-100%), że stworzone UFO stanie się myśliwym-mordercą."
+  marker: ""
+  tip_marker: ""
+  markerCrash: ""
+  tip_markerCrash: ""
+  markerLand: ""
+  tip_markerLand: ""
   missionCustomDeploy: "Alternatywna załoga misji"
+  tip_missionCustomDeploy: "missionCustomDeploy<br><br>Nadpisuje dane rozstawienia używane podczas generacji misji naziemnej, gdy UFO rozpoczyna misję naziemną."
   missionScore: "Punktacja za misję"
+  tip_missionScore: "missionScore<br><br>Ujemne punkty przyznawane za każde pół godziny, gdy UFO jest aktywne, a podwójna ich wartość, gdy jest na ziemi."
   modSprite: "Obraz w walce powietrznej"
+  tip_modSprite: "modSprite<br><br>Duszek używany do narysowania tego UFO w widoku bitwy powietrznej i w Łupopedii."
   raceBonus: "Premia dla załogi"
+  tip_raceBonus: "raceBonus<br><br>Modyfikuje lub nadpisuje współczynniki statku zależnie od załogi."
+  range: "Zasięg"
+  tip_range: ""
   reload: "Czas przeładowania"
+  tip_reload: "reload<br><br>Czas upływający między strzałami z broni tego UFO."
 
   #Armors
   Armor: "Pancerz"
@@ -157,6 +202,9 @@ pl:
   Hide: "Ukryj"
   all variants: "wszystkie warianty"
   armor: "Pancerz"
+  tip_armor: ""
+  
+  
   Front: "Przedni"
   Rear: "Tylny"
   Side: "Boczny"
@@ -164,9 +212,11 @@ pl:
   damageModifier: "Modyfikatory obrażeń"
 
   stats: "Współczynniki"
+  tip_stats: ""
   bravery: "Odwaga"
   firing: "Strzelanie"
   melee: "Walka wręcz"
+  psi: ""
   psiSkill: "Zestrojenie z wudu"
   psiStrength: "Moc wudu"
   reactions: "Refleks"
@@ -189,44 +239,114 @@ pl:
   stunNormalized: "Znormalizowane Oszołomienie"
 
   allowInv: "Dostęp do ekwipunku?"
+  tip_allowInv: "allowInv<br><br>Czy gracz ma dostęp do ekwipunku w tym pancerzu?"
   allowsKneeling: "Można klękać?"
+  tip_allowsKneeling: "allowsKneeling<br><br>Czy ten pancerz pozwala klękać?"
   allowsRunning: "Można biegać?"
+  tip_allowsRunning: "allowsRunning<br><br>Czy ten pancerz pozwala biegać?"
   allowsStrafing: "Można chodzić w bok?"
+  tip_allowsStrafing: "allowsStrafing<br><br>Czy ten pancerz pozwala chodzić na boki?"
   antiCamouflageAtDark: "Negacja kamuflażu nocnego"
+  tip_antiCamouflageAtDark: "antiCamouflageAtDark<br><br>Anuluje kamuflaż wroga o określoną wartość (w polach) w ciemności. Nie może zwiększyć widoczności ponad normalny poziom. Odpowiednik parametru KAPO."
   antiCamouflageAtDay: "Negacja kamuflażu dziennego"
+  tip_antiCamouflageAtDay: "antiCamouflageAtDay<br><br>Anuluje kamuflaż wroga o określoną wartość (w polach) za dnia. Nie może zwiększyć widoczności ponad normalny poziom. Odpowiednik parametru KAPO."
   bleedImmune: "Niewrażliwość na krwawienie?"
+  tip_bleedImmune: "bleedImmune<br><br>Czy ta jednostka jest odporna na krwawienie?"
   builtInWeapons: "Przedmioty wbudowane"
+  tip_builtInWeapons: "builtInWeapons<br><br>Nie można usunąć z ekwipunku."
   camouflageAtDark: "Kamuflaż nocny"
+  tip_camouflageAtDark: "camouflageAtDark<br><br>Sprawia, że jednostka nosząca ten pancerz jest mniej widoczna w ciemnościach.<br><br>Jeśli cyfra jest dodatnia, wartość jest bezwzględna (np. wartość 7 oznacza, że jednostka będzie widoczna z 7 pól) i opisana w grze jako NWD.<br><br>Jeśli cyfra jest ujemna, parametr ten zmniejsza zasięg, z jakiego jednostka jest widzialna (np. wartość 10 oznacza, że jednostka będzie widzialna z odległości o 10 mniejszej, niż wynikałoby to z parametru WwC obserwatora); to jest opisane w grze jako KMF.<br><br>Widoczność nigdy nie może spaść poniżej 1 pola."
   camouflageAtDay: "Kamuflaż dzienny"
+  tip_camouflageAtDay: "camouflageAtDay<br><br>Sprawia, że jednostka nosząca ten pancerz jest mniej widoczna, gdy jest oświetlona.<br><br>Jeśli cyfra jest dodatnia, wartość jest bezwzględna (np. wartość 7 oznacza, że jednostka będzie widoczna z 7 pól) i opisana w grze jako NWD.<br><br>Jeśli cyfra jest ujemna, parametr ten zmniejsza zasięg, z jakiego jednostka jest widzialna (np. wartość 10 oznacza, że jednostka będzie widzialna z odległości o 10 mniejszej, niż wynikałoby to z parametru WwD obserwatora, normalnie ustawionego na maksimum - 40); to jest opisane w grze jako KMF.<br><br>Widoczność nigdy nie może spaść poniżej 1 pola."
   constantAnimation: "Ciągła animacja?"
+  tip_constantAnimation: "constantAnimation<br><br>Co to jest, każdy widzi."
   corpseBattle: "Zwłoki (bitwa)"
+  tip_corpseBattle: "corpseBattle<br><br>Lista definicji ciągów zwłok (przedmiotów) tworzonych, gdy jednostka nosząca ten pancerz zostaje zabita/traci przytomność w misji taktycznej."
   corpseGeo: "Zwłoki (po bitwie)"
+  tip_corpseGeo: "corpseGeo<br><br>Zwłoki (przedmiot) odzyskiwane podczas sprawozdania po misji."
   createsMeleeThreat: "Broni się w walce wręcz?"
+  tip_createsMeleeThreat: "createsMeleeThreat<br><br>Czy ta jednostka potrafi bronić się przed strzelaniem w zwarciu?"
+  deathFrames: ""
+  tip_deathFrames: ""
   drawBubbles: "Puszcza bąbelki?"
+  tip_drawBubbles: "drawBubbles<br><br>Prawda dla jednostek oddychających pod wodą."
   drawingRoutine: "Algorytm rysowania"
+  tip_drawingRoutine: "drawingRoutine<br><br>Algorytm rysowania, który składa poszczególne części ciała umieszczone na atlasie duszka jednostki:
+    <ul><li> 0 = dziewka, retykulanin;</li>
+    <li> 1 = Nubiranin;</li>
+    <li> 2 = Czołg;</li>
+    <li> 3 = Cyberdysk;</li>
+    <li> 4 = Gwiezdny Bóg;</li>
+    <li> 5 = Sektopod, żeniec;</li>
+    <li> 6 = Erydianin;</li>
+    <li> 7 = Kryzalid;</li>
+    <li> 8 = Łupek;</li>
+    <li> 9 = Pierdziworek;</li>
+    <li> 10 = Muton;</li>
+    <li> 11 = Czołg podwodny;</li>
+    <li> 12 = Halucynoid;</li>
+    <li> 13 = Akwanauta;</li>
+    <li> 14 = Kalcynit, głębion, skrzelak, homaroid, tasot;</li>
+    <li> 15 = Akwatoid;</li>
+    <li> 16 = Biodron;</li>
+    <li> 17 = Cywil z TFTD typu A i zombi z TFTD;</li>
+    <li> 18 = Cywil z TFTD typu B;</li>
+    <li> 19 = Mackonóg;</li>
+    <li> 20 = Bumozaur;</li>
+    <li> 21 = Ksarkuid;</li>
+    <li> 22 = Odwrócony cyberdysk (animacja lewitacji na górze).</li></ul>"
   fearImmune: "Niewrażliwość na utratę Morale?"
+  tip_fearImmune: "fearImmune<br><br>Czy ta jednostka jest odporna na utratę morale (i widzenie psioniczne)?"
   forcedTorso: "Wymuszony wariant duszka"
+  tip_forcedTorso: "forcedTorso<br><br>Duszki mają 'męskie' i 'żeńskie' wersje tułowia. Niektóre pancerze mogą używać tego rozróżnienia dla pancerzy latających i nielatających, niezależnie od płci.
+    <ul><li> 0 = użyj zależnie od płci;</li>
+    <li> 1 = użyj wersji 'męskiej';</li>
+    <li> 2 = użyj wersji 'żeńskiej'.</li></ul>"
   heatVision: "Termowizja, %"
+  tip_heatVision: "heatVision<br><br>Pozwala lepiej widzieć przez dym. Wartość procentowa (0-100%) definiuje, ile dymu jest ignorowane."
   ignoresMeleeThreat: "Ignoruje walkę wręcz?"
+  tip_ignoresMeleeThreat: "ignoresMeleeThreat<br><br>Czy ta jednostka jest niewrażliwa na mechanikę strzelania w zwarciu?"
   loftempsSet: "Kształt"
+  tip_loftempsSet: "loftempsSet<br><br>Im ta liczba większa, tym jednostka jest większym celem."
   meleeDodge: "Uniki"
+  tip_meleeDodge: "meleeDodge<br><br>Formuły dla szansy uniknięcia ataku wręcz."
   meleeDodgeBackPenalty: "Kara do uników przy ataku od tyłu"
+  tip_meleeDodgeBackPenalty: "meleeDodgeBackPenalty<br><br>Wyznacza karę do zdolności uniku jednostki (patrz Uniki) w przypadku bycia zaatakowaną od tyłu. Definicja jest procentowa, np. 0.7 = 70%.<br><br>Przy ataku od tyłu aplikuje się pełna kara, od boku - proporcjonalnie mniej. Przy ataku od przodu nie nalicza się kary."
   moveSound: "Odgłos ruchu"
+  tip_moveSound: "moveSound<br><br>Definicja dźwięku z pliku BATTLE.CAT odgrywanego, gdy ta jednostka się porusza."
   movementType: "Typ ruchu"
+  tip_movementType: "movementType<br><br>Typy ruchu dostępne temu pancerzowi:
+    <ul><li> 0 = chodzenie;</li>
+    <li> 1 = latanie;</li>
+    <li> 2 = ślizganie (bez animacji chodu);</li>
+    <li> 3 = unoszenie ('latanie' pod wodą, chodzenie przy gruncie);</li>
+    <li> 4 = tonięcie (chodzenie pod wodą, unoszenie się przy gruncie).</li></ul>"
   overKill: "Próg odparowania"
+  tip_overKill: "overKill<br><br>Określa, ile obrażeń (powyżej maksymalnych PŻ) potrzeba, by odparować/zdezintegrować jednostkę przy trafieniu. Określane procentowo, np. 0.6 = 60% maksymalnych PŻ.
+    <ul><li> Jeśli jednostka ulega dezintegracji, będzie miała inną animację śmierci i nie pozostawi żadnych zwłok.</li>
+    <li> Broń można konfigurować, czy powoduje dezintegrację, czy też nie.</li></ul"
   painImmune: "Niewrażliwość na oszołomienie?"
+  tip_painImmune: "painImmune<br><br>Czy jednostka jest odporna na obrażenia do oszołomienia? Domyślnie wszystkie rodzaje broni z typem obrażeń 6 (oszołomienie) ignorują ten parametr."
   personalLight: "Światła"
+  tip_personalLight: "personalLight<br><br>Jasność światła emitowanego przez jednostkę noszącą ten pancerz."
   psiDefence: "Obrona przed wudu"
+  tip_psiDefence: "psiDefence<br><br>Formuły dla wartości obrony psionicznej."
   psiVision: "ZMYSŁ"
+  tip_psiVision: "psiVision<br><br>Pozwala 'widzieć' przez ściany. Jednostki noszące ten pancerz mogą wyczuwać wrogów w zasięgu widzenia psionicznego (w polach).<br><br>Nie pozwala dostrzec wrogów odpornych na strach."
   specialWeapon: "Broń specjalna"
+  tip_specialWeapon: "specialWeapon<br><br>Broń wbudowana, która nie blokuje ekwipunku. Zamiast tego jest dostępna pod specjalną ikoną."
   spriteSheet: "Atlas duszka"
+  tip_spriteSheet: "spriteSheet<br><br>Atlas duszka używany do rysowania jednostki noszącej ten pancerz."
   storeItem: "Składowane jako"
-  tags: "Etykiety skryptów Yankesa"
+  tip_storeItem: "storeItem<br><br>Ten przedmiot reprezentuje pancerz składowany w magazynie."
   units: "Jednostki"
-  users: "Użytkownicy"
+  tip_units: "units<br><br>Lista typów żołnierzy, którzy mogą nosić ten pancerz."
   visibilityAtDark: "Nocne widzenie"
+  tip_visibilityAtDark: "visibilityAtDark<br><br>Na ile pól jednostka nosząca ten pancerz widzi w ciemności."
   visibilityAtDay: "Dzienne widzenie"
+  tip_visibilityAtDay: "visibilityAtDay<br><br>Na ile pól jednostka nosząca ten pancerz widzi za dnia."
   zombiImmune: "Niewrażliwość na zombifikację?"
+  tip_zombiImmune: "zombiImmune<br><br>To ustawienie działa tylko dla jednostek 1x1. Jednostki 2x2 są odporne zawsze."
 
   #Items
   Item: "Przedmiot"
@@ -235,8 +355,15 @@ pl:
   Aimed: "Celowany"
   Auto: "Seria"
   Melee: "Walka wręcz"
+  Throwing: ""
+  Specifications: ""
   accuracy: "Celność"
+  at N m: ""
   cost: "Koszt"
+  tip_cost: ""
+
+
+
   TU: "JC"
   energy: "Energia"
   damage: "Obrażenia"
@@ -257,209 +384,574 @@ pl:
   Corpse: "Ciało"
 
   ArmorEffectiveness: "Skuteczność pancerza"
+  tip_ArmorEffectiveness: ""
+
+
+
+
   FireBlastCalc: "Standardowy model ognia?"
+  tip_FireBlastCalc: ""
   FireThreshold: "Próg podpalenia"
+  tip_FireThreshold: ""
   FixRadius: "Promień rażenia"
+  tip_FixRadius: ""
+
+
+
   IgnoreDirection: "Nie zważa na kierunek"
+  tip_IgnoreDirection: ""
   IgnoreOverKill: "Nie powoduje odparowania"
+  tip_IgnoreOverKill: ""
   IgnorePainImmunity: "Ignoruje niewrażliwość na oszołomienie"
+  tip_IgnorePainImmunity: ""
   IgnoreSelfDestruct: "Ignoruje samozniszczenie"
+  tip_IgnoreSelfDestruct: ""
+  RadiusEffectiveness: "Efektywność promienia"
+  tip_RadiusEffectiveness: ""
   RadiusReduction: "Spadek obrażeń/pole"
+  tip_RadiusReduction: ""
   RandomStun: "Losowe oszołomienie?"
+  tip_RandomStun: ""
   RandomType: "Typ kości"
+  tip_RandomType: ""
+
+
+
+
+
+
+
+
+  RandomType_0: ()
+  RandomType_1: ()
+  RandomType_2: ()
+  RandomType_3: ()
+  RandomType_4: ()
+  RandomType_5: ()
+  RandomType_6: ()
+  RandomType_7: ()
   RandomWound: "Standardowy model ran?"
+  tip_RandomWound: ""
   ResistType: "Typ odporności"
+  tip_ResistType: ""
   SmokeThreshold: "Próg dymu"
+  tip_SmokeThreshold: ""
   ToArmor: "Mnożnik uszkodzeń pancerza"
+  tip_ToArmor: ""
   ToArmorPre: "Gwarantowane uszkodzenia pancerza"
+  tip_ToArmorPre: ""
   ToEnergy: "Mnożnik obniżania energii"
+  tip_ToEnergy: ""
   ToHealth: "Mnożnik obniżania zdrowia"
+  tip_ToHealth: ""
   ToItem: "Mnożnik niszczenia przedmiotów"
+  tip_ToItem: ""
   ToMorale: "Mnożnik obniżania morale"
+  tip_ToMorale: ""
   ToStun: "Mnożnik oszałamiania"
+  tip_ToStun: ""
   ToTile: "Mnożnik niszczenia terenu"
+  tip_ToTile: ""
   ToTime: "Mnożnik obniżania JC"
+  tip_ToTime: ""
   ToWound: "Mnożnik ran"
-  range: "Zasięg"
+  tip_ToWound: ""
+
 
   accuracyAimed: "Celność ognia mierzonego"
+  tip_accuracyAimed: ""
   accuracyAuto: "Celność ognia ciągłego"
+  tip_accuracyAuto: ""
   accuracyCloseQuarters: "Celność strzelania w zwarciu"
+  tip_accuracyCloseQuarters: ""
   accuracyMelee: "Celność w walce wręcz"
+  tip_accuracyMelee: ""
   accuracyMultiplier: "Mnożnik celności ognia"
+  tip_accuracyMultiplier: ""
   accuracySnap: "Celność ognia niemierzonego"
+  tip_accuracySnap: ""
   accuracyThrow: "Celność rzutu"
+  tip_accuracyThrow: ""
+  accuracyUse: ""
+  tip_accuracyUse: ""
   aimRange: "Celny zasięg ognia mierzonego"
+  tip_aimRange: ""
   arcingShot: "Trajektoria balistyczna?"
+  tip_arcingShot: ""
   attraction: "Powab"
+  tip_attraction: ""
   autoRange: "Celny zasięg ognia ciągłego"
+  tip_autoRange: ""
   autoShots: "Liczba strzałów w ogniu ciągłym"
+  tip_autoShots: ""
   battleType: "Typ przedmiotu"
+  tip_battleType: ""
+
+
+
+
+
+
+
+
+
+
+
+
   bigSprite: "Duszek w ekwipunku"
+  tip_bigSprite: ""
   blastRadius: "Promień rażenia (OXC)"
+  tip_blastRadius: ""
+
+
+
   blockBothHands: "Zajmuje obie ręce?"
+  tip_blockBothHands: ""
   bulletSpeed: "Prędkość pocisku"
+  tip_bulletSpeed: ""
   bulletSprite: "Duszek pocisku"
+  tip_bulletSprite: ""
+
+
+
+
+
+
+
+
+
+
+
   categories: "Kategorie"
+  tip_categories: ""
   clipSize: "Pojemność magazynka"
+  tip_clipSize: ""
+  closeQuartersMultiplier: ""
+  tip_closeQuartersMultiplier: ""
   compatibleAmmo: "Pasująca amunicja"
-  compatibleWeapons: "Pasująca broń"
-  componentOf: "Składowa"
+  tip_compatibleAmmo: ""
   costAimed: "Koszt ognia mierzonego"
+  tip_costAimed: ""
+  costAuto: "Koszt strzału serią"
+  tip_costAuto: ""
   costBuy: "Cena zakupu"
+  tip_costBuy: ""
   costMelee: "Koszt ataku wręcz"
+  tip_costMelee: ""
+  costMindControl: "Koszt kontroli umysłu"
+  tip_costMindControl: ""
+  costPanic: "Koszt paniki"
+  costPanic: ""
   costPrime: "Koszt odbezpieczenia"
+  tip_costPrime: ""
   costSell: "Cena sprzedaży"
+  tip_costSell: ""
   costSnap: "Koszt ognia niemierzonego"
+  tip_costSnap: ""
   costThrow: "Koszt rzutu"
+  tip_costThrow: ""
   costUnprime: "Koszt zabezpieczenia"
+  tip_costUnprime: ""
   costUse: "Koszt użycia"
+  tip_costUse: ""
   damageBonus: "Premia do obrażeń"
+  tip_damageBonus: ""
   damageType: "Typ obrażeń"
+  tip_damageType: ""
   defaultInventorySlot: "Domyślna lokacja w ekwipunku"
+  tip_defaultInventorySlot: ""
   dropoff: "Spadek celności/pole"
+  tip_dropoff: ""
   experienceTrainingMode: "Typ doświadczenia"
+  default algorithm: ""
+  train melee: ""
+  train melee 50% chance: ""
+  train melee 33% chance: ""
+  train firing: ""
+  train firing 50% chance: ""
+  train firing 33% chance: ""
+  train throwing: ""
+  train throwing 50% chance: ""
+  train throwing 33% chance: ""
+  train firing and throwing: ""
+  train firing or throwing (coinflip): ""
+  train reactions: ""
+  train reactions and melee: ""
+  train reactions and firing: ""
+  train reactions and throwing: ""
+  train reactions or melee (coinflip): ""
+  train reactions or firing (coinflip): ""
+  train reactions or throwing (coinflip): ""
+  train bravery: ""
+  train bravery x2: ""
+  train bravery and reactions: ""
+  train bravery or reactions (coinflip): ""
+  train bravery or reactions (coinflip) x2: ""
+  train VooDoo power: ""
+  train VooDoo power x2: ""
+  train VooDoo skill: ""
+  train VooDoo skill x2: ""
+  train VooDoo power and VooDoo skill: ""
+  train VooDoo power and VooDoo skill x2: ""
+  train VooDoo power or VooDoo skill (coinflip): ""
+  train VooDoo power or VooDoo skill (coinflip) x2: ""
+  train nothing: ""
+  tip_experienceTrainingMode: ""
   explosionHitSound: "Odgłos eksplozji"
+  tip_explosionHitSound: ""
   fireSound: "Odgłos strzału"
+  tip_fireSound: ""
   fixedWeapon: "Zamontowane na stałe?"
+  tip_fixedWeapon: ""
   fixedWeaponShow: "Zamontowane na stałe i to widać?"
+  tip_fixedWeaponShow: ""
   flatMelee: "Stały koszt ataku wręcz?"
+  tip_flatMelee: ""
   flatRate: "Stały koszt JC?"
+  tip_flatRate: ""
   floorSprite: "Duszek na polu bitwy"
+  tip_floorSprite: ""
   fuseType: "Typ zapalnika"
+  tip_fuseType: ""
+
+
+
+
   handSprite: "Duszek w rękach"
+  tip_handSprite: ""
   heal: "Liczba ładunków leczących"
+  tip_heal: ""
   healthRecovery: "Zdrowie za każdą uleczoną ranę"
+  tip_healthRecovery: ""
   hitAnimation: "Animacja trafienia"
+  tip_hitAnimation: ""
   hitMissSound: "Dźwięk chybionego ataku wudu"
+  tip_hitMissSound: ""
   hitSound: "Odgłos trafienia"
+  tip_hitSound: ""
   ignoreInBaseDefense: "Pomijane w obronie kryjówki?"
+  tip_ignoreInBaseDefense: ""
   invHeight: "Wysokość w ekwipunku"
+  tip_invHeight: ""
   invWidth: "Szerokość w ekwipunku"
+  tip_invWidth: ""
   isConsumable: "Zużywa się?"
+  tip_isConsumable: ""
   isExplodingInHands: "Wybucha w rękach?"
+  tip_isExplodingInHands: ""
   kneelBonus: "Mnożnik celności w przyklęku, %"
+  tip_kneelBonus: ""
   listOrder: "Numer ewidencyjny"
+  tip_listOrder: ""
   liveAlien: "Żywe?"
+  tip_liveAlien: ""
+  LOSRequired: "Wymaga linii wzroku?"
+  tip_LOSRequired: ""
   manaRecovery: "Regeneracja Świeżości"
+  tip_manaRecovery: ""
   maxRange: "Zasięg maksymalny"
+  tip_maxRange: ""
   medikitTargetMatrix: "Matryca możliwych celów apteczki"
+  tip_medikitTargetMatrix: ""
+
+
+
+
+
+
+
+
+
+
+
   medikitTargetSelf: "Można użyć na sobie?"
+  tip_medikitTargetSelf: ""
   medikitType: "Typ apteczki"
+  tip_medikitType: ""
+
+
+
+
   meleeAnimation: "Animacja ataku wręcz"
+  tip_meleeAnimation: ""
   meleeBonus: "Premia do obrażeń ataku wręcz"
+  tip_meleeBonus: ""
   meleeHitSound: "Odgłos ataku wręcz"
+  tip_meleeHitSound: ""
   meleeMultiplier: "Mnożnik celności ataku wręcz"
+  tip_meleeMultiplier: ""
   meleePower: "Siła ataku wręcz"
+  tip_meleePower: ""
   meleeSound: "Odgłos ataku wręcz"
+  tip_meleeSound: ""
   meleeType: "Typ obrażeń ataku wręcz"
+  tip_meleeType: ""
   minRange: "Minimalny celny zasięg"
+  tip_minRange: ""
   monthlyMaintenance: "Miesięczne koszty utrzymania"
+  tip_monthlyMaintenance: ""
   monthlySalary: "Miesięczne wynagrodzenie"
+  tip_monthlySalary: ""
   noLOSAccuracyPenalty: "Kara do celności gdy cel jest niewidoczny"
+  tip_noLOSAccuracyPenalty: ""
   oneHandedPenalty: "Kara do celności jednorącz"
+  tip_oneHandedPenalty: ""
   painKiller: "Liczba ładunków przeciwbólowych"
+  tip_painKiller: ""
+  painKillerRecovery: "Siła środków przeciwbólowych"
+  tip_painKillerRecovery: ""
   power: "Siła"
+  tip_power: ""
   powerRangeReduction: "Spadek siły/pole"
+  tip_powerRangeReduction: ""
   powerRangeThreshold: "Odległość od której spada siła"
+  tip_powerRangeThreshold: ""
   primeActionMessage: "Komunikat przy odbezpieczaniu"
+  tip_primeActionMessage: ""
   primeActionName: "Nazwa czynności odbezpieczania"
+  tip_primeActionName: ""
   prisonType: "Rodzaj więzienia"
+  tip_prisonType: ""
+  psiAttackName: "Nazwa ataku psi"
+  tip_psiAttackName: ""
+  psiRequired: "Wymaga zdolności psi?"
+  tip_psiRequired: ""
   recover: "Łup?"
+  tip_recover: ""
   recoveryPoints: "Niesława za zagrabienie"
+  tip_recoveryPoints: ""
   reloadSound: "Odgłos przeładowania"
+  tip_reloadSound: ""
   requires: "Odkrycia wymagane do obsługi"
   requiresBuy: "Odkrycia wymagane do zakupu"
+  tip_requiresBuy: ""
+  shotgunBehavior: "Tryb działania strzelby"
+  tip_shotgunBehavior: ""
   shotgunChoke: "Ciasność lufy"
+  tip_shotgunChoke: ""
+  shotgunPellets: "Liczba peletek"
+  tip_shotgunPellets: ""
+  shotgunSpread: "Rozrzut strzelby"
+  tip_shotgunSpread: ""
   size: "Zajmowane miejsce"
+  tip_size: ""
+
+
+
+
   snapRange: "Celny zasięg ognia niemierzonego"
-  spawnedBy: "Tworzone przez"
+  tip_snapRange: ""
+  specialIconSprite: ""
+  tip_specialIconSprite: ""
   specialType: "Odnośnik do terenu"
-  specialUseEmptyHand: ""
+  tip_specialType: ""
+  specialUseEmptyHand: "Używane z pustej ręki"
   tip_specialUseEmptyHand: ""
   sprayWaypoints: "Koordynaty ognia posiewanego"
+  tip_sprayWaypoints: ""
   stimulant: "Liczba ładunków pobudzających"
+  tip_stimulant: ""
   stunRecovery: "Neutralizacja oszołomienia"
+  tip_stunRecovery: ""
+  supportedInventorySections: ""
+  tip_supportedInventorySections: ""
   throwMultiplier: "Mnożnik celności rzutu"
+  tip_throwMultiplier: ""
   transferTime: "Czas dostawy w godzinach"
+  tip_transferTime: ""
   tuAimed: "Koszt ognia mierzonego, % JC"
+  tip_tuAimed: ""
   tuAuto: "Koszt ognia ciągłego, % JC"
+  tip_tuAuto: ""
   tuLoad: "Koszt przeładowania w JC"
+  tip_tuLoad: ""
+  tuMelee: ""
+  tip_tuMelee: ""
   turretType: ""
   tip_turretType: ""
+
+
+
+
+
   tuSnap: "Koszt ognia niemierzonego, % JC"
+  tip_tuSnap: ""
   tuUse: "Koszt użycia w JC"
+  tip_tuUse: ""
   twoHanded: "Dwuręczne?"
+  tip_twoHanded: ""
   unprimeActionName: "Nazwa czynności zabezpieczania"
+  tip_unprimeActionName: ""
+  waypoints: ""
+  tip_waypoints: ""
   weight: "Waga"
+  tip_weight: ""
   woundRecovery: "Liczba uleczonych ran"
+  tip_woundRecovery: ""
+  zombieUnit: "Jednostka po zombifikacji"
+  tip_zombieUnit: ""
 
   #Facilities
   Facility: "Instalacja"
-  mapName: "Nazwa mapy"
-  missileAttraction: "Podatność na zbombardowanie"
-  monthlyCost: "Koszty miesięczne"
-  buildCost: "Koszt budowy"
-  buildTime: "Czas budowy (w dniach)"
-  canBeBuiltOver: "Można na tym budować?"
-  refundValue: "Zysk z likwidacji"
-  spriteFacility: "Duszek 1x1"
-  spriteShape: "Duszek wielodzielny"
-  personnel: "Kwatery mieszkalne"
-  storageTiles: "Gdzie leży towar"
-  labs: "Stanowiska dla rozkminiaczek"
-  provideBaseFunc: "Funkcje specjalne budynku"
-  rightClickActionType: "Funkcja PPM"
-  storage: "Przestrzeń magazynowa"
-  maxAllowedPerBase: "Do ilu na kryjówkę"
-  workshops: "Stanowiska dla dłubaczek"
-  defense: "Siła obrony"
-  hitRatio: "Celność obrony"
-  buildCostItems: "Materiały"
-  psiLabs: "Stanowiska do nauki wudu"
   aliens: "Ilu wchodzi więźniów"
-  trainingRooms: "Ilu tu może trenować"
-  sickBayAbsoluteBonus: "Premia do rekonwalescencji (Zdrowie/dzień)"
-  sickBayRelativeBonus: "Premia do rekonwalescencji (% Zdrowia/dzień)"
+  tip_aliens: ""
+  buildCost: "Koszt budowy"
+  tip_buildCost: ""
+  buildCostItems: "Materiały"
+  tip_buildCostItems: ""
+  buildTime: "Czas budowy (w dniach)"
+  tip_buildTime: ""
+  canBeBuiltOver: "Można na tym budować?"
+  tip_canBeBuiltOver: ""
+  crafts: "Statki"
+  tip_crafts: ""
+  defense: "Siła obrony"
+  tip_defense: ""
+  hitRatio: "Celność obrony"
+  tip_hitRatio: ""
+  labs: "Stanowiska dla rozkminiaczek"
+  tip_labs: ""
   leavesBehindOnSell: "Co zostaje po zburzeniu"
+  tip_leavesBehindOnSell: ""
+  lift: ""
+  tip_lift: ""
+  manaRecoveryPerDay: ""
+  tip_manaRecoveryPerDay: ""
+  mapName: "Nazwa mapy"
+  tip_mapName: ""
+  maxAllowedPerBase: "Do ilu na kryjówkę"
+  tip_maxAllowedPerBase: ""
+  mind: ""
+  tip_mind: ""
+  missileAttraction: "Podatność na zbombardowanie"
+  tip_missileAttraction: ""
+  monthlyCost: "Koszty miesięczne"
+  tip_monthlyCost: ""
+  personnel: "Kwatery mieszkalne"
+  tip_personnel: ""
+  provideBaseFunc: "Funkcje specjalne budynku"
+  tip_provideBaseFunc: ""
+  psiLabs: "Stanowiska do nauki wudu"
+  tip_psiLabs: ""
+  refundValue: "Zysk z likwidacji"
+  tip_refundValue: ""
   removalTime: "Czas wyburzania"
+  tip_removalTime: ""
+  rightClickActionType: "Funkcja PPM"
+  tip_rightClickActionType: ""
+
+
+
+
+
+
+
+
+
+  sickBayAbsoluteBonus: "Premia do rekonwalescencji (Zdrowie/dzień)"
+  tip_sickBayAbsoluteBonus: ""
+  sickBayRelativeBonus: "Premia do rekonwalescencji (% Zdrowia/dzień)"
+  tip_sickBayRelativeBonus: ""
+  spriteFacility: "Duszek 1x1"
+  tip_spriteFacility: ""
+  spriteShape: "Duszek wielodzielny"
+  tip_spriteShape: ""
+  storage: "Przestrzeń magazynowa"
+  tip_storage: ""
+  storageTiles: "Gdzie leży towar"
+  tip_storageTiles: ""
+  trainingRooms: "Ilu tu może trenować"
+  tip_trainingRooms: ""
+  workshops: "Stanowiska dla dłubaczek"
+  tip_workshops: ""
 
   #Other tables
   Research: "Badania"
   points: "Niesława"
+  tip_points: ""
   lookup: "Przekierowanie"
+  tip_lookup: ""
   needItem: "Wymaga przedmiotu?"
+  tip_needItem: ""
   destroyItem: "Przedmiot przepadnie?"
+  tip_destroyItem: ""
   spawnedItem: "Przedmiot utworzony"
+  tip_spawnedItem: ""
 
   Manufacture: "Produkcja"
   category: "Kategoria"
+  tip_category: ""
   producedItems: "Wyprodukowane przedmioty"
+  tip_producedItems: ""
   refund: "Zwrot kosztów przy anulowaniu?"
+  tip_refund: ""
   requiredItems: "Potrzebne zasoby"
+  tip_requiredItems: ""
+  tip_requires: ""
+  tip_requiresBaseFunc: ""
   space: "Wymagana dodatkowa przestrzeń robocza"
+  tip_space: ""
   time: "Czas"
+  tip_time: ""
   spawnedPersonType: "Kto się przyłącza"
+  tip_spawnedPersonType: ""
 
   Unit: "Jednostka"
   aggression: "Agresja"
+  tip_aggression: ""
+  aggroSound: ""
+  tip_aggroSound: ""
   berserkSound: "Odgłos szału"
+  tip_berserkSound: ""
+  builtInWeaponSets: ""
+  tip_builtInWeaponSets: ""
   canSurrender: "Poddaje się?"
+  tip_canSurrender: ""
+  capturable: ""
+  tip_capturable: ""
+  deathSound: ""
+  tip_deathSound: ""
   energyRecovery: "Regeneracja Energii"
+  tip_energyRecovery: ""
   floatHeight: "Wysokość unoszenia się"
+  tip_floatHeight: ""
   intelligence: "Inteligencja"
+  tip_intelligence: ""
+  isLeeroyJenkins: ""
+  tip_isLeeroyJenkins: ""
+
+
+
   kneelHeight: "Wysokość w przyklęku"
+  tip_kneelHeight: ""
   livingWeapon: "Żywa broń?"
+  tip_livingWeapon: ""
   meleeWeapon: "Broń biała"
+  tip_meleeWeapon: ""
   panicSound: "Odgłos paniki"
+  tip_panicSound: ""
   psiWeapon: "Broń psi"
+  tip_psiWeapon: ""
   race: "Odłam"
+  tip_race: ""
   rank: "Ranga"
+  tip_rank: ""
   sniper: "Snajper"
+  tip_sniper: ""
+  spawnUnit: ""
+  tip_spawnUnit: ""
   specab: "Zdolność specjalna"
+  tip_specab: ""
+
+
+
+
   spotter: "Zwiadowca (w turach)"
+  tip_spotter: ""
   standHeight: "Wzrost"
+  tip_standHeight: ""
   value: "Wartość w Niesławie"
+  tip_value: ""
 
   Allowed crafts: "Dozwolone statki"
   Allowed item categories: "Dozwolone kategorie przedmiotów"
@@ -475,8 +967,28 @@ pl:
   unlocks: "Odblokowuje:" #STR_UNLOCKS
   disables: "Wyłącza:" #STR_DISABLES
   getOneFree: "Daje jedno za darmo:" #STR_GIVES_ONE_FOR_FREE
+  getOneFreeProtected: ""
   manufacture: "Proces wytwórczy:" #STR_REQUIRED_BY(partly) - see STR_HEALING_GEL on the site
   randomProducedItems: "Losowa produkcja!" #STR_RANDOM_PRODUCTION_DISCLAIMER
+
+ #non-ruleset#
+  startingConditions: "Warunki początkowe"
+  tip_startingConditions: "Różne uwarunkowania i ograniczenia nakładane przed startem danej misji naziemnej."
+  tags: "Etykiety skryptów Yankesa"
+  tip_tags: "OXCE daje możliwość użycia własnego języka skryptowego do modyfikacji logiki gry w pewnych miejscach z użyciem hooków skryptowych. Yankes jest autorem tego języka, tak samo się on też nazywa."
+  users: "Użytkownicy"
+  tip_users: "Jednostki, które noszą ten pancerz."
+  armors: "Pancerze"
+  tip_armors: ""
+  compatibleWeaponsList: "Pasująca broń"
+  tip_compatibleWeaponsList: ""
+  componentOf: "Składowa"
+  tip_componentOf: ""
+  chanceSum: ""
+  tip_chanceSum: ""
+  spawnedBy: "Tworzone przez"
+  tip_spawnedBy: ""
+  tip_manufacture: ""
 
  # intro
   # Pt.1
@@ -487,7 +999,7 @@ pl:
   Enemy Unknown (1994) and X-Com: "Enemy Unknown (1994) i X-Com"
   Terror From The Deep. There are major gameplay differences, as well as a complete overhaul of research, manufacture, base facilities, and so on. X-Piratez is designed for the veteran X-Com player seeking a much longer and complex campaign.: "Terror From The Deep. Zawiera wiele zmian w mechanizmach rozgrywki, a także zupełna przebudowa struktury badań, projektów produkcyjnych, pomieszczeń bazy itd. Mod X-Piratez jest przeznaczony dla doświadczonych graczy w X-Com, którzy oczekują znacznie dłuższej i bardziej złożonej kampanii."
   The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. X-Piratez is the biggest OpenXcom mod to date.: "Jest rok 2601. Ziemię dawno temu podbili kosmici. Dowodzisz bandą mutanckich piratek. Rabuj obcych i ich ludzkich sługusów dla zabawy, zysku i władzy. X-Piratez to obecnie największy mod dla OpenXcom."
-  We appreciate Anna Zemlina for her fantastic artworks created especially for the X-Piratez Universe.: "Specjalne podziękowania dla Anny Zemliny za jej fantastyczne prace graficzne, stworzone specjalnie dla Uniwersum X-Piratez."
+  Special thanks to Anna Zemlina for her fantastic artworks created especially for the X-Piratez Universe.: "Specjalne podziękowania dla Anny Zemliny za jej fantastyczne prace graficzne, stworzone specjalnie dla Uniwersum X-Piratez."
   # Pt.2,5
   #Download mod: "Pobierz modyfikację"
   #join our community with: "dołącz do naszej społeczności na"
