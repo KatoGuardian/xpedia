@@ -142,11 +142,11 @@ ru:
   rearmRate: "Скорость переоснащения"
   tip_rearmRate: "rearmRate<br><br>Количество боеприпасов, которым судно с установленным орудием оснащается по прошествии каждого часа, пока находится на переоснащении в убежище."
   reloadAggressive: "Перезаряжание агрессивное"
-  tip_reloadAggressive: "reloadAggressive<br><br>Интервал между выстрелами в режиме 'На абордаж!'"
+  tip_reloadAggressive: "reloadAggressive<br><br>Интервал между выстрелами в режиме 'НА АБОРДАЖ!'"
   reloadCautious: "Перезаряжание осторожное"
-  tip_reloadCautious: "reloadCautious<br><br>Интервал между выстрелами в режиме 'Атакуем издалека'."
+  tip_reloadCautious: "reloadCautious<br><br>Интервал между выстрелами в режиме 'АТАКУЕМ ИЗДАЛЕКА'."
   reloadStandard: "Перезаряжание обычное"
-  tip_reloadStandard: "reloadStandard<br><br>Интервал между выстрелами в режиме 'Полный вперед!'"
+  tip_reloadStandard: "reloadStandard<br><br>Интервал между выстрелами в режиме 'ПОЛНЫЙ ВПЕРЕД!'"
   shieldDamageModifier: "Противощитный модификатор"
   tip_shieldDamageModifier: "shieldDamageModifier<br><br>Процент урона, который орудие наносит силовым щитам цели."
   sound: "Звук выстрела"
@@ -266,7 +266,7 @@ ru:
   tip_corpseGeo: "corpseGeo<br><br>Добыча с трупа, которая отображается в итогах миссии и затем попадает на склад."
   createsMeleeThreat: "Запускает механику боя на короткой дистанции?"
   tip_createsMeleeThreat: "createsMeleeThreat<br><br>Также известна как CQC (close quarters combat). Это набор правил, призванный сделать использование тяжелого и снайперского оружия на короткой дистанции (1-8 клеток) неэффективным для максимальной реалистичности ситуации."
-  deathFrames: "Раскадровка смерти."
+  deathFrames: "Раскадровка смерти"
   tip_deathFrames: "deathFrames<br><br>Количество спрайтов, задействованных в анимации смерти персонажа."
   drawBubbles: "Отрисовывать пузырьки?"
   tip_drawBubbles: "drawBubbles<br><br>Для персонажей, которые дышат под водой."
@@ -525,9 +525,9 @@ ru:
   categories: "Категории"
   tip_categories: "categories<br><br>Список категорий, которым этот предмет принадлежит."
   clipSize: "Зарядов"
+  tip_clipSize: "clipSize<br><br>Количество патронов или их аналогов, содержащихся в одном магазине или его аналоге. Неограниченное количество = -1."
   closeQuartersMultiplier: "Множитель короткой дистанции"
   tip_closeQuartersMultiplier: "closeQuartersMultiplier<br><br>То же самое, что множитель точности стрельбы, но используется в условиях боя на короткой дистанции (CQC)."
-  tip_clipSize: "clipSize<br><br>Количество патронов или их аналогов, содержащихся в одном магазине или его аналоге. Неограниченное количество = -1."
   compatibleAmmo: "Совместимые боеприпасы"
   tip_compatibleAmmo: "compatibleAmmo<br><br>Список боеприпасов, которые подходят к этому оружию. Если ничего не указано, то боеприпасы не требуются."
   costAimed: "Стоимость прицельного выстрела"
@@ -952,7 +952,7 @@ ru:
   tip_standHeight: "standHeight<br><br>Если этот параметр назначен броне, он имеет приоритет над аналогичным параметром персонажа, надевшего эту броню."
   value: "Ценность"
   tip_value: "value<br><br>Рейтинг, начисляемый за убийство этого персонажа."
-  
+
   Allowed crafts: "Допустимый транспорт"
   Allowed item categories: "Допустимые категории снаряжения"
   Allowed armors: "Допустимая броня"
@@ -999,7 +999,13 @@ ru:
   Enemy Unknown (1994) and X-Com: "Enemy Unknown (1994) и X-Com"
   Terror From The Deep. There are major gameplay differences, as well as a complete overhaul of research, manufacture, base facilities, and so on. X-Piratez is designed for the veteran X-Com player seeking a much longer and complex campaign.: "Terror From The Deep с открытым кодом. В игровой процесс внесены существенные изменения, а также полностью переработаны исследования, производственные проекты, модули базы и так далее. Целевой аудиторией мода являются ветераны X-Com, заинтересованные в более длительной и сложной кампании."
   The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. X-Piratez is the biggest OpenXcom mod to date.: "На дворе 2601 год. Земля уже давным-давно завоевана пришельцами. Вы - лидер шайки мутанток-пираток. Грабьте пришельцев и их прихвостней из числа землян ради поживы, поддержания авторитета и просто по приколу. X-Piratez - это самый крупный на сегодняшний день мод для OpenXcom."
-  We appreciate Anna Zemlina for her fantastic artworks created especially for the X-Piratez Universe.: "Выражаем признательность Анне Землиной за ее потрясающие иллюстрации, сделанные специально для Пиратовселенной."
+  Special thanks to Anna Zemlina for her fantastic artworks created especially for the X-Piratez Universe.: "Выражаем признательность Анне Землиной за ее потрясающие иллюстрации, сделанные специально для Пиратовселенной."
+
+
+
+
+
+
   # Pt.3
   Current mod version is: "Свежайшая версия мода:"
   PC Installation & Update Guide: "Установка и обновление для ПК"

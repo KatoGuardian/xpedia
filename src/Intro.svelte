@@ -13,7 +13,7 @@
       <br/>
       {rul.str("The year is 2601. The Earth has been long conquered by aliens. You run a gang of mutant pirates. Rob aliens and their human proxies for fun, profit and power. X-Piratez is the biggest OpenXcom mod to date.")}<br/>
       <br/>
-      {rul.str("We appreciate Anna Zemlina for her fantastic artworks created especially for the X-Piratez Universe.")}
+      {rul.str("Special thanks to Anna Zemlina for her fantastic artworks created especially for the X-Piratez Universe.")}
       <div class="columns">
       <div class="column media-bar">
         <a href="https://discordapp.com/invite/b5KXPvX" target="_blank"><img class="media-icon" src="xpedia/images/discord-256.png" alt="Discord" title="Discord server"></a>
