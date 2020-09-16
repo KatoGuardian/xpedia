@@ -354,6 +354,8 @@ pl:
   Snap: "Szybki"
   Aimed: "Celowany"
   Auto: "Seria"
+  Throw: ""
+  Psi: ""
   Melee: "Walka wręcz"
   Throwing: ""
   Specifications: ""
