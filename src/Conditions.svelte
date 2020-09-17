@@ -10,6 +10,8 @@
 
 <LinksPage links={conditions.allowedCraft} title={rul.str("Allowed crafts")}/>
 
+<LinksPage links={conditions.allowedSoldierTypes} title={rul.str("Allowed hands")}/>
+
 <LinksPage links={conditions.allowedItemCategories} title={rul.str("Allowed item categories")}/>
 
 <LinksPage links={conditions.allowedArmors} title={rul.str("Allowed armors")}/>
