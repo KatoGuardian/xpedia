@@ -120,7 +120,7 @@
     <br/>
     {rul.str("for translating the homepage and interfaces into non-English languages")}!
     <br/>
-    {rul.str("Wiki is powered by")} <a href="https://github.com/baturinsky/xpedia/" target="_blank">Baturinsky's XPedia</a>.
+    {rul.str("Wiki is powered by")} Baturinsky's XPedia.
     <br/>
     {rul.str("Codemasters")}: Baturinsky, Finnik, Kato.
     </div>

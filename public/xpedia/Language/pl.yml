@@ -31,6 +31,7 @@ pl:
   DISC_DUEL: "Pojedynek na dyski"
   EMANSION: "Napad na posiadłość"
   EXO: "Tylko stroje hermetyczne"
+  HUMAN_FEMALES: ""
   GAL_PARTY: ""
   MOSTLY_HARMLESS: "Przeważnie niegroźna broń"
   NOHEAVYARMOREXCEPTFLYING: "Bez ciężkich pancerzy, oprócz latających"
@@ -164,6 +165,8 @@ pl:
   tip_breakOffTime: "breakOffTime<br><br>Minimalny czas, po którym UFO może wyrwać się z walki powietrznej."
   craftCustomDeploy: "Alternatywna załoga statku"
   tip_craftCustomDeploy: "craftCustomDeploy<br><br>Nadpisuje dane rozstawienia używane podczas generacji misji naziemnej, gdy UFO się rozbije lub wyląduje."
+  huntAlertSound: ""
+  tip_huntAlertSound: ""
   huntBehavior: "Żyłka myśliwska"
   tip_huntBehavior: "huntBehavior<br><br>Algorytm używany przy rozważaniu wycofania się z walki powietrznej:
     <ul><li> 0 = uciekaj, gdy przegrywasz;</li>
@@ -194,6 +197,8 @@ pl:
   tip_range: ""
   reload: "Czas przeładowania"
   tip_reload: "reload<br><br>Czas upływający między strzałami z broni tego UFO."
+  sightRange: ""
+  tip_sightRange: ""
 
   #Armors
   Armor: "Pancerz"
@@ -956,6 +961,7 @@ pl:
   tip_value: ""
 
   Allowed crafts: "Dozwolone statki"
+  Allowed hands: "Dozwolone wojownicy"
   Allowed item categories: "Dozwolone kategorie przedmiotów"
   Allowed armors: "Dozwolone pancerze"
   Allowed auxilia: "Dozwolone pomocniki"

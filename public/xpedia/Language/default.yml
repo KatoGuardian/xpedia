@@ -65,6 +65,7 @@ default:
   tip_alertSound: "alertSound<br><br>Sound played when this vessel is detected, from GEO.CAT."
   tip_breakOffTime: "breakOffTime<br><br>Minimum amount of time for the vessel to be able to break off of a dogfight."
   tip_craftCustomDeploy: "craftCustomDeploy<br><br>Overrides the deployment data used during the Battlescape generation, when the vessel crashes or lands."
+  tip_huntAlertSound: "huntAlertSound<br><br>Sound played when this type of vessel starts hunting player's craft, from GEO.CAT."
   tip_huntBehavior: "huntBehavior<br><br>Algorithm to use when considering retreating from the dogfight:
     <ul><li> 0 = flee when losing;</li>
     <li> 1 = never flee, never crash (is destroyed instead of crashing);</li>
@@ -83,6 +84,7 @@ default:
   tip_raceBonus: "raceBonus<br><br>Modifies or overrides the craft stats per crew."
   tip_range: "range<br><br>Maximum range of a craft weapon in dogfights."
   tip_reload: "reload<br><br>Time the vessel's weapon takes to fire between each shot."
+  tip_sightRange: "sightRange<br><br>Vessel's sight range (for detecting your Hideouts) in nautical miles."
 
 #Armors section
   tip_armor: "armor

@@ -31,6 +31,7 @@ ru:
   DISC_DUEL: "Дуэль на дисках"
   EMANSION: "Набег на особняк"
   EXO: "Только экзо-костюмы"
+  HUMAN_FEMALES: "Женщины-человеки"
   GAL_PARTY: "Только для девочек"
   MOSTLY_HARMLESS: "Никакого смертельного оружия!"
   NOHEAVYARMOREXCEPTFLYING: "Тяжелая нелетающая броня не справится"
@@ -164,6 +165,8 @@ ru:
   tip_breakOffTime: "breakOffTime<br><br>Минимальное время, по истечении которого судно попытается выйти из воздушного боя."
   craftCustomDeploy: "Особые правила судна"
   tip_craftCustomDeploy: "craftCustomDeploy<br><br>Особые правила генерации тактической миссии, когда это судно терпит крушение или приземляется."
+  huntAlertSound: "Сигнал атаки"
+  tip_huntAlertSound: "huntAlertSound<br><br>Номер звука из библиотеки GEO.CAT, который воспроизводится, когда это судно идет в атаку на ваше."
   huntBehavior: "Поведение перехватчика"
   tip_huntBehavior: "huntBehavior<br><br>Алгоритм принятия решения о выходе из воздушного боя:
     <ul><li> 0 = попытается сбежать, если проигрывает;</li>
@@ -194,6 +197,8 @@ ru:
   tip_range: "range<br><br>Максимальная дальность поражения бортового орудия в воздушном бою."
   reload: "Перезаряжание"
   tip_reload: "reload<br><br>Интервал между выстрелами орудий судна."
+  sightRange: "Дальность детектора"
+  tip_sightRange: "sightRange<br><br>Радиус, в котором это судно может обнаружить ваши Убежища (в морских милях)."
 
   #Armors
   Armor: "Броня"
@@ -956,6 +961,7 @@ ru:
   tip_value: "value<br><br>Рейтинг, начисляемый за убийство этого персонажа."
 
   Allowed crafts: "Допустимый транспорт"
+  Allowed hands: "Допустимые бойцы"
   Allowed item categories: "Допустимые категории снаряжения"
   Allowed armors: "Допустимая броня"
   Allowed auxilia: "Допустимая поддержка"
